@@ -1,23 +1,3 @@
-/*
- * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20210930 (32-bit version)
- * Copyright (c) 2000 - 2021 Intel Corporation
- * 
- * Disassembling to symbolic ASL+ operators
- *
- * Disassembly of C:/Users/MatAsin/Downloads/SSDT-B460MASL.aml, Wed Sep 28 23:20:02 2022
- *
- * Original Table Header:
- *     Signature        "SSDT"
- *     Length           0x000009D1 (2513)
- *     Revision         0x02
- *     Checksum         0x31
- *     OEM ID           "ASRock"
- *     OEM Table ID     "P1.20"
- *     OEM Revision     0x00000001 (1)
- *     Compiler ID      "INTL"
- *     Compiler Version 0x20200925 (538970405)
- */
 DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
 {
     External (_SB_, DeviceObj)
