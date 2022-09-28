@@ -98,13 +98,9 @@ Metal Headless                 No
 ### ACPI
 
   - **Add**
-
     - **SSDT-B460MASL.aml** (Single File)
-
       - **_SB** (System Bus/Bus Objects are defined under this namespace)
-
         - **PCI0** (PCI Root Bridge)
-
           - **DRAM** (Comet Lake-S 6c Host Bridge/DRAM Controller )
           - **GFX0** (Intel UHD Graphics 630)
           - **HDAS** (Comet Lake PCH-V cAVS )
@@ -124,9 +120,7 @@ Metal Headless                 No
           - **SBUS** (Serial Bus)
           - **TSUB** (Thermal Subsystem)
           - **XHC_** (USB)
-
           - **USBX** (USB Power Management)
-
           - **DTGP** (Apple Standard Calling Method)
           - **STAS** (Status Method)
 
@@ -141,20 +135,16 @@ Metal Headless                 No
   - **Quirks**
     - NIL
 
-  
 
 ### Booter
 
   - **MmioWhitelist**
-
     - NIL
 
   - **Patch**
-
     - NIL
 
   - **Quirks**
-
     - [x] AvoidRuntimeDefrag
     - [x] DevirtualiseMmio
     - [x] EnableSafeModeSlide
@@ -162,7 +152,6 @@ Metal Headless                 No
     - [x] ProvideCustomSlide
     - [x] RebuildAppleMemoryMap
     - [x] SyncRuntimePermissions
-
     - ProvideMaxSlide = 0
     - ResizeAppleGpuBars = -1
 
@@ -361,19 +350,14 @@ Metal Headless                 No
         </dict>
     </plist>
     ```
-
     
-
   - **Delete**
-
     - NIL
 
-  
 
 ### Kernel
 
   - **Add**
-
     - [x] AppleALC.kext
     - [x] Lilu.kext
     - [x] LucyRTL8125Ethernet.kext
@@ -386,102 +370,69 @@ Metal Headless                 No
     - [x] WhateverGreen.kext
 
   - **Block**
-
     - NIL
 
   - **Emulate**
-
     - Cpuid1Data > Data > `Empty`
     - Cpuid1Mask > Data > `Empty`
-
     - [ ] DummyPowerManagement
-
     - MaxKernel > String > `Empty`
     - MinKernel > String > `Empty`
 
   - **Force**
-
     - NIL
 
   - **Patch**
-
     - Arch > String > `x86_64`
-
     - Base > String > `Empty`
-
     - Comment > String > `Enable TRIM for SSD`
-
     - Count > Integer > `0`
-
     - Enable > Integer > `0`
-
     - Find > Data > `004150504C452053534400`
-
     - Identifier > String > `com.apple.iokit.IOAHCIBlockStorage`
-
     - Limit > Integer > `0`
-
     - Mask > Data > `Empty`
-
     - MinKernel > String > `Empty`
-
     - MaxKernel > String > `Empty`
-
     - Replace > Data > `0000000000000000000000`
-
     - Replacemask > Data > `Empty`
-
     - Skip > Interger > `0`
 
  - **Scheme**
-
    - [ ] CustomKernel
    - [x] FuzzyMatch
-
    - KernelArch > String > `x86_64`
    - KernelCache > String > `Auto`
 
 ### Misc
 
   - **BlessOverride**
-
     - NIL
 
   - **Boot**
-
     - ConsoleAttributes = `0`
     - HibernateMode = `Auto`
-
     - [x] Hide Auxiliary 
-
     - LauncherOption = `Full`
     - LauncherPath = `Default`
     - PickerAttributes = `17`
-
     - [ ] PickerAudioAssist
-
     - PickerMode = `External`
     - PickerVariant = `Acidanthera\GoldenGate`
-
     - [ ] PollAppleHotKeys
-
     - [x] ShowPicker
-
     - TakeoffDelay = `0`
     - Timeout = `5`
 
   - **Debug**
-
     - DisplayLevel = `0`
     - DisplayDelay = `0`
     - Target = `0`
     - [x] DisableWatchDog
 
   - **Security**
-
     - [x] AllowSetDefault
     - [x] BlacklistAppleUpdate
-
     - DmgLoading = `Signed`
     - Vault = `Optional`
     - SecureBootModel = `j85-10.15.6 (19G2005)`
@@ -492,21 +443,13 @@ Metal Headless                 No
     - PasswordSalt = `Empty`
 
   - **Entries**
-
     - NIL
-
   - **Tools**
-
     - Arguments > String > `Empty`
-
     - [x] Auxiliary
-
     - Comment > String > `CleanNvram.efi` 
-
     - [x] Enabled 
-
     - Flavour = `Auto`
-
     - [ ] FullNvramAccess
     - [ ] RealPath
     - [ ] TextMode
@@ -531,7 +474,6 @@ Metal Headless                 No
     - run-efi-updater > String > `No`
 
 - **Delete**
-
   - **4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14**
     - Item 1 > String > `UIScale`
     - Item 2 > String > `DefaultBackgroundColor`
@@ -548,31 +490,19 @@ Metal Headless                 No
 ### PlatformInfo
 
 - [x] **Automatic**
-
 - [ ] **CustomMemory**
 
 - **Generic**
-
   - [ ] AdviseFeatures
-
   - MLB > String > `XXXXXXXXXXXXXXXX`
-
   - [ ] MaxBIOSVersion
-
   - ProcessorType > Interger > `0`
-
   - ROM > Data > `XXXXXXXXXXXXXXXX`
-
   - [x] SpoofVendor
-
   - SystemMemoryStatus > String > `Auto`
-
   - SystemProductName > String > `iMac20,1`
-
   - SystemSerialNumber > String > `XXXXXXXXXXXXXXXX`
-
   - SystemUUID > String > `XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXXX`
-
 - **UpdateDataHub**
 - **UpdateNVRAM**
 - **UpdateSMBIOS**
@@ -582,7 +512,6 @@ Metal Headless                 No
 ### UEFI
 
 - **APFS**
-
   - [x] EnableJumpstart
   - [ ] GlobalConnect
   - [x] HideVerbose
@@ -591,9 +520,7 @@ Metal Headless                 No
   - MinVersion > Integrer > `-1`
 
 - **AppleInput**
-
   - AppleEvent > String > `BuiltIn`
-
   - [ ] CustomDelays
   - [x] GraphicInputMirroring
   - KeyInitialDelay > Integer > `0`
