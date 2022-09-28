@@ -133,7 +133,7 @@ Metal Headless                 No
 ### ACPI
 
   - **Add**
-    - **SSDT-B460MASL.aml** (Single File)
+    - [**SSDT-B460MASL.aml**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/README.md#pci-device)
 
   - **Delete**
     - NIL
