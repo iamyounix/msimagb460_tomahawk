@@ -86,7 +86,7 @@ Metal Headless                 No
   - [x] Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet
   - [x] BCM4360 802.11ac Wireless Network Adapter    
 
-  **History**
+  **Instruction**
 
   - [x] Working
   - [ ] Not Working
@@ -95,7 +95,7 @@ Metal Headless                 No
 
 ## Configuration
 
-**History**
+**Instruction**
 
   - [x] True
   - [ ] False
