@@ -147,7 +147,7 @@ ACPI Hotpatches and Guides for the OpenCore Bootmanager. Enhance and fine-tune y
 
 References
 
-☠ [**UEFI6.1**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/ACPI_6_1.pdf) 
+☠ [**ACPI6.1**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/ACPI_6_1.pdf) 
 
 
 ## Configuration
