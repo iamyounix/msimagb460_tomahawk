@@ -2,26 +2,26 @@
 
   Hackintosh: 10th Gen Comet Lake with B460M Steel Legend Configuration
 
-  ---
+---
 
   ### System Info
 
   ```zsh
-  OS                             macOS Monterey Version 12.6 (Build 21G115)
-  Kernel                         Darwin 21.6.0 x86_64
-  RAM                            32.00 GB
-  Model Identifier               iMac20,1
-  CPU                            Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
-  Intel Generation               Coffee Lake
-  Platform ID                    0x3E920003
-  Board ID                       Mac-CFF7D910A743CAAF
-  FW Version                     1916.0.3.0.0
-  Serial Number                  C02CN0C4PN5T
-  Hardware UUID                  XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-  System ID                      XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-  ROM                            XXXXXXXXXXXX
-  Board Serial Number            XXXXXXXXXXXXXXXXX
-  VDA Decoder                    Fully Supported
+OS                             macOS Monterey Version 12.6 (Build 21G115)
+Kernel                         Darwin 21.6.0 x86_64
+RAM                            32.00 GB
+Model Identifier               iMac20,1
+CPU                            Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
+Intel Generation               Coffee Lake
+Platform ID                    0x3E920003
+Board ID                       Mac-CFF7D910A743CAAF
+FW Version                     1916.0.3.0.0
+Serial Number                  C02CN0C4PN5T
+Hardware UUID                  XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+System ID                      XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ROM                            XXXXXXXXXXXX
+Board Serial Number            XXXXXXXXXXXXXXXXX
+VDA Decoder                    Fully Supported
   ```
 
   
@@ -29,13 +29,13 @@
   ### Serial Info
 
   ```zsh
-  Country                        China (Quanta Computer)
-  Year                           2020
-  Week                           05.06.2020-05.12.2020
-  Line                           412 (copy 1)
-  Model                          iMac (Retina 5K, 27-inch, 2020)
-  Model Identifier               iMac20,1
-  Valid                          Possibly
+Country                        China (Quanta Computer)
+Year                           2020
+Week                           05.06.2020-05.12.2020
+Line                           412 (copy 1)
+Model                          iMac (Retina 5K, 27-inch, 2020)
+Model Identifier               iMac20,1
+Valid                          Possibly
   ```
 
   
@@ -43,8 +43,8 @@
   ### IGPU
 
   ```zsh
-  GPU Name                       Intel CoffeeLake-H GT2 [UHD Graphics 630]
-  GPU Device ID                  0x3E9B8086
+GPU Name                       Intel CoffeeLake-H GT2 [UHD Graphics 630]
+GPU Device ID                  0x3E9B8086
   ```
 
   
@@ -52,14 +52,14 @@
   ### GFX0
 
   ```zsh
-  GPU Name                       Navi 14 [Radeon RX 5500/5500M / Pro 5500M]
-  GPU Device ID                  0x73401002
-  Quartz Extreme (QE/CI)         Yes
-  Metal Supported                Yes
-  Metal Device Name              AMD Radeon RX 5500 XT
-  Metal Default Device           Yes
-  Metal Low Power                No
-  Metal Headless                 No
+GPU Name                       Navi 14 [Radeon RX 5500/5500M / Pro 5500M]
+GPU Device ID                  0x73401002
+Quartz Extreme (QE/CI)         Yes
+Metal Supported                Yes
+Metal Device Name              AMD Radeon RX 5500 XT
+Metal Default Device           Yes
+Metal Low Power                No
+Metal Headless                 No
   ```
 
   
@@ -91,7 +91,7 @@
   - [x] Working
   - [ ] Not Working
 
-  ---
+---
 
   ## Configuration
 
@@ -547,34 +547,41 @@
 
 ### PlatformInfo
 
-- [x] **Automatic**
+- [ ] **Automatic**
 
 - [ ] **CustomMemory**
 
-- [ ] **Generic**
+- **Generic**
 
   - [ ] AdviseFeatures
+
   - MLB > String > `XXXXXXXXXXXXXXXX`
 
   - [ ] MaxBIOSVersion
+
   - ProcessorType > Interger > `0`
+
   - ROM > Data > `XXXXXXXXXXXXXXXX`
 
   - [x] SpoofVendor
+
   - SystemMemoryStatus > String > `Auto`
+
   - SystemProductName > String > `iMac20,1`
+
   - SystemSerialNumber > String > `XXXXXXXXXXXXXXXX`
+
   - SystemUUID > String > `XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXXX`
 
-- [x] **UpdateDataHub**
+**UpdateDataHub**
 
-- [x] **UpdateNVRAM**
+**UpdateNVRAM**
 
-- [x] **UpdateSMBIOS**
+**UpdateSMBIOS**
 
-- **UpdateSMBIOSMode** > String > `Custom`
+**UpdateSMBIOSMode** > String > `Custom`
 
-- [ ] **UseRawUuidEncoding**
+**UseRawUuidEncoding**
 
 ### UEFI
 
