@@ -90,7 +90,7 @@ Metal Headless                 No
       - [x] **GFX0** = `Intel UHD Graphics 630` (Renamed as **IGPU**)
       - [x] **HDAS** = `Comet Lake PCH-V cAVS` (Renamed as **HDEF**)
       - [x] **HECI** = `Comet Lake PCH-V HECI Controller` (Renamed as **IMEI**)
-      - [ ] **PPMC** = `Programmable Power Management Controller`. Typically found on 10th generation motherboards, **not compatible** with macOS
+      - [ ] **PPMC** = `Programmable Power Management Controller`. Found on 10th generation motherboards, **not compatible** with macOS
       - [x] **PMCR** = `Fake Power Management Capabilities Register`. Replacing the function of **PPMC**
       - [x] **SAT0** = `400 Series Chipset Family SATA AHCI Controller` (Renamed as **SATA**)
       - [x] **SBUS** = `Serial Bus`
