@@ -83,7 +83,7 @@ Metal Headless                 No
     - [x] Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet
     - [x] BCM94360CD 802.11ac Wireless Network Adapter    
 
-**SSDT Patch**
+**SSDT Patch**[^1]
   - **_SB** = System Bus/Bus Objects are defined under this namespace
     - **PCI0** = PCI Root Bridge
       - [x] **DRAM** = Comet Lake-S 6c Host Bridge/DRAM Controller 
@@ -119,5 +119,4 @@ Metal Headless                 No
 
 ## Configuration
 
-**Refer:** [config.plist](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/config.plist)
-
+- [^1]: [Config](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/config.plist) and [SSDT-B460MASL](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-B460MASL.dsl)
