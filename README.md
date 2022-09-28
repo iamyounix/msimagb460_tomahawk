@@ -457,7 +457,7 @@ Metal Headless                 No
     - [ ] FullNvramAccess
     - [ ] RealPath
     - [ ] TextMode
-    *   Arguments > String > `Empty`
+    * Arguments > String > `Empty`
     * Comment > String > `CleanNvram.efi` 
     * Flavour = `Auto`
     
@@ -465,26 +465,26 @@ Metal Headless                 No
 
 - **Add**
   - **4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14**
-   - DefaultBackgroundColor > Data > `00000000`
-   - UIScale > Data > `01`
+    - DefaultBackgroundColor > Data > `00000000`
+    - UIScale > Data > `01`
   - **4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102**
-   - rtc-blacklist > Data > `Empty`
+    - rtc-blacklist > Data > `Empty`
   - **7C436110-AB2A-4BBB-A880-FE41995C9F82**
-   - ForceDisplayRotationInEFI > Number > `0`
-   - SystemAudioVolume > Data > `46`
-   - boot-args > String > `Empty` **(Patches Inject via DeviceProperties)**
-   - csr-active-config > Data > `00000000`
-   - prev-lang:kbd > Data > **Hexadecimal:** `656E2D55533A30` **ASCII:** `en-US:0`
-   - run-efi-updater > String > `No`
+    - ForceDisplayRotationInEFI > Number > `0`
+    - SystemAudioVolume > Data > `46`
+    - boot-args > String > `Empty` **(Patches Inject via DeviceProperties)**
+    - csr-active-config > Data > `00000000`
+    - prev-lang:kbd > Data > **Hexadecimal:** `656E2D55533A30` **ASCII:** `en-US:0`
+    - run-efi-updater > String > `No`
 
 - **Delete**
   - **4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14**
-   - Item 1 > String > `UIScale`
-   - Item 2 > String > `DefaultBackgroundColor`
+    - Item 1 > String > `UIScale`
+    - Item 2 > String > `DefaultBackgroundColor`
   - **4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102**
-   - Item 1 > String > `rtc-blacklist`
+    - Item 1 > String > `rtc-blacklist`
   - **7C436110-AB2A-4BBB-A880-FE41995C9F82**
-   - Item 1 > String > `boot-args`
+    - Item 1 > String > `boot-args`
 
 - **LegacyOverwrite**
   - NIL
