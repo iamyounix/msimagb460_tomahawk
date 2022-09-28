@@ -4,9 +4,9 @@
 
 ---
 
-  ### System Info
+### System Info
 
-  ```zsh
+```zsh
 OS                             macOS Monterey Version 12.6 (Build 21G115)
 Kernel                         Darwin 21.6.0 x86_64
 RAM                            32.00 GB
@@ -22,13 +22,13 @@ System ID                      XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ROM                            XXXXXXXXXXXX
 Board Serial Number            XXXXXXXXXXXXXXXXX
 VDA Decoder                    Fully Supported
-  ```
+```
 
   
 
-  ### Serial Info
+### Serial Info
 
-  ```zsh
+```zsh
 Country                        China (Quanta Computer)
 Year                           2020
 Week                           05.06.2020-05.12.2020
@@ -36,22 +36,22 @@ Line                           412 (copy 1)
 Model                          iMac (Retina 5K, 27-inch, 2020)
 Model Identifier               iMac20,1
 Valid                          Possibly
-  ```
+```
 
   
 
-  ### IGPU
+### IGPU
 
-  ```zsh
+```zsh
 GPU Name                       Intel CoffeeLake-H GT2 [UHD Graphics 630]
 GPU Device ID                  0x3E9B8086
-  ```
+```
 
   
 
-  ### GFX0
+### GFX0
 
-  ```zsh
+```zsh
 GPU Name                       Navi 14 [Radeon RX 5500/5500M / Pro 5500M]
 GPU Device ID                  0x73401002
 Quartz Extreme (QE/CI)         Yes
@@ -60,11 +60,11 @@ Metal Device Name              AMD Radeon RX 5500 XT
 Metal Default Device           Yes
 Metal Low Power                No
 Metal Headless                 No
-  ```
+```
 
   
 
-  ### PCI Device
+### PCI Device
 
   - [x] Comet Lake-S 6c Host Bridge/DRAM Controller 					       
   - [x] 6th-10th Gen Core Processor PCIe Controller (x16)  
@@ -93,9 +93,9 @@ Metal Headless                 No
 
 ---
 
-  ## Configuration
+## Configuration
 
-  ### ACPI
+### ACPI
 
   - **Add**
 
@@ -143,7 +143,7 @@ Metal Headless                 No
 
   
 
-  ### Booter
+### Booter
 
   - **MmioWhitelist**
 
@@ -168,7 +168,7 @@ Metal Headless                 No
 
   
 
-  ### DeviceProperties
+### DeviceProperties
 
   - **Add**
 
@@ -370,7 +370,7 @@ Metal Headless                 No
 
   
 
-  ### Kernel
+### Kernel
 
   - **Add**
 
@@ -441,7 +441,7 @@ Metal Headless                 No
    - KernelArch > String > `x86_64`
    - KernelCache > String > `Auto`
 
-  ### Misc
+### Misc
 
   - **BlessOverride**
 
@@ -573,15 +573,11 @@ Metal Headless                 No
 
   - SystemUUID > String > `XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXXX`
 
-**UpdateDataHub**
-
-**UpdateNVRAM**
-
-**UpdateSMBIOS**
-
-**UpdateSMBIOSMode** > String > `Custom`
-
-**UseRawUuidEncoding**
+- **UpdateDataHub**
+- **UpdateNVRAM**
+- **UpdateSMBIOS**
+- **UpdateSMBIOSMode** > String > `Custom`
+- **UseRawUuidEncoding**
 
 ### UEFI
 
