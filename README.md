@@ -153,9 +153,9 @@ Device (ABDC)
 
 A more secure method to replace the object/device is demonstrated by the script above.
 
-1. Before making any property changes to the object, `Scope` is needed to manipulate devices `Scope (ABC)`. Typically indicate to real device namespace in DSDT/SSDT. Then, `Method (_STA, 0, NotSerialized) / STA: Status` is used to tell the machine that the object is accessible. In this case, device ABC is returning properties as `0` `(Zero)` or `false`, indicating that the device's features are deactivated. 
-3. A new name for object is injected `Device (ABDC)` by the address assigned same as DSDT/SSDT i.e: `_ADR, 0x00140000`. Again, `Method (_STA, 0, NotSerialized) / STA: Status` is used to tell the machine that the object is accessible.
-4. `If (_OSI ("Darwin"))` indicates, if the macOS Kernel is loaded, the device is accessible using the new name `Device (ABDC)`. `Else`, indicates if another OS/kernel is loaded, the inject properties are not accessible. The machine will assume the device continue to function normally as `ABC`.
+1. Before making any property changes to the object, `Scope` is needed to manipulate devices i.e; `Scope (ABC)`. Typically indicate to real device namespace in DSDT/SSDT. Then, `Method (_STA, 0, NotSerialized) / STA: Status` is used to tell the machine that the object is accessible. In this case, device ABC is returning properties as `0` `(Zero)` or `false`, indicating that the device's features are deactivated. 
+3. A new name for object is injected `Device (ABDC)` by the address assigned same as DSDT/SSDT i.e; `_ADR, 0x00140000`. Again, `Method (_STA, 0, NotSerialized) / STA: Status` is used to tell the machine that the object is accessible.
+4. `If (_OSI ("Darwin"))` indicates, if the macOS Kernel is loaded, the device is accessible using the new name i.e; `Device (ABDC)`. `Else`, indicates if another OS/kernel is loaded, the inject properties are not accessible. The machine will assume the device continue to function normally as `ABC`.
 
 ## Acknowlegdement
 
