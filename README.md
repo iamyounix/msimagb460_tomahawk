@@ -84,8 +84,8 @@ Metal Headless                 No
     - [x] BCM94360CD 802.11ac Wireless Network Adapter    
 
 **SSDT Patch**[^1]
-  - **_SB** = System Bus/Bus Objects are defined under this namespace
-    - **PCI0** = PCI Root Bridge
+  - **_SB** = `System Bus/Bus Objects are defined under this namespace`
+    - **PCI0** = `PCI Root Bridge`
       - [x] **DRAM** = `Comet Lake-S 6c Host Bridge/DRAM Controller` 
       - [x] **GFX0** = `Intel UHD Graphics 630` (Renamed as **IGPU**)
       - [x] **HDAS** = `Comet Lake PCH-V cAVS` (Renamed as **HDEF**)
