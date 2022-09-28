@@ -24,8 +24,6 @@ Board Serial Number            XXXXXXXXXXXXXXXXX
 VDA Decoder                    Fully Supported
 ```
 
-  
-
 ### Serial Info
 
 ```zsh
@@ -38,16 +36,12 @@ Model Identifier               iMac20,1
 Valid                          Possibly
 ```
 
-  
-
 ### IGPU
 
 ```zsh
 GPU Name                       Intel CoffeeLake-H GT2 [UHD Graphics 630]
 GPU Device ID                  0x3E9B8086
 ```
-
-  
 
 ### GFX0
 
@@ -110,8 +104,8 @@ Metal Headless                 No
         - [x] **FWHD** = Fake Firmware Hub Device - Optional)
         - [x] **HPET** = High Precision Event Timer)
       * **PEG0** = 6th-10th Gen Core Processor PCIe Controller x16 (Renamed as PEGP)
-        - [x] **pci-bridge@0** = Navi 10 XL Upstream Port (Renamed as EGP0)
-          - [x] **pci-bridge@1** = Navi 10 XL Downstream Port (Renamed as EGP1)
+        - [x] **pci-bridge0@0** = Navi 10 XL Upstream Port (Renamed as EGP0)
+          - [x] **pci-bridge0@1** = Navi 10 XL Downstream Port (Renamed as EGP1)
             - [x] **GFX0** = Navi 14 [Radeon RX 5500/5500M / Pro 5500M] 
             - [x] **HDAU** = Navi 10 HDMI Audio
       * **RP04**, **05**, **09**, **20**, **21** (Root Port)
@@ -205,7 +199,7 @@ Metal Headless                 No
     - **PciRoot(0x0)/Pci(0x1B,0x0)**
       - `name > string > RP20`
     - **PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)**
-      - `model > string > BCM4360 802.11ac Wireless Network Adapter
+      - `model > string > BCM94360 802.11ac Wireless Network Adapter`
       - `name > string > ARPT`
     - **PciRoot(0x0)/Pci(0x1B,0x4)**
       - `name > string > RP21`
