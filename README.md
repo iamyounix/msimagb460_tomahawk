@@ -95,6 +95,11 @@ Metal Headless                 No
 
 ## Configuration
 
+**History**
+
+  - [x] True
+  - [ ] False
+
 ### ACPI
 
   - **Add**
