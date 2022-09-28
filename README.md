@@ -1,4 +1,4 @@
-- # ASRock B460M Steel Legend
+# ASRock B460M Steel Legend
 
   Hackintosh: 10th Gen Comet Lake with B460M Steel Legend Configuration
 
