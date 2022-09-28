@@ -121,6 +121,35 @@ Metal Headless                 No
       
 ---
 
+## Acknowlegdement
+
+☠ [**Acidanthera**](https://github.com/acidanthera) 
+
+The one who brings Hackintosh this further 
+
+☠ [**Dortania's OpenCore Install Guide**](https://dortania.github.io/OpenCore-Install-Guide/) 
+
+Official guide for Hackintosh
+
+☠ [**Hackintosh Malaysia**](https://www.facebook.com/groups/HackintoshMalaysia/about/) 
+
+Official Facebook for Malaysia Hackintosh Community
+
+☠ [**r/Hackintosh**](https://www.reddit.com/r/hackintosh/) 
+
+A community for those looking to install macOS on their PC!
+
+☠ [**5T33Z0**](https://github.com/5T33Z0) 
+
+ACPI Hotpatches and Guides for the OpenCore Bootmanager. Enhance and fine-tune your system by adding devices and enabling additional features not covered in the OpenCore Install Guide.
+
+☠ [**ic500k**](https://github.com/ic005k) 
+
+Cross platform Hackintosh apps
+
+☠ [**ic500k**](https://github.com/ic005k) 
+
+
 ## Configuration
 
 - [^1]: [Config](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/config.plist) and [SSDT-B460MASL](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-B460MASL.dsl)
