@@ -163,204 +163,88 @@ Metal Headless                 No
     - [x] ProvideCustomSlide
     - [x] RebuildAppleMemoryMap
     - [x] SyncRuntimePermissions
-    - ProvideMaxSlide = 0
-    - ResizeAppleGpuBars = -1
+    * ProvideMaxSlide = 0
+    * ResizeAppleGpuBars = -1
 
   
 
 ### DeviceProperties
 
   - **Add**
-
-    ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-        <dict>
-            <key>DeviceProperties</key>
-            <dict>
-                <key>Add</key>
-                <dict>
-                    <key>PciRoot(0x0)/Pci(0x0,0x0)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>DRAM</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1,0x0)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>PEG0</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>EGP0</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>EGP1</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
-                    <dict>
-                        <key>@0,AAPL,boot-display</key>
-                        <data>AQAAAA==</data>
-                        <key>@0,ATY,EFIDisplay</key>
-                        <string>DP</string>
-                        <key>@0,name</key>
-                        <string>ATY,Python</string>
-                        <key>@1,name</key>
-                        <string>ATY,Python</string>
-                        <key>@2,name</key>
-                        <string>ATY,Python</string>
-                        <key>@3,name</key>
-                        <string>ATY,Python</string>
-                        <key>AAPL,slot-name</key>
-                        <string>Internal@0,1,0/0,0/0,0/0,0</string>
-                        <key>ATY,EFIEnabledMode</key>
-                        <string>01</string>
-                        <key>ATY,EFIVersion</key>
-                        <data>MzAuMC4xMDEuMTM0MA==</data>
-                        <key>ATY,EFIVersionB</key>
-                        <data>MDE3LjAwMi4wMDAuMDAwLjAzNzYzNg==</data>
-                        <key>ATY,copyright</key>
-                        <data>Q29weXJpZ2h0IEFNRCBJbmMuICBBbGwgUmlnaHQgUmVzZXJ2ZWQuICAyMDA1LTIwMTk=</data>
-                        <key>agdpmod</key>
-                        <string>pikera</string>
-                        <key>hda-gfx</key>
-                        <string>onboard-2</string>
-                        <key>name</key>
-                        <string>ATY_GPU</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)</key>
-                    <dict>
-                        <key>model</key>
-                        <string>Navi 10 HDMI Audio</string>
-                        <key>name</key>
-                        <string>HDAU</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x14,0x0)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>XHC1</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x14,0x2)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>TSUB</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x16,0x0)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>IMEI</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x17,0x0)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>SATA</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1B,0x0)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>RP20</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)</key>
-                    <dict>
-                        <key>model</key>
-                        <string>BCM4360 802.11ac Wireless Network Adapter</string>
-                        <key>name</key>
-                        <string>ARPT</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1B,0x4)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>RP20</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1B,0x4)/Pci(0x0,0x0)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>ANS1</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1C,0x0)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>RP04</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>RTLK</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1C,0x4)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>RP05</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)</key>
-                    <dict>
-                        <key>model</key>
-                        <string>VL805/806 xHCI USB 3.0 Controller</string>
-                        <key>name</key>
-                        <string>XHC2</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1D,0x0)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>RP09</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>ANS0</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1F,0x0)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>LPCB</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1F,0x2)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>PPMC</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
-                    <dict>
-                        <key>layout-id</key>
-                        <data>AQAAAA==</data>
-                        <key>name</key>
-                        <string>HDEF</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x1F,0x4)</key>
-                    <dict>
-                        <key>name</key>
-                        <string>SBUS</string>
-                    </dict>
-                    <key>PciRoot(0x0)/Pci(0x2,0x0)</key>
-                    <dict>
-                        <key>AAPL,ig-platform-id</key>
-                        <data>AwCSPg==</data>
-                        <key>built-in</key>
-                        <data>AQ==</data>
-                        <key>device-id</key>
-                        <data>mz4AAA==</data>
-                        <key>enable-metal</key>
-                        <data>AQAAAA==</data>
-                        <key>igfxfw</key>
-                        <data>AgAAAA==</data>
-                        <key>igfxonln</key>
-                        <data>AQAAAA==</data>
-                        <key>iommu-selection</key>
-                        <data>AAAAAA==</data>
-                        <key>name</key>
-                        <string>IGPU</string>
-                    </dict>
-                </dict>
-                <key>Delete</key>
-                <dict/>
-            </dict>
-        </dict>
-    </plist>
-    ```
+    - PciRoot(0x0)/Pci(0x0,0x0)
+      - name > string > DRAM
+    - PciRoot(0x0)/Pci(0x1,0x0)
+      - name > string > PEG0
+    - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)
+      - name > string > EGP0
+    - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
+      - name > string > EGP1
+    - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+      - @0,AAPL,boot-display > data > AQAAAA==
+      - @0,ATY,EFIDisplay > string > DP
+      - @0,name > string > ATY,Python
+      - @1,name > string > ATY,Python
+      - @2,name > string > ATY,Python
+      - @4,name > string > ATY,Python
+      - AAPL,slot-name > string > Internal@0,1,0/0,0/0,0/0,0
+      - ATY,EFIEnabledMode > string > 01
+      - ATY,EFIVersion > data > MzAuMC4xMDEuMTM0MA==
+      - ATY,EFIVersionB > data > MDE3LjAwMi4wMDAuMDAwLjAzNzYzNg==
+      - ATY,copyright > data > Q29weXJpZ2h0IEFNRCBJbmMuICBBbGwgUmlnaHQgUmVzZXJ2ZWQuICAyMDA1LTIwMTk=
+      - agdpmod > string > pikera
+      - hda-gfx > string > onboard-2
+      - name > string > ATY_GPU
+    - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
+      - model > string > Navi 10 HDMI Audio
+      - name > string > HDAU
+    - PciRoot(0x0)/Pci(0x14,0x0)
+      - name > string > XHC1
+    - PciRoot(0x0)/Pci(0x14,0x2)
+      - name > string > TSUB
+    - PciRoot(0x0)/Pci(0x16,0x0)
+      - name > string > IMEI
+    - PciRoot(0x0)/Pci(0x17,0x0)
+      - name > string > SATA
+    - PciRoot(0x0)/Pci(0x1B,0x0)
+      - name > string > RP20
+    - PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)</key>
+      - model > string > BCM4360 802.11ac Wireless Network Adapter
+      - name > string > ARPT
+    - PciRoot(0x0)/Pci(0x1B,0x4)</key>
+      - name > string > RP21
+    - PciRoot(0x0)/Pci(0x1B,0x4)/Pci(0x0,0x0)
+      - name > string > ANS1
+    - PciRoot(0x0)/Pci(0x1C,0x0)
+      - name > string > RP04
+    - PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)
+      - name > string > RTLK
+    - PciRoot(0x0)/Pci(0x1C,0x4)
+      - name > string > RP05
+    - PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)
+      - model > string > VL805/806 xHCI USB 3.0 Controller
+      - name > string > XHC2
+    - PciRoot(0x0)/Pci(0x1D,0x0)
+      - name > string > RP09
+    - PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0)</key>
+      - name > string > ANS0
+    - PciRoot(0x0)/Pci(0x1F,0x0)
+      - name< > string > LPCB
+    - PciRoot(0x0)/Pci(0x1F,0x2)
+      - name</ > string > PPMC
+    - PciRoot(0x0)/Pci(0x1F,0x3)
+      - layout-id > data > AQAAAA==
+      - name< > string > HDEF
+    - PciRoot(0x0)/Pci(0x1F,0x4)</key>
+      - name > string > SBUS
+    - PciRoot(0x0)/Pci(0x2,0x0)</key>
+      - AAPL,ig-platform-id > data > AwCSPg==
+      - built-in > data > AQ==
+      - device-id > data > mz4AAA==
+      - enable-metal > data > AQAAAA==
+      - igfxfw > data > AgAAAA==
+      - igfxonln< > data > AQAAAA==
+      - iommu-selection > data > AAAAAA==
+      - name > string > IGPU
     
   - **Delete**
     - NIL
@@ -385,35 +269,35 @@ Metal Headless                 No
 
   - **Emulate**
     - [ ] DummyPowerManagement  
-    * Cpuid1Data > Data > `Empty`
-    * Cpuid1Mask > Data > `Empty`
-    * MaxKernel > String > `Empty`
-    * MinKernel > String > `Empty`
+    * Cpuid1data > data > `Empty`
+    * Cpuid1Mask > data > `Empty`
+    * MaxKernel > string > `Empty`
+    * MinKernel > string > `Empty`
 
   - **Force**
     - NIL
 
   - **Patch**
-    - Arch > String > `x86_64`
-    - Base > String > `Empty`
-    - Comment > String > `Enable TRIM for SSD`
+    - Arch > string > `x86_64`
+    - Base > string > `Empty`
+    - Comment > string > `Enable TRIM for SSD`
     - Count > Integer > `0`
     - Enable > Integer > `0`
-    - Find > Data > `004150504C452053534400`
-    - Identifier > String > `com.apple.iokit.IOAHCIBlockStorage`
+    - Find > data > `004150504C452053534400`
+    - Identifier > string > `com.apple.iokit.IOAHCIBlockStorage`
     - Limit > Integer > `0`
-    - Mask > Data > `Empty`
-    - MinKernel > String > `Empty`
-    - MaxKernel > String > `Empty`
-    - Replace > Data > `0000000000000000000000`
-    - Replacemask > Data > `Empty`
+    - Mask > data > `Empty`
+    - MinKernel > string > `Empty`
+    - MaxKernel > string > `Empty`
+    - Replace > data > `0000000000000000000000`
+    - Replacemask > data > `Empty`
     - Skip > Interger > `0`
 
  - **Scheme**
    - [ ] CustomKernel
    - [x] FuzzyMatch
-   * KernelArch > String > `x86_64`
-   * KernelCache > String > `Auto`
+   * KernelArch > string > `x86_64`
+   * KernelCache > string > `Auto`
 
 ### Misc
 
@@ -451,7 +335,7 @@ Metal Headless                 No
     * Vault = `Optional`
     * SecureBootModel = `j85-10.15.6 (19G2005)`
     * HaltLevel = `2147483648` equal to `0x80000000`
-    * ExposeSensitiveData = `3` equal to `0x03`
+    * ExposeSensitivedata = `3` equal to `0x03`
     * ScanPolicy = `2690819` equal to `0x00290F03`
     * PasswordHash = `Empty`
     * PasswordSalt = `Empty`
@@ -468,34 +352,34 @@ Metal Headless                 No
     - [ ] FullNvramAccess
     - [ ] RealPath
     - [ ] TextMode
-    * Arguments > String > `Empty`
-    * Comment > String > `CleanNvram.efi` 
+    * Arguments > string > `Empty`
+    * Comment > string > `CleanNvram.efi` 
     * Flavour = `Auto`
     
 ### NVRAM
 
 - **Add**
   - **4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14**
-    - DefaultBackgroundColor > Data > `00000000`
-    - UIScale > Data > `01`
+    - DefaultBackgroundColor > data > `00000000`
+    - UIScale > data > `01`
   - **4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102**
-    - rtc-blacklist > Data > `Empty`
+    - rtc-blacklist > data > `Empty`
   - **7C436110-AB2A-4BBB-A880-FE41995C9F82**
     - ForceDisplayRotationInEFI > Number > `0`
-    - SystemAudioVolume > Data > `46`
-    - boot-args > String > `Empty` **(Patches Inject via DeviceProperties)**
-    - csr-active-config > Data > `00000000`
-    - prev-lang:kbd > Data > **Hexadecimal:** `656E2D55533A30` **ASCII:** `en-US:0`
-    - run-efi-updater > String > `No`
+    - SystemAudioVolume > data > `46`
+    - boot-args > string > `Empty` **(Patches Inject via DeviceProperties)**
+    - csr-active-config > data > `00000000`
+    - prev-lang:kbd > data > **Hexadecimal:** `656E2D55533A30` **ASCII:** `en-US:0`
+    - run-efi-updater > string > `No`
 
 - **Delete**
   - **4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14**
-    - Item 1 > String > `UIScale`
-    - Item 2 > String > `DefaultBackgroundColor`
+    - Item 1 > string > `UIScale`
+    - Item 2 > string > `DefaultBackgroundColor`
   - **4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102**
-    - Item 1 > String > `rtc-blacklist`
+    - Item 1 > string > `rtc-blacklist`
   - **7C436110-AB2A-4BBB-A880-FE41995C9F82**
-    - Item 1 > String > `boot-args`
+    - Item 1 > string > `boot-args`
 
 - **LegacyOverwrite**
   - NIL
@@ -511,17 +395,17 @@ Metal Headless                 No
   - [ ] AdviseFeatures
   - [ ] MaxBIOSVersion
   - [x] SpoofVendor
-  * MLB > String > `XXXXXXXXXXXXXXXX`
+  * MLB > string > `XXXXXXXXXXXXXXXX`
   * ProcessorType > Interger > `0`
-  * ROM > Data > `XXXXXXXXXXXXXXXX`
-  * SystemMemoryStatus > String > `Auto`
-  * SystemProductName > String > `iMac20,1`
-  * SystemSerialNumber > String > `XXXXXXXXXXXXXXXX`
-  * SystemUUID > String > `XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXXX`
-* **UpdateDataHub**
+  * ROM > data > `XXXXXXXXXXXXXXXX`
+  * SystemMemoryStatus > string > `Auto`
+  * SystemProductName > string > `iMac20,1`
+  * SystemSerialNumber > string > `XXXXXXXXXXXXXXXX`
+  * SystemUUID > string > `XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXXX`
+* **UpdatedataHub**
 * **UpdateNVRAM**
 * **UpdateSMBIOS**
-* **UpdateSMBIOSMode** > String > `Custom`
+* **UpdateSMBIOSMode** > string > `Custom`
 * **UseRawUuidEncoding**
 
 ### UEFI
@@ -537,7 +421,7 @@ Metal Headless                 No
 - **AppleInput**
   - [ ] CustomDelays
   - [x] GraphicInputMirroring
-  * AppleEvent > String > `BuiltIn`
+  * AppleEvent > string > `BuiltIn`
   * KeyInitialDelay > Integer > `0`
   * KeySubsequentDelay > Integer > `5`
   * PointePollMask > Integer > `-1`
