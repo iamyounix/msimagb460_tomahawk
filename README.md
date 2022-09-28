@@ -373,11 +373,11 @@ Metal Headless                 No
     - NIL
 
   - **Emulate**
-    - Cpuid1Data > Data > `Empty`
-    - Cpuid1Mask > Data > `Empty`
-    - [ ] DummyPowerManagement
-    - MaxKernel > String > `Empty`
-    - MinKernel > String > `Empty`
+    - [ ] DummyPowerManagement  
+    * Cpuid1Data > Data > `Empty`
+    * Cpuid1Mask > Data > `Empty`
+    * MaxKernel > String > `Empty`
+    * MinKernel > String > `Empty`
 
   - **Force**
     - NIL
@@ -401,8 +401,8 @@ Metal Headless                 No
  - **Scheme**
    - [ ] CustomKernel
    - [x] FuzzyMatch
-   - KernelArch > String > `x86_64`
-   - KernelCache > String > `Auto`
+   * KernelArch > String > `x86_64`
+   * KernelCache > String > `Auto`
 
 ### Misc
 
@@ -410,77 +410,81 @@ Metal Headless                 No
     - NIL
 
   - **Boot**
-    - ConsoleAttributes = `0`
-    - HibernateMode = `Auto`
     - [x] Hide Auxiliary 
-    - LauncherOption = `Full`
-    - LauncherPath = `Default`
-    - PickerAttributes = `17`
     - [ ] PickerAudioAssist
-    - PickerMode = `External`
-    - PickerVariant = `Acidanthera\GoldenGate`
     - [ ] PollAppleHotKeys
     - [x] ShowPicker
-    - TakeoffDelay = `0`
-    - Timeout = `5`
+    * ConsoleAttributes = `0`
+    * HibernateMode = `Auto`
+    * LauncherOption = `Full`
+    * LauncherPath = `Default`
+    * PickerAttributes = `17`
+    * PickerMode = `External`
+    * PickerVariant = `Acidanthera\GoldenGate`
+    * TakeoffDelay = `0`
+    * Timeout = `5`
 
   - **Debug**
-    - DisplayLevel = `0`
-    - DisplayDelay = `0`
-    - Target = `0`
     - [x] DisableWatchDog
+    * DisplayLevel = `0`
+    * DisplayDelay = `0`
+    * Target = `0`
+
+  - **Entries**
+    - NIL
 
   - **Security**
     - [x] AllowSetDefault
     - [x] BlacklistAppleUpdate
-    - DmgLoading = `Signed`
-    - Vault = `Optional`
-    - SecureBootModel = `j85-10.15.6 (19G2005)`
-    - HaltLevel = `2147483648` equal to `0x80000000`
-    - ExposeSensitiveData = `3` equal to `0x03`
-    - ScanPolicy = `2690819` equal to `0x00290F03`
-    - PasswordHash = `Empty`
-    - PasswordSalt = `Empty`
+    * DmgLoading = `Signed`
+    * Vault = `Optional`
+    * SecureBootModel = `j85-10.15.6 (19G2005)`
+    * HaltLevel = `2147483648` equal to `0x80000000`
+    * ExposeSensitiveData = `3` equal to `0x03`
+    * ScanPolicy = `2690819` equal to `0x00290F03`
+    * PasswordHash = `Empty`
+    * PasswordSalt = `Empty`
 
-  - **Entries**
-    - NIL
+  - **Serial**
+    - [ ] Init
+    - [ ] Override
+    * Custom (Leave It)
+
   - **Tools**
-    - Arguments > String > `Empty`
+    
     - [x] Auxiliary
-    - Comment > String > `CleanNvram.efi` 
     - [x] Enabled 
-    - Flavour = `Auto`
     - [ ] FullNvramAccess
     - [ ] RealPath
     - [ ] TextMode
-
-    - Serial
-      - NIL
-
+    *   Arguments > String > `Empty`
+    * Comment > String > `CleanNvram.efi` 
+    * Flavour = `Auto`
+    
 ### NVRAM
 
 - **Add**
   - **4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14**
-    - DefaultBackgroundColor > Data > `00000000`
-    - UIScale > Data > `01`
+   - DefaultBackgroundColor > Data > `00000000`
+   - UIScale > Data > `01`
   - **4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102**
-    - rtc-blacklist > Data > `Empty`
+   - rtc-blacklist > Data > `Empty`
   - **7C436110-AB2A-4BBB-A880-FE41995C9F82**
-    - ForceDisplayRotationInEFI > Number > `0`
-    - SystemAudioVolume > Data > `46`
-    - boot-args > String > `Empty` **(Patches Inject via DeviceProperties)**
-    - csr-active-config > Data > `00000000`
-    - prev-lang:kbd > Data > **Hexadecimal:** `656E2D55533A30` **ASCII:** `en-US:0`
-    - run-efi-updater > String > `No`
+   - ForceDisplayRotationInEFI > Number > `0`
+   - SystemAudioVolume > Data > `46`
+   - boot-args > String > `Empty` **(Patches Inject via DeviceProperties)**
+   - csr-active-config > Data > `00000000`
+   - prev-lang:kbd > Data > **Hexadecimal:** `656E2D55533A30` **ASCII:** `en-US:0`
+   - run-efi-updater > String > `No`
 
 - **Delete**
   - **4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14**
-    - Item 1 > String > `UIScale`
-    - Item 2 > String > `DefaultBackgroundColor`
+   - Item 1 > String > `UIScale`
+   - Item 2 > String > `DefaultBackgroundColor`
   - **4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102**
-    - Item 1 > String > `rtc-blacklist`
+   - Item 1 > String > `rtc-blacklist`
   - **7C436110-AB2A-4BBB-A880-FE41995C9F82**
-    - Item 1 > String > `boot-args`
+   - Item 1 > String > `boot-args`
 
 - **LegacyOverwrite**
   - NIL
@@ -492,22 +496,22 @@ Metal Headless                 No
 - [x] **Automatic**
 - [ ] **CustomMemory**
 
-- **Generic**
+* **Generic**
   - [ ] AdviseFeatures
-  - MLB > String > `XXXXXXXXXXXXXXXX`
   - [ ] MaxBIOSVersion
-  - ProcessorType > Interger > `0`
-  - ROM > Data > `XXXXXXXXXXXXXXXX`
   - [x] SpoofVendor
-  - SystemMemoryStatus > String > `Auto`
-  - SystemProductName > String > `iMac20,1`
-  - SystemSerialNumber > String > `XXXXXXXXXXXXXXXX`
-  - SystemUUID > String > `XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXXX`
-- **UpdateDataHub**
-- **UpdateNVRAM**
-- **UpdateSMBIOS**
-- **UpdateSMBIOSMode** > String > `Custom`
-- **UseRawUuidEncoding**
+  * MLB > String > `XXXXXXXXXXXXXXXX`
+  * ProcessorType > Interger > `0`
+  * ROM > Data > `XXXXXXXXXXXXXXXX`
+  * SystemMemoryStatus > String > `Auto`
+  * SystemProductName > String > `iMac20,1`
+  * SystemSerialNumber > String > `XXXXXXXXXXXXXXXX`
+  * SystemUUID > String > `XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXXX`
+* **UpdateDataHub**
+* **UpdateNVRAM**
+* **UpdateSMBIOS**
+* **UpdateSMBIOSMode** > String > `Custom`
+* **UseRawUuidEncoding**
 
 ### UEFI
 
@@ -516,20 +520,20 @@ Metal Headless                 No
   - [ ] GlobalConnect
   - [x] HideVerbose
   - [ ] JumpstartHotPlug
-  - MinDate > Integrer > `-1`
-  - MinVersion > Integrer > `-1`
+  * MinDate > Integrer > `-1`
+  * MinVersion > Integrer > `-1`
 
 - **AppleInput**
-  - AppleEvent > String > `BuiltIn`
   - [ ] CustomDelays
   - [x] GraphicInputMirroring
-  - KeyInitialDelay > Integer > `0`
-  - KeySubsequentDelay > Integer > `5`
-  - PointePollMask > Integer > `-1`
-  - PointerPollMax > Integer > `80`
-  - PointerPollMin > Integer > `10`
-  - PointerSpeedDiv > Integer > `1`
-  - PointerSpeedMul > Interger > `1`
+  * AppleEvent > String > `BuiltIn`
+  * KeyInitialDelay > Integer > `0`
+  * KeySubsequentDelay > Integer > `5`
+  * PointePollMask > Integer > `-1`
+  * PointerPollMax > Integer > `80`
+  * PointerPollMin > Integer > `10`
+  * PointerSpeedDiv > Integer > `1`
+  * PointerSpeedMul > Interger > `1`
 
 - **Audio**
 
