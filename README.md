@@ -84,7 +84,7 @@ Metal Headless                 No
   - [x] Navi 10 HDMI Audio 
   - [x] VL805/806 xHCI USB 3.0 Controller
   - [x] Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet
-  - [x] BCM4360 802.11ac Wireless Network Adapter    
+  - [x] BCM94360CD 802.11ac Wireless Network Adapter    
 
   **Instruction**
 
@@ -104,30 +104,39 @@ Metal Headless                 No
 
   - **Add**
     - **SSDT-B460MASL.aml** (Single File)
-      - **_SB** (System Bus/Bus Objects are defined under this namespace)
-        - **PCI0** (PCI Root Bridge)
-          - **DRAM** (Comet Lake-S 6c Host Bridge/DRAM Controller )
-          - **GFX0** (Intel UHD Graphics 630)
-          - **HDAS** (Comet Lake PCH-V cAVS )
-          - **HECI** (Comet Lake PCH-V HECI Controller)
-          - **LPCB** (B460M Low Pin Count)
-            - **EC** (Fake Embeded Controller)
-            - **FWHD** (Fake Firmware Hub Device - Optional)
-            - **HPET** (High Precision Event Timer)
-          - **PEG0** (6th-10th Gen Core Processor PCIe Controller (x16) )
-            - **PEGP**, etc
-          - **RP04**, **05**, **09**, **20**, **21** (Root Port)
-            - **PXSX**, etc
-              - **XHC2** (VL805/806 xHCI USB 3.0 Controller)
-              - **RTLK** (Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet)
-              - **ARPT** (BCM4360 802.11ac Wireless Network Adapter)
-          - **SAT0** (400 Series Chipset Family SATA AHCI Controller )
-          - **SBUS** (Serial Bus)
-          - **TSUB** (Thermal Subsystem)
-          - **XHC_** (USB)
-          - **USBX** (USB Power Management)
-          - **DTGP** (Apple Standard Calling Method)
-          - **STAS** (Status Method)
+    
+    **Patch Detail**
+    - **_SB** = System Bus/Bus Objects are defined under this namespace
+      - **PCI0** = PCI Root Bridge
+        - [x] **DRAM** = Comet Lake-S 6c Host Bridge/DRAM Controller 
+        - [x] **GFX0** = Intel UHD Graphics 630 (Renamed as IGPU)
+        - [x] **HDAS** = Comet Lake PCH-V cAVS (Renamed as HDEF)
+        - [x] **HECI** = Comet Lake PCH-V HECI Controller (Renamed as IMEI)
+        - [ ] **PPMC** = Programmable Power Management Controller - Typically found on 10th generation motherboards, `not compatible` with macOS
+        - [x] **PMCR** = Fake Power Management Capabilities Register - replacing the function of PPMC
+        - [x] **SAT0** = 400 Series Chipset Family SATA AHCI Controller (Renamed as SATA)
+        - [x] **SBUS** = Serial Bus
+        - [ ] **TSUB** = Thermal Subsystem - Typically found on 10th generation motherboards, `not compatible` with macOS
+        - [x] **XHC** = 300/400 Series PCH-V USB Controller (Renamed as XHC1)
+        - [x] **USBX** = USB Power Management
+        - [x] **DTGP** = Apple/MacOS standard method that passes through calls to _DSM on various Device objects
+        - [x] **STAS** = Status Method
+        * **LPCB** = B460M Low Pin Count
+          - [x] **EC** = Fake Embeded Controller
+          - [x] **FWHD** = Fake Firmware Hub Device - Optional)
+          - [x] **HPET** = High Precision Event Timer)
+        * **PEG0** = 6th-10th Gen Core Processor PCIe Controller x16 (Renamed as PEGP)
+            - [x] **pci-bridge@0** = Navi 10 XL Upstream Port (Renamed as EGP0)
+              - [x] **pci-bridge@1** = Navi 10 XL Downstream Port (Renamed as EGP1)
+                - [x] **GFX0** = Navi 14 [Radeon RX 5500/5500M / Pro 5500M] 
+                - [x] **HDAU** = Navi 10 HDMI Audio
+        * **RP04**, **05**, **09**, **20**, **21** (Root Port)
+          * **PXSX** = Generic Bridge for PCI Device
+            - [x] **PXSX** = Kingston SA2000M8500G M.2 Slot 0 (Renamed as ANS0)
+            - [x] **PXSX** = Kingston SA2000M8500G M.2 Slot 1 (Renamed as ANS1)
+            - [x] **PXSX** = BCM4360 802.11ac Wireless Network Adapter (Renamed as ARPT)
+            - [x] **PXSX** = Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet (Renamed as RTLK)
+            - [x] **PXSX** = VL805/806 xHCI USB 3.0 Controller (Renamed as XHC2)
 
   - **Delete**
     - NIL
