@@ -547,7 +547,7 @@ Metal Headless                 No
 
 ### PlatformInfo
 
-- [ ] **Automatic**
+- [x] **Automatic**
 
 - [ ] **CustomMemory**
 
