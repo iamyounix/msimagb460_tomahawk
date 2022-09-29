@@ -4,6 +4,8 @@
 
 ---
 
+<div align="center"><p><img src="https://user-images.githubusercontent.com/72515939/192973634-3bfadc6c-a593-422b-a8c6-dfdaed8e4ee1.png" alt="2022-09-29_15-54-05"></p></div>
+
 ### System Info
 
 ```zsh
