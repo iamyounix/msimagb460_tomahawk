@@ -283,7 +283,7 @@ log show --last boot | grep AppleACPIPlatform
 log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d_%H-%M-%S')".log
 ```
 
-**Refer Output:** [Log_2022-09-29_14-40-24.log](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/Log_2022-09-29_14-40-24.log)
+- **Refer Output:** [Log_2022-09-29_14-40-24.log](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/Log_2022-09-29_14-40-24.log)
 
 ### Supported Instruction Set:
 
@@ -323,7 +323,7 @@ machdep.xcpm.mode: 1
 
 ### 4K Video test via Youtube
 
-**Refer Output:** [4k Test](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
+- **Refer Output:** [4k Test](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
 
 ---
 
