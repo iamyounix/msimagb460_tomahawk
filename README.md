@@ -118,6 +118,8 @@ Metal Headless                 No
 | DTGP          | Apple/MacOS standard method that passes through calls to `_DSM` on various device objects |
 | STAS          | `_STA` method, to enable such status changes to be communicated to the operating system. |
 
+> Note: Start from **macOS 12.3**, `SSDT-PLUS.aml` is not required. The "x86PlatformPlugin" injector is enabled by default without "plugin-type=1" in macOS 12.3+. Refer [Dortania/Bugtracker Issue #269](https://github.com/dortania/bugtracker/issues/269). 
+
 ---
 
 ## Rename/Replace/On and Off, _STA Method
