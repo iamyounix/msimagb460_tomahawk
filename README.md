@@ -125,274 +125,205 @@ Metal Headless                 No
 
 ---
 
-## Rename/Replace/On and Off, \_STA Method
-
-```asl
-Scope (ABC)
-{
-    Method (_STA, 0, NotSerialized)  // _STA: Status
-    {
-        Return (Zero)
-    }
-}
-
-Device (ABDC)
-{
-    Name (_ADR, 0x00140000)  // _ADR: Address
-    Method (_STA, 0, NotSerialized)  // _STA: Status
-    {
-        If (_OSI ("Darwin"))
-        {
-            Return (0x0F)
-        }
-        Else
-        {
-            Return (Zero)
-        }
-    }
-}
-```
-
-
-Before making any property changes to the object, **Scope** is needed to manipulate devices i.e; **Scope (ABC)**. Typically indicate to actual device name in DSDTs/SSDTs. Then, **Method (_STA, 0, NotSerialized) / STA: Status** is to enable such status changes to be communicated to the operating system. In this case, device **ABC** is returning properties as **(Zero)** or **false**, indicating that the device's features are deactivated. A new name for object is injected **Device (ABDC)** by the address assigned same as DSDT/SSDT i.e; **_ADR, 0x00140000**. Again, **Method (_STA, 0, NotSerialized) / STA: Status** used to enable such status changes to be communicated to the operating system for a second rule. **If (_OSI ("Darwin"))** indicates, if the macOS Kernel is loaded, the device is accessible using the new name i.e; **Device (ABDC)**. **Else**, indicates if another OS/kernel is loaded, the inject properties are not accessible. The machine will assume the device continue to function normally as **ABC** via DSDTs. This method has been applied to certain devices via SSDT for functional Hackintosh via OpenCore[^2] / Clover[^3].
-
-## DTGP Method
-
-```asl
-DefinitionBlock ("", "SSDT", 2, "KGP ", "DTGP", 0x00001000)
-{
-    Method (DTGP, 5, NotSerialized)
-    {
-        If ((Arg0 == ToUUID ("a0b5b7c6-1318-441c-b0c9-fe695eaf949b") /* Unknown UUID */))
-        {
-            If ((Arg1 == One))
-            {
-                If ((Arg2 == Zero))
-                {
-                    Arg3 = Buffer (One)
-                        {
-                             0x03                                             // .
-                        }
-                    Return (One)
-                }
-
-                If ((Arg2 == One))
-                {
-                    Return (One)
-                }
-            }
-        }
-
-        Arg4 = Buffer (One)
-            {
-                 0x00                                             // .
-            }
-        Return (Zero)
-    }
-}
-```
-
-
-Nowadays, most users especially from **Dortania Guide** prefer independent SSDTs, each for a specific function. Most SSDTs already have the **DTGP** method incorporated. For this reason, it is currently not necessary to use **DTGP** method and information about it is not easily found. Most of the DSDTs that are present on the iMac employ the **DTGP** approach to inject capabilities and attributes into select devices. It is crucial that this method is simply built into macOS. **DTGP** method must be present at the DSDT in order to inject custom parameters to some devices. Without this method the modified DSDTs would not work well. Since this method is not available on **generic** DSDTs, this method was applied using SSDTs. Below is an example.
-
-```asl
-Scope (RPXX)
-{
-    Scope (PXSX)
-    {
-        Method (_STA, 0, NotSerialized)  // _STA: Status
-        {
-            Return (Zero)
-        }
-    }
-
-    Device (ANSX)
-    {
-        Name (_ADR, Zero)  // _ADR: Address
-        Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-        {
-            If ((Arg2 == Zero))
-            {
-                Return (Buffer (One)
-                {
-                    0x03                                             // .
-                })
-            }
-
-            Local0 = Package (0x0A)
-                {
-                    "device_type",
-                    "NMVe",
-                    "model",
-                    "AppleSSDNVMe",
-                    "name",
-                    "ANSX",
-                    "device-id",
-                    Buffer (0x04)
-                    {
-                        x06, 0xA8, 0x00, 0x00                           // ....
-                    },
-
-                    "vendor-id",
-                    Buffer (0x04)
-                    {
-                        0x4D, 0x14, 0x00, 0x00                           // M...
-                    }
-                }
-            DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
-            Return (Local0)
-        }
-    }
-}
-```
-
 ## Test My Hack
 
 ### Build Number:
-`sw_vers`
 
-```zsh
-ProductName:	macOS
-ProductVersion:	12.6
-BuildVersion:	21G115
-```
+-   Input
+    ```zsh
+    sw_vers
+    ```
+-   Output
+    ```zsh
+    ProductName:	macOS
+    ProductVersion:	12.6
+    BuildVersion:	21G115
+    ```
 
 ### Kernel Version:
-`uname -r`
 
-```zsh
-21.6.0
-```
+-   Input
+    ```zsh
+    uname -r
+    ```
+-   Output
+    ```zsh
+    21.6.0
+    ```
 
 ### Bus and Frequency:
-`sysctl -a | grep freq`
 
-```zsh
-hw.busfrequency: 400000000
-hw.busfrequency_min: 400000000
-hw.busfrequency_max: 400000000
-hw.cpufrequency: 2900000000
-hw.cpufrequency_min: 2900000000
-hw.cpufrequency_max: 2900000000
-hw.tbfrequency: 1000000000
-machdep.tsc.frequency: 2903999153
-```
+-   Input
+    ```zsh
+    sysctl -a | grep freq
+    ```
+-   Output
+    ```zsh
+    hw.busfrequency: 400000000
+    hw.busfrequency_min: 400000000
+    hw.busfrequency_max: 400000000
+    hw.cpufrequency: 2900000000
+    hw.cpufrequency_min: 2900000000
+    hw.cpufrequency_max: 2900000000
+    hw.tbfrequency: 1000000000
+    machdep.tsc.frequency: 2903999153
+    ```
 
 ### CPU Vendor:
-`sysctl -a | grep machdep.cpu.vendor`
 
-```zsh
-machdep.cpu.vendor: GenuineIntel
-```
+-   Input
+    ```zsh
+    sysctl -a | grep machdep.cpu.vendor
+    ```
+-   Output
+    ```zsh
+    machdep.cpu.vendor: GenuineIntel
+    ```
 
 ### CPU Brand String:
-`sysctl machdep.cpu.brand_string`
 
-```zsh
-machdep.cpu.brand_string: Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
-```
+-   Input
+    ```zsh
+    sysctl machdep.cpu.brand_string
+    ```
+-   Output     
+    ```zsh
+    machdep.cpu.brand_string: Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
+    ```
 
 ### CPU Features:
-`sysctl -a | grep machdep.cpu.features`
 
-```zsh
-machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
-```
+-   Input 
+    ```zsh
+    sysctl -a | grep machdep.cpu.features
+    ```
+-   Output 
+    ```zsh
+    machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
+    ```
 
 ### CPU Full Features:
 
-```zsh
-sysctl -a | grep machdep.cpu.features
-sysctl -a | grep machdep.cpu.leaf7_features
-sysctl machdep.cpu | grep AVX
-```
-
-```zsh
-machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
-machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
-machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
-machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
-```
+-   Input   
+    ```zsh
+    sysctl -a | grep machdep.cpu.features
+    sysctl -a | grep machdep.cpu.leaf7_features
+    sysctl machdep.cpu | grep AVX
+    ```
+-   Output
+    ```zsh
+    machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
+    machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
+    machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
+    machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
+    ```
 
 ### CPU Details:
-`ioreg -rxn "PR00@0"`
 
-```zsh
-+-o PR00@0  <class IOACPIPlatformDevice, id 0x10000013c, registered, matched, a$
-  | {
-  |   "processor-lapic" = 0x0
-  |   "clock-frequency" = <007ddaac>
-  |   "processor-number" = 0x0
-  |   "timebase-frequency" = <00ca9a3b>
-  |   "processor-id" = 0x1
-  |   "bus-frequency" = <0084d717>
-  |   "cpu-type" = <0906>
-  |   "device_type" = <70726f636573736f7200>
-  |   "name" = <5052303000>
-  |   "processor-index" = 0x0
-  | }
-  |
-  +-o AppleACPICPU  <class AppleACPICPU, id 0x100000151, registered, matched, a$
-  | +-o AppleACPICPUInterruptController  <class AppleACPICPUInterruptController$
-  | +-o X86PlatformPlugin  <class X86PlatformPlugin, id 0x100000485, registered$
-  |   +-o IOPlatformEnabler  <class IOPlatformPluginDevice, id 0x100000505, reg$
-  |   | +-o ApplePlatformEnabler  <class ApplePlatformEnabler, id 0x10000050b, $
-  |   +-o AGPMEnabler  <class IOPlatformPluginDevice, id 0x100000506, registere$
-  |   | +-o AGPMController  <class AGPMController, id 0x10000050a, !registered,$
-  |   +-o X86PlatformShim  <class X86PlatformShim, id 0x100000508, !registered,$
-  +-o SMCProcessor  <class SMCProcessor, id 0x100000152, !registered, !matched,$\
-```
+-   Input
+    ```zsh
+    ioreg -rxn "PR00@0"
+    ```
+-   Output
+    ```zsh
+    +-o PR00@0  <class IOACPIPlatformDevice, id 0x10000013c, registered, matched, a$
+      | {
+      |   "processor-lapic" = 0x0
+      |   "clock-frequency" = <007ddaac>
+      |   "processor-number" = 0x0
+      |   "timebase-frequency" = <00ca9a3b>
+      |   "processor-id" = 0x1
+      |   "bus-frequency" = <0084d717>
+      |   "cpu-type" = <0906>
+      |   "device_type" = <70726f636573736f7200>
+      |   "name" = <5052303000>
+      |   "processor-index" = 0x0
+      | }
+      |
+      +-o AppleACPICPU  <class AppleACPICPU, id 0x100000151, registered, matched, a$
+      | +-o AppleACPICPUInterruptController  <class AppleACPICPUInterruptController$
+      | +-o X86PlatformPlugin  <class X86PlatformPlugin, id 0x100000485, registered$
+      |   +-o IOPlatformEnabler  <class IOPlatformPluginDevice, id 0x100000505, reg$
+      |   | +-o ApplePlatformEnabler  <class ApplePlatformEnabler, id 0x10000050b, $
+      |   +-o AGPMEnabler  <class IOPlatformPluginDevice, id 0x100000506, registere$
+      |   | +-o AGPMController  <class AGPMController, id 0x10000050a, !registered,$
+      |   +-o X86PlatformShim  <class X86PlatformShim, id 0x100000508, !registered,$
+      +-o SMCProcessor  <class SMCProcessor, id 0x100000152, !registered, !matched,$\
+    ```
 
 ### Check System Integrity Protection:
-`csrutil status`
-
-```zsh
-System Integrity Protection status: enabled.
-```
+-   Input
+    ```zsh
+    csrutil status
+    ```
+-   Output
+    ```zsh
+    System Integrity Protection status: enabled.
+    ```
 
 ### Find Wake Issue:
-`pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"`
 
-```zsh
-Empty
-```
+-   Input
+    ```zsh
+    pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
+    ```
+-   Output
+    ```zsh
+    Empty
+    ```
 
 ### Lists any ACPI Error:
 
-```zsh
-log show --last boot | grep AppleACPIPlatform
-log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d_%H-%M-%S')".log
-```
+-   Input (w/o log)
+    ```zsh
+    log show --last boot | grep AppleACPIPlatform
+    ```
+-   Input (w/ log)
+    ```zsh
+    log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d_%H-%M-%S')".log
+    ```
 
-**Refer Output:** [Log_2022-09-29_14-40-24.log](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/Log_2022-09-29_14-40-24.log)
+*   **Refer Output:** [Log_2022-09-29_14-40-24.log](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/Log_2022-09-29_14-40-24.log)
 
 ### Supported Instruction Set:
-`sysctl -a | grep machdep.cpu.leaf7_features`
 
-```zsh
-machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
-```
+-   Input
+    ```zsh
+    sysctl -a | grep machdep.cpu.leaf7_features
+    ```
+-   Output
+    ```zsh
+    machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
+    ```
 
 ### Verify Working SMBUS/SBUS:
-`kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"`
 
-```zsh
-Executing: /usr/bin/kmutil showloaded
-No variant specified, falling back to release
-  148    0 0xffffff7f98f8e000 0x1000     0x1000     com.apple.driver.AppleSMBusPCI (1.0.14d1) C0C24D4F-420F-3AD1-9039-AFA08E9524FF <16 7 6 3>
-  153    1 0xffffff7f98f82000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) 7ECD5D2C-E62F-3C6D-ACD7-D90B7443024D <152 16 15 7 6 3>
-```
+-   Input
+    ```zsh
+    kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"
+    ```
+-   Output
+    ```zsh
+    Executing: /usr/bin/kmutil showloaded
+    No variant specified, falling back to release
+      148    0 0xffffff7f98f8e000 0x1000     0x1000     com.apple.driver.AppleSMBusPCI (1.0.14d1) C0C24D4F-420F-3AD1-9039-AFA08E9524FF <16 7 6 3>
+      153    1 0xffffff7f98f82000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) 7ECD5D2C-E62F-3C6D-ACD7-D90B7443024D <152 16 15 7 6 3>
+    ```
 
 ### Verify Plugin Type 1:
-`sysctl machdep.xcpm.mode`
 
-```zsh
-machdep.xcpm.mode: 1
-```
+-   Input
+    ```zsh
+    sysctl machdep.xcpm.mode`
+    ```
+-   Output
+    ```zsh
+    machdep.xcpm.mode: 1
+    ```
 
 ### 4K Video test via Youtube
 
-**Refer Output:** [4k Test](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
+*   **Refer Output:** [4k Test](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
 
 ---
 
@@ -426,8 +357,3 @@ Cross-platform GUI management tools for OpenCore
 
 AML and DSL References
 
-## Footnote
-
-[^1]: [Config](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/config.plist) and [SSDT-B460MASL](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-B460MASL.dsl)
-[^2]: [OpenCore](https://github.com/acidanthera/OpenCorePkg)
-[^3]: [Clover](https://github.com/CloverHackyColor/CloverBootloader)
