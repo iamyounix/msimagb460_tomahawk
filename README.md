@@ -120,6 +120,13 @@ Metal Headless                 No
 
 > Note: Start from **macOS 12.3**, [**SSDT-PLUG.aml**](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) or **plugin-type=1** is not required. The **x86PlatformPlugin** is enabled by default in macOS 12.3+. **Refer** [Dortania/Bugtracker Issue #269](https://github.com/dortania/bugtracker/issues/269). 
 
+```zsh
+# With macOS 12.3 Beta 1, Apple dropped the 'plugin-type' check within X86PlatformPlugin
+# Because of this, X86PP will match onto the CPU instead of ACPI_SMC_PlatformPlugin
+# This causes power management to break on pre-Ivy Bridge CPUs as they don't have correct
+# power management tables provided.
+# This patch will simply increase ASPP's 'IOProbeScore' to outmatch X86PP
+```
 ---
 
 ## Rename/Replace/On and Off, _STA Method
