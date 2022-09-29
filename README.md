@@ -99,10 +99,10 @@ Metal Headless                 No
 | SB.PCI0.LPCB.FWHD               | Fake Firmware Hub Device (Optional)                                                                        |
 | SB.PCI0.LPCB.HPET               | High Precision Event Timer                                                                                 |
 | SB.PCI0.PEG0                    | 6th-10th Gen Core Processor PCIe Controller x16 (Renamed as `PEGP`)                                        |
-| SB.PCI0.PEG0.pci-bridge0@0      | Navi 10 XL Upstream Port (Renamed as `EGP0`)                                                               |
-| SB.PCI0.PEG0.pci-bridge1@0      | Navi 10 XL Downstream Port (Renamed as `EGP1`)                                                             |
-| SB.PCI0.PEG0.pci-bridge1@0.GFX0 | Navi 14 Radeon RX 5500/5500M / Pro 5500M                                                                   |
-| SB.PCI0.PEG0.pci-bridge1@0.HDAU | Navi 10 HDMI Audio                                                                                         |
+| SB.PCI0.PEG0.pci-bridge0/0      | Navi 10 XL Upstream Port (Renamed as `EGP0`)                                                               |
+| SB.PCI0.PEG0.pci-bridge1/0      | Navi 10 XL Downstream Port (Renamed as `EGP1`)                                                             |
+| SB.PCI0.PEG0.pci-bridge1/0.GFX0 | Navi 14 Radeon RX 5500/5500M / Pro 5500M                                                                   |
+| SB.PCI0.PEG0.pci-bridge1/0.HDAU | Navi 10 HDMI Audio                                                                                         |
 | SB.PCI0.PPMC                    | Programmable Power Management Controller. Found on 10th generation motherboards, not compatible with macOS |
 | SB.PCI0.PMCR                    | Fake Power Management Capabilities Register. Replacing the function of `PPMC`                              |
 | SB.PCI0.RP04.PXSX               | Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet (Renamed as `RTLK`)                                      |
