@@ -130,230 +130,207 @@ Metal Headless                 No
 ### Build Number:
 
 -   Input
-    ```zsh
-    sw_vers
-    ```
+```zsh
+sw_vers
+```
 -   Output
-    ```zsh
-    ProductName:	macOS
-    ProductVersion:	12.6
-    BuildVersion:	21G115
-    ```
+```zsh
+ProductName:	macOS
+ProductVersion:	12.6
+BuildVersion:	21G115
+```
 
 ### Kernel Version:
 
 -   Input
-    ```zsh
-    uname -r
-    ```
+```zsh
+ uname -r
+```
 -   Output
-    ```zsh
-    21.6.0
-    ```
+ ```zsh
+21.6.0
+```
 
 ### Bus and Frequency:
 
 -   Input
-    ```zsh
-    sysctl -a | grep freq
-    ```
+```zsh
+sysctl -a | grep freq
+```
 -   Output
-    ```zsh
-    hw.busfrequency: 400000000
-    hw.busfrequency_min: 400000000
-    hw.busfrequency_max: 400000000
-    hw.cpufrequency: 2900000000
-    hw.cpufrequency_min: 2900000000
-    hw.cpufrequency_max: 2900000000
-    hw.tbfrequency: 1000000000
-    machdep.tsc.frequency: 2903999153
-    ```
+```zsh
+hw.busfrequency: 400000000
+hw.busfrequency_min: 400000000
+hw.busfrequency_max: 400000000
+hw.cpufrequency: 2900000000
+hw.cpufrequency_min: 2900000000
+hw.cpufrequency_max: 2900000000
+hw.tbfrequency: 1000000000
+machdep.tsc.frequency: 2903999153
+```
 
 ### CPU Vendor:
 
 -   Input
-    ```zsh
-    sysctl -a | grep machdep.cpu.vendor
-    ```
+```zsh
+sysctl -a | grep machdep.cpu.vendor
+```
 -   Output
-    ```zsh
-    machdep.cpu.vendor: GenuineIntel
-    ```
+```zsh
+machdep.cpu.vendor: GenuineIntel
+```
 
 ### CPU Brand String:
 
 -   Input
-    ```zsh
-    sysctl machdep.cpu.brand_string
-    ```
+```zsh
+sysctl machdep.cpu.brand_string
+```
 -   Output     
-    ```zsh
-    machdep.cpu.brand_string: Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
-    ```
+```zsh
+machdep.cpu.brand_string: Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
+```
 
 ### CPU Features:
 
 -   Input 
-    ```zsh
-    sysctl -a | grep machdep.cpu.features
-    ```
+```zsh
+sysctl -a | grep machdep.cpu.features
+```
 -   Output 
-    ```zsh
-    machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
-    ```
+```zsh
+machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
+```
 
 ### CPU Full Features:
 
 -   Input   
-    ```zsh
-    sysctl -a | grep machdep.cpu.features
-    sysctl -a | grep machdep.cpu.leaf7_features
-    sysctl machdep.cpu | grep AVX
-    ```
+```zsh
+sysctl -a | grep machdep.cpu.features
+sysctl -a | grep machdep.cpu.leaf7_features
+sysctl machdep.cpu | grep AVX
+```
 -   Output
-    ```zsh
-    machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
-    machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
-    machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
-    machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
-    ```
+```zsh
+machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
+machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
+machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
+machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
+```
 
 ### CPU Details:
 
 -   Input
-    ```zsh
-    ioreg -rxn "PR00@0"
-    ```
+```zsh
+ioreg -rxn "PR00@0"
+```
 -   Output
-    ```zsh
-    +-o PR00@0  <class IOACPIPlatformDevice, id 0x10000013c, registered, matched, a$
-      | {
-      |   "processor-lapic" = 0x0
-      |   "clock-frequency" = <007ddaac>
-      |   "processor-number" = 0x0
-      |   "timebase-frequency" = <00ca9a3b>
-      |   "processor-id" = 0x1
-      |   "bus-frequency" = <0084d717>
-      |   "cpu-type" = <0906>
-      |   "device_type" = <70726f636573736f7200>
-      |   "name" = <5052303000>
-      |   "processor-index" = 0x0
-      | }
-      |
-      +-o AppleACPICPU  <class AppleACPICPU, id 0x100000151, registered, matched, a$
-      | +-o AppleACPICPUInterruptController  <class AppleACPICPUInterruptController$
-      | +-o X86PlatformPlugin  <class X86PlatformPlugin, id 0x100000485, registered$
-      |   +-o IOPlatformEnabler  <class IOPlatformPluginDevice, id 0x100000505, reg$
-      |   | +-o ApplePlatformEnabler  <class ApplePlatformEnabler, id 0x10000050b, $
-      |   +-o AGPMEnabler  <class IOPlatformPluginDevice, id 0x100000506, registere$
-      |   | +-o AGPMController  <class AGPMController, id 0x10000050a, !registered,$
-      |   +-o X86PlatformShim  <class X86PlatformShim, id 0x100000508, !registered,$
-      +-o SMCProcessor  <class SMCProcessor, id 0x100000152, !registered, !matched,$\
-    ```
+```zsh
++-o PR00@0  <class IOACPIPlatformDevice, id 0x10000013c, registered, matched, a$
+  | {
+  |   "processor-lapic" = 0x0
+  |   "clock-frequency" = <007ddaac>
+  |   "processor-number" = 0x0
+  |   "timebase-frequency" = <00ca9a3b>
+  |   "processor-id" = 0x1
+  |   "bus-frequency" = <0084d717>
+  |   "cpu-type" = <0906>
+  |   "device_type" = <70726f636573736f7200>
+  |   "name" = <5052303000>
+  |   "processor-index" = 0x0
+  | }
+  |
+  +-o AppleACPICPU  <class AppleACPICPU, id 0x100000151, registered, matched, a$
+  | +-o AppleACPICPUInterruptController  <class AppleACPICPUInterruptController$
+  | +-o X86PlatformPlugin  <class X86PlatformPlugin, id 0x100000485, registered$
+  |   +-o IOPlatformEnabler  <class IOPlatformPluginDevice, id 0x100000505, reg$
+  |   | +-o ApplePlatformEnabler  <class ApplePlatformEnabler, id 0x10000050b, $
+  |   +-o AGPMEnabler  <class IOPlatformPluginDevice, id 0x100000506, registere$
+  |   | +-o AGPMController  <class AGPMController, id 0x10000050a, !registered,$
+  |   +-o X86PlatformShim  <class X86PlatformShim, id 0x100000508, !registered,$
+  +-o SMCProcessor  <class SMCProcessor, id 0x100000152, !registered, !matched,$\
+```
 
 ### Check System Integrity Protection:
 -   Input
-    ```zsh
-    csrutil status
-    ```
+```zsh
+csrutil status
+```
 -   Output
-    ```zsh
-    System Integrity Protection status: enabled.
-    ```
+```zsh
+System Integrity Protection status: enabled.
+```
 
 ### Find Wake Issue:
 
 -   Input
-    ```zsh
-    pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
-    ```
+```zsh
+pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
+```
 -   Output
-    ```zsh
-    Empty
-    ```
+```zsh
+Empty
+```
 
 ### Lists any ACPI Error:
 
 -   Input (w/o log)
-    ```zsh
-    log show --last boot | grep AppleACPIPlatform
-    ```
+```zsh
+log show --last boot | grep AppleACPIPlatform
+```
 -   Input (w/ log)
-    ```zsh
-    log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d_%H-%M-%S')".log
-    ```
+```zsh
+log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d_%H-%M-%S')".log
+```
 
-*   **Refer Output:** [Log_2022-09-29_14-40-24.log](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/Log_2022-09-29_14-40-24.log)
+**Refer Output:** [Log_2022-09-29_14-40-24.log](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/Log_2022-09-29_14-40-24.log)
 
 ### Supported Instruction Set:
 
 -   Input
-    ```zsh
-    sysctl -a | grep machdep.cpu.leaf7_features
-    ```
+```zsh
+sysctl -a | grep machdep.cpu.leaf7_features
+```
 -   Output
-    ```zsh
-    machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
-    ```
+```zsh
+machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
+```
 
 ### Verify Working SMBUS/SBUS:
 
 -   Input
-    ```zsh
-    kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"
-    ```
+```zsh
+kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"
+```
 -   Output
-    ```zsh
-    Executing: /usr/bin/kmutil showloaded
-    No variant specified, falling back to release
-      148    0 0xffffff7f98f8e000 0x1000     0x1000     com.apple.driver.AppleSMBusPCI (1.0.14d1) C0C24D4F-420F-3AD1-9039-AFA08E9524FF <16 7 6 3>
-      153    1 0xffffff7f98f82000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) 7ECD5D2C-E62F-3C6D-ACD7-D90B7443024D <152 16 15 7 6 3>
-    ```
+```zsh
+Executing: /usr/bin/kmutil showloaded
+No variant specified, falling back to release
+148    0 0xffffff7f98f8e000 0x1000     0x1000     com.apple.driver.AppleSMBusPCI (1.0.14d1) C0C24D4F-420F-3AD1-9039-AFA08E9524FF <16 7 6 3>
+153    1 0xffffff7f98f82000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) 7ECD5D2C-E62F-3C6D-ACD7-D90B7443024D <152 16 15 7 6 3>
+```
 
 ### Verify Plugin Type 1:
 
 -   Input
-    ```zsh
-    sysctl machdep.xcpm.mode`
-    ```
+```zsh
+sysctl machdep.xcpm.mode`
+```
 -   Output
-    ```zsh
-    machdep.xcpm.mode: 1
-    ```
+```zsh
+machdep.xcpm.mode: 1
+```
 
 ### 4K Video test via Youtube
 
-*   **Refer Output:** [4k Test](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
+**Refer Output:** [4k Test](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
 
 ---
 
-## Acknowlegdement
-
-☠ [**Acidanthera**](https://github.com/acidanthera)
-
-The one who brings Hackintosh this further
-
-☠ [**Dortania's OpenCore Install Guide**](https://dortania.github.io/OpenCore-Install-Guide/)
-
-Official guide for Hackintosh
-
-☠ [**Hackintosh Malaysia**](https://www.facebook.com/groups/HackintoshMalaysia/about/)
-
-Official Facebook for Malaysia Hackintosh Community
-
-☠ [**r/Hackintosh**](https://www.reddit.com/r/hackintosh/)
-
-A community for those looking to install macOS on their PC!
-
-☠ [**5T33Z0**](https://github.com/5T33Z0)
-
-ACPI Hotpatches and Guides for the OpenCore Bootmanager. Enhance and fine-tune your system by adding devices and enabling additional features not covered in the OpenCore Install Guide.
-
-☠ [**ic500k**](https://github.com/ic005k)
-
-Cross-platform GUI management tools for OpenCore
-
-☠ [**ACPI 6.1**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/ACPI_6_1.pdf)
-
-AML and DSL References
+| **Acknowledgement** | **Contribution**                                   |
+|---------------------|----------------------------------------------------|
+| Acidanthera         | https://github.com/acidanthera                     |
+| Dortania            | https://dortania.github.io/OpenCore-Install-Guide/ |
+| r/Hackintosh        | https://www.reddit.com/r/hackintosh/               |
+| 5T33Z0              | https://github.com/5T33Z0                          |
 
