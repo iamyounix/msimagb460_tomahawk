@@ -4,7 +4,7 @@
 
 ---
 
-<div align="center"><p><img src="https://user-images.githubusercontent.com/72515939/192973634-3bfadc6c-a593-422b-a8c6-dfdaed8e4ee1.png" alt="2022-09-29_15-54-05"></p></div>
+<div align="center"><p><img src="https://user-images.githubusercontent.com/72515939/192975564-4f14fa9c-1f93-4aa2-93ea-d1d16287f608.png" alt="2022-09-29_15-54-05"></p></div>
 
 ### System Info
 
@@ -129,6 +129,8 @@ Metal Headless                 No
 # power management tables provided.
 # This patch will simply increase ASPP's 'IOProbeScore' to outmatch X86PP
 ```
+<div align="center"><p><img width="1000" alt="2022-09-29_15-58-49" src="https://user-images.githubusercontent.com/72515939/192975908-173cad9b-4bdf-4f73-92c5-5ee2103c64c0.png"></p></div>
+
 ---
 
 ## Rename/Replace/On and Off, _STA Method
