@@ -83,38 +83,38 @@ Metal Headless                 No
     - [x] Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet
     - [x] BCM94360CD 802.11ac Wireless Network Adapter    
 
-**SSDT Patch**[^1]
+**Device Patch vis SSDT**[^1]
 | **Device**    | **Details**                                                                                                |
 |---------------|------------------------------------------------------------------------------------------------------------|
 | SB            | System Bus/Bus Objects are defined under this namespace                                                    |
 | PCI0          | PCI Root Bridge                                                                                            |
 | DRAM          | Comet Lake-S 6c Host Bridge/DRAM Controller                                                                |
-| GFX0          | Intel UHD Graphics 630 (Renamed as IGPU)                                                                   |
-| HDAS          | Comet Lake PCH-V cAVS (Renamed as HDEF)                                                                    |
+| GFX0          | Intel UHD Graphics 630 (Renamed as `IGPU`)                                                                 |
+| HDAS          | Comet Lake PCH-V cAVS (Renamed as `HDEF`)                                                                  |
 | HDAU          | Navi 10 HDMI Audio                                                                                         |
-| HECI          | Comet Lake PCH-V HECI Controller (Renamed as IMEI)                                                         |
+| HECI          | Comet Lake PCH-V HECI Controller (Renamed as `IMEI`)                                                       |
 | LPCB          | B460M Low Pin Count Bus                                                                                    |
 | EC            | Fake Embeded Controller                                                                                    |
 | FWHD          | Fake Firmware Hub Device (Optional)                                                                        |
 | HPET          | High Precision Event Timer                                                                                 |
-| PEG0          | 6th-10th Gen Core Processor PCIe Controller x16 (Renamed as PEGP)                                          |
-| pci-bridge0@0 | Navi 10 XL Upstream Port (Renamed as EGP0)                                                                 |
-| pci-bridge1@0 | Navi 10 XL Downstream Port (Renamed as EGP1)                                                               |
+| PEG0          | 6th-10th Gen Core Processor PCIe Controller x16 (Renamed as `PEGP`)                                        |
+| pci-bridge0@0 | Navi 10 XL Upstream Port (Renamed as `EGP0`)                                                               |
+| pci-bridge1@0 | Navi 10 XL Downstream Port (Renamed as `EGP1`)                                                             |
 | GFX0          | Navi 14 Radeon RX 5500/5500M / Pro 5500M                                                                   |
 | PPMC          | Programmable Power Management Controller. Found on 10th generation motherboards, not compatible with macOS |
-| PMCR          | Fake Power Management Capabilities Register. Replacing the function of PPMC                                |
-| RP04.PXSX     | Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet (Renamed as RTLK)                                        |
-| RP05.PXSX     | VL805/806 xHCI USB 3.0 Controller (Renamed as XHC2)                                                        |
-| RP09.PXSX     | Kingston SA2000M8500G M.2 Slot 0 (Renamed as ANS0)                                                         |
-| RP20.PXSX     | BCM4360 802.11ac Wireless Network Adapter (Renamed as ARPT)                                                |
-| RP21.PXSX     | Kingston SA2000M8500G M.2 Slot 1 (Renamed as ANS1)                                                         |
-| SAT0          | 400 Series Chipset Family SATA AHCI Controller (Renamed as SATA)                                           |
+| PMCR          | Fake Power Management Capabilities Register. Replacing the function of `PPMC`                              |
+| RP04.PXSX     | Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet (Renamed as `RTLK`)                                      |
+| RP05.PXSX     | VL805/806 xHCI USB 3.0 Controller (Renamed as `XHC2`)                                                      |
+| RP09.PXSX     | Kingston SA2000M8500G M.2 Slot 0 (Renamed as `ANS0`)                                                       |
+| RP20.PXSX     | BCM4360 802.11ac Wireless Network Adapter (Renamed as `ARPT`)                                              |
+| RP21.PXSX     | Kingston SA2000M8500G M.2 Slot 1 (Renamed as `ANS1`)                                                       |
+| SAT0          | 400 Series Chipset Family SATA AHCI Controller (Renamed as `SATA`)                                         |
 | SBUS          | Serial Bus                                                                                                 |
 | TSUB          | Thermal Subsystem. Typically found on 10th generation motherboards, not compatible with macOS              |
-| XHC           | 300/400 Series PCH-V USB Controller (Renamed as XHC1)                                                      |
+| XHC           | 300/400 Series PCH-V USB Controller (Renamed as `XHC1`)                                                    |
 | USBX          | USB Power Management                                                                                       |
-| DTGP          | Apple/MacOS standard method that passes through calls to _DSM on various Device objects                    |
-| STAS          | _STA method, to enable such status changes to be communicated to the operating system.                     |
+| DTGP          | Apple/MacOS standard method that passes through calls to `_DSM` on various device objects                  |
+| STAS          | `_STA` method, to enable such status changes to be communicated to the operating system.                   |
 
 ---
 
