@@ -374,12 +374,11 @@ Empty
 log show --last boot | grep AppleACPIPlatform
 log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d_%H-%M-%S')".log
 ```
+**Refer Output:** [Log_2022-09-29_14-40-24.log](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/Log_2022-09-29_14-40-24.log)
 
 ```zsh
 
 ```
-
-
 
 **Supported Instruction Set:** `sysctl -a | grep machdep.cpu.leaf7_features`
 
@@ -395,17 +394,6 @@ No variant specified, falling back to release
   148    0 0xffffff7f98f8e000 0x1000     0x1000     com.apple.driver.AppleSMBusPCI (1.0.14d1) C0C24D4F-420F-3AD1-9039-AFA08E9524FF <16 7 6 3>
   153    1 0xffffff7f98f82000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) 7ECD5D2C-E62F-3C6D-ACD7-D90B7443024D <152 16 15 7 6 3>
 ```
-
-
-
-![Screenshot 2022-09-29 at 10 10 56 AM](https://user-images.githubusercontent.com/72515939/192923547-c39b5cbf-ce4c-459e-872b-7f2df68070fd.png)
-![Screenshot 2022-09-29 at 10 11 06 AM](https://user-images.githubusercontent.com/72515939/192923550-fdd097ee-83ae-4e40-b221-8aad34e6106c.png)
-![Screenshot 2022-09-29 at 10 11 15 AM](https://user-images.githubusercontent.com/72515939/192923558-83c60ced-2a2c-4271-b95f-6b062b4d1f70.png)
-![Screenshot 2022-09-29 at 10 11 19 AM](https://user-images.githubusercontent.com/72515939/192923565-e3ee9659-5fb0-46cc-a8a8-0e1f755705f1.png)
-![Screenshot 2022-09-29 at 10 11 24 AM](https://user-images.githubusercontent.com/72515939/192923568-a9e281bc-68ed-4fd8-ab99-bd5f49327b81.png)
-![Screenshot 2022-09-29 at 10 11 30 AM](https://user-images.githubusercontent.com/72515939/192923575-653c475c-0150-4e8f-8708-90c69ee1f19a.png)
-![Screenshot 2022-09-29 at 10 15 06 AM](https://user-images.githubusercontent.com/72515939/192923582-b351fc0d-75bd-4bba-b7e9-13790181dcce.png)
-![Screenshot 2022-09-29 at 10 10 47 AM](https://user-images.githubusercontent.com/72515939/192923779-99e1638f-b544-47b5-bc6e-afeae3e6042b.png)
 
 ---
 
