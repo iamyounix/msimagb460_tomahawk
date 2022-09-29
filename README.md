@@ -266,7 +266,8 @@ Scope (RPXX)
 
 ## Test Build
 
-**Build Number:** `sw_vers`
+**Build Number:** 
+`sw_vers`
 
 ```zsh
 ProductName:	macOS
@@ -274,13 +275,15 @@ ProductVersion:	12.6
 BuildVersion:	21G115
 ```
 
-**Kernel Version:** `uname -r`
+**Kernel Version:** 
+`uname -r`
 
 ```zsh
 21.6.0
 ```
 
-**Bus and Frequency:** `sysctl -a | grep freq`
+**Bus and Frequency:** 
+`sysctl -a | grep freq`
 
 ```zsh
 hw.busfrequency: 400000000
@@ -293,19 +296,22 @@ hw.tbfrequency: 1000000000
 machdep.tsc.frequency: 2903999153
 ```
 
-**CPU Vendor:** `sysctl -a | grep machdep.cpu.vendor`
+**CPU Vendor:** 
+`sysctl -a | grep machdep.cpu.vendor`
 
 ```zsh
 machdep.cpu.vendor: GenuineIntel
 ```
 
-**CPU Brand String:** `sysctl machdep.cpu.brand_string`
+**CPU Brand String:** 
+`sysctl machdep.cpu.brand_string`
 
 ```zsh
 machdep.cpu.brand_string: Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
 ```
 
-**CPU Features:** `sysctl -a | grep machdep.cpu.features`
+**CPU Features:** 
+`sysctl -a | grep machdep.cpu.features`
 
 ```zsh
 machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
@@ -328,7 +334,8 @@ machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 E
 
 ```
 
-**CPU Details:** `ioreg -rxn "PR00@0"`
+**CPU Details:** 
+`ioreg -rxn "PR00@0"`
 
 ```zsh
 +-o PR00@0  <class IOACPIPlatformDevice, id 0x10000013c, registered, matched, a$
@@ -356,13 +363,15 @@ machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 E
   +-o SMCProcessor  <class SMCProcessor, id 0x100000152, !registered, !matched,$\
 ```
 
-**Check System Integrity Protection:** `csrutil status`
+**Check System Integrity Protection:** 
+`csrutil status`
 
 ```zsh
 System Integrity Protection status: enabled.
 ```
 
-**Find Wake Issue:** `pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"`
+**Find Wake Issue:** 
+`pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"`
 
 ```zsh
 Empty
@@ -376,17 +385,15 @@ log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d
 ```
 **Refer Output:** [Log_2022-09-29_14-40-24.log](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/Log_2022-09-29_14-40-24.log)
 
-```zsh
-
-```
-
-**Supported Instruction Set:** `sysctl -a | grep machdep.cpu.leaf7_features`
+**Supported Instruction Set:** 
+`sysctl -a | grep machdep.cpu.leaf7_features`
 
 ```zsh
 machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
 ```
 
-**Verify Working SMBUS/SBUS:** `kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"`
+**Verify Working SMBUS/SBUS:** 
+`kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"`
 
 ```zsh
 Executing: /usr/bin/kmutil showloaded
