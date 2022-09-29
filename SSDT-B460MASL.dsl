@@ -33,37 +33,7 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
     External (_SB_.PCI0.TSUB, DeviceObj)
     External (_SB_.PCI0.XHC_, DeviceObj)
     External (_SB_.USBX, DeviceObj)
-    External (DTGP, MethodObj)    // 5 Arguments
     External (STAS, IntObj)
-
-    Method (DTGP, 5, NotSerialized)
-    {
-        If ((Arg0 == ToUUID ("a0b5b7c6-1318-441c-b0c9-fe695eaf949b") /* Unknown UUID */))
-        {
-            If ((Arg1 == One))
-            {
-                If ((Arg2 == Zero))
-                {
-                    Arg3 = Buffer (One)
-                        {
-                             0x03                                             // .
-                        }
-                    Return (One)
-                }
-
-                If ((Arg2 == One))
-                {
-                    Return (One)
-                }
-            }
-        }
-
-        Arg4 = Buffer (One)
-            {
-                 0x00                                             // .
-            }
-        Return (Zero)
-    }
 
     Scope (\_SB)
     {
@@ -293,12 +263,15 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                                          0x03                                             // .
                                     })
                                 }
-
-                                DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
-                                Return (Local0)
-                            }
-                        }
-
+								
+								Return (Package ()
+								{
+									"agdpmod", 
+									"pikera"
+								})
+							}
+						}
+						
                         Device (HDAU)
                         {
                             Name (_ADR, One)  // _ADR: Address
@@ -312,15 +285,16 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                                          0x03                                             // .
                                     })
                                 }
-
-                                DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
-                                Return (Local0)
-                            }
-                        }
+								
+								Return (Package (Zero)
+								{
+								})
+							}
+						}
                     }
-                }
-            }
-
+				}	
+			}
+			
             Scope (RP04)
             {
                 Scope (PXSX)
@@ -399,28 +373,26 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                             })
                         }
 
-                        Local0 = Package (0x0A)
+                        Return (Package ()
+                        {
+                            "device_type", 
+                            "Non-Volatile memory controller", 
+                            "model", 
+                            "KINGSTON SA2000M8500G", 
+                            "name", 
+                            "ANS0", 
+                            "device-id", 
+                            Buffer (0x04)
                             {
-                                "device_type", 
-                                "Non-Volatile memory controller", 
-                                "model", 
-                                "KINGSTON SA2000M8500G", 
-                                "name", 
-                                "ANS0", 
-                                "device-id", 
-                                Buffer (0x04)
-                                {
-                                     0x06, 0xA8, 0x00, 0x00                           // ....
-                                }, 
+                                 0x06, 0xA8, 0x00, 0x00                           // ....
+                            }, 
 
-                                "vendor-id", 
-                                Buffer (0x04)
-                                {
-                                     0x4D, 0x14, 0x00, 0x00                           // M...
-                                }
+                            "vendor-id", 
+                            Buffer (0x04)
+                            {
+                                 0x4D, 0x14, 0x00, 0x00                           // M...
                             }
-                        DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
-                        Return (Local0)
+                        })
                     }
                 }
             }
@@ -476,28 +448,26 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                             })
                         }
 
-                        Local0 = Package (0x0A)
+                        Return (Package ()
+                        {
+                            "device_type", 
+                            "Non-Volatile memory controller", 
+                            "model", 
+                            "KINGSTON SA2000M8500G", 
+                            "name", 
+                            "ANS0", 
+                            "device-id", 
+                            Buffer (0x04)
                             {
-                                "device_type", 
-                                "Non-Volatile memory controller", 
-                                "model", 
-                                "KINGSTON SA2000M8500G", 
-                                "name", 
-                                "ANS0", 
-                                "device-id", 
-                                Buffer (0x04)
-                                {
-                                     0x06, 0xA8, 0x00, 0x00                           // ....
-                                }, 
+                                 0x06, 0xA8, 0x00, 0x00                           // ....
+                            }, 
 
-                                "vendor-id", 
-                                Buffer (0x04)
-                                {
-                                     0x4D, 0x14, 0x00, 0x00                           // M...
-                                }
+                            "vendor-id", 
+                            Buffer (0x04)
+                            {
+                                 0x4D, 0x14, 0x00, 0x00                           // M...
                             }
-                        DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
-                        Return (Local0)
+                        })
                     }
                 }
             }
@@ -649,4 +619,3 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
         }
     }
 }
-
