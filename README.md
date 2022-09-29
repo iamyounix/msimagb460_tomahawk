@@ -153,9 +153,6 @@ Device (ABDC)
 }
 ```
 
-### Explanation
-
-A more secure method to replace the object / device is demonstrated by the script above.
 
 Before making any property changes to the object, **Scope** is needed to manipulate devices i.e; **Scope (ABC)**. Typically indicate to actual device name in DSDTs/SSDTs. Then, **Method (_STA, 0, NotSerialized) / STA: Status** is to enable such status changes to be communicated to the operating system. In this case, device **ABC** is returning properties as **(Zero)** or **false**, indicating that the device's features are deactivated. A new name for object is injected **Device (ABDC)** by the address assigned same as DSDT/SSDT i.e; **_ADR, 0x00140000**. Again, **Method (_STA, 0, NotSerialized) / STA: Status** used to enable such status changes to be communicated to the operating system for a second rule. **If (_OSI ("Darwin"))** indicates, if the macOS Kernel is loaded, the device is accessible using the new name i.e; **Device (ABDC)**. **Else**, indicates if another OS/kernel is loaded, the inject properties are not accessible. The machine will assume the device continue to function normally as **ABC** via DSDTs. This method has been applied to certain devices via SSDT for functional Hackintosh via OpenCore[^2] / Clover[^3].
 
@@ -195,9 +192,6 @@ DefinitionBlock ("", "SSDT", 2, "KGP ", "DTGP", 0x00001000)
 }
 ```
 
-### Explanation
-
-Inject Custom Parameters
 
 Nowadays, most users especially from **Dortania Guide** prefer independent SSDTs, each for a specific function. Most SSDTs already have the **DTGP** method incorporated. For this reason, it is currently not necessary to use **DTGP** method and information about it is not easily found. Most of the DSDTs that are present on the iMac employ the **DTGP** approach to inject capabilities and attributes into select devices. It is crucial that this method is simply built into macOS. **DTGP** method must be present at the DSDT in order to inject custom parameters to some devices. Without this method the modified DSDTs would not work well. Since this method is not available on **generic** DSDTs, this method was applied using SSDTs. Below is an example.
 
