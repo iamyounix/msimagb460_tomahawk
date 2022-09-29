@@ -327,10 +327,10 @@ machdep.xcpm.mode: 1
 
 ---
 
-| **Acknowledgement** | **Contribution**                                   |
-|---------------------|----------------------------------------------------|
-| Acidanthera         | https://github.com/acidanthera                     |
-| Dortania            | https://dortania.github.io/OpenCore-Install-Guide/ |
-| r/Hackintosh        | https://www.reddit.com/r/hackintosh/               |
-| 5T33Z0              | https://github.com/5T33Z0                          |
+| **Acknowledgement**                                             | **Contribution**                                   |
+|-----------------------------------------------------------------|----------------------------------------------------|
+| [Acidanthera](https://github.com/acidanthera)                   | for maintaining OpenCorePkg                        |
+| [Dortania](https://dortania.github.io/OpenCore-Install-Guide/)  | for updating OC Guides                             |
+| [r/Hackintosh](https://www.reddit.com/r/hackintosh/ )           | great community                                    |
+| [5T33Z0](https://github.com/5T33Z0)                             | cross platform tools                               |
 
