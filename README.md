@@ -333,4 +333,3 @@ machdep.xcpm.mode: 1
 | [Dortania](https://dortania.github.io/OpenCore-Install-Guide/)  | for updating OC Guides                             |
 | [r/Hackintosh](https://www.reddit.com/r/hackintosh/ )           | great community                                    |
 | [5T33Z0](https://github.com/5T33Z0)                             | cross platform tools                               |
-
