@@ -437,10 +437,11 @@ ACPI Hotpatches and Guides for the OpenCore Bootmanager. Enhance and fine-tune y
 
 ☠ [**ic500k**](https://github.com/ic005k) 
 
-References
+Cross-platform GUI management tools for OpenCore
 
 ☠ [**ACPI6.1**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/ACPI_6_1.pdf) 
 
+AML and DSL References
 
 ## Footnote
 
