@@ -4,7 +4,7 @@ Hackintosh: 10th Gen Comet Lake with B460M Steel Legend Configuration
 
 ---
 
-<div align="center"><p><img src="https://user-images.githubusercontent.com/72515939/192975564-4f14fa9c-1f93-4aa2-93ea-d1d16287f608.png" alt="2022-09-29_15-54-05"></p></div>
+<div align="center"><p><img width="800" src="https://user-images.githubusercontent.com/72515939/192975564-4f14fa9c-1f93-4aa2-93ea-d1d16287f608.png" alt="2022-09-29_15-54-05"></p></div>
 
 ### System Info
 
@@ -60,31 +60,30 @@ Metal Headless                 No
 
 ### PCI Device
 
-**Instruction**
-
+#### Instruction
 - [x] Working
 - [ ] Not Working
 
-- **PCI list**
-  - [x] Comet Lake-S 6c Host Bridge/DRAM Controller
-  - [x] 6th-10th Gen Core Processor PCIe Controller (x16)
-  - [x] Intel CoffeeLake-H GT2 [UHD Graphics 630]
-  - [x] Comet Lake PCH-V USB Controller
-  - [ ] Comet Lake PCH-V Thermal Subsystem
-  - [x] Comet Lake PCH-V HECI Controller
-  - [ ] Comet Lake PCH-V Memory controller
-  - [x] Comet Lake PCH-V cAVS
-  - [x] Comet Lake PCH-V SMBus Host Controller
-  - [x] 400 Series Chipset Family SATA AHCI Controller
-  - [x] B460 Chipset LPC/eSPI Controller
-  - [x] Kingston SA2000M8500G (x2)
-  - [x] Navi 10 XL Upstream Port of PCI Express Switch
-  - [x] Navi 10 XL Downstream Port of PCI Express Switch
-  - [x] Navi 14 [Radeon RX 5500/5500M / Pro 5500M]
-  - [x] Navi 10 HDMI Audio
-  - [x] VL805/806 xHCI USB 3.0 Controller
-  - [x] Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet
-  - [x] BCM94360CD 802.11ac Wireless Network Adapter
+##### PCI list
+- [x] Comet Lake-S 6c Host Bridge/DRAM Controller
+- [x] 6th-10th Gen Core Processor PCIe Controller (x16)
+- [x] Intel CoffeeLake-H GT2 [UHD Graphics 630]
+- [x] Comet Lake PCH-V USB Controller
+- [ ] Comet Lake PCH-V Thermal Subsystem
+- [x] Comet Lake PCH-V HECI Controller
+- [ ] Comet Lake PCH-V Memory controller
+- [x] Comet Lake PCH-V cAVS
+- [x] Comet Lake PCH-V SMBus Host Controller
+- [x] 400 Series Chipset Family SATA AHCI Controller
+- [x] B460 Chipset LPC/eSPI Controller
+- [x] Kingston SA2000M8500G (x2)
+- [x] Navi 10 XL Upstream Port of PCI Express Switch
+- [x] Navi 10 XL Downstream Port of PCI Express Switch
+- [x] Navi 14 [Radeon RX 5500/5500M / Pro 5500M]
+- [x] Navi 10 HDMI Audio
+- [x] VL805/806 xHCI USB 3.0 Controller
+- [x] Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet
+- [x] BCM94360CD 802.11ac Wireless Network Adapter
 
 **Device Patch vis SSDT**[^1]
 
@@ -96,14 +95,14 @@ Metal Headless                 No
 | SB.PCI0.HECI                    | Comet Lake PCH-V HECI Controller (Renamed as `IMEI`)                                                       |
 | SB.PCI0.LPCB                    | B460M Low Pin Count Bus                                                                                    |
 | SB.PCI0.LPCB.EC                 | Fake Embeded Controller                                                                                    |
-| SB.PCI0.LPCB.FWHD               | Fake Firmware Hub Device (Optional)                                                                        |
+| SB.PCI0.LPCB.FWHD               | Fake Firmware Hub Device (Optional for `300 / 400` Series)                                                 |
 | SB.PCI0.LPCB.HPET               | High Precision Event Timer                                                                                 |
 | SB.PCI0.PEG0                    | 6th-10th Gen Core Processor PCIe Controller x16 (Renamed as `PEGP`)                                        |
 | SB.PCI0.PEG0.pci-bridge0/0      | Navi 10 XL Upstream Port (Renamed as `EGP0`)                                                               |
 | SB.PCI0.PEG0.pci-bridge1/0      | Navi 10 XL Downstream Port (Renamed as `EGP1`)                                                             |
-| SB.PCI0.PEG0.pci-bridge1/0.GFX0 | Navi 14 Radeon RX 5500/5500M / Pro 5500M                                                                   |
+| SB.PCI0.PEG0.pci-bridge1/0.GFX0 | Navi 14 Radeon RX 5500 / 5500M / Pro 5500M                                                                 |
 | SB.PCI0.PEG0.pci-bridge1/0.HDAU | Navi 10 HDMI Audio                                                                                         |
-| SB.PCI0.PPMC                    | Programmable Power Management Controller. Found on 10th generation motherboards, not compatible with macOS |
+| SB.PCI0.PPMC                    | Programmable Power Management Controller. Not `compatible` with macOS                                      |
 | SB.PCI0.PMCR                    | Fake Power Management Capabilities Register. Replacing the function of `PPMC`                              |
 | SB.PCI0.RP04.PXSX               | Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet (Renamed as `RTLK`)                                      |
 | SB.PCI0.RP05.PXSX               | VL805/806 xHCI USB 3.0 Controller (Renamed as `XHC2`)                                                      |
@@ -112,23 +111,17 @@ Metal Headless                 No
 | SB.PCI0.RP21.PXSX               | Kingston SA2000M8500G M.2 Slot 1 (Renamed as `ANS1`)                                                       |
 | SB.PCI0.SAT0                    | 400 Series Chipset Family SATA AHCI Controller (Renamed as `SATA`)                                         |
 | SB.PCI0.SBUS                    | Serial Bus                                                                                                 |
-| SB.PCI0.TSUB                    | Thermal Subsystem. Typically found on 10th generation motherboards, not compatible with macOS              |
+| SB.PCI0.TSUB                    | Thermal Subsystem. Not `compatible` with macOS                                                             |
 | SB.PCI0.XHC                     | 300/400 Series PCH-V USB Controller (Renamed as `XHC1`)                                                    |
 | SB.USBX                         | USB Power Management                                                                                       |
-| SB.DTGP                         | Apple/MacOS standard method that passes through calls to `_DSM` on various device objects                  |
+| SB.DTGP                         | Apple / MacOS standard ACPI method that passes through calls to `_DSM` on various device objects           |
 | SB.STAS                         | `_STA` method, to enable such status changes to be communicated to the operating system.                   |
 
-> Note: Start from **macOS 12.3**, [SSDT-PLUG.aml](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) or [plugin-type=1](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) is not required. The [x86PlatformPlugin](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html) is enabled by default on Skylake and Comet Lake. **Refer** [Dortania/Bugtracker Issue #269](https://github.com/dortania/bugtracker/issues/269) and original [thread](https://www.insanelymac.com/forum/topic/351675-macos-12-monterey-x86platformplugin-without-plugin-type1/).
+> **Note:** Start from **macOS 12.3**, [SSDT-PLUG.aml](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) or [plugin-type=1](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) is not required. The [x86PlatformPlugin](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html) is enabled by default on Skylake and Comet Lake. **Refer** original [thread](https://www.insanelymac.com/forum/topic/351675-macos-12-monterey-x86platformplugin-without-plugin-type1/), [Dortania/Bugtracker Issue #2013](https://github.com/acidanthera/bugtracker/issues/2013) and [Dortania/Bugtracker Issue #269](https://github.com/dortania/bugtracker/issues/269).
 
-```zsh
-# With macOS 12.3 Beta 1, Apple dropped the 'plugin-type' check within X86PlatformPlugin
-# Because of this, X86PP will match onto the CPU instead of ACPI_SMC_PlatformPlugin
-# This causes power management to break on pre-Ivy Bridge CPUs as they don't have correct
-# power management tables provided.
-# This patch will simply increase ASPP's 'IOProbeScore' to outmatch X86PP
-```
+<br>
 
-<div align="center"><p><img width="1000" alt="2022-09-29_15-58-49" src="https://user-images.githubusercontent.com/72515939/192975908-173cad9b-4bdf-4f73-92c5-5ee2103c64c0.png"></p></div>
+<div align="center"><p><img width="800" alt="2022-09-29_15-58-49" src="https://user-images.githubusercontent.com/72515939/192975908-173cad9b-4bdf-4f73-92c5-5ee2103c64c0.png"></p></div>
 
 ---
 
@@ -160,13 +153,11 @@ Device (ABDC)
 }
 ```
 
-**Explanation**
+### Explanation
 
 A more secure method to replace the object / device is demonstrated by the script above.
 
-1.  Before making any property changes to the object, `Scope` is needed to manipulate devices i.e; `Scope (ABC)`. Typically indicate to actual device name in DSDTs/SSDTs. Then, `Method (_STA, 0, NotSerialized) / STA: Status` is to enable such status changes to be communicated to the operating system. In this case, device `ABC` is returning properties as `0` `(Zero)` or `false`, indicating that the device's features are deactivated.
-2.  A new name for object is injected `Device (ABDC)` by the address assigned same as DSDT/SSDT i.e; `_ADR, 0x00140000`. Again, `Method (_STA, 0, NotSerialized) / STA: Status` used to enable such status changes to be communicated to the operating system for a second rule.
-3.  `If (_OSI ("Darwin"))` indicates, if the macOS Kernel is loaded, the device is accessible using the new name i.e; `Device (ABDC)`. `Else`, indicates if another OS/kernel is loaded, the inject properties are not accessible. The machine will assume the device continue to function normally as `ABC` via DSDTs. This method has been applied to certain devices via SSDT for functional Hackintosh via OpenCore[^2] / Clover[^3].
+Before making any property changes to the object, **Scope** is needed to manipulate devices i.e; **Scope (ABC)**. Typically indicate to actual device name in DSDTs/SSDTs. Then, **Method (_STA, 0, NotSerialized) / STA: Status** is to enable such status changes to be communicated to the operating system. In this case, device **ABC** is returning properties as **(Zero)** or **false**, indicating that the device's features are deactivated. A new name for object is injected **Device (ABDC)** by the address assigned same as DSDT/SSDT i.e; **_ADR, 0x00140000**. Again, **Method (_STA, 0, NotSerialized) / STA: Status** used to enable such status changes to be communicated to the operating system for a second rule. **If (_OSI ("Darwin"))** indicates, if the macOS Kernel is loaded, the device is accessible using the new name i.e; **Device (ABDC)**. **Else**, indicates if another OS/kernel is loaded, the inject properties are not accessible. The machine will assume the device continue to function normally as **ABC** via DSDTs. This method has been applied to certain devices via SSDT for functional Hackintosh via OpenCore[^2] / Clover[^3].
 
 ## DTGP Method
 
@@ -204,17 +195,11 @@ DefinitionBlock ("", "SSDT", 2, "KGP ", "DTGP", 0x00001000)
 }
 ```
 
-**Explanation**
+### Explanation
 
 Inject Custom Parameters
 
-<p><div align="justify"></p>
-<ol>
-<li><p>Nowadays, most users especially from <strong>Dortania Guide</strong> prefer independent SSDTs, each for a specific function. Most SSDTs already have the <code>DTGP</code> method incorporated. For this reason, it is currently not necessary to use <code>DTGP</code> method and information about it is not easily found. </p>
-</li>
-<li><p>Here, <code>DTGP</code> has been used with my sample. Most of the DSDTs that are present on the iMac employ the <code>DTGP</code> approach to inject capabilities and attributes into select devices. It is crucial that this method is simply built into macOS. <code>DTGP</code> method must be present at the DSDT in order to inject custom parameters to some devices. Without this method the modified DSDTs would not work well. Since this method is not available on <code>generic</code> DSDTs, this method was applied using SSDTs. Below is an example.</div></p>
-</li>
-</ol>
+Nowadays, most users especially from **Dortania Guide** prefer independent SSDTs, each for a specific function. Most SSDTs already have the **DTGP** method incorporated. For this reason, it is currently not necessary to use **DTGP** method and information about it is not easily found. Most of the DSDTs that are present on the iMac employ the **DTGP** approach to inject capabilities and attributes into select devices. It is crucial that this method is simply built into macOS. **DTGP** method must be present at the DSDT in order to inject custom parameters to some devices. Without this method the modified DSDTs would not work well. Since this method is not available on **generic** DSDTs, this method was applied using SSDTs. Below is an example.
 
 ```asl
 Scope (RPXX)
