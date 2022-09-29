@@ -118,7 +118,7 @@ Metal Headless                 No
 | DTGP          | Apple/MacOS standard method that passes through calls to `_DSM` on various device objects |
 | STAS          | `_STA` method, to enable such status changes to be communicated to the operating system. |
 
-> Note: Start from **macOS 12.3**, [SSDT-PLUG.aml](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) or [plugin-type=1](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) is not required. The **x86PlatformPlugin** is enabled by default in macOS 12.3+. **Refer** [Dortania/Bugtracker Issue #269](https://github.com/dortania/bugtracker/issues/269). 
+> Note: Start from **macOS 12.3**, [SSDT-PLUG.aml](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) or [plugin-type=1](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) is not required. The **x86PlatformPlugin** is enabled by default. **Refer** [Dortania/Bugtracker Issue #269](https://github.com/dortania/bugtracker/issues/269). 
 
 ```zsh
 # With macOS 12.3 Beta 1, Apple dropped the 'plugin-type' check within X86PlatformPlugin
