@@ -246,9 +246,9 @@ Scope (RPXX)
 }
 ```
 
-## Test Build
+## Test My Hack
 
-**Build Number:**
+### Build Number:
 `sw_vers`
 
 ```zsh
@@ -257,14 +257,14 @@ ProductVersion:	12.6
 BuildVersion:	21G115
 ```
 
-**Kernel Version:**
+### Kernel Version:
 `uname -r`
 
 ```zsh
 21.6.0
 ```
 
-**Bus and Frequency:**
+### Bus and Frequency:
 `sysctl -a | grep freq`
 
 ```zsh
@@ -278,28 +278,28 @@ hw.tbfrequency: 1000000000
 machdep.tsc.frequency: 2903999153
 ```
 
-**CPU Vendor:**
+### CPU Vendor:
 `sysctl -a | grep machdep.cpu.vendor`
 
 ```zsh
 machdep.cpu.vendor: GenuineIntel
 ```
 
-**CPU Brand String:**
+### CPU Brand String:
 `sysctl machdep.cpu.brand_string`
 
 ```zsh
 machdep.cpu.brand_string: Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
 ```
 
-**CPU Features:**
+### CPU Features:
 `sysctl -a | grep machdep.cpu.features`
 
 ```zsh
 machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
 ```
 
-**CPU Full Features:**
+### CPU Full Features:
 
 ```zsh
 sysctl -a | grep machdep.cpu.features
@@ -314,7 +314,7 @@ machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA C
 machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
 ```
 
-**CPU Details:**
+### CPU Details:
 `ioreg -rxn "PR00@0"`
 
 ```zsh
@@ -343,21 +343,21 @@ machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 E
   +-o SMCProcessor  <class SMCProcessor, id 0x100000152, !registered, !matched,$\
 ```
 
-**Check System Integrity Protection:**
+### Check System Integrity Protection:
 `csrutil status`
 
 ```zsh
 System Integrity Protection status: enabled.
 ```
 
-**Find Wake Issue:**
+### Find Wake Issue:
 `pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"`
 
 ```zsh
 Empty
 ```
 
-**Lists any ACPI Error:**
+### Lists any ACPI Error:
 
 ```zsh
 log show --last boot | grep AppleACPIPlatform
@@ -366,14 +366,14 @@ log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d
 
 **Refer Output:** [Log_2022-09-29_14-40-24.log](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/Log_2022-09-29_14-40-24.log)
 
-**Supported Instruction Set:**
+### Supported Instruction Set:
 `sysctl -a | grep machdep.cpu.leaf7_features`
 
 ```zsh
 machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
 ```
 
-**Verify Working SMBUS/SBUS:**
+### Verify Working SMBUS/SBUS:
 `kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"`
 
 ```zsh
@@ -383,14 +383,14 @@ No variant specified, falling back to release
   153    1 0xffffff7f98f82000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) 7ECD5D2C-E62F-3C6D-ACD7-D90B7443024D <152 16 15 7 6 3>
 ```
 
-**Verify Plugin Type 1:**
+### Verify Plugin Type 1:
 `sysctl machdep.xcpm.mode`
 
 ```zsh
 machdep.xcpm.mode: 1
 ```
 
-**4K Video test via Youtube**
+### 4K Video test via Youtube
 
 **Refer Output:** [4k Test](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
 
