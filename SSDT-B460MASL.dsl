@@ -264,13 +264,13 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                                     })
                                 }
 								
-								Return (Package ()
-								{
-									"agdpmod", 
-									"pikera"
-								})
-							}
-						}
+				Return (Package ()
+				{
+				    "agdpmod", 
+				    "pikera"
+				})
+			    }
+			}
 						
                         Device (HDAU)
                         {
@@ -286,14 +286,14 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                                     })
                                 }
 								
-								Return (Package (Zero)
-								{
-								})
-							}
-						}
-                    }
-				}	
+				Return (Package (Zero)
+				{
+				})
+			    }
 			}
+                    }
+		}	
+	    }
 			
             Scope (RP04)
             {
