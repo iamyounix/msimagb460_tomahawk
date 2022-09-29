@@ -422,6 +422,9 @@ No variant specified, falling back to release
 machdep.xcpm.mode: 1
 ```
 
+**4K Video test via Youtube**
+
+**Refer Output:** [4k Test](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
 ---
 
 ## Acknowlegdement
