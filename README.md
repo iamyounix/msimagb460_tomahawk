@@ -102,7 +102,7 @@ Metal Headless                 No
 | SB.PCI0.PEG0.pci-bridge1/0      | Navi 10 XL Downstream Port (Renamed as `EGP1`)                                                             |
 | SB.PCI0.PEG0.pci-bridge1/0.GFX0 | Navi 14 Radeon RX 5500 / 5500M / Pro 5500M                                                                 |
 | SB.PCI0.PEG0.pci-bridge1/0.HDAU | Navi 10 HDMI Audio                                                                                         |
-| SB.PCI0.PPMC                    | Programmable Power Management Controller. Not `compatible` with macOS                                      |
+| SB.PCI0.PPMC                    | Programmable Power Management Controller. `Not compatible` with macOS                                      |
 | SB.PCI0.PMCR                    | Fake Power Management Capabilities Register. Replacing the function of `PPMC`                              |
 | SB.PCI0.RP04.PXSX               | Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet (Renamed as `RTLK`)                                      |
 | SB.PCI0.RP05.PXSX               | VL805/806 xHCI USB 3.0 Controller (Renamed as `XHC2`)                                                      |
@@ -111,7 +111,7 @@ Metal Headless                 No
 | SB.PCI0.RP21.PXSX               | Kingston SA2000M8500G M.2 Slot 1 (Renamed as `ANS1`)                                                       |
 | SB.PCI0.SAT0                    | 400 Series Chipset Family SATA AHCI Controller (Renamed as `SATA`)                                         |
 | SB.PCI0.SBUS                    | Serial Bus                                                                                                 |
-| SB.PCI0.TSUB                    | Thermal Subsystem. Not `compatible` with macOS                                                             |
+| SB.PCI0.TSUB                    | Thermal Subsystem. `Not compatible` with macOS                                                             |
 | SB.PCI0.XHC                     | 300/400 Series PCH-V USB Controller (Renamed as `XHC1`)                                                    |
 | SB.USBX                         | USB Power Management                                                                                       |
 | SB.DTGP                         | Apple / MacOS standard ACPI method that passes through calls to `_DSM` on various device objects           |
