@@ -411,6 +411,13 @@ No variant specified, falling back to release
   153    1 0xffffff7f98f82000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) 7ECD5D2C-E62F-3C6D-ACD7-D90B7443024D <152 16 15 7 6 3>
 ```
 
+**Verify Plugin Type 1:** 
+`sysctl machdep.xcpm.mode`
+
+```zsh
+machdep.xcpm.mode: 1
+```
+
 ---
 
 ## Acknowlegdement
