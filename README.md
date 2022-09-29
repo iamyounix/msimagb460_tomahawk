@@ -121,7 +121,7 @@ Metal Headless                 No
       
 ---
 
-## Rename/Replace/On and Off Method
+## Rename/Replace/On and Off, _STA Method
 
 ```asl
 Scope (ABC)
@@ -151,11 +151,115 @@ Device (ABDC)
 
 **Explanation**
 
-A more secure method to replace the object/device is demonstrated by the script above.
+A more secure method to replace the object / device is demonstrated by the script above.
 
-1. Before making any property changes to the object, `Scope` is needed to manipulate devices i.e; `Scope (ABC)`. Typically indicate to real device namespace in DSDT/SSDT. Then, `Method (_STA, 0, NotSerialized) / STA: Status` is used to tell the machine that the object is accessible. In this case, device ABC is returning properties as `0` `(Zero)` or `false`, indicating that the device's features are deactivated. 
-3. A new name for object is injected `Device (ABDC)` by the address assigned same as DSDT/SSDT i.e; `_ADR, 0x00140000`. Again, `Method (_STA, 0, NotSerialized) / STA: Status` is used to tell the machine that the object is accessible.
-4. `If (_OSI ("Darwin"))` indicates, if the macOS Kernel is loaded, the device is accessible using the new name i.e; `Device (ABDC)`. `Else`, indicates if another OS/kernel is loaded, the inject properties are not accessible. The machine will assume the device continue to function normally as `ABC`.
+<p><div align="justify"></p>
+<ol>
+<li>Before making any property changes to the object, <code>Scope</code> is needed to manipulate devices i.e; <code>Scope (ABC)</code>. Typically indicate to actual device name in DSDTs/SSDTs. Then, <code>Method (_STA, 0, NotSerialized) / STA: Status</code> is used to tell the machine that the object is accessible. In this case, device <code>ABC</code> is returning properties as <code>0</code> <code>(Zero)</code> or <code>false</code>, indicating that the device&#39;s features are deactivated. </li>
+<li>A new name for object is injected <code>Device (ABDC)</code> by the address assigned same as DSDT/SSDT i.e; <code>_ADR, 0x00140000</code>. Again, <code>Method (_STA, 0, NotSerialized) / STA: Status</code> is used to tell the machine that the object is accessible.</li>
+<li><code>If (_OSI (&quot;Darwin&quot;))</code> indicates, if the macOS Kernel is loaded, the device is accessible using the new name i.e; <code>Device (ABDC)</code>. <code>Else</code>, indicates if another OS/kernel is loaded, the inject properties are not accessible. The machine will assume the device continue to function normally as <code>ABC</code> via DSDTs. This method has been applied to certain devices via SSDT for functional Hackintosh via OpenCore / Clover.</div></li>
+</ol>
+
+
+## DTGP Method
+
+```asl
+DefinitionBlock ("", "SSDT", 2, "KGP ", "DTGP", 0x00001000)
+{
+    Method (DTGP, 5, NotSerialized)
+    {
+        If ((Arg0 == ToUUID ("a0b5b7c6-1318-441c-b0c9-fe695eaf949b") /* Unknown UUID */))
+        {
+            If ((Arg1 == One))
+            {
+                If ((Arg2 == Zero))
+                {
+                    Arg3 = Buffer (One)
+                        {
+                             0x03                                             // .
+                        }
+                    Return (One)
+                }
+
+                If ((Arg2 == One))
+                {
+                    Return (One)
+                }
+            }
+        }
+
+        Arg4 = Buffer (One)
+            {
+                 0x00                                             // .
+            }
+        Return (Zero)
+    }
+}
+```
+
+**Explanation**
+
+Inject Custom Parameters
+
+<p><div align="justify"></p>
+<ol>
+<li><p>Nowadays, most users especially from <strong>Dortania Guide</strong> prefer independent SSDTs, each for a specific function. Most SSDTs already have the <code>DTGP</code> method incorporated. For this reason, it is currently not necessary to use <code>DTGP</code> method and information about it is not easily found. </p>
+</li>
+<li><p>Here, <code>DTGP</code> has been used with my sample. Most of the DSDTs that are present on the iMac employ the <code>DTGP</code> approach to inject capabilities and attributes into select devices. It is crucial that this method is simply built into macOS. <code>DTGP</code> method must be present at the DSDT in order to inject custom parameters to some devices. Without this method the modified DSDTs would not work well. Since this method is not available on <code>generic</code> DSDTs, this method was applied using SSDTs. Below is an example.</div></p>
+</li>
+</ol>
+
+
+```asl
+Scope (RPXX)
+{
+    Scope (PXSX)
+    {
+        Method (_STA, 0, NotSerialized)  // _STA: Status
+        {
+            Return (Zero)
+        }
+    }
+
+    Device (ANSX)
+    {
+        Name (_ADR, Zero)  // _ADR: Address
+        Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+        {
+            If ((Arg2 == Zero))
+            {
+                Return (Buffer (One)
+                {
+                    0x03                                             // .
+                })
+            }
+
+            Local0 = Package (0x0A)
+                {
+                    "device_type", 
+                    "NMVe", 
+                    "model", 
+                    "AppleSSDNVMe", 
+                    "name", 
+                    "ANSX", 
+                    "device-id", 
+                    Buffer (0x04)
+                    {
+                        x06, 0xA8, 0x00, 0x00                           // ....
+                    }, 
+
+                    "vendor-id", 
+                    Buffer (0x04)
+                    {
+                        0x4D, 0x14, 0x00, 0x00                           // M...
+                    }
+                }
+            DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
+            Return (Local0)
+        }
+    }
+}
+```
 
 ## Acknowlegdement
 
