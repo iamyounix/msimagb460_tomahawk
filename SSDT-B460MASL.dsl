@@ -263,15 +263,15 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                                          0x03                                             // .
                                     })
                                 }
-								
-				Return (Package ()
-				{
-				    "agdpmod", 
-				    "pikera"
-				})
-			    }
-			}
-						
+
+                                Return (Package (0x02)
+                                {
+                                    "agdpmod", 
+                                    "pikera"
+                                })
+                            }
+                        }
+
                         Device (HDAU)
                         {
                             Name (_ADR, One)  // _ADR: Address
@@ -285,16 +285,21 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                                          0x03                                             // .
                                     })
                                 }
-								
-				Return (Package (Zero)
-				{
-				})
-			    }
-			}
+
+                                Return (Package (0x02)
+                                {
+                                    "layout-id", 
+                                    Buffer (0x04)
+                                    {
+                                         0x01, 0x00, 0x00, 0x00                           // ....
+                                    }
+                                })
+                            }
+                        }
                     }
-		}	
-	    }
-			
+                }
+            }
+
             Scope (RP04)
             {
                 Scope (PXSX)
@@ -373,7 +378,7 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                             })
                         }
 
-                        Return (Package ()
+                        Return (Package (0x0A)
                         {
                             "device_type", 
                             "Non-Volatile memory controller", 
@@ -448,7 +453,7 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                             })
                         }
 
-                        Return (Package ()
+                        Return (Package (0x0A)
                         {
                             "device_type", 
                             "Non-Volatile memory controller", 
