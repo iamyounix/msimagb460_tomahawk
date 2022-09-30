@@ -333,9 +333,13 @@ machdep.xcpm.mode: 1
 
 ---
 
-| **Acknowledgement**                                             | **Contribution**                                   |
-|-----------------------------------------------------------------|----------------------------------------------------|
-| [Acidanthera](https://github.com/acidanthera)                   | Maintaining OpenCorePkg                            |
-| [Dortania](https://dortania.github.io/OpenCore-Install-Guide/)  | Updating OC Guides                                 |
-| [r/Hackintosh](https://www.reddit.com/r/hackintosh/ )           | Great Community                                    |
-| [5T33Z0](https://github.com/5T33Z0)                             | Cross Platform Tools                               |
+## Acknowledgement                                 
+
+[**Acidanthera**](https://github.com/acidanthera)
+- Maintaining OpenCorePkg 
+                          
+[**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/)
+- Updating OC Guides                                
+                            
+[**5T33Z0**](https://github.com/5T33Z0)
+- OC Little Translate                          
