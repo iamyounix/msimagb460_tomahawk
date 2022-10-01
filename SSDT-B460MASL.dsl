@@ -1,3 +1,23 @@
+/*
+ * Intel ACPI Component Architecture
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
+ * 
+ * Disassembling to symbolic ASL+ operators
+ *
+ * Disassembly of iASLVnK38a.aml, Sat Oct  1 09:16:23 2022
+ *
+ * Original Table Header:
+ *     Signature        "SSDT"
+ *     Length           0x00000A4B (2635)
+ *     Revision         0x02
+ *     Checksum         0xB2
+ *     OEM ID           "ASRock"
+ *     OEM Table ID     "P1.20"
+ *     OEM Revision     0x00000001 (1)
+ *     Compiler ID      "INTL"
+ *     Compiler Version 0x20200925 (538970405)
+ */
 DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
 {
     External (_SB_, DeviceObj)
@@ -147,7 +167,14 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
             {
                 Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
-                    Return (Zero)
+                    If (_OSI ("Darwin"))
+                    {
+                        Return (Zero)
+                    }
+                    Else
+                    {
+                        Return (0x0F)
+                    }
                 }
             }
 
@@ -171,7 +198,14 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
             {
                 Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
-                    Return (Zero)
+                    If (_OSI ("Darwin"))
+                    {
+                        Return (Zero)
+                    }
+                    Else
+                    {
+                        Return (0x0F)
+                    }
                 }
             }
 
@@ -195,7 +229,14 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
             {
                 Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
-                    Return (Zero)
+                    If (_OSI ("Darwin"))
+                    {
+                        Return (Zero)
+                    }
+                    Else
+                    {
+                        Return (0x0F)
+                    }
                 }
             }
 
@@ -288,11 +329,8 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
 
                                 Return (Package (0x02)
                                 {
-                                    "layout-id", 
-                                    Buffer (0x04)
-                                    {
-                                         0x01, 0x00, 0x00, 0x00                           // ....
-                                    }
+                                    "driver-version", 
+                                    "10.0.1.24"
                                 })
                             }
                         }
@@ -306,7 +344,14 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                 {
                     Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
-                        Return (Zero)
+                        If (_OSI ("Darwin"))
+                        {
+                            Return (Zero)
+                        }
+                        Else
+                        {
+                            Return (0x0F)
+                        }
                     }
                 }
 
@@ -333,7 +378,14 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                 {
                     Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
-                        Return (Zero)
+                        If (_OSI ("Darwin"))
+                        {
+                            Return (Zero)
+                        }
+                        Else
+                        {
+                            Return (0x0F)
+                        }
                     }
                 }
 
@@ -361,7 +413,14 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                 {
                     Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
-                        Return (Zero)
+                        If (_OSI ("Darwin"))
+                        {
+                            Return (Zero)
+                        }
+                        Else
+                        {
+                            Return (0x0F)
+                        }
                     }
                 }
 
@@ -408,7 +467,14 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                 {
                     Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
-                        Return (Zero)
+                        If (_OSI ("Darwin"))
+                        {
+                            Return (Zero)
+                        }
+                        Else
+                        {
+                            Return (0x0F)
+                        }
                     }
                 }
 
@@ -436,7 +502,14 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                 {
                     Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
-                        Return (Zero)
+                        If (_OSI ("Darwin"))
+                        {
+                            Return (Zero)
+                        }
+                        Else
+                        {
+                            Return (0x0F)
+                        }
                     }
                 }
 
@@ -481,7 +554,14 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
             {
                 Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
-                    Return (Zero)
+                    If (_OSI ("Darwin"))
+                    {
+                        Return (Zero)
+                    }
+                    Else
+                    {
+                        Return (0x0F)
+                    }
                 }
             }
 
@@ -563,7 +643,14 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
             {
                 Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
-                    Return (Zero)
+                    If (_OSI ("Darwin"))
+                    {
+                        Return (Zero)
+                    }
+                    Else
+                    {
+                        Return (0x0F)
+                    }
                 }
             }
 
