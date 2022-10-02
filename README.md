@@ -293,7 +293,7 @@ w/ log:
 log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d_%H-%M-%S')".log
 ```
 
-- **My Log:** [ASRock B460M Stell Legend ACPI Log](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/ACPI%20Debug.log)
+> **My Log:** [ASRock B460M Stell Legend ACPI Log](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/ACPI%20Debug.log)
 
 ### Supported Instruction Set:
 
@@ -327,7 +327,7 @@ machdep.xcpm.mode: 1
 
 ### 4K Video test via Youtube
 
-- **My test:** [4k Test](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
+> **My test:** [4k Test](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
 
 ---
 
@@ -341,13 +341,13 @@ machdep.xcpm.mode: 1
 ## Acknowledgement                                 
 
 [**Acidanthera**](https://github.com/acidanthera)
-> Maintaining OpenCorePkg 
+> for **Maintaining OpenCorePkg** 
                           
 [**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/)
-> Updating OC Guides 
+> for **Updating OC Guides**
 
 [**dreamwhite**](https://github.com/dreamwhite/OC-Anonymizer)
-> OC-Anonymizer                                                
+> for **OC-Anonymizer**                                                
 
 [**5T33Z0**](https://github.com/5T33Z0)
-> OC Little Translate 
+> for **OC Little Translate** 
