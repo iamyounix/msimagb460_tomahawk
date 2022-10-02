@@ -316,7 +316,7 @@ machdep.xcpm.mode: 1
 #### References
 
 [**AppleLife**](https://applelife.ru/)
-> @ [Dumps of system information of Apple computers](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
+> @ [**Dumps of system information of Apple computers**](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
 
 ---
 
