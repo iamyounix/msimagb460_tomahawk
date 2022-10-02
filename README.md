@@ -64,7 +64,7 @@ Metal Headless                 No
 
 ### Attached
 
-```zsh
+```asl
 EFI.
 ├───BOOT
 └───OC
@@ -331,12 +331,13 @@ machdep.xcpm.mode: 1
 
 - **My test:** [4k Test](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
 
-
 ---
 
 ## References
 
 [**Real Macs Stuffs**](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/) - Dont ask! (Please use it as educational purpose)
+
+---
 
 ## Acknowledgement                                 
 
