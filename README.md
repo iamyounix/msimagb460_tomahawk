@@ -62,6 +62,32 @@ Metal Low Power                No
 Metal Headless                 No
 ```
 
+### Attached
+
+```zsh
+EFI.
+├───BOOT
+└───OC
+    ├───ACPI
+    ├───Drivers
+    ├───Kexts
+    │   ├───AppleALC.kext
+    │   ├───Lilu.kext
+    │   ├───LucyRTL8125Ethernet.kext
+    │   ├───RadeonSensor.kext
+    │   ├───SMCProcessor.kext
+    │   ├───SMCRadeonGPU.kext
+    │   ├───SMCSuperIO.kext
+    │   ├───USBMap.kext
+    │   ├───VirtualSMC.kext
+    │   └───WhateverGreen.kext
+    ├───Resources
+    ├───Tools
+    ├───config.plist //SMBIOS, Board-ID, Serial & etc has been censored
+    └───OpenCore.efi
+```
+> config.plist is censored by [OC-Anonymizer](https://github.com/dreamwhite/OC-Anonymizer))
+
 ### PCI Device
 
 #### Instruction
@@ -342,5 +368,8 @@ machdep.xcpm.mode: 1
 [**5T33Z0**](https://github.com/5T33Z0)
 - OC Little Translate 
 
-[**References**](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
-- Dont Ask!
+[**dreamwhite**](https://github.com/dreamwhite/OC-Anonymizer)
+- OC-Anonymizer
+
+[**Real Macs DSDTs/SSDTs, IOreg, etc**](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
+- Dont ask! (Please use it as educational purpose)
