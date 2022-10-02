@@ -284,16 +284,11 @@ Empty
 
 ### Lists any ACPI Error:
 
-w/o log:
-```zsh
-log show --last boot | grep AppleACPIPlatform
-```
-w/ log:
 ```zsh
 log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d_%H-%M-%S')".log
 ```
 
-> **My Log:** [ASRock B460M Stell Legend ACPI Log](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/ACPI%20Debug.log)
+> via [**ASRock B460M Stell Legend ACPI Log**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/ACPI%20Debug.log)
 
 ### Supported Instruction Set:
 
@@ -325,16 +320,16 @@ sysctl machdep.xcpm.mode
 machdep.xcpm.mode: 1
 ```
 
-### 4K Video test via Youtube
+### 4K Test (Online)
 
-> **My test:** [4k Test](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
+> via [**Youtube**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
 
 ---
 
 ## References
 
 [**AppleLife**](https://applelife.ru/)
-> [Dumps of system information of Apple computers](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
+> at [Dumps of system information of Apple computers](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
 
 ---
 
