@@ -64,7 +64,7 @@ Metal Low Power                No
 Metal Headless                 No
 ```
 
-### Attached
+### Structure
 
 ```asl
 EFI.
@@ -88,9 +88,6 @@ EFI.
     ├───config.plist //SMBIOS, Board-ID, Serial & etc has been censored via OC-Anonymizer
     └───OpenCore.efi
 ``` 
-
-### PCI Device
-
 #### Instruction
 - [x] Working
 - [ ] Not Working
@@ -149,12 +146,24 @@ EFI.
 
 > **Note:** Start from **macOS 12.3**, [SSDT-PLUG.aml](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) or [plugin-type=1](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) is not required. The [x86PlatformPlugin](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html) is enabled by default on Skylake and Comet Lake. **Refer** original [thread](https://www.insanelymac.com/forum/topic/351675-macos-12-monterey-x86platformplugin-without-plugin-type1/), [Dortania/Bugtracker Issue #2013](https://github.com/acidanthera/bugtracker/issues/2013) and [Dortania/Bugtracker Issue #269](https://github.com/dortania/bugtracker/issues/269).
 
+#### Generate Device Path on Windows
+
+**Tools**
+- [DevicePath](https://github.com/corpnewt/DevicePath)
+
+<div align="center"><p><img width="1000" src="https://user-images.githubusercontent.com/72515939/193466146-d507465b-4bb3-4e43-9ae7-72d12fddc3e3.png" alt="2022-09-29_15-54-05"></p></div>
+<div align="center"><p><img width="500" src="https://user-images.githubusercontent.com/72515939/193466297-130fdd50-498b-434b-b84f-e93575d6295f.png" alt="2022-09-29_15-54-05"></p></div>
+<div align="center"><p><img width="800" src="https://user-images.githubusercontent.com/72515939/193466560-36d30f37-2af4-422c-ba6c-619c1a2d62e0.png"></p></div>
+<div align="center"><p><img width="800" src="https://user-images.githubusercontent.com/72515939/193466988-82b55026-cf2c-4533-b27a-b31af1c8d18a.png"></p></div>
+<div align="center"><p><img width="500" src="https://user-images.githubusercontent.com/72515939/193467002-78d86b00-c7d5-413a-8e1e-3e7fd879cad1.png"></p></div>
+<div align="center"><p><img width="800" src="https://user-images.githubusercontent.com/72515939/193467020-103b4fc5-0088-4c79-8284-c319db0a421c.png"></p></div>
+
 ---
+
 
 ## Test My Hack
 
 ### Build Number:
-
 
 ```zsh
 sw_vers
@@ -336,5 +345,6 @@ machdep.xcpm.mode: 1
 
 * [**Acidanthera**](https://github.com/acidanthera) for [**OpenCorePkg**](https://github.com/acidanthera/OpenCorePkg) 
 * [**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/) for [**OC Guides**](https://dortania.github.io/OpenCore-Install-Guide/)
+* [**corpnewt**](https://github.com/corpnewt) for [DevicePath](https://github.com/corpnewt/DevicePath)
 * [**dreamwhite**](https://github.com/dreamwhite) for [**OC-Anonymizer**](https://github.com/dreamwhite/OC-Anonymizer)                                             
 * [**5T33Z0**](https://github.com/5T33Z0) for [**OC Little Translate**](https://github.com/5T33Z0/OC-Little-Translated) 
