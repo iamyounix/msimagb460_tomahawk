@@ -333,8 +333,8 @@ machdep.xcpm.mode: 1
 
 ## References
 
-[**Real Macs Stuffs**](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
-> Dont ask! (Please use it as educational purpose)
+[**AppleLife**](https://applelife.ru/)
+> [Dumps of system information of Apple computers](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
 
 ---
 
