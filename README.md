@@ -158,11 +158,10 @@ EFI.
 
 ### Build Number:
 
--   Input
+
 ```zsh
 sw_vers
 ```
--   Output
 ```zsh
 ProductName:	macOS
 ProductVersion:	12.6
@@ -171,22 +170,19 @@ BuildVersion:	21G115
 
 ### Kernel Version:
 
--   Input
+
 ```zsh
  uname -r
 ```
--   Output
  ```zsh
 21.6.0
 ```
 
 ### Bus and Frequency:
 
--   Input
 ```zsh
 sysctl -a | grep freq
 ```
--   Output
 ```zsh
 hw.busfrequency: 400000000
 hw.busfrequency_min: 400000000
@@ -200,46 +196,38 @@ machdep.tsc.frequency: 2903999153
 
 ### CPU Vendor:
 
--   Input
 ```zsh
 sysctl -a | grep machdep.cpu.vendor
 ```
--   Output
 ```zsh
 machdep.cpu.vendor: GenuineIntel
 ```
 
 ### CPU Brand String:
 
--   Input
 ```zsh
 sysctl machdep.cpu.brand_string
-```
--   Output     
+``` 
 ```zsh
 machdep.cpu.brand_string: Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
 ```
 
 ### CPU Features:
 
--   Input 
 ```zsh
 sysctl -a | grep machdep.cpu.features
 ```
--   Output 
 ```zsh
 machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
 ```
 
 ### CPU Full Features:
 
--   Input   
 ```zsh
 sysctl -a | grep machdep.cpu.features
 sysctl -a | grep machdep.cpu.leaf7_features
 sysctl machdep.cpu | grep AVX
 ```
--   Output
 ```zsh
 machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
 machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
@@ -249,11 +237,9 @@ machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 E
 
 ### CPU Details:
 
--   Input
 ```zsh
 ioreg -rxn "PR00@0"
 ```
--   Output
 ```zsh
 +-o PR00@0  <class IOACPIPlatformDevice, id 0x10000013c, registered, matched, a$
   | {
@@ -281,57 +267,50 @@ ioreg -rxn "PR00@0"
 ```
 
 ### Check System Integrity Protection:
--   Input
+
 ```zsh
 csrutil status
 ```
--   Output
 ```zsh
 System Integrity Protection status: enabled.
 ```
 
 ### Find Wake Issue:
 
--   Input
 ```zsh
 pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 ```
--   Output
 ```zsh
 Empty
 ```
 
 ### Lists any ACPI Error:
 
--   Input (w/o log)
+w/o log:
 ```zsh
 log show --last boot | grep AppleACPIPlatform
 ```
--   Input (w/ log)
+w/ log:
 ```zsh
 log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d_%H-%M-%S')".log
 ```
 
-- **Refer Output:** [ASRock B460M Stell Legend ACPI Log](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/ACPI%20Debug.log)
+- **My Log:** [ASRock B460M Stell Legend ACPI Log](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/ACPI%20Debug.log)
 
 ### Supported Instruction Set:
 
--   Input
 ```zsh
 sysctl -a | grep machdep.cpu.leaf7_features
 ```
--   Output
 ```zsh
 machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
 ```
 
 ### Verify Working SMBUS/SBUS:
 
--   Input
 ```zsh
 kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"
 ```
--   Output
 ```zsh
 Executing: /usr/bin/kmutil showloaded
 No variant specified, falling back to release
@@ -341,37 +320,30 @@ No variant specified, falling back to release
 
 ### Verify Plugin Type 1:
 
--   Input
 ```zsh
-sysctl machdep.xcpm.mode`
+sysctl machdep.xcpm.mode
 ```
--   Output
 ```zsh
 machdep.xcpm.mode: 1
 ```
 
 ### 4K Video test via Youtube
 
-- **Refer Output:** [4k Test](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
+- **My test:** [4k Test](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
 
 
 ---
 
 ## References
 
-[**Real Macs Stuffs**](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
-- Dont ask! (Please use it as educational purpose)
+[**Real Macs Stuffs**](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/) - Dont ask! (Please use it as educational purpose)
 
 ## Acknowledgement                                 
 
-[**Acidanthera**](https://github.com/acidanthera)
-- Maintaining OpenCorePkg 
+[**Acidanthera**](https://github.com/acidanthera) - Maintaining OpenCorePkg 
                           
-[**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/)
-- Updating OC Guides 
+[**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/) - Updating OC Guides 
 
-[**dreamwhite**](https://github.com/dreamwhite/OC-Anonymizer)
-- OC-Anonymizer                                                
+[**dreamwhite**](https://github.com/dreamwhite/OC-Anonymizer) - OC-Anonymizer                                                
 
-[**5T33Z0**](https://github.com/5T33Z0)
-- OC Little Translate 
+[**5T33Z0**](https://github.com/5T33Z0) - OC Little Translate 
