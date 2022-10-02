@@ -113,7 +113,7 @@ EFI.
 - [x] Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet
 - [x] BCM94360CD 802.11ac Wireless Network Adapter
 
-**Patched Device**
+**Patched Devices**
 
 | **Device**                      | **Details**                                                                                                |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------- |
