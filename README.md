@@ -7,7 +7,9 @@ Hackintosh: 10th Gen Comet Lake with B460M Steel Legend Configuration
 <div align="center"><p><img width="1000" src="https://user-images.githubusercontent.com/72515939/192975564-4f14fa9c-1f93-4aa2-93ea-d1d16287f608.png" alt="2022-09-29_15-54-05"></p></div>
 
 
-<div align="justify"><p><strong>Reminders:</strong> - <b>"It&#39;s merely cosmetic"</b>, according to some. For me, this content is not just for show. You may see how <strong>ACPI</strong> impacts the operating system. Incorrect device renaming through <strong>SSDTs</strong> will results the operating system getting stuck on the Apple Boot. I am strongly advised to not to modify your <strong>DSDTs</strong>. <strong>DSDT&#39;s</strong> (Primary Table) modification method will results more difficulties to your machine and harm your BIOS directly. I recommend <strong>SSDTs</strong> (Secondary Table) modifications, since this way are more <strong>dynamic</strong> and <strong>safe</strong>. Device renaming is not necessary for recognised and functional devices unless the devices are not identified or displayed via IOreg or require extra tweaks, especially if your computer contains multiple bootable OSes. Some sections from provided <strong>config.plist</strong> have been censored. I&#39;m not interested to share my personal config.plist (EFI), and not meant to be used by other people or systems. If you&#39;re still interested in utilising it, please be <strong>careful</strong> to adjust the <strong>SSDTs</strong> and <strong>plist</strong> according to your system. </p></div>
+<div align="justify">
+  <p><strong>Reminders:</strong> - <strong>"It's merely cosmetic"</strong>, according to some. For me, this content is not just for show. <code>Configuration?</code>. You can play with <strong>config.plist</strong> and experiment with it. But heed the warning—if the file is not saved properly, it may get corrupted. This issue sometimes happen due to; <strong>restart before saving</strong> , &nbsp;<strong>erroneously input something non-format needed</strong>. I'm not interested to share my personal <strong>EFI</strong>, and not meant to be used by other people or systems. If you're still interested in utilising it, please be <strong>careful</strong> to adjust the <strong>plist configuration</strong> and <strong>SSDTs</strong> according to your system. <code>ACPI?</code>. You may see how <strong>ACPI</strong> impacts the operating system. Incorrect device renaming through <strong>SSDTs</strong> will results the operating system getting stuck on the Apple Boot. I am strongly advised to not to modify your <strong>DSDTs</strong>. <strong>DSDT's</strong> (Primary Table) modification method will results more difficulties to your machine and harm your BIOS directly. I recommend <strong>SSDTs</strong> (Secondary Table) modifications, since this way are more <strong>dynamic</strong> and <strong>safe</strong>. Device renaming is not necessary for recognised and functional devices unless the devices are not identified or displayed via IOreg or require extra tweaks, especially if your computer contains multiple bootable OSes.</p>
+</div>
 
 
 ### System Info
@@ -337,10 +339,14 @@ machdep.xcpm.mode: 1
 
 ## Acknowledgement                                 
 
-[**Acidanthera**](https://github.com/acidanthera) - Maintaining OpenCorePkg 
+[**Acidanthera**](https://github.com/acidanthera)
+>   Maintaining OpenCorePkg 
                           
-[**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/) - Updating OC Guides 
+[**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/)
+>   Updating OC Guides 
 
-[**dreamwhite**](https://github.com/dreamwhite/OC-Anonymizer) - OC-Anonymizer                                                
+[**dreamwhite**](https://github.com/dreamwhite/OC-Anonymizer)
+>   OC-Anonymizer                                                
 
-[**5T33Z0**](https://github.com/5T33Z0) - OC Little Translate 
+[**5T33Z0**](https://github.com/5T33Z0)
+>   OC Little Translate 
