@@ -14,7 +14,7 @@ Hackintosh: 10th Gen Comet Lake with B460M Steel Legend Configuration
 ### OpenCore
 What we refer to as a "boot loader" – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as SMBIOS, ACPI tables and kexts. - [**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/)
 
-#### EFI Structure
+### EFI Structure
 
 ```asl
 EFI.
