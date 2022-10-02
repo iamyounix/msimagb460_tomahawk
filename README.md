@@ -357,6 +357,11 @@ machdep.xcpm.mode: 1
 
 ---
 
+## References
+
+[**Real Macs Stuffs**](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
+- Dont ask! (Please use it as educational purpose)
+
 ## Acknowledgement                                 
 
 [**Acidanthera**](https://github.com/acidanthera)
@@ -366,10 +371,7 @@ machdep.xcpm.mode: 1
 - Updating OC Guides 
 
 [**dreamwhite**](https://github.com/dreamwhite/OC-Anonymizer)
-- OC-Anonymizer                                                 
-
-[**Real Macs DSDTs/SSDTs, IOreg, etc**](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
-- Dont ask! (Please use it as educational purpose)
+- OC-Anonymizer                                                
 
 [**5T33Z0**](https://github.com/5T33Z0)
 - OC Little Translate 
