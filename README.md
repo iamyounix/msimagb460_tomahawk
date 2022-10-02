@@ -286,7 +286,7 @@ log show --last boot | grep AppleACPIPlatform
 log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d_%H-%M-%S')".log
 ```
 
-- **Refer Output:** [https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/ASRockB460%20ACPI%20Debug.log)
+- **Refer Output:** {ASRock B460M Stell Legend ACPI Log][https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/ASRockB460%20ACPI%20Debug.log)
 
 ### Supported Instruction Set:
 
