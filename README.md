@@ -344,4 +344,7 @@ machdep.xcpm.mode: 1
 - Updating OC Guides                                
                             
 [**5T33Z0**](https://github.com/5T33Z0)
-- OC Little Translate                          
+- OC Little Translate 
+
+[**References**](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
+- Dont Ask!
