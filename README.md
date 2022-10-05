@@ -309,6 +309,8 @@ machdep.xcpm.mode: 1
 
 > @ [**Youtube**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
 
+<div align="center"><p><img width="1000" src="https://user-images.githubusercontent.com/72515939/194093199-494f2d2e-251b-454e-85cb-795596f6b59e.png" alt="2022-09-29_15-54-05"></p></div>
+
 ---
 
 #### References
