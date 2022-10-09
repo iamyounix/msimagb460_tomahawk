@@ -21,7 +21,11 @@ EFI.
 ├───BOOT
 └───OC
     ├───ACPI
+    │   └───Readme.md
     ├───Drivers
+    │   ├───HfsPlus.efi
+    │   ├───OpenCanopy.efi
+    │   └───OpenRuntime.efi
     ├───Kexts
     │   ├───AppleALC.kext
     │   ├───Lilu.kext
@@ -35,6 +39,7 @@ EFI.
     │   └───WhateverGreen.kext
     ├───Resources
     ├───Tools
+    │   └───CleanNvram.efi    
     ├───config.plist //SMBIOS, Board-ID, Serial & etc has been censored via OC-Anonymizer
     └───OpenCore.efi
 ``` 
