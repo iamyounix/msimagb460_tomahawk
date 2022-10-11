@@ -146,7 +146,7 @@ Metal Headless                 No
 
 **SSDT:**
   - [SSDT-ALL (DSM)](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-ALL_DTGP.dsl)
-  - [SSDT-ALL (DTGP)](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-ALL_DTGP.dsl)
+  - [SSDT-ALL (DTGP)](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-ALL_DTGP.dsl) - Recommended
 
 <div align="center"><p><img width="1000" src="https://user-images.githubusercontent.com/72515939/194734116-07bd5cbe-531d-4107-8acb-8d97257826e6.png" alt="2022-09-29_15-54-05"></p></div>
 
