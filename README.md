@@ -320,12 +320,21 @@ machdep.xcpm.mode: 1
 
 > @ [**Youtube**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
 
-<div align="center"><p><img width="1000" src="https://user-images.githubusercontent.com/72515939/194094498-b5ad23ad-9691-4985-ae9d-f882c528d914.png" alt="2022-09-29_15-54-05"></p></div>
-<div align="center"><p><img width="1000" src="https://user-images.githubusercontent.com/72515939/194094518-4b5407c8-dbb2-4778-8a53-cf0a710be055.png" alt="2022-09-29_15-54-05"></p></div>
-<div align="center"><p><img width="1000" src="https://user-images.githubusercontent.com/72515939/194094551-df5b9495-5f54-43ec-b24a-0ab4dd45ca7d.png" alt="2022-09-29_15-54-05"></p></div>
-<div align="center"><p><img width="1000" src="https://user-images.githubusercontent.com/72515939/194094529-b45b7222-3d39-4f1e-9b58-9294ba31a9fa.png" alt="2022-09-29_15-54-05"></p></div>
-<div align="center"><p><img width="1000" src="https://user-images.githubusercontent.com/72515939/194094562-3326f4a0-8a38-4fc1-a5d5-8ffea7878129.png" alt="2022-09-29_15-54-05"></p></div>
-<div align="center"><p><img width="1000" src="https://user-images.githubusercontent.com/72515939/194094585-a9237734-9d0c-4a96-98e1-d9337d8b3a3e.png" alt="2022-09-29_15-54-05"></p></div>
+<div align="center"><p>
+<img width="853" alt="2022-10-11_13-41-36" src="https://user-images.githubusercontent.com/72515939/195006616-9211eedd-8b25-408d-bdd5-00c4275b6790.png">
+<img width="853" alt="2022-10-11_13-41-46" src="https://user-images.githubusercontent.com/72515939/195006805-6faa0f98-cf32-497a-92c7-2825e00591f3.png">
+<img width="853" alt="2022-10-11_13-41-53" src="https://user-images.githubusercontent.com/72515939/195006810-e973a6f2-ce34-40ae-81cf-938f7fb54619.png">
+<img width="853" alt="2022-10-11_13-41-58" src="https://user-images.githubusercontent.com/72515939/195006820-dee08d3f-9121-45d0-8291-ab0ced44bed6.png">
+<img width="853" alt="2022-10-11_13-42-09" src="https://user-images.githubusercontent.com/72515939/195006829-7ecc5b08-13c4-4e77-96fd-16d0aaf4b54b.png">
+<img width="853" alt="2022-10-11_13-42-20" src="https://user-images.githubusercontent.com/72515939/195006836-3daeb07c-90c3-4cd6-a24d-625ca9dc293a.png">
+<img width="853" alt="2022-10-11_13-42-26" src="https://user-images.githubusercontent.com/72515939/195006843-64e6ec96-cb17-4363-a64d-94f764e19e70.png">
+<img width="853" alt="2022-10-11_13-42-32" src="https://user-images.githubusercontent.com/72515939/195006848-5694d404-1ba3-44ed-a6ae-4d8038f2e20b.png">
+<img width="853" alt="2022-10-11_13-42-38" src="https://user-images.githubusercontent.com/72515939/195006854-28ebae7b-3cf7-4537-bd59-1b0678574d7b.png">
+<img width="853" alt="2022-10-11_13-42-58" src="https://user-images.githubusercontent.com/72515939/195006858-1f3bf77e-9b69-4c24-ba05-0e0ea940d08c.png">
+<img width="853" alt="2022-10-11_13-43-07" src="https://user-images.githubusercontent.com/72515939/195006862-e91a5b6b-438a-4eb4-9d71-6e75d4e3305a.png">
+<img width="855" alt="2022-10-11_13-43-18" src="https://user-images.githubusercontent.com/72515939/195006886-85dc122e-a60b-43c8-b322-d66985b1dadd.png">
+<img width="853" alt="2022-10-11_13-43-30" src="https://user-images.githubusercontent.com/72515939/195006903-e8aec29a-6572-4b5e-adda-044720309e87.png">
+</p></div>
 
 ---
 
