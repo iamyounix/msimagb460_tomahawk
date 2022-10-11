@@ -318,9 +318,12 @@ machdep.xcpm.mode: 1
 
 #### 4K Test (Online)
 
+<div align="center"><p>
+  
 [![AppleTV](https://yt-embed.herokuapp.com/embed?v=Yl4cs7Xzuu4)](https://youtu.be/Yl4cs7Xzuu4 "AppleTV Test")
-
 [![Youtube4K](https://yt-embed.herokuapp.com/embed?v=uV4JGZE8Jrk)](https://youtu.be/uV4JGZE8Jrk "Youtube4K")
+  
+</p></div>
 
 <div align="center"><p>
 <img width="853" alt="2022-10-11_13-41-36" src="https://user-images.githubusercontent.com/72515939/195006616-9211eedd-8b25-408d-bdd5-00c4275b6790.png">
