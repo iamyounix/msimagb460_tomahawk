@@ -318,7 +318,8 @@ machdep.xcpm.mode: 1
 
 #### 4K Test (Online)
 
-> @ [**Youtube**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/4k%20test.gif)
+- [**AppleTV**](https://youtu.be/Yl4cs7Xzuu4)
+- [**Youtube**](https://youtu.be/uV4JGZE8Jrk)
 
 <div align="center"><p>
 <img width="853" alt="2022-10-11_13-41-36" src="https://user-images.githubusercontent.com/72515939/195006616-9211eedd-8b25-408d-bdd5-00c4275b6790.png">
