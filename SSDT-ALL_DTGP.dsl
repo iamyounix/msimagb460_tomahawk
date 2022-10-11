@@ -721,7 +721,7 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
             {
                 If ((Arg2 == Zero))
                 {
-                    Arg3 = Buffer (One)
+                    Arg4 = Buffer (One)
                         {
                              0x03                                             // .
                         }
