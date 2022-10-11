@@ -1,4 +1,4 @@
-DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
+DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000003)
 {
     External (_SB_, DeviceObj)
     External (_SB_.PCI0, DeviceObj)
