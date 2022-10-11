@@ -1,23 +1,3 @@
-/*
- * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20200925 (64-bit version)
- * Copyright (c) 2000 - 2020 Intel Corporation
- * 
- * Disassembling to symbolic ASL+ operators
- *
- * Disassembly of iASL7S3HiQ.aml, Sun Oct  9 09:45:14 2022
- *
- * Original Table Header:
- *     Signature        "SSDT"
- *     Length           0x00000B07 (2823)
- *     Revision         0x02
- *     Checksum         0x01
- *     OEM ID           "ASRock"
- *     OEM Table ID     "P1.20"
- *     OEM Revision     0x00000001 (1)
- *     Compiler ID      "INTL"
- *     Compiler Version 0x20200925 (538970405)
- */
 DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
 {
     External (_SB_, DeviceObj)
