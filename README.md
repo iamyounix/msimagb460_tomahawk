@@ -144,6 +144,8 @@ Metal Headless                 No
 | SB.USBX                         | USB Power Management                                                                                         |
 | SB.STAS                         | `_STA` method, to enable such status changes to be communicated to the operating system.                     |
 
+<img width="1549" alt="SSDT-ALL (DTGP)" src="https://user-images.githubusercontent.com/72515939/195301045-4e05ed80-e035-4feb-9390-8416cf4fd8b6.png">
+
 **SSDT:**
   - [**SSDT-ALL (DSM)**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-ALL_DTGP.dsl)
   - [**SSDT-ALL (DTGP)**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-ALL_DTGP.dsl) - Recommended
