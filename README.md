@@ -1,6 +1,5 @@
 # ASRock B460M Steel Legend
-
-Hackintosh: 10th Gen Comet Lake with B460M Steel Legend Configuration
+**Hackintosh: 10th Gen Intel Comet Lake with B460M Steel Legend with OpenCore Configuration**
 
 <div align="center"><p><img width="1000" src="https://user-images.githubusercontent.com/72515939/192975564-4f14fa9c-1f93-4aa2-93ea-d1d16287f608.png" alt="2022-09-29_15-54-05"></p></div>
 
@@ -8,7 +7,7 @@ Hackintosh: 10th Gen Comet Lake with B460M Steel Legend Configuration
   <p><strong>Reminders:</strong> - <strong>"It's merely cosmetic"</strong>, according to some. For me, this content is not just for show. <code>Configuration?</code>. You can play with <strong>config.plist</strong> and experiment with it. But heed the warning—if the file is not saved properly, it may get corrupted. This issue sometimes happen due to; <strong>restart before saving</strong> , &nbsp;<strong>erroneously input something non-format needed</strong>. I'm not interested to share my personal <strong>EFI</strong>, and not meant to be used by other people or systems. If you're still interested in utilising it, please be <strong>careful</strong> to adjust the <strong>plist configuration</strong> and <strong>SSDTs</strong> according to your system. <code>ACPI?</code>. You may see how <strong>ACPI</strong> impacts the operating system. Incorrect device renaming through <strong>SSDTs</strong> will results the operating system getting stuck. My advise is not to modify your <strong>DSDTs</strong>. <strong>DSDT's</strong> (Primary Table) modification method will results more difficulties to your machine and harm your BIOS directly. I recommend <strong>SSDTs</strong> (Secondary Table) modifications, since this way are more <strong>dynamic</strong> and <strong>safe</strong>. Device renaming is not necessary for recognised and functional devices unless the devices are not identified or displayed via IOreg or require extra tweaks, especially if your computer contains multiple bootable OSes.</p>
 </div>
 
-**Reminder:** **[Installer Guide**](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/), is the most important part. There is an option to create a USB installation using a different OS. Do note, **Windows** and **Linux** methods using the **com.apple.recovery.boot** require online installation. Make sure your **LAN** is working. If not, make sure you have:
+**Reminder:** **[Installer Guide**](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/), is the most important part. There is an option to create a USB installation using a different OS. Do note, **Windows** and **Linux** methods using the **com.apple.recovery.boot** require online installation. Make sure your **Ethernet** is working. If not, make sure you have:
 
 * **Native WiFi** card, or
 * Various **WiFi card** / **Dongle** with** proper kext**, or
@@ -24,7 +23,7 @@ What we refer to as a **"boot loader"** – it is a complex piece of software th
 	- BOOT
 	- OC
 		- ACPI
-		- SSDT-ALL.aml (Not Include)
+		- SSDT-ALL.aml
 		- Drivers
 			- HfsPlus.efi
 			- OpenCanopy.efi
