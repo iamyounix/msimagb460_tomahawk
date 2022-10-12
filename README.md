@@ -9,31 +9,33 @@
 
 ### EFI Structure
 
-- EFI
-	- BOOT
-	- OC
-		- ACPI
-		- SSDT-ALL.aml
-		- Drivers
-			- HfsPlus.efi
-			- OpenCanopy.efi
-			- OpenRuntime.efi
-		- Kexts
-		- AppleALC.kext 
-		- Lilu.kext 
-		- LucyRTL8125Ethernet.kext 
-		- RadeonSensor.kext
-		- SMCProcessor.kext
-		- SMCRadeonGPU.kext
-		- SMCSuperIO.kext
-		- USBMap.kext 
-		- VirtualSMC.kext
-		- WhateverGreen.kext 
-		- Resources
-		- Tools
-			- CleanNvram.efi
-		- config.plist
-		- OpenCore.efi
+```zsh
+EFI/
+├── BOOT
+└── OC/
+    ├── ACPI/
+    │   └── SSDT-ALL.aml
+    ├── Drivers/
+    │   ├── HfsPlus.efi
+    │   ├── OpenCanopy.efi
+    │   └── OpenRuntime.efi
+    ├── Kexts/
+    │   ├── AppleALC.kext
+    │   ├── Lilu.kext
+    │   ├── LucyRTL8125Ethernet.kext
+    │   ├── RadeonSensor.kext
+    │   ├── SMCProcessor.kext
+    │   ├── SMCRadeonGPU.kext
+    │   ├── SMCSuperIO.kext
+    │   ├── USBMap.kext
+    │   ├── VirtualSMC.kext
+    │   ├── WhateverGreen.kext
+    │   └── Resources
+    ├── Tools/
+    │   └── CleanNvram.efi
+    ├── config.plist
+    └── OpenCore.efi
+```
 
 ### Basic Info
 
