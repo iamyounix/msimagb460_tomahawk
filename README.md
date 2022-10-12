@@ -10,7 +10,7 @@
 **Reminder:** **[Installer Guide**](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/), is the most important part. There is an option to create a USB installation using a different OS. Do note, **Windows** and **Linux** methods using the **com.apple.recovery.boot** require online installation. Make sure your **Ethernet** is working. If not, make sure you have:
 
 * **Native WiFi** card, or
-* Various **WiFi card** / **Dongle** with** proper kext**, or
+* Various **WiFi card** / **Dongle** with **proper kext**, or
 * [**HoRNDIS USB Tether**](https://drive.google.com/file/d/1oBKn5JwKisGOaADY5dE85-coVNqXrkFx/view?usp=sharing), or
 * Using supported [**MakeInstallmacOS**](https://github.com/theofficialcopypaste/MakeInstallmacOS) macOS version to create **Full Installation USB** (Applicable until **mid-Catalina** version, recommend **10.15.X**)
 
