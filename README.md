@@ -10,17 +10,17 @@
 ### EFI Structure
 
 ```zsh
-EFI/
-├── BOOT/
+EFI
+├── BOOT
 │       └── BOOTx64.efi
-└── OC/
-    ├── ACPI/
+└── OC
+    ├── ACPI
     │   └── SSDT-ALL.aml
-    ├── Drivers/
+    ├── Drivers
     │   ├── HfsPlus.efi
     │   ├── OpenCanopy.efi
     │   └── OpenRuntime.efi
-    ├── Kexts/
+    ├── Kexts
     │   ├── AppleALC.kext
     │   ├── Lilu.kext
     │   ├── LucyRTL8125Ethernet.kext
@@ -31,8 +31,8 @@ EFI/
     │   ├── USBMap.kext
     │   ├── VirtualSMC.kext
     │   ├── WhateverGreen.kext
-    ├── Resources /
-    ├── Tools/
+    ├── Resources
+    ├── Tools
     │   └── CleanNvram.efi
     ├── config.plist
     └── OpenCore.efi
