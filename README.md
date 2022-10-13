@@ -12,7 +12,7 @@
 ```zsh
 EFI/
 ├── BOOT/
-│   └── BOOTx64.efi
+│       └── BOOTx64.efi
 └── OC/
     ├── ACPI/
     │   └── SSDT-ALL.aml
