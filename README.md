@@ -60,6 +60,7 @@ OS Installed                   macOS, Windows
 ```
 
 ### Graphics
+
 #### IGPU - Integrated Graphics
 
 ```zsh
