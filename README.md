@@ -11,7 +11,8 @@
 
 ```zsh
 EFI/
-├── BOOT
+├── BOOT/
+│   └── BOOTx64.efi
 └── OC/
     ├── ACPI/
     │   └── SSDT-ALL.aml
@@ -30,7 +31,7 @@ EFI/
     │   ├── USBMap.kext
     │   ├── VirtualSMC.kext
     │   ├── WhateverGreen.kext
-    │   └── Resources
+    ├── Resources /
     ├── Tools/
     │   └── CleanNvram.efi
     ├── config.plist
