@@ -1,7 +1,7 @@
 # ASRock B460M Steel Legend
 **Hackintosh: 10th Gen Intel Comet Lake with B460M Steel Legend with OpenCore Configuration**
 
-<div align="center"><p><img width="700" src="https://user-images.githubusercontent.com/72515939/195469423-81725333-cfcc-4ced-be91-18299ad07076.png" alt="2022-09-29_15-54-05"></p></div>
+<div align="center"><p><img width="680" src="https://user-images.githubusercontent.com/72515939/195469423-81725333-cfcc-4ced-be91-18299ad07076.png" alt="2022-09-29_15-54-05"></p></div>
 
 <div align="justify">
   <p><strong>My word:</strong> - <strong>"It's merely cosmetic"</strong>, according to some. For me, this content is not just for show. <strong>Configuration?</strong>, You can play with <strong>config.plist</strong> and experiment with it. But heed the warning—if the file is not saved properly, it may get corrupted. This issue sometimes happen due to; <strong>restart before saving</strong> , &nbsp;<strong>erroneously input or  non-format input</strong>. I'm not interested to share my personal <strong>EFI</strong>, and not meant to be used by other people or systems. If you're still interested in utilising it, please be <strong>careful</strong> to adjust the <strong>plist configuration</strong> and <strong>SSDTs</strong> according to your system. <strong>ACPI?</strong>, You may see how <strong>ACPI</strong> impacts the operating system. Incorrect device renaming through <strong>SSDTs</strong> will results the operating system getting stuck. My advise is not to modify your <strong>DSDTs</strong>. <strong>DSDT's</strong> (Primary Table) modification method will results more difficulties to your machine and harm your BIOS directly. I recommend <strong>SSDTs</strong> (Secondary Table) modifications, since this way are more <strong>dynamic</strong> and <strong>safe</strong>. Device renaming is not necessary for recognised and functional devices unless the devices are not identified or displayed via IOreg or require extra tweaks, especially if your computer contains multiple bootable OSes.</p>
@@ -142,7 +142,7 @@ Metal Headless                 No
   - [**SSDT-ALL (DSM)**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-ALL_DTGP.dsl)
   - [**SSDT-ALL (DTGP)**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-ALL_DTGP.dsl) - Recommended
 
-<div align="center"><p><img width="1000" src="https://user-images.githubusercontent.com/72515939/194734116-07bd5cbe-531d-4107-8acb-8d97257826e6.png" alt="2022-09-29_15-54-05"></p></div>
+<div align="center"><p><img width="680" src="https://user-images.githubusercontent.com/72515939/194734116-07bd5cbe-531d-4107-8acb-8d97257826e6.png" alt="2022-09-29_15-54-05"></p></div>
 
 > **Note:** Start from **macOS 12.3**, [**SSDT-PLUG.aml**](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) or [**plugin-type=1**](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) is not required. The [**x86PlatformPlugin**](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html) is enabled by default on Skylake and Comet Lake. **Refer** original [**thread**](https://www.insanelymac.com/forum/topic/351675-macos-12-monterey-x86platformplugin-without-plugin-type1/), [**Dortania/Bugtracker Issue #2013**](https://github.com/acidanthera/bugtracker/issues/2013) and [**Dortania/Bugtracker Issue #269**](https://github.com/dortania/bugtracker/issues/269).
 
@@ -320,19 +320,19 @@ machdep.xcpm.mode: 1
 </p></div>
 
 <div align="center"><p>
-<img width="853" alt="2022-10-11_13-41-36" src="https://user-images.githubusercontent.com/72515939/195006616-9211eedd-8b25-408d-bdd5-00c4275b6790.png">
-<img width="853" alt="2022-10-11_13-41-46" src="https://user-images.githubusercontent.com/72515939/195006805-6faa0f98-cf32-497a-92c7-2825e00591f3.png">
-<img width="853" alt="2022-10-11_13-41-53" src="https://user-images.githubusercontent.com/72515939/195006810-e973a6f2-ce34-40ae-81cf-938f7fb54619.png">
-<img width="853" alt="2022-10-11_13-41-58" src="https://user-images.githubusercontent.com/72515939/195006820-dee08d3f-9121-45d0-8291-ab0ced44bed6.png">
-<img width="853" alt="2022-10-11_13-42-09" src="https://user-images.githubusercontent.com/72515939/195006829-7ecc5b08-13c4-4e77-96fd-16d0aaf4b54b.png">
-<img width="853" alt="2022-10-11_13-42-20" src="https://user-images.githubusercontent.com/72515939/195006836-3daeb07c-90c3-4cd6-a24d-625ca9dc293a.png">
-<img width="853" alt="2022-10-11_13-42-26" src="https://user-images.githubusercontent.com/72515939/195006843-64e6ec96-cb17-4363-a64d-94f764e19e70.png">
-<img width="853" alt="2022-10-11_13-42-32" src="https://user-images.githubusercontent.com/72515939/195006848-5694d404-1ba3-44ed-a6ae-4d8038f2e20b.png">
-<img width="853" alt="2022-10-11_13-42-38" src="https://user-images.githubusercontent.com/72515939/195006854-28ebae7b-3cf7-4537-bd59-1b0678574d7b.png">
-<img width="853" alt="2022-10-11_13-42-58" src="https://user-images.githubusercontent.com/72515939/195006858-1f3bf77e-9b69-4c24-ba05-0e0ea940d08c.png">
-<img width="853" alt="2022-10-11_13-43-07" src="https://user-images.githubusercontent.com/72515939/195006862-e91a5b6b-438a-4eb4-9d71-6e75d4e3305a.png">
-<img width="855" alt="2022-10-11_13-43-18" src="https://user-images.githubusercontent.com/72515939/195006886-85dc122e-a60b-43c8-b322-d66985b1dadd.png">
-<img width="853" alt="2022-10-11_13-43-30" src="https://user-images.githubusercontent.com/72515939/195006903-e8aec29a-6572-4b5e-adda-044720309e87.png">
+<img width="680" alt="2022-10-11_13-41-36" src="https://user-images.githubusercontent.com/72515939/195006616-9211eedd-8b25-408d-bdd5-00c4275b6790.png">
+<img width="680" alt="2022-10-11_13-41-46" src="https://user-images.githubusercontent.com/72515939/195006805-6faa0f98-cf32-497a-92c7-2825e00591f3.png">
+<img width="680" alt="2022-10-11_13-41-53" src="https://user-images.githubusercontent.com/72515939/195006810-e973a6f2-ce34-40ae-81cf-938f7fb54619.png">
+<img width="680" alt="2022-10-11_13-41-58" src="https://user-images.githubusercontent.com/72515939/195006820-dee08d3f-9121-45d0-8291-ab0ced44bed6.png">
+<img width="680" alt="2022-10-11_13-42-09" src="https://user-images.githubusercontent.com/72515939/195006829-7ecc5b08-13c4-4e77-96fd-16d0aaf4b54b.png">
+<img width="680" alt="2022-10-11_13-42-20" src="https://user-images.githubusercontent.com/72515939/195006836-3daeb07c-90c3-4cd6-a24d-625ca9dc293a.png">
+<img width="680" alt="2022-10-11_13-42-26" src="https://user-images.githubusercontent.com/72515939/195006843-64e6ec96-cb17-4363-a64d-94f764e19e70.png">
+<img width="680" alt="2022-10-11_13-42-32" src="https://user-images.githubusercontent.com/72515939/195006848-5694d404-1ba3-44ed-a6ae-4d8038f2e20b.png">
+<img width="680" alt="2022-10-11_13-42-38" src="https://user-images.githubusercontent.com/72515939/195006854-28ebae7b-3cf7-4537-bd59-1b0678574d7b.png">
+<img width="680" alt="2022-10-11_13-42-58" src="https://user-images.githubusercontent.com/72515939/195006858-1f3bf77e-9b69-4c24-ba05-0e0ea940d08c.png">
+<img width="680" alt="2022-10-11_13-43-07" src="https://user-images.githubusercontent.com/72515939/195006862-e91a5b6b-438a-4eb4-9d71-6e75d4e3305a.png">
+<img width="680" alt="2022-10-11_13-43-18" src="https://user-images.githubusercontent.com/72515939/195006886-85dc122e-a60b-43c8-b322-d66985b1dadd.png">
+<img width="680" alt="2022-10-11_13-43-30" src="https://user-images.githubusercontent.com/72515939/195006903-e8aec29a-6572-4b5e-adda-044720309e87.png">
 </p></div>
 
 ---
