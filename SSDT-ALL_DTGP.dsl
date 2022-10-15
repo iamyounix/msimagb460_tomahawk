@@ -1,4 +1,4 @@
-DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000003)
+DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
 {
     External (_SB_, DeviceObj)
     External (_SB_.PCI0, DeviceObj)
@@ -33,6 +33,8 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000003)
     External (_SB_.PCI0.TSUB, DeviceObj)
     External (_SB_.PCI0.XHC_, DeviceObj)
     External (_SB_.USBX, DeviceObj)
+    External (GPRW, MethodObj)    // 2 Arguments
+    External (OSDW, MethodObj)    // 0 Arguments
     External (STAS, IntObj)
 
     Scope (\_SB)
@@ -162,6 +164,7 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000003)
             Device (IGPU)
             {
                 Name (_ADR, 0x00020000)  // _ADR: Address
+                Name (_SUN, Zero)  // _SUN: Slot User Number
                 Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
                     If (_OSI ("Darwin"))
@@ -171,6 +174,17 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000003)
                     Else
                     {
                         Return (Zero)
+                    }
+                }
+
+                If (_OSI ("Darwin"))
+                {
+                    Device (PNLF)
+                    {
+                        Name (_HID, EisaId ("APP0002"))  // _HID: Hardware ID
+                        Name (_CID, "backlight")  // _CID: Compatible ID
+                        Name (_UID, 0x13)  // _UID: Unique ID
+                        Name (_STA, 0x0B)  // _STA: Status
                     }
                 }
             }
@@ -312,6 +326,18 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000003)
                                     {
                                          0x03                                             // .
                                     })
+                                }
+
+                                Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
+                                {
+                                    If (OSDW ())
+                                    {
+                                        Return (GPRW (0x69, 0x04))
+                                    }
+                                    Else
+                                    {
+                                        Return (GPRW (0x69, 0x04))
+                                    }
                                 }
 
                                 Local0 = Package (0x02)
@@ -742,4 +768,3 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000003)
         Return (Zero)
     }
 }
-
