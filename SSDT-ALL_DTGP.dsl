@@ -33,9 +33,17 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
     External (_SB_.PCI0.TSUB, DeviceObj)
     External (_SB_.PCI0.XHC_, DeviceObj)
     External (_SB_.USBX, DeviceObj)
+    External (ALSE, IntObj)
     External (GPRW, MethodObj)    // 2 Arguments
-    External (OSDW, MethodObj)    // 0 Arguments
     External (STAS, IntObj)
+
+    Scope (\)
+    {
+        If (_OSI ("Darwin"))
+        {
+            ALSE = 0x02
+        }
+    }
 
     Scope (\_SB)
     {
@@ -174,17 +182,6 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                     Else
                     {
                         Return (Zero)
-                    }
-                }
-
-                If (_OSI ("Darwin"))
-                {
-                    Device (PNLF)
-                    {
-                        Name (_HID, EisaId ("APP0002"))  // _HID: Hardware ID
-                        Name (_CID, "backlight")  // _CID: Compatible ID
-                        Name (_UID, 0x13)  // _UID: Unique ID
-                        Name (_STA, 0x0B)  // _STA: Status
                     }
                 }
             }
@@ -330,7 +327,7 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
 
                                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                                 {
-                                    If (OSDW ())
+                                    If (_OSI ("Darwin"))
                                     {
                                         Return (GPRW (0x69, 0x04))
                                     }
