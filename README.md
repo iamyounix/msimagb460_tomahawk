@@ -338,7 +338,7 @@ machdep.xcpm.mode: 1
 </p></div>
 
 
-#### EFI Download
+#### Download
 - [Clover5149](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/v5149.zip) Pre-Build
 - [OpenCore 0.8.5](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/v0.8.5.zip) Pre-Build
 ---
