@@ -132,7 +132,7 @@ OS                             macOS Monterey Version 12.6 (Build 21G115)
 | SB.PCI0.TSUB                    | Thermal Subsystem. `Not compatible` with macOS                                                               |
 | SB.PCI0.XHC                     | 300/400 Series PCH-V USB Controller (Renamed as `XHC1`)                                                      |
 | SB.USBX                         | USB Power Management                                                                                         |
-| ALSE                            | ALSD Method for ALSD                                                                                         |
+| ALSE                            | ALSE Method for ALSD                                                                                         |
 | GPRW                            | Native Power Resource for Wake Method                                                                        |
 | STAS                            | `_STA` method, to enable such status changes to be communicated to the operating system.                     |
 
