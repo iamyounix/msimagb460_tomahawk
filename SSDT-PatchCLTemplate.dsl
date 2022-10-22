@@ -421,16 +421,23 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                 Device (XHC2)
                 {
                     Name (_ADR, Zero)  // _ADR: Address
-                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                     {
-                        If (_OSI ("Darwin"))
+                        If ((Arg2 == Zero))
                         {
-                            Return (0x0F)
+                            Return (Buffer (One)
+                            {
+                                 0x03                                             // .
+                            })
                         }
-                        Else
-                        {
-                            Return (Zero)
-                        }
+
+                        Local0 = Package (0x02)
+                            {
+                                "built-in", 
+                                Zero
+                            }
+                        DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
+                        Return (Local0)
                     }
                 }
             }
@@ -521,7 +528,7 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
                             })
                         }
 
-                        Local0 = Package (0x0A)
+                        Local0 = Package (0x02)
                             {
                                 "built-in", 
                                 Zero
@@ -760,4 +767,3 @@ DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
         Return (Zero)
     }
 }
-
