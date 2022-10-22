@@ -137,29 +137,29 @@ OS                             macOS Monterey Version 12.6 (Build 21G115)
 ### PCI Device
 
 #### Instruction
-- [x] Working
-- [ ] Not Working
+- [ ] Working
+- [x] Not Working
 
 #### Device List
-- [x] Comet Lake-S 6c Host Bridge/DRAM Controller
-- [x] 6th-10th Gen Core Processor PCIe Controller (x16)
-- [x] Intel CoffeeLake-H GT2 [UHD Graphics 630]
-- [x] Comet Lake PCH-V USB Controller
-- [ ] Comet Lake PCH-V Thermal Subsystem
-- [x] Comet Lake PCH-V HECI Controller
-- [ ] Comet Lake PCH-V Memory controller
-- [x] Comet Lake PCH-V cAVS
-- [x] Comet Lake PCH-V SMBus Host Controller
-- [x] 400 Series Chipset Family SATA AHCI Controller
-- [x] B460 Chipset LPC/eSPI Controller
-- [x] Kingston SA2000M8500G (x2)
-- [x] Navi 10 XL Upstream Port of PCI Express Switch
-- [x] Navi 10 XL Downstream Port of PCI Express Switch
-- [x] Navi 14 [Radeon RX 5500/5500M / Pro 5500M]
-- [x] Navi 10 HDMI Audio
-- [x] VL805/806 xHCI USB 3.0 Controller
-- [x] Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet
-- [x] BCM94360CD 802.11ac Wireless Network Adapter
+- [ ] Comet Lake-S 6c Host Bridge/DRAM Controller
+- [ ] 6th-10th Gen Core Processor PCIe Controller (x16)
+- [ ] Intel CoffeeLake-H GT2 [UHD Graphics 630]
+- [ ] Comet Lake PCH-V USB Controller
+- [x] Comet Lake PCH-V Thermal Subsystem
+- [ ] Comet Lake PCH-V HECI Controller
+- [x] Comet Lake PCH-V Memory controller
+- [ ] Comet Lake PCH-V cAVS
+- [ ] Comet Lake PCH-V SMBus Host Controller
+- [ ] 400 Series Chipset Family SATA AHCI Controller
+- [ ] B460 Chipset LPC/eSPI Controller
+- [ ] Kingston SA2000M8500G (x2)
+- [ ] Navi 10 XL Upstream Port of PCI Express Switch
+- [ ] Navi 10 XL Downstream Port of PCI Express Switch
+- [ ] Navi 14 [Radeon RX 5500/5500M / Pro 5500M]
+- [ ] Navi 10 HDMI Audio
+- [ ] VL805/806 xHCI USB 3.0 Controller
+- [ ] Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet
+- [ ] BCM94360CD 802.11ac Wireless Network Adapter
 
 #### Patched Devices
 
