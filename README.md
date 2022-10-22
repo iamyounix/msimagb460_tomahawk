@@ -1,8 +1,6 @@
 # ASRock B460M Steel Legend
 **Hackintosh: 10th Gen Intel Comet Lake with B460M Steel Legend with OpenCore Configuration**
 
-<div align="center"><p><img width="680" src="https://user-images.githubusercontent.com/72515939/197362856-7cba1735-b91c-4cc6-8453-2c484e9a7880.png" alt="2022-09-29_15-54-05"></p></div>
-
 <div align="justify">
   <p><strong>My word:</strong> - <strong>"It's merely cosmetic"</strong>, according to some. For me, this content is not just for show. <strong>Configuration?</strong>, You can play with <strong>config.plist</strong> and experiment with it. But heed the warning—if the file is not saved properly, it may get corrupted. This issue sometimes happen due to; <strong>restart before saving</strong> , &nbsp;<strong>erroneously input or  non-format input</strong>. I'm not interested to share my personal <strong>EFI</strong>, and not meant to be used by other people or systems. If you're still interested in utilising it, please be <strong>careful</strong> to adjust the <strong>plist configuration</strong> and <strong>SSDTs</strong> according to your system. <strong>ACPI?</strong>, You may see how <strong>ACPI</strong> impacts the operating system. Incorrect device renaming through <strong>SSDTs</strong> will results the operating system getting stuck. My advise is not to modify your <strong>DSDTs</strong>. <strong>DSDT's</strong> (Primary Table) modification method will results more difficulties to your machine and harm your BIOS directly. I recommend <strong>SSDTs</strong> (Secondary Table) modifications, since this way are more <strong>dynamic</strong> and <strong>safe</strong>. Device renaming is not necessary for recognised and functional devices unless the devices are not identified or displayed via IOreg or require extra tweaks, especially if your computer contains multiple bootable OSes.</p>
 </div>
@@ -40,36 +38,18 @@ EFI
 
 ### Basic Info
 
-```zsh
-OS                             macOS Monterey Version 12.6 (Build 21G115)
-Motherboard                    ASRock B460 Steel Legend
-CPU                            Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
-RAM                            32.00 GB
-Model Identifier               iMac20,1
-Kernel                         Darwin 21.6.0 x86_64
-Intel Generation               Coffee Lake
-Platform ID                    0x3E920003
-Board ID                       Mac-CFF7D910A743CAAF
-FW Version                     1916.0.3.0.0
-Serial Number                  XXXXXXXXXXXX
-Hardware UUID                  XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-System ID                      XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-ROM                            XXXXXXXXXXXX
-Board Serial Number            XXXXXXXXXXXXXXXXX
-VDA Decoder                    Fully Supported
-OS Installed                   macOS, Windows
-```
+<div align="center"><p><img width="680" src="https://user-images.githubusercontent.com/72515939/197362856-7cba1735-b91c-4cc6-8453-2c484e9a7880.png" alt="2022-09-29_15-54-05"></p></div>
 
 ### Graphics
 
-#### IGPU - Integrated Graphics
+#### IGPU - Integrated Graphics (Headless)
 
 ```zsh
 GPU Name                       Intel CoffeeLake-H GT2 [UHD Graphics 630]
 GPU Device ID                  0x3E9B8086
 ```
 
-#### GFX0 - Dedicated Graphics
+#### GFX0 - Dedicated Graphics (Display)
 
 ```zsh
 GPU Name                       Navi 14 [Radeon RX 5500/5500M / Pro 5500M]
@@ -80,6 +60,19 @@ Metal Device Name              AMD Radeon RX 5500 XT
 Metal Default Device           Yes
 Metal Low Power                No
 Metal Headless                 No
+```
+
+#### VDA Support
+
+```zsh
+VDA Decoder                    Fully Supported 
+```
+
+#### Others
+
+```zsh
+Kernel                         Darwin 21.6.0 x86_64
+OS                             macOS Monterey Version 12.6 (Build 21G115)
 ```
 
 ### PCI Device
