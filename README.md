@@ -1,7 +1,7 @@
 # ASRock B460M Steel Legend
 **Hackintosh: 10th Gen Intel Comet Lake with B460M Steel Legend with OpenCore Configuration**
 
-<div align="center"><p><img width="680" src="https://user-images.githubusercontent.com/72515939/195469423-81725333-cfcc-4ced-be91-18299ad07076.png" alt="2022-09-29_15-54-05"></p></div>
+<div align="center"><p><img width="680" src="https://user-images.githubusercontent.com/72515939/197362856-7cba1735-b91c-4cc6-8453-2c484e9a7880.png" alt="2022-09-29_15-54-05"></p></div>
 
 <div align="justify">
   <p><strong>My word:</strong> - <strong>"It's merely cosmetic"</strong>, according to some. For me, this content is not just for show. <strong>Configuration?</strong>, You can play with <strong>config.plist</strong> and experiment with it. But heed the warning—if the file is not saved properly, it may get corrupted. This issue sometimes happen due to; <strong>restart before saving</strong> , &nbsp;<strong>erroneously input or  non-format input</strong>. I'm not interested to share my personal <strong>EFI</strong>, and not meant to be used by other people or systems. If you're still interested in utilising it, please be <strong>careful</strong> to adjust the <strong>plist configuration</strong> and <strong>SSDTs</strong> according to your system. <strong>ACPI?</strong>, You may see how <strong>ACPI</strong> impacts the operating system. Incorrect device renaming through <strong>SSDTs</strong> will results the operating system getting stuck. My advise is not to modify your <strong>DSDTs</strong>. <strong>DSDT's</strong> (Primary Table) modification method will results more difficulties to your machine and harm your BIOS directly. I recommend <strong>SSDTs</strong> (Secondary Table) modifications, since this way are more <strong>dynamic</strong> and <strong>safe</strong>. Device renaming is not necessary for recognised and functional devices unless the devices are not identified or displayed via IOreg or require extra tweaks, especially if your computer contains multiple bootable OSes.</p>
@@ -113,6 +113,7 @@ Metal Headless                 No
 
 | **Device**                      | **Details**                                                                                                  |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| ALSD                            | Ambient Light Sensor enable (AppleLMUController)                                                             |           
 | SB.PCI0.DRAM                    | Comet Lake-S 6c Host Bridge/DRAM Controller                                                                  |
 | SB.PCI0.GFX0                    | Intel UHD Graphics 630 (Renamed as `IGPU`)                                                                   |
 | SB.PCI0.HDAS                    | Comet Lake PCH-V cAVS (Renamed as `HDEF`)                                                                    |
@@ -138,7 +139,9 @@ Metal Headless                 No
 | SB.PCI0.TSUB                    | Thermal Subsystem. `Not compatible` with macOS                                                               |
 | SB.PCI0.XHC                     | 300/400 Series PCH-V USB Controller (Renamed as `XHC1`)                                                      |
 | SB.USBX                         | USB Power Management                                                                                         |
-| SB.STAS                         | `_STA` method, to enable such status changes to be communicated to the operating system.                     |
+| ALSE                            | ALSD Method for ALSD                                                                                         |
+| GPRW                            | Native Power Resource for Wake Method                                                                        |
+| STAS                            | `_STA` method, to enable such status changes to be communicated to the operating system.                     |
 
 #### SSDT
 - [SSDT-Patch.aml](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-PatchCLTemplate.dsl) (Clover)
@@ -150,7 +153,7 @@ Metal Headless                 No
 
 ---
 
-### Validate
+### Test & Validate
 #### Build Number:
 
 ```zsh
