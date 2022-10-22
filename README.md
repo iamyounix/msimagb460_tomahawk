@@ -5,36 +5,95 @@
   <p><strong>My word:</strong> - <strong>"It's merely cosmetic"</strong>, according to some. For me, this content is not just for show. <strong>Configuration?</strong>, You can play with <strong>config.plist</strong> and experiment with it. But heed the warning—if the file is not saved properly, it may get corrupted. This issue sometimes happen due to; <strong>restart before saving</strong> , &nbsp;<strong>erroneously input or  non-format input</strong>. I'm not interested to share my personal <strong>EFI</strong>, and not meant to be used by other people or systems. If you're still interested in utilising it, please be <strong>careful</strong> to adjust the <strong>plist configuration</strong> and <strong>SSDTs</strong> according to your system. <strong>ACPI?</strong>, You may see how <strong>ACPI</strong> impacts the operating system. Incorrect device renaming through <strong>SSDTs</strong> will results the operating system getting stuck. My advise is not to modify your <strong>DSDTs</strong>. <strong>DSDT's</strong> (Primary Table) modification method will results more difficulties to your machine and harm your BIOS directly. I recommend <strong>SSDTs</strong> (Secondary Table) modifications, since this way are more <strong>dynamic</strong> and <strong>safe</strong>. Device renaming is not necessary for recognised and functional devices unless the devices are not identified or displayed via IOreg or require extra tweaks, especially if your computer contains multiple bootable OSes. This is not full feature guide. OpenCore and Clover sample is attached as a learning curve. Please be careful what you're read, copy and modified all these stuffs. Do a research first. Do note, while attached OpenCore and Clover SSDT has 98% differencies, both has the same output.</p>
 </div>
 
-### EFI Structure
+### OpenCore EFI Structure
 
 ```zsh
 EFI
 ├── BOOT
-│       └── BOOTx64.efi
+│   └── BOOTx64.efi
 └── OC
     ├── ACPI
-    │   └── SSDT-ALL.aml
+    │   └── SSDT-Patch.aml
     ├── Drivers
-    │   ├── HfsPlus.efi
-    │   ├── OpenCanopy.efi
-    │   └── OpenRuntime.efi
+    │   ├── HfsPlus.efi
+    │   ├── OpenCanopy.efi
+    │   └── OpenRuntime.efi
     ├── Kexts
-    │   ├── AppleALC.kext
-    │   ├── Lilu.kext
-    │   ├── LucyRTL8125Ethernet.kext
-    │   ├── RadeonSensor.kext
-    │   ├── SMCProcessor.kext
-    │   ├── SMCRadeonGPU.kext
-    │   ├── SMCSuperIO.kext
-    │   ├── USBMap.kext
-    │   ├── VirtualSMC.kext
-    │   ├── WhateverGreen.kext
+    │   ├── AppleALC.kext
+    │   ├── Lilu.kext
+    │   ├── LucyRTL8125Ethernet.kext
+    │   ├── RadeonSensor.kext
+    │   ├── SMCProcessor.kext
+    │   ├── SMCRadeonGPU.kext
+    │   ├── SMCSuperIO.kext
+    │   ├── USBMap.kext
+    │   └── WhateverGreen.kext
+    ├── OpenCore.efi
     ├── Resources
+    │   ├── Audio
+    │   ├── Font
+    │   ├── Image
+    │   │   └── Acidanthera
+    │   │       ├── Chardonnay
+    │   │       ├── GoldenGate
+    │   │       └── Syrah
+    │   └── Label
     ├── Tools
-    │   └── CleanNvram.efi
-    ├── config.plist
-    └── OpenCore.efi
+    │   └── CleanNvram.efi
+    └── config.plist
 ```
+
+### Clover EFI Structure
+
+```zsh
+EFI
+├── BOOT
+│   └── BOOTX64.efi
+└── CLOVER
+    ├── ACPI
+    │   ├── WINDOWS
+    │   ├── origin
+    │   └── patched
+    │       └── SSDT-ALL.aml
+    ├── CLOVERX64.efi
+    ├── ROM
+    ├── config.plist
+    ├── drivers
+    │   └── UEFI
+    │       ├── ApfsDriverLoader.efi
+    │       ├── EnglishDxe.efi
+    │       ├── HFSPlus.efi
+    │       ├── OcQuirks.efi
+    │       └── OpenRuntime.efi
+    ├── kexts
+    │   ├── 10.11
+    │   ├── 10.12
+    │   ├── 10.13
+    │   ├── 10.14
+    │   ├── 10.15
+    │   ├── 11
+    │   ├── 12
+    │   │   ├── AppleALC.kext
+    │   │   ├── Lilu.kext
+    │   │   ├── LucyRTL8125Ethernet.kext
+    │   │   ├── RadeonSensor.kext
+    │   │   ├── SMCProcessor.kext
+    │   │   ├── SMCRadeonGPU.kext
+    │   │   ├── SMCSuperIO.kext
+    │   │   ├── USBMap.kext
+    │   │   ├── VirtualSMC.kext
+    │   │   └── WhateverGreen.kext
+    │   ├── 13
+    │   ├── Off
+    │   └── Other
+    ├── misc
+    ├── themes
+    │   ├── Blackcamp
+    │   ├── embedded
+    │   └── random
+    │       └── theme.plist
+    └── tools      
+```        
 
 ### Basic Info
 
@@ -104,43 +163,43 @@ OS                             macOS Monterey Version 12.6 (Build 21G115)
 
 #### Patched Devices
 
-| **Device**                      | **Details**                                                                                                  |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| ALSD                            | Ambient Light Sensor enable (AppleLMUController)                                                             |           
-| SB.PCI0.DRAM                    | Comet Lake-S 6c Host Bridge/DRAM Controller                                                                  |
-| SB.PCI0.GFX0                    | Intel UHD Graphics 630 (Renamed as `IGPU`)                                                                   |
-| SB.PCI0.HDAS                    | Comet Lake PCH-V cAVS (Renamed as `HDEF`)                                                                    |
-| SB.PCI0.HECI                    | Comet Lake PCH-V HECI Controller (Renamed as `IMEI`)                                                         |
-| SB.PCI0.LPCB                    | B460M Low Pin Count Bus                                                                                      |
-| SB.PCI0.LPCB.EC                 | Fake Embeded Controller                                                                                      |
-| SB.PCI0.LPCB.FWHD               | Fake Firmware Hub Device (Optional for `300 / 400` Series)                                                   |
-| SB.PCI0.LPCB.HPET               | High Precision Event Timer                                                                                   |
-| SB.PCI0.PEG0                    | 6th-10th Gen Core Processor PCIe Controller x16 (Renamed as `PEGP`)                                          |
-| SB.PCI0.PEG0.pci-bridge0/0      | Navi 10 XL Upstream Port (Renamed as `EGP0`)                                                                 |
-| SB.PCI0.PEG0.pci-bridge1/0      | Navi 10 XL Downstream Port (Renamed as `EGP1`)                                                               |
-| SB.PCI0.PEG0.pci-bridge1/0.GFX0 | Navi 14 Radeon RX 5500 / 5500M / Pro 5500M (added `_SUN`, slot user number to properties)                    |
-| SB.PCI0.PEG0.pci-bridge1/0.HDAU | Navi 10 HDMI Audio (added `_SUN` (Slot User Number) to properties)                                           |
-| SB.PCI0.PPMC                    | Programmable Power Management Controller. `Not compatible` with macOS                                        |
-| SB.PCI0.PMCR                    | Fake Power Management Capabilities Register. Replacing the function of `PPMC`                                |
-| SB.PCI0.RP04.PXSX               | Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet (Renamed as `RTLK`)                                        |
-| SB.PCI0.RP05.PXSX               | VL805/806 xHCI USB 3.0 Controller (Renamed as `XHC2` and added `_SUN`, slot user number to properties)       |
-| SB.PCI0.RP09.PXSX               | Kingston SA2000M8500G M.2 Slot 0 (Renamed as `ANS0`)                                                         |
-| SB.PCI0.RP20.PXSX               | BCM4360 802.11ac Wireless Network Adapter (Renamed as `ARPT`and added `_SUN`, slot user number to properties |
-| SB.PCI0.RP21.PXSX               | Kingston SA2000M8500G M.2 Slot 1 (Renamed as `ANS1`)                                                         |
-| SB.PCI0.SAT0                    | 400 Series Chipset Family SATA AHCI Controller (Renamed as `SATA`)                                           |
-| SB.PCI0.SBUS                    | Serial Bus                                                                                                   |
-| SB.PCI0.TSUB                    | Thermal Subsystem. `Not compatible` with macOS                                                               |
-| SB.PCI0.XHC                     | 300/400 Series PCH-V USB Controller (Renamed as `XHC1`)                                                      |
-| SB.USBX                         | USB Power Management                                                                                         |
-| ALSE                            | ALSE method for ALSD                                                                                         |
-| GPRW                            | Native `_PRW` method for Power Resource for Wake                                                                  |
-| STAS                            | `_STA` method, to enable such status changes to be communicated to the operating system.                     |
+| **Device**                      | **Details**                                                                                                        |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| ALSD                            | Ambient Light Sensor enable (AppleLMUController)                                                                   |           
+| SB.PCI0.DRAM                    | Comet Lake-S 6c Host Bridge/DRAM Controller                                                                        |
+| SB.PCI0.GFX0                    | Intel UHD Graphics 630 (Renamed as `IGPU`)                                                                         |
+| SB.PCI0.HDAS                    | Comet Lake PCH-V cAVS (Renamed as `HDEF`)                                                                          |
+| SB.PCI0.HECI                    | Comet Lake PCH-V HECI Controller (Renamed as `IMEI`)                                                               |
+| SB.PCI0.LPCB                    | B460M Low Pin Count Bus                                                                                            |
+| SB.PCI0.LPCB.EC                 | Fake Embeded Controller                                                                                            |
+| SB.PCI0.LPCB.FWHD               | Fake Firmware Hub Device (Optional for `300 / 400` Series)                                                         |
+| SB.PCI0.LPCB.HPET               | High Precision Event Timer                                                                                         |
+| SB.PCI0.PEG0                    | 6th-10th Gen Core Processor PCIe Controller x16 (Renamed as `PEGP`)                                                |
+| SB.PCI0.PEG0.pci-bridge0/0      | Navi 10 XL Upstream Port (Renamed as `EGP0`)                                                                       |
+| SB.PCI0.PEG0.pci-bridge1/0      | Navi 10 XL Downstream Port (Renamed as `EGP1`)                                                                     |
+| SB.PCI0.PEG0.pci-bridge1/0.GFX0 | Navi 14 Radeon RX 5500 / 5500M / Pro 5500M (added `_SUN`, slot user number to properties - OpenCore Only)          |
+| SB.PCI0.PEG0.pci-bridge1/0.HDAU | Navi 10 HDMI Audio (added `_SUN` (Slot User Number) to properties - OpenCore Only)                                 |
+| SB.PCI0.PPMC                    | Programmable Power Management Controller. `Not compatible` with macOS                                              |
+| SB.PCI0.PMCR                    | Fake Power Management Capabilities Register. Replacing the function of `PPMC`                                      |
+| SB.PCI0.RP04.PXSX               | Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet (Renamed as `RTLK`)                                              |
+| SB.PCI0.RP05.PXSX               | VL805/806 xHCI USB 3.0 Controller (Renamed as `XHC2` and added `built-in`, `_SUN`, slot user number to properties - OpenCore Only)                    |
+| SB.PCI0.RP09.PXSX               | Kingston SA2000M8500G M.2 Slot 0 (Renamed as `ANS0`)                                                               |
+| SB.PCI0.RP20.PXSX               | BCM4360 802.11ac Wireless Network Adapter (Renamed as `ARPT`and added `built-in`, `_SUN`, slot user number to properties - OpenCore Only)       |
+| SB.PCI0.RP21.PXSX               | Kingston SA2000M8500G M.2 Slot 1 (Renamed as `ANS1`)                                                               |
+| SB.PCI0.SAT0                    | 400 Series Chipset Family SATA AHCI Controller (Renamed as `SATA`)                                                 |
+| SB.PCI0.SBUS                    | Serial Bus                                                                                                         |
+| SB.PCI0.TSUB                    | Thermal Subsystem. `Not compatible` with macOS                                                                     |
+| SB.PCI0.XHC                     | 300/400 Series PCH-V USB Controller (Renamed as `XHC1`)                                                            |
+| SB.USBX                         | USB Power Management                                                                                               |
+| ALSE                            | ALSE method for ALSD                                                                                               |
+| GPRW                            | Native `_PRW` method for Power Resource for Wake                                                                   |
+| STAS                            | `_STA` method, to enable such status changes to be communicated to the operating system.                           |
 
 #### SSDT
 - [SSDT-Patch.aml](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-PatchCLTemplate.dsl) (Clover)
 - [SSDT-Patch.aml](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-PatchOCTemplate.dsl) (OpenCore)
 
-> **Note:** Start from **macOS 12.3**, [**SSDT-PLUG.aml**](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) or [**plugin-type=1**](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) is not required. The [**x86PlatformPlugin**](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html) is enabled by default on Skylake and Comet Lake. **Refer** original [**thread**](https://www.insanelymac.com/forum/topic/351675-macos-12-monterey-x86platformplugin-without-plugin-type1/), [**Dortania/Bugtracker Issue #2013**](https://github.com/acidanthera/bugtracker/issues/2013) and [**Dortania/Bugtracker Issue #269**](https://github.com/dortania/bugtracker/issues/269).
+> **Note:** Start from **macOS 12.3**, [**SSDT-PLUG.aml**](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) or [**plugin-type=1**](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) is not required. The [**x86PlatformPlugin**](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html) is enabled by default on Skylake and Comet Lake. **Refer** original [**thread**](https://www.insanelymac.com/forum/topic/351675-macos-12-monterey-x86platformplugin-without-plugin-type1/), [**Dortania/Bugtracker Issue #2013**](https://github.com/acidanthera/bugtracker/issues/2013) and [**Dortania/Bugtracker Issue #269**](https://github.com/dortania/bugtracker/issues/269). 
 
 ---
 
@@ -334,8 +393,10 @@ machdep.xcpm.mode: 1
 
 
 #### Download
-- [Clover 5149](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/v5149.zip) Pre-Build
-- [OpenCore 0.8.5](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/v0.8.5.zip) Pre-Build
+- [**Clover 5149**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/v5149.zip) Pre-Build
+- [**OpenCore 0.8.5**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/v0.8.5.zip) Pre-Build
+
+> Both **config.plist** sensitive data is removed
 ---
 
 #### References
