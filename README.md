@@ -175,16 +175,16 @@ OS                             macOS Monterey Version 12.6 (Build 21G115)
 | SB.PCI0.LPCB.FWHD               | Fake Firmware Hub Device (Optional for `300 / 400` Series)                                                         |
 | SB.PCI0.LPCB.HPET               | High Precision Event Timer                                                                                         |
 | SB.PCI0.PEG0                    | 6th-10th Gen Core Processor PCIe Controller x16 (Renamed as `PEGP`)                                                |
-| SB.PCI0.PEG0.pci-bridge0/0      | Navi 10 XL Upstream Port (Renamed as `EGP0`)                                                                       |
-| SB.PCI0.PEG0.pci-bridge1/0      | Navi 10 XL Downstream Port (Renamed as `EGP1`)                                                                     |
+| SB.PCI0.PEG0.pci-bridge0/0      | Navi 10 XL Upstream Port (Renamed as `PEG0`)                                                                       |
+| SB.PCI0.PEG0.pci-bridge1/0      | Navi 10 XL Downstream Port (Renamed as `BRG0`)                                                                     |
 | SB.PCI0.PEG0.pci-bridge1/0.GFX0 | Navi 14 Radeon RX 5500 / 5500M / Pro 5500M (added `_SUN`, slot user number to properties - OpenCore Only)          |
 | SB.PCI0.PEG0.pci-bridge1/0.HDAU | Navi 10 HDMI Audio (added `_SUN` (Slot User Number) to properties - OpenCore Only)                                 |
 | SB.PCI0.PPMC                    | Programmable Power Management Controller. `Not compatible` with macOS                                              |
 | SB.PCI0.PMCR                    | Fake Power Management Capabilities Register. Replacing the function of `PPMC`                                      |
 | SB.PCI0.RP04.PXSX               | Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet (Renamed as `RTLK`)                                              |
-| SB.PCI0.RP05.PXSX               | VL805/806 xHCI USB 3.0 Controller (Renamed as `XHC2` and added `built-in`, `_SUN`, slot user number to properties - OpenCore Only)                    |
+| SB.PCI0.RP05.PXSX               | VL805/806 xHCI USB 3.0 Controller (Renamed as `XHC2` and added `built-in`, `_SUN`, slot user number to properties - OpenCore Only)                                   |
 | SB.PCI0.RP09.PXSX               | Kingston SA2000M8500G M.2 Slot 0 (Renamed as `ANS0`)                                                               |
-| SB.PCI0.RP20.PXSX               | BCM4360 802.11ac Wireless Network Adapter (Renamed as `ARPT`and added `built-in`, `_SUN`, slot user number to properties - OpenCore Only)       |
+| SB.PCI0.RP20.PXSX               | BCM4360 802.11ac Wireless Network Adapter (Renamed as `ARPT`and added `built-in`, `_SUN`, slot user number to properties - OpenCore Only)                             |
 | SB.PCI0.RP21.PXSX               | Kingston SA2000M8500G M.2 Slot 1 (Renamed as `ANS1`)                                                               |
 | SB.PCI0.SAT0                    | 400 Series Chipset Family SATA AHCI Controller (Renamed as `SATA`)                                                 |
 | SB.PCI0.SBUS                    | Serial Bus                                                                                                         |
