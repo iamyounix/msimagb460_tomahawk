@@ -197,7 +197,12 @@ OS                             macOS Monterey Version 12.6 (Build 21G115)
 
 #### SSDT
 - [SSDT-PatchCLVR](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-PatchCLVR.dsl.dsl) (Clover)
+
+<img width="988" alt="Page 1" src="https://user-images.githubusercontent.com/72515939/197654895-39ec6305-f3f9-4148-883d-da8ea8077da5.png">
+
 - [SSDT-PatchOC](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-PatchOC.dsl) (OpenCore)
+
+<img width="988" alt="Page 2" src="https://user-images.githubusercontent.com/72515939/197654909-306009cf-699f-4acd-bbd2-3491e82ad8f1.png">
 
 > **Note:** Start from **macOS 12.3**, [**SSDT-PLUG.aml**](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) or [**plugin-type=1**](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) is not required. The [**x86PlatformPlugin**](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html) is enabled by default on Skylake and Comet Lake. **Refer** original [**thread**](https://www.insanelymac.com/forum/topic/351675-macos-12-monterey-x86platformplugin-without-plugin-type1/), [**Dortania/Bugtracker Issue #2013**](https://github.com/acidanthera/bugtracker/issues/2013) and [**Dortania/Bugtracker Issue #269**](https://github.com/dortania/bugtracker/issues/269). 
 
