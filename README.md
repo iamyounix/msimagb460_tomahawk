@@ -5,6 +5,8 @@
   <p><strong>My word:</strong> - <strong>"It's merely cosmetic"</strong>, according to some. For me, this content is not just for show. <strong>Configuration?</strong>, You can play with <strong>config.plist</strong> and experiment with it. But heed the warning—if the file is not saved properly, it may get corrupted. This issue sometimes happen due to; <strong>restart before saving</strong> , &nbsp;<strong>erroneously input or  non-format input</strong>. I'm not interested to share my personal <strong>EFI</strong>, and not meant to be used by other people or systems. If you're still interested in utilising it, please be <strong>careful</strong> to adjust the <strong>plist configuration</strong> and <strong>SSDTs</strong> according to your system. <strong>ACPI?</strong>, You may see how <strong>ACPI</strong> impacts the operating system. Incorrect device renaming through <strong>SSDTs</strong> will results the operating system getting stuck. My advise is not to modify your <strong>DSDTs</strong>. <strong>DSDT's</strong> (Primary Table) modification method will results more difficulties to your machine and harm your BIOS directly. I recommend <strong>SSDTs</strong> (Secondary Table) modifications, since this way are more <strong>dynamic</strong> and <strong>safe</strong>. Device renaming is not necessary for recognised and functional devices unless the devices are not identified or displayed via IOreg or require extra tweaks, especially if your computer contains multiple bootable OSes. This is not full feature guide. OpenCore and Clover sample is attached as a learning curve. Please be careful what you're read, copy and modified all these stuffs. Do a research first. Do note, while attached OpenCore and Clover SSDT has 98% differencies, both has the same output.</p>
 </div>
 
+> Please change SMBIOS accordingly (matched with your hardware). Attachment is just a sample/example. I personally use **iMac20,1**. Refer: [Choose The Right SMBIOS](https://dortania.github.io/OpenCore-Install-Guide/extras/smbios-support.html)
+
 ### OpenCore EFI Structure
 
 ```zsh
@@ -73,6 +75,7 @@ EFI
     │   ├── 10.15
     │   ├── 11
     │   ├── 12
+    │   ├── 13
     │   │   ├── AppleALC.kext
     │   │   ├── Lilu.kext
     │   │   ├── LucyRTL8125Ethernet.kext
@@ -83,7 +86,6 @@ EFI
     │   │   ├── USBMap.kext
     │   │   ├── VirtualSMC.kext
     │   │   └── WhateverGreen.kext
-    │   ├── 13
     │   ├── Off
     │   └── Other
     ├── misc
@@ -130,7 +132,7 @@ VDA Decoder                    Fully Supported
 #### Others
 
 ```zsh
-Kernel                         Darwin 21.6.0 x86_64
+Kernel                         Darwin 22.1.0 x86_64
 OS                             macOS Ventura Version 13.0 (Build 22A380)
 ```
 
@@ -216,8 +218,8 @@ sw_vers
 ```
 ```zsh
 ProductName:	macOS
-ProductVersion:	12.6
-BuildVersion:	21G115
+ProductVersion:	13.0
+BuildVersion:	22A380
 ```
 
 #### Kernel Version:
@@ -226,7 +228,7 @@ BuildVersion:	21G115
  uname -r
 ```
  ```zsh
-21.6.0
+22.1.0
 ```
 
 #### Bus and Frequency:
