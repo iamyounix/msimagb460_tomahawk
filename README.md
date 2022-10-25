@@ -13,7 +13,7 @@ EFI
 │   └── BOOTx64.efi
 └── OC
     ├── ACPI
-    │   └── SSDT-Patch.aml
+    │   └── SSDT-PatchOC.aml
     ├── Drivers
     │   ├── HfsPlus.efi
     │   ├── OpenCanopy.efi
@@ -54,7 +54,7 @@ EFI
     │   ├── WINDOWS
     │   ├── origin
     │   └── patched
-    │       └── SSDT-ALL.aml
+    │       └── SSDT-PatchCLVR.aml
     ├── CLOVERX64.efi
     ├── ROM
     ├── config.plist
