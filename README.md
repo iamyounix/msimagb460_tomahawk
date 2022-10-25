@@ -97,7 +97,7 @@ EFI
 
 ### Basic Info
 
-<div align="center"><p><img width="680" src="https://user-images.githubusercontent.com/72515939/197362856-7cba1735-b91c-4cc6-8453-2c484e9a7880.png" alt="2022-09-29_15-54-05"></p></div>
+<div align="center"><p><img width="680" src="https://user-images.githubusercontent.com/72515939/197660662-25adbd37-64af-43c4-ba79-b1a2e06117a4.png" alt="2022-09-29_15-54-05"></p></div>
 
 ### Graphics
 
@@ -376,11 +376,11 @@ machdep.xcpm.mode: 1
   
 [![AppleTV](https://yt-embed.herokuapp.com/embed?v=Yl4cs7Xzuu4)](https://youtu.be/Yl4cs7Xzuu4 "AppleTV Test")
 [![Youtube4K](https://yt-embed.herokuapp.com/embed?v=uV4JGZE8Jrk)](https://youtu.be/uV4JGZE8Jrk "Youtube4K")
-  
 </p></div>
+
+<div align="center"><p>
 <img width="584" alt="Page 0" src="https://user-images.githubusercontent.com/72515939/197660426-ce80a169-c6ab-451a-aab4-0def82e52f5e.png">
 <img width="284" alt="Page 1" src="https://user-images.githubusercontent.com/72515939/197660437-c82f5399-25a8-4671-84aa-2ba18353cec9.png">
-<img width="709" alt="Page 2" src="https://user-images.githubusercontent.com/72515939/197660447-e4b267d6-8d05-4cf4-9f37-098e08aea4e0.png">
 <img width="908" alt="Page 3" src="https://user-images.githubusercontent.com/72515939/197660455-1b476530-4632-4b64-827c-4e69549e5583.png">
 <img width="908" alt="Page 4" src="https://user-images.githubusercontent.com/72515939/197660456-dbefed3b-6f82-4ba4-8ef4-132393efe4e6.png">
 <img width="908" alt="Page 5" src="https://user-images.githubusercontent.com/72515939/197660461-1dd3a09b-0539-4049-b7ee-e34b996ff705.png">
@@ -395,8 +395,6 @@ machdep.xcpm.mode: 1
 <img width="908" alt="Page 14" src="https://user-images.githubusercontent.com/72515939/197660504-345b5af1-1536-43c9-ba41-096e3cca5a44.png">
 <img width="908" alt="Page 15" src="https://user-images.githubusercontent.com/72515939/197660509-8d0ac9e6-8a7c-41f5-8b74-a75e12526128.png">
 <img width="908" alt="Page 16" src="https://user-images.githubusercontent.com/72515939/197660515-b1114821-1308-4a34-8a7e-ca000d3db842.png">
-<div align="center"><p>
-
 </p></div>
 
 
