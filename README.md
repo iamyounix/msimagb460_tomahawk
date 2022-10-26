@@ -316,6 +316,7 @@ machdep.xcpm.mode: 1
 
 ```zsh
 Catalina  =  Passed (UEFI > APFS: MinDate=20200306 and MinVersion=1412101001000000, SecureBootModel: j185)
+BigSur    =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j185)
 Monterey  =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j185)
 Ventura   =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j185)
 ```
