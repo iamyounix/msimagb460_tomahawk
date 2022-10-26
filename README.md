@@ -262,9 +262,7 @@ System Integrity Protection status: enabled.
 pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 ```
 
-```zsh
-Empty
-```
+> **Note**: If the output is nothing, machine has no issues.
 
 #### Lists any ACPI Error:
 
