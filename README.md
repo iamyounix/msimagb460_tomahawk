@@ -324,9 +324,8 @@ Ventura   =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j18
 ### References
 
 #### [**AppleLife**](https://applelife.ru/)
-
-> @ [Dumps of system information of Apple computers](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
-
+```zsh
+curl -L "https://drive.google.com/file/d/1EjbseetzW4JG3Ltc8cr0RZa2xfmVyUOs/view?usp=sharing"
 ---
 
 ### Acknowledgement
