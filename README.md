@@ -47,8 +47,6 @@ EFI
 
 ### Basic Info
 
-<div align="center"><p><img width="500" src="https://user-images.githubusercontent.com/72515939/197660662-25adbd37-64af-43c4-ba79-b1a2e06117a4.png" alt="2022-09-29_15-54-05"></p></div>
-
 ### Processor
 
 #### Intel® Core™ i5-10400
