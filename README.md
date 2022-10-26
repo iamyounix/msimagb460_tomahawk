@@ -8,6 +8,10 @@
 
 > **Note**: SMBIOS is pre-generated. Since this attachment is just an example, please change SMBIOS matched with your settings. Refer [Choose The Right SMBIOS](https://dortania.github.io/OpenCore-Install-Guide/extras/smbios-support.html) and [Platform Info](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#platforminfo) by Dortania.
 
+```zsh
+Compatible: Catalina, Monterey, Ventura
+```
+
 ### OpenCore EFI Structure
 
 ```zsh
@@ -121,14 +125,6 @@ VDA Decoder                 : Fully Supported
 - `XHC`- renamed as `XHC1`
 
 > **Note**: This is just cosmetics. However, inaccurate rename method can cause an issue. Use at your own risk!.
-
-### Secondary System Description Tables
-
-#### [SSDT-PatchOC](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-PatchOC.dsl)
-
-```zsh
-Compatible: Catalina, Monterey, Ventura
-```
 
 ### Validate
 
