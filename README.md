@@ -312,12 +312,12 @@ machdep.xcpm.mode: 1
 
 </p></div>
 
-### Compability
+### Compatible with
 
 ```zsh
-Catalina  =  Passed
-Monterey  =  Passed
-Ventura   =  Passed
+Catalina  =  Passed (UEFI > APFS: MinDate=20200306 and MinVersion=1412101001000000, SecureBootModel: j185)
+Monterey  =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j185)
+Ventura   =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j185)
 ```
 
 ### References
