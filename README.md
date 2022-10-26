@@ -326,7 +326,7 @@ Ventura   =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j18
 #### [**AppleLife**](https://applelife.ru/)
 
 ```zsh
-curl -L "https://drive.google.com/u/0/uc?id=1EjbseetzW4JG3Ltc8cr0RZa2xfmVyUOs&export=download"
+curl -L "https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/Real%20iMac%2020%2C1.zip"
 ```
 
 ---
