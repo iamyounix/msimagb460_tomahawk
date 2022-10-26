@@ -81,54 +81,67 @@ Metal Low Power             : No
 Metal Headless              : No
 VDA Decoder                 : Fully Supported 
 ```
-
-| **Device**                      | **Details**                                                                    |
-| ------------------------------- | ------------------------------------------------------------------------------ |
-| SB.PCI0.PEG0.pci-bridge0/0      | Navi 10 XL Upstream Port (pci-bridge0 to PEGP)                                 |
-| SB.PCI0.PEG0.pci-bridge1/0      | Navi 10 XL Downstream Port (pci-bridge1 to BRG0)                               |
-| SB.PCI0.PEG0.pci-bridge1/0.GFX0 | Navi 14 Radeon RX 5500 / 5500M / Pro 5500M (include with _SUN, properties)     |
-| SB.PCI0.PEG0.pci-bridge1/0.HDAU | Navi 10 HDMI Audio (include with _SUN, properties)                             |
+1. `pci-bridge0`
+	- rename to `PEGP`
+2. `pci-bridge1`
+	- rename to `BRG0`
+3. `GFX0`
+	- with `_SUN` properties, `agdpmod=pikera`
+4. `HDAU`
+	- with `_SUN` properties
 
 > **Note**: Use at your own risk! In general, these patches have to be regarded as "experimental". They may work as intended but that's not guaranteed.
 
 ### PCI Devices
 
-#### Patches
+#### Other Patches
 
-| **Device**                      | **Details**                                                                                               |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------- |          
-| SB.PCI0.GFX0                    | Intel UHD Graphics 630 (rename as IGPU)                                                                   |
-| SB.PCI0.HDAS                    | Comet Lake PCH-V cAVS (renamed as HDEF)                                                                   |
-| SB.PCI0.HECI                    | Comet Lake PCH-V HECI Controller (Renamed as IMEI)                                                        |
-| SB.PCI0.LPCB.EC                 | Fake Embeded Controller                                                                                   |
-| SB.PCI0.LPCB.HPET               | High Precision Event Timer                                                                                |
-| SB.PCI0.PEG0.pci-bridge1/0.GFX0 | Navi 14 Radeon RX 5500 / 5500M / Pro 5500M (include with _SUN, properties)                                |
-| SB.PCI0.PEG0.pci-bridge1/0.HDAU | Navi 10 HDMI Audio (include with _SUN, properties)                                                        |
-| SB.PCI0.RP05.PXSX               | VL805/806 xHCI USB 3.0 Controller (renamed as XHC2, added built-in, include with _SUN properties)         |
-| SB.PCI0.RP09.PXSX               | Kingston SA2000M8500G M.2 (renamed as ANS0, include AppleSSDController patch)                             |
-| SB.PCI0.RP20.PXSX               | BCM4360 802.11ac Wireless Network Adapter (renamed as ARPT, added built-in, include with _SUN properties) |
-| SB.PCI0.RP21.PXSX               | Kingston SA2000M8500G M.2 Slot 1 (renamed as ANS1, include AppleSSDController patch)                      |            
-| SB.PCI0.SBUS                    | Serial Bus                                                                                                |                         
-| SB.USBX                         | USB Power Management                                                                                      |
-| _DSM                            | Device Specific Method                                                                                    |
-| GPRW                            | Native _PRW method for Power Resource for Wake                                                            |
-| STAS                            | _STA method, to enable such status changes to be communicated to the operating system.                    |
+1. `GFX0`
+	- rename as `IGPU` (Headless)
+2. `HDAS`
+	- rename as `HDEF`
+3. `HECI`
+	- rename as `IMEI`
+4. `HDAU`
+	- with `_SUN` properties
+5. `EC`
+	- Fake Embedded Controller
+6. ` HPET`
+	- High Precision Event Timer Fix (Optional)
+7. `RP05.PXSX`
+	- rename as `XHC2`, with `_SUN` properties
+8. `RP09.PXSX`
+	- rename as `ANS0`, AppleSSDController patch
+9. `RP20.PXSX`
+	- rename as `ARPT`, with `_SUN` properties 
+10. `RP21.PXSX`
+	- renamed as `ANS1`, AppleSSDController patch
+11. `SBUS`
+	- compatible `smbus` and `diagsvault` patch
+12. `USBX`
+	- USB Power Management patch
+
 
 #### Cosmetics
 
-| **Device**                      | **Details**                                                                                               |
-| ------------------------------- | ----------------------------------------------------------------------------------------------------------|
-| ALSD                            | Ambient Light Sensor enable (AppleLMUController)                                                          |           
-| SB.PCI0.LPCB.FWHD               | Fake Firmware Hub Device (Optional for 300 / 400 Series)                                                  |
-| SB.PCI0.PPMC                    | Programmable Power Management Controller. Device rename. Not compatible with macOS                        |
-| SB.PCI0.PMCR                    | Fake Power Management Capabilities Register.                                                              |
-| SB.PCI0.RP04.PXSX               | Realtek RTL8125B PCI Express 2.5 Gigabit Ethernet (renamed as RTLK)                                       |
-| SB.PCI0.SAT0                    | 400 Series Chipset Family SATA AHCI Controller (renamed as SATA)                                          |
-| SB.PCI0.TSUB                    | Thermal Subsystem. Device rename. Not compatible with macOS                                               |
-| SB.PCI0.XHC                     | 300/400 Series PCH-V USB Controller (renamed as XHC1)                                                     |
-| ALSE                            | ALSE method for Ambient Light Sensor                                                                      |
+1. `ALSD`
+	- Ambient Light Sensor, `AppleLMUController` (Optional)
+2. `FWHD`
+	- Fake Firmware Hub Device (Optional for 300 / 400 Series)
+3. `PPMC`
+	- device unrecognised and rename. (Not compatible)
+4. `PMCR`
+	- Fake Power Management Capabilities Register
+5. `RP04.PXSX`
+	- rename as `RTLK`
+6. `SAT0`
+	- rename as `SATA`
+7. `TSUB`
+	- device unrecognised and rename. (Not compatible)
+8. `XHC`
+	- renamed as `XHC1`
 
-> **Note**: Use at your own risk! In general, these patches have to be regarded as "experimental". They may work as intended but that's not guaranteed.
+> **Note**: This is just cosmetics. However, inaccurate rename method can cause an issue. Use at your own risk!.
 
 ### Secondary System Description Tables
 
