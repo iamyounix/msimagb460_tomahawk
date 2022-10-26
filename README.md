@@ -119,6 +119,7 @@ VDA Decoder                 : Fully Supported
 12. `USBX`
 	- USB Power Management patch
 
+> **Note**: This is not just cosmetics. Certain device is injected with properties.
 
 #### Cosmetics
 
