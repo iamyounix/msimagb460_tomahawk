@@ -320,18 +320,37 @@ machdep.xcpm.mode: 1
 
 </p></div>
 
-#### References
+### References
 
-[**AppleLife**](https://applelife.ru/)
+#### [**AppleLife**](https://applelife.ru/)
 
-> @ [**Dumps of system information of Apple computers**](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
+> @ [Dumps of system information of Apple computers](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
 
 ---
 
 ### Acknowledgement
 
-- [**Acidanthera**](https://github.com/acidanthera) for [**OpenCorePkg**](https://github.com/acidanthera/OpenCorePkg)
-- [**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/) for [**OC Guides**](https://dortania.github.io/OpenCore-Install-Guide/)
-- [**corpnewt**](https://github.com/corpnewt) for [**DevicePath**](https://github.com/corpnewt/DevicePath)
-- [**dreamwhite**](https://github.com/dreamwhite) for [**OC-Anonymizer**](https://github.com/dreamwhite/OC-Anonymizer)
-- [**5T33Z0**](https://github.com/5T33Z0) for [**OC Little Translate**](https://github.com/5T33Z0/OC-Little-Translated)
+- [**Acidanthera**](https://github.com/acidanthera) for
+```zsh
+git clone https://github.com/acidanthera/OpenCorePkg.git
+```
+
+- [**Dortania**](https://dortania.github.io/OpenCore-Install-Guide/) for 
+```zsh
+git clone https://github.com/dortania/OpenCore-Install-Guide.git
+```
+
+- [**corpnewt**](https://github.com/corpnewt) for 
+```zsh
+git clone https://github.com/corpnewt/DevicePath.git
+```
+
+- [**dreamwhite**](https://github.com/dreamwhite) for
+```zsh
+git clone https://github.com/dreamwhite/OC-Anonymizer.git
+```
+
+- [**5T33Z0**](https://github.com/5T33Z0) for
+```zsh
+git clone https://github.com/5T33Z0/OC-Little-Translated.git
+```
