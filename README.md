@@ -127,7 +127,7 @@ VDA Decoder                 : Fully Supported
 #### [SSDT-PatchOC](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-PatchOC.dsl)
 
 ```zsh
-Current Bootable            : Catalina, Monterey, Ventura
+Compatible: Catalina, Monterey, Ventura
 ```
 
 ### Validate
