@@ -46,8 +46,6 @@ EFI
     └── config.plist
 ```
 
-### Basic Info
-
 ### Processor
 
 #### Intel® Core™ i5-10400
