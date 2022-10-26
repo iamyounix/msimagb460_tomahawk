@@ -8,10 +8,6 @@
 
 > **Note**: SMBIOS is pre-generated. Since this attachment is just an example, please change SMBIOS matched with your settings. Refer [Choose The Right SMBIOS](https://dortania.github.io/OpenCore-Install-Guide/extras/smbios-support.html) and [Platform Info](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#platforminfo) by Dortania.
 
-```zsh
-Compatible: Catalina, Monterey, Ventura
-```
-
 ### OpenCore EFI Structure
 
 ```zsh
@@ -315,6 +311,14 @@ machdep.xcpm.mode: 1
 <div align="center"><p>
 
 </p></div>
+
+### Compability
+
+```zsh
+Catalina  =  Passed
+Monterey  =  Passed
+Ventura   =  Passed
+```
 
 ### References
 
