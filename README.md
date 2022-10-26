@@ -324,8 +324,11 @@ Ventura   =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j18
 ### References
 
 #### [**AppleLife**](https://applelife.ru/)
+
 ```zsh
 curl -L "https://drive.google.com/file/d/1EjbseetzW4JG3Ltc8cr0RZa2xfmVyUOs/view?usp=sharing"
+```
+
 ---
 
 ### Acknowledgement
