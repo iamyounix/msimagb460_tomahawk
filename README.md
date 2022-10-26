@@ -273,8 +273,7 @@ Empty
 ```zsh
 log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d_%H-%M-%S')".log
 ```
-
-> @ [**ASRock B460M Stell Legend ACPI Log**](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/ACPI%20Debug.log)
+> **Note**: This will export ACPI log to desktop. Better use with OpenCore-Debug
 
 #### Verify SMBUS/SBUS:
 
@@ -323,8 +322,7 @@ Ventura   =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j18
 
 ### References
 
-#### [**AppleLife**](https://applelife.ru/) and [**Mac's Darwin Dumps**](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
-
+#### [AppleLife](https://applelife.ru/) and [Mac's Darwin Dumps](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
 ```zsh
 curl -L "https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/Real%20iMac%2020%2C1.zip"
 ```
