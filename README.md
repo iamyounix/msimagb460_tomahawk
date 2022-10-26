@@ -198,11 +198,11 @@ OS                             macOS Ventura Version 13.0 (Build 22A380)
 | STAS                            | `_STA` method, to enable such status changes to be communicated to the operating system.                           |
 
 #### SSDT
-- [SSDT-PatchCLVR](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-PatchCLVR.dsl.dsl) (Clover)
+- [SSDT-PatchCLVR](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-PatchCLVR.dsl.dsl) (Clover) - Up Until macOS Monterey
 
 <img width="988" alt="Page 1" src="https://user-images.githubusercontent.com/72515939/197654895-39ec6305-f3f9-4148-883d-da8ea8077da5.png">
 
-- [SSDT-PatchOC](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-PatchOC.dsl) (OpenCore)
+- [SSDT-PatchOC](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/SSDT-PatchOC.dsl) (OpenCore) Up Until macOS Ventura
 
 <img width="988" alt="Page 2" src="https://user-images.githubusercontent.com/72515939/197654909-306009cf-699f-4acd-bbd2-3491e82ad8f1.png">
 
