@@ -273,7 +273,7 @@ Empty
 ```zsh
 log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d_%H-%M-%S')".log
 ```
-> **Note**: This will export ACPI log to desktop. Better use with OpenCore-Debug
+> **Note**: This will export ACPI log to desktop. Better logging and results is by using OpenCore-Debug
 
 #### Verify SMBUS/SBUS:
 
