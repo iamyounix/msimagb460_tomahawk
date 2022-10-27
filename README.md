@@ -59,7 +59,9 @@ Code Name                   : Comet Lake
 ### Graphics
 
 <div align=center>
+  
 <img width="1017" alt="2022-10-27_22-19-30" src="https://user-images.githubusercontent.com/72515939/198311969-4949a162-ad67-4e35-8738-f996716d0518.png">
+
 </div>
 
 #### IGPU (Headless)
@@ -73,6 +75,12 @@ GPU Device ID               : 0xC59B8086
 
 #### GFX0 (Display)
 
+<div align=center>
+  
+<img width="919" alt="2022-10-27_22-23-02" src="https://user-images.githubusercontent.com/72515939/198312790-4dffdc77-6e9e-4463-89e9-1bb02c7bd054.png">
+
+</div>
+  
 ```zsh
 GPU Name                    : Navi 14 [Radeon RX 5500/5500M / Pro 5500M]
 GPU Device ID               : 0x73401002
@@ -94,6 +102,12 @@ VDA Decoder                 : Fully Supported
 
 ### PCI Devices
 
+<div align=center>  
+  
+<img width="919" alt="2022-10-27_22-23-24" src="https://user-images.githubusercontent.com/72515939/198312992-ae285354-a2d3-486b-b7e8-13addb08747d.png">
+
+</div>
+  
 #### Other Patches
 
 - `GFX0`- rename as `IGPU` (Headless)
@@ -128,10 +142,11 @@ VDA Decoder                 : Fully Supported
 
 #### Check Build Number:
 
+  * Input:
 ```zsh
 sw_vers
 ```
-
+  * Output:
 ```zsh
 ProductName:		macOS
 ProductVersion:		13.0
