@@ -407,19 +407,6 @@ sysctl machdep.xcpm.mode
 machdep.xcpm.mode: 1
 ```
 
-#### 4K Test (Online)
-
-<div align="center"><p>
-  
-[![AppleTV](https://yt-embed.herokuapp.com/embed?v=Yl4cs7Xzuu4)](https://youtu.be/Yl4cs7Xzuu4 "AppleTV Test")
-[![Youtube4K](https://yt-embed.herokuapp.com/embed?v=uV4JGZE8Jrk)](https://youtu.be/uV4JGZE8Jrk "Youtube4K")
-
-</p></div>
-
-<div align="center"><p>
-
-</p></div>
-
 ### Compatible with
 
 ```zsh
