@@ -82,6 +82,18 @@ Code Name                   : Comet Lake
 GPU Name                    : Intel® UHD Graphics 630
 GPU Device ID               : 0xC59B8086
 ```
+**Patch via config.plist**
+
+* PciRoot(0x0)/Pci(0x2,0x0)
+	* AAPL,ig-platform-id / data / `0300923E`
+	* AAPL,slot-name / string / `Slot- 0`
+	* built-in / data / `00`
+	* device-id / data / `9B3E0000`
+	* enable-metal / data / `01000000`
+	* igfxfw / data / `02000000`
+	* igfxonln / data / `01000000`
+	* iommu-selection / data / `00000000`
+	* name / string / `IGPU`
 
 > **Note**: With a few exceptions, like headless Intel® KBL Unknown "0xC59B8086", certain strange name artefacts are present. There is no performance impact from this artefact. As of right now, device-id spoofing has been successful in altering its name to Intel® UHD Graphics 630. Without a doubt, only through the headless "0x3E9B8086". The real iMac20,1 uses Intel® HD Graphics "0xC89B8086" instead of Intel® UHD Graphics. Additionally, the Comet Lake processor was first used in the iMac20,1 before being officially released. Checkout [Headless framebuffers](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#add-2) / [Enabling Metal Support](https://github.com/5T33Z0/OC-Little-Translated/tree/main/11_Graphics/Metal_3#enabling-metal-3-support-and-gpu-tab-in-activity-monitor) / [Acidanthera Bugtracker Issues #1905](https://github.com/acidanthera/bugtracker/issues/1905)
 
@@ -105,17 +117,59 @@ Metal Headless              : No
 VDA Decoder                 : Fully Supported
 ```
 
+**Patch via ACPI**
+
 - `pci-bridge0`- rename to `PEGP`
 - `pci-bridge1`- rename to `BRG0`
+- `GFX0`- with `_SUN` properties, `agdpmod=pikera`
+- `HDAU`- with `_SUN` properties
+
+**Patch via config.plist**
+
+* PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)
+	* name / string / `PEGP`
+* PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
+	* name / string / BRG0
+* PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
+	* @0,AAPL,boot-display / data / `01000000`
+	* @0,ATY,EFIDisplay / string / `DP1`
+	* @0,compatible / string / `ATY,Python`
+	* @0,display-type / string / `LCD`
+	* @0,display_type / string / `display`
+	* @0,name / string / `ATY,Python`
+	* @1,compatible / string / `ATY,Python`
+	* @1,display-type / string / `NONE`
+	* @1,display_type / string / `display`
+	* @1,name / string / `ATY,Python`
+	* @2,compatible / string / `ATY,Python`
+	* @2,display-type / string / `NONE`
+	* @2,display_type / string / `display`
+	* @2,name / string / `ATY,Python`
+	* @3,compatible / string / `ATY,Python`
+	* @3,display-type / string / `NONE`
+	* @3,display_type / string / `display`
+	* @3,name / string / `ATY,Python`
+	* AAPL,slot-name / string / `Internal@0,1,0/0,0/0,0/0,0`
+	* ATY,DeviceID / data / `4073`
+	* ATY,EFIEnabledMode / data / `01`
+	* ATY,EFIVersion / string / `31.0.12026.3`
+	* ATY,EFIVersionB / string / `113-MSITV382MH.161`
+	* ATY,EFIVersionE / string / `113-EXT37635-001`
+	* ATY,Rom# / string / `113-EXT37635-001`
+	* ATY,copyright / string / `Copyright AMD Inc.  All Right Reserved.  2005-2019`
+	* hda-gfx / string / `onboard-1`
+	* name / string / `ATY,PythonParent`
+	* rebuild-device-tree / data / `00`		
+* PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
+	* hda-gfx / string / `onboard-1`
+	* model / string / `Navi 10 HDMI Audio`
+	* name / string / `HDAU`
 
 <div align=center>
 
 <img width="917" alt="2022-10-27_22-48-54" src="https://user-images.githubusercontent.com/72515939/198322516-083df5a4-c15e-451c-9371-582ef3597d0a.png">
 
 </div>
-
-- `GFX0`- with `_SUN` properties, `agdpmod=pikera`
-- `HDAU`- with `_SUN` properties
 
 > **Note**: Use at your own risk! In general, these patches have to be regarded as "experimental". They may work as intended but that's not guaranteed.
 
@@ -167,6 +221,17 @@ VDA Decoder                 : Fully Supported
 
   * ALCS1200A (Layout ID = 1)
 
+#### Patch via ACPI
+
+* No-hda-gfx = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+* No-idle-support = 0x00
+
+#### Patch via config.plist
+
+* PciRoot(0x0)/Pci(0x1F,0x3)
+	* layout-id / data / `01000000`
+	* name / string / HDEF
+
 <div align=center>
   
 <img width="933" alt="2022-10-27_23-06-44" src="https://user-images.githubusercontent.com/72515939/198327334-02fb3dbc-a1ae-40f7-b0b0-bfe8f8a0464f.png">
@@ -180,6 +245,29 @@ VDA Decoder                 : Fully Supported
 <img width="933" alt="2022-10-27_23-07-31" src="https://user-images.githubusercontent.com/72515939/198327777-c47f3ec6-8c46-4ab8-a692-515ccb7e0a95.png">
   
 </div>
+
+### Config 
+
+This config is based on OpenCore 0.8.5. 
+
+#### ACPI / Quirks
+
+* All False
+
+#### Booter / Quirks
+
+AvoidRuntimeDefrag = True
+DevirtualiseMmio = True
+EnableSafeModeSlide = True
+ProtectUefiServices = True
+ProvideCustomSlide = True
+RebuildAppleMemoryMap = True
+ResizeAppleGpuBars = -1
+SyncRuntimePermissions = True
+
+> **Note**: Other than above is `false`
+
+#### DeviceProperties
 
 ### NVRAM
 
@@ -415,6 +503,7 @@ BigSur    =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j18
 Monterey  =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j185)
 Ventura   =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j185)
 ```
+> **Note**: Warning: Not all Apple Secure Boot models are supported on all hardware configurations. Please refer [APFS Min Version & Min Date](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#apfs) / [SecureBootModel](https://dortania.github.io/OpenCore-Post-Install/universal/security/applesecureboot.html#securebootmodel) for more info.
 
 ### References
 
