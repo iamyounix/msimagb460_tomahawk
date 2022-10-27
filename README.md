@@ -157,6 +157,7 @@ VDA Decoder                 : Fully Supported
 	* ATY,EFIVersionE / string / `113-EXT37635-001`
 	* ATY,Rom# / string / `113-EXT37635-001`
 	* ATY,copyright / string / `Copyright AMD Inc.  All Right Reserved.  2005-2019`
+	* device_type / string / `ATY,PythonParent`
 	* hda-gfx / string / `onboard-1`
 	* name / string / `ATY,PythonParent`
 	* rebuild-device-tree / data / `00`		
