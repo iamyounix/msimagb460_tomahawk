@@ -224,14 +224,14 @@ VDA Decoder                 : Fully Supported
 
 #### Patch via ACPI
 
-* No-hda-gfx = 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-* No-idle-support = 0x00
+* No-hda-gfx = `0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00`
+* No-idle-support = `0x00`
 
 #### Patch via config.plist
 
 * PciRoot(0x0)/Pci(0x1F,0x3)
 	* layout-id / data / `01000000`
-	* name / string / HDEF
+	* name / string / `HDEF`
 
 <div align=center>
   
