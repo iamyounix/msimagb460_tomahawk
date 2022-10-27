@@ -250,7 +250,7 @@ VDA Decoder                 : Fully Supported
   
 </div>
 
-### Config 
+### Quirks 
 
 This config is based on OpenCore 0.8.5. 
 
@@ -260,18 +260,36 @@ This config is based on OpenCore 0.8.5.
 
 #### Booter / Quirks
 
-AvoidRuntimeDefrag = True
-DevirtualiseMmio = True
-EnableSafeModeSlide = True
-ProtectUefiServices = True
-ProvideCustomSlide = True
-RebuildAppleMemoryMap = True
-ResizeAppleGpuBars = -1
-SyncRuntimePermissions = True
+* AvoidRuntimeDefrag = `True`
+* DevirtualiseMmio = `True`
+* EnableSafeModeSlide = `True`
+* ProtectUefiServices = `True`
+* ProvideCustomSlide = `True`
+* RebuildAppleMemoryMap = `True`
+* ResizeAppleGpuBars = `-1`
+* SyncRuntimePermissions = `True`
 
 > **Note**: Other than above is `false`
 
-#### DeviceProperties
+#### Kernel / Quirks
+
+* CustomSMBIOSGuid = `True` (Require PlatformInfo / Generic / UpdateSMBIOSMode = `Custom`)
+* DisableLinkeditJettison = `True`
+* PanicNoKextDump = `True`
+* PowerTimeoutKernelPanic = `True`
+* SetApfsTrimTimeout = `0`
+
+> **Note**: Other than above is `false`
+
+#### UEFI / Quirks
+
+* EnableVectorAcceleration = `True`
+* RequestBootVarRouting = `True`
+* ResizeGpuBars = `-1`
+* TscSyncTimeout = `0`
+* SetApfsTrimTimeout = `0`
+
+> **Note**: Other than above is `false`
 
 ### NVRAM
 
