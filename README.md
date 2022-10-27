@@ -2,7 +2,11 @@
 
 **Hackintosh: 10th Gen Intel Comet Lake with B460M Steel Legend with OpenCore 0.8.5**
 
-<div align="justify">
+<div align=center>
+<img width="294" alt="2022-10-27_23-15-50" src="https://user-images.githubusercontent.com/72515939/198330095-5b594802-a6c2-41d9-9e83-510a66604dc6.png">
+</div>
+
+<div align=justify>
   <p><strong>My word:</strong> - <strong>"It's merely cosmetic"</strong>, according to some. For me, this content is not just for show. <strong>Configuration?</strong>, You can play with <strong>config.plist</strong> and experiment with it. But heed the warning—if the file is not saved properly, it may get corrupted. This issue sometimes happen due to; <strong>restart before saving</strong> , &nbsp;<strong>erroneously input or  non-format input</strong>. I'm not interested to share my personal <strong>EFI</strong>, and not meant to be used by other people or systems. If you're still interested in utilising it, please be <strong>careful</strong> to adjust the <strong>plist configuration</strong> and <strong>SSDTs</strong> according to your system. <strong>ACPI?</strong>, You may see how <strong>ACPI</strong> impacts the operating system. Incorrect device renaming through <strong>SSDTs</strong> will results the operating system getting stuck. My advise is not to modify your <strong>DSDTs</strong>. <strong>DSDT's</strong> (Primary Table) modification method will results more difficulties to your machine and harm your BIOS directly. I recommend <strong>SSDTs</strong> (Secondary Table) modifications, since this way are more <strong>dynamic</strong> and <strong>safe</strong>. Device renaming is not necessary for recognised and functional devices unless the devices are not identified or displayed via IOreg or require extra tweaks, especially if your computer contains multiple bootable OSes. This is not full feature guide. OpenCore and Clover sample is attached as a learning curve. Please be careful what you're read, copy and modified all these stuffs. Do a research first.</p>
 </div>
 
@@ -65,6 +69,14 @@ Code Name                   : Comet Lake
 </div>
 
 #### IGPU (Headless)
+
+<div align=center>
+
+<img width="916" alt="2022-10-27_23-01-58" src="https://user-images.githubusercontent.com/72515939/198326196-3b0d12d2-e74b-4b4c-ae62-7317398fa3a7.png">
+  
+<img width="916" alt="2022-10-27_23-00-57" src="https://user-images.githubusercontent.com/72515939/198325841-1d3c6c81-0310-4889-86ec-372c243b7eed.png">
+
+</div>
 
 ```zsh
 GPU Name                    : Intel® UHD Graphics 630
@@ -150,6 +162,42 @@ VDA Decoder                 : Fully Supported
 - `XHC`- renamed as `XHC1`
 
 > **Note**: This is just cosmetics. However, inaccurate rename method can cause an issue. Use at your own risk!.
+
+### Audio
+
+  * ALCS1200A (Layout ID = 1)
+
+<div align=center>
+  
+<img width="933" alt="2022-10-27_23-06-44" src="https://user-images.githubusercontent.com/72515939/198327334-02fb3dbc-a1ae-40f7-b0b0-bfe8f8a0464f.png">
+  
+</div>
+
+  * AppleGFXHDADriver (Navi 10 HDMI Audio)
+
+<div align=center>
+  
+<img width="933" alt="2022-10-27_23-07-31" src="https://user-images.githubusercontent.com/72515939/198327777-c47f3ec6-8c46-4ab8-a692-515ccb7e0a95.png">
+  
+</div>
+
+### NVRAM
+
+<div align=center>
+  
+<img width="933" alt="2022-10-27_23-04-03" src="https://user-images.githubusercontent.com/72515939/198326691-5d0606c8-70ce-4dd1-b466-e3c7b9cf504c.png">
+
+</div>
+  
+### NVMe
+
+<div align=center>
+  
+<img width="716" alt="2022-10-27_23-11-09" src="https://user-images.githubusercontent.com/72515939/198328522-75eb2a96-9fc5-49e7-8989-09cfe27857f8.png">
+  
+</div>  
+
+> **Note**: `ANS0` and `ANS1` as Apple SSD Controller
 
 ### Validate
 
