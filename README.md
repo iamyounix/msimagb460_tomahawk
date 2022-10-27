@@ -129,15 +129,15 @@ sw_vers
 ```
 
 ```zsh
-ProductName:	macOS
-ProductVersion:	13.0
-BuildVersion:	22A380
+ProductName:		macOS
+ProductVersion:		13.0
+BuildVersion:		22A380
 ```
 
 #### Check Kernel Version:
 
 ```zsh
- uname -r
+uname -r
 ```
 
 ```zsh
@@ -151,6 +151,7 @@ sysctl -a | grep freq
 ```
 
 ```zsh
+net.link.fake.switch_mode_frequency: 10
 hw.busfrequency: 400000000
 hw.busfrequency_min: 400000000
 hw.busfrequency_max: 400000000
@@ -158,7 +159,7 @@ hw.cpufrequency: 2900000000
 hw.cpufrequency_min: 2900000000
 hw.cpufrequency_max: 2900000000
 hw.tbfrequency: 1000000000
-machdep.tsc.frequency: 2903999153
+machdep.tsc.frequency: 2903996007
 ```
 
 #### Check CPU Vendor:
@@ -191,6 +192,16 @@ sysctl -a | grep machdep.cpu.features
 machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
 ```
 
+#### Check Instruction Set:
+
+```zsh
+sysctl -a | grep machdep.cpu.leaf7_features
+```
+
+```zsh
+machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
+```
+
 #### Check CPU Full Features:
 
 ```zsh
@@ -202,6 +213,8 @@ sysctl machdep.cpu | grep AVX
 ```zsh
 machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
 machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
+machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
+machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
 ```
 
 #### Check CPU Details:
@@ -211,7 +224,7 @@ ioreg -rxn "PR00@0"
 ```
 
 ```zsh
-+-o PR00@0  <class IOACPIPlatformDevice, id 0x10000013c, registered, matched, a$
++-o PR00@0  <class IOACPIPlatformDevice, id 0x10000013f, registered, matched, a$
   | {
   |   "processor-lapic" = 0x0
   |   "clock-frequency" = <007ddaac>
@@ -224,26 +237,16 @@ ioreg -rxn "PR00@0"
   |   "name" = <5052303000>
   |   "processor-index" = 0x0
   | }
-  |
-  +-o AppleACPICPU  <class AppleACPICPU, id 0x100000151, registered, matched, a$
+  | 
+  +-o AppleACPICPU  <class AppleACPICPU, id 0x100000154, registered, matched, a$
   | +-o AppleACPICPUInterruptController  <class AppleACPICPUInterruptController$
-  | +-o X86PlatformPlugin  <class X86PlatformPlugin, id 0x100000485, registered$
-  |   +-o IOPlatformEnabler  <class IOPlatformPluginDevice, id 0x100000505, reg$
-  |   | +-o ApplePlatformEnabler  <class ApplePlatformEnabler, id 0x10000050b, $
-  |   +-o AGPMEnabler  <class IOPlatformPluginDevice, id 0x100000506, registere$
-  |   | +-o AGPMController  <class AGPMController, id 0x10000050a, !registered,$
-  |   +-o X86PlatformShim  <class X86PlatformShim, id 0x100000508, !registered,$
-  +-o SMCProcessor  <class SMCProcessor, id 0x100000152, !registered, !matched,$\
-```
-
-#### Check Instruction Set:
-
-```zsh
-sysctl -a | grep machdep.cpu.leaf7_features
-```
-
-```zsh
-machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
+  | +-o X86PlatformPlugin  <class X86PlatformPlugin, id 0x1000004b0, registered$
+  |   +-o IOPlatformEnabler  <class IOPlatformPluginDevice, id 0x10000057f, reg$
+  |   | +-o ApplePlatformEnabler  <class ApplePlatformEnabler, id 0x100000584, $
+  |   +-o AGPMEnabler  <class IOPlatformPluginDevice, id 0x100000580, registere$
+  |   | +-o AGPMController  <class AGPMController, id 0x100000583, !registered,$
+  |   +-o X86PlatformShim  <class X86PlatformShim, id 0x100000582, !registered,$
+  +-o SMCProcessor  <class SMCProcessor, id 0x100000155, !registered, !matched,$
 ```
 
 #### Check SIP (System Integrity Protection):
@@ -262,7 +265,14 @@ System Integrity Protection status: enabled.
 pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 ```
 
-> **Note**: If the output is nothing, machine has no issues.
+```zsh
+2022-10-26 09:31:20 +0800 Sleep               	Entering DarkWake state due to 'Idle Sleep':TCPKeepAlive=active Using AC (Charge:0%) 2 secs    
+2022-10-26 09:31:22 +0800 Wake                	DarkWake to FullWake from Invalid [CDNVA] : due to HID Activity Using AC (Charge:0%) 0 secs    
+2022-10-26 09:31:22 +0800 Sleep               	Entering DarkWake state due to 'Software Sleep pid=173':TCPKeepAlive=active Using AC (Charge:0%) 5 secs    
+2022-10-26 09:31:27 +0800 Wake                	DarkWake to FullWake from Invalid [CDNVA] : due to HID Activity Using AC (Charge:0%)  
+```
+
+> **Note**: Head to [GPRW/UPRW/LANC Instant Wake Patch](https://dortania.github.io/OpenCore-Post-Install/usb/misc/instant-wake.html) if output as above. If the output is nothing, machine has no issues.
 
 #### Lists any ACPI Error:
 
@@ -280,8 +290,8 @@ kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"
 ```zsh
 Executing: /usr/bin/kmutil showloaded
 No variant specified, falling back to release
-148    0 0xffffff7f98f8e000 0x1000     0x1000     com.apple.driver.AppleSMBusPCI (1.0.14d1) C0C24D4F-420F-3AD1-9039-AFA08E9524FF <16 7 6 3>
-153    1 0xffffff7f98f82000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) 7ECD5D2C-E62F-3C6D-ACD7-D90B7443024D <152 16 15 7 6 3>
+  150    0 0xffffff7f95eb5000 0x1000     0x1000     com.apple.driver.AppleSMBusPCI (1.0.14d1) 27454DC4-17BA-3D0C-AD38-E7EDD2C69545 <17 7 6 3>
+  161    1 0xffffff7f95ea9000 0x6ffd     0x6ffd     com.apple.driver.AppleSMBusController (1.0.18d1) 67C1DE20-8B96-3253-B373-5F234037AA59 <69 17 16 7 6 3>
 ```
 
 #### Verify Plugin-Type=1:
