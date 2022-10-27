@@ -119,17 +119,19 @@ VDA Decoder                 : Fully Supported
 
 **Patch via ACPI**
 
-- Navi XL Upstream `pci-bridge0` = rename to `PEGP` (Upstream)
-- Navi XL Downstream `pci-bridge1` = rename to `BRG0` (Downstream)	
-- Navi 14 Radeon RX5500XT `GFX0`= with `_SUN` properties, `agdpmod=pikera`
-- Navi 10 HDMI Audio `HDAU`= with `_SUN` properties
+- `pci-bridge0` = rename to `PEGP`
+- `pci-bridge1` = rename to `BRG0`	
+- `GFX0`= with `_SUN` properties, `agdpmod=pikera`
+- `HDAU`= with `_SUN` properties
 
 **Patch via config.plist**
 
 * PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)
 	* name / string / `PEGP`
+	
 * PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
 	* name / string / `BRG0`
+	
 * PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
 	* @0,AAPL,boot-display / data / `01000000`
 	* @0,ATY,EFIDisplay / string / `DP1`
@@ -160,7 +162,8 @@ VDA Decoder                 : Fully Supported
 	* device_type / string / `ATY,PythonParent`
 	* hda-gfx / string / `onboard-1`
 	* name / string / `ATY,PythonParent`
-	* rebuild-device-tree / data / `00`		
+	* rebuild-device-tree / data / `00`
+			
 * PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
 	* hda-gfx / string / `onboard-1`
 	* model / string / `Navi 10 HDMI Audio`
