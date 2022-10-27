@@ -136,20 +136,23 @@ BuildVersion:		22A380
 
 #### Check Kernel Version:
 
+  * Input:
 ```zsh
 uname -r
 ```
-
+  * Output:
 ```zsh
 22.1.0
 ```
 
 #### Check Bus & Frequency:
 
+  * Input:
 ```zsh
 sysctl -a | grep freq
 ```
 
+  * Output:
 ```zsh
 net.link.fake.switch_mode_frequency: 10
 hw.busfrequency: 400000000
@@ -164,52 +167,57 @@ machdep.tsc.frequency: 2903996007
 
 #### Check CPU Vendor:
 
+  * Input:
 ```zsh
 sysctl -a | grep machdep.cpu.vendor
 ```
-
+  * Output:
 ```zsh
 machdep.cpu.vendor: GenuineIntel
 ```
 
 #### Check CPU Brand String:
 
+  * Input:
 ```zsh
 sysctl machdep.cpu.brand_string
 ```
-
+  * Output:
 ```zsh
 machdep.cpu.brand_string: Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
 ```
 
 #### Check CPU Features:
 
+  * Input:
 ```zsh
 sysctl -a | grep machdep.cpu.features
 ```
-
+  * Output:
 ```zsh
 machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
 ```
 
 #### Check Instruction Set:
 
+  * Input:
 ```zsh
 sysctl -a | grep machdep.cpu.leaf7_features
 ```
-
+  * Output:
 ```zsh
 machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
 ```
 
 #### Check CPU Full Features:
 
+  * Input:
 ```zsh
 sysctl -a | grep machdep.cpu.features
 sysctl -a | grep machdep.cpu.leaf7_features
 sysctl machdep.cpu | grep AVX
 ```
-
+  * Output:
 ```zsh
 machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
 machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
@@ -219,10 +227,11 @@ machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 E
 
 #### Check CPU Details:
 
+  * Input:
 ```zsh
 ioreg -rxn "PR00@0"
 ```
-
+  * Output:
 ```zsh
 +-o PR00@0  <class IOACPIPlatformDevice, id 0x10000013f, registered, matched, a$
   | {
@@ -251,21 +260,24 @@ ioreg -rxn "PR00@0"
 
 #### Check SIP (System Integrity Protection):
 
+  * Input:
 ```zsh
 csrutil status
 ```
-
+  * Output:
 ```zsh
 System Integrity Protection status: enabled.
 ```
 
 #### Find Wake Issue:
 
+  * Input:
 ```zsh
 pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 ```
 
-  * Sleep/Wake Issue Example:
+  * Output:
+    * Sleep/Wake Issue Example:
 
 ```zsh
 2022-10-26 09:31:20 +0800 Sleep               	Entering DarkWake state due to 'Idle Sleep':TCPKeepAlive=active Using AC (Charge:0%) 2 secs    
@@ -274,7 +286,8 @@ pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 2022-10-26 09:31:27 +0800 Wake                	DarkWake to FullWake from Invalid [CDNVA] : due to HID Activity Using AC (Charge:0%)  
 ```
 
-  * Sleep/Wake Issue Fix Example (After Clean Install):
+  * Output:
+    * Sleep/Wake Issue Fix Example (After Clean Install):
 
 <div align=center>
 <img width="749" alt="2022-10-27_22-04-11" src="https://user-images.githubusercontent.com/72515939/198307679-3e5a9008-5352-4563-a92f-b597bf712380.png">
@@ -284,6 +297,7 @@ pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 
 #### Lists any ACPI Error:
 
+  * Input:
 ```zsh
 log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d_%H-%M-%S')".log
 ```
@@ -291,10 +305,11 @@ log show --last boot | grep AppleACPIPlatform > ~/Desktop/Log_"$(date '+%Y-%m-%d
 
 #### Verify SMBUS/SBUS:
 
+  * Input:
 ```zsh
 kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"
 ```
-
+  * Output:
 ```zsh
 Executing: /usr/bin/kmutil showloaded
 No variant specified, falling back to release
@@ -304,10 +319,11 @@ No variant specified, falling back to release
 
 #### Verify Plugin-Type=1:
 
+  * Input:
 ```zsh
 sysctl machdep.xcpm.mode
 ```
-
+  * Output:
 ```zsh
 machdep.xcpm.mode: 1
 ```
