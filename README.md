@@ -304,7 +304,7 @@ pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 2022-10-26 09:31:22 +0800 Sleep               	Entering DarkWake state due to 'Software Sleep pid=173':TCPKeepAlive=active Using AC (Charge:0%) 5 secs    
 2022-10-26 09:31:27 +0800 Wake                	DarkWake to FullWake from Invalid [CDNVA] : due to HID Activity Using AC (Charge:0%)  
 ```
-> **Note**: Head to [GPRW/UPRW/LANC Instant Wake Patch](https://dortania.github.io/OpenCore-Post-Install/usb/misc/instant-wake.html) if output as above. Sometimes, dortania solution does't fix this issue. From my experience personally, just clean install macOS. This happen to me when upgrading Monterey to Ventura. Other than that, if the no output, this mean the machine has no sleep and wake issues. Whatever happen, try Dortania method first.
+> **Note**: Head to [GPRW/UPRW/LANC Instant Wake Patch](https://dortania.github.io/OpenCore-Post-Install/usb/misc/instant-wake.html) if output as above. Sometimes, dortania solution does't fix this issue. From my experience personally, just clean install macOS. This happen to me when upgrading Monterey to Ventura. Other than that, if no output, this mean the machine has no sleep and wake issues. Whatever happen, try Dortania method first.
 
   * Output:
     * Sleep/Wake Issue Fix Example (After Clean Install):
