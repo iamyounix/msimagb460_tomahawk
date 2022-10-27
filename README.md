@@ -95,6 +95,13 @@ VDA Decoder                 : Fully Supported
 
 - `pci-bridge0`- rename to `PEGP`
 - `pci-bridge1`- rename to `BRG0`
+
+<div align=center>
+
+<img width="917" alt="2022-10-27_22-48-54" src="https://user-images.githubusercontent.com/72515939/198322516-083df5a4-c15e-451c-9371-582ef3597d0a.png">
+
+</div>
+
 - `GFX0`- with `_SUN` properties, `agdpmod=pikera`
 - `HDAU`- with `_SUN` properties
 
@@ -109,6 +116,12 @@ VDA Decoder                 : Fully Supported
 </div>
   
 #### Other Patches
+
+<div align=center>
+
+<img width="2133" alt="2022-10-27_22-52-31" src="https://user-images.githubusercontent.com/72515939/198324011-917702b0-2d1a-4298-b10a-e7c7a3c6e9d2.png">
+
+</div>
 
 - `GFX0`- rename as `IGPU` (Headless)
 - `HDAS`- rename as `HDEF`
