@@ -265,6 +265,8 @@ System Integrity Protection status: enabled.
 pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 ```
 
+  * Sleep/Wake Issue Example:
+
 ```zsh
 2022-10-26 09:31:20 +0800 Sleep               	Entering DarkWake state due to 'Idle Sleep':TCPKeepAlive=active Using AC (Charge:0%) 2 secs    
 2022-10-26 09:31:22 +0800 Wake                	DarkWake to FullWake from Invalid [CDNVA] : due to HID Activity Using AC (Charge:0%) 0 secs    
@@ -272,9 +274,13 @@ pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 2022-10-26 09:31:27 +0800 Wake                	DarkWake to FullWake from Invalid [CDNVA] : due to HID Activity Using AC (Charge:0%)  
 ```
 
-> **Note**: Head to [GPRW/UPRW/LANC Instant Wake Patch](https://dortania.github.io/OpenCore-Post-Install/usb/misc/instant-wake.html) if output as above. Sometimes, dortania solution does't fix this issue. From my experience personally, just clean install macOS. This happen to me when upgrading Monterey to Ventura. Other than that, if the no output, this mean the machine has no sleep and wake issues.
+  * Sleep/Wake Issue Fix Example (After Clean Install):
 
+<div align=center>
 <img width="749" alt="2022-10-27_22-04-11" src="https://user-images.githubusercontent.com/72515939/198307679-3e5a9008-5352-4563-a92f-b597bf712380.png">
+</div>
+
+> **Note**: Head to [GPRW/UPRW/LANC Instant Wake Patch](https://dortania.github.io/OpenCore-Post-Install/usb/misc/instant-wake.html) if output as above. Sometimes, dortania solution does't fix this issue. From my experience personally, just clean install macOS. This happen to me when upgrading Monterey to Ventura. Other than that, if the no output, this mean the machine has no sleep and wake issues. Whatever happen, try Dortania method first.
 
 #### Lists any ACPI Error:
 
