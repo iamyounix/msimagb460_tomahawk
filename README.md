@@ -152,17 +152,15 @@ VDA Decoder                 : Fully Supported
 	* @3,display_type / string / `display`
 	* @3,name / string / `ATY,Python`
 	* AAPL,slot-name / string / `Internal@0,1,0/0,0/0,0/0,0`
+	* ATY,copyright / string / `Copyright AMD Inc.  All Right Reserved.  2005-2019`
 	* ATY,DeviceID / data / `4073`
 	* ATY,EFIEnabledMode / data / `01`
 	* ATY,EFIVersion / string / `31.0.12026.3`
 	* ATY,EFIVersionB / string / `113-MSITV382MH.161`
 	* ATY,EFIVersionE / string / `113-EXT37635-001`
 	* ATY,Rom# / string / `113-EXT37635-001`
-	* ATY,copyright / string / `Copyright AMD Inc.  All Right Reserved.  2005-2019`
-	* device_type / string / `ATY,PythonParent`
 	* hda-gfx / string / `onboard-1`
-	* name / string / `ATY,PythonParent`
-	* rebuild-device-tree / data / `00`
+
 			
 * PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
 	* hda-gfx / string / `onboard-1`
@@ -193,12 +191,12 @@ VDA Decoder                 : Fully Supported
 
 </div>
 
+- `EC`- Fake Embedded Controller
 - `GFX0`- rename as `IGPU` (Headless)
 - `HDAS`- rename as `HDEF`
-- `HECI`- rename as `IMEI`
 - `HDAU`- with `_SUN` properties
-- `EC`- Fake Embedded Controller
-- ` HPET`- High Precision Event Timer Fix (Optional)
+- `HECI`- rename as `IMEI`
+- `HPET`- High Precision Event Timer Fix (Optional)
 - `RP05.PXSX`- rename as `XHC2`, with `_SUN` properties
 - `RP09.PXSX`- rename as `ANS0`, AppleSSDController patch
 - `RP20.PXSX`- rename as `ARPT`, with `_SUN` properties
@@ -212,8 +210,8 @@ VDA Decoder                 : Fully Supported
 
 - `ALSD`- Ambient Light Sensor, `AppleLMUController` (Optional)
 - `FWHD`- Fake Firmware Hub Device (Optional for 300 / 400 Series)
-- `PPMC`- device unrecognised and rename. (Not compatible)
 - `PMCR`- Fake Power Management Capabilities Register
+- `PPMC`- device unrecognised and rename. (Not compatible)
 - `RP04.PXSX`- rename as `RTLK`
 - `SAT0`- rename as `SATA`
 - `TSUB`- device unrecognised and rename. (Not compatible)
