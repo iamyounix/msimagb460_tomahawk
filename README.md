@@ -58,6 +58,10 @@ Code Name                   : Comet Lake
 
 ### Graphics
 
+<div align=center>
+<img width="1017" alt="2022-10-27_22-19-30" src="https://user-images.githubusercontent.com/72515939/198311969-4949a162-ad67-4e35-8738-f996716d0518.png">
+</div>
+
 #### IGPU (Headless)
 
 ```zsh
@@ -291,7 +295,7 @@ pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
     * Sleep/Wake Issue Fix Example (After Clean Install):
 
 <div align=center>
-<img width="749" alt="2022-10-27_22-04-11" src="https://user-images.githubusercontent.com/72515939/198307679-3e5a9008-5352-4563-a92f-b597bf712380.png">
+<img width="788" alt="2022-10-27_22-20-09" src="https://user-images.githubusercontent.com/72515939/198312156-62d91cbc-01a5-4ff9-a0eb-ddf61636f4ef.png">
 </div>
 
 #### Lists any ACPI Error:
