@@ -315,7 +315,7 @@ This config is based on OpenCore 0.8.5.
 
 </div>
 
-> **Note**: Here is alternative sample attached. Download [here](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/EFI-CLVR5149.zip)
+> **Note**: Here is an alternative sample attached. Download [here](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/EFI-CLVR5149.zip)
 
 ### Validate
 
