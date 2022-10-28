@@ -12,6 +12,10 @@
 
 > **Note**: SMBIOS is pre-generated. Since this attachment is just an example, please change SMBIOS matched with your settings. Refer [Choose The Right SMBIOS](https://dortania.github.io/OpenCore-Install-Guide/extras/smbios-support.html) and [Platform Info](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#platforminfo) by Dortania.
 
+### Sample
+
+Download [here](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/EFI-OC085.zip)
+
 ### OpenCore EFI Structure
 
 ```zsh
