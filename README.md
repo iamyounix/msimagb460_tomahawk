@@ -14,7 +14,7 @@
 
 ### Sample
 
-Download [here](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/EFI-OC085.zip)
+Download [here](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/EFI%20085.zip)
 
 ### OpenCore EFI Structure
 
@@ -310,16 +310,6 @@ This config is based on OpenCore 0.8.5.
 </div>  
 
 > **Note**: `ANS0` and `ANS1` as Apple SSD Controller
-
-### Clover
-
-<div align=center>
-
-<img width="965" alt="2022-10-28_12-42-53" src="https://user-images.githubusercontent.com/72515939/198504941-39d8a891-aabd-44e3-8bad-3e67b082fae1.png">
-
-</div>
-
-> **Note**: Here is an alternative sample attached. Download [here](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/EFI-CLVR5149.zip)
 
 ### Validate
 
