@@ -53,7 +53,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
         Scope(PCI0) {
             Device(DRAM) {
                 Name(_ADR, Zero) // _ADR: Address
-                Method(_STA, 0, NotSerialized) // _STA: Status
+                Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
                 {
                     If(_OSI("Darwin")) {
                         Return(0x0F)
@@ -151,8 +151,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
 
             Device(IGPU) {
                 Name(_ADR, 0x00020000) // _ADR: Address
-                Name(_SUN, Zero) // _SUN: Slot User Number
-                Method(_STA, 0, NotSerialized) // _STA: Status
+                Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
                 {
                     If(_OSI("Darwin")) {
                         Return(0x0F)
@@ -180,14 +179,14 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
                 Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
                 {
                     If((Arg2 == Zero)) {
-                        Return(Buffer() {
+                        Return(Buffer(One) {
                             0x03 // .
                         })
                     }
 
                     Return(Package(0x04) {
                         "No-hda-gfx",
-                        Buffer() {
+                        Buffer(0x08) {
                             0x00,
                             0x00,
                             0x00,
@@ -199,20 +198,10 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
                         },
 
                         "No-idle-support",
-                        Buffer() {
+                        Buffer(One) {
                             0x00 // .
                         }
                     })
-                }
-
-                Method(_STA, 0, NotSerialized) // _STA: Status
-                {
-                    If(_OSI("Darwin")) {
-                        Return(0x0F)
-                    }
-                    Else {
-                        Return(Zero)
-                    }
                 }
             }
 
@@ -230,7 +219,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
 
             Device(IMEI) {
                 Name(_ADR, 0x00160000) // _ADR: Address
-                Method(_STA, 0, NotSerialized) // _STA: Status
+                Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
                 {
                     If(_OSI("Darwin")) {
                         Return(0x0F)
@@ -247,11 +236,10 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
                         Name(_ADR, Zero) // _ADR: Address
                         Device(GFX0) {
                             Name(_ADR, Zero) // _ADR: Address
-                            Name(_SUN, One) // _SUN: Slot User Number
                             Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
                             {
                                 If((Arg2 == Zero)) {
-                                    Return(Buffer() {
+                                    Return(Buffer(One) {
                                         0x03 // .
                                     })
                                 }
@@ -261,7 +249,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
                                     Return(GPRW(0x69, 0x04))
                                 }
 
-                                Return(Package() {
+                                Return(Package(0x02) {
                                     "agdpmod",
                                     "pikera"
                                 })
@@ -270,16 +258,15 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
 
                         Device(HDAU) {
                             Name(_ADR, One) // _ADR: Address
-                            Name(_SUN, One) // _SUN: Slot User Number
                             Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
                             {
                                 If((Arg2 == Zero)) {
-                                    Return(Buffer() {
+                                    Return(Buffer(One) {
                                         0x03 // .
                                     })
                                 }
 
-                                Return(Package() {
+                                Return(Package(0x02) {
                                     "driver-version",
                                     "10.0.1.24"
                                 })
@@ -304,7 +291,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
 
                 Device(RTLK) {
                     Name(_ADR, Zero) // _ADR: Address
-                    Method(_STA, 0, NotSerialized) // _STA: Status
+                    Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
                     {
                         If(_OSI("Darwin")) {
                             Return(0x0F)
@@ -331,16 +318,15 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
 
                 Device(XHC2) {
                     Name(_ADR, Zero) // _ADR: Address
-                    Name(_SUN, 0x03) // _SUN: Slot User Number
                     Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
                     {
                         If((Arg2 == Zero)) {
-                            Return(Buffer() {
+                            Return(Buffer(One) {
                                 0x03 // .
                             })
                         }
 
-                        Return(Package() {
+                        Return(Package(0x02) {
                             "built-in",
                             Zero
                         })
@@ -371,7 +357,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
                             })
                         }
 
-                        Return(Package() {
+                        Return(Package(0x0A) {
                             "device_type",
                             "Non-Volatile memory controller",
                             "model",
@@ -379,7 +365,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
                             "name",
                             "ANS0",
                             "device-id",
-                            Buffer() {
+                            Buffer(0x04) {
                                 0x06,
                                 0xA8,
                                 0x00,
@@ -387,7 +373,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
                             },
 
                             "vendor-id",
-                            Buffer() {
+                            Buffer(0x04) {
                                 0x4D,
                                 0x14,
                                 0x00,
@@ -413,7 +399,6 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
 
                 Device(ARPT) {
                     Name(_ADR, Zero) // _ADR: Address
-                    Name(_SUN, 0x02) // _SUN: Slot User Number
                     Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
                     {
                         If((Arg2 == Zero)) {
@@ -422,7 +407,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
                             })
                         }
 
-                        Return(Package() {
+                        Return(Package(0x02) {
                             "built-in",
                             Zero
                         })
@@ -453,7 +438,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
                             })
                         }
 
-                        Return(Package() {
+                        Return(Package(0x0A) {
                             "device_type",
                             "Non-Volatile memory controller",
                             "model",
@@ -461,7 +446,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
                             "name",
                             "ANS1",
                             "device-id",
-                            Buffer() {
+                            Buffer(0x04) {
                                 0x06,
                                 0xA8,
                                 0x00,
@@ -469,7 +454,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
                             },
 
                             "vendor-id",
-                            Buffer() {
+                            Buffer(0x04) {
                                 0x4D,
                                 0x14,
                                 0x00,
@@ -494,7 +479,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
 
             Device(SATA) {
                 Name(_ADR, 0x00170000) // _ADR: Address
-                Method(_STA, 0, NotSerialized) // _STA: Status
+                Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
                 {
                     If(_OSI("Darwin")) {
                         Return(0x0F)
@@ -515,12 +500,12 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
                         Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
                         {
                             If(!Arg2) {
-                                Return(Buffer() {
+                                Return(Buffer(One) {
                                     0x03 // .
                                 })
                             }
 
-                            Return(Package() {
+                            Return(Package(0x02) {
                                 "address",
                                 Zero
                             })
@@ -541,7 +526,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
 
             Device(TSUB) {
                 Name(_ADR, 0x00140002) // _ADR: Address
-                Method(_STA, 0, NotSerialized) // _STA: Status
+                Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
                 {
                     If(_OSI("Darwin")) {
                         Return(0x0F)
@@ -566,7 +551,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
 
             Device(XHC1) {
                 Name(_ADR, 0x00140000) // _ADR: Address
-                Method(_STA, 0, NotSerialized) // _STA: Status
+                Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
                 {
                     If(_OSI("Darwin")) {
                         Return(0x0F)
@@ -588,7 +573,7 @@ DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
                     })
                 }
 
-                Return(Package() {
+                Return(Package(0x08) {
                     "kUSBSleepPowerSupply",
                     0x13EC,
                     "kUSBSleepPortCurrentLimit",
