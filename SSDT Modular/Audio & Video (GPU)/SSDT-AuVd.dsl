@@ -6,6 +6,7 @@ DefinitionBlock("", "SSDT", 2, "CpyPst", "CP-AuVd", 0x00000001) {
     External(_SB_.PCI0.PEG0, DeviceObj)
     External(_SB_.PCI0.PEG0.PEGP, DeviceObj)
     External(GPRW, MethodObj) // 2 Arguments
+    
     Scope(\_SB) {
         Scope(PCI0) {
             Scope(GFX0) {
