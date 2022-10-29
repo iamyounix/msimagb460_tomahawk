@@ -1,13 +1,12 @@
 DefinitionBlock("", "SSDT", 2, "CpyPst", "CP-Lpcb", 0x00000001) {
-
     External(_SB_, DeviceObj)
-	External(_SB_.PCI0, DeviceObj)
-	External(_SB_.PCI0.LPCB, DeviceObj)
+    External(_SB_.PCI0, DeviceObj)
+    External(_SB_.PCI0.LPCB, DeviceObj)
     External(_SB_.PCI0.LPCB.EC__, DeviceObj)
     External(_SB_.PCI0.LPCB.FWHD, DeviceObj)
     External(_SB_.PCI0.LPCB.HPET, DeviceObj)
     External(_SB_.PCI0.LPCB.PMCR, DeviceObj)
-
+  
     Scope(\_SB) {
         Scope(PCI0) {
             Scope(LPCB) {
@@ -24,7 +23,6 @@ DefinitionBlock("", "SSDT", 2, "CpyPst", "CP-Lpcb", 0x00000001) {
                         }
                     }
                 }
-
                 Device(FWHD) {
                     Name(_HID, EisaId("INT0800") /* Intel 82802 Firmware Hub Device */ ) // _HID: Hardware ID
                     Method(_STA, 0, NotSerialized) // _STA: Status
@@ -36,16 +34,13 @@ DefinitionBlock("", "SSDT", 2, "CpyPst", "CP-Lpcb", 0x00000001) {
                             Return(Zero)
                         }
                     }
-
                     Name(_CRS, ResourceTemplate() // _CRS: Current Resource Settings
                         {
-                            Memory32Fixed(ReadOnly,
-                                0xFF000000, // Address Base
+                            Memory32Fixed(ReadOnly, 0xFF000000, // Address Base
                                 0x01000000, // Address Length
                             )
                         })
                 }
-
                 Scope(HPET) {
                     Name(_CRS, ResourceTemplate() // _CRS: Current Resource Settings
                         {
@@ -54,13 +49,11 @@ DefinitionBlock("", "SSDT", 2, "CpyPst", "CP-Lpcb", 0x00000001) {
                                 8,
                                 11
                             }
-                            Memory32Fixed(ReadWrite,
-                                0xFED00000, // Address Base
+                            Memory32Fixed(ReadWrite, 0xFED00000, // Address Base
                                 0x00000400, // Address Length
                             )
                         })
                 }
-
                 Device(PMCR) {
                     Name(_HID, EisaId("APP9876")) // _HID: Hardware ID
                     Method(_STA, 0, NotSerialized) // _STA: Status
@@ -72,11 +65,9 @@ DefinitionBlock("", "SSDT", 2, "CpyPst", "CP-Lpcb", 0x00000001) {
                             Return(Zero)
                         }
                     }
-
                     Name(_CRS, ResourceTemplate() // _CRS: Current Resource Settings
                         {
-                            Memory32Fixed(ReadWrite,
-                                0xFE000000, // Address Base
+                            Memory32Fixed(ReadWrite, 0xFE000000, // Address Base
                                 0x00010000, // Address Length
                             )
                         })
