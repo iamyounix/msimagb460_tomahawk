@@ -294,7 +294,7 @@ This config is based on OpenCore 0.8.5.
 
 > **Note**: Other than above is `false`
 
-### NVRAM
+### USB
 
 <div align=center>
   
