@@ -299,6 +299,7 @@ This config is based on OpenCore 0.8.5.
 <div align=center>
   
 <img width="1222" alt="2022-10-30_22-59-07" src="https://user-images.githubusercontent.com/72515939/198885720-0128d065-95d3-4c2b-8816-4e825a9bfae0.png">
+<img width="1222" alt="2022-10-30_23-08-32" src="https://user-images.githubusercontent.com/72515939/198886071-5cd95588-e49e-419d-842d-532d8c38a5ba.png">
 
 </div>
 
