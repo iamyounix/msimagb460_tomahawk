@@ -311,6 +311,16 @@ This config is based on OpenCore 0.8.5.
 
 > **Note**: `ANS0` and `ANS1` as Apple SSD Controller
 
+### IOAaCPIPlane Patch
+
+<div align=center>
+
+<img width="1195" alt="2022-10-30_21-41-20" src="https://user-images.githubusercontent.com/72515939/198882187-fddd24cb-b851-4bbe-a781-b39fb7321ef3.png">
+
+</div>
+
+> **Note**: Refer SSDT [Modular Mode](https://github.com/theofficialcopypaste/ASRockB460MSL/tree/main/SSDT%20Modular) and [Single Mode](https://github.com/theofficialcopypaste/ASRockB460MSL/tree/main/SSDT-Patch) for more info.
+
 ### Validate
 
 #### Check Build Number:
