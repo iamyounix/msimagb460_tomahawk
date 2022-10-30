@@ -14,7 +14,7 @@
 
 ### Sample
 
-Download [here](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/EFI%20085.zip)
+Download [here](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/OC085.zip)
 
 ### OpenCore EFI Structure
 
