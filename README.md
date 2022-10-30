@@ -174,6 +174,7 @@ VDA Decoder                 : Fully Supported
 <div align=center>
 
 <img width="917" alt="2022-10-27_22-48-54" src="https://user-images.githubusercontent.com/72515939/198322516-083df5a4-c15e-451c-9371-582ef3597d0a.png">
+<img width="1222" alt="2022-10-30_23-00-44" src="https://user-images.githubusercontent.com/72515939/198885694-9fabeaf7-dc00-4def-8303-962d8de093f8.png">
 
 </div>
 
@@ -292,6 +293,16 @@ This config is based on OpenCore 0.8.5.
 * SetApfsTrimTimeout = `0`
 
 > **Note**: Other than above is `false`
+
+### NVRAM
+
+<div align=center>
+  
+<img width="1222" alt="2022-10-30_22-59-07" src="https://user-images.githubusercontent.com/72515939/198885720-0128d065-95d3-4c2b-8816-4e825a9bfae0.png">
+
+</div>
+
+> **Note**: USB is mapped properly using [USBToolbox](https://github.com/USBToolBox/tool)
 
 ### NVRAM
 
@@ -557,9 +568,17 @@ git clone https://github.com/acidanthera/OpenCorePkg.git
 git clone https://github.com/dortania/OpenCore-Install-Guide.git
 ```
 
+- [**dhinakg**](https://github.com/dhinakg) for
+```zsh
+git clone https://github.com/USBToolBox/tool.git
+```
+
 - [**corpnewt**](https://github.com/corpnewt) for 
 ```zsh
 git clone https://github.com/corpnewt/DevicePath.git
+```
+```zsh
+git clone https://github.com/corpnewt/SSDTTime.git
 ```
 
 - [**dreamwhite**](https://github.com/dreamwhite) for
