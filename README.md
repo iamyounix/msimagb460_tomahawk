@@ -24,7 +24,7 @@ EFI
 │   └── BOOTx64.efi
 └── OC
     ├── ACPI
-    │   └── SSDT-PatchOC.aml
+    │   └── SSDT-Patch.aml
     ├── Drivers
     │   ├── HfsPlus.efi
     │   ├── OpenCanopy.efi
