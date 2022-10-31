@@ -3,7 +3,9 @@
 **Hackintosh: 10th Gen Intel Comet Lake with B460M Steel Legend with OpenCore 0.8.5**
 
 <div align=center>
-<img width="294" alt="2022-10-27_23-15-50" src="https://user-images.githubusercontent.com/72515939/198330095-5b594802-a6c2-41d9-9e83-510a66604dc6.png">
+
+<img width="583" alt="2022-11-01_05-05-09" src="https://user-images.githubusercontent.com/72515939/199110702-604c7262-0bc7-444e-9f29-4d61ab18e380.png">
+	
 </div>
 
 <div align=justify>
