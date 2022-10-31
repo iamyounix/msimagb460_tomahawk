@@ -174,7 +174,7 @@ VDA Decoder                 : Fully Supported
 <div align=center>
 
 <img width="917" alt="2022-10-27_22-48-54" src="https://user-images.githubusercontent.com/72515939/198322516-083df5a4-c15e-451c-9371-582ef3597d0a.png">
-<img width="1222" alt="2022-10-30_23-00-44" src="https://user-images.githubusercontent.com/72515939/198885694-9fabeaf7-dc00-4def-8303-962d8de093f8.png">
+<img width="1507" alt="2022-11-01_05-02-13" src="https://user-images.githubusercontent.com/72515939/199110086-3b30b0ca-5a71-46e8-8976-14b433665008.png">
 
 </div>
 
@@ -297,9 +297,9 @@ This config is based on OpenCore 0.8.5.
 ### USB
 
 <div align=center>
-  
-<img width="1222" alt="2022-10-30_22-59-07" src="https://user-images.githubusercontent.com/72515939/198885720-0128d065-95d3-4c2b-8816-4e825a9bfae0.png">
-<img width="1222" alt="2022-10-30_23-08-32" src="https://user-images.githubusercontent.com/72515939/198886071-5cd95588-e49e-419d-842d-532d8c38a5ba.png">
+
+<img width="1219" alt="2022-11-01_04-52-04" src="https://user-images.githubusercontent.com/72515939/199108930-2936ddfb-c197-47f4-a68b-482cc6ec5f37.png">
+<img width="1507" alt="2022-11-01_04-58-19" src="https://user-images.githubusercontent.com/72515939/199109651-388683ea-2995-476b-b90a-4ec12834be5c.png">
 
 </div>
 
@@ -323,7 +323,7 @@ This config is based on OpenCore 0.8.5.
 
 > **Note**: `ANS0` and `ANS1` as Apple SSD Controller
 
-### IOAaCPIPlane Patch
+### IOACPIPlane Patch
 
 <div align=center>
 
