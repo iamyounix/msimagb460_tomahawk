@@ -1,4 +1,4 @@
-DefinitionBlock ("", "SSDT", 2, "CpyPst", "PatchAll", 0x00000001)
+DefinitionBlock ("", "SSDT", 2, "ASRock", "P1.20", 0x00000001)
 {
     External (_SB_, DeviceObj)
     External (_SB_.PCI0, DeviceObj)
@@ -78,7 +78,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "PatchAll", 0x00000001)
                 Device (EC)
                 {
                     Name (_HID, EisaId ("PNP0C09") /* Embedded Controller Device */)  // _HID: Hardware ID
-                    Name (_UID, Zero)  // _UID: Unique ID
+                    Name (_UID, One)  // _UID: Unique ID
                     Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
                         If (_OSI ("Darwin"))
@@ -1299,7 +1299,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "PatchAll", 0x00000001)
 
                     Device (SS01)
                     {
-                        Name (_ADR, 0x11)  // _ADR: Address
+                        Name (_ADR, Zero)  // _ADR: Address
                         Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                         {
                             If (_OSI ("Darwin"))
@@ -1315,7 +1315,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "PatchAll", 0x00000001)
 
                     Device (SS02)
                     {
-                        Name (_ADR, 0x12)  // _ADR: Address
+                        Name (_ADR, One)  // _ADR: Address
                         Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                         {
                             If (_OSI ("Darwin"))
@@ -1331,7 +1331,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "PatchAll", 0x00000001)
 
                     Device (SS03)
                     {
-                        Name (_ADR, 0x13)  // _ADR: Address
+                        Name (_ADR, 0x02)  // _ADR: Address
                         Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                         {
                             If (_OSI ("Darwin"))
@@ -1347,7 +1347,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "PatchAll", 0x00000001)
 
                     Device (SS04)
                     {
-                        Name (_ADR, 0x14)  // _ADR: Address
+                        Name (_ADR, 0x03)  // _ADR: Address
                         Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                         {
                             If (_OSI ("Darwin"))
@@ -1363,7 +1363,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "PatchAll", 0x00000001)
 
                     Device (SS05)
                     {
-                        Name (_ADR, 0x15)  // _ADR: Address
+                        Name (_ADR, 0x04)  // _ADR: Address
                         Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                         {
                             If (_OSI ("Darwin"))
@@ -1379,7 +1379,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "PatchAll", 0x00000001)
 
                     Device (SS06)
                     {
-                        Name (_ADR, 0x16)  // _ADR: Address
+                        Name (_ADR, 0x05)  // _ADR: Address
                         Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                         {
                             If (_OSI ("Darwin"))
@@ -1395,7 +1395,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "PatchAll", 0x00000001)
 
                     Device (SS07)
                     {
-                        Name (_ADR, 0x17)  // _ADR: Address
+                        Name (_ADR, 0x06)  // _ADR: Address
                         Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                         {
                             If (_OSI ("Darwin"))
@@ -1411,7 +1411,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "PatchAll", 0x00000001)
 
                     Device (SS08)
                     {
-                        Name (_ADR, 0x18)  // _ADR: Address
+                        Name (_ADR, 0x07)  // _ADR: Address
                         Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                         {
                             If (_OSI ("Darwin"))
@@ -1427,7 +1427,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "PatchAll", 0x00000001)
 
                     Device (SS09)
                     {
-                        Name (_ADR, 0x19)  // _ADR: Address
+                        Name (_ADR, 0x08)  // _ADR: Address
                         Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                         {
                             If (_OSI ("Darwin"))
@@ -1443,7 +1443,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "PatchAll", 0x00000001)
 
                     Device (SS10)
                     {
-                        Name (_ADR, 0x1A)  // _ADR: Address
+                        Name (_ADR, 0x09)  // _ADR: Address
                         Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                         {
                             If (_OSI ("Darwin"))
@@ -1500,4 +1500,3 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "PatchAll", 0x00000001)
         }
     }
 }
-
