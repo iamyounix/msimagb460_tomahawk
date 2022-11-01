@@ -550,7 +550,9 @@ Ventura   =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j18
 ```
 > **Note**: Warning: Not all Apple Secure Boot models are supported on all hardware configurations. Please refer [APFS Min Version & Min Date](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#apfs) / [SecureBootModel](https://dortania.github.io/OpenCore-Post-Install/universal/security/applesecureboot.html#securebootmodel) for more info.
 
-### Clover Fans? Grab [Here](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/CLVR5150.zip)
+### Clover Fans? 
+
+Grab Sample [Here](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/CLVR5150.zip)
 
 ### References
 
