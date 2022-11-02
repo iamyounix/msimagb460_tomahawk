@@ -2,12 +2,6 @@
 
 **Hackintosh: 10th Gen Intel Comet Lake with B460M Steel Legend with OpenCore 0.8.5**
 
-<div align=center>
-
-<img width="1000" alt="2022-11-01_05-05-09" src="https://user-images.githubusercontent.com/72515939/199110702-604c7262-0bc7-444e-9f29-4d61ab18e380.png">
-	
-</div>
-
 <div align=justify>
   <p><strong>My word:</strong> - <strong>"It's merely cosmetic"</strong>, according to some. For me, this content is not just for show. <strong>Configuration?</strong>, You can play with <strong>config.plist</strong> and experiment with it. But heed the warning—if the file is not saved properly, it may get corrupted. This issue sometimes happen due to; <strong>restart before saving</strong> , &nbsp;<strong>erroneously input or  non-format input</strong>. I'm not interested to share my personal <strong>EFI</strong>, and not meant to be used by other people or systems. If you're still interested in utilising it, please be <strong>careful</strong> to adjust the <strong>plist configuration</strong> and <strong>SSDTs</strong> according to your system. <strong>ACPI?</strong>, You may see how <strong>ACPI</strong> impacts the operating system. Incorrect device renaming through <strong>SSDTs</strong> will results the operating system getting stuck. My advise is not to modify your <strong>DSDTs</strong>. <strong>DSDT's</strong> (Primary Table) modification method will results more difficulties to your machine and harm your BIOS directly. I recommend <strong>SSDTs</strong> (Secondary Table) modifications, since this way are more <strong>dynamic</strong> and <strong>safe</strong>. Device renaming is not necessary for recognised and functional devices unless the devices are not identified or displayed via IOreg or require extra tweaks, especially if your computer contains multiple bootable OSes. This is not full feature guide. OpenCore and Clover sample is attached as a learning curve. Please be careful what you're read, copy and modified all these stuffs. Do a research first.</p>
 </div>
@@ -70,7 +64,7 @@ Code Name                   : Comet Lake
 
 <div align=center>
   
-<img width="1000" alt="2022-10-27_22-19-30" src="https://user-images.githubusercontent.com/72515939/198311969-4949a162-ad67-4e35-8738-f996716d0518.png">
+<img width="1192" alt="Screenshot 2022-11-02 at 12 22 20 PM" src="https://user-images.githubusercontent.com/72515939/199395267-818ded7f-d88c-41b8-8d6c-d88dc7118d13.png">
 
 </div>
 
@@ -78,9 +72,9 @@ Code Name                   : Comet Lake
 
 <div align=center>
 
-<img width="916" alt="2022-10-27_23-01-58" src="https://user-images.githubusercontent.com/72515939/198326196-3b0d12d2-e74b-4b4c-ae62-7317398fa3a7.png">
-  
-<img width="916" alt="2022-10-27_23-00-57" src="https://user-images.githubusercontent.com/72515939/198325841-1d3c6c81-0310-4889-86ec-372c243b7eed.png">
+<img width="1192" alt="Screenshot 2022-11-02 at 12 19 45 PM" src="https://user-images.githubusercontent.com/72515939/199394948-87c83532-4e5e-485d-a5d0-f35840234d0c.png">
+
+<img width="1192" alt="Screenshot 2022-11-02 at 12 19 21 PM" src="https://user-images.githubusercontent.com/72515939/199394961-5f1f5fd1-d561-4e10-9347-eb866416b564.png">
 
 </div>
 
@@ -107,7 +101,8 @@ GPU Device ID               : 0xC59B8086
 
 <div align=center>
   
-<img width="919" alt="2022-10-27_22-23-02" src="https://user-images.githubusercontent.com/72515939/198312790-4dffdc77-6e9e-4463-89e9-1bb02c7bd054.png">
+<img width="1192" alt="Screenshot 2022-11-02 at 12 23 36 PM" src="https://user-images.githubusercontent.com/72515939/199395457-4b39618d-9ad7-4a87-a6d2-079619ab6dc1.png">
+<img width="1191" alt="Screenshot 2022-11-02 at 12 27 24 PM" src="https://user-images.githubusercontent.com/72515939/199396022-ab5ac06d-53c8-4b81-bc19-c40c3e1b51d5.png">
 
 </div>
   
@@ -173,20 +168,13 @@ VDA Decoder                 : Fully Supported
 	* model / string / `Navi 10 HDMI Audio`
 	* name / string / `HDAU`
 
-<div align=center>
-
-<img width="1000" alt="2022-10-27_22-48-54" src="https://user-images.githubusercontent.com/72515939/198322516-083df5a4-c15e-451c-9371-582ef3597d0a.png">
-<img width="840" alt="2022-11-01_05-02-13" src="https://user-images.githubusercontent.com/72515939/199110086-3b30b0ca-5a71-46e8-8976-14b433665008.png">
-
-</div>
-
 > **Note**: Use at your own risk! In general, these patches have to be regarded as "experimental". They may work as intended but that's not guaranteed.
 
 ### PCI Devices
 
 <div align=center>  
   
-<img width="919" alt="2022-10-27_22-23-24" src="https://user-images.githubusercontent.com/72515939/198312992-ae285354-a2d3-486b-b7e8-13addb08747d.png">
+<img width="1187" alt="Screenshot 2022-11-02 at 12 29 12 PM" src="https://user-images.githubusercontent.com/72515939/199396641-93f5b163-702c-42bf-8733-9701394042d2.png">
 
 </div>
   
