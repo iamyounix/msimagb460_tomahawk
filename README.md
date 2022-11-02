@@ -4,7 +4,7 @@
 
 <div align=center>
 
-<img width="583" alt="2022-11-01_05-05-09" src="https://user-images.githubusercontent.com/72515939/199110702-604c7262-0bc7-444e-9f29-4d61ab18e380.png">
+<img width="1000" alt="2022-11-01_05-05-09" src="https://user-images.githubusercontent.com/72515939/199110702-604c7262-0bc7-444e-9f29-4d61ab18e380.png">
 	
 </div>
 
@@ -70,7 +70,7 @@ Code Name                   : Comet Lake
 
 <div align=center>
   
-<img width="1017" alt="2022-10-27_22-19-30" src="https://user-images.githubusercontent.com/72515939/198311969-4949a162-ad67-4e35-8738-f996716d0518.png">
+<img width="1000" alt="2022-10-27_22-19-30" src="https://user-images.githubusercontent.com/72515939/198311969-4949a162-ad67-4e35-8738-f996716d0518.png">
 
 </div>
 
@@ -175,8 +175,8 @@ VDA Decoder                 : Fully Supported
 
 <div align=center>
 
-<img width="917" alt="2022-10-27_22-48-54" src="https://user-images.githubusercontent.com/72515939/198322516-083df5a4-c15e-451c-9371-582ef3597d0a.png">
-<img width="1507" alt="2022-11-01_05-02-13" src="https://user-images.githubusercontent.com/72515939/199110086-3b30b0ca-5a71-46e8-8976-14b433665008.png">
+<img width="1000" alt="2022-10-27_22-48-54" src="https://user-images.githubusercontent.com/72515939/198322516-083df5a4-c15e-451c-9371-582ef3597d0a.png">
+<img width="840" alt="2022-11-01_05-02-13" src="https://user-images.githubusercontent.com/72515939/199110086-3b30b0ca-5a71-46e8-8976-14b433665008.png">
 
 </div>
 
@@ -311,7 +311,7 @@ This config is based on OpenCore 0.8.5.
 
 <div align=center>
   
-<img width="933" alt="2022-10-27_23-04-03" src="https://user-images.githubusercontent.com/72515939/198326691-5d0606c8-70ce-4dd1-b466-e3c7b9cf504c.png">
+<img width="1000" alt="2022-10-27_23-04-03" src="https://user-images.githubusercontent.com/72515939/198326691-5d0606c8-70ce-4dd1-b466-e3c7b9cf504c.png">
 
 </div>
   
@@ -319,7 +319,7 @@ This config is based on OpenCore 0.8.5.
 
 <div align=center>
   
-<img width="716" alt="2022-10-27_23-11-09" src="https://user-images.githubusercontent.com/72515939/198328522-75eb2a96-9fc5-49e7-8989-09cfe27857f8.png">
+<img width="1000" alt="2022-10-27_23-11-09" src="https://user-images.githubusercontent.com/72515939/198328522-75eb2a96-9fc5-49e7-8989-09cfe27857f8.png">
   
 </div>  
 
