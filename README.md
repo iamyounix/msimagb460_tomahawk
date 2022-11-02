@@ -288,8 +288,8 @@ This config is based on OpenCore 0.8.5.
 
 <div align=center>
 
-<img width="1219" alt="2022-11-01_04-52-04" src="https://user-images.githubusercontent.com/72515939/199108930-2936ddfb-c197-47f4-a68b-482cc6ec5f37.png">
-<img width="1507" alt="2022-11-01_04-58-19" src="https://user-images.githubusercontent.com/72515939/199109651-388683ea-2995-476b-b90a-4ec12834be5c.png">
+<img width="1187" alt="Screenshot 2022-11-02 at 1 14 08 PM" src="https://user-images.githubusercontent.com/72515939/199403906-43be578e-6b92-4602-8cff-42c9f2ca1969.png">
+<img width="1187" alt="Screenshot 2022-11-02 at 1 14 34 PM" src="https://user-images.githubusercontent.com/72515939/199403909-d012c99b-583c-44eb-a9dd-21bbb845a19e.png">
 
 </div>
 
@@ -299,7 +299,7 @@ This config is based on OpenCore 0.8.5.
 
 <div align=center>
   
-<img width="1000" alt="2022-10-27_23-04-03" src="https://user-images.githubusercontent.com/72515939/198326691-5d0606c8-70ce-4dd1-b466-e3c7b9cf504c.png">
+<img width="1191" alt="Screenshot 2022-11-02 at 1 15 48 PM" src="https://user-images.githubusercontent.com/72515939/199404085-864927aa-fb17-4596-a925-5d7aae4eb6ea.png">
 
 </div>
   
@@ -307,7 +307,7 @@ This config is based on OpenCore 0.8.5.
 
 <div align=center>
   
-<img width="1000" alt="2022-10-27_23-11-09" src="https://user-images.githubusercontent.com/72515939/198328522-75eb2a96-9fc5-49e7-8989-09cfe27857f8.png">
+<img width="1163" alt="Screenshot 2022-11-02 at 1 16 25 PM" src="https://user-images.githubusercontent.com/72515939/199404095-83ad8aba-becb-43bb-bfa3-9cc52c743d56.png">
   
 </div>  
 
@@ -479,21 +479,23 @@ System Integrity Protection status: enabled.
 pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 ```
 
-  * Output:
-    * Sleep/Wake Issue Example:
-    
-<div align=center>
-<img width="1299" alt="2022-10-28_03-55-59" src="https://user-images.githubusercontent.com/72515939/198386035-85b2141b-9dbe-47a1-9f93-a6b645c04e78.png">
-</div>
+  * And generally you'll get results like these:
+
+	*	Wake [CDNVA] due to GLAN: Using AC
+		*	Generally caused by WakeOnLAN enabled, try to disable this option first in the BIOS
+	*	If WOL wasn't the issue, you can try the below patches
+		*	Wake [CDNVA] due to HDEF: Using AC
+	*	Similar to the GLAN issue
+		*	Wake [CDNVA] due to XHC: Using AC
+	*	Generally caused by WakeOnUSB enabled, try to disable this option first in the BIOS
+		*	GPRW patch is likely needed
+	*	DarkWake from Normal Sleep [CDNPB] : due to RTC/Maintenance Using AC
+		*	Generally caused by PowerNap
+	*	Wake reason: RTC (Alarm)
+		*	Generally caused by an app waking the system, quitting said app before you sleep should fix it
+
 
 > **Note**: Head to [GPRW/UPRW/LANC Instant Wake Patch](https://dortania.github.io/OpenCore-Post-Install/usb/misc/instant-wake.html) if output as above. Sometimes, dortania solution does't fix this issue. From my experience personally, just clean install macOS. This happen to me when upgrading Monterey to Ventura. Other than that, if no output, this mean the machine has no sleep and wake issues. Whatever happen, try Dortania method first.
-
-  * Output:
-    * Sleep/Wake Issue Fix Example (After Clean Install):
-
-<div align=center>
-<img width="788" alt="2022-10-27_22-20-09" src="https://user-images.githubusercontent.com/72515939/198312156-62d91cbc-01a5-4ff9-a0eb-ddf61636f4ef.png">
-</div>
 
 #### Lists any ACPI Error:
 
