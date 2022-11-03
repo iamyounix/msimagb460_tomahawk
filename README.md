@@ -476,7 +476,7 @@ System Integrity Protection status: enabled.
 pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 ```
 
-  * And generally you'll get results like these:
+  * And generally you'll get output like these:
 
 	* Wake [CDNVA] due to GLAN: Using AC
 		* Generally caused by WakeOnLAN enabled, try to disable this option first in the BIOS
@@ -492,7 +492,7 @@ pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 		* Generally caused by an app waking the system, quitting said app before you sleep should fix it
 
 
-> **Note**: Head to [GPRW/UPRW/LANC Instant Wake Patch](https://dortania.github.io/OpenCore-Post-Install/usb/misc/instant-wake.html) if output as above. Sometimes, dortania solution does't fix this issue. From my experience personally, just clean install macOS. This happen to me when upgrading Monterey to Ventura. Other than that, if no output, this mean the machine has no sleep and wake issues. Whatever happen, try Dortania method first.
+> **Note**: Head to [GPRW/UPRW/LANC Instant Wake Patch](https://dortania.github.io/OpenCore-Post-Install/usb/misc/instant-wake.html) for more info.
 
 #### Lists any ACPI Error:
 
