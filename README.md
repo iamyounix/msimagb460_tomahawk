@@ -34,16 +34,13 @@ EFI
     │   ├── SMCRadeonGPU.kext
     │   ├── SMCSuperIO.kext
     │   ├── USBMap.kext
+    │   ├── VirtualSMC.kext
     │   └── WhateverGreen.kext
     ├── OpenCore.efi
     ├── Resources
     │   ├── Audio
     │   ├── Font
     │   ├── Image
-    │   │   └── Acidanthera
-    │   │       ├── Chardonnay
-    │   │       ├── GoldenGate
-    │   │       └── Syrah
     │   └── Label
     ├── Tools
     │   └── CleanNvram.efi
