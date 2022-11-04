@@ -61,24 +61,40 @@ Code Name                   : Comet Lake
 
 <div align=center>
   
-<img width="1192" alt="Screenshot 2022-11-02 at 12 22 20 PM" src="https://user-images.githubusercontent.com/72515939/199395267-818ded7f-d88c-41b8-8d6c-d88dc7118d13.png">
+![GPU](https://user-images.githubusercontent.com/72515939/199858587-831f2951-1ed5-48d3-890a-da5c8e85c4d0.png)
 
 </div>
 
 #### IGPU (Headless)
 
-<div align=center>
-
-<img width="1192" alt="Screenshot 2022-11-02 at 12 19 45 PM" src="https://user-images.githubusercontent.com/72515939/199394948-87c83532-4e5e-485d-a5d0-f35840234d0c.png">
-
-<img width="1192" alt="Screenshot 2022-11-02 at 12 19 21 PM" src="https://user-images.githubusercontent.com/72515939/199394961-5f1f5fd1-d561-4e10-9347-eb866416b564.png">
-
-</div>
+* Current
 
 ```zsh
 GPU Name                    : Intel® UHD Graphics 630
 GPU Device ID               : 0xC59B8086
+Mobile			    : No
 ```
+<div align=center>
+
+* Current
+
+![IGPU9BC5](https://user-images.githubusercontent.com/72515939/199859156-609ae9b5-c6cb-4280-b8fd-65d5e289333a.png)
+
+</div>
+
+* Used
+
+```zsh
+GPU Name                    : Intel® UHD Graphics 630
+GPU Device ID               : 0x3E928086
+Mobile			    : No
+```
+<div align=center>
+
+![IGPU923E](https://user-images.githubusercontent.com/72515939/199859350-19b5d82e-9c1f-4b5c-a00f-a392587819b6.png)
+
+</div>
+
 **Patch via config.plist**
 
 * PciRoot(0x0)/Pci(0x2,0x0)
@@ -98,8 +114,8 @@ GPU Device ID               : 0xC59B8086
 
 <div align=center>
   
-<img width="1192" alt="Screenshot 2022-11-02 at 12 23 36 PM" src="https://user-images.githubusercontent.com/72515939/199395457-4b39618d-9ad7-4a87-a6d2-079619ab6dc1.png">
-<img width="1191" alt="Screenshot 2022-11-02 at 12 27 24 PM" src="https://user-images.githubusercontent.com/72515939/199396022-ab5ac06d-53c8-4b81-bc19-c40c3e1b51d5.png">
+![GFX0](https://user-images.githubusercontent.com/72515939/199858610-040a217e-95c3-4278-b5ff-c25da795a288.png)
+![IOregGFX0](https://user-images.githubusercontent.com/72515939/199858868-2fcad4c5-b973-49c7-9287-24273814f5d2.png)
 
 </div>
   
@@ -171,7 +187,7 @@ VDA Decoder                 : Fully Supported
 
 <div align=center>  
   
-<img width="1187" alt="Screenshot 2022-11-02 at 12 29 12 PM" src="https://user-images.githubusercontent.com/72515939/199396641-93f5b163-702c-42bf-8733-9701394042d2.png">
+![PCI](https://user-images.githubusercontent.com/72515939/199859770-f821e5d9-3faf-4602-80ec-f00c03449b70.png)
 
 </div>
   
@@ -179,7 +195,7 @@ VDA Decoder                 : Fully Supported
 
 <div align=center>
 
-<img width="2133" alt="2022-10-27_22-52-31" src="https://user-images.githubusercontent.com/72515939/198324011-917702b0-2d1a-4298-b10a-e7c7a3c6e9d2.png">
+![OtherPatches](https://user-images.githubusercontent.com/72515939/199859915-ae709a8f-d2a7-40ee-b6cc-c7c3b138f094.png)
 
 </div>
 
@@ -227,16 +243,16 @@ VDA Decoder                 : Fully Supported
 	* name / string / `HDEF`
 
 <div align=center>
-  
-<img width="933" alt="2022-10-27_23-06-44" src="https://user-images.githubusercontent.com/72515939/198327334-02fb3dbc-a1ae-40f7-b0b0-bfe8f8a0464f.png">
-  
+
+![Audio](https://user-images.githubusercontent.com/72515939/199860198-759ed5e5-3061-4be1-a05a-535b237bb9f0.png) 
+
 </div>
 
   * AppleGFXHDADriver (Navi 10 HDMI Audio)
 
 <div align=center>
   
-<img width="933" alt="2022-10-27_23-07-31" src="https://user-images.githubusercontent.com/72515939/198327777-c47f3ec6-8c46-4ab8-a692-515ccb7e0a95.png">
+![HDMIAu](https://user-images.githubusercontent.com/72515939/199860231-599aef27-f08e-46a6-a329-0e92cc32dc66.png)
   
 </div>
 
@@ -285,8 +301,7 @@ This config is based on OpenCore 0.8.5.
 
 <div align=center>
 
-<img width="1187" alt="Screenshot 2022-11-02 at 1 14 08 PM" src="https://user-images.githubusercontent.com/72515939/199403906-43be578e-6b92-4602-8cff-42c9f2ca1969.png">
-<img width="1187" alt="Screenshot 2022-11-02 at 1 14 34 PM" src="https://user-images.githubusercontent.com/72515939/199403909-d012c99b-583c-44eb-a9dd-21bbb845a19e.png">
+![USB](https://user-images.githubusercontent.com/72515939/199860343-2e2eefe1-94ab-480c-b2de-a2195f6bc9ca.png)
 
 </div>
 
@@ -296,7 +311,7 @@ This config is based on OpenCore 0.8.5.
 
 <div align=center>
   
-<img width="1191" alt="Screenshot 2022-11-02 at 1 15 48 PM" src="https://user-images.githubusercontent.com/72515939/199404085-864927aa-fb17-4596-a925-5d7aae4eb6ea.png">
+![NVRAM](https://user-images.githubusercontent.com/72515939/199860442-72bdf0a9-059d-41e9-8170-09f72ed3a9ea.png)
 
 </div>
   
@@ -304,8 +319,8 @@ This config is based on OpenCore 0.8.5.
 
 <div align=center>
   
-<img width="1163" alt="Screenshot 2022-11-02 at 1 16 25 PM" src="https://user-images.githubusercontent.com/72515939/199404095-83ad8aba-becb-43bb-bfa3-9cc52c743d56.png">
-  
+![NVMe](https://user-images.githubusercontent.com/72515939/199860512-2aea8ec7-a63e-40fc-885d-e869b0410592.png)
+
 </div>  
 
 > **Note**: `ANS0` and `ANS1` as Apple SSD Controller
