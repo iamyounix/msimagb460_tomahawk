@@ -538,11 +538,11 @@ curl -L "https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/Real%20
 
 * Catalina
 ```zsh
-python macrecovery.py -b Mac-00BE6ED71E35EB86 -m 00000000000000000 download
+python ./macrecovery.py -b Mac-00BE6ED71E35EB86 -m 00000000000000000 download
 ```
 * Big Sur
 ```zsh
-python macrecovery.py -b Mac-42FD25EABCABB274 -m 00000000000000000 download
+python ./macrecovery.py -b Mac-42FD25EABCABB274 -m 00000000000000000 download
 ```
 
 * Monterey
@@ -552,7 +552,7 @@ python ./macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000 download
 
 * Ventura
 ```zsh
-python3 macrecovery.py -b Mac-7BA5B2D9E42DDD94 download
+python3 ./macrecovery.py -b Mac-7BA5B2D9E42DDD94 download
 ```
 
 > **Note**: [macrecovery](https://github.com/acidanthera/OpenCorePkg/releases) is required. Credit to credit to [**dreamwhite**](https://github.com/dreamwhite) for discover [macOS Ventura Online Recovery Install](https://www.reddit.com/r/hackintosh/comments/yf3mzs/macos_ventura_internet_recovery_install/). To check [Python](http://softwarert.com) version, use `python -V` command on [Windows Powershell x64](https://github.com/PowerShell/PowerShell/releases/download/v7.2.7/PowerShell-7.2.7-win-x64.msi) and `python --version` on macOS Terminal. If you are using [Python 3](http://softwarert.com), change the command based on [Python](http://softwarert.com) version. ie: `python3 ./macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000 download`. This method will download `2` files, **BaseSystem.chunklist** and **BaseSystem.dmg**.
