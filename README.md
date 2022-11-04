@@ -14,8 +14,12 @@ Download [here](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/
 
 ### OpenCore EFI Structure
 
-![untitled](https://user-images.githubusercontent.com/72515939/199891041-da9f6ff8-ca0a-455d-888c-4cfe0cd0f9c3.png)
+<div align=center>
+	
+![EFI drawio](https://user-images.githubusercontent.com/72515939/199974686-7700f31d-9729-458d-9833-c5df5cf755bc.png)
 
+</div>
+	
 ### Processor
 
 #### Intel® Core™ i5-10400
