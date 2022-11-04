@@ -45,8 +45,6 @@ Mobile			    : No
 ```
 <div align=center>
 
-* Current
-
 ![IGPU9BC5](https://user-images.githubusercontent.com/72515939/199859156-609ae9b5-c6cb-4280-b8fd-65d5e289333a.png)
 
 </div>
