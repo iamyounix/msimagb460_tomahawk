@@ -14,38 +14,7 @@ Download [here](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/
 
 ### OpenCore EFI Structure
 
-```zsh
-EFI
-├── BOOT
-│   └── BOOTx64.efi
-└── OC
-    ├── ACPI
-    │   └── SSDT-Patch.aml
-    ├── Drivers
-    │   ├── HfsPlus.efi
-    │   ├── OpenCanopy.efi
-    │   └── OpenRuntime.efi
-    ├── Kexts
-    │   ├── AppleALC.kext
-    │   ├── Lilu.kext
-    │   ├── LucyRTL8125Ethernet.kext
-    │   ├── RadeonSensor.kext
-    │   ├── SMCProcessor.kext
-    │   ├── SMCRadeonGPU.kext
-    │   ├── SMCSuperIO.kext
-    │   ├── USBMap.kext
-    │   ├── VirtualSMC.kext
-    │   └── WhateverGreen.kext
-    ├── OpenCore.efi
-    ├── Resources
-    │   ├── Audio
-    │   ├── Font
-    │   ├── Image
-    │   └── Label
-    ├── Tools
-    │   └── CleanNvram.efi
-    └── config.plist
-```
+![untitled](https://user-images.githubusercontent.com/72515939/199891041-da9f6ff8-ca0a-455d-888c-4cfe0cd0f9c3.png)
 
 ### Processor
 
