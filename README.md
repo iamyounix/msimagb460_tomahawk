@@ -16,7 +16,7 @@ Download [here](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/
 
 <div align=center>
 	
-![EFI](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/EFI.drawio.png)
+![EFI](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/OC.drawio.png)
 
 </div>
 	
