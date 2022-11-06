@@ -229,8 +229,6 @@ VDA Decoder                 : Fully Supported
 
 ### Quirks
 
-This config is based on OpenCore 0.8.5.
-
 #### ACPI / Quirks
 
 - All False
