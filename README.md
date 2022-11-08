@@ -302,7 +302,7 @@ VDA Decoder                 : Fully Supported
 
 </div>
 
-> **Note**: Refer my SSDT [Modular](https://github.com/theofficialcopypaste/ASRockB460MSL/tree/main/SSDT-Modular) and [All](https://github.com/theofficialcopypaste/ASRockB460MSL/tree/main/SSDT-Patch) for more info.
+> **Note**: Refer my [Modular](https://github.com/theofficialcopypaste/ASRockB460MSL/tree/main/SSDT-Modular) SSDT's and [Patch](https://github.com/theofficialcopypaste/ASRockB460MSL/tree/main/SSDT-Patch) SSDT (Single File) for more info.
 
 ### Validate
 
