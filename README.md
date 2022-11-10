@@ -507,6 +507,18 @@ pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 
 > **Note**: Head to [GPRW/UPRW/LANC Instant Wake Patch](https://dortania.github.io/OpenCore-Post-Install/usb/misc/instant-wake.html) for more info.
 
+#### Fix Power Issues:
+
+* Open [Hackintool](https://github.com/headkaze/Hackintool)
+* Hit FixSleepImage Icon as picture below
+
+<div align=center>
+
+![2022-11-10_23-13-48](https://user-images.githubusercontent.com/72515939/201133767-26576c18-59ce-4e85-a5c7-6a0c143eb70f.png)
+![2022-11-10_23-14-19](https://user-images.githubusercontent.com/72515939/201133782-bc664c26-bc79-4640-b9fc-c993359aeeb0.png)
+
+</div>
+
 #### Lists any ACPI Error:
 
 - Input:
@@ -635,6 +647,12 @@ git clone https://github.com/corpnewt/SSDTTime.git
 
 ```zsh
 git clone https://github.com/dreamwhite/OC-Anonymizer.git
+```
+
+- [**headkaze**](https://github.com/headkaze) for
+
+```zsh
+https://github.com/headkaze/Hackintool.git
 ```
 
 - [**5T33Z0**](https://github.com/5T33Z0) for
