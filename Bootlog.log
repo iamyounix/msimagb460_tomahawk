@@ -1,0 +1,1198 @@
+16.506410]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.506435]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x105) returns 0x0
+[   16.506438]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   16.506439]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x105) returns 0x0
+[   16.518410]: Sandbox: imagent(453) deny(1) user-preference-read com.apple.CloudKitSandbox: identityservicesd(417) deny(1) mach-lookup com.apple.tccdIOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 143 bytes
+[   16.531923]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   16.544744]: sandboxd rejected approval request from CategoriesService for kTCCServiceSystemPolicyAppBundles (/Applications/VLC.app): would require promptSandbox: identityservicesd(417) deny(1) mach-lookup com.apple.tccd.systemSandbox: identityservicesd(417) deny(1) mach-lookup com.apple.tccdSandbox: nsurlsessiond(409) deny(1) file-write-create /Users/mohdismailmatasin/Library/HTTPStorages/com.apple.nsurlsessiondSandbox: identityservicesd(417) deny(1) mach-lookup com.apple.tccd.systemiCloudNotificationAgent[518] Corpse allowed 3 of 5
+[   16.601198]: AMFI: Launch Constraint Violation (not enforcing), error info: c[6]p[2]m[3]e[255], (Process was launched as a system service unexpectedly but met System Service constraints) launching proc[vc: 1 pid: 460]: /Library/Apple/System/Library/CoreServices/MRT.app/Contents/MacOS/MRT, launch type 1, failure proc [vc: 1 pid: 1]: /sbin/launchd
+[   16.601264]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 863 bytes
+[   16.613339]: tx_flush:1241: disk4 xid 15351 tx stats: # 40 finish 40 enter 687 wait 2 1794us close 1us flush 2222us
+[   16.634664]: Sandbox: suggestd(434) deny(1) mach-lookup com.apple.coreservices.launchservicesdSandbox: mobileassetd(254) deny(1) file-write-create /private/var/root/Library/Caches/com.apple.mobileassetd1 duplicate report for Sandbox: mobileassetd(254) deny(1) file-write-create /private/var/root/Library/Caches/com.apple.mobileassetdSandbox: mobileassetd(254) deny(1) file-read-metadata /private/var/root/Librarysuccessfully parsed 2/4 entries for file MaciASL.appSandbox apply: neagent[526] <bytes>Sandbox apply: mediaanalysisd[527] <bytes>macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2Sandbox apply: financed[528] <bytes>Sandbox apply: weatherd[532] <bytes>Sandbox apply: maild[531] <bytes>1 duplicate report for Sandbox: mobileassetd(254) deny(1) file-read-metadata /private/var/root/LibrarySandbox: calaccessd(405) deny(1) file-write-create /private/tmp/CalNotificationsAvailableSandbox apply: gamecontrollerd[368] <bytes>+ IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.884423]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   16.884429]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   16.884449]:   ConnectionID:0x5666c1f0
+[   16.884452]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   16.884454]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   16.884461]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   16.884463]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   16.884465]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   16.884466]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.884493]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x100) returns 0x0
+[   16.884496]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   16.884497]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x100) returns 0x0
+[   16.886526]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 143 bytes
+[   16.886554]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 143 bytes
+[   16.887462]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.887467]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   16.887473]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   16.887478]:   ConnectionID:0x46c5bf18
+[   16.887483]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   16.887485]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   16.887490]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   16.887492]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   16.887493]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   16.887499]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.887527]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x100) returns 0x0
+[   16.887530]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   16.887534]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x100) returns 0x0
+[   16.888758]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.888763]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   16.888768]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   16.888774]:   ConnectionID:0x8b31a88b
+[   16.888779]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   16.888781]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   16.888786]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   16.888787]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   16.888789]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   16.888790]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.888816]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x101) returns 0x0
+[   16.888818]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   16.888820]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x101) returns 0x0
+[   16.889926]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.889931]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   16.889935]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   16.889942]:   ConnectionID:0xe8c85d49
+[   16.889946]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   16.889948]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   16.889953]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   16.889955]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   16.889957]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   16.889958]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.889982]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x102) returns 0x0
+[   16.889984]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   16.889986]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x102) returns 0x0
+[   16.891220]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.891229]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   16.891234]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   16.891240]:   ConnectionID:0x84d876b1
+[   16.891244]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   16.891246]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   16.891251]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   16.891253]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   16.891255]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   16.891256]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.891283]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x103) returns 0x0
+[   16.891285]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   16.891286]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x103) returns 0x0
+[   16.892372]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.892377]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   16.892382]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   16.892387]:   ConnectionID:0xcbfde2c0
+[   16.892392]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   16.892394]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   16.892400]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   16.892402]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   16.892403]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   16.892404]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.892428]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x104) returns 0x0
+[   16.892431]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   16.892432]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x104) returns 0x0
+[   16.893496]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.893501]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   16.893505]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   16.893510]:   ConnectionID:0x5d71e411
+[   16.893515]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   16.893517]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   16.893526]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   16.893528]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   16.893530]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   16.893531]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   16.893556]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x105) returns 0x0
+[   16.893558]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   16.893560]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x105) returns 0x0
+[   16.896312]: Full corpse <ptr> enqueued for task <ptr>.
+[   16.896320]: EXC_RESOURCE -> iCloudNotificationAgent[518] exceeded mem limit: ActiveSoft 15 MB (non-fatal)
+[   16.897717]: Corpse released, count at 2
+[   16.962639]: Sandbox apply: coresymbolicationd[537] <bytes>connectx() - failed necp_set_socket_domain_attributesIOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   16.992899]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   16.993372]: connectx() - failed necp_set_socket_domain_attributesCorpse released, count at 1
+[   17.053008]: Corpse released, count at 0
+[   17.062042]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   17.062073]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   17.075232]: Sandbox: triald(499) deny(1) mach-lookup com.apple.metadata.mds1 duplicate report for Sandbox: triald(499) deny(1) mach-lookup com.apple.metadata.mdsSandbox: parsecd(498) deny(1) iokit-open-user-client AppleKeyStoreUserClientIOUC AppleKeyStoreUserClient failed MACF in process pid 498, parsecd
+[   17.091424]: IOUC AppleKeyStoreUserClient failed MACF in process pid 498, parsecd
+[   17.113359]: AppleKeyStore:8070:495: unexpected session: 100034 uid: -1 requested by: com.apple.siri.embeddedspeech (495)
+[   17.113367]: AppleKeyStore:12114:495: operation failed (sel: 7 ret: e00002c2, -1, 100034)
+[   17.215916]: Sandbox apply: adprivacyd[538] <bytes>1 duplicate report for Sandbox: parsecd(498) deny(1) iokit-open-user-client AppleKeyStoreUserClientSandbox: adprivacyd(538) deny(1) mach-lookup com.apple.ManagedClient.agentSandbox: adprivacyd(538) deny(1) mach-lookup com.apple.windowserver.activesandboxd rejected approval request from CategoriesService for kTCCServiceSystemPolicyAppBundles (/Applications/Cog.app): would require promptSandbox apply: commerce[540] <bytes>Sandbox apply: ContextStoreAgent[440] <bytes>Sandbox apply: contactsdonationagent[544] <bytes>connectx() - failed necp_set_socket_domain_attributes1 duplicate report for Sandbox: adprivacyd(538) deny(1) mach-lookup com.apple.windowserver.activeSandbox: ContextStoreAgent(440) deny(1) ipc-posix-shm-write-create ContextStoreAgentconnectx() - failed necp_set_socket_domain_attributessuccessfully parsed 2/4 entries for file MonitorControl.appSandbox apply: swcd[546] <bytes>Sandbox apply: linkd[547] <bytes>Sandbox apply: siriknowledged[548] <bytes>connectx() - failed necp_set_socket_domain_attributesSandbox apply: assistantd[545] <bytes>Sandbox: assistantd(545) deny(1) mach-lookup com.apple.cmio.registerassistantservice.system-extensionsIOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   17.703627]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   17.715718]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   17.715748]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   17.720843]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   17.720866]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   17.730977]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   17.731005]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   17.739322]: Sandbox: assistantd(545) deny(1) iokit-open-user-client AppleKeyStoreUserClientIOUC AppleKeyStoreUserClient failed MACF in process pid 545, assistantd
+[   17.739575]: IOUC AppleKeyStoreUserClient failed MACF in process pid 545, assistantd
+[   17.741602]: IOUC AppleKeyStoreUserClient failed MACF in process pid 545, assistantd
+[   17.741800]: IOUC AppleKeyStoreUserClient failed MACF in process pid 545, assistantd
+[   17.743396]: IOUC AppleKeyStoreUserClient failed MACF in process pid 545, assistantd
+[   17.743576]: IOUC AppleKeyStoreUserClient failed MACF in process pid 545, assistantd
+[   17.751392]: Sandbox apply: homed[551] <bytes>AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   17.752724]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   17.754553]: 5 duplicate reports for Sandbox: assistantd(545) deny(1) iokit-open-user-client AppleKeyStoreUserClientSandbox: triald(499) deny(1) iokit-open-user-client AppleKeyStoreUserClientIOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.754780]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.771040]: 1 duplicate report for Sandbox: triald(499) deny(1) iokit-open-user-client AppleKeyStoreUserClientSandbox: assistantd(545) deny(1) iokit-open-user-client AppleKeyStoreUserClientIOUC AppleKeyStoreUserClient failed MACF in process pid 545, assistantd
+[   17.771328]: IOUC AppleKeyStoreUserClient failed MACF in process pid 545, assistantd
+[   17.778547]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   17.778553]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   17.778556]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   17.778579]:   ConnectionID:0x36179ed6
+[   17.778582]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   17.778583]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   17.778587]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   17.778588]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   17.778589]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   17.778590]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   17.778610]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x100) returns 0x0
+[   17.778612]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   17.778613]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x100) returns 0x0
+[   17.780757]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   17.780761]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   17.780766]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   17.780771]:   ConnectionID:0x9acc3d8d
+[   17.780775]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   17.780776]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   17.780780]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   17.780782]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   17.780783]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   17.780784]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   17.780803]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x100) returns 0x0
+[   17.780804]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   17.780805]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x100) returns 0x0
+[   17.781656]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   17.781662]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   17.781664]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   17.781668]:   ConnectionID:0x223df814
+[   17.781671]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   17.781672]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   17.781675]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   17.781676]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   17.781677]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   17.781678]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   17.781695]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x101) returns 0x0
+[   17.781696]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   17.781697]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x101) returns 0x0
+[   17.782475]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   17.782479]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   17.782482]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   17.782485]:   ConnectionID:0x81d191bd
+[   17.782487]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   17.782489]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   17.782492]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   17.782493]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   17.782494]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   17.782495]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   17.782511]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x102) returns 0x0
+[   17.782513]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   17.782514]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x102) returns 0x0
+[   17.783591]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   17.783596]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   17.783600]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   17.783609]:   ConnectionID:0x8883899a
+[   17.783614]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   17.783616]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   17.783621]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   17.783623]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   17.783624]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   17.783625]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   17.783649]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x103) returns 0x0
+[   17.783651]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   17.783653]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x103) returns 0x0
+[   17.784597]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   17.784601]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   17.784603]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   17.784607]:   ConnectionID:0x8242607e
+[   17.784609]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   17.784611]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   17.784616]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   17.784618]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   17.784618]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   17.784619]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   17.784636]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x104) returns 0x0
+[   17.784637]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   17.784638]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x104) returns 0x0
+[   17.785465]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   17.785468]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   17.785471]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   17.785474]:   ConnectionID:0xc078ed04
+[   17.785476]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   17.785477]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   17.785481]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   17.785482]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   17.785483]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   17.785484]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   17.785499]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x105) returns 0x0
+[   17.785500]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   17.785501]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x105) returns 0x0
+[   17.793971]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   17.793980]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   17.794380]: 1 duplicate report for Sandbox: assistantd(545) deny(1) iokit-open-user-client AppleKeyStoreUserClientSandbox: triald(499) deny(1) iokit-open-user-client AppleKeyStoreUserClientIOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.794516]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.801124]: successfully parsed 2/4 entries for file Ghost Buster Pro.appAppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   17.825804]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   17.826163]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.826345]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.852401]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   17.852423]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   17.861093]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   17.861104]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   17.861571]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.861841]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.891650]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   17.891658]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   17.892103]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.892250]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.919978]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   17.919987]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   17.920364]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.920500]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.922062]: successfully parsed 2/4 entries for file IORegistryExplorer.appAppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   17.952967]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   17.953456]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.953628]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.982063]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   17.982071]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   17.982514]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.982718]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   17.987774]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 142 bytes
+[   17.987795]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 142 bytes
+[   18.006729]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.006737]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.007149]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.007287]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.017686]: successfully parsed 2/4 entries for file OnyX.appAppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.029949]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.030335]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.030460]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.034758]: 17 duplicate reports for Sandbox: triald(499) deny(1) iokit-open-user-client AppleKeyStoreUserClientSandbox: homed(551) deny(1) mach-lookup com.apple.coreduetd.knowledgeSandbox: homed(551) deny(1) mach-lookup com.apple.coreduetd.contextSandbox: homed(551) deny(1) mach-lookup com.apple.CoreLocation.agentAppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.054443]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.054836]: Sandbox: triald(499) deny(1) iokit-open-user-client AppleKeyStoreUserClientIOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.054998]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.065198]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 145 bytes
+[   18.065221]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 145 bytes
+[   18.068887]: 1 duplicate report for Sandbox: triald(499) deny(1) iokit-open-user-client AppleKeyStoreUserClientSandbox: homed(551) deny(1) mach-lookup com.apple.powerlog.plxpclogger.xpcconnectx() - failed necp_set_socket_domain_attributesAppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.082676]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.083044]: Sandbox: triald(499) deny(1) iokit-open-user-client AppleKeyStoreUserClientIOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.083225]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.107835]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.107843]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.108298]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.108424]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.110880]: apfs_stop_bg_work:831: disk4s4 Volume Macintosh is unmounting, stop any bg work
+[   18.112312]: apfs_log_mount_unmount:1969: disk4s4 unmounting volume Macintosh, requested by: com.apple.MobileSoftwareUpdate. (pid 325); parent: launchd (pid 1)
+[   18.112319]: apfs_vfsop_unmount:2897: disk4s4 waiting for purgatory cleaner to finish
+[   18.113380]: authapfs_seal_restore:564: disk4s4 broken in xid: 12591, fsroot tree xid: 12598
+[   18.113450]: apfs_vfsop_unmount:3226: disk4 nx_num_vols_mounted is 5
+[   18.113453]: apfs: total mem allocated: 91296819 (87 mb);
+[   18.113455]: apfs_vfsop_unmount:3239: all done.  going home.  (numMountedAPFSVolumes 5)
+[   18.116516]: AMFI: constraint violation /Applications/Snagit 2023.app/Contents/Frameworks/ShaferFilechck.dylib has entitlements but is not a main binary
+[   18.117078]: AMFIGetLocalSigningPublicKey: local signing public not avilable with daemon
+[   18.117084]: AMFI: '/Applications/Snagit 2023.app/Contents/Frameworks/ShaferFilechck.dylib': local signing public key not initialized
+[   18.122203]: apfs_mount:28745: disk4s4 EALREADY; rooted from snap, apfs <ptr>
+[   18.122213]: apfs_log_mount_unmount:1969: disk4s4 mounting volume Macintosh, requested by: mount_apfs (pid 554); parent: com.apple.Mobile (pid 325)
+[   18.122219]: apfs_mount_livefs:28444: disk4 mount no firmlinks
+[   18.122256]: revert_to_snapshot:1618: disk4s4 Reverting to snapshot w/xid 251 and old sblock oid 984458.
+[   18.122278]: revert_extents_to_snapshot:1435: disk4s4 free'ing extents in main extentref tree 870074
+[   18.122289]: free_allocated_snapshot_extents:1350: disk4s4 processed 0 extents and free'd 0 blocks
+[   18.122384]: AMFI: code signature validation failed.
+[   18.138877]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.138885]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.139265]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.139394]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.169826]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   18.169832]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   18.169836]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   18.169841]:   ConnectionID:0x41e045d8
+[   18.169843]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   18.169844]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   18.169849]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   18.169850]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   18.169851]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   18.169852]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   18.169871]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x100) returns 0x0
+[   18.169874]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   18.169876]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x100) returns 0x0
+[   18.171900]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   18.171905]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   18.171908]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   18.171913]:   ConnectionID:0x13ee7670
+[   18.171917]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   18.171918]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   18.171922]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   18.171923]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   18.171924]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   18.171925]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   18.171943]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x100) returns 0x0
+[   18.171945]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   18.171946]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x100) returns 0x0
+[   18.172088]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.172098]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.172597]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.172780]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.173017]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   18.173021]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   18.173025]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   18.173029]:   ConnectionID:0x90e62c95
+[   18.173033]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   18.173035]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   18.173040]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   18.173043]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   18.173044]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   18.173045]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   18.173066]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x101) returns 0x0
+[   18.173069]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   18.173070]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x101) returns 0x0
+[   18.174270]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   18.174274]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   18.174276]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   18.174280]:   ConnectionID:0xff6ea0f7
+[   18.174283]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   18.174285]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   18.174290]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   18.174292]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   18.174293]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   18.174294]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   18.174318]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x102) returns 0x0
+[   18.174320]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   18.174322]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x102) returns 0x0
+[   18.175558]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   18.175567]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   18.175571]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   18.175580]:   ConnectionID:0x7ffeb3ba
+[   18.175584]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   18.175586]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   18.175591]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   18.175593]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   18.175595]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   18.175596]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   18.175627]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x103) returns 0x0
+[   18.175630]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   18.175632]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x103) returns 0x0
+[   18.176675]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   18.176679]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   18.176683]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   18.176687]:   ConnectionID:0x84ab8cc2
+[   18.176691]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   18.176693]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   18.176697]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   18.176699]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   18.176700]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   18.176701]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   18.176723]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x104) returns 0x0
+[   18.176725]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   18.176726]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x104) returns 0x0
+[   18.177601]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   18.177606]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   18.177610]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   18.177618]:   ConnectionID:0xb500ab75
+[   18.177622]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   18.177624]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   18.177629]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   18.177631]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   18.177632]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   18.177634]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   18.177657]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x105) returns 0x0
+[   18.177659]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   18.177661]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x105) returns 0x0
+[   18.202448]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.202456]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.202852]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.202979]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.204723]: successfully parsed 2/4 entries for file AppCleaner.appsupplemental_tree_revert:305: disk4s4 reverted supplemental tree (type 5): 870109 -> 870034
+[   18.228460]: omap_cleanup:1464: disk4s4 started cleaning snapshots 15359-15359
+[   18.231637]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.231646]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.232049]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.232184]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.257875]: successfully parsed 2/4 entries for file WhatsApp.appAppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.261574]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.262036]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.262176]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.280684]: omap_cleanup:1686: disk4s4 completed cleaning snapshot 15359, om_snap_count 1 om_most_recent_snap 15359
+[   18.280690]: obj_cache_remove_reverted_fs_objects:1593: disk4s4 removing reverted fs objects for fs 1339: 252 - 15359
+[   18.281093]: revert_to_snapshot:1713: disk4s4 DONE reverting to snapshot w/xid 251
+[   18.281194]: authapfs_seal_break:488: disk4s4 integrity protection will be disabled (from xid: 15360)
+[   18.282569]: handle_mount:714: disk4s4 vol-uuid: D768AF74-BC1D-46EB-8442-0DCE1B5A19D3 block size: 4096 block count: 122045436 (unencrypted; flags: 0x201; features: 21.0.12)
+[   18.282641]: handle_mount:727: disk4s4 setting dev block size to 4096 from 512
+[   18.282800]: ioqueue_depth = 256,   ioscale = 8
+[   18.292038]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.292046]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.292528]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.292703]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.316062]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.316070]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.316497]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.316629]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.338762]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.338770]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.339152]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.339274]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.362292]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.362300]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.362673]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.362824]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.386094]: AppleKeyStore:8070:550: unexpected session: 100041 uid: -1 requested by: com.apple.siri.embeddedspeech (550)
+[   18.386101]: AppleKeyStore:12114:550: operation failed (sel: 7 ret: e00002c2, -1, 100041)
+[   18.386485]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.386609]: IOUC AppleKeyStoreUserClient failed MACF in process pid 499, triald
+[   18.476582]: newUserClient: Invalid userClient Type request: 0newUserClient: Invalid userClient Type request: 023 duplicate reports for Sandbox: triald(499) deny(1) iokit-open-user-client AppleKeyStoreUserClientSandbox: siriactionsd(398) deny(1) iokit-open-user-client RootDomainUserClientIOUC RootDomainUserClient failed MACF in process pid 398, siriactionsd
+[   18.613372]: Sandbox: siriactionsd(398) deny(1) mach-lookup com.apple.logindSandbox: siriactionsd(398) deny(1) mach-lookup com.apple.identityservicesd.desktop.authsandboxd rejected approval request from defaults for kTCCServiceSystemPolicyAllFiles (/Users/mohdismailmatasin/Library/Containers/com.apple.archiveutility/Data/Library/Preferences): deniedSystem Policy: defaults(561) deny(1) file-read-data /Users/mohdismailmatasin/Library/Containers/com.apple.archiveutility/Data/Library/Preferencesconnectx() - failed necp_set_socket_domain_attributesSystem Policy: defaults(561) deny(1) file-read-data /Users/mohdismailmatasin/Library/Containers/com.apple.Safari/Data/Library/PreferencesSystem Policy: defaults(561) deny(1) file-read-data /Users/mohdismailmatasin/Library/Containers/com.apple.CloudDocs.MobileDocumentsFileProvider/Data/Library/PreferencesSystem Policy: defaults(561) deny(1) file-read-data /Users/mohdismailmatasin/Library/Containers/com.apple.mail/Data/Library/PreferencesSystem Policy: defaults(561) deny(1) file-read-data /Users/mohdismailmatasin/Library/Containers/com.apple.Notes/Data/Library/PreferencesSystem Policy: defaults(561) deny(1) file-read-data /Users/mohdismailmatasin/Library/Containers/com.apple.stocks/Data/Library/PreferencesSystem Policy: defaults(562) deny(1) file-read-data /Users/mohdismailmatasin/Library/Containers/com.apple.archiveutility/Data/Library/PreferencesSystem Policy: defaults(562) deny(1) file-read-data /Users/mohdismailmatasin/Library/Containers/com.apple.Safari/Data/Library/PreferencesSystem Policy: defaults(562) deny(1) file-read-data /Users/mohdismailmatasin/Library/Containers/com.apple.CloudDocs.MobileDocumentsFileProvider/Data/Library/PreferencesSystem Policy: defaults(562) deny(1) file-read-data /Users/mohdismailmatasin/Library/Containers/com.apple.mail/Data/Library/PreferencesSystem Policy: defaults(562) deny(1) file-read-data /Users/mohdismailmatasin/Library/Containers/com.apple.Notes/Data/Library/PreferencesSystem Policy: defaults(562) deny(1) file-read-data /Users/mohdismailmatasin/Library/Containers/com.apple.stocks/Data/Library/Preferencessuccessfully parsed 1/4 entries for file DesktopSandbox: pkd(399) deny(1) mach-lookup com.apple.mobile.keybagd.UserManager.xpcIOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   18.769601]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   18.776769]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   18.776793]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   18.780444]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   18.780473]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   18.798790]: Sandbox apply: UsageTrackingAgent[529] <bytes>Sandbox apply: com.apple.CloudDocs.MobileDocume[563] <bytes>Sandbox apply: logd_helper[565] <bytes>connectx() - failed necp_set_socket_domain_attributesSandbox: ContextStoreAgent(440) deny(1) mach-lookup com.apple.coremedia.volumecontroller.xpccom.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 2) on:0, source:ScanManagerFamily, err:0
+[   19.107073]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:DriverInternalScanDone, err:0
+[   19.116720]: newUserClient: Invalid userClient Type request: 0apfs_log_mount_unmount:1969: disk4s4 unmounting volume Macintosh, requested by: com.apple.MobileSoftwareUpdate. (pid 325); parent: launchd (pid 1)
+[   19.232839]: apfs_vfsop_unmount:2897: disk4s4 waiting for purgatory cleaner to finish
+[   19.235179]: authapfs_seal_restore:564: disk4s4 broken in xid: 15360, fsroot tree xid: 15361
+[   19.235281]: apfs_vfsop_unmount:3226: disk4 nx_num_vols_mounted is 5
+[   19.235285]: apfs: total mem allocated: 111796816 (107 mb);
+[   19.235288]: apfs_vfsop_unmount:3239: all done.  going home.  (numMountedAPFSVolumes 5)
+[   19.239783]: connectx() - failed necp_set_socket_domain_attributessandboxd rejected approval request from com.apple.dock.extra for kTCCServiceSystemPolicyAllFiles (/Users/mohdismailmatasin/Library/Application Support/CallHistoryDB): deniedSystem Policy: com.apple.dock.extra(476) deny(1) file-read-data /Users/mohdismailmatasin/Library/Application Support/CallHistoryDBSandbox apply: mediasharingd[442] <bytes>Sandbox: financed(528) deny(1) file-read-data /Library/Preferences/com.apple.networkd.plist1 duplicate report for Sandbox: financed(528) deny(1) file-read-data /Library/Preferences/com.apple.networkd.plistSandbox: linkd(547) deny(1) file-read-data /usr/libexec1 duplicate report for Sandbox: linkd(547) deny(1) file-read-data /usr/libexecSandbox: linkd(547) deny(1) file-read-data /usr/libexec/linkdPMRD: assertionsUser 0x40->0x41
+[   19.364674]:   IOTimeSyncTimeSyncTimePort(0xa8a15966cea50008): Other 0xe0034150Sandbox: linkd(547) deny(1) user-preference-read kCFPreferencesAnyApplication2 duplicate reports for Sandbox: linkd(547) deny(1) user-preference-read kCFPreferencesAnyApplicationSandbox: linkd(547) deny(1) file-read-data /usr/libexecPMRD: assertionsUser 0x41->0x40
+[   19.376776]:   IOTimeSyncTimeSyncTimePort(0xa8a15966cea50008): Other 0xe0034150PMRD: assertionsUser 0x40->0x41
+[   19.378514]:   IOTimeSyncTimeSyncTimePort(0xa8a15966cea50008): Other 0xe0034150PMRD: assertionsUser 0x41->0x40
+[   19.381770]:   IOTimeSyncTimeSyncTimePort(0xa8a15966cea50008): Other 0xe0034150Sandbox: contextstored(175) deny(1) mach-lookup com.apple.biome.compute.source.userIOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 143 bytes
+[   19.402069]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.419610]: Sandbox apply: MTLAssetUpgraderD[549] <bytes>IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.439359]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.445804]: Sandbox apply: distnoted[567] <bytes>Sandbox apply: parsec-fbf[506] <bytes>IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.450763]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.451907]: Sandbox apply: cloudpaird[454] <bytes>Sandbox apply: gamecontrolleragentd[569] <bytes>tx_flush:1241: disk4 xid 15371 tx stats: # 60 finish 59 enter 511 wait 6 2030us close 573us flush 2054us
+[   19.679350]: 3 duplicate reports for Sandbox: contextstored(175) deny(1) mach-lookup com.apple.biome.compute.source.userSandbox: parsec-fbf(506) deny(1) file-read-data /Users/mohdismailmatasin/Library/Caches/GeoServices/DirectReadConfigStore.plistSandbox: parsec-fbf(506) deny(1) mach-lookup com.apple.coreservices.quarantine-resolverSandbox: parsec-fbf(506) deny(1) file-read-data /Users/mohdismailmatasin/Library/Caches/GeoServicesSandbox: cloudpaird(454) deny(1) system-fsctl (_IO "h" 47)Sandbox: cloudpaird(454) deny(1) mach-lookup com.apple.metadata.mds1 duplicate report for Sandbox: cloudpaird(454) deny(1) mach-lookup com.apple.metadata.mdsSandbox: siriactionsd(398) deny(1) mach-lookup com.apple.CARenderServerSandbox: cloudpaird(454) deny(1) mach-lookup com.apple.tccdconnectx() - failed necp_set_socket_domain_attributesSandbox: cloudpaird(454) deny(1) file-read-data /Library/Preferences/com.apple.networkd.plistIOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.724173]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.726045]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.726073]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.726701]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.726725]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.727387]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.727411]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.727854]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.727873]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.732269]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.732297]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.733065]: Sandbox apply: remindd[458] <bytes>IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.742304]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   19.811378]: 1 duplicate report for Sandbox: cloudpaird(454) deny(1) file-read-data /Library/Preferences/com.apple.networkd.plistSandbox: siriactionsd(398) deny(1) user-preference-read com.apple.universalaccess2 duplicate reports for Sandbox: siriactionsd(398) deny(1) user-preference-read com.apple.universalaccessSandbox: adprivacyd(538) deny(1) file-write-create /private/var/folders/r0/qp252jpn6nvbzhk9pplt0_qc0000gn/T/com.apple.adprivacydSandbox apply: amsengagementd[568] <bytes>IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 143 bytes
+[   20.151847]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 143 bytes
+[   20.151933]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 143 bytes
+[   20.151974]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 143 bytes
+[   20.210383]: Sandbox: adprivacyd(538) deny(1) file-write-create /Users/mohdismailmatasin/Library/HTTPStorages/com.apple.ap.adprivacydSandbox: adprivacyd(538) deny(1) mach-lookup com.apple.metadata.mdsSandbox: amsengagementd(568) deny(1) file-read-data /Library/Preferences/com.apple.networkd.plistconnectx() - failed necp_set_socket_domain_attributessuccessfully parsed 1/4 entries for file Reminders1 duplicate report for Sandbox: amsengagementd(568) deny(1) file-read-data /Library/Preferences/com.apple.networkd.plistSandbox: amsengagementd(568) deny(1) file-write-create /Users/mohdismailmatasin/Library/Caches/com.apple.amsengagementd1 duplicate report for Sandbox: amsengagementd(568) deny(1) file-write-create /Users/mohdismailmatasin/Library/Caches/com.apple.amsengagementdSandbox: amsengagementd(568) deny(1) file-write-create /Users/mohdismailmatasin/Library/HTTPStorages/com.apple.amsengagementdSandbox: amsengagementd(568) deny(1) mach-lookup com.apple.metadata.mdsSandbox: amsengagementd(568) deny(1) file-read-data /private/var/db/nsurlstoraged/dafsaData.binconnectx() - failed necp_set_socket_domain_attributesIOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   20.288668]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   20.289474]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   20.289492]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   20.315262]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   20.315285]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   20.342314]: connectx() - failed necp_set_socket_domain_attributesSandbox: swcd(546) deny(1) system-fsctl (_IO "h" 47)14 duplicate reports for Sandbox: swcd(546) deny(1) system-fsctl (_IO "h" 47)Sandbox: adprivacyd(538) deny(1) user-preference-read com.apple.springboardconnectx() - failed necp_set_socket_domain_attributesconnectx() - failed necp_set_socket_domain_attributesSystem Policy: UserEventAgent(82) deny(1) file-read-data /private/var/db/installcoordinationd/Library/InstallCoordinationSystem Policy: UserEventAgent(82) deny(1) file-read-data /private/var/db/installcoordinationd/LibrarySystem Policy: UserEventAgent(82) deny(1) file-read-data /private/var/db/installcoordinationdconnectx() - failed necp_set_socket_domain_attributesSandbox apply: com.apple.audio.SandboxHelper[576] <bytes>Sandbox apply: deleted[575] <bytes>Sandbox: systemsoundserverd(341) deny(1) file-read-data /dev/dtracehelper+ IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   20.763904]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   20.763908]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   20.763922]:   ConnectionID:0xb4df8467
+[   20.763925]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   20.763926]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   20.763931]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   20.763932]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   20.763933]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   20.763934]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   20.763953]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x100) returns 0x0
+[   20.763954]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   20.763955]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x100) returns 0x0
+[   20.765767]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   20.765771]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   20.765774]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   20.765778]:   ConnectionID:0xe79d013c
+[   20.765782]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   20.765783]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   20.765787]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   20.765789]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   20.765789]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   20.765790]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   20.765806]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x100) returns 0x0
+[   20.765807]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   20.765808]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x100) returns 0x0
+[   20.766517]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   20.766520]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   20.766523]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   20.766529]:   ConnectionID:0x3facd65b
+[   20.766532]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   20.766534]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   20.766537]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   20.766538]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   20.766539]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   20.766540]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   20.766555]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x101) returns 0x0
+[   20.766556]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   20.766557]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x101) returns 0x0
+[   20.767294]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   20.767298]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   20.767300]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   20.767303]:   ConnectionID:0x59c1bfd8
+[   20.767306]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   20.767307]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   20.767310]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   20.767312]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   20.767312]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   20.767313]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   20.767328]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x102) returns 0x0
+[   20.767329]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   20.767330]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x102) returns 0x0
+[   20.768094]: + IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   20.768097]: + IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0)
+[   20.768102]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   20.768105]:   ConnectionID:0xd975fe04
+[   20.768107]: - IOAudioEngineUserClient[<ptr>]::initWithAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns 1
+[   20.768109]: +- IOAudioEngineUserClient::withAudioEngine(<ptr>, 0x<ptr>, <ptr>, 0x0, 0) returns <ptr>
+[   20.768112]: + IOAudioEngine::addUserClientAction(<ptr>, <ptr>)
+[   20.768113]: +- IOAudioEngine[<ptr>]::addUserClient(<ptr>) returns 0x0
+[   20.768114]: - IOAudioEngine::addUserClientAction(<ptr>, <ptr>) returns 0x0
+[   20.768115]: - IOAudioEngine[<ptr>]::newUserClient(0x<ptr>, <ptr>, 0x0, 0, <ptr>)
+[   20.768129]: - IOAudioEngineUserClient[<ptr>]::registerFormatNotification(0x<ptr>, 0x103) returns 0x0
+[   20.768131]: - IOAudioEngineUserClient::registerNotificationAction(<ptr>, <ptr>) returns 0x0
+[   20.768132]: - IOAudioEngineUserClient[<ptr>]::registerNotificationPort(0x<ptr>, 0x0, 0x103) returns 0x0
+[   20.778942]: + IOAudioEngineUserClient::externalMethod, selector=0x0,   arg0 0x0, arg1 0x115528000, arg2 0x8010 arg3 0x13f 
+[   20.778947]:   scalarInputCount=0x4  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   20.778955]: + IOAudioEngineUserClient::registerBuffer64 0x0 0x115528000 0x8010 0x13f
+[   20.778957]: + IOAudioEngineUserClient::safeRegisterClientBuffer64 <ptr> 
+[   20.778960]: + IOAudioEngineUserClient[<ptr>]::registerClientBuffer64  (<ptr>[1], 0x115528000, 0x8010, 0x13f)
+[   20.778963]:   null clientBufferSetList
+[   20.778963]:   did not find clientBufferSetList for ID 0x13f 
+[   20.778980]:   clientBuffer->mAudioClientBuffer32.sourceBuffer before offset: <ptr>, offset size: 16
+[   20.778982]:   clientBuffer->mAudioClientBuffer32.sourceBuffer after offset: <ptr>
+[   20.778983]:   null clientBufferSetList
+[   20.778983]:   did not find clientBufferSetList for ID 0x13f 
+[   20.778984]:   creating new IOAudioClientBufferSet 
+[   20.778985]:   output 
+[   20.778986]:   !isOnline 
+[   20.778987]: - IOAudioEngineUserClient::registerClientBuffer64() result 0x0
+[   20.778988]: - IOAudioEngineUserClient::safeRegisterClientBuffer64  returns 0x0
+[   20.778989]: - IOAudioEngineUserClient::registerBuffer64 0x0 0x115528000 0x8010 0x13f returns 0x0
+[   20.778990]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   20.779050]: + IOAudioEngineUserClient::externalMethod, selector=0x3,   arg0 0x0, arg1 0x0, arg2 0x0 arg3 0x0 
+[   20.779051]:   scalarInputCount=0x0  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   20.779056]: + IOAudioEngineUserClient[<ptr>]::startClient() - 0
+[   20.779058]:   audioEngine && !isInactive(). State = 0 
+[   20.779058]:   audioEngine->getState() != kIOAudioEnginePaused 
+[   20.779061]: +- IOAudioEngineUserClient[<ptr>]::setOnline(1)
+[   20.779062]:   !isOnline() setting online 
+[   20.779063]: + IOAudioEngine[<ptr>]::startClient(<ptr>)
+[   20.779064]: + IOAudioEngine[<ptr>]::incrementActiveUserClients() - 0
+[   20.779066]: + IOAudioEngine[<ptr>]::startAudioEngine(state = 0)
+[   20.779067]: + IOAudioDevice[<ptr>]::audioEngineStarting() - numRunningAudioEngines = 0
+[   20.779068]: + IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 1 - pending = 2
+[   20.779069]: + IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 1 - pending = 2
+[   20.779070]: - IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 2 - pending = 2 returns 0x0
+[   20.779071]: - IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 2 - pending = 2 returns 0x0
+[   20.779076]: - IOAudioDevice[<ptr>]::audioEngineStarting() - numRunningAudioEngines = 1
+[   20.779078]: - IOAudioEngine[<ptr>]::stopEngineAtPosition(0,0)
+[   20.779079]: +- IOAudioEngine[<ptr>]::resetStatusBuffer()
+[   20.779600]: +-IOAudioEngine[<ptr>]::setState(0x1. oldState=0)
+[   20.779604]: - IOAudioEngine[<ptr>]::getTimerInterval()
+[   20.779616]: - IOAudioEngine[<ptr>]::startAudioEngine() returns 0x0
+[   20.779617]: - IOAudioEngine[<ptr>]::incrementActiveUserClients() - 1 returns 0
+[   20.779618]: - IOAudioEngine[<ptr>]::startClient(<ptr>) returns 0x0
+[   20.779619]:   engine started 
+[   20.779620]:   bufferSet <ptr> 
+[   20.779621]:   output clientBuffer <ptr> 
+[   20.779621]: + IOAudioStream[<ptr>]::addClient(<ptr>)
+[   20.779640]: - IOAudioStream[<ptr>]::addClient(<ptr>) returns 0x0
+[   20.779641]: - IOAudioEngineUserClient[<ptr>]::startClient() - 1 returns 0x0
+[   20.779643]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   20.791788]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 143 bytes
+[   20.791820]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 150 bytes
+[   20.866831]: 1 duplicate report for Sandbox: systemsoundserverd(341) deny(1) file-read-data /dev/dtracehelperSandbox: systemsoundserverd(341) deny(1) network-outbound /private/var/run/syslogACM: deleteCredentialSet: Deleting credential set, CS[104].
+[   21.024708]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   21.024741]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   21.025859]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   21.025888]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   21.078351]: Sandbox apply: SiriTTSSynthesizerAU[579] <bytes>Sandbox apply: com.apple.audio.SandboxHelper[580] <bytes>IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   21.282575]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   21.328812]: Sandbox: remindd(458) deny(1) file-read-data /Library/Preferences/com.apple.networkd.plistIOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 145 bytes
+[   21.378369]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 145 bytes
+[   21.378468]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 145 bytes
+[   21.378486]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 145 bytes
+[   21.524621]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 146 bytes
+[   21.524647]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 146 bytes
+[   21.566513]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   21.566538]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   21.566783]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   21.566803]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   21.709793]: + IOAudioEngineUserClient::externalMethod, selector=0x4,   arg0 0x0, arg1 0x0, arg2 0x0 arg3 0x0 
+[   21.709798]:   scalarInputCount=0x0  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   21.709808]: + IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   21.709811]: +-IOAudioStream[<ptr>]::safeLogError kErrorLogDumpCounters mStreamErrorCountsUpdated=0
+[   21.709812]: - IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   21.709814]: - IOAudioEngine[<ptr>]::stopEngineAtPosition(3,2800)
+[   21.709815]: +- IOAudioEngine[<ptr>]::decrementActiveUserClients() - 0 returns 0x0
+[   21.709816]: +- IOAudioEngine[<ptr>]::stopClient(<ptr>) returns 0x0
+[   21.709818]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   21.709818]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   21.709981]: + IOAudioEngineUserClient::externalMethod, selector=0x1,   arg0 0x115528000, arg1 0x13f, arg2 0x0 arg3 0x0 
+[   21.709985]:   scalarInputCount=0x2  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   21.709995]: + IOAudioEngineUserClient[<ptr>]::unregisterClientBuffer64(0x<ptr>, 0x13f)
+[   21.709996]:   searching for sourceBuffer 0x115528000 
+[   21.709999]: +- IOAudioEngineUserClient[<ptr>]::removeBufferSet(<ptr>)
+[   21.710000]: + IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   21.710001]: +-IOAudioStream[<ptr>]::safeLogError kErrorLogDumpCounters mStreamErrorCountsUpdated=0
+[   21.710002]: - IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   21.710018]: - IOAudioEngineUserClient::unregisterClientBuffer64 no sourcebuffer returns 0x0
+[   21.710019]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   21.728921]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   21.728944]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   21.812308]: Sandbox apply: diagnosticextensionsd[581] <bytes>PMRD: Desktop mode 1
+[   21.894874]: PMRD: Clamshell enabled
+[   22.019188]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   22.019211]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   22.019477]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   22.019497]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   22.019913]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   22.019933]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   22.020129]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   22.020145]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   22.144989]: + IOAudioEngine[<ptr>]::stopAudioEngine()
+[   22.145081]: AppleUSBXHCIIsochronousRequest: AppleUSBXHCIRequest::finish: transfer completed with status 0xe00002eb
+[   22.145689]: +-IOAudioEngine[<ptr>]::setState(0x0. oldState=0x1)
+[   22.145699]: + IOAudioDevice[<ptr>]::audioEngineStopped() - numRunningAudioEngines = 1
+[   22.145701]: + IOAudioDevice[<ptr>]::scheduleIdleAudioSleep: idleSleepDelayTime = 00
+[   22.145702]: + IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 2 - pending = 1
+[   22.145703]: + IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 2 - pending = 1
+[   22.145704]: - IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 1 - pending = 1 returns 0x0
+[   22.145705]: - IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 1 - pending = 1 returns 0x0
+[   22.145706]: - IOAudioDevice[<ptr>]::scheduleIdleAudioSleep: idleSleepDelayTime = 00
+[   22.145707]: - IOAudioDevice[<ptr>]::audioEngineStopped() - numRunningAudioEngines = 0
+[   22.145708]: - IOAudioEngine[<ptr>]::stopAudioEngine() returns 0x0
+[   22.729362]: PMRD: setAggressiveness(0) kPMMinutesToSleep = 1
+[   22.729810]: PMRD: aggressiveness changed: system 0->1, display 10
+[   22.729815]: PMRD: idle time -> 0 ms (ena 1)
+[   22.729817]: PMRD: idle sleep timer enabled
+[   23.023935]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   23.023974]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   23.024065]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   23.024105]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   23.078417]: CCDataPipe::profileRemoved(): 
+[   23.078425]: profileRemoved:914 Pipe Owner:com.apple.driver.AirPort.Brcm4360.0 Name:StateSnapshots LogIdentifier:Brcm4360CCDataPipe::profileRemoved(): 
+[   23.078476]: profileRemoved:914 Pipe Owner:com.apple.iokit.IO80211Family Name:StateSnapshots LogIdentifier:StateSnapshotsCCDataPipe::profileRemoved(): 
+[   23.078487]: profileRemoved:914 Pipe Owner:com.apple.iokit.IO80211Family Name:AssociationEventHistory LogIdentifier:AssociationEventHistoryconnectx() - failed necp_set_socket_domain_attributesvirtual void IOAccelSysMemory::free(): still have 1 outstanding fCPULockedKernMapping
+[   23.672996]: 1 duplicate report for Sandbox: remindd(458) deny(1) file-read-data /Library/Preferences/com.apple.networkd.plistSandbox: iconservicesagent(426) deny(1) mach-lookup com.apple.tccd.system1 duplicate report for Sandbox: iconservicesagent(426) deny(1) mach-lookup com.apple.tccd.systemSandbox: iconservicesagent(426) deny(1) mach-lookup com.apple.windowserver.active1 duplicate report for Sandbox: iconservicesagent(426) deny(1) mach-lookup com.apple.windowserver.activeSandbox: iconservicesagent(426) deny(1) file-write-xattr /private/var/folders/r0/qp252jpn6nvbzhk9pplt0_qc0000gn/C/com.apple.iconservicesagent/com.apple.metal/31001/libraries.listSandbox: iconservicesagent(426) deny(1) file-write-xattr /private/var/folders/r0/qp252jpn6nvbzhk9pplt0_qc0000gn/C/com.apple.iconservicesagent/com.apple.metal/31001/libraries.list.tmpSandbox: iconservicesagent(426) deny(1) file-write-xattr /private/var/folders/r0/qp252jpn6nvbzhk9pplt0_qc0000gn/C/com.apple.iconservicesagent/com.apple.metal/16777237_9765381/functions.listSandbox: iconservicesagent(426) deny(1) file-write-xattr /private/var/folders/r0/qp252jpn6nvbzhk9pplt0_qc0000gn/C/com.apple.iconservicesagent/com.apple.metal/16777237_9765381/functions.list.tmpIOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   23.747919]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   23.748453]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   23.748470]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   23.749346]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   23.749363]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   23.749496]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   23.749511]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   23.762857]: ALUC:clientDied(PID: 366), entitled 1
+[   23.769294]: ALUC:init(PID: 587), entitled 1
+[   23.769325]: methodSetClientDomain entered
+[   23.769329]: registerNotificationPort entered
+[   24.265231]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   24.265283]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   24.342316]: tx_flush:1241: disk4 xid 15391 tx stats: # 80 finish 79 enter 438 wait 7 1868us close 430us flush 1863us
+[   24.421084]: Terminate all synthetic devices before generation '1'.Sandbox apply: mdbulkimport[589] <bytes>Sandbox: mdbulkimport(589) deny(1) mach-lookup com.apple.FileProviderIOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   24.863185]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.865207]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.865227]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.866125]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.866143]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.866844]: AMFI: Launch Constraint Violation (not enforcing), error info: c[6]p[2]m[3]e[255], (Process was launched as a system service unexpectedly but met System Service constraints) launching proc[vc: 1 pid: 591]: /System/Library/PrivateFrameworks/SoftwareUpdate.framework/Versions/A/Resources/SoftwareUpdateNotificationManager.app/Contents/MacOS/SoftwareUpdateNotificationManager, launch type 1, failure proc [vc: 1 pid: 1]: /sbin/launchd
+[   24.866880]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 960 bytes
+[   24.868693]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.868711]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.869882]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.869897]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.870324]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.870334]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.871522]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.871539]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.871878]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.871892]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.872069]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.872084]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.873238]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.873254]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.873630]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.873651]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.874817]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.874834]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.875172]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.875183]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.876385]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.876401]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.877260]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.877284]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.879163]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.879187]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.880368]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.880386]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.880789]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.880807]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.881634]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 148 bytes
+[   24.881651]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 148 bytes
+[   24.882838]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.882857]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.883235]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.883256]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.883342]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 148 bytes
+[   24.883360]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.884282]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 148 bytes
+[   24.884304]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.885134]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.885150]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.885881]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.885899]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 148 bytes
+[   24.886615]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.886626]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.888146]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.888162]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.889850]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.889867]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.893223]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.893242]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.894039]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.894055]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.894799]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.894818]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.895606]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.895623]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.896425]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.896442]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.897228]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.897245]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.898795]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.898812]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.900625]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.900642]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.901420]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.901438]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.902997]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.904725]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.904753]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   24.951337]: 3 duplicate reports for Sandbox: mdbulkimport(589) deny(1) mach-lookup com.apple.FileProviderSandbox: softwareupdated(292) deny(1) file-issue-extension target:/private/var/db/softwareupdate/Library/Preferences/com.apple.OSPersonalization.plist class:com.apple.cfprefsd.readSandbox: UARPUpdaterServiceDisplay(344) deny(1) file-issue-extension target:/private/var/db/accessoryupdater/Library/Preferences/com.apple.uarpupdaterservice.display.plist class:com.apple.cfprefsd.readSandbox: accessoryupdaterd(90) allow file-issue-extension target:/private/var/db/accessoryupdater/Library/Preferences/com.apple.SoftwareUpdate.plist class:com.apple.cfprefsd.readSandbox: accessoryupdaterd(90) allow mach-lookup com.apple.softwareupdated.OSUpdatePMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+[   25.230106]: PMRD: aggressiveness changed: system 1->0, display 10
+[   25.230110]: PMRD: idle time -> 0 ms (ena 0)
+[   25.230112]: PMRD: idle sleep timer disabled
+[   25.230116]: PMRD: changePowerStateWithTagToPriv(ON_STATE, 3a0008)
+[   25.230126]: PMRD: PowerChangeOverride (ON_STATE->ON_STATE, f, 0x2) tag 0x3a0008
+[   25.230129]: PMRD: PowerChangeDone: ON_STATE->ON_STATE
+[   25.234746]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 149 bytes
+[   25.234769]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 149 bytes
+[   25.273400]: connectx() - failed necp_set_socket_domain_attributesSandbox: softwareupdated(292) deny(1) file-issue-extension target:/private/var/db/softwareupdate/Library/Preferences/com.apple.UpdateMetrics.plist class:com.apple.cfprefsd.readconnectx() - failed necp_set_socket_domain_attributesSandbox: softwareupdated(292) deny(1) file-issue-extension target:/private/var/db/softwareupdate/Library/Preferences/com.apple.CFNetwork.plist class:com.apple.cfprefsd.readSandbox: softwareupdated(292) deny(1) mach-lookup com.apple.metadata.mdsconnectx() - failed necp_set_socket_domain_attributesconnectx() - failed necp_set_socket_domain_attributesconnectx() - failed necp_set_socket_domain_attributescom.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:ScanManagerFamily, err:0
+[   25.851132]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:DriverInternalScanDone, err:0
+[   25.935961]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:ScanManagerFamily, err:0
+[   25.935966]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:DriverInternalScanDone, err:0
+[   26.022312]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:ScanManagerFamily, err:0
+[   26.022317]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:DriverInternalScanDone, err:0
+[   26.108626]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:ScanManagerFamily, err:0
+[   26.108655]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:DriverInternalScanDone, err:0
+[   26.196174]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:ScanManagerFamily, err:0
+[   26.196179]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:DriverInternalScanDone, err:0
+[   26.306811]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:ScanManagerFamily, err:0
+[   26.306817]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:DriverInternalScanDone, err:0
+[   26.462123]: memorystatus: set assertion priority(0) target HomeWidget:497
+[   26.534083]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:ScanManagerFamily, err:0
+[   26.534087]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:DriverInternalScanDone, err:0
+[   26.566684]: PMRD: setAggressiveness(0) kPMMinutesToSleep = 1
+[   26.567035]: PMRD: aggressiveness changed: system 0->1, display 10
+[   26.567039]: PMRD: idle time -> 0 ms (ena 1)
+[   26.567040]: PMRD: idle sleep timer enabled
+[   26.992286]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:ScanManagerFamily, err:0
+[   26.992292]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:DriverInternalScanDone, err:0
+[   27.291607]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 142 bytes
+[   27.291627]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 142 bytes
+[   27.298127]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 142 bytes
+[   27.298144]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 142 bytes
+[   27.349113]: Sandbox apply: MacinTalkAUSP[600] <bytes>Sandbox apply: WardaSynthesizer_x86_64[601] <bytes>Sandbox apply: com.apple.audio.SandboxHelper[602] <bytes>Sandbox apply: KonaSynthesizer[603] <bytes>AppleUSBXHCIRequest: AppleUSBXHCIRequest::finish: transfer completed with status 0xe0005000
+[   27.402750]: AppleUSBXHCIRequest: AppleUSBXHCIRequest::finish: transfer completed with status 0xe0005000
+[   27.413478]: AppleUSBXHCIRequest: AppleUSBXHCIRequest::finish: transfer completed with status 0xe0005000
+[   27.414035]: AppleUSBXHCIRequest: AppleUSBXHCIRequest::finish: transfer completed with status 0xe0005000
+[   27.415063]: AppleUSBXHCIRequest: AppleUSBXHCIRequest::finish: transfer completed with status 0xe0005000
+[   27.415618]: AppleUSBXHCIRequest: AppleUSBXHCIRequest::finish: transfer completed with status 0xe0005000
+[   27.424870]: Sandbox apply: com.apple.audio.SandboxHelper[604] <bytes>com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:ScanManagerFamily, err:0
+[   27.450165]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:DriverInternalScanDone, err:0
+[   27.514302]: memorystatus: set assertion priority(40) target ThumbnailExtension_macOS:605
+[   27.515272]: memorystatus: assertion priority 40 overrides priority 0 for ThumbnailExtension_macOS:605
+[   27.525541]: Sandbox apply: ThumbnailExtension_macOS[605] <bytes>memorystatus: assertion priority 40 overrides priority 0 for ThumbnailExtension_macOS:605
+[   27.539985]: memorystatus: assertion priority 40 overrides priority 0 for ThumbnailExtension_macOS:605
+[   27.540162]: memorystatus: assertion priority 40 overrides priority 0 for ThumbnailExtension_macOS:605
+[   27.540670]: memorystatus: set assertion priority(100) target ThumbnailExtension_macOS:605
+[   27.543031]: memorystatus: assertion priority 100 overrides priority 0 for ThumbnailExtension_macOS:605
+[   27.587461]: Sandbox apply: com.apple.audio.SandboxHelper[606] <bytes>1 duplicate report for Sandbox: softwareupdated(292) deny(1) mach-lookup com.apple.metadata.mdsSandbox: ThumbnailExtension_macOS(605) deny(1) mach-lookup com.apple.dock.servercom.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:ScanManagerFamily, err:0
+[   27.907190]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:DriverInternalScanDone, err:0
+[   28.364719]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:ScanManagerFamily, err:0
+[   28.364724]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:DriverInternalScanDone, err:0
+[   28.824101]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:ScanManagerFamily, err:0
+[   28.824106]: com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:DriverInternalScanDone, err:0
+[   28.828045]: com.apple.p2p: IO80211AWDLPeerManager::setAwdlOperatingMode Setting the AWDL operation mode from AUTO to SUSPENDED
+[   28.828051]: com.apple.p2p: AWDL is suspended
+[   30.071664]: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+[   30.071966]: PMRD: aggressiveness changed: system 1->0, display 10
+[   30.071969]: PMRD: idle time -> 0 ms (ena 0)
+[   30.071970]: PMRD: idle sleep timer disabled
+[   30.071972]: PMRD: changePowerStateWithTagToPriv(ON_STATE, 3b0008)
+[   30.071980]: PMRD: PowerChangeOverride (ON_STATE->ON_STATE, f, 0x2) tag 0x3b0008
+[   30.071982]: PMRD: PowerChangeDone: ON_STATE->ON_STATE
+[   30.085000]: + IOAudioEngineUserClient::externalMethod, selector=0x0,   arg0 0x0, arg1 0x115528000, arg2 0x8010 arg3 0x13f 
+[   30.085004]:   scalarInputCount=0x4  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   30.085015]: + IOAudioEngineUserClient::registerBuffer64 0x0 0x115528000 0x8010 0x13f
+[   30.085018]: + IOAudioEngineUserClient::safeRegisterClientBuffer64 <ptr> 
+[   30.085020]: + IOAudioEngineUserClient[<ptr>]::registerClientBuffer64  (<ptr>[1], 0x115528000, 0x8010, 0x13f)
+[   30.085023]:   null clientBufferSetList
+[   30.085023]:   did not find clientBufferSetList for ID 0x13f 
+[   30.085044]:   clientBuffer->mAudioClientBuffer32.sourceBuffer before offset: <ptr>, offset size: 16
+[   30.085045]:   clientBuffer->mAudioClientBuffer32.sourceBuffer after offset: <ptr>
+[   30.085045]:   null clientBufferSetList
+[   30.085046]:   did not find clientBufferSetList for ID 0x13f 
+[   30.085046]:   creating new IOAudioClientBufferSet 
+[   30.085048]:   output 
+[   30.085048]:   !isOnline 
+[   30.085049]: - IOAudioEngineUserClient::registerClientBuffer64() result 0x0
+[   30.085049]: - IOAudioEngineUserClient::safeRegisterClientBuffer64  returns 0x0
+[   30.085050]: - IOAudioEngineUserClient::registerBuffer64 0x0 0x115528000 0x8010 0x13f returns 0x0
+[   30.085052]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   30.085071]: + IOAudioEngineUserClient::externalMethod, selector=0x3,   arg0 0x0, arg1 0x0, arg2 0x0 arg3 0x0 
+[   30.085073]:   scalarInputCount=0x0  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   30.085078]: + IOAudioEngineUserClient[<ptr>]::startClient() - 0
+[   30.085079]:   audioEngine && !isInactive(). State = 0 
+[   30.085079]:   audioEngine->getState() != kIOAudioEnginePaused 
+[   30.085082]: +- IOAudioEngineUserClient[<ptr>]::setOnline(1)
+[   30.085083]:   !isOnline() setting online 
+[   30.085084]: + IOAudioEngine[<ptr>]::startClient(<ptr>)
+[   30.085085]: + IOAudioEngine[<ptr>]::incrementActiveUserClients() - 0
+[   30.085090]: + IOAudioEngine[<ptr>]::startAudioEngine(state = 0)
+[   30.085091]: + IOAudioDevice[<ptr>]::audioEngineStarting() - numRunningAudioEngines = 0
+[   30.085092]: + IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 1 - pending = 2
+[   30.085093]: + IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 1 - pending = 2
+[   30.085094]: - IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 2 - pending = 2 returns 0x0
+[   30.085095]: - IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 2 - pending = 2 returns 0x0
+[   30.085096]: - IOAudioDevice[<ptr>]::audioEngineStarting() - numRunningAudioEngines = 1
+[   30.085098]: - IOAudioEngine[<ptr>]::stopEngineAtPosition(0,0)
+[   30.085098]: +- IOAudioEngine[<ptr>]::resetStatusBuffer()
+[   30.087888]: +-IOAudioEngine[<ptr>]::setState(0x1. oldState=0)
+[   30.087892]: - IOAudioEngine[<ptr>]::getTimerInterval()
+[   30.087899]: - IOAudioEngine[<ptr>]::startAudioEngine() returns 0x0
+[   30.087900]: - IOAudioEngine[<ptr>]::incrementActiveUserClients() - 1 returns 0
+[   30.087901]: - IOAudioEngine[<ptr>]::startClient(<ptr>) returns 0x0
+[   30.087902]:   engine started 
+[   30.087902]:   bufferSet <ptr> 
+[   30.087903]:   output clientBuffer <ptr> 
+[   30.087904]: + IOAudioStream[<ptr>]::addClient(<ptr>)
+[   30.087905]: - IOAudioStream[<ptr>]::addClient(<ptr>) returns 0x0
+[   30.087906]: - IOAudioEngineUserClient[<ptr>]::startClient() - 1 returns 0x0
+[   30.087907]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   30.377226]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 142 bytes
+[   30.377251]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 148 bytes
+[   30.377384]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 148 bytes
+[   30.377401]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 148 bytes
+[   30.687389]: + IOAudioEngineUserClient::externalMethod, selector=0x4,   arg0 0x0, arg1 0x0, arg2 0x0 arg3 0x0 
+[   30.687393]:   scalarInputCount=0x0  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   30.687403]: + IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   30.687406]: +-IOAudioStream[<ptr>]::safeLogError kErrorLogDumpCounters mStreamErrorCountsUpdated=0
+[   30.687407]: - IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   30.687409]: - IOAudioEngine[<ptr>]::stopEngineAtPosition(2,2c00)
+[   30.687410]: +- IOAudioEngine[<ptr>]::decrementActiveUserClients() - 0 returns 0x0
+[   30.687411]: +- IOAudioEngine[<ptr>]::stopClient(<ptr>) returns 0x0
+[   30.687413]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   30.687414]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   30.687526]: + IOAudioEngineUserClient::externalMethod, selector=0x1,   arg0 0x115528000, arg1 0x13f, arg2 0x0 arg3 0x0 
+[   30.687528]:   scalarInputCount=0x2  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   30.687533]: + IOAudioEngineUserClient[<ptr>]::unregisterClientBuffer64(0x<ptr>, 0x13f)
+[   30.687535]:   searching for sourceBuffer 0x115528000 
+[   30.687536]: +- IOAudioEngineUserClient[<ptr>]::removeBufferSet(<ptr>)
+[   30.687537]: + IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   30.687538]: +-IOAudioStream[<ptr>]::safeLogError kErrorLogDumpCounters mStreamErrorCountsUpdated=0
+[   30.687539]: - IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   30.687553]: - IOAudioEngineUserClient::unregisterClientBuffer64 no sourcebuffer returns 0x0
+[   30.687554]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   30.687804]: PMRD: setAggressiveness(0) kPMMinutesToSleep = 1
+[   30.688180]: PMRD: aggressiveness changed: system 0->1, display 10
+[   30.688183]: PMRD: idle time -> 0 ms (ena 1)
+[   30.688184]: PMRD: idle sleep timer enabled
+[   31.112236]: + IOAudioEngine[<ptr>]::stopAudioEngine()
+[   31.112274]: AppleUSBXHCIIsochronousRequest: AppleUSBXHCIIsochronousRequest::update: transfer TRB 0x0000000003a8e040 0x008000c0e5c01425, event TRB 0x00000000003df7d0 0x1a0000c003048001, current frame 0x000000000000065b
+[   31.112290]: AppleUSBXHCIIsochronousRequest: AppleUSBXHCIRequest::finish: transfer completed with status 0xe00002eb
+[   31.112321]: AppleUSBXHCIIsochronousRequest: AppleUSBXHCIRequest::finish: transfer completed with status 0xe00002eb
+[   31.112859]: +-IOAudioEngine[<ptr>]::setState(0x0. oldState=0x1)
+[   31.112875]: + IOAudioDevice[<ptr>]::audioEngineStopped() - numRunningAudioEngines = 1
+[   31.112877]: + IOAudioDevice[<ptr>]::scheduleIdleAudioSleep: idleSleepDelayTime = 00
+[   31.112879]: + IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 2 - pending = 1
+[   31.112881]: + IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 2 - pending = 1
+[   31.112883]: - IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 1 - pending = 1 returns 0x0
+[   31.112885]: - IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 1 - pending = 1 returns 0x0
+[   31.112887]: - IOAudioDevice[<ptr>]::scheduleIdleAudioSleep: idleSleepDelayTime = 00
+[   31.112889]: - IOAudioDevice[<ptr>]::audioEngineStopped() - numRunningAudioEngines = 0
+[   31.112890]: - IOAudioEngine[<ptr>]::stopAudioEngine() returns 0x0
+[   31.228011]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   31.228070]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   31.771919]: macl_read_xattr_contents: failed to size xattr: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2com.apple.p2p: IO80211PeerManager::setScanningState:5227:_scanningState:0x0(oldState 0) on:0, source:DriverScanDone, err:0
+[   32.175631]: com.apple.p2p: IO80211AWDLPeerManager::setAwdlOperatingMode Setting the AWDL operation mode from SUSPENDED to AUTO
+[   32.175635]: com.apple.p2p: IO80211AWDLPeerManager::exitAwdlSuspendedMode Resuming AWDL from SUSPEND  mode
+[   32.175642]: com.apple.p2p: getInfrastructureState:8803  infra: cd.channel 153 infrachannel 153 
+[   32.175817]: com.apple.p2p: IO80211AWDLPeerManager::configureValidAWDLChannels Default alternate 5GHz channel 44 is valid 
+[   32.175822]: com.apple.p2p: configureValidAWDLChannels:12583 Associated on non-DFS channel 153 (40MHz+).  Channel is  allowed for use by AWDL
+[   32.175824]: com.apple.p2p: IO80211AWDLPeerManager::configureValidAWDLChannels social channel 2G: 6 on 5G: 149 5G Alt: 44 country code: US
+[   32.175826]: com.apple.p2p: AWDL is off
+[   32.266059]: AppleUSBXHCIRequest: AppleUSBXHCIRequest::finish: transfer completed with status 0xe00002eb
+[   32.266158]: makequeues@: AppleUSBHostUserClient::closeGated: trying to close a non-opened client
+[   32.266311]: makequeues@: AppleUSBHostUserClient::closeGated: trying to close a non-opened client
+[   32.266421]: makequeues@: AppleUSBHostUserClient::closeGated: trying to close a non-opened client
+[   32.266513]: makequeues@: AppleUSBHostUserClient::closeGated: trying to close a non-opened client
+[   32.266604]: makequeues@: AppleUSBHostUserClient::closeGated: trying to close a non-opened client
+[   32.266689]: makequeues@: AppleUSBHostUserClient::closeGated: trying to close a non-opened client
+[   32.266813]: makequeues@: AppleUSBHostUserClient::closeGated: trying to close a non-opened client
+[   32.266899]: makequeues@: AppleUSBHostUserClient::closeGated: trying to close a non-opened client
+[   32.343759]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   32.343782]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   32.768500]: Sandbox: softwareupdated(292) deny(1) file-issue-extension target:/private/var/db/softwareupdate/Library/Preferences/com.apple.coremedia.plist class:com.apple.cfprefsd.readSandbox: softwareupdated(292) deny(1) file-issue-extension target:/private/var/db/softwareupdate/Library/Preferences/com.apple.CoreGraphics.plist class:com.apple.cfprefsd.readSandbox: softwareupdated(292) deny(1) file-issue-extension target:/private/var/db/softwareupdate/Library/Preferences/com.apple.Accessibility.plist class:com.apple.cfprefsd.readSandbox apply: mdsync[618] <bytes>memorystatus: assertion priority 100 overrides priority 0 for ThumbnailExtension_macOS:605
+[   33.100156]: memorystatus: assertion priority 100 overrides priority 0 for ThumbnailExtension_macOS:605
+[   33.201102]: memorystatus: set assertion priority(0) target ThumbnailExtension_macOS:605
+[   33.241219]: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+[   33.241528]: PMRD: aggressiveness changed: system 1->0, display 10
+[   33.241532]: PMRD: idle time -> 0 ms (ena 0)
+[   33.241533]: PMRD: idle sleep timer disabled
+[   33.241537]: PMRD: changePowerStateWithTagToPriv(ON_STATE, 3c0008)
+[   33.241548]: PMRD: PowerChangeOverride (ON_STATE->ON_STATE, f, 0x2) tag 0x3c0008
+[   33.241551]: PMRD: PowerChangeDone: ON_STATE->ON_STATE
+[   33.316129]: + IOAudioEngineUserClient::externalMethod, selector=0x0,   arg0 0x0, arg1 0x115528000, arg2 0x8010 arg3 0x13f 
+[   33.316134]:   scalarInputCount=0x4  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   33.316141]: + IOAudioEngineUserClient::registerBuffer64 0x0 0x115528000 0x8010 0x13f
+[   33.316144]: + IOAudioEngineUserClient::safeRegisterClientBuffer64 <ptr> 
+[   33.316146]: + IOAudioEngineUserClient[<ptr>]::registerClientBuffer64  (<ptr>[1], 0x115528000, 0x8010, 0x13f)
+[   33.316149]:   null clientBufferSetList
+[   33.316149]:   did not find clientBufferSetList for ID 0x13f 
+[   33.316167]:   clientBuffer->mAudioClientBuffer32.sourceBuffer before offset: <ptr>, offset size: 16
+[   33.316168]:   clientBuffer->mAudioClientBuffer32.sourceBuffer after offset: <ptr>
+[   33.316169]:   null clientBufferSetList
+[   33.316169]:   did not find clientBufferSetList for ID 0x13f 
+[   33.316170]:   creating new IOAudioClientBufferSet 
+[   33.316171]:   output 
+[   33.316172]:   !isOnline 
+[   33.316172]: - IOAudioEngineUserClient::registerClientBuffer64() result 0x0
+[   33.316173]: - IOAudioEngineUserClient::safeRegisterClientBuffer64  returns 0x0
+[   33.316176]: - IOAudioEngineUserClient::registerBuffer64 0x0 0x115528000 0x8010 0x13f returns 0x0
+[   33.316177]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   33.316199]: + IOAudioEngineUserClient::externalMethod, selector=0x3,   arg0 0x0, arg1 0x0, arg2 0x0 arg3 0x0 
+[   33.316201]:   scalarInputCount=0x0  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   33.316206]: + IOAudioEngineUserClient[<ptr>]::startClient() - 0
+[   33.316207]:   audioEngine && !isInactive(). State = 0 
+[   33.316208]:   audioEngine->getState() != kIOAudioEnginePaused 
+[   33.316211]: +- IOAudioEngineUserClient[<ptr>]::setOnline(1)
+[   33.316211]:   !isOnline() setting online 
+[   33.316212]: + IOAudioEngine[<ptr>]::startClient(<ptr>)
+[   33.316216]: + IOAudioEngine[<ptr>]::incrementActiveUserClients() - 0
+[   33.316219]: + IOAudioEngine[<ptr>]::startAudioEngine(state = 0)
+[   33.316219]: + IOAudioDevice[<ptr>]::audioEngineStarting() - numRunningAudioEngines = 0
+[   33.316221]: + IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 1 - pending = 2
+[   33.316222]: + IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 1 - pending = 2
+[   33.316223]: - IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 2 - pending = 2 returns 0x0
+[   33.316224]: - IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 2 - pending = 2 returns 0x0
+[   33.316225]: - IOAudioDevice[<ptr>]::audioEngineStarting() - numRunningAudioEngines = 1
+[   33.316226]: - IOAudioEngine[<ptr>]::stopEngineAtPosition(0,0)
+[   33.316227]: +- IOAudioEngine[<ptr>]::resetStatusBuffer()
+[   33.316740]: +-IOAudioEngine[<ptr>]::setState(0x1. oldState=0)
+[   33.316743]: - IOAudioEngine[<ptr>]::getTimerInterval()
+[   33.316751]: - IOAudioEngine[<ptr>]::startAudioEngine() returns 0x0
+[   33.316752]: - IOAudioEngine[<ptr>]::incrementActiveUserClients() - 1 returns 0
+[   33.316753]: - IOAudioEngine[<ptr>]::startClient(<ptr>) returns 0x0
+[   33.316754]:   engine started 
+[   33.316754]:   bufferSet <ptr> 
+[   33.316755]:   output clientBuffer <ptr> 
+[   33.316755]: + IOAudioStream[<ptr>]::addClient(<ptr>)
+[   33.316757]: - IOAudioStream[<ptr>]::addClient(<ptr>) returns 0x0
+[   33.316758]: - IOAudioEngineUserClient[<ptr>]::startClient() - 1 returns 0x0
+[   33.316759]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   33.558248]: Sandbox apply: cloudd[625] <bytes>AMFI: Launch Constraint Violation (not enforcing), error info: c[6]p[2]m[3]e[255], (Process was launched as a system service unexpectedly but met System Service constraints) launching proc[vc: 1 pid: 628]: /System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/PlugIns/CacheDeleteExtension.appex/Contents/MacOS/CacheDeleteExtension, launch type 1, failure proc [vc: 1 pid: 1]: /sbin/launchd
+[   33.581046]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 942 bytes
+[   33.620152]: Sandbox apply: CacheDeleteExtension[628] <bytes>Sandbox apply: MusicCacheExtension[629] <bytes>memorystatus: set assertion priority(100) target ThumbnailExtension_macOS:605
+[   33.783198]: memorystatus: assertion priority 100 overrides priority 0 for ThumbnailExtension_macOS:605
+[   33.783382]: memorystatus: assertion priority 100 overrides priority 0 for ThumbnailExtension_macOS:605
+[   33.783526]: memorystatus: assertion priority 100 overrides priority 0 for ThumbnailExtension_macOS:605
+[   33.784121]: memorystatus: assertion priority 100 overrides priority 0 for ThumbnailExtension_macOS:605
+[   33.789379]: Sandbox apply: TVCacheExtension[630] <bytes>ALUC:clientDied(PID: 587), entitled 1
+[   33.859951]: ALUC:init(PID: 631), entitled 1
+[   33.859984]: methodSetClientDomain entered
+[   33.859988]: registerNotificationPort entered
+[   34.083206]: Sandbox apply: storedownloadd[627] <bytes>Sandbox apply: appstoreagent[626] <bytes>Sandbox apply: distnoted[633] <bytes>connectx() - failed necp_set_socket_domain_attributesSandbox apply: AssetCache[621] <bytes>+ IOAudioEngineUserClient::externalMethod, selector=0x4,   arg0 0x0, arg1 0x0, arg2 0x0 arg3 0x0 
+[   34.461121]:   scalarInputCount=0x0  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   34.461134]: + IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   34.461137]: +-IOAudioStream[<ptr>]::safeLogError kErrorLogDumpCounters mStreamErrorCountsUpdated=0
+[   34.461139]: - IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   34.461141]: - IOAudioEngine[<ptr>]::stopEngineAtPosition(4,c00)
+[   34.461142]: +- IOAudioEngine[<ptr>]::decrementActiveUserClients() - 0 returns 0x0
+[   34.461143]: +- IOAudioEngine[<ptr>]::stopClient(<ptr>) returns 0x0
+[   34.461145]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   34.461146]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   34.461276]: + IOAudioEngineUserClient::externalMethod, selector=0x1,   arg0 0x115528000, arg1 0x13f, arg2 0x0 arg3 0x0 
+[   34.461279]:   scalarInputCount=0x2  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   34.461287]: + IOAudioEngineUserClient[<ptr>]::unregisterClientBuffer64(0x<ptr>, 0x13f)
+[   34.461289]:   searching for sourceBuffer 0x115528000 
+[   34.461291]: +- IOAudioEngineUserClient[<ptr>]::removeBufferSet(<ptr>)
+[   34.461293]: + IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   34.461294]: +-IOAudioStream[<ptr>]::safeLogError kErrorLogDumpCounters mStreamErrorCountsUpdated=0
+[   34.461295]: - IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   34.461312]: - IOAudioEngineUserClient::unregisterClientBuffer64 no sourcebuffer returns 0x0
+[   34.461314]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   34.485965]: Sandbox apply: AssetCacheTetheratorService[634] <bytes>Sandbox apply: installcoordinationd[635] <bytes>System Policy: mds(108) deny(1) file-read-data /private/var/db/installcoordinationdSandbox apply: mdworker_shared[636] <bytes>sandboxd rejected approval request from appstoreagent for kTCCServiceSystemPolicyAllFiles (/Users/mohdismailmatasin/.Trash): deniedIOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   34.581393]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   34.581862]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   34.581883]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   34.582813]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   34.582830]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   34.589184]: connectx() - failed necp_set_socket_domain_attributesSandbox: amsengagementd(568) deny(1) user-preference-read com.apple.itunescloudSandbox: amsengagementd(568) deny(1) user-preference-write com.apple.itunescloudSandbox: amsengagementd(568) deny(1) mach-lookup com.apple.itunescloud.music-subscription-status-serviceSandbox apply: com.apple.AppStoreDaemon.StorePr[637] <bytes>Sandbox apply: promotedcontentd[638] <bytes>connectx() - failed necp_set_socket_domain_attributesSandbox: promotedcontentd(638) deny(1) file-write-create /Users/mohdismailmatasin/Library/Caches/promotedcontentd1 duplicate report for Sandbox: promotedcontentd(638) deny(1) file-write-create /Users/mohdismailmatasin/Library/Caches/promotedcontentdSandbox: promotedcontentd(638) deny(1) file-write-create /Users/mohdismailmatasin/Library/HTTPStorages/promotedcontentdSandbox: promotedcontentd(638) deny(1) mach-lookup com.apple.metadata.mdsconnectx() - failed necp_set_socket_domain_attributesSandbox: AssetCache(621) deny(1) file-read-metadata /VolumesSandbox: AssetCache(621) deny(1) file-read-metadata /Volumes/StorageSandbox: mobileassetd(254) deny(1) file-read-metadata /VolumesSandbox: mobileassetd(254) deny(1) file-read-metadata /Volumes/Storagetx_flush:1241: disk4 xid 15411 tx stats: # 100 finish 99 enter 415 wait 9 1618us close 358us flush 1752us
+[   34.853765]: + IOAudioEngine[<ptr>]::stopAudioEngine()
+[   34.853792]: AppleUSBXHCIIsochronousRequest: AppleUSBXHCIIsochronousRequest::update: transfer TRB 0x0000000003a8e040 0x008000c0cf901425, event TRB 0x0000000001b82bd0 0x1a0000c003048000, current frame 0x00000000000004f8
+[   34.853803]: AppleUSBXHCIIsochronousRequest: AppleUSBXHCIRequest::finish: transfer completed with status 0xe00002eb
+[   34.853820]: AppleUSBXHCIIsochronousRequest: AppleUSBXHCIRequest::finish: transfer completed with status 0xe00002eb
+[   34.854258]: +-IOAudioEngine[<ptr>]::setState(0x0. oldState=0x1)
+[   34.854273]: + IOAudioDevice[<ptr>]::audioEngineStopped() - numRunningAudioEngines = 1
+[   34.854275]: + IOAudioDevice[<ptr>]::scheduleIdleAudioSleep: idleSleepDelayTime = 00
+[   34.854277]: + IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 2 - pending = 1
+[   34.854279]: + IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 2 - pending = 1
+[   34.854281]: - IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 1 - pending = 1 returns 0x0
+[   34.854283]: - IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 1 - pending = 1 returns 0x0
+[   34.854284]: - IOAudioDevice[<ptr>]::scheduleIdleAudioSleep: idleSleepDelayTime = 00
+[   34.854286]: - IOAudioDevice[<ptr>]::audioEngineStopped() - numRunningAudioEngines = 0
+[   34.854287]: - IOAudioEngine[<ptr>]::stopAudioEngine() returns 0x0
+[   34.859542]: Sandbox apply: mdworker_shared[642] <bytes>Sandbox apply: mdworker_shared[648] <bytes>Sandbox apply: mdworker_shared[639] <bytes>Sandbox apply: mdworker_shared[645] <bytes>Sandbox apply: mdworker_shared[643] <bytes>Sandbox apply: mdworker_shared[641] <bytes>Sandbox apply: mdworker_shared[644] <bytes>Sandbox apply: mdworker_shared[649] <bytes>Sandbox apply: mdworker_shared[647] <bytes>Sandbox apply: mdworker_shared[640] <bytes>Sandbox apply: mdworker_shared[646] <bytes>successfully parsed 1/4 entries for file F6Qtfpu3w5PBuMBSgx0qmlf9H5t-qTIL0OObgxBBxNUsuccessfully parsed 1/4 entries for file observations.dbSandbox apply: mdworker_shared[651] <bytes>Sandbox apply: mdworker_shared[650] <bytes>Sandbox apply: mdworker_shared[653] <bytes>Sandbox apply: mdworker_shared[652] <bytes>connectx() - failed necp_set_socket_domain_attributesconnectx() - failed necp_set_socket_domain_attributesconnectx() - failed necp_set_socket_domain_attributesIOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   35.696829]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   35.697217]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   35.697236]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   35.697571]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   35.697589]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   35.697941]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   35.697958]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 141 bytes
+[   36.013276]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   36.013307]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   36.147029]: successfully parsed 1/4 entries for file SSDT-EXT.dslSandbox apply: mdworker_shared[657] <bytes>Invalid denylist
+[   36.538884]: Sandbox apply: mdworker_shared[661] <bytes>Sandbox apply: mdworker_shared[660] <bytes>Sandbox apply: mdworker_shared[659] <bytes>IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   36.718756]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   36.752321]: Sandbox apply: mdworker_shared[662] <bytes>PMRD: setAggressiveness(0) kPMMinutesToSleep = 1
+[   36.886261]: PMRD: aggressiveness changed: system 0->1, display 10
+[   36.886266]: PMRD: idle time -> 0 ms (ena 1)
+[   36.886267]: PMRD: idle sleep timer enabled
+[   37.008326]: PMRD: setAggressiveness(0) kPMMinutesToSleep = 0
+[   37.008645]: PMRD: aggressiveness changed: system 1->0, display 10
+[   37.008648]: PMRD: idle time -> 0 ms (ena 0)
+[   37.008650]: PMRD: idle sleep timer disabled
+[   37.008653]: PMRD: changePowerStateWithTagToPriv(ON_STATE, 3d0008)
+[   37.008664]: PMRD: PowerChangeOverride (ON_STATE->ON_STATE, f, 0x2) tag 0x3d0008
+[   37.008668]: PMRD: PowerChangeDone: ON_STATE->ON_STATE
+[   37.036430]: + IOAudioEngineUserClient::externalMethod, selector=0x0,   arg0 0x0, arg1 0x115528000, arg2 0x8010 arg3 0x13f 
+[   37.036436]:   scalarInputCount=0x4  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   37.036445]: + IOAudioEngineUserClient::registerBuffer64 0x0 0x115528000 0x8010 0x13f
+[   37.036448]: + IOAudioEngineUserClient::safeRegisterClientBuffer64 <ptr> 
+[   37.036451]: + IOAudioEngineUserClient[<ptr>]::registerClientBuffer64  (<ptr>[1], 0x115528000, 0x8010, 0x13f)
+[   37.036453]:   null clientBufferSetList
+[   37.036454]:   did not find clientBufferSetList for ID 0x13f 
+[   37.036480]:   clientBuffer->mAudioClientBuffer32.sourceBuffer before offset: <ptr>, offset size: 16
+[   37.036481]:   clientBuffer->mAudioClientBuffer32.sourceBuffer after offset: <ptr>
+[   37.036482]:   null clientBufferSetList
+[   37.036482]:   did not find clientBufferSetList for ID 0x13f 
+[   37.036483]:   creating new IOAudioClientBufferSet 
+[   37.036484]:   output 
+[   37.036485]:   !isOnline 
+[   37.036485]: - IOAudioEngineUserClient::registerClientBuffer64() result 0x0
+[   37.036486]: - IOAudioEngineUserClient::safeRegisterClientBuffer64  returns 0x0
+[   37.036487]: - IOAudioEngineUserClient::registerBuffer64 0x0 0x115528000 0x8010 0x13f returns 0x0
+[   37.036489]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   37.036511]: + IOAudioEngineUserClient::externalMethod, selector=0x3,   arg0 0x0, arg1 0x0, arg2 0x0 arg3 0x0 
+[   37.036513]:   scalarInputCount=0x0  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   37.036519]: + IOAudioEngineUserClient[<ptr>]::startClient() - 0
+[   37.036523]:   audioEngine && !isInactive(). State = 0 
+[   37.036524]:   audioEngine->getState() != kIOAudioEnginePaused 
+[   37.036528]: +- IOAudioEngineUserClient[<ptr>]::setOnline(1)
+[   37.036529]:   !isOnline() setting online 
+[   37.036530]: + IOAudioEngine[<ptr>]::startClient(<ptr>)
+[   37.036531]: + IOAudioEngine[<ptr>]::incrementActiveUserClients() - 0
+[   37.036534]: + IOAudioEngine[<ptr>]::startAudioEngine(state = 0)
+[   37.036535]: + IOAudioDevice[<ptr>]::audioEngineStarting() - numRunningAudioEngines = 0
+[   37.036536]: + IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 1 - pending = 2
+[   37.036537]: + IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 1 - pending = 2
+[   37.036539]: - IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 2 - pending = 2 returns 0x0
+[   37.036540]: - IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 2 - pending = 2 returns 0x0
+[   37.036542]: - IOAudioDevice[<ptr>]::audioEngineStarting() - numRunningAudioEngines = 1
+[   37.036543]: - IOAudioEngine[<ptr>]::stopEngineAtPosition(0,0)
+[   37.036544]: +- IOAudioEngine[<ptr>]::resetStatusBuffer()
+[   37.039079]: +-IOAudioEngine[<ptr>]::setState(0x1. oldState=0)
+[   37.039084]: - IOAudioEngine[<ptr>]::getTimerInterval()
+[   37.039092]: - IOAudioEngine[<ptr>]::startAudioEngine() returns 0x0
+[   37.039093]: - IOAudioEngine[<ptr>]::incrementActiveUserClients() - 1 returns 0
+[   37.039094]: - IOAudioEngine[<ptr>]::startClient(<ptr>) returns 0x0
+[   37.039095]:   engine started 
+[   37.039096]:   bufferSet <ptr> 
+[   37.039097]:   output clientBuffer <ptr> 
+[   37.039097]: + IOAudioStream[<ptr>]::addClient(<ptr>)
+[   37.039099]: - IOAudioStream[<ptr>]::addClient(<ptr>) returns 0x0
+[   37.039100]: - IOAudioEngineUserClient[<ptr>]::startClient() - 1 returns 0x0
+[   37.039101]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   37.066508]: Sandbox apply: mdworker_shared[666] <bytes>Sandbox apply: mdworker_shared[665] <bytes>Sandbox apply: mdworker_shared[667] <bytes>Sandbox apply: mdworker_shared[664] <bytes>Sandbox: swcd(546) deny(1) system-fsctl (_IO "h" 47)Sandbox apply: mdworker_shared[668] <bytes>Sandbox apply: mdworker_shared[669] <bytes>Sandbox apply: mdworker_shared[670] <bytes>+ IOAudioEngineUserClient::externalMethod, selector=0x4,   arg0 0x0, arg1 0x0, arg2 0x0 arg3 0x0 
+[   37.970628]:   scalarInputCount=0x0  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   37.970644]: + IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   37.970649]: +-IOAudioStream[<ptr>]::safeLogError kErrorLogDumpCounters mStreamErrorCountsUpdated=0
+[   37.970650]: - IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   37.970654]: - IOAudioEngine[<ptr>]::stopEngineAtPosition(3,2800)
+[   37.970656]: +- IOAudioEngine[<ptr>]::decrementActiveUserClients() - 0 returns 0x0
+[   37.970657]: +- IOAudioEngine[<ptr>]::stopClient(<ptr>) returns 0x0
+[   37.970660]: +- IOAudioEngineUserClient[<ptr>]::setOnline(0)
+[   37.970662]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   37.970947]: + IOAudioEngineUserClient::externalMethod, selector=0x1,   arg0 0x115528000, arg1 0x13f, arg2 0x0 arg3 0x0 
+[   37.970954]:   scalarInputCount=0x2  structureInputSize 0x0, scalarOutputCount 0x0, structureOutputSize 0x0 
+[   37.970970]: + IOAudioEngineUserClient[<ptr>]::unregisterClientBuffer64(0x<ptr>, 0x13f)
+[   37.970974]:   searching for sourceBuffer 0x115528000 
+[   37.970977]: +- IOAudioEngineUserClient[<ptr>]::removeBufferSet(<ptr>)
+[   37.970980]: + IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   37.970982]: +-IOAudioStream[<ptr>]::safeLogError kErrorLogDumpCounters mStreamErrorCountsUpdated=0
+[   37.970985]: - IOAudioStream[<ptr>]::removeClient(<ptr>)
+[   37.971014]: - IOAudioEngineUserClient::unregisterClientBuffer64 no sourcebuffer returns 0x0
+[   37.971017]: - IOAudioEngineUserClient::externalMethod returns 0x0
+[   37.971381]: PMRD: setAggressiveness(0) kPMMinutesToSleep = 1
+[   37.971975]: PMRD: aggressiveness changed: system 0->1, display 10
+[   37.971980]: PMRD: idle time -> 0 ms (ena 1)
+[   37.971983]: PMRD: idle sleep timer enabled
+[   38.320876]: tx_flush:1241: disk4 xid 15431 tx stats: # 120 finish 119 enter 355 wait 11 1348us close 301us flush 1650us
+[   38.404555]: + IOAudioEngine[<ptr>]::stopAudioEngine()
+[   38.404609]: AppleUSBXHCIIsochronousRequest: AppleUSBXHCIIsochronousRequest::update: transfer TRB 0x0000000003232f40 0x008000c0ad801425, event TRB 0x0000000001b82130 0x1a0000c003048000, current frame 0x00000000000002d7
+[   38.404620]: AppleUSBXHCIIsochronousRequest: AppleUSBXHCIRequest::finish: transfer completed with status 0xe00002eb
+[   38.404649]: AppleUSBXHCIIsochronousRequest: AppleUSBXHCIRequest::finish: transfer completed with status 0xe00002eb
+[   38.405274]: +-IOAudioEngine[<ptr>]::setState(0x0. oldState=0x1)
+[   38.405298]: + IOAudioDevice[<ptr>]::audioEngineStopped() - numRunningAudioEngines = 1
+[   38.405302]: + IOAudioDevice[<ptr>]::scheduleIdleAudioSleep: idleSleepDelayTime = 00
+[   38.405305]: + IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 2 - pending = 1
+[   38.405308]: + IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 2 - pending = 1
+[   38.405311]: - IOAudioDevice[<ptr>]::protectedCompletePowerStateChange() - current = 1 - pending = 1 returns 0x0
+[   38.405313]: - IOAudioDevice[<ptr>]::initiatePowerStateChange(0) - current = 1 - pending = 1 returns 0x0
+[   38.405317]: - IOAudioDevice[<ptr>]::scheduleIdleAudioSleep: idleSleepDelayTime = 00
+[   38.405319]: - IOAudioDevice[<ptr>]::audioEngineStopped() - numRunningAudioEngines = 0
+[   38.405322]: - IOAudioEngine[<ptr>]::stopAudioEngine() returns 0x0
+[   39.146873]: memorystatus: assertion priority 100 overrides priority 0 for ThumbnailExtension_macOS:605
+[   39.147057]: memorystatus: assertion priority 100 overrides priority 0 for ThumbnailExtension_macOS:605
+[   39.251644]: memorystatus: set assertion priority(0) target ThumbnailExtension_macOS:605
+[   41.440959]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 153 bytes
+[   41.440997]: IOReturn CoreAnalyticsUserClient::sendDataToUser(uint8_t *, size_t)::309: sending 147 bytes
+[   43.217569]: [AGPM][ERROR][BOOST       ][setBoost                ] 0 fGPUIdleIntervalMS = 0, ControlID = 17
+[   43.956657]: ALUC:clientDied(PID: 631), entitled 1
+[   43.969153]: ALUC:init(PID: 677), entitled 1
+[   43.969229]: methodSetClientDomain entered
+[   43.969240]: registerNotificationPort entered
+[   47.151025]: Sandbox apply: SiriTTSSynthesizerAU[681] <bytes>Sandbox apply: com.apple.audio.SandboxHelper[683] <bytes>[AGPM][ERROR][BOOST       ][setBoost                ] 0 fGPUIdleIntervalMS = 0, ControlID = 17
+[   48.524882]: Waking up reference: 7Thread waiting on reference 7 woke upevaluation result: 7, allowed, cache,  1668075960tx_flush:1241: disk4 xid 15451 tx stats: # 140 finish 142 enter 364 wait 11 1348us close 258us flush 1567us
+[   49.195920]: Sandbox apply: VTDecoderXPCService[690] <bytes>macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2macl_get_vnode: failed to resolve vnode: 2ACM: createCredentialSet: Credential set created, CS[105]/2, mem=1537(0).
+[   52.276666]: ACM: verifyPolicy: Verifying DeviceOwnerAuthenticationWithBiometrics (P) on CS[105] (preflight=YES, secure=NO, checkKeybagUUID=NO).
+[   52.276675]: ACM: Env_GetVariable: get var[6] len=1 <00>.
+[   52.276679]: ACM: dumpVerificationStatus: DeviceOwnerAuthenticationWithBiometrics (P) on CS[105] *NOT* SATISFIED: 03R -> R.
+[   52.282592]: ACM: verifyPolicy: Verifying DeviceOwnerAuthenticationWithWatch (P) on CS[105] (preflight=YES, secure=NO, checkKeybagUUID=NO).
+[   52.282600]: ACM: dumpVerificationStatus: DeviceOwnerAuthenticationWithWatch (P) on CS[105] *NOT* SATISFIED: 15R -> R.
+[   52.288327]: ACM: deleteCredentialSet: Deleting credential set, CS[105].
+[   52.308084]: IOConsoleUsers: time(0) 0->0, lin 1, llk 0, 
+[   52.308094]: IOConsoleUsers: gIOScreenLockState 1, hs 0, bs 0, now 0, sm 0x0
+[   52.308627]: Couldn't alloc class "AppleKeyStoreTest"
+[   53.969621]: ALUC:clientDied(PID: 677), entitled 1
+[   53.986160]: ALUC:init(PID: 700), entitled 1
+[   53.986244]: methodSetClientDomain entered
+[   53.986252]: registerNotificationPort entered
+[   54.546959]: Sandbox apply: SubmitDiagInfo[705] <bytes>IOConsoleUsers: time(0) 0->0, lin 1, llk 0, 
+[   54.624480]: IOConsoleUsers: gIOScreenLockState 1, hs 0, bs 0, now 0, sm 0x0
+[   54.625408]: Couldn't alloc class "AppleKeyStoreTest"
+[   54.867914]: AppleKeyStore:1918:119: vol-uuid: , portable: 0, res: 0xfffffffd
+[   54.867923]: AppleKeyStore:3467:119: user c02f611451b54d5daff0926d69e80abb unlock successful (0)
+[   55.032455]: ACM: Env_GetVariable: get var[11] len=0 <>.
