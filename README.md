@@ -510,7 +510,7 @@ pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 #### Fix Sleep Image using Hackintool:
 
 * Open [Hackintool](https://github.com/headkaze/Hackintool)
-* Hit FixSleepImage Icon as picture below
+* Hit FixSleepImage icon as picture below
 
 <div align=center>
 
