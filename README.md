@@ -507,7 +507,7 @@ pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 
 > **Note**: Head to [GPRW/UPRW/LANC Instant Wake Patch](https://dortania.github.io/OpenCore-Post-Install/usb/misc/instant-wake.html) for more info.
 
-#### Fix Power Issues:
+#### Fix Sleep Image using Hackintool:
 
 * Open [Hackintool](https://github.com/headkaze/Hackintool)
 * Hit FixSleepImage Icon as picture below
