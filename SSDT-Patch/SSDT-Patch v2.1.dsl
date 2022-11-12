@@ -1,8 +1,9 @@
-// SSDT-Patch v2.1.dsl
-//	Created by "CpyPst" on 11/11/2022.
-// 
-//	Note: All patches is tested using my own hadware and devices. Plase consider this as a sample and do not use it without knowledge.
-// Thanks to to all Hackintosh community, especially Developers who spend a lot of time to bring hackintosh scene this far.
+//
+//	SSDT-Patch v2.1.dsl
+//	
+//
+//	Created by CpyPst on 11/11/2022.
+//
 
 DefinitionBlock("", "SSDT", 2, "CpyPst", "EXT", 0x42343630) {
    External(_SB_, DeviceObj)
