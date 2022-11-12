@@ -1,4 +1,6 @@
-DefinitionBlock("", "SSDT", 2, "ASRock", "P1.20", 0x00000001) {
+//  Created by CpyPst on 11/11/2022.
+ 
+DefinitionBlock("", "SSDT", 2, "CpyPst", "Patch", 0x42343630) {
    External(_SB_, DeviceObj)
    External(_SB_.PCI0, DeviceObj)
    External(_SB_.PCI0.DRAM, DeviceObj)
