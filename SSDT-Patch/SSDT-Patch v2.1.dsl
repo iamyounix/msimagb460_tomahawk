@@ -1,11 +1,6 @@
-//
-//	SSDT-Patch v2.1.dsl
-//	
-//
 //	Created by CpyPst on 11/11/2022.
-//
 
-DefinitionBlock("", "SSDT", 2, "CpyPst", "EXT", 0x42343630) {
+DefinitionBlock("", "SSDT", 2, "CpyPst", "Patch", 0x42343630) {
    External(_SB_, DeviceObj)
    External(_SB_.PCI0, DeviceObj)
    External(_SB_.PCI0.DRAM, DeviceObj)
