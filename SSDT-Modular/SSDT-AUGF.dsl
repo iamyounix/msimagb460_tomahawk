@@ -312,27 +312,25 @@ DefinitionBlock("", "SSDT", 2, "CpyPst", "AUGF", 0x00000001) {
                         }
 
                         Method(_PRW, 0, NotSerialized) // _PRW: Power Resources for Wake
-                        {
-                           Return(GPRW(0x69, 0x04))
-                        }
+						 {
+							 If(_OSI("Darwin")) {
+								 Return(Package() {
+									 0x69,
+									 0x04
+								 })
+							 }
+							 Else {
+								 Return(Package() {
+									 0x69,
+									 0x03
+								 })
+							 }
+						 }
 
                         Return(Package(0x02) {
                            "agdpmod",
                            "pikera"
                         })
-                     }
-
-                     Device(LCD) {
-                        Name(_ADR, 0x0110) // _ADR: Address
-                        Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
-                        {
-                           If(_OSI("Darwin")) {
-                              Return(0x0F)
-                           }
-                           Else {
-                              Return(Zero)
-                           }
-                        }
                      }
                   }
 
