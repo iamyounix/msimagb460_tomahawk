@@ -5,7 +5,6 @@ DefinitionBlock("", "SSDT", 2, "CpyPst", "AUGF", 0x00000001) {
    External(_SB_.PCI0.HDAS, DeviceObj)
    External(_SB_.PCI0.PEG0, DeviceObj)
    External(_SB_.PCI0.PEG0.PEGP, DeviceObj)
-   External(GPRW, MethodObj) // 2 Arguments
 
    Scope(\_SB) {
       Scope(PCI0) {
@@ -312,20 +311,20 @@ DefinitionBlock("", "SSDT", 2, "CpyPst", "AUGF", 0x00000001) {
                         }
 
                         Method(_PRW, 0, NotSerialized) // _PRW: Power Resources for Wake
-						 {
-							 If(_OSI("Darwin")) {
-								 Return(Package() {
-									 0x69,
-									 0x04
-								 })
-							 }
-							 Else {
-								 Return(Package() {
-									 0x69,
-									 0x03
-								 })
-							 }
-						 }
+                        {
+                           If(_OSI("Darwin")) {
+                              Return(Package(0x02) {
+                                 0x69,
+                                 0x04
+                              })
+                           }
+                           Else {
+                              Return(Package(0x02) {
+                                 0x69,
+                                 0x03
+                              })
+                           }
+                        }
 
                         Return(Package(0x02) {
                            "agdpmod",
