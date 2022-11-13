@@ -8,6 +8,56 @@
 
 > **Note**: Since this attachment is just an example, please change SMBIOS matched with your settings. Refer [Choose The Right SMBIOS](https://dortania.github.io/OpenCore-Install-Guide/extras/smbios-support.html) and [Platform Info](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#platforminfo) by Dortania.
 
+### OpenCore EFI Structure
+
+```zsh
+tree
+.
+├── BOOT
+│   └── BOOTX64.efi
+└── CLOVER
+    ├── ACPI
+    │   ├── WINDOWS
+    │   ├── origin
+    │   └── patched
+    │       └── SSDT-EXT.aml
+    ├── CLOVERX64.efi
+    ├── ROM
+    ├── config.plist
+    ├── drivers
+    │   └── UEFI
+    │       ├── ApfsDriverLoader.efi
+    │       ├── EnglishDxe.efi
+    │       ├── HFSPlus.efi
+    │       ├── OcQuirks.efi
+    │       └── OpenRuntime.efi
+    ├── kexts
+    │   ├── 10.11
+    │   ├── 10.12
+    │   ├── 10.13
+    │   ├── 10.14
+    │   ├── 10.15
+    │   ├── 11
+    │   ├── 12
+    │   ├── 13
+    │   │   ├── AppleALC.kext
+    │   │   ├── Display-4c2d-c4d.kext
+    │   │   ├── Lilu.kext
+    │   │   ├── LucyRTL8125Ethernet.kext
+    │   │   ├── RadeonSensor.kext
+    │   │   ├── SMCProcessor.kext
+    │   │   ├── SMCRadeonGPU.kext
+    │   │   ├── SMCSuperIO.kext
+    │   │   ├── USBMap.kext
+    │   │   ├── VirtualSMC.kext
+    │   │   └── WhateverGreen.kext
+    │   ├── Off
+    │   └── Other
+    ├── misc
+    ├── themes
+    └── tools
+```
+
 ### Sample
 
 Download [here](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/OC085.zip)
