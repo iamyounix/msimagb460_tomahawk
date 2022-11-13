@@ -482,20 +482,15 @@ System Integrity Protection status: enabled.
 pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 ```
 
-- And generally you'll get output like these:
+- Example:
 
-  - Wake [CDNVA] due to GLAN: Using AC
-	- Generally caused by WakeOnLAN enabled, try to disable this option first in the BIOS
-  - If WOL wasn't the issue, you can try the below patches
-	- Wake [CDNVA] due to HDEF: Using AC
-  - Similar to the GLAN issue
-	- Wake [CDNVA] due to XHC: Using AC
-  - Generally caused by WakeOnUSB enabled, try to disable this option first in the BIOS
-	- GPRW patch is likely needed
-  - DarkWake from Normal Sleep [CDNPB] : due to RTC/Maintenance Using AC
-	- Generally caused by PowerNap
-  - Wake reason: RTC (Alarm)
-	- Generally caused by an app waking the system, quitting said app before you sleep should fix it
+```zsh
+2022-11-12 23:27:46 +0800 Sleep               	Entering Sleep state due to 'Idle Sleep':TCPKeepAlive=active Using AC (Charge:0%) 12 secs
+2022-11-12 23:27:58 +0800 DarkWake            	DarkWake from Normal Sleep [CDNP] : due to GLAN XDCI/ Using AC (Charge:0%) 45 secs
+2022-11-12 23:28:43 +0800 Sleep               	Entering Sleep state due to 'Maintenance Sleep':TCPKeepAlive=active Using AC (Charge:0%) 10 secs
+2022-11-12 23:28:53 +0800 DarkWake            	DarkWake from Normal Sleep [CDNP] : due to GLAN XDCI/ Using AC (Charge:0%) 9 secs
+2022-11-12 23:29:02 +0800 Wake                	DarkWake to FullWake from Normal Sleep [CDNVA] : due to UserActivity Assertion Using AC (Charge:0%)
+```
 
 > **Note**: Head to [GPRW/UPRW/LANC Instant Wake Patch](https://dortania.github.io/OpenCore-Post-Install/usb/misc/instant-wake.html) for more info.
 
