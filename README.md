@@ -607,7 +607,7 @@ git clone https://github.com/dreamwhite/OC-Anonymizer.git
 - [**headkaze**](https://github.com/headkaze) for
 
 ```zsh
-https://github.com/headkaze/Hackintool.git
+git clone https://github.com/headkaze/Hackintool.git
 ```
 
 - [**5T33Z0**](https://github.com/5T33Z0) for
