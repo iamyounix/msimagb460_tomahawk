@@ -6,7 +6,7 @@
 
 OpenCore is what we refer to as a "boot loader" – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as SMBIOS, ACPI tables and kexts. How this tool differs from others like Clover is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as System <b>Integrity Protection</b> and <b>FileVault</b>.
 
-</div><br>
+</div>
 
 * Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding
 * Checkout Dortania Monthly [Post](https://dortania.github.io) to get more info
