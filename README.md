@@ -165,7 +165,142 @@ VDA Decoder                 : Fully Supported
 ![PCI](https://user-images.githubusercontent.com/72515939/201564595-f4a4e48f-f68f-499b-8c7a-cc7f2a1c9a76.png)
 
 </div>
-  
+
+#### DeviceProperties (.plist)
+
+```xml
+<key>DeviceProperties</key>
+<dict>
+	<key>Add</key>
+	<dict>
+		<key>PciRoot(0x0)/Pci(0x0,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>DRAM</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>PEG0</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>PEGP</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>BRG0</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>ATY_GPU</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)</key>
+		<dict>
+			<key>name</key>
+			<string>HDAU</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x14,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>XHC1</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x14,0x2)</key>
+		<dict>
+			<key>name</key>
+			<string>TSUB</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x16,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>IMEI</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x17,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>SATA</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1B,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>RP20</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>ARPT</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1B,0x4)</key>
+		<dict>
+			<key>name</key>
+			<string>RP20</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1B,0x4)/Pci(0x0,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>ANS1</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1C,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>RP04</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>RTLK</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1C,0x4)</key>
+		<dict>
+			<key>name</key>
+			<string>RP05</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>XHC2</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1D,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>RP09</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>ANS0</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1F,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>LPCB</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1F,0x2)</key>
+		<dict>
+			<key>name</key>
+			<string>PPMC</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
+		<dict>
+			<key>name</key>
+			<string>HDEF</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x1F,0x4)</key>
+		<dict>
+			<key>name</key>
+			<string>SBUS</string>
+		</dict>
+		<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
+		<dict>
+			<key>name</key>
+			<string>IGPU</string>
+		</dict>
+	</dict>
+```
+
 #### Other Patches
 
 <div align=center>
