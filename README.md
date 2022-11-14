@@ -30,7 +30,7 @@ Code Name                   : Comet Lake
 
 <div align=center>
   
-![GPU](https://user-images.githubusercontent.com/72515939/199858587-831f2951-1ed5-48d3-890a-da5c8e85c4d0.png)
+![Graphics](https://user-images.githubusercontent.com/72515939/201564512-85b70d59-cc94-4a34-8b2f-723546c9790a.png)
 
 </div>
 
@@ -46,7 +46,7 @@ Mobile			    : No
 
 <div align=center>
 
-![IGPU9BC5](https://user-images.githubusercontent.com/72515939/199859156-609ae9b5-c6cb-4280-b8fd-65d5e289333a.png)
+![IGPU](https://user-images.githubusercontent.com/72515939/201564546-2c6f57ad-72fc-478e-921e-342a009074eb.png)
 
 </div>
 
@@ -60,7 +60,7 @@ Mobile			    : No
 
 <div align=center>
 
-![IGPU923E](https://user-images.githubusercontent.com/72515939/199859350-19b5d82e-9c1f-4b5c-a00f-a392587819b6.png)
+![IGPU USED](https://user-images.githubusercontent.com/72515939/201564553-07f0cb0e-2bf8-4246-abfe-5ea3abd1c65f.png)
 
 </div>
 
@@ -83,8 +83,7 @@ Mobile			    : No
 
 <div align=center>
   
-![GFX0](https://user-images.githubusercontent.com/72515939/199858610-040a217e-95c3-4278-b5ff-c25da795a288.png)
-![IOregGFX0](https://user-images.githubusercontent.com/72515939/199858868-2fcad4c5-b973-49c7-9287-24273814f5d2.png)
+![GFX0](https://user-images.githubusercontent.com/72515939/201564574-c15433d6-683e-4765-8161-8d82a6936269.png)
 
 </div>
   
@@ -156,7 +155,7 @@ VDA Decoder                 : Fully Supported
 
 <div align=center>  
   
-![PCI](https://user-images.githubusercontent.com/72515939/199859770-f821e5d9-3faf-4602-80ec-f00c03449b70.png)
+![PCI](https://user-images.githubusercontent.com/72515939/201564595-f4a4e48f-f68f-499b-8c7a-cc7f2a1c9a76.png)
 
 </div>
   
@@ -164,7 +163,7 @@ VDA Decoder                 : Fully Supported
 
 <div align=center>
 
-![OtherPatches](https://user-images.githubusercontent.com/72515939/199859915-ae709a8f-d2a7-40ee-b6cc-c7c3b138f094.png)
+![Other Patches](https://user-images.githubusercontent.com/72515939/201564609-f85ed4ae-5584-48e8-aa00-2eaf39f8fd3b.png)
 
 </div>
 
@@ -213,7 +212,7 @@ VDA Decoder                 : Fully Supported
 
 <div align=center>
 
-![Audio](https://user-images.githubusercontent.com/72515939/199860198-759ed5e5-3061-4be1-a05a-535b237bb9f0.png)
+![Audio](https://user-images.githubusercontent.com/72515939/201564627-0f6f3016-6251-4cfb-9132-360a9a6489e9.png)
 
 </div>
 
@@ -221,7 +220,7 @@ VDA Decoder                 : Fully Supported
 
 <div align=center>
   
-![HDMIAu](https://user-images.githubusercontent.com/72515939/199860231-599aef27-f08e-46a6-a329-0e92cc32dc66.png)
+![AppleGFXHDA](https://user-images.githubusercontent.com/72515939/201564637-635e432f-f3d4-4954-8da3-191568d284a7.png)
   
 </div>
 
@@ -268,7 +267,7 @@ VDA Decoder                 : Fully Supported
 
 <div align=center>
 
-![USB](https://user-images.githubusercontent.com/72515939/199860343-2e2eefe1-94ab-480c-b2de-a2195f6bc9ca.png)
+![USB](https://user-images.githubusercontent.com/72515939/201564661-e93efb8e-211c-4d85-9479-567ef8796c9b.png)
 
 </div>
 
@@ -278,7 +277,7 @@ VDA Decoder                 : Fully Supported
 
 <div align=center>
   
-![NVRAM (1)](https://user-images.githubusercontent.com/72515939/201563468-43316f3a-ef9a-4126-8022-c3c0edb6999d.png)
+![NVRAM](https://user-images.githubusercontent.com/72515939/201564673-4626b8e5-5268-4eeb-97a8-ecbf4540b52c.png)
 
 </div>
   
@@ -286,7 +285,7 @@ VDA Decoder                 : Fully Supported
 
 <div align=center>
   
-![NVMe](https://user-images.githubusercontent.com/72515939/199860512-2aea8ec7-a63e-40fc-885d-e869b0410592.png)
+![NVME](https://user-images.githubusercontent.com/72515939/201564683-1fc5dbd3-799f-4274-bb7d-9e1ab341c818.png)
 
 </div>
 
