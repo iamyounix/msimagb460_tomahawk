@@ -568,6 +568,10 @@ Ventura   =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j18
 curl -L "https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/Real%20iMac%2020%2C1.zip"
 ```
 
+### Soft Reminder
+
+Please do not use [Olarila](https://www.olarila.com) since the EFI provided by him is bloated with junk and not specifically built for your hardware and device. DSDT is not a full solution, per my first [reminder](https://github.com/theofficialcopypaste/ASRockB460MSL-CLVR#asrock-b460m-steel-legend). You can do it on your own. Take your time, read well, and learn the curve. Simple methods will break your machine too early. So, I'm warning you. It doesn't matter what bootloader you choose. The best hack version is determined by your level of comprehension.
+
 ---
 
 ### Acknowledgement
