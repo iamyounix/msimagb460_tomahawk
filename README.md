@@ -179,7 +179,6 @@ VDA Decoder                 : Fully Supported
 - `HDAS`- rename as `HDEF`
 - `HDAU`- with `_SUN` properties
 - `HECI`- rename as `IMEI`
-- `HPET`- High Precision Event Timer Fix (Optional)
 - `RP05.PXSX`- rename as `XHC2`, with `_SUN` properties
 - `RP09.PXSX`- rename as `ANS0`, AppleSSDController patch
 - `RP20.PXSX`- rename as `ARPT`, with `_SUN` properties
@@ -192,8 +191,6 @@ VDA Decoder                 : Fully Supported
 #### Cosmetics
 
 - `ALSD`- Ambient Light Sensor, `AppleLMUController` (Optional)
-- `FWHD`- Fake Firmware Hub Device (Optional for 300 / 400 Series)
-- `PMCR`- Fake Power Management Capabilities Register
 - `PPMC`- device unrecognised and rename. (Not compatible)
 - `RP04.PXSX`- rename as `RTLK`
 - `SAT0`- rename as `SATA`
