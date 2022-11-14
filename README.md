@@ -212,7 +212,6 @@ VDA Decoder                 : Fully Supported
 #### Patch via config.plist
 
 - PciRoot(0x0)/Pci(0x1F,0x3)
-  - layout-id / data / `01000000`
   - name / string / `HDEF`
 
 <div align=center>
