@@ -278,7 +278,7 @@ VDA Decoder                 : Fully Supported
 
 <div align=center>
   
-![NVRAM](https://user-images.githubusercontent.com/72515939/199860442-72bdf0a9-059d-41e9-8170-09f72ed3a9ea.png)
+![NVram](https://user-images.githubusercontent.com/72515939/201562887-e22cb918-0a13-4ff9-a2f8-8761fb1213e3.png)
 
 </div>
   
