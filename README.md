@@ -3,7 +3,9 @@
 **Hackintosh: 10th Gen Comet Lake + ASRock B460M Steel Legend + OpenCore**
 
 <div align=justify>
+
 OpenCore is what we refer to as a "boot loader" – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as SMBIOS, ACPI tables and kexts. How this tool differs from others like Clover is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as System <b>Integrity Protection</b> and <b>FileVault</b>.
+
 </div><br>
 
 * Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding
@@ -18,7 +20,7 @@ OpenCore is what we refer to as a "boot loader" – it is a complex piece of sof
 ### OpenCore EFI Structure
 
 <div align=center>
-	
+
 ![OpenCore](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/OpenCore.drawio.png)
 
 </div>
@@ -28,27 +30,32 @@ OpenCore is what we refer to as a "boot loader" – it is a complex piece of sof
 #### Intel® Core™ i5-10400
 
 ```zsh
-Code Name                   : Comet Lake
+Code Name 					: Comet Lake
 ```
 
 > **Note**: Start from macOS 12.3, [SSDT-PLUG.aml](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) or [plugin-type=1](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html) is not required. The [x86PlatformPlugin](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html) is enabled by default. Check out [thread](https://www.insanelymac.com/forum/topic/351675-macos-12-monterey-x86platformplugin-without-plugin-type1/) / [Acidanthera Bugtracker Issues #2013](https://github.com/acidanthera/bugtracker/issues/2013) / [Dortania Bugtracker Issues #269](https://github.com/dortania/bugtracker/issues/269) / [Intel Ark](https://ark.intel.com/content/www/us/en/ark/products/199271/intel-core-i510400-processor-12m-cache-up-to-4-30-ghz.html)
 
 ### Graphics
 
+* Intel UHD 630 - Headless
+	* IGPU - An Intregrated Graphic Processor Unit (iGPU). Function as headless mode, where the dGPU is the display out. Used when the Desktop iGPU is only used for computing tasks and doesn't drive a display. 
+* MSI RX 5500 XT - Display
+	* GFX0 - A Dedicated Graphic Processor Unit (dGPU) is a PCI-based chip or electronic circuit that can render graphics for display on a computer. While the desktop iGPU is only used for computing tasks, this device functions as the main display.
+
+> **Note**: Headless display for hackintosh not require `framebuffer-patch-enable` and `framebuffer-stolenmem`. 
+
 <div align=center>
-  
+
 ![Graphics](https://user-images.githubusercontent.com/72515939/201564512-85b70d59-cc94-4a34-8b2f-723546c9790a.png)
 
 </div>
 
-#### IGPU (Headless)
-
-- Current
+#### IGPU
 
 ```zsh
-GPU Name                    : Intel® UHD Graphics 630
-GPU Device ID               : 0xC59B8086
-Mobile			    : No
+GPU Name 					: Intel® UHD Graphics 630
+GPU Device ID 					: 0xC59B8086
+Mobile 						: No
 ```
 
 <div align=center>
@@ -57,12 +64,20 @@ Mobile			    : No
 
 </div>
 
-- Used
+<div align=justify>
+
+With a few exceptions, like headless <b>Intel® KBL Unknown</b> <code>0xC59B8086</code>, certain strange name artefacts are present. There is no performance impact from this artefact. As of right now, device-id spoofing has been successful in altering its name to <b>Intel® UHD Graphics 630</b>. Without a doubt, only through the headless <code>0x3E9B8086</code>. 
+
+</div>
+
+> **Note**: Real iMac 20,1 use **Intel® HD Graphics** as headless. While regular i5 10500 use **Intel® UHD Graphics**. Refer [Intel Ark](https://ark.intel.com/content/www/us/en/ark/products/199277/intel-core-i510500-processor-12m-cache-up-to-4-50-ghz.html) for more info.
+
+#### IGPU Patch
 
 ```zsh
-GPU Name                    : Intel® UHD Graphics 630
-GPU Device ID               : 0x3E928086
-Mobile			    : No
+GPU Name 					: Intel® UHD Graphics 630
+GPU Device ID 					: 0x3E928086
+Mobile 						: No
 ```
 
 <div align=center>
@@ -71,7 +86,9 @@ Mobile			    : No
 
 </div>
 
-**Patch via config.plist**
+Patching can be done in two ways, via **config.plist** or via **SSDT**. 
+
+**via config.plist**
 
 - PciRoot(0x0)/Pci(0x2,0x0)
   - AAPL,slot-name / string / `Slot- 0`
@@ -83,13 +100,94 @@ Mobile			    : No
   - iommu-selection / data / `00000000`
   - name / string / `IGPU`
   - AAPL,ig-platform-id / data / `0300923E`
+  
+**via SSDT**
 
-> **Note**: With a few exceptions, like headless Intel® KBL Unknown "0xC59B8086", certain strange name artefacts are present. There is no performance impact from this artefact. As of right now, device-id spoofing has been successful in altering its name to Intel® UHD Graphics 630. Without a doubt, only through the headless "0x3E9B8086". The real iMac20,1 uses Intel® HD Graphics "0xC89B8086" instead of Intel® UHD Graphics. Additionally, the Comet Lake processor was first used in the iMac20,1 before being officially released. Checkout [Headless framebuffers](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#add-2) / [Enabling Metal Support](https://github.com/5T33Z0/OC-Little-Translated/tree/main/11_Graphics/Metal_3#enabling-metal-3-support-and-gpu-tab-in-activity-monitor) / [Acidanthera Bugtracker Issues #1905](https://github.com/acidanthera/bugtracker/issues/1905)
+```asl
+Scope (GFX0)
+{
+	Method (_STA, 0, NotSerialized)  // _STA: Status
+	{
+		If (_OSI ("Darwin"))
+		{
+			Return (Zero)
+		}
+		Else
+		{
+			Return (0x0F)
+		}
+	}
+}
 
-#### GFX0 (Display)
+Device (IGPU)
+{
+	Name (_ADR, 0x00020000)  // _ADR: Address
+	Name (_SUN, Zero)  // _SUN: Slot User Number
+	Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+	{
+		If ((Arg2 == Zero))
+		{
+			Return (Buffer (One)
+			{
+				 0x03                                             // .
+			})
+		}
+
+		Return (Package (0x10)
+		{
+			"AAPL,ig-platform-id", 
+			Buffer (0x04)
+			{
+				 0x03, 0x00, 0x92, 0x3E                           // ...>
+			}, 
+
+			"AAPL,slot-name", 
+			Buffer (0x07)
+			{
+				 0x53, 0x6C, 0x6F, 0x74, 0x2D, 0x20, 0x30         // Slot- 0
+			}, 
+
+			"built-in", 
+			Zero, 
+			"device-id", 
+			Buffer (0x04)
+			{
+				 0x9B, 0x3E, 0x00, 0x00                           // .>..
+			}, 
+
+			"enable-metal", 
+			Buffer (0x04)
+			{
+				 0x01, 0x00, 0x00, 0x00                           // ....
+			}, 
+
+			"igfxfw", 
+			Buffer (0x04)
+			{
+				 0x02, 0x00, 0x00, 0x00                           // ....
+			}, 
+
+			"igfxonln", 
+			Buffer (0x04)
+			{
+				 0x01, 0x00, 0x00, 0x00                           // ....
+			}, 
+
+			"iommu-selection", 
+			Buffer (0x04)
+			{
+				 0x00, 0x00, 0x00, 0x00                           // ....
+			}
+		})
+	}
+```  
+
+> **Note**:  Additionally, the Comet Lake processor was first used in the iMac20,1 before being officially released. Checkout [Headless framebuffers](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#add-2) / [Enabling Metal Support](https://github.com/5T33Z0/OC-Little-Translated/tree/main/11_Graphics/Metal_3#enabling-metal-3-support-and-gpu-tab-in-activity-monitor) / [Acidanthera Bugtracker Issues #1905](https://github.com/acidanthera/bugtracker/issues/1905)
+
+#### GFX0
 
 <div align=center>
-  
+
 ![GFX0](https://user-images.githubusercontent.com/72515939/201564574-c15433d6-683e-4765-8161-8d82a6936269.png)
 
 </div>
@@ -106,14 +204,11 @@ Metal Headless              : No
 VDA Decoder                 : Fully Supported
 ```
 
-**Patch via ACPI**
+#### GFX0 Patch
 
-- `pci-bridge0` = rename to `PEGP`
-- `pci-bridge1` = rename to `BRG0`
-- `GFX0`= with `_SUN` properties, `agdpmod=pikera`
-- `HDAU`= with `_SUN` properties
+Patching can be done in two ways, via **config.plist** or via **SSDT**. 
 
-**Patch via config.plist**
+**via config.plist**
 
 - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)
   - name / string / `PEGP`
@@ -151,157 +246,458 @@ VDA Decoder                 : Fully Supported
   - PP_WorkLoadPolicyMask / data / `32`
   - StartupDisplay / data / `474E02000000000000140000400B0000108FEC370000000000140000400B0000A00000000000000000000000520000000000000000000000300000002000000003000000050000000000000000000000000000020000000000000000100632AE0100000000000000000A0000400B000050CFCD1C00000000000A0000400B0000A000000000000000000000005200000000000000000000003000000020000000030000000A0000000000000000000000000A000000000000100632AE0200000000000000000A0000400B000050CFCD1C00000000000A0000400B0000A000000000000000000000005200000000000000000000003000000020000000030000000A0000000000000000000000`
   - hda-gfx / string / `onboard-1`
-- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
-  - hda-gfx / string / `onboard-1`
-  - model / string / `Navi 10 HDMI Audio`
-  - name / string / `HDAU`
+  
+**via SSDT**
+  
+```asl
+Scope (PEG0)
+{
+	Scope (PEGP)
+	{
+		Device (BRG0)
+		{
+			Name (_ADR, Zero)  // _ADR: Address
+			Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+			{
+				If (_OSI ("Darwin"))
+				{
+					Return (0x0F)
+				}
+				Else
+				{
+					Return (Zero)
+				}
+			}
+
+			Device (GFX0)
+			{
+				Name (_ADR, Zero)  // _ADR: Address
+				Name (_SUN, One)  // _SUN: Slot User Number
+				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+				{
+					If ((Arg2 == Zero))
+					{
+						Return (Buffer (One)
+						{
+							 0x03                                             // .
+						})
+					}
+
+					Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
+					{
+						If (_OSI ("Darwin"))
+						{
+							Return (Package (0x02)
+							{
+								0x69, 
+								0x04
+							})
+						}
+						Else
+						{
+							Return (Package (0x02)
+							{
+								0x69, 
+								0x03
+							})
+						}
+					}
+
+					Return (Package (0x42)
+					{
+						"@0,AAPL,boot-display", 
+						Buffer (0x04)
+						{
+							 0x01, 0x00, 0x00, 0x00                           // ....
+						}, 
+
+						"@0,ATY,EFIDisplay", 
+						Buffer (0x03)
+						{
+							 0x44, 0x50, 0x31                                 // DP1
+						}, 
+
+						"@0,compatible", 
+						Buffer (0x0A)
+						{
+							/* 0000 */  0x41, 0x54, 0x59, 0x2C, 0x50, 0x79, 0x74, 0x68,  // ATY,Pyth
+							/* 0008 */  0x6F, 0x6E                                       // on
+						}, 
+
+						"@0,device_type", 
+						Buffer (0x07)
+						{
+							 0x64, 0x69, 0x73, 0x70, 0x6C, 0x61, 0x79         // display
+						}, 
+
+						"@0,display-type", 
+						Buffer (0x03)
+						{
+							 0x4C, 0x43, 0x44                                 // LCD
+						}, 
+
+						"@0,display_type", 
+						Buffer (0x07)
+						{
+							 0x64, 0x69, 0x73, 0x70, 0x6C, 0x61, 0x79         // display
+						}, 
+
+						"@0,name", 
+						Buffer (0x0A)
+						{
+							/* 0000 */  0x41, 0x54, 0x59, 0x2C, 0x50, 0x79, 0x74, 0x68,  // ATY,Pyth
+							/* 0008 */  0x6F, 0x6E                                       // on
+						}, 
+
+						"@1,compatible", 
+						Buffer (0x0A)
+						{
+							/* 0000 */  0x41, 0x54, 0x59, 0x2C, 0x50, 0x79, 0x74, 0x68,  // ATY,Pyth
+							/* 0008 */  0x6F, 0x6E                                       // on
+						}, 
+
+						"@1,device_type", 
+						Buffer (0x07)
+						{
+							 0x64, 0x69, 0x73, 0x70, 0x6C, 0x61, 0x79         // display
+						}, 
+
+						"@1,display-type", 
+						Buffer (0x04)
+						{
+							 0x4E, 0x4F, 0x4E, 0x45                           // NONE
+						}, 
+
+						"@1,name", 
+						Buffer (0x0A)
+						{
+							/* 0000 */  0x41, 0x54, 0x59, 0x2C, 0x50, 0x79, 0x74, 0x68,  // ATY,Pyth
+							/* 0008 */  0x6F, 0x6E                                       // on
+						}, 
+
+						"@2,compatible", 
+						Buffer (0x0A)
+						{
+							/* 0000 */  0x41, 0x54, 0x59, 0x2C, 0x50, 0x79, 0x74, 0x68,  // ATY,Pyth
+							/* 0008 */  0x6F, 0x6E                                       // on
+						}, 
+
+						"@2,device_type", 
+						Buffer (0x07)
+						{
+							 0x64, 0x69, 0x73, 0x70, 0x6C, 0x61, 0x79         // display
+						}, 
+
+						"@2,display-type", 
+						Buffer (0x04)
+						{
+							 0x4E, 0x4F, 0x4E, 0x45                           // NONE
+						}, 
+
+						"@2,name", 
+						Buffer (0x0A)
+						{
+							/* 0000 */  0x41, 0x54, 0x59, 0x2C, 0x50, 0x79, 0x74, 0x68,  // ATY,Pyth
+							/* 0008 */  0x6F, 0x6E                                       // on
+						}, 
+
+						"@3,compatible", 
+						Buffer (0x0A)
+						{
+							/* 0000 */  0x41, 0x54, 0x59, 0x2C, 0x50, 0x79, 0x74, 0x68,  // ATY,Pyth
+							/* 0008 */  0x6F, 0x6E                                       // on
+						}, 
+
+						"@3,device_type", 
+						Buffer (0x07)
+						{
+							 0x64, 0x69, 0x73, 0x70, 0x6C, 0x61, 0x79         // display
+						}, 
+
+						"@3,display-type", 
+						Buffer (0x04)
+						{
+							 0x4E, 0x4F, 0x4E, 0x45                           // NONE
+						}, 
+
+						"@3,name", 
+						Buffer (0x0A)
+						{
+							/* 0000 */  0x41, 0x54, 0x59, 0x2C, 0x50, 0x79, 0x74, 0x68,  // ATY,Pyth
+							/* 0008 */  0x6F, 0x6E                                       // on
+						}, 
+
+						"AAPL,slot-name", 
+						Buffer (0x07)
+						{
+							 0x53, 0x6C, 0x6F, 0x74, 0x2D, 0x20, 0x31         // Slot- 1
+						}, 
+
+						"ATY,EFIBootMode", 
+						Buffer (0x0203)
+						{
+							/* 0000 */  0x00, 0x00, 0x01, 0x00, 0x02, 0x00, 0x00, 0x00,  // ........
+							/* 0008 */  0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00,  // ........
+							/* 0010 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0018 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0020 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0028 */  0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0030 */  0x00, 0x01, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00,  // ........
+							/* 0038 */  0x00, 0x50, 0xCF, 0xCD, 0x1C, 0x00, 0x00, 0x00,  // .P......
+							/* 0040 */  0x00, 0x00, 0x0A, 0x00, 0x00, 0x40, 0x0B, 0x00,  // .....@..
+							/* 0048 */  0x00, 0xA0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0050 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x52, 0x00, 0x00,  // .....R..
+							/* 0058 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0060 */  0x00, 0x30, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00,  // .0... ..
+							/* 0068 */  0x00, 0x01, 0x03, 0x00, 0x00, 0x00, 0x0A, 0x00,  // ........
+							/* 0070 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00,  // ........
+							/* 0078 */  0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0080 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0088 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0A, 0x00,  // ........
+							/* 0090 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x01,  // ........
+							/* 0098 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00,  // ........
+							/* 00A0 */  0x00, 0x03, 0x00, 0x00, 0x00, 0x50, 0xCF, 0xCD,  // .....P..
+							/* 00A8 */  0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0A, 0x00,  // ........
+							/* 00B0 */  0x00, 0x40, 0x0B, 0x00, 0x00, 0xA0, 0x00, 0x00,  // .@......
+							/* 00B8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 00C0 */  0x00, 0x52, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // .R......
+							/* 00C8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x00, 0x00,  // .....0..
+							/* 00D0 */  0x00, 0x20, 0x00, 0x00, 0x00, 0x01, 0x03, 0x00,  // . ......
+							/* 00D8 */  0x00, 0x00, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 00E0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 00E8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 00F0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 00F8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0100 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0108 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0110 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0118 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0120 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0128 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0130 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0138 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0140 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0148 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0150 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0158 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0160 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0168 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0170 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0178 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0180 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0188 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0190 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0198 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 01A0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 01A8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 01B0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 01B8 */  0x01, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 01C0 */  0x01, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00,  // ........
+							/* 01C8 */  0x10, 0x8F, 0xEC, 0x37, 0x00, 0x00, 0x00, 0x00,  // ...7....
+							/* 01D0 */  0x00, 0x14, 0x00, 0x00, 0x40, 0x0B, 0x00, 0x00,  // ....@...
+							/* 01D8 */  0xA0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 01E0 */  0x00, 0x00, 0x00, 0x00, 0x52, 0x00, 0x00, 0x00,  // ....R...
+							/* 01E8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 01F0 */  0x30, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00,  // 0... ...
+							/* 01F8 */  0x01, 0x03, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00,  // ........
+							/* 0200 */  0x00, 0x00, 0x00                                 // ...
+						}, 
+
+						"ATY,EFICompileDate", 
+						Buffer (0x0B)
+						{
+							/* 0000 */  0x4F, 0x63, 0x74, 0x20, 0x31, 0x32, 0x20, 0x32,  // Oct 12 2
+							/* 0008 */  0x30, 0x31, 0x39                                 // 019
+						}, 
+
+						"ATY,EFIDriverType", 
+						Buffer (0x02)
+						{
+							 0x30, 0x32                                       // 02
+						}, 
+
+						"ATY,EFIEnabledMode", 
+						Buffer (0x02)
+						{
+							 0x30, 0x34                                       // 04
+						}, 
+
+						"ATY,EFIVersion", 
+						Buffer (0x0C)
+						{
+							/* 0000 */  0x33, 0x31, 0x2E, 0x30, 0x2E, 0x31, 0x32, 0x30,  // 31.0.120
+							/* 0008 */  0x32, 0x36, 0x2E, 0x33                           // 26.3
+						}, 
+
+						"ATY,EFIVersionB", 
+						Buffer (0x12)
+						{
+							/* 0000 */  0x31, 0x31, 0x33, 0x2D, 0x4D, 0x53, 0x49, 0x54,  // 113-MSIT
+							/* 0008 */  0x56, 0x33, 0x38, 0x32, 0x4D, 0x48, 0x2E, 0x31,  // V382MH.1
+							/* 0010 */  0x36, 0x31                                       // 61
+						}, 
+
+						"ATY,Rom#", 
+						Buffer (0x10)
+						{
+							/* 0000 */  0x31, 0x31, 0x33, 0x2D, 0x45, 0x58, 0x54, 0x33,  // 113-EXT3
+							/* 0008 */  0x37, 0x36, 0x33, 0x35, 0x2D, 0x30, 0x30, 0x31   // 7635-001
+						}, 
+
+						"ATY,copyright", 
+						Buffer (0x32)
+						{
+							/* 0000 */  0x43, 0x6F, 0x70, 0x79, 0x72, 0x69, 0x67, 0x68,  // Copyrigh
+							/* 0008 */  0x74, 0x20, 0x41, 0x4D, 0x44, 0x20, 0x49, 0x6E,  // t AMD In
+							/* 0010 */  0x63, 0x2E, 0x20, 0x20, 0x41, 0x6C, 0x6C, 0x20,  // c.  All 
+							/* 0018 */  0x52, 0x69, 0x67, 0x68, 0x74, 0x20, 0x52, 0x65,  // Right Re
+							/* 0020 */  0x73, 0x65, 0x72, 0x76, 0x65, 0x64, 0x2E, 0x20,  // served. 
+							/* 0028 */  0x20, 0x32, 0x30, 0x30, 0x35, 0x2D, 0x32, 0x30,  //  2005-20
+							/* 0030 */  0x31, 0x39                                       // 19
+						}, 
+
+						"Force_Load_FalconSMUFW", 
+						Buffer (One)
+						{
+							 0x01                                             // .
+						}, 
+
+						"PP_WorkLoadPolicyMask", 
+						Buffer (One)
+						{
+							 0x32                                             // 2
+						}, 
+
+						"StartupDisplay", 
+						Buffer (0x010C)
+						{
+							/* 0000 */  0x47, 0x4E, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00,  // GN......
+							/* 0008 */  0x00, 0x14, 0x00, 0x00, 0x40, 0x0B, 0x00, 0x00,  // ....@...
+							/* 0010 */  0x10, 0x8F, 0xEC, 0x37, 0x00, 0x00, 0x00, 0x00,  // ...7....
+							/* 0018 */  0x00, 0x14, 0x00, 0x00, 0x40, 0x0B, 0x00, 0x00,  // ....@...
+							/* 0020 */  0xA0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0028 */  0x00, 0x00, 0x00, 0x00, 0x52, 0x00, 0x00, 0x00,  // ....R...
+							/* 0030 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0038 */  0x30, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00,  // 0... ...
+							/* 0040 */  0x03, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00,  // ........
+							/* 0048 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0050 */  0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0058 */  0x00, 0x00, 0x00, 0x00, 0x10, 0x06, 0x32, 0xAE,  // ......2.
+							/* 0060 */  0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0068 */  0x00, 0x0A, 0x00, 0x00, 0x40, 0x0B, 0x00, 0x00,  // ....@...
+							/* 0070 */  0x50, 0xCF, 0xCD, 0x1C, 0x00, 0x00, 0x00, 0x00,  // P.......
+							/* 0078 */  0x00, 0x0A, 0x00, 0x00, 0x40, 0x0B, 0x00, 0x00,  // ....@...
+							/* 0080 */  0xA0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0088 */  0x00, 0x00, 0x00, 0x00, 0x52, 0x00, 0x00, 0x00,  // ....R...
+							/* 0090 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0098 */  0x30, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00,  // 0... ...
+							/* 00A0 */  0x03, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x00,  // ........
+							/* 00A8 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 00B0 */  0x00, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 00B8 */  0x10, 0x06, 0x32, 0xAE, 0x02, 0x00, 0x00, 0x00,  // ..2.....
+							/* 00C0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x00,  // ........
+							/* 00C8 */  0x40, 0x0B, 0x00, 0x00, 0x50, 0xCF, 0xCD, 0x1C,  // @...P...
+							/* 00D0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x00,  // ........
+							/* 00D8 */  0x40, 0x0B, 0x00, 0x00, 0xA0, 0x00, 0x00, 0x00,  // @.......
+							/* 00E0 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 00E8 */  0x52, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // R.......
+							/* 00F0 */  0x00, 0x00, 0x00, 0x00, 0x30, 0x00, 0x00, 0x00,  // ....0...
+							/* 00F8 */  0x20, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00,  //  .......
+							/* 0100 */  0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+							/* 0108 */  0x00, 0x00, 0x00, 0x00                           // ....
+						}, 
+
+						"hdagfx", 
+						Buffer (0x09)
+						{
+							/* 0000 */  0x6F, 0x6E, 0x62, 0x6F, 0x61, 0x72, 0x64, 0x2D,  // onboard-
+							/* 0008 */  0x31                                             // 1
+						}, 
+
+						"agdpmod", 
+						"pikera"
+					})
+				}
+			}
+		}
+	}
+}
+```
 
 > **Note**: Use at your own risk! In general, these patches have to be regarded as "experimental". They may work as intended but that's not guaranteed.
 
-### PCI Devices
+### PCI Devices (DeviceProperties)
 
-<div align=center>  
-  
+<div align=center> 
+
 ![PCI](https://user-images.githubusercontent.com/72515939/201564595-f4a4e48f-f68f-499b-8c7a-cc7f2a1c9a76.png)
 
 </div>
 
-#### DeviceProperties (.plist)
+#### DeviceProperties
 
-```xml
-<key>DeviceProperties</key>
-<dict>
-	<key>Add</key>
-	<dict>
-		<key>PciRoot(0x0)/Pci(0x0,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>DRAM</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>PEG0</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>PEGP</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>BRG0</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>ATY_GPU</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)</key>
-		<dict>
-			<key>name</key>
-			<string>HDAU</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x14,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>XHC1</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x14,0x2)</key>
-		<dict>
-			<key>name</key>
-			<string>TSUB</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x16,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>IMEI</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x17,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>SATA</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1B,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>RP20</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>ARPT</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1B,0x4)</key>
-		<dict>
-			<key>name</key>
-			<string>RP20</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1B,0x4)/Pci(0x0,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>ANS1</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1C,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>RP04</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>RTLK</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1C,0x4)</key>
-		<dict>
-			<key>name</key>
-			<string>RP05</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>XHC2</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1D,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>RP09</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>ANS0</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1F,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>LPCB</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1F,0x2)</key>
-		<dict>
-			<key>name</key>
-			<string>PPMC</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
-		<dict>
-			<key>name</key>
-			<string>HDEF</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x1F,0x4)</key>
-		<dict>
-			<key>name</key>
-			<string>SBUS</string>
-		</dict>
-		<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
-		<dict>
-			<key>name</key>
-			<string>IGPU</string>
-		</dict>
-	</dict>
-```
+**via config.plist**
 
-#### Other Patches
+- PciRoot(0x0)/Pci(0x0,0x0)
+  - name / string / `DRAM`
+- PciRoot(0x0)/Pci(0x1,0x0)
+	- name / string / `PEG0`
+- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)
+	- name / string / `PEGP`
+- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)
+	- name / string / `PEGP`	
+- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
+	- name / string / `BRG0`	
+- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
+	- name / string / `ATY_GPU`
+- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
+	- name / string / `HDAU`	
+- PciRoot(0x0)/Pci(0x14,0x0)
+	- name / string / `XHC1`	
+- PciRoot(0x0)/Pci(0x14,0x2)
+	- name / string / `TSUB`	
+- PciRoot(0x0)/Pci(0x16,0x0)
+	- name / string / `IMEI`	
+- PciRoot(0x0)/Pci(0x17,0x0)
+	- name / string / `SATA`	
+- PciRoot(0x0)/Pci(0x17,0x0)
+	- name / string / `SATA`	
+- PciRoot(0x0)/Pci(0x1B,0x0)
+	- name / string / `RP20`	
+- PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)
+	- name / string / `ARPT`	
+- PciRoot(0x0)/Pci(0x1B,0x4)
+	- name / string / `RP21`	
+- PciRoot(0x0)/Pci(0x1B,0x4)/Pci(0x0,0x0)
+	- name / string / `ANS1`
+- PciRoot(0x0)/Pci(0x1C,0x0)
+	- name / string / `RP04`	
+- PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)
+	- name / string / `RTLK`	
+- PciRoot(0x0)/Pci(0x1C,0x4)
+	- name / string / `RP05	
+- PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)
+	- name / string / `XHC2`	
+- PciRoot(0x0)/Pci(0x1D,0x0)
+	- name / string / `RP09`	
+- PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0)
+	- name / string / `ANS0`	
+- PciRoot(0x0)/Pci(0x1F,0x0)
+	- name / string / `LPCB`	
+- PciRoot(0x0)/Pci(0x1F,0x2)
+	- name / string / `PPMC`	
+- PciRoot(0x0)/Pci(0x1F,0x3)
+	- name / string / `HDEF`	
+- PciRoot(0x0)/Pci(0x1F,0x4)
+	- name / string / `SBUS`	
+- PciRoot(0x0)/Pci(0x2,0x0)
+	- name / string / `IGPU`	
+		
+**via SSDT**
+
+Refer [SSDT-EXT.dsl](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXT.dsl) for more info
+
+#### Patch
 
 <div align=center>
 
@@ -309,45 +705,97 @@ VDA Decoder                 : Fully Supported
 
 </div>
 
+- `ALSD`- Ambient Light Sensor, `AppleLMUController` (Optional)
 - `EC`- Fake Embedded Controller
 - `GFX0`- rename as `IGPU` (Headless)
 - `HDAS`- rename as `HDEF`
 - `HDAU`- with `_SUN` properties
 - `HECI`- rename as `IMEI`
+- `PPMC`- device unrecognised and rename. (Not compatible)
+- `RP04.PXSX`- rename as `RTLK`
 - `RP05.PXSX`- rename as `XHC2`, with `_SUN` properties
 - `RP09.PXSX`- rename as `ANS0`, AppleSSDController patch
 - `RP20.PXSX`- rename as `ARPT`, with `_SUN` properties
 - `RP21.PXSX`- renamed as `ANS1`, AppleSSDController patch
-- `SBUS`- compatible `smbus` and `diagsvault` patch
-- `USBX`- USB Power Management patch
-
-> **Note**: This is not just cosmetics. Device is injected with properties.
-
-#### Cosmetics
-
-- `ALSD`- Ambient Light Sensor, `AppleLMUController` (Optional)
-- `PPMC`- device unrecognised and rename. (Not compatible)
-- `RP04.PXSX`- rename as `RTLK`
 - `SAT0`- rename as `SATA`
+- `SBUS`- compatible `smbus` and `diagsvault` patch
 - `TSUB`- device unrecognised and rename. (Not compatible)
+- `USBX`- USB Power Management patch
 - `XHC`- renamed as `XHC1`
-
-> **Note**: This is just cosmetics. However, inaccurate rename method can cause an issue. Use at your own risk!.
 
 ### Audio
 
-- ALCS1200A (Layout ID = 1)
+HD audio, or high-definition audio, enables streaming music to sound more like an original studio recording. While the specifications for HD audio can vary, the term is generally used to refer to digital music formats that offer at least CD-quality mastering.
 
-#### Patch via ACPI
+#### HDEF
 
-- No-hda-gfx = `0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00`
-- No-idle-support = `0x00`
-- layout-id = `0x01, 0x00, 0x00, 0x00`
+```zsh
+Device		 					: ALCS1200A
+```
 
-#### Patch via config.plist
+Patching can be done in two ways, via **config.plist** or via **SSDT**. 
 
-- PciRoot(0x0)/Pci(0x1F,0x3)
-  - name / string / `HDEF`
+**via config.plist**
+
+- layout-id = `01000000`
+- name = `HDEF`
+- No-hda-gfx = `0000000000000000`
+- No-idle-support = `00`
+
+**via SSDT**
+
+```asl
+Scope (HDAS)
+{
+	Method (_STA, 0, NotSerialized)  // _STA: Status
+	{
+		If (_OSI ("Darwin"))
+		{
+			Return (Zero)
+		}
+		Else
+		{
+			Return (0x0F)
+		}
+	}
+}
+
+Device (HDEF)
+{
+	Name (_ADR, 0x001F0003)  // _ADR: Address
+	Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+	{
+		If ((Arg2 == Zero))
+		{
+			Return (Buffer (One)
+			{
+				 0x03                                             // .
+			})
+		}
+
+		Return (Package (0x06)
+		{
+			"No-hda-gfx", 
+			Buffer (0x08)
+			{
+				 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
+			}, 
+
+			"layout-id", 
+			Buffer (0x04)
+			{
+				 0x01, 0x00, 0x00, 0x00                           // ....
+			}, 
+
+			"No-idle-support", 
+			Buffer (One)
+			{
+				 0x00                                             // .
+			}
+		})
+	}
+}
+```
 
 <div align=center>
 
@@ -355,15 +803,75 @@ VDA Decoder                 : Fully Supported
 
 </div>
 
-- AppleGFXHDADriver (Navi 10 HDMI Audio)
+#### HDAU
 
-<div align=center>
+```zsh
+Device		 					: Navi 10 HDMI Audio (RX 5500 XT)
+```
+
+Regularly, this device is attached via `GFX0`. Patching can be done in two ways, via **config.plist** or via **SSDT**. 
+
+**via config.plist**
+
+- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
+  - hda-gfx / string / `onboard-1`
+  - model / string / `Navi 10 HDMI Audio`
+  - name / string / `HDAU`
   
-![AppleGFXHDA](https://user-images.githubusercontent.com/72515939/201564637-635e432f-f3d4-4954-8da3-191568d284a7.png)
-  
+**via SSDT**
+
+```asl
+Device (HDAU)
+{
+	Name (_ADR, One)  // _ADR: Address
+	Name (_SUN, One)  // _SUN: Slot User Number
+	Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+	{
+		If ((Arg2 == Zero))
+		{
+			Return (Buffer (One)
+			{
+				 0x03                                             // .
+			})
+		}
+
+		Return (Package (0x06)
+		{
+			"driver-version", 
+			Buffer (0x09)
+			{
+				/* 0000 */  0x31, 0x30, 0x2E, 0x30, 0x2E, 0x31, 0x2E, 0x32,  // 10.0.1.2
+				/* 0008 */  0x34                                             // 4
+			}, 
+
+			"hdagfx", 
+			Buffer (0x09)
+			{
+				/* 0000 */  0x6F, 0x6E, 0x62, 0x6F, 0x61, 0x72, 0x64, 0x2D,  // onboard-
+				/* 0008 */  0x31                                             // 1
+			}, 
+
+			"model", 
+			Buffer (0x12)
+			{
+				/* 0000 */  0x4E, 0x61, 0x76, 0x69, 0x20, 0x31, 0x30, 0x20,  // Navi 10 
+				/* 0008 */  0x48, 0x44, 0x4D, 0x49, 0x20, 0x41, 0x75, 0x64,  // HDMI Aud
+				/* 0010 */  0x69, 0x6F                                       // io
+			}
+		})
+	}
+}
+```
+
+<div align=center> 
+
+![AppleGFXHDA](https://user-images.githubusercontent.com/72515939/201564637-635e432f-f3d4-4954-8da3-191568d284a7.png)  
+
 </div>
 
 ### Quirks
+
+OpenCore Quirks are a variety of abilities that can be used to influence and alter kernel behaviour or certain types of data. It is employed to take advantage of a BIOS that occasionally differs from the kernel or operating system. Here are the Quirks necessary to meet the macOS requirements.
 
 #### ACPI / Quirks
 
@@ -404,23 +912,120 @@ VDA Decoder                 : Fully Supported
 
 ### USB
 
+<div align=justify>
+
+With other operating systems, the number of USB ports on macOS varies. It is distinctive and has a port of its own based on Apple's product preferences. The "15 port restriction" refers to the limit of 15 ports per device for Apple goods in particular. It differs from other operating systems where there are generally more than 15 ports. It is called as USB Port Mapping, and it involves choosing ports for devices, typically 15 specific ports using <a href="https://github.com/USBToolBox/tool">USBToolbox</a>
+
+</div><br>
+
 <div align=center>
 
 ![USB](https://user-images.githubusercontent.com/72515939/201564661-e93efb8e-211c-4d85-9479-567ef8796c9b.png)
 
 </div>
 
-> **Note**: USB is mapped properly using [USBToolbox](https://github.com/USBToolBox/tool)
-
 ### NVRAM
 
+<div align=justify>
+
+NVRAM (non-volatile random-access memory) refers to computer memory that can hold data even when power to the memory chips has been turned off. NVRAM is a subset of the larger category of non-volatile memory (NVM), which includes storage-class memory based on NAND flash. Flash memory chips are slower to read to and write from than RAM chips, making them less well suited for active computational memory. Computer manufacturers mainly use NVRAM to hold information about the state of the computer for faster boot times. This allows information about the components and devices in the computer to be stored from one use to the next while the system power is turned off. Standard computer memory uses dynamic random access memory (DRAM) which requires constant power to retain data.
+
+</div>
+
 <div align=center>
-  
+
 ![NVRAM](https://user-images.githubusercontent.com/72515939/201564673-4626b8e5-5268-4eeb-97a8-ecbf4540b52c.png)
 
 </div>
-  
+
 ### NVMe
+
+```zsh
+Device		 					: KINGSTON SA2000M8500G
+```
+
+NVMe (nonvolatile memory express) is a new storage access and transport protocol for flash and next-generation solid-state drives (SSDs) that delivers the highest throughput and fastest response times yet for all types of enterprise workloads. 
+
+#### Patch as AppleSSDController
+
+Patching can be done in two ways, via **config.plist** or via **SSDT**. 
+
+**via config.plist**
+
+- PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0)
+  - device_type / string / `Non-Volatile memory controller`
+  - model / string / `KINGSTON SA2000M8500G`
+  - device-id / data / `06A80000`
+  - vendor-id / data / `4D140000`
+  
+**via SSDT**
+
+```asl
+Scope (RP09)
+{
+	Scope (PXSX)
+	{
+		Method (_STA, 0, NotSerialized)  // _STA: Status
+		{
+			If (_OSI ("Darwin"))
+			{
+				Return (Zero)
+			}
+			Else
+			{
+				Return (0x0F)
+			}
+		}
+	}
+
+	Device (ANS0)
+	{
+		Name (_ADR, Zero)  // _ADR: Address
+		Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+		{
+			If ((Arg2 == Zero))
+			{
+				Return (Buffer (One)
+				{
+					 0x03                                             // .
+				})
+			}
+
+			Return (Package (0x08)
+			{
+				"device_type", 
+				Buffer (0x1E)
+				{
+					/* 0000 */  0x4E, 0x6F, 0x6E, 0x2D, 0x56, 0x6F, 0x6C, 0x61,  // Non-Vola
+					/* 0008 */  0x74, 0x69, 0x6C, 0x65, 0x20, 0x6D, 0x65, 0x6D,  // tile mem
+					/* 0010 */  0x6F, 0x72, 0x79, 0x20, 0x63, 0x6F, 0x6E, 0x74,  // ory cont
+					/* 0018 */  0x72, 0x6F, 0x6C, 0x6C, 0x65, 0x72               // roller
+				}, 
+
+				"model", 
+				Buffer (0x15)
+				{
+					/* 0000 */  0x4B, 0x49, 0x4E, 0x47, 0x53, 0x54, 0x4F, 0x4E,  // KINGSTON
+					/* 0008 */  0x20, 0x53, 0x41, 0x32, 0x30, 0x30, 0x30, 0x4D,  //  SA2000M
+					/* 0010 */  0x38, 0x35, 0x30, 0x30, 0x47                     // 8500G
+				}, 
+
+				"device-id", 
+				Buffer (0x04)
+				{
+					 0x06, 0xA8, 0x00, 0x00                           // ....
+				}, 
+
+				"vendor-id", 
+				Buffer (0x04)
+				{
+					 0x4D, 0x14, 0x00, 0x00                           // M...
+				}
+			})
+		}
+	}
+}
+```
 
 <div align=center>
   
@@ -428,9 +1033,7 @@ VDA Decoder                 : Fully Supported
 
 </div>
 
-> **Note**: `ANS0` and `ANS1` as Apple SSD Controller
-
-### Validate
+### Validate Settings
 
 #### Check Build Number:
 
