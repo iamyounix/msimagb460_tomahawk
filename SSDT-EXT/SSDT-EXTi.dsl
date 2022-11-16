@@ -138,10 +138,6 @@ DefinitionBlock("", "SSDT", 2, "CpyPst", "EXT", 0x00000001) {
             Name(_SUN, Zero) // _SUN: Slot User Number
             /* "_DSM" = This optional object is a control method that enables devices to provide device specific control 
              * functions that are consumed by the device driver.
-             * Arg0 - A Buffer containing a UUID
-             * Arg1 - An Integer containing the Revision ID
-             * Arg2 - An Integer containing the Function Index
-             * Arg3 - A Package that contains function-specific arguments
              */
             Method(_DSM, 4, NotSerialized) {
                /* "_DSM" Functions:
