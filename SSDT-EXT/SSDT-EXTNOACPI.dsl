@@ -1,3 +1,7 @@
+// Readme First:
+// SSDT-EXTNOACPI is a compact version of SSDT-EXT by removing "Else { Return (Zero)}" on the Windows Platform.
+// Because of "EnableforAll" quirks, OpenCore No ACPI does not load SSDT-EXT by default. 
+
 DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 {
     External (_SB_, DeviceObj)
