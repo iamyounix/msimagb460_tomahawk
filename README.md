@@ -1,9 +1,5 @@
 # ASRock B460M Steel Legend
-
----
-
-## Jump!
-
+**List**
 * [OpenCore EFI Structure](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#opencore-efi-structure)
 * [Processor](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#processor)
 * [Graphics](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#graphics)
@@ -19,35 +15,40 @@
 * [Soft Reminder](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#soft-reminder)
 * [Acknowledgement](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#acknowledgement)
 
----
-
 ## Hackintosh: 10th Gen Comet Lake + ASRock B460M Steel Legend + OpenCore
 
-<div align=justify>
-
-OpenCore is what we refer to as a "boot loader" – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as SMBIOS, ACPI tables and kexts. How this tool differs from others like Clover is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as System <b>Integrity Protection</b> and <b>FileVault</b>.
-
-</div>
+OpenCore is what we refer to as a **boot loader** – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as **SMBIOS**, **ACPI** tables and **kexts**. How this tool differs from others like **Clover** is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as **System Integrity Protection** and  Filevault
 
 * Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding
 * Checkout Dortania Monthly [Post](https://dortania.github.io) to get more info
 
-<div align=justify>
-<p><strong>My word:</strong> - <strong>"It's merely cosmetic"</strong>, according to some. For me, this content is not just for show. <strong>Configuration?</strong>, You can play with <strong>config.plist</strong> and experiment with it. But heed the warning—if the file is not saved properly, it may get corrupted. This issue sometimes happen due to; <strong>restart before saving</strong> , &nbsp;<strong>erroneously input or  non-format input</strong>. I'm not interested to share my personal <strong>EFI</strong>, and not meant to be used by other people or systems. If you're still interested in utilising it, please be <strong>careful</strong> to adjust the <strong>plist configuration</strong> and <strong>SSDTs</strong> according to your system. <strong>ACPI?</strong>, You may see how <strong>ACPI</strong> impacts the operating system. Incorrect device renaming through <strong>SSDTs</strong> will results the operating system getting stuck. My advise is not to modify your <strong>DSDTs</strong>. <strong>DSDT's</strong> (Primary Table) modification method will results more difficulties to your machine and harm your BIOS directly. I recommend <strong>SSDTs</strong> (Secondary Table) modifications, since this way are more <strong>dynamic</strong> and <strong>safe</strong>. Device renaming is not necessary for recognised and functional devices unless the devices are not identified or displayed via IOreg or require extra tweaks, especially if your computer contains multiple bootable OSes. This is not full feature guide. OpenCore sample is attached as a learning curve. Please be careful what you're read, copy and modified all these stuffs. Do a research first.</p>
-</div>
+My word:"It's merely cosmetic", according to some. For me, this content is not just for show.
+
+**Configuration?**,
+
+- You can play with **config.plist** and experiment with it.
+
+But heed the warning,
+
+- If you're still interested in utilising it, please be carefulto adjust the .plist configuration and SSDTs according to your machine.
+
+**ACPI?**,
+
+Warning, editing ACPI without knowing anything may cause
+
+- an error (stucks)
+- broken device
+- BIOS issues
+
+OpenCore sample is attached as a learning curve. Please be careful what you're read, copy and modified all these stuffs. Do a research first.
 
 > **Note**: Since this attachment is just an example, please change SMBIOS matched with your settings. Refer [Choose The Right SMBIOS](https://dortania.github.io/OpenCore-Install-Guide/extras/smbios-support.html) and [Platform Info](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#platforminfo) by Dortania.
 
 ### OpenCore EFI Structure
 
-<div align=center>
-
 ![OpenCore](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/OpenCore.drawio.png)
 
-</div>
-	
 ### Processor
-
 #### Intel® Core™ i5-10400
 
 ```zsh
@@ -59,17 +60,14 @@ Code Name 					: Comet Lake
 ### Graphics
 
 * Intel UHD 630 - Headless
-	* IGPU - An Intregrated Graphic Processor Unit (iGPU). Function as headless mode, where the dGPU is the display out. Used when the Desktop iGPU is only used for computing tasks and doesn't drive a display. 
+	* IGPU - An Intregrated Graphic Processor Unit (iGPU). Function as headless mode, where the dGPU is the display out. Used when the Desktop iGPU is only used for computing tasks and doesn't drive a display.
+
 * MSI RX 5500 XT - Display
 	* GFX0 - A Dedicated Graphic Processor Unit (dGPU) is a PCI-based chip or electronic circuit that can render graphics for display on a computer. While the desktop iGPU is only used for computing tasks, this device functions as the main display.
 
-> **Note**: Headless display for hackintosh not require `framebuffer-patch-enable` and `framebuffer-stolenmem`. 
-
-<div align=center>
+> **Note**: Headless display for hackintosh not require `framebuffer-patch-enable` and `framebuffer-stolenmem`.
 
 ![Graphics](https://user-images.githubusercontent.com/72515939/201564512-85b70d59-cc94-4a34-8b2f-723546c9790a.png)
-
-</div>
 
 #### IGPU
 
@@ -79,17 +77,9 @@ GPU Device ID 					: 0xC59B8086
 Mobile 						: No
 ```
 
-<div align=center>
-
 ![IGPU](https://user-images.githubusercontent.com/72515939/201564546-2c6f57ad-72fc-478e-921e-342a009074eb.png)
 
-</div>
-
-<div align=justify>
-
-With a few exceptions, like headless <b>Intel® KBL Unknown</b> <code>0xC59B8086</code>, certain strange name artefacts are present. There is no performance impact from this artefact. As of right now, device-id spoofing has been successful in altering its name to <b>Intel® UHD Graphics 630</b>. Without a doubt, only through the headless <code>0x3E9B8086</code>. 
-
-</div>
+With a few exceptions, like headless Intel® KBL Unknown 0xC59B8086, certain strange name artefacts are present. There is no performance impact from this artefact. As of right now, device-id spoofing has been successful in altering its name to Intel® UHD Graphics 630. Without a doubt, only through the headless 0x3E9B8086.
 
 > **Note**: Real iMac 20,1 use **Intel® HD Graphics** as headless. While regular i5 10500 use **Intel® UHD Graphics**. Refer [Intel Ark](https://ark.intel.com/content/www/us/en/ark/products/199277/intel-core-i510500-processor-12m-cache-up-to-4-50-ghz.html) for more info.
 
@@ -101,11 +91,7 @@ GPU Device ID 					: 0x3E928086
 Mobile 						: No
 ```
 
-<div align=center>
-
 ![IGPU USED](https://user-images.githubusercontent.com/72515939/201564553-07f0cb0e-2bf8-4246-abfe-5ea3abd1c65f.png)
-
-</div>
 
 Patching can be done in two ways, via **config.plist** or via **SSDT**. 
 
@@ -207,12 +193,8 @@ Device (IGPU)
 
 #### GFX0
 
-<div align=center>
-
 ![GFX0](https://user-images.githubusercontent.com/72515939/201564574-c15433d6-683e-4765-8161-8d82a6936269.png)
 
-</div>
-  
 ```zsh
 GPU Name                    : Navi 14 [Radeon RX 5500/5500M / Pro 5500M]
 GPU Device ID               : 0x73401002
@@ -267,9 +249,9 @@ Patching can be done in two ways, via **config.plist** or via **SSDT**. 
   - PP_WorkLoadPolicyMask / data / `32`
   - StartupDisplay / data / `474E02000000000000140000400B0000108FEC370000000000140000400B0000A00000000000000000000000520000000000000000000000300000002000000003000000050000000000000000000000000000020000000000000000100632AE0100000000000000000A0000400B000050CFCD1C00000000000A0000400B0000A000000000000000000000005200000000000000000000003000000020000000030000000A0000000000000000000000000A000000000000100632AE0200000000000000000A0000400B000050CFCD1C00000000000A0000400B0000A000000000000000000000005200000000000000000000003000000020000000030000000A0000000000000000000000`
   - hda-gfx / string / `onboard-1`
-  
+
 **via SSDT**
-  
+
 ```asl
 Scope (PEG0)
 {
@@ -649,11 +631,7 @@ Scope (PEG0)
 
 ### Other Devices
 
-<div align=center> 
-
 ![PCI](https://user-images.githubusercontent.com/72515939/201564595-f4a4e48f-f68f-499b-8c7a-cc7f2a1c9a76.png)
-
-</div>
 
 #### DeviceProperties
 
@@ -713,18 +691,14 @@ Scope (PEG0)
 	- name / string / `SBUS`	
 - PciRoot(0x0)/Pci(0x2,0x0)
 	- name / string / `IGPU`	
-		
+
 **via SSDT**
 
 Refer [SSDT-EXT.dsl](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXT.dsl) for more info
 
 #### Patch
 
-<div align=center>
-
 ![Other Patches](https://user-images.githubusercontent.com/72515939/201564609-f85ed4ae-5584-48e8-aa00-2eaf39f8fd3b.png)
-
-</div>
 
 - `ALSD`- Ambient Light Sensor, `AppleLMUController` (Optional)
 - `EC`- Fake Embedded Controller
@@ -746,7 +720,7 @@ Refer [SSDT-EXT.dsl](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/bl
 
 ### Audio
 
-HD audio, or high-definition audio, enables streaming music to sound more like an original studio recording. While the specifications for HD audio can vary, the term is generally used to refer to digital music formats that offer at least CD-quality mastering.
+- to enables streaming music to sound more like an original studio recording.
 
 #### HDEF
 
@@ -754,7 +728,7 @@ HD audio, or high-definition audio, enables streaming music to sound more like a
 Device		 					: ALCS1200A
 ```
 
-Patching can be done in two ways, via **config.plist** or via **SSDT**. 
+Patching can be done in two ways, via **config.plist** or via **SSDT**.
 
 **via config.plist**
 
@@ -818,11 +792,7 @@ Device (HDEF)
 }
 ```
 
-<div align=center>
-
 ![Audio](https://user-images.githubusercontent.com/72515939/201564627-0f6f3016-6251-4cfb-9132-360a9a6489e9.png)
-
-</div>
 
 #### HDAU
 
@@ -838,7 +808,7 @@ Regularly, this device is attached via `GFX0`. Patching can be done in two ways,
   - hda-gfx / string / `onboard-1`
   - model / string / `Navi 10 HDMI Audio`
   - name / string / `HDAU`
-  
+
 **via SSDT**
 
 ```asl
@@ -884,15 +854,12 @@ Device (HDAU)
 }
 ```
 
-<div align=center> 
-
 ![AppleGFXHDA](https://user-images.githubusercontent.com/72515939/201564637-635e432f-f3d4-4954-8da3-191568d284a7.png)  
-
-</div>
 
 ### Quirks
 
-OpenCore Quirks are a variety of abilities that can be used to influence and alter kernel behaviour or certain types of data. It is employed to take advantage of a BIOS that occasionally differs from the kernel or operating system. Here are the Quirks necessary to meet the macOS requirements.
+- variety of abilities that can be used to influence and alter kernel behaviour or certain types of data. 
+- to take advantage of a BIOS that occasionally differs from the kernel or operating system.
 
 #### ACPI / Quirks
 
@@ -933,34 +900,22 @@ OpenCore Quirks are a variety of abilities that can be used to influence and alt
 
 ### USB
 
-<div align=justify>
-
-With other operating systems, the number of USB ports on macOS varies. It is distinctive and has a port of its own based on Apple's product preferences. The "15 port restriction" refers to the limit of 15 ports per device for Apple goods in particular. It differs from other operating systems where there are generally more than 15 ports. It is called as USB Port Mapping, and it involves choosing ports for devices, typically 15 specific ports using <a href="https://github.com/USBToolBox/tool">USBToolbox</a>
-
-</div><br>
-
-<div align=center>
+- 15 ports mapped using [USBToolbox](https://github.com/USBToolBox/tool "USBToolbox").
 
 ![USB](https://user-images.githubusercontent.com/72515939/201564661-e93efb8e-211c-4d85-9479-567ef8796c9b.png)
 
-</div>
-
 ### NVRAM
 
-<div align=justify>
+NVRAM (non-volatile random-access memory) refers to 
 
-NVRAM (non-volatile random-access memory) refers to computer memory that can hold data even when power to the memory chips has been turned off. NVRAM is a subset of the larger category of non-volatile memory (NVM), which includes storage-class memory based on NAND flash. Flash memory chips are slower to read to and write from than RAM chips, making them less well suited for active computational memory. Computer manufacturers mainly use NVRAM to hold information about the state of the computer for faster boot times. This allows information about the components and devices in the computer to be stored from one use to the next while the system power is turned off. Standard computer memory uses dynamic random access memory (DRAM) which requires constant power to retain data. Additional bootargs can be found here:
-
-* [Lilu](https://github.com/theofficialcopypaste/Lilu/edit/master/README.md)
-* [Whatevergreen](https://github.com/acidanthera/WhateverGreen)
-
-</div>
-
-<div align=center>
+- computer memory that can hold data even when power to the memory chips has been turned off.
+- subset of the larger category of non-volatile memory (NVM), which includes storage-class memory based on NAND flash.
+- Flash memory chips are slower to read to and write from than RAM chips, making them less well suited for active computational memory.
+- cmputer manufacturers mainly use NVRAM to hold information about the state of the computer for faster boot times.
+- allows information about the components and devices in the computer to be stored from one use to the next while the system power is turned off.
+- standard computer memory uses dynamic random access memory (DRAM) which requires constant power to retain data.
 
 ![NVRAM](https://user-images.githubusercontent.com/72515939/201564673-4626b8e5-5268-4eeb-97a8-ecbf4540b52c.png)
-
-</div>
 
 > **Note**: This build patches bootarg via ACPI.
 
@@ -970,7 +925,8 @@ NVRAM (non-volatile random-access memory) refers to computer memory that can hol
 Device		 					: KINGSTON SA2000M8500G
 ```
 
-NVMe (nonvolatile memory express) is a new storage access and transport protocol for flash and next-generation solid-state drives (SSDs) that delivers the highest throughput and fastest response times yet for all types of enterprise workloads. 
+- storage access and transport protocol for flash and next-generation solid-state drives (SSDs)
+- delivers the highest throughput and fastest response times yet for all types of enterprise workloads.
 
 #### Patch as AppleSSDController
 
@@ -983,7 +939,7 @@ Patching can be done in two ways, via **config.plist** or via **SSDT**. 
   - model / string / `KINGSTON SA2000M8500G`
   - device-id / data / `06A80000`
   - vendor-id / data / `4D140000`
-  
+
 **via SSDT**
 
 ```asl
@@ -1053,15 +1009,12 @@ Scope (RP09)
 }
 ```
 
-<div align=center>
-  
 ![NVME](https://user-images.githubusercontent.com/72515939/201564683-1fc5dbd3-799f-4274-bb7d-9e1ab341c818.png)
-
-</div>
 
 ### Test
 
-The linked EFI has already been tested through its requirements on releases of macOS Catalina to Ventura. There are currently no significant issues and all devices function as intended.
+- tested through its requirements on releases of macOS Catalina to Ventura. 
+- no significant issues and all devices function as intended.
 
 | **MacOS** | **Version** | **Pass** | **APFS MinDate** | **APFS MinVersion** |
 |-----------|-------------|----------|------------------|---------------------|
@@ -1090,7 +1043,7 @@ ProductVersion:		13.0
 BuildVersion:		22A380
 ```
 
-#### Check Kernel Version:
+#### Kernel Version:
 
 - Input:
 
@@ -1104,7 +1057,7 @@ uname -r
 22.1.0
 ```
 
-#### Check Bus & Frequency:
+#### Bus & Frequency:
 
 - Input:
 
@@ -1126,7 +1079,7 @@ hw.tbfrequency: 1000000000
 machdep.tsc.frequency: 2903996007
 ```
 
-#### Check CPU Vendor:
+#### CPU Vendor:
 
 - Input:
 
@@ -1140,7 +1093,7 @@ sysctl -a | grep machdep.cpu.vendor
 machdep.cpu.vendor: GenuineIntel
 ```
 
-#### Check CPU Brand String:
+#### CPU Brand String:
 
 - Input:
 
@@ -1154,7 +1107,7 @@ sysctl machdep.cpu.brand_string
 machdep.cpu.brand_string: Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
 ```
 
-#### Check CPU Features:
+#### CPU Features:
 
 - Input:
 
@@ -1168,7 +1121,7 @@ sysctl -a | grep machdep.cpu.features
 machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
 ```
 
-#### Check Instruction Set:
+#### Instruction Set:
 
 - Input:
 
@@ -1182,7 +1135,7 @@ sysctl -a | grep machdep.cpu.leaf7_features
 machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 ERMS INVPCID FPU_CSDS MPX RDSEED ADX SMAP CLFSOPT IPT PKU SGXLC MDCLEAR IBRS STIBP L1DF ACAPMSR SSBD
 ```
 
-#### Check CPU Full Features:
+#### CPU Full Features:
 
 - Input:
 
@@ -1200,7 +1153,7 @@ machdep.cpu.leaf7_features: RDWRFSGS TSC_THREAD_OFFSET SGX BMI1 AVX2 SMEP BMI2 E
 machdep.cpu.features: FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C
 ```
 
-#### Check CPU Details:
+#### CPU Details:
 
 - Input:
 
@@ -1236,7 +1189,7 @@ ioreg -rxn "PR00@0"
   +-o SMCProcessor  <class SMCProcessor, id 0x100000155, !registered, !matched,$
 ```
 
-#### Check SIP (System Integrity Protection):
+#### SIP (System Integrity Protection):
 
 - Input:
 
@@ -1250,7 +1203,7 @@ csrutil status
 System Integrity Protection status: enabled.
 ```
 
-#### Find Wake Issue:
+#### Wake Issue:
 
 - Input:
 
@@ -1275,14 +1228,10 @@ pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
 * Open [Hackintool](https://github.com/headkaze/Hackintool)
 * Hit FixSleepImage icon as picture below
 
-<div align=center>
+![Red](https://user-images.githubusercontent.com/72515939/201133767-26576c18-59ce-4e85-a5c7-6a0c143eb70f.png)
+![Green](https://user-images.githubusercontent.com/72515939/201133782-bc664c26-bc79-4640-b9fc-c993359aeeb0.png)
 
-![2022-11-10_23-13-48](https://user-images.githubusercontent.com/72515939/201133767-26576c18-59ce-4e85-a5c7-6a0c143eb70f.png)
-![2022-11-10_23-14-19](https://user-images.githubusercontent.com/72515939/201133782-bc664c26-bc79-4640-b9fc-c993359aeeb0.png)
-
-</div>
-
-#### Lists any ACPI Error:
+#### ACPI Error Lists:
 
 - Input:
 
@@ -1323,6 +1272,9 @@ sysctl machdep.xcpm.mode
 machdep.xcpm.mode: 1
 ```
 
+------------
+
+
 ### References
 
 #### [AppleLife](https://applelife.ru/) and [Mac's Darwin Dumps](https://applelife.ru/threads/dampy-originalnyx-makov.2943712/)
@@ -1331,7 +1283,7 @@ machdep.xcpm.mode: 1
 
 Please do not use [Olarila](https://www.olarila.com) since the EFI provided by him is bloated with junk and not specifically built for your hardware and device. DSDT is not a full solution, per my first [reminder](https://github.com/theofficialcopypaste/ASRockB460MSL-CLVR#asrock-b460m-steel-legend). You can do it on your own. Take your time, read well, and learn the curve. Simple methods will break your machine too early. So, I'm warning you. It doesn't matter what bootloader you choose. The best hack version is determined by your level of comprehension.
 
----
+------------
 
 ### Acknowledgement
 
