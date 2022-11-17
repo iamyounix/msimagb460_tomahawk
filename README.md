@@ -948,7 +948,10 @@ With other operating systems, the number of USB ports on macOS varies. It is dis
 
 <div align=justify>
 
-NVRAM (non-volatile random-access memory) refers to computer memory that can hold data even when power to the memory chips has been turned off. NVRAM is a subset of the larger category of non-volatile memory (NVM), which includes storage-class memory based on NAND flash. Flash memory chips are slower to read to and write from than RAM chips, making them less well suited for active computational memory. Computer manufacturers mainly use NVRAM to hold information about the state of the computer for faster boot times. This allows information about the components and devices in the computer to be stored from one use to the next while the system power is turned off. Standard computer memory uses dynamic random access memory (DRAM) which requires constant power to retain data.
+NVRAM (non-volatile random-access memory) refers to computer memory that can hold data even when power to the memory chips has been turned off. NVRAM is a subset of the larger category of non-volatile memory (NVM), which includes storage-class memory based on NAND flash. Flash memory chips are slower to read to and write from than RAM chips, making them less well suited for active computational memory. Computer manufacturers mainly use NVRAM to hold information about the state of the computer for faster boot times. This allows information about the components and devices in the computer to be stored from one use to the next while the system power is turned off. Standard computer memory uses dynamic random access memory (DRAM) which requires constant power to retain data. Additional bootargs can be found here:
+
+* [Lilu](https://github.com/theofficialcopypaste/Lilu/edit/master/README.md)
+* [Whatevergreen](https://github.com/acidanthera/WhateverGreen)
 
 </div>
 
@@ -957,6 +960,8 @@ NVRAM (non-volatile random-access memory) refers to computer memory that can hol
 ![NVRAM](https://user-images.githubusercontent.com/72515939/201564673-4626b8e5-5268-4eeb-97a8-ecbf4540b52c.png)
 
 </div>
+
+> **Note**: This build patches bootarg via ACPI.
 
 ### NVMe
 
