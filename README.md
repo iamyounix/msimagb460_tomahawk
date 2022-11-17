@@ -6,6 +6,7 @@
 
 * [OpenCore EFI Structure](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#opencore-efi-structure)
 * [Graphics](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#graphics)
+* [Other Devices](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#pci-devices-deviceproperties]
 * [Audio](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#audio)
 * [Quirks](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#quirks)
 * [USB](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#usb)
@@ -645,7 +646,7 @@ Scope (PEG0)
 
 > **Note**: Use at your own risk! In general, these patches have to be regarded as "experimental". They may work as intended but that's not guaranteed.
 
-### PCI Devices (DeviceProperties)
+### Other Drvices
 
 <div align=center> 
 
