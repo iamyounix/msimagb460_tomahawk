@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-11-14T09:24:44.577Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15" etag="uOce5Tw9g1R6J2-CSLaM" version="20.5.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-17T06:02:09.050Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15" etag="1tGQVohrnpiEYY9epx2o" version="20.5.3" type="github">
   <diagram name="Page-1" id="9f46799a-70d6-7492-0946-bef42562c5a5">
-    <mxGraphModel dx="2335" dy="1438" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1302" dy="1262" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -82,7 +82,7 @@
           <mxGeometry y="74" width="120" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ako7mKqaWkMYn8Wf8Trb-46" value="Kexts" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=13;" parent="1" vertex="1">
-          <mxGeometry x="530" y="211" width="180" height="282" as="geometry" />
+          <mxGeometry x="530" y="211" width="180" height="230" as="geometry" />
         </mxCell>
         <mxCell id="ako7mKqaWkMYn8Wf8Trb-47" value="+ Lilu.kext" style="text;html=1;strokeColor=#A50040;fillColor=#d80073;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=13;fontColor=#ffffff;" parent="ako7mKqaWkMYn8Wf8Trb-46" vertex="1">
           <mxGeometry y="26" width="180" height="22" as="geometry" />
@@ -102,17 +102,11 @@
         <mxCell id="ako7mKqaWkMYn8Wf8Trb-53" value="+ SMCSuperIO.kext" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=13;fontColor=#ffffff;" parent="ako7mKqaWkMYn8Wf8Trb-46" vertex="1">
           <mxGeometry y="152" width="180" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ako7mKqaWkMYn8Wf8Trb-54" value="+ RadeonSensor.kext" style="text;html=1;strokeColor=#2D7600;fillColor=#60a917;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=13;fontColor=#ffffff;" parent="ako7mKqaWkMYn8Wf8Trb-46" vertex="1">
+        <mxCell id="ako7mKqaWkMYn8Wf8Trb-58" value="+ USBMap.kext" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=13;" parent="ako7mKqaWkMYn8Wf8Trb-46" vertex="1">
           <mxGeometry y="178" width="180" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="iNtt1AEWV2vydWxyn8MH-66" value="+ SMCRadeonGPU.kext" style="text;html=1;strokeColor=#2D7600;fillColor=#60a917;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=13;fontColor=#ffffff;" parent="ako7mKqaWkMYn8Wf8Trb-46" vertex="1">
-          <mxGeometry y="204" width="180" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="ako7mKqaWkMYn8Wf8Trb-58" value="+ USBMap.kext" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=13;" parent="ako7mKqaWkMYn8Wf8Trb-46" vertex="1">
-          <mxGeometry y="230" width="180" height="26" as="geometry" />
-        </mxCell>
         <mxCell id="ako7mKqaWkMYn8Wf8Trb-59" value="+ Whatevergreen.kext" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=13;fontColor=#ffffff;" parent="ako7mKqaWkMYn8Wf8Trb-46" vertex="1">
-          <mxGeometry y="256" width="180" height="26" as="geometry" />
+          <mxGeometry y="204" width="180" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ako7mKqaWkMYn8Wf8Trb-66" value="Resources" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="750" y="210" width="120" height="126" as="geometry" />
