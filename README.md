@@ -1,6 +1,21 @@
 # ASRock B460M Steel Legend
-
 **Hackintosh: 10th Gen Comet Lake + ASRock B460M Steel Legend + OpenCore**
+---
+
+## Jump!
+
+* [OpenCore EFI Structure](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#opencore-efi-structure)
+* [Graphics](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#graphics)
+* [Audio](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#audio)
+* [Quirks](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#quirks)
+* [USB](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#usb)
+* [NVRAM](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#nvram)
+* [NVMe](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#nvme)
+* [Validate Settings](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#validate-settings)
+* [Compability](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#compatible-with)
+* [References](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#references)
+* [Soft Reminder](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#soft-reminder)
+* [Acknowledgement](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#acknowledgement)
 
 <div align=justify>
 
