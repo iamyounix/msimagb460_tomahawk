@@ -1,5 +1,5 @@
 # ASRock B460M Steel Legend
-**Hackintosh: 10th Gen Comet Lake + ASRock B460M Steel Legend + OpenCore**
+
 ---
 
 ## Jump!
@@ -16,6 +16,10 @@
 * [References](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#references)
 * [Soft Reminder](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#soft-reminder)
 * [Acknowledgement](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#acknowledgement)
+
+---
+
+## Hackintosh: 10th Gen Comet Lake + ASRock B460M Steel Legend + OpenCore
 
 <div align=justify>
 
