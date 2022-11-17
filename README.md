@@ -19,18 +19,15 @@
 
 OpenCore is what we refer to as a **boot loader** – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as **SMBIOS**, **ACPI** tables and **kexts**. How this tool differs from others like **Clover** is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as **System Integrity Protection** and  Filevault
 
-* Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding
-* Checkout Dortania Monthly [Post](https://dortania.github.io) to get more info
+* refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding
+* checkout Dortania Monthly [Post](https://dortania.github.io) to get more info
 
-My word:"It's merely cosmetic", according to some. For me, this content is not just for show.
+**My word:** "It's merely cosmetic", according to some. For me, this content is not just for show.
 
 **Configuration?**,
 
-- You can play with **config.plist** and experiment with it.
-
-But heed the warning,
-
-- If you're still interested in utilising it, please be carefulto adjust the .plist configuration and SSDTs according to your machine.
+- you can play with **config.plist** and experiment with it. **But, heed the warnin**g...
+- if you're still interested in utilising it, please be carefulto adjust the .plist configuration and SSDTs according to your machine.
 
 **ACPI?**,
 
