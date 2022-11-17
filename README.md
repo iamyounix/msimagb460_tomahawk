@@ -24,12 +24,12 @@ OpenCore is what we refer to as a **boot loader** – it is a complex piece of s
 
 **My word:** "It's merely cosmetic", according to some. For me, this content is not just for show.
 
-**Configuration?**,
+**Configuration?**
 
 - you can play with **config.plist** and experiment with it. **But, heed the warnin**g...
 - if you're still interested in utilising it, please be carefulto adjust the .plist configuration and SSDTs according to your machine.
 
-**ACPI?**,
+**ACPI?**
 
 Warning, editing ACPI without knowing anything may cause
 
