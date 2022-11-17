@@ -646,7 +646,7 @@ Scope (PEG0)
 
 > **Note**: Use at your own risk! In general, these patches have to be regarded as "experimental". They may work as intended but that's not guaranteed.
 
-### Other Drvices
+### Other Devices
 
 <div align=center> 
 
