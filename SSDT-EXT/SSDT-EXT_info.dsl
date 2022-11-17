@@ -300,7 +300,7 @@ DefinitionBlock("", "SSDT", 2, "CpyPst", "EXT", 0x00000001) {
          Scope(PEG0) {
             Scope(PEGP) {
                /* Bridge 1 - Cosmetics Patch (Optional)
-                * This is a PCI bridge device present after PEGP.
+                * This is a PCI bridge device present after PEG0.
                 * Normally seen as "pci-bridge" in I/O Registry.
                 */
                Device(BRG0) {
