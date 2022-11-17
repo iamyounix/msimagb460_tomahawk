@@ -1059,6 +1059,19 @@ Scope (RP09)
 
 </div>
 
+### Test
+
+The linked EFI has already been tested through its requirements on releases of macOS Catalina to Ventura. There are currently no significant issues and all devices function as intended.
+
+| **MacOS** | **Version** | **Pass** | **APFS MinDate** | **APFS MinVersion** |
+|-----------|-------------|----------|------------------|---------------------|
+| Catalina  |      10     |     ✓    |     20200306     |   1412101001000000  |
+| BigSur    |      11     |     ✓    |         0        |          0          |
+| Monterey  |      12     |     ✓    |         0        |          0          |
+| Ventura   |      13     |     ✓    |         0        |          0          |
+
+> **Note**: Warning: Not all Apple Secure Boot models are supported on all hardware configurations. Please refer [APFS Min Version & Min Date](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#apfs) / [SecureBootModel](https://dortania.github.io/OpenCore-Post-Install/universal/security/applesecureboot.html#securebootmodel) for more info.
+
 ### Validate Settings
 
 #### Check Build Number:
@@ -1309,17 +1322,6 @@ sysctl machdep.xcpm.mode
 ```zsh
 machdep.xcpm.mode: 1
 ```
-
-### Compatible with
-
-```zsh
-Catalina  =  Passed (UEFI > APFS: MinDate=20200306 and MinVersion=1412101001000000, SecureBootModel: j185)
-BigSur    =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j185)
-Monterey  =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j185)
-Ventura   =  Passed (UEFI > APFS: MinDate and MinVersion 0, SecureBootModel: j185)
-```
-
-> **Note**: Warning: Not all Apple Secure Boot models are supported on all hardware configurations. Please refer [APFS Min Version & Min Date](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#apfs) / [SecureBootModel](https://dortania.github.io/OpenCore-Post-Install/universal/security/applesecureboot.html#securebootmodel) for more info.
 
 ### References
 
