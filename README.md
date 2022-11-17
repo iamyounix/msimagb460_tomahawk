@@ -95,20 +95,19 @@ Mobile 						: No
 
 Patching can be done in two ways, via **config.plist** or via **SSDT**. 
 
-**via config.plist**
-
-- PciRoot(0x0)/Pci(0x2,0x0)
-  - AAPL,slot-name / string / `Slot- 0`
-  - built-in / data / `00`
-  - device-id / data / `9B3E0000`
-  - enable-metal / data / `01000000`
-  - igfxfw / data / `02000000`
-  - igfxonln / data / `01000000`
-  - iommu-selection / data / `00000000`
-  - name / string / `IGPU`
-  - AAPL,ig-platform-id / data / `0300923E`
+- **via config.plist**
+	- PciRoot(0x0)/Pci(0x2,0x0)
+	  - AAPL,slot-name / string / `Slot- 0`
+	  - built-in / data / `00`
+	  - device-id / data / `9B3E0000`
+	  - enable-metal / data / `01000000`
+	  - igfxfw / data / `02000000`
+	  - igfxonln / data / `01000000`
+	  - iommu-selection / data / `00000000`
+	  - name / string / `IGPU`
+	  - AAPL,ig-platform-id / data / `0300923E`
   
-**via SSDT**
+- **via SSDT**
 
 ```asl
 Scope (GFX0)
@@ -211,46 +210,45 @@ VDA Decoder                 : Fully Supported
 
 Patching can be done in two ways, via **config.plist** or via **SSDT**. 
 
-**via config.plist**
+- **via config.plist**
+	- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)
+	  - name / string / `PEGP`
+	- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
+	  - name / string / `BRG0`
+	- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
+	  - @0,AAPL,boot-display / data / `01000000`
+	  - @0,ATY,EFIDisplay / string / `DP1`
+	  - @0,compatible / string / `ATY,Python`
+	  - @0,display-type / string / `LCD`
+	  - @0,display_type / string / `display`
+	  - @0,name / string / `ATY,Python`
+	  - @1,compatible / string / `ATY,Python`
+	  - @1,display-type / string / `NONE`
+	  - @1,display_type / string / `display`
+	  - @1,name / string / `ATY,Python`
+	  - @2,compatible / string / `ATY,Python`
+	  - @2,display-type / string / `NONE`
+	  - @2,display_type / string / `display`
+	  - @2,name / string / `ATY,Python`
+	  - @3,compatible / string / `ATY,Python`
+	  - @3,display-type / string / `NONE`
+	  - @3,display_type / string / `display`
+	  - @3,name / string / `ATY,Python`
+	  - AAPL,slot-name / string / `Internal@0,1,0/0,0/0,0/0,0`
+	  - ATY,EFIBootMode / data / `00000100020000000000010001000000000000000000000000000000000000000000000000000000000100010000000000010000000300000050CFCD1C00000000000A0000400B0000A00000000000000000000000520000000000000000000000300000002000000001030000000A000000000000000100020000000000000000000000000000000000000000000A0000000000000100010000000000010000000300000050CFCD1C00000000000A0000400B0000A00000000000000000000000520000000000000000000000300000002000000001030000000A000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000100000000000100000003000000108FEC370000000000140000400B0000A0000000000000000000000052000000000000000000000030000000200000000103000000050000000000`
+	  - ATY,EFICompileDate / data / `4F63742031322032303139`
+	  - ATY,EFIDriverType / data / `02`
+	  - ATY,EFIEnabledMode / data / `04`
+	  - ATY,EFIVersion / data / `33312E302E31323032362E33`
+	  - ATY,EFIVersionB / string / `3131332D4D534954563338324D482E313631`
+	  - ATY,Rom# / string / `3131332D45585433373633352D303031`
+	  - ATY,copyright / string / `436F7079726967687420414D4420496E632E2020416C6C2052696768742052657365727665642E2020323030352D32303139`
+	  - Force_Load_FalconSMUFW / data / `01`
+	  - PP_WorkLoadPolicyMask / data / `32`
+	  - StartupDisplay / data / `474E02000000000000140000400B0000108FEC370000000000140000400B0000A00000000000000000000000520000000000000000000000300000002000000003000000050000000000000000000000000000020000000000000000100632AE0100000000000000000A0000400B000050CFCD1C00000000000A0000400B0000A000000000000000000000005200000000000000000000003000000020000000030000000A0000000000000000000000000A000000000000100632AE0200000000000000000A0000400B000050CFCD1C00000000000A0000400B0000A000000000000000000000005200000000000000000000003000000020000000030000000A0000000000000000000000`
+	  - hda-gfx / string / `onboard-1`
 
-- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)
-  - name / string / `PEGP`
-- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
-  - name / string / `BRG0`
-- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
-  - @0,AAPL,boot-display / data / `01000000`
-  - @0,ATY,EFIDisplay / string / `DP1`
-  - @0,compatible / string / `ATY,Python`
-  - @0,display-type / string / `LCD`
-  - @0,display_type / string / `display`
-  - @0,name / string / `ATY,Python`
-  - @1,compatible / string / `ATY,Python`
-  - @1,display-type / string / `NONE`
-  - @1,display_type / string / `display`
-  - @1,name / string / `ATY,Python`
-  - @2,compatible / string / `ATY,Python`
-  - @2,display-type / string / `NONE`
-  - @2,display_type / string / `display`
-  - @2,name / string / `ATY,Python`
-  - @3,compatible / string / `ATY,Python`
-  - @3,display-type / string / `NONE`
-  - @3,display_type / string / `display`
-  - @3,name / string / `ATY,Python`
-  - AAPL,slot-name / string / `Internal@0,1,0/0,0/0,0/0,0`
-  - ATY,EFIBootMode / data / `00000100020000000000010001000000000000000000000000000000000000000000000000000000000100010000000000010000000300000050CFCD1C00000000000A0000400B0000A00000000000000000000000520000000000000000000000300000002000000001030000000A000000000000000100020000000000000000000000000000000000000000000A0000000000000100010000000000010000000300000050CFCD1C00000000000A0000400B0000A00000000000000000000000520000000000000000000000300000002000000001030000000A000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000100000000000100000003000000108FEC370000000000140000400B0000A0000000000000000000000052000000000000000000000030000000200000000103000000050000000000`
-  - ATY,EFICompileDate / data / `4F63742031322032303139`
-  - ATY,EFIDriverType / data / `02`
-  - ATY,EFIEnabledMode / data / `04`
-  - ATY,EFIVersion / data / `33312E302E31323032362E33`
-  - ATY,EFIVersionB / string / `3131332D4D534954563338324D482E313631`
-  - ATY,Rom# / string / `3131332D45585433373633352D303031`
-  - ATY,copyright / string / `436F7079726967687420414D4420496E632E2020416C6C2052696768742052657365727665642E2020323030352D32303139`
-  - Force_Load_FalconSMUFW / data / `01`
-  - PP_WorkLoadPolicyMask / data / `32`
-  - StartupDisplay / data / `474E02000000000000140000400B0000108FEC370000000000140000400B0000A00000000000000000000000520000000000000000000000300000002000000003000000050000000000000000000000000000020000000000000000100632AE0100000000000000000A0000400B000050CFCD1C00000000000A0000400B0000A000000000000000000000005200000000000000000000003000000020000000030000000A0000000000000000000000000A000000000000100632AE0200000000000000000A0000400B000050CFCD1C00000000000A0000400B0000A000000000000000000000005200000000000000000000003000000020000000030000000A0000000000000000000000`
-  - hda-gfx / string / `onboard-1`
-
-**via SSDT**
+- **via SSDT**
 
 ```asl
 Scope (PEG0)
@@ -635,64 +633,64 @@ Scope (PEG0)
 
 #### DeviceProperties
 
-**via config.plist**
+- **via config.plist**
 
-- PciRoot(0x0)/Pci(0x0,0x0)
-  - name / string / `DRAM`
-- PciRoot(0x0)/Pci(0x1,0x0)
-	- name / string / `PEG0`
-- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)
-	- name / string / `PEGP`
-- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)
-	- name / string / `PEGP`	
-- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
-	- name / string / `BRG0`	
-- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
-	- name / string / `ATY_GPU`
-- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
-	- name / string / `HDAU`	
-- PciRoot(0x0)/Pci(0x14,0x0)
-	- name / string / `XHC1`	
-- PciRoot(0x0)/Pci(0x14,0x2)
-	- name / string / `TSUB`	
-- PciRoot(0x0)/Pci(0x16,0x0)
-	- name / string / `IMEI`	
-- PciRoot(0x0)/Pci(0x17,0x0)
-	- name / string / `SATA`	
-- PciRoot(0x0)/Pci(0x17,0x0)
-	- name / string / `SATA`	
-- PciRoot(0x0)/Pci(0x1B,0x0)
-	- name / string / `RP20`	
-- PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)
-	- name / string / `ARPT`	
-- PciRoot(0x0)/Pci(0x1B,0x4)
-	- name / string / `RP21`	
-- PciRoot(0x0)/Pci(0x1B,0x4)/Pci(0x0,0x0)
-	- name / string / `ANS1`
-- PciRoot(0x0)/Pci(0x1C,0x0)
-	- name / string / `RP04`	
-- PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)
-	- name / string / `RTLK`	
-- PciRoot(0x0)/Pci(0x1C,0x4)
-	- name / string / `RP05	
-- PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)
-	- name / string / `XHC2`	
-- PciRoot(0x0)/Pci(0x1D,0x0)
-	- name / string / `RP09`	
-- PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0)
-	- name / string / `ANS0`	
-- PciRoot(0x0)/Pci(0x1F,0x0)
-	- name / string / `LPCB`	
-- PciRoot(0x0)/Pci(0x1F,0x2)
-	- name / string / `PPMC`	
-- PciRoot(0x0)/Pci(0x1F,0x3)
-	- name / string / `HDEF`	
-- PciRoot(0x0)/Pci(0x1F,0x4)
-	- name / string / `SBUS`	
-- PciRoot(0x0)/Pci(0x2,0x0)
-	- name / string / `IGPU`	
+	- PciRoot(0x0)/Pci(0x0,0x0)
+	  - name / string / `DRAM`
+	- PciRoot(0x0)/Pci(0x1,0x0)
+		- name / string / `PEG0`
+	- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)
+		- name / string / `PEGP`
+	- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)
+		- name / string / `PEGP`	
+	- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
+		- name / string / `BRG0`	
+	- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
+		- name / string / `ATY_GPU`
+	- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
+		- name / string / `HDAU`	
+	- PciRoot(0x0)/Pci(0x14,0x0)
+		- name / string / `XHC1`	
+	- PciRoot(0x0)/Pci(0x14,0x2)
+		- name / string / `TSUB`	
+	- PciRoot(0x0)/Pci(0x16,0x0)
+		- name / string / `IMEI`	
+	- PciRoot(0x0)/Pci(0x17,0x0)
+		- name / string / `SATA`	
+	- PciRoot(0x0)/Pci(0x17,0x0)
+		- name / string / `SATA`	
+	- PciRoot(0x0)/Pci(0x1B,0x0)
+		- name / string / `RP20`	
+	- PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)
+		- name / string / `ARPT`	
+	- PciRoot(0x0)/Pci(0x1B,0x4)
+		- name / string / `RP21`	
+	- PciRoot(0x0)/Pci(0x1B,0x4)/Pci(0x0,0x0)
+		- name / string / `ANS1`
+	- PciRoot(0x0)/Pci(0x1C,0x0)
+		- name / string / `RP04`	
+	- PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)
+		- name / string / `RTLK`	
+	- PciRoot(0x0)/Pci(0x1C,0x4)
+		- name / string / `RP05	
+	- PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)
+		- name / string / `XHC2`	
+	- PciRoot(0x0)/Pci(0x1D,0x0)
+		- name / string / `RP09`	
+	- PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0)
+		- name / string / `ANS0`	
+	- PciRoot(0x0)/Pci(0x1F,0x0)
+		- name / string / `LPCB`	
+	- PciRoot(0x0)/Pci(0x1F,0x2)
+		- name / string / `PPMC`	
+	- PciRoot(0x0)/Pci(0x1F,0x3)
+		- name / string / `HDEF`	
+	- PciRoot(0x0)/Pci(0x1F,0x4)
+		- name / string / `SBUS`	
+	- PciRoot(0x0)/Pci(0x2,0x0)
+		- name / string / `IGPU`	
 
-**via SSDT**
+- **via SSDT**
 
 Refer [SSDT-EXT.dsl](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXT.dsl) for more info
 
@@ -730,12 +728,11 @@ Device		 					: ALCS1200A
 
 Patching can be done in two ways, via **config.plist** or via **SSDT**.
 
-**via config.plist**
-
-- layout-id = `01000000`
-- name = `HDEF`
-- No-hda-gfx = `0000000000000000`
-- No-idle-support = `00`
+- **via config.plist**
+	- layout-id = `01000000`
+	- name = `HDEF`
+	- No-hda-gfx = `0000000000000000`
+	- No-idle-support = `00`
 
 **via SSDT**
 
@@ -802,12 +799,11 @@ Device		 					: Navi 10 HDMI Audio (RX 5500 XT)
 
 Regularly, this device is attached via `GFX0`. Patching can be done in two ways, via **config.plist** or via **SSDT**. 
 
-**via config.plist**
-
-- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
-  - hda-gfx / string / `onboard-1`
-  - model / string / `Navi 10 HDMI Audio`
-  - name / string / `HDAU`
+- **via config.plist**
+	- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
+	  - hda-gfx / string / `onboard-1`
+	  - model / string / `Navi 10 HDMI Audio`
+	  - name / string / `HDAU`
 
 **via SSDT**
 
@@ -932,13 +928,12 @@ Device		 					: KINGSTON SA2000M8500G
 
 Patching can be done in two ways, via **config.plist** or via **SSDT**. 
 
-**via config.plist**
-
-- PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0)
-  - device_type / string / `Non-Volatile memory controller`
-  - model / string / `KINGSTON SA2000M8500G`
-  - device-id / data / `06A80000`
-  - vendor-id / data / `4D140000`
+- **via config.plist**
+	- PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0)
+	  - device_type / string / `Non-Volatile memory controller`
+	  - model / string / `KINGSTON SA2000M8500G`
+	  - device-id / data / `06A80000`
+	  - vendor-id / data / `4D140000`
 
 **via SSDT**
 
