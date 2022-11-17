@@ -6,7 +6,7 @@
 
 * [OpenCore EFI Structure](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#opencore-efi-structure)
 * [Graphics](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#graphics)
-* [Other Devices](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#pci-devices-deviceproperties]
+* [Other Devices](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#other-devices)
 * [Audio](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#audio)
 * [Quirks](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#quirks)
 * [USB](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#usb)
