@@ -76,7 +76,7 @@ Mobile 						: No
 
 ![IGPU](https://user-images.githubusercontent.com/72515939/201564546-2c6f57ad-72fc-478e-921e-342a009074eb.png)
 
-With a few exceptions, like headless Intel® KBL Unknown 0xC59B8086, certain strange name artefacts are present. There is no performance impact from this artefact. As of right now, device-id spoofing has been successful in altering its name to Intel® UHD Graphics 630. Without a doubt, only through the headless 0x3E9B8086.
+With a few exceptions, like headless Intel® KBL Unknown `0xC59B8086`, certain strange name artefacts are present. There is no performance impact from this artefact. As of right now, device-id spoofing has been successful in altering its name to Intel® UHD Graphics 630. Without a doubt, only through the headless `0x3E9B8086`.
 
 > **Note**: Real iMac 20,1 use **Intel® HD Graphics** as headless. While regular i5 10500 use **Intel® UHD Graphics**. Refer [Intel Ark](https://ark.intel.com/content/www/us/en/ark/products/199277/intel-core-i510500-processor-12m-cache-up-to-4-50-ghz.html) for more info.
 
