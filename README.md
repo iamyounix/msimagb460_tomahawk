@@ -873,13 +873,13 @@ Device (HDAU)
 
 ### USB
 
-Credit to [osy](https://github.com/osy)
-
 - 15 ports mapped using [USBToolbox](https://github.com/USBToolBox/tool "USBToolbox").
 
 ![USB](https://user-images.githubusercontent.com/72515939/201564661-e93efb8e-211c-4d85-9479-567ef8796c9b.png)
 
 - If you have an issue regarding sleep, and wake...you may try this method by creating `USB Wake Vietual Device`:
+
+Credit to [osy](https://github.com/osy)
 
 - Step 1: Download [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup/releases/tag/v1.0)
 - Step 2: Copy this script and paste to MaciAsl
