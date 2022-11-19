@@ -1351,3 +1351,7 @@ git clone https://github.com/5T33Z0/OC-Little-Translated.git
 ```zsh
 git clone https://github.com/osy/USBWakeFixup.git
 ```
+
+<!---------------------------
+CopyPaste on 15/11/2022.
+---------------------------->
