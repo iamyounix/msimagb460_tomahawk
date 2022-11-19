@@ -931,7 +931,7 @@ NVRAM (non-volatile random-access memory) refers to
 
 ![NVRAM](https://user-images.githubusercontent.com/72515939/201564673-4626b8e5-5268-4eeb-97a8-ecbf4540b52c.png)
 
-> **Note**: This build patches bootarg via ACPI.
+> **Note**: This build patches bootarg via ACPI (more transparent)
 
 ### NVMe
 
