@@ -873,9 +873,50 @@ Device (HDAU)
 
 ### USB
 
+Credit to [osy](https://github.com/osy)
+
 - 15 ports mapped using [USBToolbox](https://github.com/USBToolBox/tool "USBToolbox").
 
 ![USB](https://user-images.githubusercontent.com/72515939/201564661-e93efb8e-211c-4d85-9479-567ef8796c9b.png)
+
+- If you have an issue regarding sleep, and wake...you may try this method.:
+
+- Step 1: Download [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup/releases/tag/v1.0)
+- Step 2: Copy this script and paste to MaciAsl
+
+```asl
+/**
+ * USB wakeup virtual device
+ */
+DefinitionBlock ("", "SSDT", 2, "OSY86 ", "USBW", 0x00001000)
+{
+    External (\_SB.PCI0.XHC._PRW, MethodObj)
+
+    // We only enable the device for OSX
+    If (CondRefOf (\_OSI, Local0) && _OSI ("Darwin"))
+    {
+        Device (\_SB.USBW)
+        {
+            Name (_HID, "PNP0D10")  // _HID: Hardware ID
+            Name (_UID, "WAKE")  // _UID: Unique ID
+
+            Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
+            {
+                Return (\_SB.PCI0.XHC._PRW ()) // Replace with path to your USB device
+            }
+        }
+    }
+}
+```
+
+- Step 3: Save this script to `.aml` with any name you want. ie: `SSDT-USBW.aml`. Before you save, make sure "Return `(\_SB.PCI0.XHC._PRW ())`" is according to your USB device (Check via DSDT).
+- Step 4: Load **SSDT.USBW.aml** to `EFI` / `OC` / `ACPI` and load **USBWakeFixup.kext** to `EFI` / `OC` / `Kexts`
+- Step 5: Edit your `config.plist` by adding both file and save your `.plist`
+- Step 6: Reboot.
+
+> **Note**: You may check edit script above and combine with your single SSDT. Below is an example:
+
+![USBW](https://user-images.githubusercontent.com/72515939/202840905-c535fa20-e57b-4f3b-aae3-65e67cfbd540.png)
 
 ### NVRAM
 
@@ -1303,4 +1344,10 @@ git clone https://github.com/headkaze/Hackintool.git
 
 ```zsh
 git clone https://github.com/5T33Z0/OC-Little-Translated.git
+```
+
+- [**osy**](https://github.com/osy) for
+
+```zsh
+git clone https://github.com/osy/USBWakeFixup.git
 ```
