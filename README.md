@@ -33,7 +33,7 @@ OpenCore is what we refer to as a **boot loader** – it is a complex piece of s
 
 Warning, editing ACPI without knowing anything may cause
 
-- an error (stucks)
+- an error / unrensponsive (hang)
 - broken device
 - BIOS issues
 
