@@ -914,7 +914,7 @@ DefinitionBlock ("", "SSDT", 2, "OSY86 ", "USBW", 0x00001000)
 - Step 5: Edit your `config.plist` by adding both file and save your `.plist`
 - Step 6: Reboot.
 
-> **Note**: You may check edit script above and combine with your single SSDT. Below is an example:
+> **Note**: You may edit script above and combine with your single SSDT. Below is an example:
 
 ![USBW](https://user-images.githubusercontent.com/72515939/202840905-c535fa20-e57b-4f3b-aae3-65e67cfbd540.png)
 
