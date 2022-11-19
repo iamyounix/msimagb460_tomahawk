@@ -877,7 +877,7 @@ Device (HDAU)
 
 ![USB](https://user-images.githubusercontent.com/72515939/201564661-e93efb8e-211c-4d85-9479-567ef8796c9b.png)
 
-If you have an issue regarding sleep, and wake...you may try this method by creating `USB Wake Vietual Device`:
+If you have an issue regarding sleep, and wake...you may try this method by creating `USB Wake Virtual Device`:
 
 Credit to [osy](https://github.com/osy)
 
