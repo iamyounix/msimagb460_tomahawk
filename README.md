@@ -879,7 +879,7 @@ Credit to [osy](https://github.com/osy)
 
 ![USB](https://user-images.githubusercontent.com/72515939/201564661-e93efb8e-211c-4d85-9479-567ef8796c9b.png)
 
-- If you have an issue regarding sleep, and wake...you may try this method.:
+- If you have an issue regarding sleep, and wake...you may try this method:
 
 - Step 1: Download [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup/releases/tag/v1.0)
 - Step 2: Copy this script and paste to MaciAsl
@@ -910,7 +910,7 @@ DefinitionBlock ("", "SSDT", 2, "OSY86 ", "USBW", 0x00001000)
 ```
 
 - Step 3: Save this script to `.aml` with any name you want. ie: `SSDT-USBW.aml`. Before you save, make sure "Return `(\_SB.PCI0.XHC._PRW ())`" is according to your USB device (Check via DSDT).
-- Step 4: Load **SSDT.USBW.aml** to `EFI` / `OC` / `ACPI` and load **USBWakeFixup.kext** to `EFI` / `OC` / `Kexts`
+- Step 4: Load `SSDT.USBW.aml` to `EFI` / `OC` / `ACPI` and load `USBWakeFixup.kext` to `EFI` / `OC` / `Kexts`
 - Step 5: Edit your `config.plist` by adding both file and save your `.plist`
 - Step 6: Reboot.
 
