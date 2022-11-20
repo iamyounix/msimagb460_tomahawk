@@ -5,7 +5,7 @@
 * [Graphics](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#graphics)
 * [Other Devices](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#other-devices)
 * [Audio](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#audio)
-* [Quirks](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#quirks)
+* [Quirks and PlatformInfo](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#quirks-and-platforminfo)
 * [USB](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#usb)
 * [NVRAM](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#nvram)
 * [NVMe](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#nvme)
