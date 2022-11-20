@@ -830,7 +830,7 @@ Device (HDAU)
 
 ![AppleGFXHDA](https://user-images.githubusercontent.com/72515939/201564637-635e432f-f3d4-4954-8da3-191568d284a7.png)  
 
-### Quirks
+### Quirks and PlatformInfo
 
 - variety of abilities that can be used to influence and alter kernel behaviour or certain types of data. 
 - to take advantage of a BIOS that occasionally differs from the kernel or operating system.
@@ -839,7 +839,7 @@ Device (HDAU)
 
 - All False
 
-#### Booter / Quirks and PlatformInfo
+#### Booter / Quirks
 
 - AvoidRuntimeDefrag = `True`
 - DevirtualiseMmio = `True`
