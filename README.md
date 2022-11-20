@@ -916,7 +916,7 @@ DefinitionBlock ("", "SSDT", 2, "OSY86 ", "USBW", 0x00001000)
 
 > **Note**: You may edit script above and combine with your single SSDT. Below is an example:
 
-![USBW](https://user-images.githubusercontent.com/72515939/202840905-c535fa20-e57b-4f3b-aae3-65e67cfbd540.png)
+![USBW](https://user-images.githubusercontent.com/72515939/202895945-4e9a502d-bbaa-406a-b65c-844b006a85fa.png)
 
 ### NVRAM
 
