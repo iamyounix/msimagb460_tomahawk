@@ -1,0 +1,210 @@
+2022-11-20 21:57:58.365580+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.365581+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.365583+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) RSDP 0x000000004F225014 000024 (v02 ALASKA)
+2022-11-20 21:57:58.365584+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) RSDP 0x000000004F225014 000024 (v02 ALASKA)
+2022-11-20 21:57:58.365584+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.365585+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.365599+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.365599+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.365601+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) XSDT 0x000000004F207000 0000DC (v01 ALASKA A M I    01072009 AMI  01000013)
+2022-11-20 21:57:58.365602+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) XSDT 0x000000004F207000 0000DC (v01 ALASKA A M I    01072009 AMI  01000013)
+2022-11-20 21:57:58.365603+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.365603+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.365655+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.365655+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.365657+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) FACP 0x000000004EDDA000 000114 (v06 ALASKA A M I    01072009 AMI  00010013)
+2022-11-20 21:57:58.365658+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) FACP 0x000000004EDDA000 000114 (v06 ALASKA A M I    01072009 AMI  00010013)
+2022-11-20 21:57:58.365659+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.365659+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.386369+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.386370+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.386372+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) DSDT 0x000000004EDA2000 037A24 (v02 ALASKA A M I    01072009 INTL 20160527)
+2022-11-20 21:57:58.386373+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) DSDT 0x000000004EDA2000 037A24 (v02 ALASKA A M I    01072009 INTL 20160527)
+2022-11-20 21:57:58.386374+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.386374+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.386394+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.386394+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.386396+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) FACS 0x000000004F2B9000 000040
+2022-11-20 21:57:58.386396+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) FACS 0x000000004F2B9000 000040
+2022-11-20 21:57:58.386397+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.386398+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.386414+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.386414+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.386416+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) MCFG 0x000000004EDDE000 00003C (v01 ALASKA A M I    01072009 MSFT 00000097)
+2022-11-20 21:57:58.386416+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) MCFG 0x000000004EDDE000 00003C (v01 ALASKA A M I    01072009 MSFT 00000097)
+2022-11-20 21:57:58.386417+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.386418+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.387062+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.387063+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.387065+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) SSDT 0x000000004EDDB000 0020AD (v02 CpuRef CpuSsdt  00003000 INTL 20160527)
+2022-11-20 21:57:58.387065+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) SSDT 0x000000004EDDB000 0020AD (v02 CpuRef CpuSsdt  00003000 INTL 20160527)
+2022-11-20 21:57:58.387066+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.387067+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.387090+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.387091+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.387093+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) FIDT 0x000000004EDA1000 00009C (v01 ALASKA A M I    01072009 AMI  00010013)
+2022-11-20 21:57:58.387093+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) FIDT 0x000000004EDA1000 00009C (v01 ALASKA A M I    01072009 AMI  00010013)
+2022-11-20 21:57:58.387094+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.387095+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.387162+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.387162+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.387164+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) AAFT 0x000000004EDE0000 000300 (v01 ALASKA OEMAAFT  01072009 MSFT 00000097)
+2022-11-20 21:57:58.387164+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) AAFT 0x000000004EDE0000 000300 (v01 ALASKA OEMAAFT  01072009 MSFT 00000097)
+2022-11-20 21:57:58.387165+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.387166+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.388138+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.388139+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.388141+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) SSDT 0x000000004ED9D000 0031DA (v02 SaSsdt SaSsdt   00003000 INTL 20160527)
+2022-11-20 21:57:58.388141+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) SSDT 0x000000004ED9D000 0031DA (v02 SaSsdt SaSsdt   00003000 INTL 20160527)
+2022-11-20 21:57:58.388142+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.388143+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.389078+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.389078+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.389080+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) SSDT 0x000000004ED9A000 002703 (v02 Intel  PegSsdt  00001000 INTL 20160527)
+2022-11-20 21:57:58.389081+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) SSDT 0x000000004ED9A000 002703 (v02 Intel  PegSsdt  00001000 INTL 20160527)
+2022-11-20 21:57:58.389082+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.389083+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.389102+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.389103+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.389105+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) HPET 0x000000004EDDF000 000038 (v01 ALASKA A M I    01072009 AMI  01000013)
+2022-11-20 21:57:58.389105+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) HPET 0x000000004EDDF000 000038 (v01 ALASKA A M I    01072009 AMI  01000013)
+2022-11-20 21:57:58.389106+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.389107+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.390035+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.390036+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.390037+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) SSDT 0x000000004ED97000 002FB1 (v02 INTEL  xh_cmvd4 00000000 INTL 20160527)
+2022-11-20 21:57:58.390038+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) SSDT 0x000000004ED97000 002FB1 (v02 INTEL  xh_cmvd4 00000000 INTL 20160527)
+2022-11-20 21:57:58.390039+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.390039+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.390053+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.390054+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.390055+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) NHLT 0x000000004ED96000 00002D (v00 ALASKA A M I    01072009 AMI  01000013)
+2022-11-20 21:57:58.390056+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) NHLT 0x000000004ED96000 00002D (v00 ALASKA A M I    01072009 AMI  01000013)
+2022-11-20 21:57:58.390057+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.390057+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.390082+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.390082+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.390084+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) LPIT 0x000000004ED95000 000094 (v01 ALASKA A M I    01072009 AMI  01000013)
+2022-11-20 21:57:58.390086+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) LPIT 0x000000004ED95000 000094 (v01 ALASKA A M I    01072009 AMI  01000013)
+2022-11-20 21:57:58.390087+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.390087+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.390828+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.390829+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.390831+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) SSDT 0x000000004ED91000 0025B2 (v02 ALASKA TbtTypeC 00000000 INTL 20160527)
+2022-11-20 21:57:58.390831+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) SSDT 0x000000004ED91000 0025B2 (v02 ALASKA TbtTypeC 00000000 INTL 20160527)
+2022-11-20 21:57:58.390832+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.390832+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.390847+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.390848+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.390849+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) DBGP 0x000000004ED90000 000034 (v01 ALASKA A M I    01072009 AMI  01000013)
+2022-11-20 21:57:58.390850+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) DBGP 0x000000004ED90000 000034 (v01 ALASKA A M I    01072009 AMI  01000013)
+2022-11-20 21:57:58.390851+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.390851+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.390868+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.390869+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.390871+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) DBG2 0x000000004ED8F000 000054 (v00 ALASKA A M I    01072009 AMI  01000013)
+2022-11-20 21:57:58.390871+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) DBG2 0x000000004ED8F000 000054 (v00 ALASKA A M I    01072009 AMI  01000013)
+2022-11-20 21:57:58.390872+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.390873+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.391415+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.391415+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.391417+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) SSDT 0x000000004ED8D000 001B67 (v02 ALASKA UsbCTabl 00001000 INTL 20160527)
+2022-11-20 21:57:58.391418+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) SSDT 0x000000004ED8D000 001B67 (v02 ALASKA UsbCTabl 00001000 INTL 20160527)
+2022-11-20 21:57:58.391418+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.391419+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.391443+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.391443+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.391445+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) DMAR 0x000000004ED8C000 0000A8 (v01 INTEL  EDK2     00000002      01000013)
+2022-11-20 21:57:58.391445+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) DMAR 0x000000004ED8C000 0000A8 (v01 INTEL  EDK2     00000002      01000013)
+2022-11-20 21:57:58.391446+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.391447+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.395911+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.395912+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.395914+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) VFCT 0x000000004ED7D000 00E684 (v01 ALASKA A M I    00000001 AMD  31504F47)
+2022-11-20 21:57:58.395914+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) VFCT 0x000000004ED7D000 00E684 (v01 ALASKA A M I    00000001 AMD  31504F47)
+2022-11-20 21:57:58.395915+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.395916+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.395931+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.395931+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.395933+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) BGRT 0x000000004ED7C000 000038 (v01 ALASKA A M I    01072009 AMI  00010013)
+2022-11-20 21:57:58.395934+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) BGRT 0x000000004ED7C000 000038 (v01 ALASKA A M I    01072009 AMI  00010013)
+2022-11-20 21:57:58.395934+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.395935+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.395961+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.395961+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.395962+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) TPM2 0x000000004ED7B000 00004C (v04 ALASKA A M I    00000001 AMI  00000000)
+2022-11-20 21:57:58.395963+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) TPM2 0x000000004ED7B000 00004C (v04 ALASKA A M I    00000001 AMI  00000000)
+2022-11-20 21:57:58.395964+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.395964+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.395978+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.395979+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.395981+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) WSMT 0x000000004ED94000 000028 (v01 ALASKA A M I    01072009 AMI  00010013)
+2022-11-20 21:57:58.395981+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) WSMT 0x000000004ED94000 000028 (v01 ALASKA A M I    01072009 AMI  00010013)
+2022-11-20 21:57:58.395982+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.395983+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.396010+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.396011+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.396012+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) APIC 0x000000004ED7A000 0000F4 (v04 ALASKA A M I    01072009 AMI  00010013)
+2022-11-20 21:57:58.396013+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) APIC 0x000000004ED7A000 0000F4 (v04 ALASKA A M I    01072009 AMI  00010013)
+2022-11-20 21:57:58.396014+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.396014+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.396030+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.396031+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.396032+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) FPDT 0x000000004ED79000 000044 (v01 ALASKA CML      01072009 AMI  01000013)
+2022-11-20 21:57:58.396033+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) FPDT 0x000000004ED79000 000044 (v01 ALASKA CML      01072009 AMI  01000013)
+2022-11-20 21:57:58.396034+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.396034+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.396358+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.396358+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.396360+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) SSDT 0x000000004F208000 001029 (v02 CpyPst EXT      00000001 INTL 20200925)
+2022-11-20 21:57:58.396361+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) SSDT 0x000000004F208000 001029 (v02 CpyPst EXT      00000001 INTL 20200925)
+2022-11-20 21:57:58.396361+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.396362+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.441965+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.441966+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.441967+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 8 ACPI AML tables successfully acquired and loaded
+2022-11-20 21:57:58.441967+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 8 ACPI AML tables successfully acquired and loaded
+2022-11-20 21:57:58.441968+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.441969+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.446064+0800 0x90       Default     0x0                  0      0    kernel: (AppleACPIPlatform) AppleACPICPU: ProcessorId=1 LocalApicId=0 Enabled
+2022-11-20 21:57:58.446067+0800 0x90       Default     0x0                  0      0    kernel: (AppleACPIPlatform) AppleACPICPU: ProcessorId=2 LocalApicId=2 Enabled
+2022-11-20 21:57:58.446211+0800 0x90       Default     0x0                  0      0    kernel: (AppleACPIPlatform) AppleACPICPU: ProcessorId=3 LocalApicId=4 Enabled
+2022-11-20 21:57:58.446219+0800 0x90       Default     0x0                  0      0    kernel: (AppleACPIPlatform) AppleACPICPU: ProcessorId=4 LocalApicId=6 Enabled
+2022-11-20 21:57:58.446225+0800 0x90       Default     0x0                  0      0    kernel: (AppleACPIPlatform) AppleACPICPU: ProcessorId=5 LocalApicId=8 Enabled
+2022-11-20 21:57:58.446233+0800 0x90       Default     0x0                  0      0    kernel: (AppleACPIPlatform) AppleACPICPU: ProcessorId=6 LocalApicId=10 Enabled
+2022-11-20 21:57:58.446240+0800 0x90       Default     0x0                  0      0    kernel: (AppleACPIPlatform) AppleACPICPU: ProcessorId=7 LocalApicId=1 Enabled
+2022-11-20 21:57:58.446248+0800 0x90       Default     0x0                  0      0    kernel: (AppleACPIPlatform) AppleACPICPU: ProcessorId=8 LocalApicId=3 Enabled
+2022-11-20 21:57:58.446254+0800 0x90       Default     0x0                  0      0    kernel: (AppleACPIPlatform) AppleACPICPU: ProcessorId=9 LocalApicId=5 Enabled
+2022-11-20 21:57:58.446261+0800 0x90       Default     0x0                  0      0    kernel: (AppleACPIPlatform) AppleACPICPU: ProcessorId=10 LocalApicId=7 Enabled
+2022-11-20 21:57:58.446267+0800 0x90       Default     0x0                  0      0    kernel: (AppleACPIPlatform) AppleACPICPU: ProcessorId=11 LocalApicId=9 Enabled
+2022-11-20 21:57:58.446273+0800 0x90       Default     0x0                  0      0    kernel: (AppleACPIPlatform) AppleACPICPU: ProcessorId=12 LocalApicId=11 Enabled
+2022-11-20 21:57:58.492281+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.492282+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI:
+2022-11-20 21:57:58.492283+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) Executed 38 blocks of module-level executable AML code
+2022-11-20 21:57:58.492284+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) Executed 38 blocks of module-level executable AML code
+2022-11-20 21:57:58.492284+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.492285+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) 
+2022-11-20 21:57:58.505754+0800 0x6f       Default     0x0                  0      0    kernel: (AppleACPIPlatform) ACPI: sleep states S3 S4 S5
+2022-11-20 21:57:58.546407+0800 0x125      Default     0x0                  0      0    kernel: (AppleACPIPlatform) Matched against SMC (started)
+2022-11-20 21:57:58.546409+0800 0x125      Default     0x0                  0      0    kernel: (AppleACPIPlatform) Generation from SMC report as 2
+2022-11-20 21:57:58.561970+0800 0x75       Default     0x0                  0      0    kernel: (AppleACPIPlatform)  found RTC service
+2022-11-20 21:57:58.581996+0800 0x75       Default     0x0                  0      0    kernel: Got boot device = IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/RP21@1B,4/IOPP/ANS1@0/IONVMeController/IONVMeBlockStorageDevice@1/IOBlockStorageDriver/KINGSTON SA2000M8500G Media/IOGUIDPartitionScheme/Untitled 2@2/AppleAPFSContainerScheme/AppleAPFSMedia/AppleAPFSContainer/Macintosh@5
+gpu 0x6184        pci 0x10000022c IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/IGPU@2
+gpu 0xb609        pci 0x1000001e4 IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/PEG0@1/IOPP/PEGP@0/IOPP/BRG0@0/IOPP/GFX0@0
+2022-11-20 21:58:02.006259+0800 0x3e8      Default     0x0                  118    0    kernelmanagerd: Received kext load notification: com.apple.driver.AppleACPIPlatform
+gpu 0x6184        pci 0x10000022c IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/IGPU@2
+gpu 0xb609        pci 0x1000001e4 IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/PEG0@1/IOPP/PEGP@0/IOPP/BRG0@0/IOPP/GFX0@0
+gpu 0x6184        pci 0x10000022c IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/IGPU@2
+gpu 0xb609        pci 0x1000001e4 IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/PEG0@1/IOPP/PEGP@0/IOPP/BRG0@0/IOPP/GFX0@0
+gpu 0xb609        pci 0x1000001e4 IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/PEG0@1/IOPP/PEGP@0/IOPP/BRG0@0/IOPP/GFX0@0
+2022-11-20 21:58:03.670516+0800 0x35f      Default     0x0                  157    7    WindowServer: (CoreDisplay) [com.apple.CoreDisplay:default] [WARN] - IOFBSetDisplayModeAndDepth: IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/PEG0@1/IOPP/PEGP@0/IOPP/BRG0@0/IOPP/GFX0@0-4c2d-c4d-88fe8ef79c003c8c
+2022-11-20 21:58:03.689769+0800 0x35f      Default     0x0                  157    7    WindowServer: (CoreDisplay) [com.apple.CoreDisplay:default] [WARN] - IOFBSetDisplayModeAndDepth: IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/PEG0@1/IOPP/PEGP@0/IOPP/BRG0@0/IOPP/GFX0@0-4c2d-c4d-88fe8ef79c003c8c
+2022-11-20 21:58:04.985046+0800 0x35f      Default     0x0                  157    7    WindowServer: (CoreDisplay) [com.apple.CoreDisplay:default] [WARN] - IOFBSetDisplayModeAndDepth: IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/PEG0@1/IOPP/PEGP@0/IOPP/BRG0@0/IOPP/GFX0@0-4c2d-c4d-88fe8ef79c003c8c
+2022-11-20 21:58:05.094322+0800 0x35f      Default     0x0                  157    7    WindowServer: (CoreDisplay) [com.apple.CoreDisplay:default] [WARN] - IOFBSetDisplayModeAndDepth: IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/PEG0@1/IOPP/PEGP@0/IOPP/BRG0@0/IOPP/GFX0@0-4c2d-c4d-88fe8ef79c003c8c
+2022-11-20 21:58:05.245264+0800 0x35f      Default     0x0                  157    7    WindowServer: (CoreDisplay) [com.apple.CoreDisplay:default] [WARN] - IOFBSetDisplayModeAndDepth: IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/PEG0@1/IOPP/PEGP@0/IOPP/BRG0@0/IOPP/GFX0@0-4c2d-c4d-88fe8ef79c003c8c
+gpu 0x6184        pci 0x10000022c IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/IGPU@2
+gpu 0xb609        pci 0x1000001e4 IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/PEG0@1/IOPP/PEGP@0/IOPP/BRG0@0/IOPP/GFX0@0
+gpu 0x6184        pci 0x10000022c IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/IGPU@2
+gpu 0xb609        pci 0x1000001e4 IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/PEG0@1/IOPP/PEGP@0/IOPP/BRG0@0/IOPP/GFX0@0
+gpu 0x6184        pci 0x10000022c IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/IGPU@2
+gpu 0xb609        pci 0x1000001e4 IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/PEG0@1/IOPP/PEGP@0/IOPP/BRG0@0/IOPP/GFX0@0
