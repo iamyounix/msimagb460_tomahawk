@@ -854,7 +854,7 @@ Device (HDAU)
 
 #### Kernel / Quirks
 
-- CustomSMBIOSGuid = `False` (Require PlatformInfo / Generic / UpdateSMBIOSMode = `Custom`)
+- CustomSMBIOSGuid = `False` (Require PlatformInfo / Generic / UpdateSMBIOSMode = `Custom`). Refer [here](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/README.md#platforminfo)
 - DisableLinkeditJettison = `True`
 - PanicNoKextDump = `True`
 - PowerTimeoutKernelPanic = `True`
