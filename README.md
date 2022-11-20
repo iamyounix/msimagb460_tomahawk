@@ -711,7 +711,7 @@ Patching can be done in two ways, via **config.plist** or via **SSDT**.
 	- No-hda-gfx = `0000000000000000`
 	- No-idle-support = `00`
 
-**via SSDT**
+- **via SSDT**
 
 ```asl
 Scope (HDAS)
@@ -782,7 +782,7 @@ Regularly, this device is attached via `GFX0`. Patching can be done in two ways,
 	  - model / string / `Navi 10 HDMI Audio`
 	  - name / string / `HDAU`
 
-**via SSDT**
+- **via SSDT**
 
 ```asl
 Device (HDAU)
@@ -879,6 +879,62 @@ Device (HDAU)
 
 If you have an issue regarding sleep, and wake...you may try this method by creating `USB Wake Virtual Device`:
 
+#### Method 1 : ACPI Wake Type
+
+Patching can be done in two ways, via **config.plist** or via **SSDT**. 
+
+- **via config.plist**
+	- PciRoot(0x0)/Pci(0x14,0x0)
+	  - acpi-wake-type / data / `01`	  
+
+- **via SSDT**
+
+```asl
+/**
+ * Declare the XHCI Controller since this device don't have compatible ECs for macOS to handle proper wake calls.
+ */
+Scope (\_SB)
+{
+	Scope (PCI0)
+	{
+		Scope (XHC)
+		{
+			Method (_STA, 0, NotSerialized)  // _STA: Status
+			{
+				Return (Zero)
+			}
+		}
+
+		Device (XHC1)
+		{
+			Name (_ADR, 0x00140000)  // _ADR: Address
+			Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+			{
+				If ((Arg2 == Zero))
+				{
+					Return (Buffer (One)
+					{
+						 0x03                                             // .
+					})
+				}
+
+				Return (Package (0x02)
+				{
+					"acpi-wake-type", 
+					Buffer (One)
+					{
+						 0x01                                             // .
+					}
+				})
+			}
+		}
+	}
+}
+```
+
+
+#### Method 2 : USBFixup.kext & SSDT-USBW
+
 Credit to [osy](https://github.com/osy)
 
 - Step 1: Download [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup/releases/tag/v1.0)
@@ -890,22 +946,22 @@ Credit to [osy](https://github.com/osy)
  */
 DefinitionBlock ("", "SSDT", 2, "OSY86 ", "USBW", 0x00001000)
 {
-    External (\_SB.PCI0.XHC._PRW, MethodObj)
+	External (\_SB.PCI0.XHC._PRW, MethodObj)
 
-    // We only enable the device for OSX
-    If (CondRefOf (\_OSI, Local0) && _OSI ("Darwin"))
-    {
-        Device (\_SB.USBW)
-        {
-            Name (_HID, "PNP0D10")  // _HID: Hardware ID
-            Name (_UID, "WAKE")  // _UID: Unique ID
+	// We only enable the device for OSX
+	If (CondRefOf (\_OSI, Local0) && _OSI ("Darwin"))
+	{
+		Device (\_SB.USBW)
+		{
+			Name (_HID, "PNP0D10")  // _HID: Hardware ID
+			Name (_UID, "WAKE")  // _UID: Unique ID
 
-            Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
-            {
-                Return (\_SB.PCI0.XHC._PRW ()) // Replace with path to your USB device
-            }
-        }
-    }
+			Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
+			{
+				Return (\_SB.PCI0.XHC._PRW ()) // Replace with path to your USB device
+			}
+		}
+	}
 }
 ```
 
@@ -953,7 +1009,7 @@ Patching can be done in two ways, via **config.plist** or via **SSDT**. 
 	  - device-id / data / `06A80000`
 	  - vendor-id / data / `4D140000`
 
-**via SSDT**
+- **via SSDT**
 
 ```asl
 Scope (RP09)
@@ -1081,7 +1137,7 @@ ioreg -l | grep -i board-id
 - Output:
 
 ```zsh
-    |   "board-id" = <"Mac-CFF7D910A743CAAF">
+	|   "board-id" = <"Mac-CFF7D910A743CAAF">
 ```
 
 #### Bus & Frequency:
