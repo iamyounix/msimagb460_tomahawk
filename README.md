@@ -1070,6 +1070,20 @@ uname -r
 22.1.0
 ```
 
+#### Board-id
+
+- Input:
+
+```zsh
+ioreg -l | grep -i board-id
+```
+
+- Output:
+
+```zsh
+    |   "board-id" = <"Mac-CFF7D910A743CAAF">
+```
+
 #### Bus & Frequency:
 
 - Input:
