@@ -839,7 +839,7 @@ Device (HDAU)
 
 - All False
 
-#### Booter / Quirks
+#### Booter / Quirks and PlatformInfo
 
 - AvoidRuntimeDefrag = `True`
 - DevirtualiseMmio = `True`
