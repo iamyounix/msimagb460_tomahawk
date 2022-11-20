@@ -850,17 +850,17 @@ Device (HDAU)
 - ResizeAppleGpuBars = `-1`
 - SyncRuntimePermissions = `True`
 
-> **Note**: Other than above is `false`
+> **Note**: Other than above is `False`
 
 #### Kernel / Quirks
 
-- CustomSMBIOSGuid = `True` (Require PlatformInfo / Generic / UpdateSMBIOSMode = `Custom`)
+- CustomSMBIOSGuid = `False` (Require PlatformInfo / Generic / UpdateSMBIOSMode = `Custom`)
 - DisableLinkeditJettison = `True`
 - PanicNoKextDump = `True`
 - PowerTimeoutKernelPanic = `True`
 - SetApfsTrimTimeout = `0`
 
-> **Note**: Other than above is `false`
+> **Note**: Other than above is `False`
 
 #### UEFI / Quirks
 
@@ -871,6 +871,18 @@ Device (HDAU)
 - TscSyncTimeout = `0`
 
 > **Note**: Other than above is `false`
+
+#### PlatformInfo
+
+- Automatic = `True`
+- CustomMemory = `False`
+- Generic = `Please Generate using` [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
+- UpdateDataHub = `True`
+- UpdateNVRAM = `True`
+- UpdateSMBIOS = `True`
+- UpdateSMBIOSMode = `Create`
+- UseRawUuidEncoding = `False`
+
 
 ### USB
 
