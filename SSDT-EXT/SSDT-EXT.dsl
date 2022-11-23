@@ -22,7 +22,6 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 	External (_SB_.PCI0.SBUS, DeviceObj)
 	External (_SB_.PCI0.TSUB, DeviceObj)
 	External (_SB_.PCI0.XHC_, DeviceObj)
-	External (ALSE, IntObj)
 	External (STAS, IntObj)
 
 	Scope (\_SB)
