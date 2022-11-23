@@ -1,3 +1,5 @@
+//SSDT-EXT Template
+
 DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 {
 	External (_SB_.PCI0, DeviceObj)
