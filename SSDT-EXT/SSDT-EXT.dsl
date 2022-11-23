@@ -42,10 +42,17 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 				Name (_ADR, Zero)  // _ADR: Address
 				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 				{
-					Return (0x0F)
+					If (_OSI ("Darwin"))
+					{
+						Return (0x0F)
+					}
+					Else
+					{
+						Return (Zero)
+					}
 				}
 			}
-
+			
 			Scope (LPCB)
 			{
 				Device (EC)
@@ -54,16 +61,30 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 					Name (_UID, One)  // _UID: Unique ID
 					Method (_STA, 0, NotSerialized)  // _STA: Status
 					{
-						Return (0x0F)
+						If (_OSI ("Darwin"))
+						{
+							Return (0x0F)
+						}
+						Else
+						{
+							Return (Zero)
+						}
 					}
 				}
 			}
-
+			
 			Scope (GFX0)
 			{
 				Method (_STA, 0, NotSerialized)  // _STA: Status
 				{
-					Return (Zero)
+					If (_OSI ("Darwin"))
+					{
+						Return (Zero)
+					}
+					Else
+					{
+						Return (0x0F)
+					}
 				}
 			}
 
@@ -134,7 +155,14 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 			{
 				Method (_STA, 0, NotSerialized)  // _STA: Status
 				{
-					Return (Zero)
+					If (_OSI ("Darwin"))
+					{
+						Return (Zero)
+					}
+					Else
+					{
+						Return (0x0F)
+					}
 				}
 			}
 
@@ -178,16 +206,30 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 			{
 				Method (_STA, 0, NotSerialized)  // _STA: Status
 				{
-					Return (Zero)
+					If (_OSI ("Darwin"))
+					{
+						Return (Zero)
+					}
+					Else
+					{
+						Return (0x0F)
+					}
 				}
 			}
-
+			
 			Device (IMEI)
 			{
 				Name (_ADR, 0x00160000)  // _ADR: Address
 				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 				{
-					Return (0x0F)
+					If (_OSI ("Darwin"))
+					{
+						Return (0x0F)
+					}
+					Else
+					{
+						Return (Zero)
+					}
 				}
 			}
 
@@ -584,7 +626,14 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 				{
 					Method (_STA, 0, NotSerialized)  // _STA: Status
 					{
-						Return (Zero)
+						If (_OSI ("Darwin"))
+						{
+							Return (Zero)
+						}
+						Else
+						{
+							Return (0x0F)
+						}
 					}
 				}
 
@@ -593,18 +642,32 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 					Name (_ADR, Zero)  // _ADR: Address
 					Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 					{
-						Return (0x0F)
+						If (_OSI ("Darwin"))
+						{
+							Return (0x0F)
+						}
+						Else
+						{
+							Return (Zero)
+						}
 					}
 				}
 			}
-
+			
 			Scope (RP05)
 			{
 				Scope (PXSX)
 				{
 					Method (_STA, 0, NotSerialized)  // _STA: Status
 					{
-						Return (Zero)
+						If (_OSI ("Darwin"))
+						{
+							Return (Zero)
+						}
+						Else
+						{
+							Return (0x0F)
+						}
 					}
 				}
 
@@ -652,7 +715,14 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 				{
 					Method (_STA, 0, NotSerialized)  // _STA: Status
 					{
-						Return (Zero)
+						If (_OSI ("Darwin"))
+						{
+							Return (Zero)
+						}
+						Else
+						{
+							Return (0x0F)
+						}
 					}
 				}
 
@@ -710,7 +780,14 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 				{
 					Method (_STA, 0, NotSerialized)  // _STA: Status
 					{
-						Return (Zero)
+						If (_OSI ("Darwin"))
+						{
+							Return (Zero)
+						}
+						Else
+						{
+							Return (0x0F)
+						}
 					}
 				}
 
@@ -753,7 +830,14 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 				{
 					Method (_STA, 0, NotSerialized)  // _STA: Status
 					{
-						Return (Zero)
+						If (_OSI ("Darwin"))
+						{
+							Return (Zero)
+						}
+						Else
+						{
+							Return (0x0F)
+						}
 					}
 				}
 
@@ -809,7 +893,14 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 			{
 				Method (_STA, 0, NotSerialized)  // _STA: Status
 				{
-					Return (Zero)
+					If (_OSI ("Darwin"))
+					{
+						Return (Zero)
+					}
+					Else
+					{
+						Return (0x0F)
+					}
 				}
 			}
 
@@ -818,7 +909,14 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 				Name (_ADR, 0x00170000)  // _ADR: Address
 				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 				{
-					Return (0x0F)
+					If (_OSI ("Darwin"))
+					{
+						Return (0x0F)
+					}
+					Else
+					{
+						Return (Zero)
+					}
 				}
 			}
 
@@ -852,17 +950,31 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 
 					Method (_STA, 0, NotSerialized)  // _STA: Status
 					{
-						Return (0x0F)
+						If (_OSI ("Darwin"))
+						{
+							Return (0x0F)
+						}
+						Else
+						{
+							Return (Zero)
+						}
 					}
 				}
 			}
-
+					
 			Device (TSUB)
 			{
 				Name (_ADR, 0x00140002)  // _ADR: Address
 				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 				{
-					Return (0x0F)
+					If (_OSI ("Darwin"))
+					{
+						Return (0x0F)
+					}
+					Else
+					{
+						Return (Zero)
+					}
 				}
 			}
 
@@ -870,7 +982,14 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 			{
 				Method (_STA, 0, NotSerialized)  // _STA: Status
 				{
-					Return (Zero)
+					If (_OSI ("Darwin"))
+					{
+						Return (Zero)
+					}
+					Else
+					{
+						Return (0x0F)
+					}
 				}
 			}
 
@@ -927,7 +1046,14 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 
 			Method (_STA, 0, NotSerialized)  // _STA: Status
 			{
-				Return (0x0F)
+				If (_OSI ("Darwin"))
+				{
+					Return (0x0F)
+				}
+				Else
+				{
+					Return (Zero)
+				}
 			}
 		}
 	}
