@@ -1,7 +1,3 @@
-// Readme First:
-// SSDT-EXT is a safe way to multiboot, especially on Windows and macOS.
-// This require "Kernel / Quirks / CustomSMBIOSGuid = Yes" and "PlatformInfo / UpdateSMBIOSMode = Custom" via config.plist
-
 DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 {
 	External (_SB_.PCI0, DeviceObj)
