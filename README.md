@@ -914,7 +914,14 @@ Scope (\_SB)
 		{
 			Method (_STA, 0, NotSerialized)  // _STA: Status
 			{
-				Return (Zero)
+				If (_OSI ("Darwin"))
+				{
+					Return (Zero)
+				}
+				Else
+				{
+					Return (0x0F)
+				}
 			}
 		}
 
@@ -934,7 +941,7 @@ Scope (\_SB)
 				Return (Package (0x02)
 				{
 					"acpi-wake-type", 
-					Buffer (One)
+					Buffer ()
 					{
 						 0x01                                             // .
 					}
@@ -942,7 +949,7 @@ Scope (\_SB)
 			}
 		}
 	}
-}
+}	
 ```
 
 
