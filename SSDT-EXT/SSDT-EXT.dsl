@@ -1040,13 +1040,13 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)    // Foundation of
 				Return (Package ()    // USB Power Properties
 				{
 					"kUSBSleepPowerSupply", 
-					0x13EC, 
+					0x13EC,    // 5100
 					"kUSBSleepPortCurrentLimit", 
-					0x0834, 
+					0x0834,    // 2100 
 					"kUSBWakePowerSupply", 
-					0x13EC, 
+					0x13EC,    // 5100
 					"kUSBWakePortCurrentLimit", 
-					0x0834
+					0x0834     // 2100
 				})
 			}
 
