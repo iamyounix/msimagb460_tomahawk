@@ -10,7 +10,8 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "ANSX", 0x00000001)
 	{
 		Scope (PCI0)    // PCI Root Bridge
 		{
-			Scope (RP21)    // Root Port No. 21			{
+			Scope (RP21)    // Root Port No. 21			
+			{
 				Scope (PXSX)    // M.2 Bridge    
 				{
 					Method (_STA, 0, NotSerialized)  // _STA: Status
