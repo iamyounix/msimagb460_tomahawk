@@ -22,6 +22,6 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "DRAM", 0x00000001)
 					}
 				}
 			}
-        }
+        	}
 	}
 }
