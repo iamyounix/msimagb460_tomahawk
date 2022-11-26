@@ -19,7 +19,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "SATA", 0x00000001)
 					{
 				        Return (0x0F)    // Control Method Apply    
 					}
-			    }
+			    	}
 			}
 
 			Device (SATA)    // Generic HDD/SSD Device, SATO to SATA Rename
