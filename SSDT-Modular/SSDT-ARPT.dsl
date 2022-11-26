@@ -1,4 +1,10 @@
-Scope (\_SB)
+DefinitionBlock ("", "SSDT", 2, "CpyPst", "ARPT", 0x00000001)
+{
+	External (_SB_.PCI0, DeviceObj)
+	External (_SB_.PCI0.RP20, DeviceObj)
+	External (_SB_.PCI0.RP20.PXSX, DeviceObj)
+
+	Scope (\_SB)
 	{
 		Scope (PCI0)
 		{
@@ -7,17 +13,17 @@ Scope (\_SB)
 				Scope (PXSX)    // Adapter or Device
 				{
 					Method (_STA, 0, NotSerialized)  // _STA: Status
-					{
-						If (_OSI ("Darwin"))    // Operating System Interfaces
-						{
-							Return (Zero)    // ontrol Method Not Apply
-						}
-						Else    // Other Operating System Interfaces
-						{
-							Return (0x0F)    // Control Method Apply    
-						}
-					}
-				}
+					 {
+						 If (_OSI ("Darwin"))    // Operating System Interfaces
+						 {
+							 Return (Zero)    // ontrol Method Not Apply
+						 }
+						 Else    // Other Operating System Interfaces
+						 {
+							 Return (0x0F)    // Control Method Apply    
+						 }
+					 }
+				 }
 
 				Device (ARPT)    // Broadcom Wi-Fi (Renamed)
 				{
@@ -54,4 +60,3 @@ Scope (\_SB)
 		}
 	}
 }
-					Name (_ADR, Zero)  // _ADR: Address
