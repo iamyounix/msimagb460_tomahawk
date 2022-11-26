@@ -16,16 +16,16 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "GFX0", 0x00000001)
 					{
 						Name (_ADR, Zero)  // _ADR: Address
 						Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-				        {
-					        If (_OSI ("Darwin"))    // Operating System Interfaces
-					        {
-						        Return (0x0F)    // Control Method Apply   
-					        }
-					        Else    // Other Operating System Interfaces
-					        {
-						        Return (Zero)    // Control Method Not Apply
-					        }
-				        }
+						{
+							If (_OSI ("Darwin"))    // Operating System Interfaces
+							{
+								Return (0x0F)    // Control Method Apply   
+							}
+							Else    // Other Operating System Interfaces
+							{
+								Return (Zero)    // Control Method Not Apply
+							}
+						}
 
 						Device (GFX0)    // Dedicated Grapic Processor Unit
 						{
