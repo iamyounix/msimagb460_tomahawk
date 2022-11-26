@@ -64,7 +64,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)    // Foundation of
 						{
 							Return (0x0F)    // Control Method Apply   
 						}
-						Else
+						Else    // Other Operating System Interfaces
 						{
 							Return (Zero)    // Control Method Not Apply
 						}
