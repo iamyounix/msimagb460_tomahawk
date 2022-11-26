@@ -57,6 +57,6 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "ARPT", 0x00000001)
 					}
 				}
 			}
-        }
+        	}
 	}
 }
