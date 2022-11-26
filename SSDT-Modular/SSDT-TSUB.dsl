@@ -20,8 +20,8 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "TSUB", 0x00000001)
 					{
 						Return (Zero)    // Control Method Not Apply
 					}
-			    }
-		    }
-	    }
-    }
+				}
+			}
+		}
+	}
 }
