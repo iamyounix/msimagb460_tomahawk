@@ -1,16 +1,16 @@
-DefinitionBlock ("", "SSDT", 2, "CpyPst", "ANSX", 0x00000001)
+DefinitionBlock ("", "SSDT", 2, "CpyPst", "NVMe", 0x00000001)
 {
 	External (_SB_.PCI0, DeviceObj)
 	External (_SB_.PCI0.RP09, DeviceObj)
-	External (_SB_.PCI0.RP09.PXSX, DeviceObj)
 	External (_SB_.PCI0.RP21, DeviceObj)
+	External (_SB_.PCI0.RP09.PXSX, DeviceObj)
 	External (_SB_.PCI0.RP21.PXSX, DeviceObj)
 
 	Scope (\_SB)    // System BUS
 	{
 		Scope (PCI0)    // PCI Root Bridge
 		{
-			Scope (RP21)    // Root Port No. 21			
+			Scope (RP21)    // Root Port No. 21
 			{
 				Scope (PXSX)    // M.2 Bridge    
 				{
