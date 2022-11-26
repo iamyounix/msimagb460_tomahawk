@@ -2,8 +2,8 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "ANSX", 0x00000001)
 {
 	External (_SB_.PCI0, DeviceObj)
 	External (_SB_.PCI0.RP09, DeviceObj)
-	External (_SB_.PCI0.RP21, DeviceObj)
 	External (_SB_.PCI0.RP09.PXSX, DeviceObj)
+	External (_SB_.PCI0.RP21, DeviceObj)
 	External (_SB_.PCI0.RP21.PXSX, DeviceObj)
 
 	Scope (\_SB)    // System BUS
