@@ -30,7 +30,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)    // Foundation of
 		{
 			If (_OSI ("Darwin"))    // Operating System Interfaces
 			{
-				STAS = One    // Handler ; Bit: "One", Set if the device is enabled and decoding its resources)
+				STAS = One    // Handler ; Bit: "One", Set if the device is enabled and decoding its resources
 			}
 		}
 
