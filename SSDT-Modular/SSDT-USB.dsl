@@ -1,8 +1,8 @@
 DefinitionBlock ("", "SSDT", 2, "CpyPst", "USB", 0x00000001)
 {
 	External (_SB_.PCI0, DeviceObj)
-	External (_SB_.PCI0.RP05, DeviceObj)
 	External (_SB_.PCI0.XHC_, DeviceObj)
+	External (_SB_.PCI0.RP05, DeviceObj)
 	External (_SB_.PCI0.RP05.PXSX, DeviceObj)
 
 	Scope (\_SB)    // System BUS
