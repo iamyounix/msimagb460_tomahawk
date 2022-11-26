@@ -38,13 +38,13 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "SBUS", 0x00000001)
 					Method (_STA, 0, NotSerialized)  // _STA: Status
 					{
 						If (_OSI ("Darwin"))    // Operating System Interfaces
-					    {
-						    Return (0x0F)    // Control Method Apply   
-					    }
-					    Else    // Other Operating System Interfaces
-					    {
-						    Return (Zero)    // Control Method Not Apply
-					    }
+						{
+							Return (0x0F)    // Control Method Apply   
+						}
+						Else    // Other Operating System Interfaces
+						{
+							Return (Zero)    // Control Method Not Apply
+						}
 					}
 				}
 			}
