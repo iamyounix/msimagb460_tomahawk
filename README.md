@@ -468,6 +468,7 @@ Regularly, this device is attached via `GFX0`. Patching can be done in two ways,
 
 - **via config.plist**
 	- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
+	  - driver-version / string / `10.0.1.14`
 	  - hda-gfx / string / `onboard-1`
 	  - model / string / `Navi 10 HDMI Audio`
 	  - name / string / `HDAU`
