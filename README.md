@@ -209,6 +209,7 @@ Patching can be done in two ways, via **config.plist** or via **SSDT**. 
 	  - name / string / `PEGP`
 	- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
 	  - name / string / `BRG0`
+	- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
 	  - @0,name / string / `ATY,Python`
 	  - @1,name / string / `ATY,Python`
 	  - @2,name / string / `ATY,Python`
@@ -222,6 +223,7 @@ Patching can be done in two ways, via **config.plist** or via **SSDT**. 
 	  - hdagfx / string / `onboard-1`
 	  - agdpmod / string / pikera
 	  - device_type / string / `ATY,PythonParent`
+	  - name / string / `ATY_GPU`
 	  
 - **via SSDT**
 
