@@ -43,7 +43,29 @@ OpenCore sample is attached as a learning curve. Please be careful what you're r
 
 ### OpenCore EFI Structure
 
-![OpenCore](https://github.com/theofficialcopypaste/ASRockB460MSL/blob/main/OpenCore.drawio.png)
+```zsh
+EFI
+├── ./BOOT
+│   └── ./BOOTx64.efi	
+└── ./OC
+    ├── ./OC/ACPI
+    ├── ./OC/Drivers
+    ├── ./OC/Kexts
+    │   ├── ./OC/Kexts/AppleALC.kext
+    │   ├── ./OC/Kexts/Lilu.kext
+    │   ├── ./OC/Kexts/LucyRTL8125Ethernet.kext
+    │   ├── ./OC/Kexts/SMCProcessor.kext
+    │   ├── ./OC/Kexts/SMCSuperIO.kext
+    │   ├── ./OC/Kexts/USBMap.kext
+    │   ├── ./OC/Kexts/VirtualSMC.kext
+    │   └── ./OC/Kexts/WhateverGreen.kext
+    ├── ./OC/Resources
+    │   ├── ./OC/Resources/Audio
+    │   ├── ./OC/Resources/Font
+    │   ├── ./OC/Resources/Image
+    │   └── ./OC/Resources/Label
+    └── ./OC/Tools
+```
 
 ### Processor
 #### Intel® Core™ i5-10400
