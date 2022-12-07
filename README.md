@@ -39,6 +39,7 @@ OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend - WIP
 
 ### Tools
 * [DevicePath](https://github.com/corpnewt/DevicePath)
+* [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
 * [gibMacRecovery](https://github.com/corpnewt/gibMacRecovery)
 * [Hackintool](https://github.com/benbaker76/Hackintool)
 * [OCAuxiliary](https://github.com/ic005k/OCAuxiliaryTools)
@@ -78,6 +79,8 @@ EFI
 * This project uses almost 80% of the patches from ACPI. The patch used is the same patch as used in config.plist. The purpose of patching on ACPI is that it is more permanent, at the same time we may learn a bit about ACPI basic knowledge. [SSDTTime](https://github.com/corpnewt/SSDTTime) is the tool used in this process. But be reminded, [SSDTTime](https://github.com/corpnewt/SSDTTime) only helps to patch the basic ACPI structure. The full patch can be viewed through the link provided below.
 
 * [SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXT.dsl)
+
+![SSDTTime](https://user-images.githubusercontent.com/72515939/206207663-6e93f488-8194-4c19-8484-2e5f78ba1971.png)
 
 #### Add
 
@@ -187,6 +190,10 @@ EFI
 ![NVRAM](https://user-images.githubusercontent.com/72515939/206199938-8dbd2a8e-ab9a-4b83-994e-bebf4ca0f40b.png)
 
 ### PlatformInfo
+
+* Use [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to generate serial, MLB, UUID and others.
+
+![SSDTTime](https://user-images.githubusercontent.com/72515939/206208319-f92b2648-ee67-4270-93fa-084dd4bad2a0.png)
 
 ![PI](https://user-images.githubusercontent.com/72515939/206200493-bd8260ab-1582-4353-9b4b-7ee51610e154.png)
 
