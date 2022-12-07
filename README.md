@@ -1,4 +1,5 @@
 # Hackintosh: ASRock B460M Steel Legend
+OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend - WIP
 
 [![BIOS](https://img.shields.io/badge/BIOS-1.60-purple)](https://www.asrock.com/mb/Intel/B460M%20Steel%20Legend/#BIOS)
 [![OpenCore](https://img.shields.io/badge/OpenCore-0.8.7-white)](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/releases)
@@ -8,47 +9,42 @@
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
 
 **Table of Content**
-- [OpenCore EFI Structure](#opencore-efi-structure)
-- [Processor](#processor)
-- [Graphics](#graphics)
-- [Other Devices](#other-devices)
-- [Audio](#audio)
-- [Quirks and PlatformInfo](#quirks-and-platforminfo)
-- [USB](#usb)
+- [Introduction](#introduction)
+- [Device Specification](#device-specification)
+- [Tools](#tools)
+- [EFI Structure](#efi-structure)
+- [ACPI](#acpi)
+- [Booter](#booter)
+- [DeviceProperties](#deviceproperties)
+- [Kernel](#kernel)
+- [MIsc](#misc)
 - [NVRAM](#nvram)
-- [NVMe](#nvme)
-- [Test](#test)
-- [References](#references)
-- [Soft Reminder](#soft-reminder)
+- [PlatformInfo](#platforminfo)
 - [Acknowledgement](#acknowledgement)
 
-## OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend
-
+### Introduction
 OpenCore is what we refer to as a **boot loader** – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as **SMBIOS**, **ACPI** tables and **kexts**. How this tool differs from others like **Clover** is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as **System Integrity Protection** and  Filevault
 
-* refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding
-* checkout Dortania Monthly [Post](https://dortania.github.io) to get more info
+* Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding
+* Checkout Dortania Monthly [Post](https://dortania.github.io) to get more info
 
-**My word:** "It's merely cosmetic", according to some. For me, this content is not just for show.
+* **Note**: if you're still interested in utilising it, please be carefulto adjust the .plist configuration and SSDTs according to your machine.
 
-**Configuration?**
+### Device Specification
+* **Processor** - Intel® Core™ i5-10400 `CometLake` 
+* **Graphics 1**- Intel® UHD 630 - Headless
+* **Graphics 2**- MSI RX 5500 XT 4GB - Main Display
+* **Disk**	- 02 x Kingston A2000 500GB, 02 x San Disk 500GB
 
-- you can play with **config.plist** and experiment with it. **But, heed the warnin**g...
-- if you're still interested in utilising it, please be carefulto adjust the .plist configuration and SSDTs according to your machine.
+### Tools
+* [DevicePath](https://github.com/corpnewt/DevicePath)
+* [gibMacRecovery](https://github.com/corpnewt/gibMacRecovery)
+* [OCAuxiliary](https://github.com/ic005k/OCAuxiliaryTools)
+* [octool](https://github.com/rusty-bits/octool)
+* [ProperTree](https://github.com/corpnewt/ProperTree)
+* [SSDTTime](https://github.com/corpnewt/SSDTTime)
 
-**ACPI?**
-
-Warning, editing ACPI without knowing anything may cause
-
-- unrensponsive
-- broken device
-- BIOS issues
-
-OpenCore sample is attached as a learning curve. Please be careful what you're read, copy and modified all these stuffs. Do a research first.
-
-> **Note**: Since this attachment is just an example, please change SMBIOS matched with your settings. Refer [Choose The Right SMBIOS](https://dortania.github.io/OpenCore-Install-Guide/extras/smbios-support.html) and [Platform Info](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#platforminfo) by Dortania.
-
-### OpenCore EFI Structure
+### EFI Structure
 
 ```zsh
 EFI
@@ -74,8 +70,26 @@ EFI
     └── ./OC/Tools
 ```
 
-### Processor
-#### Intel® Core™ i5-10400
+### ACPI
+This project uses almost 80% of the patches from ACPI. The patch used is the same patch as used in config.plist. The purpose of patching on ACPI is that it is more permanent, at the same time we may learn a bit about ACPI basic knowledge. [SSDTTime](https://github.com/corpnewt/SSDTTime) is the tool used in this process. But be reminded, [SSDTTime](https://github.com/corpnewt/SSDTTime) only helps to patch the basic ACPI structure. The full patch can be viewed through the link provided below.
+
+* [SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXT.dsl)
+
+### Booter
+* MmioWhitelist - NIL
+* Patch - NIL
+* Quirks
+  * AvoidRuntimeDefrag = `True`
+  * DevirtualiseMmio = `True`
+  * EnableSafeModeSlide = `True`
+  * ProtectUefiServices = `True`
+  * ProvideCustomSlide = `True`
+  * RebuildAppleMemoryMap = `True`
+  * ResizeAppleGpuBars = `-1`
+  * SyncRuntimePermissions = `True`
+
+> **Note**: Other than above is `False`
+#### 
 
 ```zsh
 Code Name 					: Comet Lake
@@ -544,19 +558,6 @@ Device (HDAU)
 #### ACPI / Quirks
 
 - All False
-
-#### Booter / Quirks
-
-- AvoidRuntimeDefrag = `True`
-- DevirtualiseMmio = `True`
-- EnableSafeModeSlide = `True`
-- ProtectUefiServices = `True`
-- ProvideCustomSlide = `True`
-- RebuildAppleMemoryMap = `True`
-- ResizeAppleGpuBars = `-1`
-- SyncRuntimePermissions = `True`
-
-> **Note**: Other than above is `False`
 
 #### Kernel / Quirks
 
