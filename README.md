@@ -20,10 +20,13 @@ OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend - WIP
 - [Misc](#misc)
 - [NVRAM](#nvram)
 - [PlatformInfo](#platforminfo)
+- [UEFI](#uefi)
+- 
 - [Acknowledgement](#acknowledgement)
 
 ### Introduction
-OpenCore is what we refer to as a **boot loader** – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as **SMBIOS**, **ACPI** tables and **kexts**. How this tool differs from others like **Clover** is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as **System Integrity Protection** and  Filevault
+
+* OpenCore is what we refer to as a **boot loader** – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as **SMBIOS**, **ACPI** tables and **kexts**. How this tool differs from others like **Clover** is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as **System Integrity Protection** and  Filevault
 
 * Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding
 * Checkout Dortania Monthly [Post](https://dortania.github.io) to get more info
@@ -72,9 +75,26 @@ EFI
 ```
 
 ### ACPI
-This project uses almost 80% of the patches from ACPI. The patch used is the same patch as used in config.plist. The purpose of patching on ACPI is that it is more permanent, at the same time we may learn a bit about ACPI basic knowledge. [SSDTTime](https://github.com/corpnewt/SSDTTime) is the tool used in this process. But be reminded, [SSDTTime](https://github.com/corpnewt/SSDTTime) only helps to patch the basic ACPI structure. The full patch can be viewed through the link provided below.
+
+* This project uses almost 80% of the patches from ACPI. The patch used is the same patch as used in config.plist. The purpose of patching on ACPI is that it is more permanent, at the same time we may learn a bit about ACPI basic knowledge. [SSDTTime](https://github.com/corpnewt/SSDTTime) is the tool used in this process. But be reminded, [SSDTTime](https://github.com/corpnewt/SSDTTime) only helps to patch the basic ACPI structure. The full patch can be viewed through the link provided below.
 
 * [SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXT.dsl)
+
+#### Add
+
+![ACPI-Add](https://user-images.githubusercontent.com/72515939/206202889-00f51692-3f6b-40d5-bb93-8d598b146884.png)
+
+#### Delete
+
+* Untouched. Keep all empty.
+
+#### Patch
+
+* Untouched. Keep all empty.
+
+####Quirks
+
+![Quirks (1)](https://user-images.githubusercontent.com/72515939/206203114-133e4565-985c-4b8d-ae79-79ba259fa6d9.png)
 
 ### Booter
 * MmioWhitelist - NIL
@@ -93,16 +113,16 @@ This project uses almost 80% of the patches from ACPI. The patch used is the sam
 
 ### DeviceProperties
 
-In this section, what we need is to export important `devices path`, copy and add additional data to our config.plist. In this case, we take all `devices path`. The reason we doing this is to make sure all device is properly mapped. Export all `devices path` using [Hackintool](https://github.com/benbaker76/Hackintool). This will dump `pcidevices.dsl`, `pcidevices.json`, `pcidevices.plist` and `pcidevices.txt`. Only `pcidevices.plist` is what we need.
+* In this section, what we need is to export important `devices path`, copy and add additional data to our config.plist. In this case, we take all `devices path`. The reason we doing this is to make sure all device is properly mapped. Export all `devices path` using [Hackintool](https://github.com/benbaker76/Hackintool). This will dump `pcidevices.dsl`, `pcidevices.json`, `pcidevices.plist` and `pcidevices.txt`. Only `pcidevices.plist` is what we need.
 
 ![PCI](https://user-images.githubusercontent.com/72515939/206184503-bdb22c2c-3321-44cd-861c-e1011a67c959.png)
 ![Files](https://user-images.githubusercontent.com/72515939/206185002-51536d9e-5270-4d3c-9956-a523e00d645c.png)
 
-Then, open `pcidevices.plist` using [ProperTree](https://github.com/corpnewt/ProperTree), copy all and paste to config.plist. Add `name` / `string` / `device name` to all device. Below is an example:
+* Then, open `pcidevices.plist` using [ProperTree](https://github.com/corpnewt/ProperTree), copy all and paste to config.plist. Add `name` / `string` / `device name` to all device. Below is an example:
 
 ![path](https://user-images.githubusercontent.com/72515939/206184392-14984c21-6fa4-4c55-aee8-401233eb908d.png)
 
-Below is the results. 
+* Below is the results. 
 
 ![Mapped](https://user-images.githubusercontent.com/72515939/206185310-9fd93aed-5f3f-4d8a-94a2-b10874ccce06.png)
 
@@ -110,7 +130,7 @@ Below is the results.
 
 #### Add
 
-Only `7` Kernel extension needed to get all our hacks working. 
+* To make all of our hacks function, just `7` kernel extensions addition is required. 
 
 ![Kernel2](https://user-images.githubusercontent.com/72515939/206186463-b9183de6-6fb2-436e-8ac8-50bc7be67fea.png)
 
@@ -118,79 +138,95 @@ Only `7` Kernel extension needed to get all our hacks working.
 
 #### Block
 
-No additional data needed here.
+* Untouched. Keep all empty.
 
 #### Emulate
 
-All is untouched. Keep all empty.
+* Untouched. Keep all empty.
 
 #### Force
 
-No additional data needed here.
+* Untouched. Keep all empty.
 
 #### Patch
 
-Here, only TRIM patch is added. All data as stated below:
+* Here, only the TRIM patch is applied. The following details are available:
 
-```xml
-<key>Patch</key>
-<array>
-	<dict>
-		<key>Arch</key>
-		<string>x86_64</string>
-		<key>Base</key>
-		<string></string>
-		<key>Comment</key>
-		<string>Enable TRIM for SSD</string>
-		<key>Count</key>
-		<integer>0</integer>
-		<key>Enabled</key>
-		<true/>
-		<key>Find</key>
-		<data>
-		AEFQUExFIFNTRAA=
-		</data>
-		<key>Identifier</key>
-		<string>com.apple.iokit.IOAHCIBlockStorage</string>
-		<key>Limit</key>
-		<integer>0</integer>
-		<key>Mask</key>
-		<data>
-		</data>
-		<key>MaxKernel</key>
-		<string></string>
-		<key>MinKernel</key>
-		<string></string>
-		<key>Replace</key>
-		<data>
-		AAAAAAAAAAAAAAA=
-		</data>
-		<key>ReplaceMask</key>
-		<data>
-		</data>
-		<key>Skip</key>
-		<integer>0</integer>
-	</dict>
-</array>
-```
+![Patch](https://user-images.githubusercontent.com/72515939/206198814-88c24678-5164-43c8-accf-1f6402821cde.png)
 
 ### Misc
 
+#### BlessOverride
+
+* Untouched. Keep all empty.
+
 #### Boot
 
-Enable:
-
-- HideAuxiliary = `True`
-- Showpicker = `True`
-- PickerAttributes = `147`
-- PickerMode = `External`
-- PickerVariant = `Acidanthera\GoldenGate`
-- Timeout - `5`
-
-> **Note**: The rest just keep untouched
+![Boot](https://user-images.githubusercontent.com/72515939/206198048-26eec458-eaa6-49fc-82c9-626cb6016748.png)
 
 #### Debug
 
-This section is only needed when we need OpenCore `debug` to find any clue related to device issues. In this case, we don't need it.
+* This part is only required when using OpenCore `debug` to look for any device-related hints. This time, we don't need it.
+
+#### Entries
+
+* Untouched. Keep all empty.
 
 #### Security
+
+![Security](https://user-images.githubusercontent.com/72515939/206195788-2cf8170a-c94b-4ce3-af74-761cb2e96e21.png)
+
+#### Serial
+
+![Serial](https://user-images.githubusercontent.com/72515939/206199568-e20d77b2-a071-44f5-b411-d0d4b2722051.png)
+
+#### Tools
+
+* Untouched. Keep all empty.
+
+### NVRAM
+
+![NVRAM](https://user-images.githubusercontent.com/72515939/206199938-8dbd2a8e-ab9a-4b83-994e-bebf4ca0f40b.png)
+
+### PlatformInfo
+
+![PI](https://user-images.githubusercontent.com/72515939/206200493-bd8260ab-1582-4353-9b4b-7ee51610e154.png)
+
+### UEFI
+
+#### APFS
+
+![APFS](https://user-images.githubusercontent.com/72515939/206200992-ce905c71-a22b-413d-927b-80643805ed32.png)
+
+#### AppleInput
+
+![AppleInput](https://user-images.githubusercontent.com/72515939/206201217-389e944d-fbbf-460a-86fd-ca3bf45f54e6.png)
+
+#### Audio
+
+![Audio](https://user-images.githubusercontent.com/72515939/206201393-2c3c93b5-af9b-42c3-b520-4016814129d9.png)
+
+#### Drivers
+
+![Drivers](https://user-images.githubusercontent.com/72515939/206201551-a5e24006-feea-4ae9-8798-c28d1794e897.png)
+
+#### Input
+
+![Input](https://user-images.githubusercontent.com/72515939/206202189-a01fce37-b190-4ada-ad35-799bd57c7a9f.png)
+
+#### Output
+
+![Output](https://user-images.githubusercontent.com/72515939/206202215-c6736f00-62b8-49b8-8202-6db0f952aba7.png)
+
+#### ProtocolOverrides
+
+![ProtocolOverrides](https://user-images.githubusercontent.com/72515939/206202267-6d6d433a-fede-4eef-b6cc-df366300cec5.png)
+
+#### Quirks
+
+![Quirks](https://user-images.githubusercontent.com/72515939/206202288-0fe9a22d-ada5-4fa1-8cbb-7bb446895ba1.png)
+
+
+
+
+
