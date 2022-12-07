@@ -7,21 +7,20 @@
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
 
-**List**
-* [OpenCore EFI Structure](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#opencore-efi-structure)
-* [Processor](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#processor)
-* [Graphics](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#graphics)
-* [Other Devices](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#other-devices)
-* [Audio](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#audio)
-* [Quirks and PlatformInfo](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#quirks-and-platforminfo)
-* [USB](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#usb)
-* [NVRAM](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#nvram)
-* [NVMe](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#nvme)
-* [Test](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/README.md#test)
-* [Validate Settings](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#validate-settings)
-* [References](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#references)
-* [Soft Reminder](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#soft-reminder)
-* [Acknowledgement](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#acknowledgement)
+**Table of Content**
+- [OpenCore EFI Structure](#opencore-efi-structure)
+- [Processor](#processor)
+- [Graphics](#graphics)
+- [Other Devices](#other-devices)
+- [Audio](#audio)
+- [Quirks and PlatformInfo](#quirks-and-platforminfo)
+- [USB](#usb)
+- [NVRAM](#nvram)
+- [NVMe](#nvme)
+- [Test](#test)
+- [References](#references)
+- [Soft Reminder](#soft-reminder)
+- [Acknowledgement](#acknowledgement)
 
 ## OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend
 
