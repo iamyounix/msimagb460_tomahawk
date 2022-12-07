@@ -45,6 +45,7 @@ OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend - WIP
 * [octool](https://github.com/rusty-bits/octool)
 * [ProperTree](https://github.com/corpnewt/ProperTree)
 * [SSDTTime](https://github.com/corpnewt/SSDTTime)
+* [USBToolbox](https://github.com/USBToolBox/tool)
 
 ### EFI Structure
 
