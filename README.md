@@ -1,4 +1,12 @@
 # Hackintosh: ASRock B460M Steel Legend
+
+[![BIOS](https://img.shields.io/badge/BIOS-1.60-purple)](https://www.asrock.com/mb/Intel/B460M%20Steel%20Legend/#BIOS)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.8.7-white)](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/releases)
+[![Release](https://img.shields.io/badge/Release-Latest-yellow)](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/releases)
+[![OS](https://img.shields.io/badge/OS-Monterey%20%2F%20Ventura-orange)](https://www.apple.com/my/macos/ventura/)
+![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
+![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
+
 **List**
 * [OpenCore EFI Structure](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#opencore-efi-structure)
 * [Processor](https://github.com/theofficialcopypaste/ASRockB460MSL-OC#processor)
