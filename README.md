@@ -42,6 +42,7 @@ OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend - WIP
 * [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
 * [gibMacRecovery](https://github.com/corpnewt/gibMacRecovery)
 * [Hackintool](https://github.com/benbaker76/Hackintool)
+* [IOreg](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/IORegistryExplorer.zip)
 * [OCAuxiliary](https://github.com/ic005k/OCAuxiliaryTools)
 * [octool](https://github.com/rusty-bits/octool)
 * [ProperTree](https://github.com/corpnewt/ProperTree)
