@@ -193,7 +193,7 @@ EFI
 
 * Use [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to generate serial, MLB, UUID and others.
 
-![GenSMBIOS](https://user-images.githubusercontent.com/72515939/206208791-b9005042-7aa6-48f1-b23c-b90e38028195.png)
+![GenSMBIOS (1)](https://user-images.githubusercontent.com/72515939/206208941-ddabc3a1-6979-4903-8c55-8bee4975565a.png)
 
 ![PI](https://user-images.githubusercontent.com/72515939/206200493-bd8260ab-1582-4353-9b4b-7ee51610e154.png)
 
