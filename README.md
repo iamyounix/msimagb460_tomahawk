@@ -92,24 +92,23 @@ EFI
 
 * Untouched. Keep all empty.
 
-####Quirks
+#### Quirks
 
 ![Quirks (1)](https://user-images.githubusercontent.com/72515939/206203114-133e4565-985c-4b8d-ae79-79ba259fa6d9.png)
 
 ### Booter
-* MmioWhitelist - NIL
-* Patch - NIL
-* Quirks
-  * AvoidRuntimeDefrag = `True`
-  * DevirtualiseMmio = `True`
-  * EnableSafeModeSlide = `True`
-  * ProtectUefiServices = `True`
-  * ProvideCustomSlide = `True`
-  * RebuildAppleMemoryMap = `True`
-  * ResizeAppleGpuBars = `-1`
-  * SyncRuntimePermissions = `True`
 
-> **Note**: Other than above is `False`
+#### MmioWhitelist
+
+* Untouched. Keep all empty.
+
+#### Patch
+
+* Untouched. Keep all empty.
+
+#### Quirks
+
+![Quirks (2)](https://user-images.githubusercontent.com/72515939/206203808-e053d833-d8a6-4fa6-b169-76820d728ec1.png)
 
 ### DeviceProperties
 
