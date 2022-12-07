@@ -193,4 +193,4 @@ Enable:
 
 This section is only needed when we need OpenCore `debug` to find any clue related to device issues. In this case, we don't need it.
 
-### Security
+#### Security
