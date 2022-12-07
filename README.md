@@ -21,8 +21,6 @@ OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend - WIP
 - [NVRAM](#nvram)
 - [PlatformInfo](#platforminfo)
 - [UEFI](#uefi)
-- 
-- [Acknowledgement](#acknowledgement)
 
 ### Introduction
 
