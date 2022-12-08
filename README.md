@@ -24,7 +24,7 @@ OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend - WIP
 
 ### Introduction
 
-* OpenCore is what we refer to as a **boot loader** – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as **SMBIOS**, **ACPI** tables and **kexts**. How this tool differs from others like **Clover** is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as **System Integrity Protection** and  Filevault
+OpenCore is what we refer to as a **boot loader** – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as **SMBIOS**, **ACPI** tables and **kexts**. How this tool differs from others like **Clover** is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as **System Integrity Protection** and  Filevault
 
 * Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding
 * Checkout Dortania Monthly [Post](https://dortania.github.io) to get more info
@@ -77,29 +77,35 @@ EFI
 
 ### ACPI
 
-* This project uses almost 80% of the patches from ACPI. The patch used is the same patch as used in config.plist. The purpose of patching on ACPI is that it is more permanent, at the same time we may learn a bit about ACPI basic knowledge. [SSDTTime](https://github.com/corpnewt/SSDTTime) is the tool used in this process. But be reminded, [SSDTTime](https://github.com/corpnewt/SSDTTime) only helps to patch the basic ACPI structure. The full patch can be viewed through the link provided below.
-
-* [SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXT.dsl)
+Almost 80% of the patches from ACPI are used in this project. The patch applied is identical to the patch applied to config.plist. Patching ACPI has the advantage of making it more permanent, and it also gives us the chance to learn some fundamental concepts about ACPI. This basic process require [SSDTTime](https://github.com/corpnewt/SSDTTime). However, keep in mind that [SSDTTime](https://github.com/corpnewt/SSDTTime) only helps the fundamental ACPI patching structure.
 
 ![SSDTTime](https://user-images.githubusercontent.com/72515939/206207663-6e93f488-8194-4c19-8484-2e5f78ba1971.png)
 
+> **Note**:  Refer to [SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXT.dsl) as a template for advance patching.
+
 #### Add
+
+* The ACPI table load order follows the item order in the array. ACPI tables are loaded from the `OC` / `ACPI` directory.
 
 ![ACPI-Add](https://user-images.githubusercontent.com/72515939/206202889-00f51692-3f6b-40d5-bb93-8d598b146884.png)
 
 #### Delete
 
-* Untouched. Keep all empty.
+* ACPI delete section. Just remain this as untouched unless we need to delete certain SSDT by using signature or OEM ID.
+
+> **Note**: Do not use table signatures when the sequence must be replaced in multiple places. This is particularly relevant when performing different types of renames.
 
 #### Patch
 
-* Untouched. Keep all empty.
+* Most of the cases, using ACPI patches throughout this section is dangerous, sometimes useless. Only an appropriate and functional patch implemented via ACPI achieves better results. Keep it untouched.
 
 #### Quirks
 
 ![Quirks (1)](https://user-images.githubusercontent.com/72515939/206203114-133e4565-985c-4b8d-ae79-79ba259fa6d9.png)
 
 ### Booter
+
+This section is originally implement from `AptioMemoryFix.efi` which is no longer maintained. It is also allows the application of different types of UEFI modifications to operating system bootloaders. The modifications currently provide various patches and environment alterations for different firmware types.
 
 #### MmioWhitelist
 
@@ -115,9 +121,18 @@ EFI
 
 ### DeviceProperties
 
-* In this section, what we need is to export important `devices path`, copy and add additional data to our config.plist. In this case, we take all `devices path`. The reason we doing this is to make sure all device is properly mapped. Export all `devices path` using [Hackintool](https://github.com/benbaker76/Hackintool). This will dump `pcidevices.dsl`, `pcidevices.json`, `pcidevices.plist` and `pcidevices.txt`. Only `pcidevices.plist` is what we need.
+In this section, what we need is to export important `devices path`, copy and add additional data to our config.plist. In this case, we take all `devices path`. The reason we doing this is to make sure all device is properly mapped.
+
+* On Mac, export all `devices path` using [Hackintool](https://github.com/benbaker76/Hackintool). This will dump `pcidevices.dsl`, `pcidevices.json`, `pcidevices.plist` and `pcidevices.txt`. Only `pcidevices.plist` is what we need.
+
+* On Windows, [DevicePath](https://github.com/corpnewt/DevicePath) is the best tool to convert device path. However, this need to be done manually 
+
+![DPWin1](https://user-images.githubusercontent.com/72515939/206334354-a204a84d-bc9e-42e5-8878-7e5bc6416c92.PNG)
+
+![DPWin](https://user-images.githubusercontent.com/72515939/206334366-d9d1c69f-8906-43ba-9745-74eb661d3103.PNG)
 
 ![PCI](https://user-images.githubusercontent.com/72515939/206184503-bdb22c2c-3321-44cd-861c-e1011a67c959.png)
+
 ![Files](https://user-images.githubusercontent.com/72515939/206185002-51536d9e-5270-4d3c-9956-a523e00d645c.png)
 
 * Then, open `pcidevices.plist` using [ProperTree](https://github.com/corpnewt/ProperTree), copy all and paste to config.plist. Add `name` / `string` / `device name` to all device. Below is an example:
