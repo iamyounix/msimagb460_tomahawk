@@ -10,7 +10,7 @@ OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend - WIP
 
 **Table of Content**
 
-[Introduction](#introduction) | [Device Specification](#device-specification) | [Tools](#tools) | [EFI Structure](#efi-structure) | [ACPI](#acpi) | [Booter](#booter) | [DeviceProperties](#deviceproperties) | [Kernel](#kernel) | [Misc](#misc) | [NVRAM](#nvram) | [PlatformInfo](#platforminfo) | [UEFI](#uefi) | [Acknowledgement](#acknowledgement)
+[Introduction](#introduction) | [Device Specification](#device-specification) | [Tools](#tools) | [EFI Structure](#efi-structure) | [ACPI](#acpi) | [Booter](#booter) | [DeviceProperties](#deviceproperties) | [Kernel](#kernel) | [Misc](#misc) | [NVRAM](#nvram) | [PlatformInfo](#platforminfo) | [UEFI](#uefi) | [Tips](#tips) | [Acknowledgement](#acknowledgement)
 
 ### Introduction
 
@@ -281,6 +281,42 @@ Mainly relevant for Virtual machines, legacy macs and FileVault users. Leave as 
 Relating to quirks with the UEFI environment.
 
 ![Quirks](https://user-images.githubusercontent.com/72515939/206202288-0fe9a22d-ada5-4fa1-8cbb-7bb446895ba1.png)
+
+### Tips
+
+This is just a tips related to this project
+
+#### Building EFI (GUI)
+
+Certain users depend on OpenCore Configurator to build an EFI. However, this app only works on macOS. Post-install, maybe. But how do you create an EFI from scratch without macOS installed? The answer is [OCAuxiliary](https://github.com/ic005k/OCAuxiliaryTools). OpenCore Auxiliary Tools is a graphical user interface (GUI) configuration tool for editing config.plist files for Acidanthera's OpenCore Boot Manager. This app supports the Windows, Linux, and MacOS platforms. Because of that, this app also provides a workaround to build an EFI without any macOS installed.
+
+![OCAT2](https://user-images.githubusercontent.com/72515939/206455702-08d09a76-4b38-408a-9cfe-e84901d96166.png)
+
+Unlike other Configurator apps, OCAT doesn't mess up the config if the Devs of OpenCore add new features/keys to the config file structure. Instead, it adapts and integrates them in the interface automatically. 
+
+#### Update
+
+[octool](https://github.com/rusty-bits/octool), A tool to help edit an OpenCore config.plist, updating and make an EFI folder from the command line. Developer also provides crossplatform workaround (Windows, Linux, macOS) to handle the task.
+  
+![oactool](https://user-images.githubusercontent.com/72515939/206457470-8e6d377a-219e-412b-9a0b-830da7005597.png)
+
+### Editing Plist
+
+ProperTree is a cross-platform GUI plist editor written using Python (compatible with both 2.x and 3.x) and Tkinter. Monterey and above, please update least `python-tk@3.10` via homebrew. Download [ProperTree](https://github.com/corpnewt/ProperTree) and start find [ProperTree](https://github.com/corpnewt/ProperTree) > Scripts > `buildappselect.command` and run the program.
+
+```zsh
+brew install python-tk@3.10
+```
+
+run `ProperTree.command`
+
+![xxxxx](https://user-images.githubusercontent.com/72515939/206460072-63691f3f-1754-4b73-a092-192c087504e4.png)
+
+Select No. 2 to gen an app.
+
+![xxx](https://user-images.githubusercontent.com/72515939/206460220-6718e1ad-fbf2-4b13-8993-48459c3e30ed.png)
+
+Then, grab `ProperTree.app` from **ProperTree-master**. Move the app to `Applications` folder.
 
 ### Acknowledgement
 
