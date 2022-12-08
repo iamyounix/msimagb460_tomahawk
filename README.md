@@ -218,9 +218,17 @@ Perform serial port initialisation and configure PCD values required by `BaseSer
 
 #### Tools
 
-* Untouched. Keep all empty.
+* Standalone tools may help to debug firmware and hardware. In these case, leave it untouched.
 
 ### NVRAM
+
+Allows setting of non-volatile UEFI variables which commonly described as `NVRAM` variables. Refer to man nvram for details. The macOS operating system extensively uses `NVRAM` variables for OS Bootloader  Firmware intercommunication. Hence, the supply of several `NVRAM` variables is required for the proper functioning of macOS.
+
+- **4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14** (APPLE_VENDOR_VARIABLE_GUID)
+- **7C436110-AB2A-4BBB-A880-FE41995C9F82** (APPLE_BOOT_VARIABLE_GUID)
+- **5EDDA193-A070-416A-85EB-2A1181F45B18** (Apple Hardware Configuration Storage for MacPro7,1)
+- **8BE4DF61-93CA-11D2-AA0D-00E098032B8C** (EFI_GLOBAL_VARIABLE_GUID)
+- **4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102** (OC_VENDOR_VARIABLE_GUID)
 
 ![NVRAM](https://user-images.githubusercontent.com/72515939/206199938-8dbd2a8e-ab9a-4b83-994e-bebf4ca0f40b.png)
 
@@ -234,35 +242,61 @@ Perform serial port initialisation and configure PCD values required by `BaseSer
 
 ### UEFI
 
+UEFI (Unified Extensible Firmware Interface) is a specification that defines a software interface between an operating system and platform firmware. This section allows loading additional UEFI modules as well as applying tweaks to the onboard firmware. To inspect firmware contents, apply modifications and perform upgrades UEFITool and supplementary utilities can be used.
+
 #### APFS
 
 ![APFS](https://user-images.githubusercontent.com/72515939/206200992-ce905c71-a22b-413d-927b-80643805ed32.png)
 
+* **MinDate** (Minimal allowed APFS driver date)
+	- **0** = require the default supported release date of APFS in OpenCore.
+	- **-1** =  permit any release date to load (strongly discouraged).
+	- **Other** = custom minimal APFS release date. APFS release dates can be found in OpenCore boot log and [OcApfsLib](https://github.com/acidanthera/OpenCorePkg/blob/master/Include/Acidanthera/Library/OcApfsLib.h).
+
+* **MinVersion** (Minimal allowed APFS driver version)
+	- **0** = require the default supported version of APFS in OpenCore.
+	- **- 1** = permit any version to load (strongly discouraged).
+	- **Other** = custom minimal APFS version. APFS versions can be found in OpenCore boot log and [OcApfsLib](https://github.com/acidanthera/OpenCorePkg/blob/master/Include/Acidanthera/Library/OcApfsLib.h).
+
 #### AppleInput
+
+This option determines whether the **OEM Apple Event Protocol** is used (where available). In mosts case, these settings is untouched. No need to change anything unless needed.
 
 ![AppleInput](https://user-images.githubusercontent.com/72515939/206201217-389e944d-fbbf-460a-86fd-ca3bf45f54e6.png)
 
 #### Audio
 
+This typically contains the first audio codec address on the builtin analog audio controller (HDEF). For us we'll be ignoring (leave as default).
+
 ![Audio](https://user-images.githubusercontent.com/72515939/206201393-2c3c93b5-af9b-42c3-b520-4016814129d9.png)
 
 #### Drivers
+
+Depending on the firmware, a different set of drivers may be required. Refer [here](https://dortania.github.io/docs/release/Configuration.html#drivers) for more info.
 
 ![Drivers](https://user-images.githubusercontent.com/72515939/206201551-a5e24006-feea-4ae9-8798-c28d1794e897.png)
 
 #### Input
 
+Related to boot.efi keyboard passthrough used for FileVault and Hotkey support, leave everything here as default as we have no use for these quirks. Leave as default.
+
 ![Input](https://user-images.githubusercontent.com/72515939/206202189-a01fce37-b190-4ada-ad35-799bd57c7a9f.png)
 
 #### Output
+
+Relating to OpenCore's visual output, leave everything here as default as we have no use for these quirks. Leave as default.
 
 ![Output](https://user-images.githubusercontent.com/72515939/206202215-c6736f00-62b8-49b8-8202-6db0f952aba7.png)
 
 #### ProtocolOverrides
 
+Mainly relevant for Virtual machines, legacy macs and FileVault users. Leave as default.
+
 ![ProtocolOverrides](https://user-images.githubusercontent.com/72515939/206202267-6d6d433a-fede-4eef-b6cc-df366300cec5.png)
 
 #### Quirks
+
+Relating to quirks with the UEFI environment.
 
 ![Quirks](https://user-images.githubusercontent.com/72515939/206202288-0fe9a22d-ada5-4fa1-8cbb-7bb446895ba1.png)
 
