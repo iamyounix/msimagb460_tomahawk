@@ -29,7 +29,7 @@ OpenCore is what we refer to as a **boot loader** – it is a complex piece of s
 * Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding
 * Checkout Dortania Monthly [Post](https://dortania.github.io) to get more info
 
-* **Note**: if you're still interested in utilising it, please be carefulto adjust the .plist configuration and SSDTs according to your machine.
+**Note**: if you're still interested in utilising it, please be carefulto adjust the .plist configuration and SSDTs according to your machine.
 
 ### Device Specification
 * **Processor** - Intel® Core™ i5-10400 `CometLake` 
@@ -85,19 +85,19 @@ Almost 80% of the patches from ACPI are used in this project. The patch applied 
 
 #### Add
 
-* The ACPI table load order follows the item order in the array. ACPI tables are loaded from the `OC` / `ACPI` directory.
+The ACPI table load order follows the item order in the array. ACPI tables are loaded from the `OC` / `ACPI` directory.
 
 ![ACPI-Add](https://user-images.githubusercontent.com/72515939/206202889-00f51692-3f6b-40d5-bb93-8d598b146884.png)
 
 #### Delete
 
-* ACPI delete section. Just remain this as untouched unless we need to delete certain SSDT by using signature or OEM ID.
+ACPI delete section. Just remain this as untouched unless we need to delete certain SSDT by using signature or OEM ID.
 
 > **Note**: Do not use table signatures when the sequence must be replaced in multiple places. This is particularly relevant when performing different types of renames.
 
 #### Patch
 
-* Most of the cases, using ACPI patches throughout this section is dangerous, sometimes useless. Only an appropriate and functional patch implemented via ACPI achieves better results. Keep it untouched.
+Most of the cases, using ACPI patches throughout this section is dangerous, sometimes useless. Only an appropriate and functional patch implemented via ACPI achieves better results. Keep it untouched.
 
 #### Quirks
 
@@ -109,11 +109,11 @@ This section is originally implement from `AptioMemoryFix.efi` which is no longe
 
 #### MmioWhitelist
 
-* Untouched. Keep all empty.
+Keep empty.
 
 #### Patch
 
-* Untouched. Keep all empty.
+Keep empty.
 
 #### Quirks
 
@@ -125,15 +125,15 @@ In this section, what we need is to export important `devices path`, copy and ad
 
 * On Mac, export all `devices path` using [Hackintool](https://github.com/benbaker76/Hackintool). This will dump `pcidevices.dsl`, `pcidevices.json`, `pcidevices.plist` and `pcidevices.txt`. Only `pcidevices.plist` is what we need.
 
+![PCI](https://user-images.githubusercontent.com/72515939/206184503-bdb22c2c-3321-44cd-861c-e1011a67c959.png)
+
+![Files](https://user-images.githubusercontent.com/72515939/206185002-51536d9e-5270-4d3c-9956-a523e00d645c.png)
+
 * On Windows, [DevicePath](https://github.com/corpnewt/DevicePath) is the best tool to convert device path. However, this need to be done manually 
 
 ![DPWin1](https://user-images.githubusercontent.com/72515939/206334354-a204a84d-bc9e-42e5-8878-7e5bc6416c92.PNG)
 
 ![DPWin](https://user-images.githubusercontent.com/72515939/206334366-d9d1c69f-8906-43ba-9745-74eb661d3103.PNG)
-
-![PCI](https://user-images.githubusercontent.com/72515939/206184503-bdb22c2c-3321-44cd-861c-e1011a67c959.png)
-
-![Files](https://user-images.githubusercontent.com/72515939/206185002-51536d9e-5270-4d3c-9956-a523e00d645c.png)
 
 * Then, open `pcidevices.plist` using [ProperTree](https://github.com/corpnewt/ProperTree), copy all and paste to config.plist. Add `name` / `string` / `device name` to all device. Below is an example:
 
@@ -145,9 +145,20 @@ In this section, what we need is to export important `devices path`, copy and ad
 
 ### Kernel
 
+This section allows the application of different kinds of kernelspace modifications on `Apple Kernel (XNU)`. The modifications currently provide driver (kext) injection, kernel and driver patching, and driver blocking.
+
 #### Add
 
-* To make all of our hacks function, just `7` kernel extensions addition is required. 
+To make all of our hacks function, just `7` kernel extensions addition is required. 
+
+**Kexts List**
+1. [Lilu](https://github.com/acidanthera/Lilu)
+2. [AppleALC](https://github.com/acidanthera/AppleALC)
+3. [VirtualSMC](https://github.com/acidanthera/VirtualSMC) - include [SMCProcessor.kext](https://github.com/acidanthera/VirtualSMC) and [SMCSuperIO.kext](https://github.com/acidanthera/VirtualSMC)
+4. [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)
+5. USBMap
+
+> **Note**: USBMap.kext require [USBToolbox](https://github.com/USBToolBox/tool). Please read developer description. 
 
 ![Kernel2](https://user-images.githubusercontent.com/72515939/206186463-b9183de6-6fb2-436e-8ac8-50bc7be67fea.png)
 
@@ -155,45 +166,53 @@ In this section, what we need is to export important `devices path`, copy and ad
 
 #### Block
 
-* Untouched. Keep all empty.
+To remove selected kernel extensions (kexts) from the prelinked kerne
 
 #### Emulate
 
-* Untouched. Keep all empty.
+Keep empty.
 
 #### Force
 
-* Untouched. Keep all empty.
+Keep empty.
 
 #### Patch
 
-* Here, only the TRIM patch is applied. The following details are available:
+Here, only TRIM patch applied. The following details are as below:
 
 ![Patch](https://user-images.githubusercontent.com/72515939/206198814-88c24678-5164-43c8-accf-1f6402821cde.png)
 
 ### Misc
 
+This section contains miscellaneous configuration options affecting OpenCore operating system loading behaviour in addition to other options that do not readily fit into other sections.
+
 #### BlessOverride
 
-* Untouched. Keep all empty.
+Add custom scanning paths through the bless model. In these case, just keep it untouched unless needed.
 
 #### Boot
+
+Apply the boot configuration described in the [Boot Properties](https://dortania.github.io/docs/release/Configuration.html#boot-properties)
 
 ![Boot](https://user-images.githubusercontent.com/72515939/206198048-26eec458-eaa6-49fc-82c9-626cb6016748.png)
 
 #### Debug
 
-* This part is only required when using OpenCore `debug` to look for any device-related hints. This time, we don't need it.
+Apply debug configuration described in the [Debug Properties](https://dortania.github.io/docs/release/Configuration.html#debug-properties) section below
 
 #### Entries
 
-* Untouched. Keep all empty.
+This section add boot entries to OpenCore picker. Other than that, just keep empty.
 
 #### Security
+
+Apply the security configuration described in the [Security Properties](https://dortania.github.io/docs/release/Configuration.html#security-properties)
 
 ![Security](https://user-images.githubusercontent.com/72515939/206195788-2cf8170a-c94b-4ce3-af74-761cb2e96e21.png)
 
 #### Serial
+
+Perform serial port initialisation and configure PCD values required by `BaseSerialPortLib16550` for serial ports to properly function. Values are listed and described in the [Serial Properties](https://dortania.github.io/docs/release/Configuration.html#serial-properties) and [Serial Custom Properties](https://dortania.github.io/docs/release/Configuration.html#serial-custom-properties). Keep it untouched.
 
 ![Serial](https://user-images.githubusercontent.com/72515939/206199568-e20d77b2-a071-44f5-b411-d0d4b2722051.png)
 
