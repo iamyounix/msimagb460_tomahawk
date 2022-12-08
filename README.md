@@ -9,19 +9,8 @@ OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend - WIP
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
 
 **Table of Content**
-- [Introduction](#introduction)
-- [Device Specification](#device-specification)
-- [Tools](#tools)
-- [EFI Structure](#efi-structure)
-- [ACPI](#acpi)
-- [Booter](#booter)
-- [DeviceProperties](#deviceproperties)
-- [Kernel](#kernel)
-- [Misc](#misc)
-- [NVRAM](#nvram)
-- [PlatformInfo](#platforminfo)
-- [UEFI](#uefi)
-- [Acknowledgement](#acknowledgement)
+
+[Introduction](#introduction) | [Device Specification](#device-specification) | [Tools](#tools) | [EFI Structure](#efi-structure) | [ACPI](#acpi) | [Booter](#booter) | [DeviceProperties](#deviceproperties) | [Kernel](#kernel) | [Misc](#misc) | [NVRAM](#nvram) | [PlatformInfo](#platforminfo) | [UEFI](#uefi) | [Acknowledgement](#acknowledgement)
 
 ### Introduction
 
@@ -39,16 +28,8 @@ OpenCore is what we refer to as a **boot loader** – it is a complex piece of s
 * **Disk**	- 02 x Kingston A2000 500GB, 02 x San Disk 500GB
 
 ### Tools
-* [DevicePath](https://github.com/corpnewt/DevicePath)
-* [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
-* [gibMacRecovery](https://github.com/corpnewt/gibMacRecovery)
-* [Hackintool](https://github.com/benbaker76/Hackintool)
-* [IOreg](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/IORegistryExplorer.zip)
-* [OCAuxiliary](https://github.com/ic005k/OCAuxiliaryTools)
-* [octool](https://github.com/rusty-bits/octool)
-* [ProperTree](https://github.com/corpnewt/ProperTree)
-* [SSDTTime](https://github.com/corpnewt/SSDTTime)
-* [USBToolbox](https://github.com/USBToolBox/tool)
+
+[DevicePath](https://github.com/corpnewt/DevicePath) | [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) | [gibMacRecovery](https://github.com/corpnewt/gibMacRecovery) | [Hackintool](https://github.com/benbaker76/Hackintool) | [IOreg](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/IORegistryExplorer.zip) | [OCAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) | [octool](https://github.com/rusty-bits/octool) | [ProperTree](https://github.com/corpnewt/ProperTree) | [SSDTTime](https://github.com/corpnewt/SSDTTime) | [USBToolbox](https://github.com/USBToolBox/tool)
 
 ### EFI Structure
 
