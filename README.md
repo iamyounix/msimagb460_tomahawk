@@ -10,7 +10,7 @@ OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend - WIP
 
 **Table of Content**
 
-[Introduction](#introduction) | [Device Specification](#device-specification) | [Tools](#tools) | [EFI Structure](#efi-structure) | [ACPI](#acpi) | [Booter](#booter) | [DeviceProperties](#deviceproperties) | [Kernel](#kernel) | [Misc](#misc) | [NVRAM](#nvram) | [PlatformInfo](#platforminfo) | [UEFI](#uefi) | [Tips](#tips) | [Acknowledgement](#acknowledgement)
+[Introduction](#introduction) | [Device Specification](#device-specification) | [Tools](#tools) | [EFI Structure](#efi-structure) | [ACPI](#acpi) | [Booter](#booter) | [DeviceProperties](#deviceproperties) | [Kernel](#kernel) | [Misc](#misc) | [NVRAM](#nvram) | [PlatformInfo](#platforminfo) | [UEFI](#uefi) | [Tips](#tips) | [Varuous terminal Command](#various-terminal-command] | [Acknowledgement](#acknowledgement)
 
 ### Introduction
 
@@ -334,7 +334,11 @@ As refered as [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/mi
 
 > **Note**: Go to [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-1-add-wake-type-property-recommended) for more method.
 
+### Various Terminal Command
+
+Refer [Various Terminal Command](https://github.com/5T33Z0/OC-Little-Translated/blob/main/Terminal_Commands.md) for more info.
+
 ### Acknowledgement
 
-#### [Acidanthera](https://github.com/acidanthera) | [benbaker76](https://github.com/benbaker76) | [corpnewt](https://github.com/corpnewt) | [Dortania](https://github.com/dortania) | [ic005k](https://github.com/ic005k) | [rusty-bits](https://github.com/rusty-bits) | [USBToolbox](https://github.com/USBToolBox)
+#### [Acidanthera](https://github.com/acidanthera) | [benbaker76](https://github.com/benbaker76) | [corpnewt](https://github.com/corpnewt) | [Dortania](https://github.com/dortania) | [ic005k](https://github.com/ic005k) | [rusty-bits](https://github.com/rusty-bits) | [USBToolbox](https://github.com/USBToolBox) | [5T33Z0](https://github.com/5T33Z0)
 
