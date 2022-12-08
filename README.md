@@ -318,6 +318,22 @@ Select No. 2 to gen an app.
 
 Then, grab `ProperTree.app` from **ProperTree-master**. Move the app to `Applications` folder.
 
+### Fix Keyboard Wake
+
+As refered as [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-1-add-wake-type-property-recommended), there is a workaround fix keyboard wake. There are two choice which is via config.plist (DeviceProperties) or ACPI. 
+
+* **DeviceProperties**
+  * add `acpi-wake-type` | `Data` | `<01>` to our USB device. In this case is **XHC**.
+
+![WakeType](https://user-images.githubusercontent.com/72515939/206504787-829fd4f3-78b5-4fc6-bc95-68e4a28d7582.png)
+
+* **ACPI**
+  * add `acpi-wake-type` | `One` to our USB device. In this case is **XHC1**.
+
+![Wake](https://user-images.githubusercontent.com/72515939/206506046-552e7799-d3e6-4eec-aa50-5371ef20c563.png)
+
+> **Note**: Go to [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-1-add-wake-type-property-recommended) for more method.
+
 ### Acknowledgement
 
 #### [Acidanthera](https://github.com/acidanthera) | [benbaker76](https://github.com/benbaker76) | [corpnewt](https://github.com/corpnewt) | [Dortania](https://github.com/dortania) | [ic005k](https://github.com/ic005k) | [rusty-bits](https://github.com/rusty-bits) | [USBToolbox](https://github.com/USBToolBox)
