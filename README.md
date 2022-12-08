@@ -21,6 +21,7 @@ OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend - WIP
 - [NVRAM](#nvram)
 - [PlatformInfo](#platforminfo)
 - [UEFI](#uefi)
+- [Acknowledgement](#acknowledgement)
 
 ### Introduction
 
@@ -300,7 +301,7 @@ Relating to quirks with the UEFI environment.
 
 ![Quirks](https://user-images.githubusercontent.com/72515939/206202288-0fe9a22d-ada5-4fa1-8cbb-7bb446895ba1.png)
 
+### Acknowledgement
 
-
-
+#### [Acidanthera](https://github.com/acidanthera) | [benbaker76](https://github.com/benbaker76) | [corpnewt](https://github.com/corpnewt) | [Dortania](https://github.com/dortania) | [ic005k](https://github.com/ic005k) | [rusty-bits](https://github.com/rusty-bits) | [USBToolbox](https://github.com/USBToolBox)
 
