@@ -10,7 +10,7 @@ OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend - WIP
 
 **Table of Content**
 
-[Introduction](#introduction) | [Device Specification](#device-specification) | [Tools](#tools) | [EFI Structure](#efi-structure) | [ACPI](#acpi) | [Booter](#booter) | [DeviceProperties](#deviceproperties) | [Kernel](#kernel) | [Misc](#misc) | [NVRAM](#nvram) | [PlatformInfo](#platforminfo) | [UEFI](#uefi) | [Tips](#tips) | [Varuous terminal Command](#various-terminal-command] | [Acknowledgement](#acknowledgement)
+[Introduction](#introduction) | [Device Specification](#device-specification) | [Tools](#tools) | [EFI Structure](#efi-structure) | [ACPI](#acpi) | [Booter](#booter) | [DeviceProperties](#deviceproperties) | [Kernel](#kernel) | [Misc](#misc) | [NVRAM](#nvram) | [PlatformInfo](#platforminfo) | [UEFI](#uefi) | [Tips](#tips) | [Varuous terminal Command](#various-terminal-command) | [Acknowledgement](#acknowledgement)
 
 ### Introduction
 
