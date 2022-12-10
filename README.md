@@ -332,11 +332,9 @@ git clone https://github.com/corpnewt/ProperTree.git
 brew install python-tk@3.10
 ```
 
-After installlation process is done, open Scripts folder and run  `buildapp-select.command`
+After installlation process is done, open Scripts folder. Run  `buildapp-select.command` and select No. 2 to build an `app`.
 
 ![ProperTreebuild](https://user-images.githubusercontent.com/72515939/206828298-23f8e36f-f624-495b-aff0-947bdc55ce0a.png)
-
-Select No. 2 to gen an app.
 
 ```zsh
 Building .app with the following python install:
