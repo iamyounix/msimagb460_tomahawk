@@ -380,12 +380,12 @@ You may move `ProperTree.app` to `Applications` folder.
 As refered as [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-1-add-wake-type-property-recommended), there is a workaround fix keyboard wake. There are two choice which is via config.plist (DeviceProperties) or ACPI. 
 
 * **DeviceProperties**
-  * add `acpi-wake-type` | `Data` | `<01>` to our USB device. In this case is **XHC**. Open SSDT related to USB Devices using [macIASL](https://github.com/acidanthera/MaciASL) or [Xiasl](https://github.com/ic005k/Xiasl).
+  * add `acpi-wake-type` | `Data` | `<01>` to our USB device. In this case is **XHC**. Edit USB device path using [ProperTree](https://github.com/corpnewt/ProperTree).
 
-![WakeType](https://user-images.githubusercontent.com/72515939/206504787-829fd4f3-78b5-4fc6-bc95-68e4a28d7582.png)
+![acpi-wake-type](https://user-images.githubusercontent.com/72515939/206828850-0df824eb-e925-411e-a18d-95b8266bc5ea.png)
 
 * **ACPI**
-  * add `acpi-wake-type` | `One` to our USB device. In this case is **XHC1**.
+  * add `acpi-wake-type` | `One` to our USB device. In this case is **XHC1**. Edit USB device path using [macIASL](https://github.com/acidanthera/MaciASL) or [Xiasl](https://github.com/ic005k/Xiasl).
 
 ![Wake](https://user-images.githubusercontent.com/72515939/206827847-30a93ff6-61e7-44b4-8b2e-530c82ffc4e4.png)
 
