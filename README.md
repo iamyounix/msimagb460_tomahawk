@@ -29,7 +29,7 @@ OpenCore is what we refer to as a **boot loader** – it is a complex piece of s
 
 ### Tools
 
-[DevicePath](https://github.com/corpnewt/DevicePath) | [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) | [gibMacRecovery](https://github.com/corpnewt/gibMacRecovery) | [Hackintool](https://github.com/benbaker76/Hackintool) | [IOreg](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/IORegistryExplorer.zip) | [OCAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) | [octool](https://github.com/rusty-bits/octool) | [ProperTree](https://github.com/corpnewt/ProperTree) | [SSDTTime](https://github.com/corpnewt/SSDTTime) | [USBToolbox](https://github.com/USBToolBox/tool)
+[DevicePath](https://github.com/corpnewt/DevicePath) | [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) | [gibMacRecovery](https://github.com/corpnewt/gibMacRecovery) | [Hackintool](https://github.com/benbaker76/Hackintool) | [IOreg](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/IORegistryExplorer.zip) | [macIASL](https://github.com/acidanthera/MaciASL) or [Xiasl](https://github.com/ic005k/Xiasl) | [OCAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) | [octool](https://github.com/rusty-bits/octool) | [ProperTree](https://github.com/corpnewt/ProperTree) | [SSDTTime](https://github.com/corpnewt/SSDTTime) | [USBToolbox](https://github.com/USBToolBox/tool)
 
 ### EFI Structure
 
