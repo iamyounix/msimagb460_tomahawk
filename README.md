@@ -304,33 +304,92 @@ Unlike other Configurator apps, OCAT doesn't mess up the config if the Devs of O
 
 ProperTree is a cross-platform GUI plist editor written using Python (compatible with both 2.x and 3.x) and Tkinter. Monterey and above, please update least `python-tk@3.10` via homebrew. Download [ProperTree](https://github.com/corpnewt/ProperTree) and start find [ProperTree](https://github.com/corpnewt/ProperTree) > Scripts > `buildappselect.command` and run the program.
 
+#### Download ProperTree
+
+```zsh
+cd <Location>
+```
+```zsh
+git clone https://github.com/corpnewt/ProperTree.git
+```
+
+#### Check ProperTree Files and Folder
+
+**Structure**
+
+- Scripts (Folder) - location to build `Propertree.app` 
+- LICENSE
+- ProperTree.bat - for Windows
+- ProperTree.command - macOS & Linux
+- ProperTree.py - source
+- Readme.md - Description/Guide
+
+![ProperTree](https://user-images.githubusercontent.com/72515939/206828201-329a539a-b541-46ca-bb8a-fe54b36c8190.png)
+
+#### Install python-tk@3.10
+
 ```zsh
 brew install python-tk@3.10
 ```
 
-run `ProperTree.command`
+After installlation process is done, open Scripts folder and run  `buildapp-select.command`
 
-![xxxxx](https://user-images.githubusercontent.com/72515939/206460072-63691f3f-1754-4b73-a092-192c087504e4.png)
+![ProperTreebuild](https://user-images.githubusercontent.com/72515939/206828298-23f8e36f-f624-495b-aff0-947bdc55ce0a.png)
 
 Select No. 2 to gen an app.
 
-![xxx](https://user-images.githubusercontent.com/72515939/206460220-6718e1ad-fbf2-4b13-8993-48459c3e30ed.png)
+```zsh
+Building .app with the following python install:
+ - /usr/local/bin/python3
+ --> 3.10.8
+ --> tk 8.6
+Checking for existing ProperTree.app...
+Creating bundle structure...
+Copying scripts...
+ - ProperTree.py -> ProperTree.command
+ - __init__.py
+ - buildapp-select.py
+ - downloader.py
+ - menu.plist
+ - plist.py
+ - plistwindow.py
+ - run.py
+ - shortcut.icns
+ - snapshot.plist
+ - utils.py
+ - version.json
+Building Info.plist...
+Saved to: /Volumes/Tools/ProperTree/ProperTree.app
 
-Then, grab `ProperTree.app` from **ProperTree-master**. Move the app to `Applications` folder.
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+[Process completed]
+```
+
+Then go back to ProperTree main folder. You may see `ProperTree.app` in this location.
+
+![ProperTreebuild2](https://user-images.githubusercontent.com/72515939/206828403-f841f3a3-d651-430c-b405-828420c4dbd8.png)
+
+You may move `ProperTree.app` to `Applications` folder.
+
+> **Note**: Using `ProperTree.command` may run the this tool without build the `app`.
 
 ### Fix Keyboard Wake
 
 As refered as [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-1-add-wake-type-property-recommended), there is a workaround fix keyboard wake. There are two choice which is via config.plist (DeviceProperties) or ACPI. 
 
 * **DeviceProperties**
-  * add `acpi-wake-type` | `Data` | `<01>` to our USB device. In this case is **XHC**.
+  * add `acpi-wake-type` | `Data` | `<01>` to our USB device. In this case is **XHC**. Open SSDT related to USB Devices using [macIASL](https://github.com/acidanthera/MaciASL) or [Xiasl](https://github.com/ic005k/Xiasl).
 
 ![WakeType](https://user-images.githubusercontent.com/72515939/206504787-829fd4f3-78b5-4fc6-bc95-68e4a28d7582.png)
 
 * **ACPI**
   * add `acpi-wake-type` | `One` to our USB device. In this case is **XHC1**.
 
-![Wake](https://user-images.githubusercontent.com/72515939/206506046-552e7799-d3e6-4eec-aa50-5371ef20c563.png)
+![Wake](https://user-images.githubusercontent.com/72515939/206827847-30a93ff6-61e7-44b4-8b2e-530c82ffc4e4.png)
 
 > **Note**: Go to [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-1-add-wake-type-property-recommended) for more method.
 
