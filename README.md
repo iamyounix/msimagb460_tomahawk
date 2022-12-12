@@ -19,7 +19,7 @@ OpenCore is what we refer to as a **boot loader** – it is a complex piece of s
 * Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding
 * Checkout Dortania Monthly [Post](https://dortania.github.io) to get more info.
 
-**Note**: if you're still interested in utilising it, please be carefulto adjust the .plist configuration and SSDTs according to your machine.
+**Note**: if you're still interested in utilising it, please be careful to adjust the `.plist` configuration and SSDTs according to your machine.
 
 ### Device Specification
 * **Processor** - Intel® Core™ i5-10400 `CometLake` 
