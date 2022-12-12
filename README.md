@@ -298,7 +298,7 @@ Unlike other Configurator apps, OCAT doesn't mess up the config if the Devs of O
 
 [octool](https://github.com/rusty-bits/octool), A tool to help edit an OpenCore config.plist, updating and make an EFI folder from the command line. Developer also provides crossplatform workaround (Windows, Linux, macOS) to handle the task.
   
-![oactool](https://user-images.githubusercontent.com/72515939/206457470-8e6d377a-219e-412b-9a0b-830da7005597.png)
+![octool](https://user-images.githubusercontent.com/72515939/206938654-956575d3-2034-440d-b99b-be9b826421a4.png)
 
 ### Editing Plist
 
@@ -382,8 +382,12 @@ As refered as [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/mi
 * **DeviceProperties**
   * add `acpi-wake-type` | `Data` | `<01>` to our USB device. In this case is **XHC**. Edit USB device path using [ProperTree](https://github.com/corpnewt/ProperTree).
 
+![acpi-wake-type cp](https://user-images.githubusercontent.com/72515939/206938454-6c0fe68e-e8c6-4fea-8cc9-f8a14f51e187.png)
+
 * **ACPI**
   * add `acpi-wake-type` | `One` to our USB device. In this case is **XHC1**. Edit USB device path using [macIASL](https://github.com/acidanthera/MaciASL) or [Xiasl](https://github.com/ic005k/Xiasl).
+
+![acpi-wake-type](https://user-images.githubusercontent.com/72515939/206938315-74d244b6-3535-47e1-8081-401643d8aa8c.png)
 
 > **Note**: Go to [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-1-add-wake-type-property-recommended) for more method.
 
