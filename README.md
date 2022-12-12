@@ -380,7 +380,7 @@ You may move `ProperTree.app` to `Applications` folder.
 As refered as [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-1-add-wake-type-property-recommended), there is a workaround fix keyboard wake. There are two choice which is via config.plist (DeviceProperties) or ACPI. 
 
 * **DeviceProperties**
-  * add `acpi-wake-type` | `Data` | `<01>` to our USB device. In this case is **XHC**. Edit USB device path using [ProperTree](https://github.com/corpnewt/ProperTree).
+  * add `acpi-wake-type` | `Data` | `<01>` to our USB device. In this case is **XHC1**. Edit USB device path using [ProperTree](https://github.com/corpnewt/ProperTree).
 
 ![acpi-wake-type cp](https://user-images.githubusercontent.com/72515939/206938454-6c0fe68e-e8c6-4fea-8cc9-f8a14f51e187.png)
 
