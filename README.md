@@ -387,8 +387,6 @@ As refered as [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/mi
 * **ACPI**
   * add `acpi-wake-type` | `One` to our USB device. In this case is **XHC1**. Edit USB device path using [macIASL](https://github.com/acidanthera/MaciASL) or [Xiasl](https://github.com/ic005k/Xiasl).
 
-![Wake](https://user-images.githubusercontent.com/72515939/206827847-30a93ff6-61e7-44b4-8b2e-530c82ffc4e4.png)
-
 > **Note**: Go to [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-1-add-wake-type-property-recommended) for more method.
 
 ### Various Terminal Command
