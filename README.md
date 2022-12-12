@@ -10,14 +10,14 @@ OpenCore: 10th Gen Comet Lake + ASRock B460M Steel Legend - WIP
 
 **Table of Content**
 
-[Introduction](#introduction) | [Device Specification](#device-specification) | [Tools](#tools) | [EFI Structure](#efi-structure) | [ACPI](#acpi) | [Booter](#booter) | [DeviceProperties](#deviceproperties) | [Kernel](#kernel) | [Misc](#misc) | [NVRAM](#nvram) | [PlatformInfo](#platforminfo) | [UEFI](#uefi) | [Tips](#tips) | [Various Terminal Command](#various-terminal-command) | [Acknowledgement](#acknowledgement)
+[Introduction](#introduction) | [Device Specification](#device-specification) | [Tools](#tools) | [EFI Structure](#efi-structure) | [ACPI](#acpi) | [Booter](#booter) | [DeviceProperties](#deviceproperties) | [Kernel](#kernel) | [Misc](#misc) | [NVRAM](#nvram) | [PlatformInfo](#platforminfo) | [UEFI](#uefi) | [Tips](#tips) | [Various Terminal Command](#various-terminal-command) | [Credits](#credits)
 
 ### Introduction
 
 OpenCore is what we refer to as a **boot loader** – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as **SMBIOS**, **ACPI** tables and **kexts**. How this tool differs from others like **Clover** is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as **System Integrity Protection** and  Filevault
 
 * Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding
-* Checkout Dortania Monthly [Post](https://dortania.github.io) to get more info
+* Checkout Dortania Monthly [Post](https://dortania.github.io) to get more info.
 
 **Note**: if you're still interested in utilising it, please be carefulto adjust the .plist configuration and SSDTs according to your machine.
 
@@ -379,6 +379,8 @@ You may move `ProperTree.app` to `Applications` folder.
 
 As refered from [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-1-add-wake-type-property-recommended), there is a workaround fix keyboard wake. There are two choice which is via config.plist (DeviceProperties) or ACPI. 
 
+#### Method 1 (Recommended) 
+
 * **DeviceProperties**
   * add `acpi-wake-type` | `Data` | `<01>` to our USB device. In this case is **XHC1**. Edit USB device path using [ProperTree](https://github.com/corpnewt/ProperTree).
 
@@ -391,11 +393,94 @@ As refered from [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/
 
 > **Note**: Go to [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-1-add-wake-type-property-recommended) for more method.
 
+#### Method 2 (Virtual Wake Device)
+
+This method creates **USB wakeup virtual device** that will be associated with the GPE, then add the property of `acpi-wake-type` with `USBWakeFixup.kext`.
+
+* Apply [USBWakeFixup.kext](https://github.com/osy86/USBWakeFixup/releases) using bootloader.
+* Add `SSDT-USBW.dsl` to ACPI. Below is an example:
+
+```asl
+/**
+ * USB wakeup virtual device
+ */
+DefinitionBlock ("", "SSDT", 2, "OSY86 ", "USBW", 0x00001000)
+{
+    External (\_SB.PCI0.XHC1._PRW, MethodObj)
+
+    // We only enable the device for OSX
+    If (CondRefOf (\_OSI, Local0) && _OSI ("Darwin"))
+    {
+        Device (\_SB.USBW)
+        {
+            Name (_HID, "PNP0D10")  // _HID: Hardware ID
+            Name (_UID, "WAKE")  // _UID: Unique ID
+
+            Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
+            {
+                Return (\_SB.PCI0.XHC1._PRW ()) // Replace with path to your USB device
+            }
+        }
+    }
+}
+```
+
+#### Method 3 (Partial Wake)
+
+* Hint 1
+```zsh
+// gDarkWakeFlags
+enum {
+    kDarkWakeFlagHIDTickleEarly      = 0x01, // hid tickle before gfx suppression
+    kDarkWakeFlagHIDTickleLate       = 0x02, // hid tickle after gfx suppression
+    kDarkWakeFlagHIDTickleNone       = 0x03, // hid tickle is not posted
+    kDarkWakeFlagHIDTickleMask       = 0x03,
+    kDarkWakeFlagAlarmIsDark         = 0x0100,
+    kDarkWakeFlagGraphicsPowerState1 = 0x0200,
+    kDarkWakeFlagAudioNotSuppressed  = 0x0400
+};
+```
+* Hint 2
+```zsh
+Bit	Name	Comment
+0	N/A	Supposedly disables darkwake
+1	HID Tickle Early	Helps with wake from lid, may require pwr-button press to wake in addition
+2	HID Tickle Late	Helps single keypress wake but disables auto-sleep
+3	HID Tickle None	Default darkwake value if none is set
+3	HID Tickle Mask	To be paired with other
+256	Alarm Is Dark	To be explored
+512	Graphics Power State 1	Enables wranglerTickled to wake fully from hibernation and RTC
+1024	Audio Not Suppressed	Supposedly helps with audio disappearing after wake
+```
+> **Note**: HID = Human-interface devices (Keyboards, mice, pointing devices, etc).
+
+To apply the above table to your system, it's as simple as grabbing calculator, adding up your desired darkwake values and then applying the final value to your boot-args. However we recommend trying 1 at a time rather than merging all at once, unless you know what you're doing(though you likely wouldn't be reading this guide).
+
+* As example, lets try and combine `kDarkWakeFlagHIDTickleLate` and `kDarkWakeFlagGraphicsPowerState1`:
+  * `2 = kDarkWakeFlagHIDTickleLate`
+  * `512 = kDarkWakeFlagAudioNotSuppressed`
+
+* So our final value would be darkwake=514, which we can next place into boot-args:
+
+```
+NVRAM
+|---Add
+  |---7C436110-AB2A-4BBB-A880-FE41995C9F82
+    |---boot-args | Sting | darkwake=514
+```
+
+Below is clarification for users who are already using darkwake or are looking into it, specifically clarifying what values no longer work:
+
+* `darkwake=8`: This hasn't been in the kernel since [Mavericks](https://opensource.apple.com/source/xnu/xnu-2422.115.4/iokit/Kernel/IOPMrootDomain.cpp.auto.html)
+  * Correct boot-arg would be `darkwake=0`
+* `darkwake=10`: This hasn't been in the kernel since [Mavericks](https://opensource.apple.com/source/xnu/xnu-2422.115.4/iokit/Kernel/IOPMrootDomain.cpp.auto.html)
+  * Correct boot-arg would be `darkwake=2`
+
 ### Various Terminal Command
 
 Refer [Various Terminal Command](https://github.com/5T33Z0/OC-Little-Translated/blob/main/Terminal_Commands.md) for more info.
 
-### Acknowledgement
+### Credits
 
-#### [Acidanthera](https://github.com/acidanthera) | [benbaker76](https://github.com/benbaker76) | [corpnewt](https://github.com/corpnewt) | [Dortania](https://github.com/dortania) | [ic005k](https://github.com/ic005k) | [rusty-bits](https://github.com/rusty-bits) | [USBToolbox](https://github.com/USBToolBox) | [5T33Z0](https://github.com/5T33Z0)
+#### [Acidanthera](https://github.com/acidanthera) | [benbaker76](https://github.com/benbaker76) | [corpnewt](https://github.com/corpnewt) | [Dortania](https://github.com/dortania) | [ic005k](https://github.com/ic005k) | [osy86](https://github.com/osy86) | [rusty-bits](https://github.com/rusty-bits) | [USBToolbox](https://github.com/USBToolBox) | [5T33Z0](https://github.com/5T33Z0)
 
