@@ -382,8 +382,6 @@ As refered as [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/mi
 * **DeviceProperties**
   * add `acpi-wake-type` | `Data` | `<01>` to our USB device. In this case is **XHC**. Edit USB device path using [ProperTree](https://github.com/corpnewt/ProperTree).
 
-![acpi-wake-type](https://user-images.githubusercontent.com/72515939/206828850-0df824eb-e925-411e-a18d-95b8266bc5ea.png)
-
 * **ACPI**
   * add `acpi-wake-type` | `One` to our USB device. In this case is **XHC1**. Edit USB device path using [macIASL](https://github.com/acidanthera/MaciASL) or [Xiasl](https://github.com/ic005k/Xiasl).
 
