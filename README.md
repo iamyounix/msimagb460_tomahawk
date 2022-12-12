@@ -237,7 +237,7 @@ UEFI (Unified Extensible Firmware Interface) is a specification that defines a s
 
 * **MinVersion** (Minimal allowed APFS driver version)
 	- **0** = require the default supported version of APFS in OpenCore.
-	- **- 1** = permit any version to load (strongly discouraged).
+	- **-1** = permit any version to load (strongly discouraged).
 	- **Other** = custom minimal APFS version. APFS versions can be found in OpenCore boot log and [OcApfsLib](https://github.com/acidanthera/OpenCorePkg/blob/master/Include/Acidanthera/Library/OcApfsLib.h).
 
 #### AppleInput
