@@ -382,7 +382,7 @@ As refered from [Dortania](https://dortania.github.io/OpenCore-Post-Install/usb/
 #### Method 1 (Recommended) 
 
 * **DeviceProperties**
-  * add `acpi-wake-type` | `Data` | `<01>` to our USB device. In this case is **XHC1**. Edit USB device path using [ProperTree](https://github.com/corpnewt/ProperTree).
+  * add `acpi-wake-type` | `Data` | `<01>` to our USB device. In this case is **XHC1**. Add USB device properties using [ProperTree](https://github.com/corpnewt/ProperTree).
 
 ![acpi-wake-type cp](https://user-images.githubusercontent.com/72515939/206938454-6c0fe68e-e8c6-4fea-8cc9-f8a14f51e187.png)
 
