@@ -22,7 +22,7 @@ OpenCore is what we refer to as a **boot loader** – it is a complex piece of s
 **Note**: if you're still interested in utilising it, please be careful to adjust the `.plist` configuration and `SSDT's` according to your machine.
 
 ### Device Specification
-* **Processor** - Intel® Core™ i5-10400 `CometLake` 
+* **Processor** - Intel® Core™ i5-10400 | Codename: Comet Lake 
 * **Graphics 1**- Intel® UHD 630 - Headless
 * **Graphics 2**- MSI RX 5500 XT 4GB - Main Display
 * **Disk**	- 02 x Kingston A2000 500GB, 02 x San Disk 500GB
