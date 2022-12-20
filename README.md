@@ -219,7 +219,9 @@ Allows setting of non-volatile UEFI variables which commonly described as `NVRAM
 
 * Use [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to generate serial, MLB, UUID and others.
 
-![GenSMBIOS (1)](https://user-images.githubusercontent.com/72515939/206208941-ddabc3a1-6979-4903-8c55-8bee4975565a.png)
+![GenSMBIOS](https://user-images.githubusercontent.com/72515939/208702274-20832ad7-b72f-41ec-b794-6dd45852541f.png)
+
+![Serial](https://user-images.githubusercontent.com/72515939/208702607-6bf84cf8-10d7-4b92-a641-69c1124f1b9d.png)
 
 ![PI](https://user-images.githubusercontent.com/72515939/206200493-bd8260ab-1582-4353-9b4b-7ee51610e154.png)
 
