@@ -73,9 +73,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 
                         "AAPL,slot-name", 
                         "Slot- 0", 
-                        "built-in", 
-                        Zero, 
-			"agdpmod", 
+			            "agdpmod", 
                         "pikera",
                         "device-id", 
                         Buffer ()
@@ -99,12 +97,6 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
                         Buffer ()
                         {
                              0x01, 0x00, 0x00, 0x00                           // ....
-                        }, 
-
-                        "iommu-selection", 
-                        Buffer ()
-                        {
-                             0x00, 0x00, 0x00, 0x00                           // ....
                         }
                     })
                 }
@@ -140,20 +132,11 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 
                     Return (Package ()
                     {
-                        "No-hda-gfx", 
-                        Buffer ()
-                        {
-                             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
-                        }, 
-
                         "layout-id", 
                         Buffer ()
                         {
                              0x01, 0x00, 0x00, 0x00                           // ....
-                        }, 
-
-                        "No-idle-support", 
-                        Zero
+                        }
                     })
                 }
             }
@@ -279,9 +262,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
                                     "ATY,Rom#", 
                                     "113-EXT7635-001", 
                                     "ATY,copyright", 
-                                    "Copyright AMD Inc. All Right Reserved. 2005-2019", 
-                                    "hdagfx", 
-                                    "onboard-1"
+                                    "Copyright AMD Inc. All Right Reserved. 2005-2019",
                                 })
                             }
                         }
@@ -301,11 +282,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
                                 }
 
                                 Return (Package ()
-                                {
-                                    "driver-version", 
-                                    "10.0.1.14", 
-                                    "hdagfx", 
-                                    "onboard-1", 
+                                { 
                                     "model", 
                                     "Navi 10 HDMI Audio"
                                 })
@@ -384,8 +361,6 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
                         {
                             "acpi-wake-type", 
                             One, 
-                            "built-in", 
-                            Zero, 
                             "model", 
                             "VL805/806 xHCI USB 3.0 Controller"
                         })
@@ -478,8 +453,6 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 
                         Return (Package ()
                         {
-                            "built-in", 
-                            Zero, 
                             "model", 
                             "BCM4360 802.11ac Wireless Network Adapter"
                         })
