@@ -238,7 +238,7 @@ Allows setting of non-volatile UEFI variables which commonly described as `NVRAM
 
 ![NVRAM](https://user-images.githubusercontent.com/72515939/209305551-357ebabc-64c2-4c07-b730-89475b02c36e.png)
 
-**boot-args** is placed under (APPLE_BOOT_VARIABLE_GUID). In this case, MSI RX 5500 XT (Mostly Navi Variant) will experience a black screen issue after the boot process. This situation occurs when Apple's Graphic Device Policy is not satisfied with DGPU and IGPU. As a solution, Whatevergreen supports boot-arguement called as `agdpmod=pikera`, which renames `board-id` to `board-ix`. This will effectively disabling boardID checks, this is based off of Pike.R.A's [work](https://pikeralpha.wordpress.com/2015/11/23/patching-applegraphicsdevicepolicy-kext/). As temporary workaround, refer example below:
+**boot-args** is placed under (APPLE_BOOT_VARIABLE_GUID). In this case, MSI RX 5500 XT (Mostly Navi Variant) will experience a black screen issue after the boot process. This situation occurs when Apple's Graphic Device Policy is not satisfied with DGPU and IGPU. As a solution, Whatevergreen supports boot-arguement called as `agdpmod=pikera`, which renames `board-id` to `board-ix`. This will effectively disabling boardID checks, based off of Pike.R.A's [work](https://pikeralpha.wordpress.com/2015/11/23/patching-applegraphicsdevicepolicy-kext/). As temporary workaround, refer example below:
 
 * **7C436110-AB2A-4BBB-A880-FE41995C9F82**
   * `boot-args` / `string` / `agdpmod=pikera`
