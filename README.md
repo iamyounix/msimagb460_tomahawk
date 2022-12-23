@@ -238,6 +238,121 @@ Allows setting of non-volatile UEFI variables which commonly described as `NVRAM
 
 ![NVRAM](https://user-images.githubusercontent.com/72515939/209305551-357ebabc-64c2-4c07-b730-89475b02c36e.png)
 
+boot-args is placed under (APPLE_BOOT_VARIABLE_GUID). In this case, MSI RX 5500 XT (Mostly Navi Variant) will experience a black screen issue after the boot process. This situation occurs when Apple's Graphic Device Policy is not satisfied with DGPU and IGPU. As a solution, Whatevergreen supports boot-arguement called as `agdpmod=pikera`, which renames `board-id` to `board-ix`. This will effectively disabling boardID checks, this is based off of Pike.R.A's [work](https://pikeralpha.wordpress.com/2015/11/23/patching-applegraphicsdevicepolicy-kext/). As temporary workaround, refer example below:
+
+* **7C436110-AB2A-4BBB-A880-FE41995C9F82**
+  * `boot-args` / `string` / `agdpmod=pikera`
+
+We can use these boot-args on ACPI and DeviceProperties in config.plist permanently. See the example below:
+
+* ACPI (SSDT)
+
+```asl
+Scope (\_SB)
+{
+	Method (_INI, 0, NotSerialized)  // _INI: Initialize
+	{
+		If (_OSI ("Darwin"))
+		{
+			STAS = One
+		}
+	}
+
+	Scope (PCI0)
+	{
+		Scope (GFX0)
+		{
+			Method (_STA, 0, NotSerialized)  // _STA: Status
+			{
+				If (_OSI ("Darwin"))
+				{
+					Return (Zero)
+				}
+				Else
+				{
+					Return (0x0F)
+				}
+			}
+		}
+
+		Device (IGPU)
+		{
+			Name (_ADR, 0x00020000)  // _ADR: Address
+			Name (_SUN, Zero)  // _SUN: Slot User Number
+			Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+			{
+				If ((Arg2 == Zero))
+				{
+					Return (Buffer ()
+					{
+						 0x03                                             // .
+					})
+				}
+
+				Return (Package ()
+				{
+					"AAPL,ig-platform-id", 
+					Buffer ()
+					{
+						 0x03, 0x00, 0x92, 0x3E                           // ...>
+					}, 
+
+					"AAPL,slot-name", 
+					"Slot- 0", 
+					"agdpmod",	// Apple Graphic Device Policy Patch
+					"pikera",	// Arguement
+					"device-id", 
+					Buffer ()
+					{
+						 0x9B, 0x3E, 0x00, 0x00                           // .>..
+					}, 
+
+					"enable-metal", 
+					Buffer ()
+					{
+						 0x01, 0x00, 0x00, 0x00                           // ....
+					}, 
+
+					"igfxfw", 
+					Buffer ()
+					{
+						 0x02, 0x00, 0x00, 0x00                           // ....
+					}, 
+
+					"igfxonln", 
+					Buffer ()
+					{
+						 0x01, 0x00, 0x00, 0x00                           // ....
+					}
+				})
+			}
+		}
+	}
+}
+```
+
+* via DeviceProperties (config.plist)
+
+```xml
+<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
+<dict>
+	<key>AAPL,ig-platform-id</key>
+	<data>AwCSPg==</data>
+	<key>AAPL,slot-name</key>
+	<string>Slot- 0</string>
+	<key>agdpmod</key>		 	// Apple Graphic Device Policy Patch
+	<data>cGlrZXJhAA==</data>   // Arguement
+	<key>device-id</key>
+	<data>mz4AAA==</data>
+	<key>enable-metal</key>
+	<data>AQAAAA==</data>
+	<key>igfxfw</key>
+	<data>AgAAAA==</data>
+	<key>igfxonln</key>
+	<string>01000000</string>
+</dict>
+```
+
 ### PlatformInfo
 
 * Use [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) to generate serial, MLB, UUID and others.
