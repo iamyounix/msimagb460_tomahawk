@@ -340,8 +340,8 @@ Scope (\_SB)
 	<data>AwCSPg==</data>
 	<key>AAPL,slot-name</key>
 	<string>Slot- 0</string>
-	<key>agdpmod</key>		 	// Apple Graphic Device Policy Patch
-	<data>cGlrZXJhAA==</data>   // Arguement
+	<key>agdpmod</key>		// Apple Graphic Device Policy Patch
+	<data>cGlrZXJhAA==</data>	// Arguement
 	<key>device-id</key>
 	<data>mz4AAA==</data>
 	<key>enable-metal</key>
