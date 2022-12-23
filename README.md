@@ -250,14 +250,6 @@ We can use these boot-args on ACPI and DeviceProperties in config.plist permanen
 ```asl
 Scope (\_SB)
 {
-	Method (_INI, 0, NotSerialized)  // _INI: Initialize
-	{
-		If (_OSI ("Darwin"))
-		{
-			STAS = One
-		}
-	}
-
 	Scope (PCI0)
 	{
 		Scope (GFX0)
