@@ -122,6 +122,29 @@ In this section, what we need is to export important `devices path`, copy and ad
 
 ![path](https://user-images.githubusercontent.com/72515939/206184392-14984c21-6fa4-4c55-aee8-401233eb908d.png)
 
+* Details via Linux [lspci](https://man7.org/linux/man-pages/man8/lspci.8.html)
+
+```zsh
+00:00.0 Host bridge: Intel Corporation Comet Lake-S 6c Host Bridge/DRAM Controller (rev 05)
+00:01.0 PCI bridge: Intel Corporation 6th-10th Gen Core Processor PCIe Controller (x16) (rev 05)
+00:02.0 Display controller: Intel Corporation CometLake-S GT2 [UHD Graphics 630] (rev 05)
+00:14.0 USB controller: Intel Corporation Comet Lake PCH-V USB Controller
+00:14.2 Signal processing controller: Intel Corporation Comet Lake PCH-V Thermal Subsystem
+00:16.0 Communication controller: Intel Corporation Comet Lake PCH-V HECI Controller
+00:17.0 SATA controller: Intel Corporation 400 Series Chipset Family SATA AHCI Controller
+00:1b.0 PCI bridge: Intel Corporation Device a3ea (rev f0)
+00:1b.4 PCI bridge: Intel Corporation Comet Lake PCI Express Root Port #21 (rev f0)
+00:1c.0 PCI bridge: Intel Corporation Device a393 (rev f0)
+00:1c.4 PCI bridge: Intel Corporation Comet Lake PCI Express Root Port #05 (rev f0)
+00:1d.0 PCI bridge: Intel Corporation Comet Lake PCI Express Root Port 9 (rev f0)
+00:1f.0 ISA bridge: Intel Corporation B460 Chipset LPC/eSPI Controller
+00:1f.2 Memory controller: Intel Corporation Cannon Lake PCH Power Management Controller
+00:1f.3 Audio device: Intel Corporation Comet Lake PCH-V cAVS
+00:1f.4 SMBus: Intel Corporation Comet Lake PCH-V SMBus Host Controller
+01:00.0 PCI bridge: Advanced Micro Devices, Inc. [AMD/ATI] Navi 10 XL Upstream Port of PCI Express Switch (rev c5)
+02:00.0 PCI bridge: Advanced Micro Devices, Inc. [AMD/ATI] Navi 10 XL Downstream Port of PCI Express Switch
+```
+
 * Below is the results. 
 
 ![Mapped](https://user-images.githubusercontent.com/72515939/206185310-9fd93aed-5f3f-4d8a-94a2-b10874ccce06.png)
