@@ -75,7 +75,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
                         "Slot- 0", 
                         "built-in", 
                         Zero, 
-						"agdpmod", 
+			"agdpmod", 
                         "pikera",
                         "device-id", 
                         Buffer ()
