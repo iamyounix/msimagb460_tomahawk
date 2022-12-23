@@ -70,7 +70,7 @@ Almost 80% of the patches from ACPI are used in this project. The patch applied 
 
 The ACPI table load order follows the item order in the array. ACPI tables are loaded from the `OC` / `ACPI` directory.
 
-![ACPI-Add](https://user-images.githubusercontent.com/72515939/206202889-00f51692-3f6b-40d5-bb93-8d598b146884.png)
+![Add](https://user-images.githubusercontent.com/72515939/209303375-ce396194-1562-4c62-90d6-6f4b343d1aaa.png)
 
 #### Delete
 
@@ -84,7 +84,7 @@ Most of the cases, using ACPI patches throughout this section is dangerous, some
 
 #### Quirks
 
-![Quirks (1)](https://user-images.githubusercontent.com/72515939/206203114-133e4565-985c-4b8d-ae79-79ba259fa6d9.png)
+![Quirks](https://user-images.githubusercontent.com/72515939/209303627-2716b1a2-2c52-4f92-8498-1232e0240a61.png)
 
 ### Booter
 
@@ -100,7 +100,7 @@ Keep empty.
 
 #### Quirks
 
-![Quirks (2)](https://user-images.githubusercontent.com/72515939/206203808-e053d833-d8a6-4fa6-b169-76820d728ec1.png)
+![B Quirks](https://user-images.githubusercontent.com/72515939/209303876-89665f09-bae6-4407-aaa1-026b5c0c9f29.png)
 
 ### DeviceProperties
 
@@ -120,7 +120,7 @@ In this section, what we need is to export important `devices path`, copy and ad
 
 * Then, open `pcidevices.plist` using [ProperTree](https://github.com/corpnewt/ProperTree), copy all and paste to config.plist. Add `name` / `string` / `device name` to all device. Below is an example:
 
-![path](https://user-images.githubusercontent.com/72515939/206184392-14984c21-6fa4-4c55-aee8-401233eb908d.png)
+![DP](https://user-images.githubusercontent.com/72515939/209304264-46f59a56-ceaf-4856-a0f3-c482d4260b4d.png)
 
 * Details via Linux [lspci](https://man7.org/linux/man-pages/man8/lspci.8.html)
 
@@ -168,7 +168,7 @@ To make all of our hacks function, just `7` kernel extensions addition is requir
 
 ![Kernel2](https://user-images.githubusercontent.com/72515939/206186463-b9183de6-6fb2-436e-8ac8-50bc7be67fea.png)
 
-![Kernel](https://user-images.githubusercontent.com/72515939/206186484-416352f1-797e-4ae0-8b6d-2a82cebfee1c.png)
+![Kernel](https://user-images.githubusercontent.com/72515939/209304588-168d7c4f-8c59-4e03-ab25-3322a41f5361.png)
 
 #### Block
 
@@ -186,7 +186,7 @@ Keep empty.
 
 Here, only TRIM patch applied. The following details are as below:
 
-![Patch](https://user-images.githubusercontent.com/72515939/206198814-88c24678-5164-43c8-accf-1f6402821cde.png)
+![Patch](https://user-images.githubusercontent.com/72515939/209305376-e7c50801-6220-4080-a2fa-83ce0163986b.png)
 
 ### Misc
 
@@ -236,7 +236,7 @@ Allows setting of non-volatile UEFI variables which commonly described as `NVRAM
 - **8BE4DF61-93CA-11D2-AA0D-00E098032B8C** (EFI_GLOBAL_VARIABLE_GUID)
 - **4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102** (OC_VENDOR_VARIABLE_GUID)
 
-![NVRAM](https://user-images.githubusercontent.com/72515939/206199938-8dbd2a8e-ab9a-4b83-994e-bebf4ca0f40b.png)
+![NVRAM](https://user-images.githubusercontent.com/72515939/209305551-357ebabc-64c2-4c07-b730-89475b02c36e.png)
 
 ### PlatformInfo
 
