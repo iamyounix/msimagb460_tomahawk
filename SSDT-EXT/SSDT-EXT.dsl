@@ -73,7 +73,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 
 						"AAPL,slot-name", 
 						"Slot- 0", 
-						"agdpmod",	//	Permanent AGDP Patch 
+						"agdpmod",
 						"pikera",
 						"device-id", 
 						Buffer ()
