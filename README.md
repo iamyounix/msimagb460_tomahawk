@@ -15,7 +15,7 @@
 
 ### Introduction
 
-OpenCore is what we refer to as a **boot loader** – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as **SMBIOS**, **ACPI** tables and **kexts**. How this tool differs from others like **Clover** is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as **System Integrity Protection** and  Filevault
+OpenCore is what we refer to as a **boot loader** – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as **SMBIOS**, **ACPI** tables and **kexts**. How this tool differs from others like **Clover** is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as **System Integrity Protection** and  Filevault.
 
 * Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding
 * Checkout Dortania Monthly [Post](https://dortania.github.io) to get more info.
@@ -23,10 +23,11 @@ OpenCore is what we refer to as a **boot loader** – it is a complex piece of s
 **Note**: if you're still interested in utilising it, please be careful to adjust the `.plist` configuration and `SSDT's` according to your machine.
 
 ### Device Specification
-* **Processor** - Intel® Core™ i5-10400 | Codename: Comet Lake 
-* **Graphics 1**- Intel® UHD 630 - Headless
-* **Graphics 2**- MSI RX 5500 XT 4GB - Main Display
-* **Disk**	- 02 x Kingston A2000 500GB, 02 x San Disk 500GB
+* **Processor** 	- Intel® Core™ i5-10400 | Codename: Comet Lake 
+* **Motherboard**	- ASRock B460M Steel legend
+* **Graphics 1**	- Intel® UHD 630 - Headless
+* **Graphics 2**	- MSI RX 5500 XT 4GB - Main Display
+* **Disk**		- 02 x Kingston A2000 500GB, 02 x San Disk 500GB
 
 ### Tools
 
@@ -60,15 +61,47 @@ EFI
 
 ### ACPI
 
-Almost 80% of the patches from ACPI are used in this project. The patch applied is identical to the patch applied to config.plist. Patching ACPI has the advantage of making it more permanent, and it also gives us the chance to learn some fundamental concepts about ACPI. This basic process require [SSDTTime](https://github.com/corpnewt/SSDTTime). However, keep in mind that [SSDTTime](https://github.com/corpnewt/SSDTTime) only helps the fundamental ACPI patching structure.
+**Tools Required**:
+
+* [Xiasl](https://github.com/ic005k/Xiasl)
+* [ProperTree](https://github.com/corpnewt/ProperTree)
+* [SSDTTime](https://github.com/corpnewt/SSDTTime)
+
+Almost 80% of the patches from ACPI are used in this project. The patch applied is identical to the patch applied to `config.plist`. Patching ACPI has the advantage of making it more permanent, and it also gives us the chance to learn some fundamental concepts about ACPI.
 
 ![SSDTTime](https://user-images.githubusercontent.com/72515939/206207663-6e93f488-8194-4c19-8484-2e5f78ba1971.png)
 
-> **Note**:  Refer to [SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/blob/main/SSDT-EXT/SSDT-EXT.dsl) as a template for advance patching.
+Generate basic SSDT's using [SSDTTime](https://github.com/corpnewt/SSDTTime). Keep in mind that [SSDTTime](https://github.com/corpnewt/SSDTTime) only helps the basic ACPI patching. Which file to launch SSDTTime for different Operating System?
+  
+* Linux = SSDTTime.py
+* macOS = SSDTTime.command (double click launch enable)
+* Windows = SSDTTime.bat (double click launch enable)
+
+In this project, we use 10th Gen procesor (Comet Lake) as a processor. As a references, Comet Lake require `SSDT-PLUG`, `SSDT-EC-USBX`, `SSDT-AWAC` and `SSDT-RHUB`.
+
+> **Note**: `SSDT-PLUG` is not required on macOS 12.3 and up and `SSDT-RHUB` is depend on motherboard. Refer [USB Fix](https://dortania.github.io/Getting-Started-With-ACPI/Universal/rhub.html#fixing-usb) to determine our USB device require fix using `SSDT-RHUB`. 
+
+To fulfill the requirement we need to dump DSDT. How to get that? Additionally, [SSDTTime](https://github.com/corpnewt/SSDTTime) for Linux and Windows capable to dump the system DSDT. Since we are starting from scratch, we assume that all of this process is done on Linux or Windows. Launch SSDTTime based on your current OS. 
+
+* Dump DSDT first by select option `P`. Normally after DSDT dumping, SSDTTime automatically select dumped DSDT as references.
+
+* Select Option `2`, `4`, `5`, and `8`. This motherboard only require `2`, `4` since ASRock B460M not require `SSDT-RHUB` and our target installation OS is macOS 12.6. 
+
+* Get `SSDT-SBUS-MCHC` from [Dortania](https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus.html#fixing-smbus-support-ssdt-sbus-mchc) and follow the instruction. This need to be done manually. Here, [Xiasl](https://github.com/ic005k/Xiasl) is required. 
+
+* Then, colect compiled SSDT's in `.aml` format. 
+
+* Here is the struggle part, we need to edit all SSDT's into one file. Using [Xiasl](https://github.com/ic005k/Xiasl) is required. It is compulsory to editing all file and combine all SSDT to a single `.aml` file. Open one by one and use [SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/tree/main/SSDT-EXT) as references. Other additional device such as `TSUB` is optional. The link to build our own single SSDT is provided below.
+
+  * [Basic ACPI](https://github.com/5T33Z0/OC-Little-Translated/tree/main/00_ACPI)
+  * [Adding Missing Devices](https://github.com/5T33Z0/OC-Little-Translated/tree/main/01_Adding_missing_Devices_and_enabling_Features)
+  * [Disabling Device](https://github.com/5T33Z0/OC-Little-Translated/tree/main/02_Disabling_Devices)
+  
+* After done, save it as `.dsl` and compile it as `.aml`. Rename as `SSDT-(Whatever).aml`. In this case, as `SSDT-EXT.aml`. 
 
 #### Add
 
-The ACPI table load order follows the item order in the array. ACPI tables are loaded from the `OC` / `ACPI` directory.
+The ACPI table load order follows the item order in the array. ACPI tables are loaded from the `OC` / `ACPI` directory. Add `SSDT-EXT.aml` here. Below is an example:
 
 ![Add](https://user-images.githubusercontent.com/72515939/209303375-ce396194-1562-4c62-90d6-6f4b343d1aaa.png)
 
