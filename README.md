@@ -74,8 +74,8 @@ Almost 80% of the patches from ACPI are used in this project. The patch applied 
 Generate basic SSDT's using [SSDTTime](https://github.com/corpnewt/SSDTTime). Keep in mind that [SSDTTime](https://github.com/corpnewt/SSDTTime) only helps the basic ACPI patching. Which file to launch SSDTTime for different Operating System?
   
 * Linux = SSDTTime.py
-* macOS = SSDTTime.command (double click launch enable)
-* Windows = SSDTTime.bat (double click launch enable)
+* macOS = SSDTTime.command
+* Windows = SSDTTime.bat
 
 In this project, we use 10th Gen procesor (Comet Lake) as a processor. As a references, Comet Lake require `SSDT-PLUG`, `SSDT-EC-USBX`, `SSDT-AWAC` and `SSDT-RHUB`.
 
