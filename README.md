@@ -11,19 +11,21 @@
 
 ### Introduction
 
-OpenCore is what we refer to as a **boot loader** – it is a complex piece of software that we use to prepare our systems for macOS – specifically by injecting new data for macOS such as **SMBIOS**, **ACPI** tables and **kexts**. How this tool differs from others like **Clover** is that it has been designed with security and quality in mind, allowing us to use many security features found on real Macs, such as **System Integrity Protection** and  Filevault.
+Well, I'll make all the explanations about this project simple. This is my hackintosh port of Generic Desktop. 
 
-* Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding
-* Checkout Dortania Monthly [Post](https://dortania.github.io) to get more info.
+* Please Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding.
+* Checkout Dortania Monthly [Post](https://dortania.github.io) to get latest news from developer directly.
 
-**Note**: if you're still interested in utilising it, please be careful to adjust the `.plist` configuration and `SSDT's` according to your machine.
+**Note**: if you're still interested in utilising it, please be careful to adjust the ".plist" configuration and "SSDT's" according to your machine.
 
 ### Device Specification
-* **Processor** 	- Intel® Core™ i5-10400 | Codename: Comet Lake 
-* **Motherboard**	- ASRock B460M Steel legend
-* **Graphics 1**	- Intel® UHD 630 - Headless
-* **Graphics 2**	- MSI RX 5500 XT 4GB - Main Display
-* **Disk**		- 02 x Kingston A2000 500GB, 02 x San Disk 500GB
+
+*   ASRock [B460M](https://www.asrock.com/mb/Intel/B460M%20Steel%20Legend/) Steel legend
+    *   [x] Intel® [Core™ i5-10400](https://www.intel.com/content/www/us/en/products/sku/199271/intel-core-i510400-processor-12m-cache-up-to-4-30-ghz/specifications.html)
+    *   [x] Intel® [UHD 630](https://ark.intel.com/content/www/us/en/ark/products/graphics/126790/intel-uhd-graphics-630.html)
+    *   [x] MSI [RX 5500 XT MECH OC](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G/Overview) 4GB
+    *   [x] 32GB RAM
+    *   [x] 02 x [Kingston A2000](https://www.kingston.com/en/company/press/article/56606) 500GB, 02 x [San Disk Ultra 3D SSD](https://www.westerndigital.com/en-ap/products/internal-drives/sandisk-ultra-3d-sata-iii-ssd#SDSSDH3-250G-G25) 500GB
 
 ### EFI Structure
 
