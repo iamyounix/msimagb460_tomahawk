@@ -1,5 +1,4 @@
 # Hackintosh: ASRock B460M Steel Legend
-**OpenCore:** 10th Gen Comet Lake + ASRock B460M Steel Legend
 
 [![BIOS](https://img.shields.io/badge/BIOS-1.60-red)](https://www.asrock.com/mb/Intel/B460M%20Steel%20Legend/#BIOS)
 [![Bootloader](https://img.shields.io/badge/Bootloader-OpenCore-yellow)](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/releases)
@@ -16,8 +15,6 @@ Well, I'll make all the explanations about this project simple. This is my hacki
 * Please Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding.
 * Checkout Dortania Monthly [Post](https://dortania.github.io) to get latest news from developer directly.
 
-**Note**: if you're still interested in utilising it, please be careful to adjust the ".plist" configuration and "SSDT's" according to your machine.
-
 ### Device Specification
 
 *   ASRock [B460M](https://www.asrock.com/mb/Intel/B460M%20Steel%20Legend/) Steel legend
@@ -26,32 +23,6 @@ Well, I'll make all the explanations about this project simple. This is my hacki
     *   [x] MSI [RX 5500 XT MECH OC](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G/Overview) 4GB
     *   [x] 32GB RAM
     *   [x] 02 x [Kingston A2000](https://www.kingston.com/en/company/press/article/56606) 500GB, 02 x [San Disk Ultra 3D SSD](https://www.westerndigital.com/en-ap/products/internal-drives/sandisk-ultra-3d-sata-iii-ssd#SDSSDH3-250G-G25) 500GB
-
-### EFI Structure
-
-```zsh
-EFI
-├── ./BOOT
-│   └── ./BOOTx64.efi	
-└── ./OC
-	├── ./OC/ACPI
-	├── ./OC/Drivers
-	├── ./OC/Kexts
-	│   ├── ./OC/Kexts/AppleALC.kext
-	│   ├── ./OC/Kexts/Lilu.kext
-	│   ├── ./OC/Kexts/LucyRTL8125Ethernet.kext
-	│   ├── ./OC/Kexts/SMCProcessor.kext
-	│   ├── ./OC/Kexts/SMCSuperIO.kext
-	│   ├── ./OC/Kexts/USBMap.kext
-	│   ├── ./OC/Kexts/VirtualSMC.kext
-	│   └── ./OC/Kexts/WhateverGreen.kext
-	├── ./OC/Resources
-	│   ├── ./OC/Resources/Audio
-	│   ├── ./OC/Resources/Font
-	│   ├── ./OC/Resources/Image
-	│   └── ./OC/Resources/Label
-	└── ./OC/Tools
-```
 
 ### Credits
 
