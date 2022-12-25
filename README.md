@@ -61,12 +61,6 @@ EFI
 
 ### ACPI
 
-**Tools Required**:
-
-* [ProperTree](https://github.com/corpnewt/ProperTree)
-* [SSDTTime](https://github.com/corpnewt/SSDTTime)
-* [Xiasl](https://github.com/ic005k/Xiasl)
-
 Almost 80% of the patches from ACPI are used in this project. The patch applied is identical to the patch applied to `config.plist`. Patching ACPI has the advantage of making it more permanent, and it also gives us the chance to learn some fundamental concepts about ACPI. Generate basic SSDT's using [SSDTTime](https://github.com/corpnewt/SSDTTime). Keep in mind that [SSDTTime](https://github.com/corpnewt/SSDTTime) only helps the basic ACPI patching. Which file to launch SSDTTime for different Operating System? In this case, we are using Linux. Open Terminal and run:
 
 ```zsh
