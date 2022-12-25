@@ -677,4 +677,4 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 			}
 		}
 	}
-}
+} 
