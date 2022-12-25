@@ -119,11 +119,22 @@ To fulfill the requirement we need to dump DSDT. How to get that? Additionally, 
 
 ![Config](https://user-images.githubusercontent.com/72515939/209453916-583cffbd-5a46-4d52-8801-b96e577f7a17.png)
 
-* Move our created [SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/tree/main/SSDT-EXT) to `Desktop` / `EFI` / `OC` /`ACPI`
+* Move our created [SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/tree/main/SSDT-EXT) to `Desktop` / `EFI` / `OC` / `ACPI`
 
 ![Folder](https://user-images.githubusercontent.com/72515939/209454008-aa9e7006-e034-45fa-8d4d-564755ee60d9.png)
 
-Now, we finish for this part.
+Now, we finish for this part. Download and unzip [ProperTree](https://github.com/corpnewt/ProperTree) to Desktop using terminal:
+
+```zsh
+cd /home/yourusername/Desktop/ProperTree   
+```
+```zsh
+./ProperTree.command  
+```
+
+Go to top menu called `File` and choose needed file from `Desktop` / `EFI` / `OC` / `config.plist`. Now, we head to the next section in order to edit our configuration.
+
+![ProperTree](https://user-images.githubusercontent.com/72515939/209454187-9edde8f0-2071-48b5-ac79-bce52e444a4f.png)
 
 #### Add
 
