@@ -8,10 +8,6 @@
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
 
-### Introduction
-
-Well, I'll make all the explanations about this project simple. This is my hackintosh port of Generic Desktop. 
-
 * Please Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding.
 * Checkout Dortania Monthly [Post](https://dortania.github.io) to get latest news from developer directly.
 
