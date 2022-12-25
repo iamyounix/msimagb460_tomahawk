@@ -119,7 +119,7 @@ To fulfill the requirement we need to dump DSDT. How to get that? Additionally, 
 
 ![Config](https://user-images.githubusercontent.com/72515939/209453916-583cffbd-5a46-4d52-8801-b96e577f7a17.png)
 
-* Move our created [SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/tree/main/SSDT-EXT) to `Desktop` / `EFI` / `ACPI`
+* Move our created [SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/tree/main/SSDT-EXT) to `Desktop` / `EFI` / `OC` /`ACPI`
 
 ![Folder](https://user-images.githubusercontent.com/72515939/209454008-aa9e7006-e034-45fa-8d4d-564755ee60d9.png)
 
