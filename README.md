@@ -63,41 +63,73 @@ EFI
 
 **Tools Required**:
 
-* [Xiasl](https://github.com/ic005k/Xiasl)
 * [ProperTree](https://github.com/corpnewt/ProperTree)
 * [SSDTTime](https://github.com/corpnewt/SSDTTime)
+* [Xiasl](https://github.com/ic005k/Xiasl)
 
-Almost 80% of the patches from ACPI are used in this project. The patch applied is identical to the patch applied to `config.plist`. Patching ACPI has the advantage of making it more permanent, and it also gives us the chance to learn some fundamental concepts about ACPI.
+Almost 80% of the patches from ACPI are used in this project. The patch applied is identical to the patch applied to `config.plist`. Patching ACPI has the advantage of making it more permanent, and it also gives us the chance to learn some fundamental concepts about ACPI. Generate basic SSDT's using [SSDTTime](https://github.com/corpnewt/SSDTTime). Keep in mind that [SSDTTime](https://github.com/corpnewt/SSDTTime) only helps the basic ACPI patching. Which file to launch SSDTTime for different Operating System? In this case, we are using Linux. Open Terminal and run:
 
-![SSDTTime](https://user-images.githubusercontent.com/72515939/206207663-6e93f488-8194-4c19-8484-2e5f78ba1971.png)
+```zsh
+git clone https://github.com/corpnewt/SSDTTime.git
+```
+```zsh
+cd <SSDTTime Folder>
+```
+```zsh
+python3 ./SSDTTime.py
+```
 
-Generate basic SSDT's using [SSDTTime](https://github.com/corpnewt/SSDTTime). Keep in mind that [SSDTTime](https://github.com/corpnewt/SSDTTime) only helps the basic ACPI patching. Which file to launch SSDTTime for different Operating System?
-  
-* Linux = SSDTTime.py
-* macOS = SSDTTime.command
-* Windows = SSDTTime.bat
+In this project, we use 10th Gen procesor (Comet Lake) as a processor. As a references, Comet Lake require:
 
-In this project, we use 10th Gen procesor (Comet Lake) as a processor. As a references, Comet Lake require `SSDT-PLUG`, `SSDT-EC-USBX`, `SSDT-AWAC` and `SSDT-RHUB`.
+* SSDT-PLUG (required on macOS 12.3 and up)
+* SSDT-EC-USBX
+* SSDT-AWAC
+* SSDT-RHUB (optional for certain motherboard). Please refer [USB Fix](https://dortania.github.io/Getting-Started-With-ACPI/Universal/rhub.html#fixing-usb)
 
-> **Note**: `SSDT-PLUG` is not required on macOS 12.3 and up and `SSDT-RHUB` is depend on motherboard. Refer [USB Fix](https://dortania.github.io/Getting-Started-With-ACPI/Universal/rhub.html#fixing-usb) to determine our USB device require fix using `SSDT-RHUB`. 
+To fulfill the requirement we need to dump DSDT. How to get that? Additionally, [SSDTTime](https://github.com/corpnewt/SSDTTime) for Linux and Windows capable to dump the system DSDT. Since we are starting from scratch, we assume that all of this process is done on Linux. Launch SSDTTime.
 
-To fulfill the requirement we need to dump DSDT. How to get that? Additionally, [SSDTTime](https://github.com/corpnewt/SSDTTime) for Linux and Windows capable to dump the system DSDT. Since we are starting from scratch, we assume that all of this process is done on Linux or Windows. Launch SSDTTime based on your current OS. 
+#### SSDTTime
+
+![SSDTTime](https://user-images.githubusercontent.com/72515939/209453689-aa6ced92-44e7-48f1-a7d2-7332e35d5e52.png)
 
 * Dump DSDT first by select option `P`. Normally after DSDT dumping, SSDTTime automatically select dumped DSDT as references.
 
 * Select Option `2`, `4`, `5`, and `8`. This motherboard only require `2`, `4` since ASRock B460M not require `SSDT-RHUB` and our target installation OS is macOS 12.6. 
 
-* Get `SSDT-SBUS-MCHC` from [Dortania](https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus.html#fixing-smbus-support-ssdt-sbus-mchc) and follow the instruction. This need to be done manually. Here, [Xiasl](https://github.com/ic005k/Xiasl) is required. 
+* Then get:
 
-* Then, colect compiled SSDT's in `.aml` format. 
+  * [SSDT-SBUS-MCHC](https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus.html#fixing-smbus-support-ssdt-sbus-mchc) and follow the instruction.
+  * [Xiasl](https://github.com/ic005k/Xiasl) for ACPI writing and editing
 
-* Here is the struggle part, we need to edit all SSDT's into one file. Using [Xiasl](https://github.com/ic005k/Xiasl) is required. It is compulsory to editing all file and combine all SSDT to a single `.aml` file. Open one by one and use [SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/tree/main/SSDT-EXT) as references. Other additional device such as `TSUB` is optional. The link to build our own single SSDT is provided below.
+* Colect compiled SSDT's in `.aml` format. 
+
+* Here is the struggle part, we need to edit all SSDT's into one file. It is compulsory to editing all file and combine all SSDT to a single `.aml` file. Open one by one and use [SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/tree/main/SSDT-EXT) as references. Other additional device such as `TSUB` is optional. The link to build our own single SSDT is provided below.
 
   * [Basic ACPI](https://github.com/5T33Z0/OC-Little-Translated/tree/main/00_ACPI)
   * [Adding Missing Devices](https://github.com/5T33Z0/OC-Little-Translated/tree/main/01_Adding_missing_Devices_and_enabling_Features)
   * [Disabling Device](https://github.com/5T33Z0/OC-Little-Translated/tree/main/02_Disabling_Devices)
   
 * After done, save it as `.dsl` and compile it as `.aml`. Rename as `SSDT-(Whatever).aml`. In this case, as `SSDT-EXT.aml`. 
+
+#### Create EFI
+
+* Download latest [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg/releases). ie: OpenCore-0.8.7-Release.zip.
+
+* Extract it to any location. ie: Downloads. Open `x64` folder for 64bit support.
+
+![64bit](https://user-images.githubusercontent.com/72515939/209453865-103e947d-4590-4002-bdff-13356480e238.png)
+
+* Copy EFI folder to Desktop.
+
+* Go back to the OpenCorepkg main folder. Copy `sample.plist` from OpenCorePkg Docs to `Desktop` / `EFI` / `OC`. Rename `sample.plist` to `config.plist`.
+
+![Config](https://user-images.githubusercontent.com/72515939/209453916-583cffbd-5a46-4d52-8801-b96e577f7a17.png)
+
+* Move our created [SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/tree/main/SSDT-EXT) to `Desktop` / `EFI` / `ACPI`
+
+![Folder](https://user-images.githubusercontent.com/72515939/209454008-aa9e7006-e034-45fa-8d4d-564755ee60d9.png)
+
+Now, we finish for this part.
 
 #### Add
 
