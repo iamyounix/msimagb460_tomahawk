@@ -151,7 +151,7 @@ This is an Hackintosh EFI template that I built according to my generic computer
 - Skip
 	+ 0 (number)
 	
-> **Note**: Leave empty on Base, MinKernel, maxKernel
+> **Note**: Leave empty on Base, MinKernel, MaxKernel
 
 	
 ---
