@@ -53,7 +53,7 @@ This is an Hackintosh EFI template that I built according to my generic computer
 
 ####  DeviceProperties
 
-- 03:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Navi 14 [Radeon RX 5500/5500M / Pro 5500M] (rev c5)
+- 03:00.0 **VGA compatible controller**: Advanced Micro Devices, Inc. [AMD/ATI] Navi 14 [Radeon RX 5500/5500M / Pro 5500M] (rev c5)
 	+ PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
 		* 0@,name
 			- ATY,Python (string)
@@ -74,26 +74,26 @@ This is an Hackintosh EFI template that I built according to my generic computer
 		* ATY,copyright
 			- Copyright AMD Inc. All Rights Reserved. 2005-2019 (string)
 				
-- 03:00.1 Audio device: Advanced Micro Devices, Inc. [AMD/ATI] Navi 10 HDMI Audio
+- 03:00.1 **Audio device**: Advanced Micro Devices, Inc. [AMD/ATI] Navi 10 HDMI Audio
 	+ PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
 		* AAPL,slot-name
 			- Slot- 1 (string)
 		* model
 			- Navi 10 HDMI Audio (string)
 				
-- 00:14.0 USB controller: Intel Corporation Comet Lake PCH-V USB Controller
+- 00:14.0 **USB controller**: Intel Corporation Comet Lake PCH-V USB Controller
 	+ PciRoot(0x0)/Pci(0x14,0x0)
 		* acpi-wake-type
 			- 01 (data)
 				
-- 04:00.0 Network controller: Broadcom Inc. and subsidiaries BCM4360 802.11ac Wireless Network Adapter (rev 03)
+- 04:00.0 **Network controller**: Broadcom Inc. and subsidiaries BCM4360 802.11ac Wireless Network Adapter (rev 03)
 	+ PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)
 		* AAPL,slot-name
 			- Slot- 2 (string)
 		* model
 			- BCM4360 802.11ac Wireless Network Adapter (string)
 				
-- 07:00.0 USB controller: VIA Technologies, Inc. VL805/806 xHCI USB 3.0 Controller (rev 01)
+- 07:00.0 **USB controller**: VIA Technologies, Inc. VL805/806 xHCI USB 3.0 Controller (rev 01)
 	+ PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)
 		*  AAPL,slot-name
 			-  Slot- 3 (string)
@@ -102,12 +102,12 @@ This is an Hackintosh EFI template that I built according to my generic computer
 		* model
 			- VL805/806 xHCI USB 3.0 Controller (string)
 			
-- 00:1f.3 Audio device: Intel Corporation Comet Lake PCH-V cAVS
+- 00:1f.3 **Audio device**: Intel Corporation Comet Lake PCH-V cAVS
 	+ PciRoot(0x0)/Pci(0x1F,0x3)
 		* layout-id
 			- 01000000 (data)
 				
-- 00:02.0 Display controller: Intel Corporation CometLake-S GT2 [UHD Graphics 630] (rev 05)
+- 00:02.0 **Display controller**: Intel Corporation CometLake-S GT2 [UHD Graphics 630] (rev 05)
 	+ PciRoot(0x0)/Pci(0x2,0x0)
 		* AAPL,ig-platform-id 
 			- 0300923E (data)
