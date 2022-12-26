@@ -12,6 +12,7 @@
 
 * [Introduction](#introduction)
 * [Devices Specification](#devices-specification)
+* [Structure](#structure)
 * [ACPI](#acpi)
 * [DeviceProperties](#deviceproperties)
 * [Kexts](#kexts)
@@ -33,6 +34,10 @@ This is an Hackintosh EFI template that I built according to my generic computer
     *   [x] MSI [RX 5500 XT MECH OC](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G/Overview) 4GB
     *   [x] 32GB RAM
     *   [x] 02 x [Kingston A2000](https://www.kingston.com/en/company/press/article/56606) 500GB, 02 x [San Disk Ultra 3D SSD](https://www.westerndigital.com/en-ap/products/internal-drives/sandisk-ultra-3d-sata-iii-ssd#SDSSDH3-250G-G25) 500GB
+
+### Structure
+
+![Structure](https://user-images.githubusercontent.com/72515939/209513272-5d82f072-63a5-492b-9e29-c072176d1585.png)
 
 #### ACPI
 
