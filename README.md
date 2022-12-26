@@ -129,7 +129,7 @@ This is an Hackintosh EFI template that I built according to my generic computer
 - Count
 	+ 0 (number)
 - Enable
-	+ Yes
+	+ Yes (boolean)
 - Find
 	+ 00415050 4C452053 534400 (data)
 - Identifier
