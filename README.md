@@ -8,7 +8,7 @@
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
 
-## [TOC]
+## TOC
 
 * [Introduction](#introduction)
 * [Devices Specification](#devices-specification)
