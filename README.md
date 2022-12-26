@@ -1,4 +1,4 @@
-\# Hackintosh: ASRock B460M Steel Legend
+# Hackintosh: ASRock B460M Steel Legend
 
 [![BIOS](https://img.shields.io/badge/BIOS-1.60B-red)](https://www.asrock.com/mb/Intel/B460M%20Steel%20Legend/#BIOS)
 [![Bootloader](https://img.shields.io/badge/Bootloader-OpenCore-yellow)](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/releases)
@@ -18,14 +18,14 @@
 * [Trim](#trim)
 * [Credits](#credits)
 
-## Introduction
+### Introduction
 
 This is an Hackintosh EFI template that I built according to my generic computer specifications. Before start, please...
 
 * Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding.
 * Checkout Dortania Monthly [Post](https://dortania.github.io) to get latest news from developer directly.
 
-## Devices Specification
+### Devices Specification
 
 *   ASRock [B460M](https://www.asrock.com/mb/Intel/B460M%20Steel%20Legend/) Steel legend
     *   [x] Intel® [Core™ i5-10400](https://www.intel.com/content/www/us/en/products/sku/199271/intel-core-i510400-processor-12m-cache-up-to-4-30-ghz/specifications.html)
@@ -34,7 +34,7 @@ This is an Hackintosh EFI template that I built according to my generic computer
     *   [x] 32GB RAM
     *   [x] 02 x [Kingston A2000](https://www.kingston.com/en/company/press/article/56606) 500GB, 02 x [San Disk Ultra 3D SSD](https://www.westerndigital.com/en-ap/products/internal-drives/sandisk-ultra-3d-sata-iii-ssd#SDSSDH3-250G-G25) 500GB
 
-### ACPI
+#### ACPI
 
 * SSDT-EXT contain:
 	* An extension of Advanced Configuration and Power Interface
@@ -46,7 +46,7 @@ This is an Hackintosh EFI template that I built according to my generic computer
 		+ TSUB (Thermal Subsystem, cosmetics)
 		+ USBX (USB Power Management)
 
-###  DeviceProperties
+####  DeviceProperties
 
 - 03:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Navi 14 [Radeon RX 5500/5500M / Pro 5500M] (rev c5)
 	+ PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
@@ -119,7 +119,7 @@ This is an Hackintosh EFI template that I built according to my generic computer
 		* igfxonln
 			- 01000000 (data)
 
-###  Kexts
+####  Kexts
 
 1. Lilu
 2. VirtualSMC
@@ -130,7 +130,7 @@ This is an Hackintosh EFI template that I built according to my generic computer
 7. LucyRTL8125Ethernet
 8. USBMap
 
-### Trim
+#### Trim
 
 - Arch
 	+ x86_64 (string)
