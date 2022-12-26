@@ -1,6 +1,6 @@
 \# Hackintosh: ASRock B460M Steel Legend
 
-[![BIOS](https://img.shields.io/badge/BIOS-1.60-red)](https://www.asrock.com/mb/Intel/B460M%20Steel%20Legend/#BIOS)
+[![BIOS](https://img.shields.io/badge/BIOS-1.60B-red)](https://www.asrock.com/mb/Intel/B460M%20Steel%20Legend/#BIOS)
 [![Bootloader](https://img.shields.io/badge/Bootloader-OpenCore-yellow)](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/releases)
 [![Version](https://img.shields.io/badge/Version-0.8.7-white)](https://github.com/acidanthera/OpenCorePkg/releases)
 [![MOnterey](https://img.shields.io/badge/Compatible-Monterey-purple)](https://www.apple.com/ge/macos/monterey/)
