@@ -8,6 +8,16 @@
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
 
+## [TOC]
+
+* [Introduction](#introduction)
+* [Devices Specification](#devices-specification)
+* [ACPI](#acpi)
+* [DeviceProperties](#deviceproperties)
+* [Kexts](#kexts)
+* [Trim](#trim)
+* [Credits](#credits)
+
 ## Introduction
 
 This is an Hackintosh EFI template that I built according to my generic computer specifications. Before start, please...
@@ -15,7 +25,7 @@ This is an Hackintosh EFI template that I built according to my generic computer
 * Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding.
 * Checkout Dortania Monthly [Post](https://dortania.github.io) to get latest news from developer directly.
 
-## Device Specification
+## Devices Specification
 
 *   ASRock [B460M](https://www.asrock.com/mb/Intel/B460M%20Steel%20Legend/) Steel legend
     *   [x] Intel® [Core™ i5-10400](https://www.intel.com/content/www/us/en/products/sku/199271/intel-core-i510400-processor-12m-cache-up-to-4-30-ghz/specifications.html)
@@ -109,7 +119,7 @@ This is an Hackintosh EFI template that I built according to my generic computer
 		* igfxonln
 			- 01000000 (data)
 
-###  Kext
+###  Kexts
 
 1. Lilu
 2. VirtualSMC
@@ -120,7 +130,7 @@ This is an Hackintosh EFI template that I built according to my generic computer
 7. LucyRTL8125Ethernet
 8. USBMap
 
-### Trim Patch
+### Trim
 
 - Arch
 	+ x86_64 (string)
