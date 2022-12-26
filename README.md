@@ -41,7 +41,7 @@ This is an Hackintosh EFI template that I built according to my generic computer
 		+ AWAC (system clock fix on Z390, B460, Z490 motherboards)
 		+ Fake EC (Fake Embedded Controller)
 		+ MCHC (Known as DRAM - Dynamic Random Access Memory, in most 10th Gen Motherboard in order to Aids in proper memory reporting and can aid in getting better kernel panic details if memory related)
-		+ PCI GPU Bridge (PXSX)
+		+ PXSX (PCI GPU Bridge)
 		+ SBUS (System Bus PCI Controller fix)
 		+ TSUB (Thermal Subsystem, cosmetics)
 		+ USBX (USB Power Management)
