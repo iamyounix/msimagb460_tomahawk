@@ -206,11 +206,11 @@ Quirks
 
 | Input | Option |
 |---|---|
-| AppleXcpmCfgLock | Yes |
-| DisableIoMapper | Yes |
-| PanicNoKextDump | Yes |
-| PowerTimeoutKernelPanic | Yes |
-| SetApfsTrimTimeout | -1 |
+| AppleXcpmCfgLock | Boolean | Yes |
+| DisableIoMapper | Boolean | Yes |
+| PanicNoKextDump | Boolean | Yes |
+| PowerTimeoutKernelPanic | Boolean | Yes |
+| SetApfsTrimTimeout | Number | 0 |
 
 > **Note**: Other than above is `No`
 
@@ -245,7 +245,7 @@ APFS
 | EnableJumpstart | Boolean | Yes |
 | HideVerbose | Boolean | Yes |
 | MinDate | Number | 0 |
-| MinVolume | Number | 0|
+| MinVolume | Number | 0 |
 
 Drivers
 
