@@ -37,19 +37,69 @@ This is an Hackintosh EFI template that I built according to my generic computer
 
 ### Structure
 
-![Structure](https://user-images.githubusercontent.com/72515939/209513272-5d82f072-63a5-492b-9e29-c072176d1585.png)
+```zsh
+EFI
+├── BOOT
+│   └── BOOTx64.efi
+└── OC
+    ├── ACPI
+    │   └── SSDT-EXT.aml
+    ├── config.plist
+    ├── Drivers
+    │   ├── HfsPlus.efi
+    │   ├── OpenCanopy.efi
+    │   ├── OpenRuntime.efi
+    │   └── ResetNvramEntry.efi
+    ├── Kexts
+    │   ├── AppleALC.kext
+    │   ├── Lilu.kext
+    │   ├── LucyRTL8125Ethernet.kext
+    │   ├── SMCProcessor.kext
+    │   ├── SMCSuperIO.kext
+    │   ├── USBMap.kext
+    │   ├── VirtualSMC.kext
+    │   └── WhateverGreen.kext
+    ├── OpenCore.efi
+    ├── Resources
+    │   ├── Audio
+    │   ├── Font
+    │   ├── Image
+    │   │   └── Acidanthera
+    │   │       ├── Chardonnay
+    │   │       ├── GoldenGate
+    │   │       └── Syrah
+    │   └── Label
+    └── Tools
+```
 
 #### ACPI
 
-- SSDT-EXT contain:
-  - An extension of Advanced Configuration and Power Interface
-    - AWAC (system clock fix on Z390, B460, Z490 motherboards)
-    - Fake EC (Fake Embedded Controller)
-    - MCHC (Known as DRAM - Dynamic Random Access Memory, in most 10th Gen Motherboard in order to Aids in proper memory reporting and can aid in getting better kernel panic details if memory related)
-    - PXSX (PCI GPU Bridge)
-    - SBUS (System Bus PCI Controller fix)
-    - TSUB (Thermal Subsystem, cosmetics)
-    - USBX (USB Power Management)
+[SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/tree/main/SSDT-EXT) contain:
+
+| Input | Details |
+|---|---|
+| AWAC | ACPI based System clock fix on Z390, B460, Z490 motherboards |
+| EC | ACPI based fake Embedded Controller as an alternative EC controller, also prevents actual AppleACPIEC from being loaded on macOS. |
+| MCHC | Known as DRAM (Dynamic Random Access Memory), in most 10th Gen Motherboard in order to Aids in proper memory reporting and can aid in getting better kernel panic details if memory related |
+| PXSX | PCI Bridge |
+| TSUB | ACPI based Thermal Subsystem. |
+| USBX | USB Power Management (Required for USBMap.kext) |
+
+#### Booter
+
+Quirks
+
+| Input | Option |
+|---|---|
+| AvoidRuntimeDefrag | Yes |
+| DevirtualiseMmio | Yes |
+| EnableSafeModeSlide | Yes |
+| ProvideCustomSlide | Yes |
+| SyncRuntimePermissions | Yes |
+| ProvideMaxSlide | 0 |
+| ResizeAppleGpuBars | -1 |
+
+> **Note**: Other than above is `No`
 
 #### DeviceProperties
 
@@ -120,7 +170,9 @@ This is an Hackintosh EFI template that I built according to my generic computer
 | igfxfw | Data | 02000000 |
 | igfxonln | Data | 01000000 |
 
-#### Kexts
+#### Kernel
+
+Kexts
 
 | Kext | Details |
 |---|---|
@@ -130,6 +182,144 @@ This is an Hackintosh EFI template that I built according to my generic computer
 | Whatevergreen | [Lilu](https://github.com/acidanthera/Lilu) plugin providing patches to select GPUs on macOS. Requires Lilu 1.5.6 or newer. |
 | LucyRTL8125Ethernet | A macOS driver for Realtek RTL8125 2.5GBit Ethernet Controllers |
 | USBMap | USB Port configuration. Require [USBMap](https://github.com/corpnewt/USBMap) or [USBToolbox)(https://github.com/USBToolBox/tool) |
+
+Patch
+
+| Input | Type | Details |
+|---|---|---|
+| Arch | String | x86_64 |
+| Base | String |  |
+| Comment | String | Enable TRIM for SSD \| Catalina + |
+| Count | Number | 0 |
+| Enabled | Boolean | Yes |
+| Find | Data | 00415050 4C452053 534400 |
+| Identifier | String | com.apple.iokit.IOAHCIBlockStorage |
+| Limit | Number | 0 |
+| Mask | Data |  |
+| MaxKernel | String |  |
+| MinKernel | String |  |
+| Replace | Data | 00000000 00000000 000000 |
+| ReplaceMask | Data |  |
+| Skip | Data |  |
+
+Quirks
+
+| Input | Option |
+|---|---|
+| AppleXcpmCfgLock | Yes |
+| DisableIoMapper | Yes |
+| PanicNoKextDump | Yes |
+| PowerTimeoutKernelPanic | Yes |
+| SetApfsTrimTimeout | -1 |
+
+> **Note**: Other than above is `No`
+
+#### Misc
+
+| Input | Type | Details |
+|---|---|---|
+| ConsoleAttributes | Boolean | Yes |
+| HibernateMode | Boolean | Yes |
+| HideAuxiliary | String | Auto |
+| LauncherOption | String | Full |
+| LauncherPath | String | Default |
+| PickerAttributes | Number | 147 |
+| PickerMode | String | External |
+| PickerVariant | String | Acidanthera\GoldenGate |
+| ShowPicker | Boolean | Yes |
+| TakeoffDelay | Number | 0 |
+| Timeout | Number | 5 |
+
+> **Note**: Other than above is `No`
+
+#### PlatformInfo
+
+SMBIOS: iMac20,1
+
+#### UEFI
+
+APFS
+
+| Input | Type | Details |
+|---|---|---|
+| EnableJumpstart | Boolean | Yes |
+| HideVerbose | Boolean | Yes |
+| MinDate | Number | 0 |
+| MinVolume | Number | 0|
+
+Drivers
+
+- HFSPlus
+
+| Input | Type | Details |
+|---|---|---|
+| Enable | Boolean | Yes |
+| Path | Boolean | HFSPlus.efi |
+
+- OpenRuntime
+
+| Input | Type | Details |
+|---|---|---|
+| Enable | Boolean | Yes |
+| Path | Boolean | OpenRuntime.efi |
+
+- OpenCanopy
+
+| Input | Type | Details |
+|---|---|---|
+| Enable | Boolean | Yes |
+| Path | Boolean | HFSPlus.efi |
+
+- ResetNvramEntry
+
+| Input | Type | Details |
+|---|---|---|
+| Enable | Boolean | Yes |
+| Path | Boolean | ResetNvramEntry.efi |
+
+Input
+
+| Input | Type | Details |
+|---|---|---|
+| KeyForgetThreshold | Number | 5 |
+| LeySupport | Boolean | Yes |
+| KeySupportMode | Boolean | Auto |
+| PointerSupportMode | String | ASUS |
+| TimerResolution | Number | 50000 |
+
+> **Note**: Other than above is `No`
+
+Output
+
+| Input | Type | Details |
+|---|---|---|
+| GopPassThrough | String | Disable |
+| ProvideConsoleGop | Boolean | Yes |
+| Resolution | String | max |
+| TextRenderer| String | BuiltinGraphics |
+| UIScale | Number | - |
+
+> **Note**: Other than above is `No`
+
+ProtocolOverrides
+
+| Input | Type | Details |
+|---|---|---|
+| FirmwareVolume | Boolean | Yes |
+
+> **Note**: Other than above is `No`
+
+Quirks
+
+| Input | Type | Details |
+|---|---|---|
+| EnableVectorAcceleration | Boolean | Yes |
+| ExitBootServicesDelay | Number | 0 |
+| RequestBootVarRouting | Boolean | Yes |
+| ResizeGpuBars | Number | -1 |
+| TscSyncTimeout| Number | 0 |
+
+> **Note**: Other than above is `No`
 
 ### Credits
 
