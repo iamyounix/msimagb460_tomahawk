@@ -8,17 +8,6 @@
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
 
-## TOC
-
-- [Introduction](#introduction)
-- [Devices Specification](#devices-specification)
-- [Structure](#structure)
-- [ACPI](#acpi)
-- [DeviceProperties](#deviceproperties)
-- [Kexts](#kexts)
-- [Trim](#trim)
-- [Credits](#credits)
-
 ### Introduction
 
 This is an Hackintosh EFI template that I built according to my generic computer specifications. Before start, please...
