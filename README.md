@@ -266,7 +266,7 @@ Drivers
 | Enable | Boolean | Yes |
 | Path | Boolean | ResetNvramEntry.efi |
 
-Input
+- Input
 
 | Input | Type | Details |
 |---|---|---|
@@ -278,7 +278,7 @@ Input
 
 > **Note**: Other than above is `No`
 
-Output
+- Output
 
 | Input | Type | Details |
 |---|---|---|
@@ -290,7 +290,7 @@ Output
 
 > **Note**: Other than above is `No`
 
-ProtocolOverrides
+- ProtocolOverrides
 
 | Input | Type | Details |
 |---|---|---|
