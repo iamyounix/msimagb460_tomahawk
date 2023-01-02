@@ -41,6 +41,7 @@ EFI
     │   └── ResetNvramEntry.efi
     ├── Kexts
     │   ├── AppleALC.kext
+    │   ├── IntelMausi.kext
     │   ├── Lilu.kext
     │   ├── LucyRTL8125Ethernet.kext
     │   ├── SMCProcessor.kext
@@ -69,9 +70,10 @@ EFI
 |---|---|
 | AWAC | ACPI based System clock fix on Z390, B460, Z490 motherboards |
 | EC | ACPI based fake Embedded Controller as an alternative EC controller, also prevents actual AppleACPIEC from being loaded on macOS. |
-| MCHC | Known as DRAM (Dynamic Random Access Memory), in most 10th Gen Motherboard in order to Aids in proper memory reporting and can aid in getting better kernel panic details if memory related |
+| MCHC | Known as DRAM (Dynamic Random Access Memory), in most 10th Gen Motherboard in order to Aids in proper memory reporting and can aid in getting better kernel panic details if memory related (Cosmetics) |
 | PXSX | PCI Bridge |
-| TSUB | ACPI based Thermal Subsystem. |
+| PGMM | Processor Gaussian Mixture Model (Cosmetics) |
+| TSUB | ACPI based Thermal Subsystem (Cosmetics) |
 | USBX | USB Power Management (Required for USBMap.kext) |
 
 #### Booter
@@ -92,85 +94,127 @@ Quirks
 
 #### DeviceProperties
 
-**03:00.0 VGA compatible controller**: Advanced Micro Devices, Inc. [AMD/ATI] Navi 14 [Radeon RX 5500/5500M / Pro 5500M] (rev c5)
-- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
-
-| Input | Type | Data |
-|---|---|---|
-| 0@,name | String | ATY,Python |
-| 1@,name | String | ATY,Python |
-| 2@,name | String | ATY,Python |
-| 3@,name | String | ATY,Python |
-| AAPL,slot-name | String | Slot- 1 |
-| ATY,EFIVersion | String | 31.0.120.26.3 |
-| ATY,EFIVersionB | String | 113-MSITV382MH.161 |
-| ATY,Rom# | String | 113-EXT7635-001 |
-| ATY,copyright | String | Copyright AMD Inc. All Rights Reserved. 2005-2019 |
-
-**03:00.1 Audio device**: Advanced Micro Devices, Inc. [AMD/ATI] Navi 10 HDMI Audio
-- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
-
-| Input | Type | Data |
-|---|---|---|
-| AAPL,slot-name | String | Slot- 1 |
-| model | String | Navi 10 HDMI Audio |
-
-**00:14.0 USB controller**: Intel Corporation Comet Lake PCH-V USB Controller
-- PciRoot(0x0)/Pci(0x14,0x0)
-
-| Input | Type | Data |
-|---|---|---|
-| acpi-wake-type | Data | 01 |
-
-**04:00.0 Network controller**: Broadcom Inc. and subsidiaries BCM4360 802.11ac Wireless Network Adapter (rev 03)
-- PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)
-
-| Input | Type | Data |
-|---|---|---|
-| AAPL,slot-name | String | Slot- 2 |
-| model | String | BCM4360 802.11ac Wireless Network Adapter |
-
-**07:00.0 USB controller**: VIA Technologies, Inc. VL805/806 xHCI USB 3.0 Controller (rev 01)
-- PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)
-
-| Input | Type | Data |
-|---|---|---|
-| AAPL,slot-name | String | Slot- 3 |
-| acpi-wake-type | Data | 01 |
-| model | String | VL805/806 xHCI USB 3.0 Controller |
-
-**00:1f.3 Audio device**: Intel Corporation Comet Lake PCH-V cAVS
-- PciRoot(0x0)/Pci(0x1F,0x3)
-  
-| Input | Type | Data |
-|---|---|---|
-| layout-id | Data | 01000000 |
-
-**00:02.0 Display controller**: Intel Corporation CometLake-S GT2 [UHD Graphics 630] (rev 05)
-- PciRoot(0x0)/Pci(0x2,0x0)
-
-| Input | Type | Data |
-|---|---|---|
-| AAPL,ig-platform-id | Data | 0300923E |
-| AAPL,slot-name | String | Slot- 0 |
-| agdpmod | Data | 70696B65 726100 |
-| device-id | Data | 9B3E0000 |
-| enable-metal | Data | 01000000 |
-| igfxfw | Data | 02000000 |
-| igfxonln | Data | 01000000 |
-
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DeviceProperties</key>
+	<dict>
+		<key>Add</key>
+		<dict>
+			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>@0,name</key>
+				<string>ATY,Python</string>
+				<key>@1,name</key>
+				<string>ATY,Python</string>
+				<key>@2,name</key>
+				<string>ATY,Python</string>
+				<key>@3,name</key>
+				<string>ATY,Python</string>
+				<key>AAPL,slot-name</key>
+				<string>Slot- 1</string>
+				<key>ATY,EFIVersion</key>
+				<string>31.0.120.26.3</string>
+				<key>ATY,EFIVersionB</key>
+				<string>113-MSITV382MH.161</string>
+				<key>ATY,Rom#</key>
+				<string>113-EXT7635-001</string>
+				<key>ATY,copyright</key>
+				<string>Copyright AMD Inc. All Rights Reserved. 2005-2019</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Slot- 1</string>
+				<key>model</key>
+				<string>Navi 10 HDMI Audio</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x14,0x0)</key>
+			<dict>
+				<key>acpi-wake-type</key>
+				<data>
+				AQ==
+				</data>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>acpi-wake-type</key>
+				<data>
+				AQ==
+				</data>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Slot- 3</string>
+				<key>acpi-wake-type</key>
+				<data>
+				AQ==
+				</data>
+				<key>model</key>
+				<string>VL805/806 xHCI USB 3.0 Controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Slot- 2</string>
+				<key>model</key>
+				<string>BCM4360 802.11ac Wireless Network Adapter</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
+			<dict>
+				<key>layout-id</key>
+				<data>
+				AQAAAA==
+				</data>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
+			<dict>
+				<key>AAPL,ig-platform-id</key>
+				<data>
+				AwCSPg==
+				</data>
+				<key>AAPL,slot-name</key>
+				<string>Slot- 0</string>
+				<key>agdpmod</key>
+				<data>
+				cGlrZXJhAA==
+				</data>
+				<key>device-id</key>
+				<data>
+				mz4AAA==
+				</data>
+				<key>enable-metal</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>igfxfw</key>
+				<data>
+				AgAAAA==
+				</data>
+				<key>igfxonln</key>
+				<string>01000000</string>
+			</dict>
+		</dict>
+		<key>Delete</key>
+		<dict/>
+	</dict>
+```
 #### Kernel
 
 Kexts
 
 | Kext | Details |
 |---|---|
-| Lilu | An open source kernel extension bringing a platform for arbitrary kext, library, and program patching throughout the system for macOS. |
-| VirtualSMC | Advanced Apple SMC emulator in the kernel. Requires [Lilu](https://github.com/acidanthera/Lilu) for full functioning. Include with SMCProcessor & SMCSuperIO. |
 | AppleALC | An open source kernel extension enabling native macOS HD audio for not officially supported codecs without any filesystem modifications. AppleALCU can be used for systems with digital-only audio. |
-| Whatevergreen | [Lilu](https://github.com/acidanthera/Lilu) plugin providing patches to select GPUs on macOS. Requires Lilu 1.5.6 or newer. |
+| IntelMausi | Intel onboard LAN driver for macOS |
+| Lilu | An open source kernel extension bringing a platform for arbitrary kext, library, and program patching throughout the system for macOS. |
 | LucyRTL8125Ethernet | A macOS driver for Realtek RTL8125 2.5GBit Ethernet Controllers |
 | USBMap | USB Port configuration. Require [USBMap](https://github.com/corpnewt/USBMap) or [USBToolbox](https://github.com/USBToolBox/tool) |
+| VirtualSMC | Advanced Apple SMC emulator in the kernel. Requires [Lilu](https://github.com/acidanthera/Lilu) for full functioning. Include with SMCProcessor & SMCSuperIO. |
+| Whatevergreen | [Lilu](https://github.com/acidanthera/Lilu) plugin providing patches to select GPUs on macOS. Requires Lilu 1.5.6 or newer. |
 
 Patch
 
