@@ -1,7 +1,5 @@
 # USB Keyboard Wake
 
-### Wake-Type & Wake-GPE?
-
 #### acpi-wake-type
 
 The `acpi-wake-type` is a kernel parameter that can be used to specify the **Type of Wake Event** that will trigger the system to resume from a suspended or hibernated state. It is typically used in conjunction with the `acpi-wake` kernel parameter, which specifies the device that will trigger the wake event.
