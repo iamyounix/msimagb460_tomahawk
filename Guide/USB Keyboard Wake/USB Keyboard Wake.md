@@ -1,4 +1,4 @@
-# Hackintosh: Troubleshooting, Method and Alternative
+# USB Keyboard Wake
 This is all about alternative methods that users can try in order to solve hackintosh issues.
 
 ### Keyboard Wake Issues
