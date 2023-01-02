@@ -1,4 +1,4 @@
-# Hackintosh: ASRock B460M Steel Legend
+# Hackintosh: MSI MAG B460M Tomahawk
 
 [![BIOS](https://img.shields.io/badge/BIOS-1.60B-red)](https://www.asrock.com/mb/Intel/B460M%20Steel%20Legend/#BIOS)
 [![Bootloader](https://img.shields.io/badge/Bootloader-OpenCore-yellow)](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/releases)
