@@ -1,43 +1,37 @@
 # USB Keyboard Wake
 
-### Type of ACPI Wake
+Original Thread: [Dortania - Keyboard Wake Issues](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#keyboard-wake-issues)
 
-**acpi-wake-type**
-* The `acpi-wake-type` is a kernel parameter that can be used to specify the **Type of Wake Event** that will trigger the system to resume from a suspended or hibernated state. It is typically used in conjunction with the `acpi-wake` kernel parameter, which specifies the device that will trigger the wake event. The value of the `acpi-wake-type` parameter can be one of the following:
+### Two effective method
 
-  * `s3_bios` - resume from a suspend-to-RAM (S3) state when it receives a BIOS-generated wake event.
-  * `s4_bios` - resume from a suspend-to-disk (S4) state when it receives a BIOS-generated wake event.
-  * `s3_device` - resume from a suspend-to-RAM (S3) state when it receives a device-generated wake event.
-  * `s4_device` - resume from a suspend-to-disk (S4) state when it receives a device-generated wake event.
-
-**acpi-wake-gpe**
-* The `acpi-wake-gpe` kernel parameter is used to specify the type of **General-Purpose Event (GPE)** that will trigger the system to resume from a suspended or hibernated state. GPEs are a type of interrupt used in the Advanced Configuration and Power Interface (ACPI) specification to signal the occurrence of an event that may affect the system's power state.
-* The value of the `acpi-wake-gpe` parameter can be either `disable` or `enable`, depending on whether you want to disable or enable GPE-based wake events. When set to "enable", the system will resume from a suspended or hibernated state when it receives a GPE-based wake event. When set to `disable`, the system will ignore GPE-based wake events and will not resume from a suspended or hibernated state when it receives one.
-* The `acpi-wake-gpe` kernel parameter is typically used in conjunction with other kernel parameters such as `acpi-wake` and `acpi-wake-type`, which can be used to specify the device or type of wake event that will trigger the system to resume.
+- Set `acpi-wake-type` to all usb devices.
+- Set Virtual USB Devices to route proper wake event from loaded [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) to acpi mapped usb devices (i.e., `Return (\_SB.PCI0.USB._PRW ())`).
 
 #### How?
 
+So the ideal method is to declare the XHCI Controller(This is our USB Controller) to be an ACPI wake device, as we don't have compatible ECs for macOS to handle proper wake calls.
+
 **Method 1**: 
 
-Using DeviceProperties via config.plist
+Set wake by adding the property of `acpi-wake-type` | `data` | `01` to USB devices via DeviceProperties in config.plist.
 
 - Internal (Motherboard based USB devices)
   - PciRoot(0x0)/Pci(0x14,0x0)
     - `acpi-wake-type` | `Data` | `01` (recommended)
-    - `acpi-wake-type` | `Data` | `6D` (Optional)
+    - `acpi-wake-type` | `Data` | `6D` (This is normal value for for motherboard based USB device)
 
 - External (PCIe based USB devices)
   - PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0))
-    - `acpi-wake-type` | `Data` | `01` (recommended)
-    - `acpi-wake-type` | `Data` | `69` (Optional)
+    - `acpi-wake-type` | `Data` | `01` (Equivalent to enable)
+    - `acpi-wake-type` | `Data` | `69` (This is normal value for for PCIe based USB device)
 
 ![ACPIwake](https://user-images.githubusercontent.com/72515939/210158780-d2b7a60d-856f-4175-b67f-682c985fed84.png)
 
-> **Note**: No kext required, If this method doesn't work, head to Method 2.
+> **Note**: If this method doesn't work, head to Method 2.
 
 **Method 2**
 
-Using combination of SSDT (ACPI) and Kernel Extension (Kext). This method also using combination of SSDT (ACPI) and Kernel Extension (Kext) and associate with `acpi-wake-gpe` and `acpi-wake-type`. Create new SSDT by pasting this code to any asl equivalent editor and save it as `.dsl`. before editing, please make sure to check the path of your USB devices.You may need this code below:
+Set Virtual USB Devices to route proper wake event from loaded [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) to acpi mapped usb devices. This method using combine proper instruction from acpi from assiociated kext with `acpi-wake-type` and `acpi-wake-gpe`. Create new SSDT by pasting this code to any `.asl` equivalent editor and save it as `.dsl`. before editing, please make sure to check the path of your USB devices. You may need this code below:
 
 ```asl
 /**
@@ -71,7 +65,7 @@ DefinitionBlock ("", "SSDT", 2, "OSY86 ", "USBW", 0x00001000)
 }
 ```
 
-If you have multiple devices, include PCIe based USB devices. Similar as above, this method also using combination of SSDT (ACPI) and Kernel Extension (Kext) and associate with `acpi-wake-gpe` and `acpi-wake-type`. Create new SSDT by pasting this code to any asl equivalent editor and save it as `.dsl`. before editing, please make sure to check the path of your USB devices.You may need this code below:
+In order to make multiple usb device work with this method. You may need this code below:
 
 ```asl
 /**
