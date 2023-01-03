@@ -64,15 +64,16 @@ EFI
 
 #### ACPI
 
-[SSDT-EXT](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/tree/main/SSDT-EXT) contain:
+[SSDT-EXT](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/SSDT/SSDT-EXT.dsl) contain:
 
 | Input | Details |
 |---|---|
 | AWAC | ACPI based System clock fix on Z390, B460, Z490 motherboards |
 | EC | ACPI based fake Embedded Controller as an alternative EC controller, also prevents actual AppleACPIEC from being loaded on macOS. |
 | MCHC | Known as DRAM (Dynamic Random Access Memory), in most 10th Gen Motherboard in order to Aids in proper memory reporting and can aid in getting better kernel panic details if memory related (Cosmetics) |
-| PXSX | PCI Bridge |
+| PXSX | PCI Bridge for GFX0 |
 | PGMM | Processor Gaussian Mixture Model (Cosmetics) |
+| SBUS | Patched System BUS |
 | TSUB | ACPI based Thermal Subsystem (Cosmetics) |
 | USBX | USB Power Management (Required for USBMap.kext) |
 
