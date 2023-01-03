@@ -35,11 +35,11 @@ This is an Hackintosh EFI template that I built according to my generic computer
  **RAM**               | Up to 2666 MHz DDR4 SDRAM | Up to 2666 MHz DDR4 SDRAM             | -                                                           
  **iGPU**              | Intel UHD 630             | Intel UHD 630                         | -                                                           
  **dGPU**              | Radeon Pro 5300 4GB + TB  | MSI RX 5500 XT Mech OC 4GB + HDMI, DP | Both is GDDR6. RX 5500 XT bottleneck on 10th Gen Processor
- **Native Resolution** | 5120 x 2880               | 5120 x 2880                           | Hackintosh require 5k Monitor Support for Max Resolution
+ **Native Resolution** | 5120 x 2880               | 5120 x 2880                           | Hackintosh require 5k monitor support for max resolution
  **Firewire Ports**    | None                      | None                                  | -                                                           
  **Expansion Slot**    | SDXC SD Card              | Upgradeable                           | -                                                           
  **Wi-Fi**             | 802.11ac                  | 802.11ac by Fenvi T919 (BCM94360CD)   | Native                                                      
- **Bluetooth**         | 5.0                       | 5.0 via BCM94360CD                    | Fenvi T919 require USB Port                                 
+ **Bluetooth**         | 5.0                       | 5.0 via BCM94360CD                    | Fenvi T919 require USB port                                 
  **Standard Storage**  | 256 GB SSD                | Upgradeable                           |                   
  
 ### Structure
