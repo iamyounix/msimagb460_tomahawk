@@ -51,7 +51,7 @@ XHC device in the PCI0 scope. This method appears to be used to control the powe
 also includes an "If" statement that checks whether the operating system is Darwin (i.e., MacOS) using the _OSI ("Darwin")
 function. If the operating system is Darwin, the code enables the USBW device. Otherwise, the device is not enabled. Overall, 
 this SSDT appears to be defining a device and method for managing the power state of a USB device, with the device and method
-being enabled only on MacOS.
+being enabled only on MacOS. However, this SSDT require USBWakeFixup.kext to work.
  */
 DefinitionBlock ("", "SSDT", 2, "OSY86 ", "USBW", 0x00001000)
 {
@@ -90,7 +90,7 @@ operating system is Darwin (i.e., MacOS) using the _OSI ("Darwin") function. If 
 enables the three internal devices and their corresponding _PRW methods. Otherwise, the devices and methods are not enabled.
 Overall, this SSDT appears to be defining three virtual devices and their corresponding power management methods for managing
 the power state of USB devices on a system running MacOS. The devices and methods are intended to control the power state of
-the USB devices on the motherboard and on a PCIe card.
+the USB devices on the motherboard and on a PCIe card. Same as above, this SSDT require USBWakeFixup.kext to work.
  */
 DefinitionBlock ("", "SSDT", 2, "CpyPst", "USBPW", 0x00001001)
 {
