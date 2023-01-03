@@ -6,7 +6,7 @@ ie: `SB` / `PCI0` / `PEG0` / `PEGP` / `pcibridge` / `GFX0`
 
 ```asl
 /**
- * GPU Bridge missiing fix
+ * GPU Bridge missing fix
  */
 DefinitionBlock ("", "SSDT", 2, "CpyPst", "PXSX", 0x00001002)
 {
