@@ -93,11 +93,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "MCHC", 0x4D434843)
 }
 ```
 
-In other cases, there is also a way to name an existing device. As an example `SAT0` to `SATA`. This is the best example for naming an existing devices.
-
-Rename existing devices, with `If (_OSI ("Darwin"))` implementation. This block of code includes another Scope statement and two Device objects. The first Scope statement creates a namespace for the SAT0 object, and the second Scope statement defines a Method object named `_STA` for the `SAT0` object. The `_STA` object is a predefined method that is used to retrieve the current status of a device. The method is defined as taking no arguments and returning a value of `Zero`. The second Device object is named `SATA` and has two methods: `_ADR` and `_STA`. The `_ADR` method assigns the value `0x001F0002` to the `_ADR` method.
-The specific meaning of this value depends on the device and is defined by the device's hardware or firmware. The `_STA` method
-is identical to the `_STA` method defined for the `SAT0` object, with the exception that it returns a value of `0x0F` instead of `Zero`.
+Rename existing devices, with `If (_OSI ("Darwin"))` implementation. In other cases, there is also a way to name an existing device. As an example `SAT0` to `SATA`. This is the best example for naming an existing devices.This block of code includes another Scope statement and two Device objects. The first Scope statement creates a namespace for the SAT0 object, and the second Scope statement defines a Method object named `_STA` for the `SAT0` object. The `_STA` object is a predefined method that is used to retrieve the current status of a device. The method is defined as taking no arguments and returning a value of `Zero`. The second Device object is named `SATA` and has two methods: `_ADR` and `_STA`. The `_ADR` method assigns the value `0x001F0002` to the `_ADR` method. The specific meaning of this value depends on the device and is defined by the device's hardware or firmware. The `_STA` method is identical to the `_STA` method defined for the `SAT0` object, with the exception that it returns a value of `0x0F` instead of `Zero`.
 
 ```asl
 /*
