@@ -140,4 +140,4 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "USBPW", 0x00001001)
 
 ### Credits
 
-[Acidanthera](https://github.com/acidanthera/) | [osy](https://github.com/osy) | 
+[Acidanthera](https://github.com/acidanthera/) | [osy](https://github.com/osy)
