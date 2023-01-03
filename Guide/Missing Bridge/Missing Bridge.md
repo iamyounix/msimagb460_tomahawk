@@ -36,4 +36,4 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "PXSX", 0x50585358)
         }
     }
 }
-``
+```
