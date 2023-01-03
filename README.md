@@ -17,13 +17,31 @@ This is an Hackintosh EFI template that I built according to my generic computer
 
 ### Devices Specification
 
-- MSI MAG [B460M Tomahawk](https://www.msi.com/Motherboard/MAG-B460-TOMAHAWK)
-  - [x] Intel® [Core™ i5-10400](https://www.intel.com/content/www/us/en/products/sku/199271/intel-core-i510400-processor-12m-cache-up-to-4-30-ghz/specifications.html)
-  - [x] Intel® [UHD 630](https://ark.intel.com/content/www/us/en/ark/products/graphics/126790/intel-uhd-graphics-630.html)
-  - [x] MSI [RX 5500 XT MECH OC](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G/Overview) 4GB
-  - [x] 32GB RAM
-  - [x] 02 x [Kingston A2000](https://www.kingston.com/en/company/press/article/56606) 500GB, 02 x [San Disk Ultra 3D SSD](https://www.westerndigital.com/en-ap/products/internal-drives/sandisk-ultra-3d-sata-iii-ssd#SDSSDH3-250G-G25) 500GB
+- Real iMac20,1 vs My Hack
 
+ **Hardware**          | **Real iMac**             | **My Hack**                           | **Others**                                                 
+-----------------------|---------------------------|---------------------------------------|-------------------------------------------------------------
+ **Motherboard**       | Apple Custom              | MSI MAG B460 Tomahawk                 |                                                             
+ **Processor**         | Core i5 10500             | Core i5 10400                         | -                                                           
+ **Series**            | 10th Gen                  | 10th Gen                              |                                                             
+ **Code Name**         | Comet Lake                | Comet Lake                            | -                                                           
+ **Socket**            | LGA1200                   | LGA1200                               | -                                                           
+ **Core**              | 6                         | 6                                     | -                                                           
+ **Thread**            | 12                        | 12                                    | -                                                           
+ **Base Freq**         | 3.1 GHz                   | 2.9 GHz                               | - 0.2                                                       
+ **Turbo Boost**       | 4.5 GHz                   | 4.3 GHz                               | - 0.2                                                       
+ **ROM/FW Type**       | EFI                       | EFI / Legacy                          |                                                             
+ **T2 Sec. Chip**      | Yes (Custom by Apple)     | No                                    | Generic i5 10500 has no T2 Security Chip.     
+ **RAM**               | Up to 2666 MHz DDR4 SDRAM | Up to 2666 MHz DDR4 SDRAM             | -                                                           
+ **iGPU**              | Intel UHD 630             | Intel UHD 630                         | -                                                           
+ **dGPU**              | Radeon Pro 5300 4GB + TB  | MSI RX 5500 XT Mech OC 4GB + HDMI, DP | Both is GDDR6. RX 5500 XT bottleneck on 10th Gen Processor
+ **Native Resolution** | 5120 x 2880               | 5120 x 2880                           | Hackintosh require 5k Monitor Support for Max Resolution
+ **Firewire Ports**    | None                      | None                                  | -                                                           
+ **Expansion Slot**    | SDXC SD Card              | Upgradeable                           | -                                                           
+ **Wi-Fi**             | 802.11ac                  | 802.11ac by Fenvi T919 (BCM94360CD)   | Native                                                      
+ **Bluetooth**         | 5.0                       | 5.0 via BCM94360CD                    | Fenvi T919 require USB Port                                 
+ **Standard Storage**  | 256 GB SSD                | Upgradeable                           |                   
+ 
 ### Structure
 
 ```zsh
@@ -163,32 +181,7 @@ Quirks
 #### PlatformInfo
 
 **SMBIOS:** [iMac20,1](https://everymac.com/systems/apple/imac/specs/imac-core-i5-3.1-6-core-27-inch-retina-5k-2020-specs.html)
-  * Real iMac20,1 vs My Hack
-
- **Hardware**          | **Real iMac**             | **My Hack**                           | **Details**                                                 
------------------------|---------------------------|---------------------------------------|-------------------------------------------------------------
- **Motherboard**       | Apple Custom              | MSI MAG B460 Tomahawk                 |                                                             
- **Processor**         | Core i5 10500             | Core i5 10400                         | -                                                           
- **Series**            | 10th Gen                  | 10th Gen                              |                                                             
- **Code Name**         | Comet Lake                | Comet Lake                            | -                                                           
- **Socket**            | LGA1200                   | LGA1200                               | -                                                           
- **Core**              | 6                         | 6                                     | -                                                           
- **Thread**            | 12                        | 12                                    | -                                                           
- **Base Freq**         | 3.1 GHz                   | 2.9 GHz                               | - 0.2                                                       
- **Turbo Boost**       | 4.5 GHz                   | 4.3 GHz                               | - 0.2                                                       
- **ROM/FW Type**       | EFI                       | EFI / Legacy                          |                                                             
- **T2 Sec. Chip**      | Yes                       | No                                    | Generic i5 10500 has no T2 Security Chip. Apple does.       
- **RAM**               | Up to 2666 MHz DDR4 SDRAM | Up to 2666 MHz DDR4 SDRAM             | -                                                           
- **iGPU**              | Intel UHD 630             | Intel UHD 630                         | -                                                           
- **dGPU**              | Radeon Pro 5300 4GB + TB  | MSI RX 5500 XT Mech OC 4GB + HDMI, DP | Both is GDDR6. RX 5500 XT bottleneck on 10th Gen Processor. 
- **Native Resolution** | 5120 x 2880               | 5120 x 2880                           | Hackintosh require 5k Monitor Support.                      
- **Firewire Ports**    | None                      | None                                  | -                                                           
- **Expansion Slot**    | SDXC SD Card              | Upgradeable                           | -                                                           
- **Wi-Fi**             | 802.11ac                  | 802.11ac by Fenvi T919 (BCM94360CD)   | Native                                                      
- **Bluetooth**         | 5.0                       | 5.0 via BCM94360CD                    | Fenvi T919 require USB Port                                 
- **Standard Storage**  | 256 GB SSD                | Upgradeable                           |                                                             
-
-     
+        
 #### UEFI
 
 APFS
