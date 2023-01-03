@@ -249,6 +249,21 @@ Quirks
 
 > **Note**: Other than above is `No`
 
+## Changelog
+
+**v0.8.8** 
+
+1. [Release](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8release.zip)
+2. [Debug](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8debug.zip)
+3. [Both](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8both.dmg)
+
+- Patches: 
+  - permanent `agdpmod=pikera` via IGPU DeviceProperties.
+  - permanent `acpi-wake-type` via XHCI and PXSX DeviceProperties.
+  - patched `ATY,Python` FB for MSI RX 5500 XT Mech OC 4GB.
+  - censored SMBIOS using [OC-Anonymizer](https://github.com/dreamwhite/OC-Anonymizer) credit to [dreamwhite](https://github.com/dreamwhite).
+  - less acpi code
+
 ### Credits
 
 #### [Acidanthera](https://github.com/acidanthera) | [Dortania](https://github.com/dortania)
