@@ -21,16 +21,16 @@ This is an Hackintosh EFI template that I built according to my generic computer
 
  **Hardware**          | **Real iMac**             | **My Hack**                           | **Others**                                                 
 -----------------------|---------------------------|---------------------------------------|-------------------------------------------------------------
- **Motherboard**       | Apple Custom              | MSI MAG B460 Tomahawk                 |                                                             
+ **Motherboard**       | Apple Custom              | MSI MAG B460 Tomahawk                 | -                                                            
  **Processor**         | Core i5 10500             | Core i5 10400                         | -                                                           
- **Series**            | 10th Gen                  | 10th Gen                              |                                                             
+ **Series**            | 10th Gen                  | 10th Gen                              | -                                                            
  **Code Name**         | Comet Lake                | Comet Lake                            | -                                                           
  **Socket**            | LGA1200                   | LGA1200                               | -                                                           
  **Core**              | 6                         | 6                                     | -                                                           
  **Thread**            | 12                        | 12                                    | -                                                           
  **Base Freq**         | 3.1 GHz                   | 2.9 GHz                               | - 0.2                                                       
  **Turbo Boost**       | 4.5 GHz                   | 4.3 GHz                               | - 0.2                                                       
- **ROM/FW Type**       | EFI                       | EFI / Legacy                          |                                                             
+ **ROM/FW Type**       | EFI                       | EFI / Legacy                          | -                                                            
  **T2 Sec. Chip**      | Yes (Custom by Apple)     | No                                    | Generic i5 10500 has no T2 Security Chip.     
  **RAM**               | Up to 2666 MHz DDR4 SDRAM | Up to 2666 MHz DDR4 SDRAM             | -                                                           
  **iGPU**              | Intel UHD 630             | Intel UHD 630                         | -                                                           
