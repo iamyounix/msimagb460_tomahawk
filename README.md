@@ -118,9 +118,9 @@ Quirks
 				<key>ATY,EFIVersion</key>
 				<string>31.0.120.26.3</string>
 				<key>ATY,EFIVersionB</key>
-				<string>113-MSITV382MH.161</string>
+				<string>113-EXT37635-001</string>
 				<key>ATY,Rom#</key>
-				<string>113-EXT7635-001</string>
+				<string>113-MSITV382MH.161</string>
 				<key>ATY,copyright</key>
 				<string>Copyright AMD Inc. All Rights Reserved. 2005-2019</string>
 			</dict>
@@ -172,19 +172,11 @@ Quirks
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
-				<key>AAPL,ig-platform-id</key>
-				<data>
-				AwCSPg==
-				</data>
 				<key>AAPL,slot-name</key>
 				<string>Slot- 0</string>
 				<key>agdpmod</key>
 				<data>
 				cGlrZXJhAA==
-				</data>
-				<key>device-id</key>
-				<data>
-				mz4AAA==
 				</data>
 				<key>enable-metal</key>
 				<data>
@@ -195,12 +187,15 @@ Quirks
 				AgAAAA==
 				</data>
 				<key>igfxonln</key>
-				<string>01000000</string>
+				<data>
+				AQAAAA==
+				</data>
 			</dict>
 		</dict>
 		<key>Delete</key>
 		<dict/>
 	</dict>
+</plist>
 ```
 #### Kernel
 
