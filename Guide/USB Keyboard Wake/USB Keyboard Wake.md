@@ -17,7 +17,9 @@
 
 #### How?
 
-**Method 1**: DeviceProperties
+**Method 1**: 
+
+Using DeviceProperties via config.plist
 
 - Internal (Motherboard based USB devices)
   - PciRoot(0x0)/Pci(0x14,0x0)
@@ -33,11 +35,9 @@
 
 > **Note**: No kext required, If this method doesn't work, head to Method 2.
 
-**Method 2**: Kext & SSDT
+**Method 2**
 
-This method can be acieved by creating **Virtual USB Device**, associate with `acpi-wake-gpe` and `acpi-wake-type`
-
-- Paste this code to MaciASL or Xiasl.
+Using combination of SSDT (ACPI) and Kernel Extension (Kext). This method also using combination of SSDT (ACPI) and Kernel Extension (Kext) and associate with `acpi-wake-gpe` and `acpi-wake-type`. Create new SSDT by pasting this code to any asl equivalent editor and save it as `.dsl`. before editing, please make sure to check the path of your USB devices.You may need this code below:
 
 ```asl
 /**
@@ -71,10 +71,7 @@ DefinitionBlock ("", "SSDT", 2, "OSY86 ", "USBW", 0x00001000)
 }
 ```
 
-- As required, change the path of your USB Devices.
-- Save it as `SSDT-USBW.aml`.
-- This SSDT require [USBWakeFixup](https://github.com/osy/USBWakeFixup) to work. 
-- If you have multiple devices, include PCIe based USB devices. You may need this code below:
+If you have multiple devices, include PCIe based USB devices. Similar as above, this method also using combination of SSDT (ACPI) and Kernel Extension (Kext) and associate with `acpi-wake-gpe` and `acpi-wake-type`. Create new SSDT by pasting this code to any asl equivalent editor and save it as `.dsl`. before editing, please make sure to check the path of your USB devices.You may need this code below:
 
 ```asl
 /**
