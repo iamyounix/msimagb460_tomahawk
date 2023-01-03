@@ -75,7 +75,7 @@ USB0, USB1, and USB2. Each of these devices has three properties: _HID, which st
 for "Unique ID," and _PRW, which stands for "Power Resources for Wake." The _PRW method for each of these devices returns
 the value of the _PRW method of one of the external devices. The code also includes an "If" statement that checks whether the
 operating system is Darwin (i.e., MacOS) using the _OSI ("Darwin") function. If the operating system is Darwin, the code
-enables the three internal devices and their corresponding _PRW methods. Otherwise, the devices and methods are not enabled.
+enables the three devices and their corresponding _PRW methods. Otherwise, the devices and methods are not enabled.
 Overall, this SSDT appears to be defining three virtual devices and their corresponding power management methods for managing
 the power state of USB devices on a system running MacOS. The devices and methods are intended to control the power state of
 the USB devices on the motherboard and on a PCIe card. Same as above, this SSDT require USBWakeFixup.kext to work.
