@@ -1,3 +1,8 @@
+/**
+ * The code defines a number of external devices, such as the PCI0 device and the LPCB device, as well as a number of internal devices, such as the EC device and the MCHC device. It also defines a number of methods, such as the _INI method and the _DSM method, which are used to initialize and configure the devices and perform other tasks.
+One notable feature of the code is the use of the "If(_OSI("Darwin"))" construct, which checks whether the operating system is Darwin (i.e., MacOS). This allows the code to behave differently depending on the operating system that is running on the system.
+Overall, the purpose of this code is to provide the operating system with information about the hardware and software configuration of the system and to define methods for controlling and managing power and configuration settings on the system.
+ */
 DefinitionBlock("", "SSDT", 2, "CpyPst", "EXT", 0x00455854) {
     External(_SB_.PCI0, DeviceObj)
     External(_SB_.PCI0.LPCB, DeviceObj)
