@@ -82,7 +82,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "MCHC", 0x54535542)
 
 #### If (_OSI ("Darwin")) implementation:
 
-The `If (_OSI ("Darwin"))` statement tests whether the operating system is Darwin (which is the operating system used by macOS). If the operating system is `Darwin`, the block of code defined within the `If` statement will be executed. This block of code includes a Device statement, which defines a device object. The device object is named `MCHC` and has a single method, `_ADR`, with a value of `Zero`.
+The `If (_OSI ("Darwin"))` statement tests whether the operating system is Darwin (which is the operating system used by macOS). If the operating system is `Darwin`, the block of code defined within the `If` statement will be executed. This block of code includes a Device statement, which defines a device object. The device object is named `MCHC` and has a single method, `_ADR`, with a value of `Zero`. So if another operating system other than macOS, this device is not rename.
 
 ```asl
 DefinitionBlock ("", "SSDT", 2, "CpyPst", "MCHC", 0x4D434843)
