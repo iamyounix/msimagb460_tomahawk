@@ -269,9 +269,11 @@ Quirks
 
 **My Build** 
 
-- [Release](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8release.zip) - censored SMBIOS using [OC-Anonymizer](https://github.com/dreamwhite/OC-Anonymizer) credit to [dreamwhite](https://github.com/dreamwhite).
-- [Debug](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8debug.zip) - censored SMBIOS using [OC-Anonymizer](https://github.com/dreamwhite/OC-Anonymizer) credit to [dreamwhite](https://github.com/dreamwhite).
-- [Both](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8both.dmg) - censored SMBIOS using [OC-Anonymizer](https://github.com/dreamwhite/OC-Anonymizer) credit to [dreamwhite](https://github.com/dreamwhite).
+- [Release](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8release.zip)
+- [Debug](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8debug.zip)
+- [Both](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8both.dmg)
+
+> **Note**: All EFI's SMBIOS is censored by [OC-Anonymizer](https://github.com/dreamwhite/OC-Anonymizer), Thanks to [dreamwhite](https://github.com/dreamwhite).
 
 **Patches** 
   
