@@ -104,3 +104,39 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "MCHC", 0x4D434843)
     }
 }
 ```
+
+In other cases, there is also a way to name an existing device. As an example `SAT0` to `SATA`. This is the best example for naming an existing devices.
+
+```asl
+DefinitionBlock ("", "SSDT", 2, "CpyPst", "SATA", 0x53415441)
+{
+    External (_SB_.PCI0, DeviceObj)
+    External (_SB_.PCI0.SAT0, DeviceObj)
+
+    Scope (\_SB)
+    {
+        Scope (PCI0)
+        {
+            If (_OSI ("Darwin"))
+            {
+                Scope (SAT0)
+                {
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        Return (Zero)
+                    }
+                }
+
+                Device (SATA)
+                {
+                    Name (_ADR, 0x001F0002)  // _ADR: Address
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        Return (0x0F)
+                    }
+                }
+            }
+        }
+    }
+}
+```
