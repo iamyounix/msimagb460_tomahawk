@@ -65,7 +65,7 @@ DefinitionBlock ("", "SSDT", 2, "OSY86 ", "USBW", 0x00001000)
 }
 ```
 
-In order to make multiple usb device work with this method. You may need this code below:
+In order to make multiple usb device work with this method. Use code as below:
 
 ```asl
 /**
