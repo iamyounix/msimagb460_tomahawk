@@ -251,18 +251,35 @@ Quirks
 
 ## Changelog
 
-**v0.8.8** 
+**[0.8.8](https://github.com/acidanthera/OpenCorePkg/releases)** 
 
-1. [Release](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8release.zip)
-2. [Debug](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8debug.zip)
-3. [Both](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8both.dmg)
+- Updated underlying EDK II package to edk2-stable202211
+- Updated AppleKeyboardLayouts.txt from macOS 13.1
+- Updated builtin firmware versions for SMBIOS and the rest
+- Updated ocvalidate to allow duplicate tool if FullNvramAccess is different
+- Fixed `Kernel` -> `Block` entries not being processed if one was skipped due to `Arch`
+- Fixed intermittent prelinking failures caused by XML corruption when kext blocking is enabled
+- Removed magic Acidanthera sequence from OpenCore files used for picker hiding
+- Added `.contentVisibility` to hide and disable boot entries
+- Added Linux support to QemuBuild.command used for Duet debugging
+- Built in new secure PE/COFF loader
+- Added prebuilt mtoc universal binary with Apple Silicon support
+- Corrected OpenDuet build on Apple Silicon
+- Added SD card device path support for boot device selection
 
-- Patches: 
-  - permanent `agdpmod=pikera` via IGPU DeviceProperties.
-  - permanent `acpi-wake-type` via XHCI and PXSX DeviceProperties.
-  - patched `ATY,Python` FB for MSI RX 5500 XT Mech OC 4GB.
-  - censored SMBIOS using [OC-Anonymizer](https://github.com/dreamwhite/OC-Anonymizer) credit to [dreamwhite](https://github.com/dreamwhite).
-  - less acpi code
+**My Build** 
+
+- [Release](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8release.zip)
+- [Debug](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8debug.zip)
+- [Both](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8both.dmg)
+
+**Patches** 
+  
+- permanent `agdpmod=pikera` via IGPU DeviceProperties.
+- permanent `acpi-wake-type` via XHCI and PXSX DeviceProperties.
+- patched `ATY,Python` FB for MSI RX 5500 XT Mech OC 4GB.
+- censored SMBIOS using [OC-Anonymizer](https://github.com/dreamwhite/OC-Anonymizer) credit to [dreamwhite](https://github.com/dreamwhite).
+- less acpi code
 
 ### Credits
 
