@@ -40,7 +40,7 @@ This is an Hackintosh EFI template that I built according to my generic computer
  **Expansion Slot**    | SDXC SD Card              | Upgradeable                           | -                                                           
  **Wi-Fi**             | 802.11ac                  | 802.11ac by Fenvi T919 (BCM94360CD)   | Native                                                      
  **Bluetooth**         | 5.0                       | 5.0 via BCM94360CD                    | Fenvi T919 require USB port                                 
- **Standard Storage**  | 256 GB SSD                | Upgradeable                           |                   
+ **Standard Storage**  | 256 GB SSD                | Upgradeable                           | -                  
  
 ### Structure
 
