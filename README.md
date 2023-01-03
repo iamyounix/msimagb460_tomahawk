@@ -300,6 +300,13 @@ Quirks
 - patched `ATY,Python` FB for MSI RX 5500 XT Mech OC 4GB.
 - less acpi code
 
+
+## Other Guide
+
+- [Rename Devices](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Guide/Rename%20Devices/Rename%20Devices.md)
+- [Missing Bridge](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Guide/Missing%20Bridge/Missing%20Bridge.md)
+- [USB keyboard Wake](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Guide/USB%20Keyboard%20Wake/USB%20Keyboard%20Wake.md)
+
 ### Credits
 
 #### [Acidanthera](https://github.com/acidanthera) | [Dortania](https://github.com/dortania)
