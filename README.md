@@ -45,7 +45,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   | **Thread** | 12  | 12  |
   | **Base Freq** | 3.1 GHz | 2.9 GHz |
   | **Turbo Boost** | 4.5 GHz | 4.3 GHz |
-  | **ROM/FW Type** | EFI | EFI / Legacy |
+  | **ROM / FW Type** | EFI | EFI / Legacy |
   | **T2 Sec. Chip** | Yes | No  |
   | **RAM** | Up to 2666 MHz DDR4 SDRAM | Up to 2666 MHz DDR4 SDRAM |
   | **iGPU** | Intel UHD 630 | Intel UHD 630 |
