@@ -131,7 +131,5 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
 ```
 
 > **Note**: On my experience, the agdpmod=pikera can work on:
-> 
 > - GFX0 via ACPI
-> 
 > - IGPU via DeviceProperties
