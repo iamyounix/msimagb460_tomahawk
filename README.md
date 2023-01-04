@@ -10,29 +10,17 @@
 ## Table of Content
 
 - [Introduction](#introduction)
-  
 - [Devices Specification](#devices-specification)
-  
 - [OpenCore](#opencore)
-  
   - [ACPI](#acpi)
-    
   - [Booter](#booter)
-    
   - [DeviceProperties](#deviceproperties)
-    
   - [Kernel](#kernel)
-    
   - [Misc](#misc)
-    
   - [PlatformInfo](#platforminfo)
-    
   - [UEFI](#uefi)
-    
 - [Changelog](#changelog)
-  
 - [Tips](#tips)
-  
 - [Credits](#credits)
   
 ### Introduction
