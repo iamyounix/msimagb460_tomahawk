@@ -331,9 +331,9 @@ Quirks
 
 ## Tips
 
-- [Rename Devices](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Guide/Rename%20Devices/Rename%20Devices.md)
-- [Missing Bridge](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Guide/Missing%20Bridge/Missing%20Bridge.md)
-- [USB keyboard Wake](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Guide/USB%20Keyboard%20Wake/USB%20Keyboard%20Wake.md)
+- [Rename Devices](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/Rename%20Devices/Rename%20Devices.md)
+- [Missing Bridge](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/Missing%20Bridge/Missing%20Bridge.md)
+- [USB keyboard Wake](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/USB%20Keyboard%20Wake/USB%20Keyboard%20Wake.md)
 
 ## Credits
 
