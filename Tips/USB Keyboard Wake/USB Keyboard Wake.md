@@ -9,7 +9,7 @@ Original Thread: [Dortania - Keyboard Wake Issues](https://dortania.github.io/Op
 
 #### How?
 
-So the ideal method is to declare the XHCI Controller(This is our USB Controller) to be an ACPI wake device, as we don't have compatible ECs for macOS to handle proper wake calls.
+So the ideal method is to declare the XHCI Controller to be an ACPI wake device, as we don't have compatible ECs for macOS to handle proper wake calls.
 
 **Method 1**: 
 
