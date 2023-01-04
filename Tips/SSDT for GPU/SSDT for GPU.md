@@ -1,19 +1,14 @@
 # SSDT for GPU
 
-
-
 SSDT for GPUs is not as complicated as it seems. It is used for several reasons. Either to
 
 - spoof and
-
 - improve. 
 
 As example, `agdpmod=pikera`and is often injected via NVRAM. There are two permanent ways to get permanent injection effects: either through 
 
 - DeviceProperties or
-
 -  ACPI
-
 
 
 ## Method 1
@@ -58,17 +53,17 @@ As example, `agdpmod=pikera`and is often injected via NVRAM. There are two perma
 </plist>
 ```
 
-
+ie: `adgpmod` | `data` | `70696b65726100`
 
 ## Method 2
 
 - Inject properties via ACPI (SSDTs). This is an example of Navi14 based GPU:
 
 ```asl
-DefinitionBlock ("", "SSDT", 2, "CpyPst", "GFX0", 0x47465830)
+DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
 {
     External (_SB_.PCI0, DeviceObj)
-	External (_SB_.PCI0.PEG0, DeviceObj)
+    External (_SB_.PCI0.PEG0, DeviceObj)
     External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
 
     Scope (\_SB)
@@ -82,60 +77,58 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "GFX0", 0x47465830)
                     Device (PXSX)
                     {
                         Name (_ADR, Zero)  // _ADR: Address
-						Device (GFX0)
-						{
-							Name (_ADR, Zero)  // _ADR: Address
-							Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-							{
-								If ((Arg2 == Zero))
-								{
-									Return (Buffer ()
-									{
-										 0x03                                             // .
-									})
-								}
-								
-								Return (Package ()
-								{
-									"AAPL,slot-name", 
-									"Slot- 1",
-									"agdpmod", 
-									"pikera"									
-								})
-							}
-						}
-						
-						Device (HDAU)
-						{
-							Name (_ADR, Zero)  // _ADR: Address
-							Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-							{
-								If ((Arg2 == Zero))
-								{
-									Return (Buffer ()
-									{
-										 0x03                                             // .
-									})
-								}
-								
-								Return (Package ()
-								{
-									"AAPL,slot-name", 
-									"Slot- 1",
-									"model", 
-									"Navi 10 HDMI Audio"                         
-								})
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+                        Device (GFX0)
+                        {
+                            Name (_ADR, Zero)  // _ADR: Address
+                            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                            {
+                                If ((Arg2 == Zero))
+                                {
+                                    Return (Buffer ()
+                                    {
+                                         0x03                                             // .
+                                    })
+                                }
+
+                                Return (Package ()
+                                {
+                                    "AAPL,slot-name", 
+                                    "Slot- 1", 
+                                    "agdpmod", 
+                                    "pikera"
+                                })
+                            }
+                        }
+
+                        Device (HDAU)
+                        {
+                            Name (_ADR, Zero)  // _ADR: Address
+                            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                            {
+                                If ((Arg2 == Zero))
+                                {
+                                    Return (Buffer ()
+                                    {
+                                         0x03                                             // .
+                                    })
+                                }
+
+                                Return (Package ()
+                                {
+                                    "AAPL,slot-name", 
+                                    "Slot- 1", 
+                                    "model", 
+                                    "Navi 10 HDMI Audio"
+                                })
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 ```
-
-
 
 > **Note**: On my experience, the agdpmod=pikera can work on:
 > 
