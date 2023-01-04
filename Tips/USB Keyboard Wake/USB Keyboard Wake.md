@@ -18,12 +18,12 @@ Set wake by adding the property of `acpi-wake-type` | `data` | `01` to USB devic
 - Internal (Motherboard based USB devices)
   - PciRoot(0x0)/Pci(0x14,0x0)
     - `acpi-wake-type` | `Data` | `01` (recommended)
-    - `acpi-wake-type` | `Data` | `6D` (This is normal value for for motherboard based USB device)
+    - `acpi-wake-type` | `Data` | `6D` (This is normal value for motherboard based USB device)
 
 - External (PCIe based USB devices)
   - PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0))
     - `acpi-wake-type` | `Data` | `01` (Equivalent to enable)
-    - `acpi-wake-type` | `Data` | `69` (This is normal value for for PCIe based USB device)
+    - `acpi-wake-type` | `Data` | `69` (This is normal value for PCIe based USB device)
 
 ![ACPIwake](https://user-images.githubusercontent.com/72515939/210158780-d2b7a60d-856f-4175-b67f-682c985fed84.png)
 
