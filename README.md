@@ -11,7 +11,7 @@
 
 - [Introduction](#introduction)
 - [Devices Specification](#devices-specification)
-- [OpenCore](#opencore)
+- [EFI](#efi)
   - [ACPI](#acpi)
   - [Booter](#booter)
   - [DeviceProperties](#deviceproperties)
@@ -57,7 +57,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   | **Bluetooth** | 5.0 | 5.0 via BCM94360CD |
   | **Standard Storage** | 256 GB SSD | Upgradeable |
   
-### OpenCore
+### EFI
 
 - Structure
   
