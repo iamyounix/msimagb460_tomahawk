@@ -37,7 +37,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   | **Hardware** | **Real iMac** | **My Hack** |
   | --- | --- | --- |
   | **Motherboard** | Apple Custom | MSI MAG B460 Tomahawk |
-  | **Processor** | Core i5 10500 | i5 10400 |
+  | **Processor** | [Intel® Core™ i5-10500](https://ark.intel.com/content/www/us/en/ark/products/199277/intel-core-i510500-processor-12m-cache-up-to-4-50-ghz.html) | [Intel® Core™ i5-10400](https://ark.intel.com/content/www/us/en/ark/products/199271/intel-core-i510400-processor-12m-cache-up-to-4-30-ghz.html) |
   | **Series** | 10th Gen | 10th Gen |
   | **Code Name** | Comet Lake | Comet Lake |
   | **Socket** | LGA1200 | LGA1200 |
@@ -46,16 +46,33 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   | **Base Freq** | 3.1 GHz | 2.9 GHz |
   | **Turbo Boost** | 4.5 GHz | 4.3 GHz |
   | **ROM / FW Type** | EFI | EFI / Legacy |
-  | **T2 Sec. Chip** | Yes | No  |
+  | **T2 Sec. Chip** | Yes | No (OpenCore) |
   | **RAM** | Up to 2666 MHz DDR4 SDRAM | Up to 2666 MHz DDR4 SDRAM |
-  | **iGPU** | Intel UHD 630 | Intel UHD 630 |
-  | **dGPU** | Radeon Pro 5300 4GB  (TB) | MSI RX 5500 XT Mech OC 4GB (HDMI & DP) |
+  | **iGPU** | [Intel UHD 630](https://ark.intel.com/content/www/us/en/ark/products/graphics/126790/intel-uhd-graphics-630.html) | [Intel UHD 630](https://ark.intel.com/content/www/us/en/ark/products/graphics/126790/intel-uhd-graphics-630.html) |
+  | **dGPU** | [Radeon Pro 5300 4GB](https://www.amd.com/en/products/graphics/amd-radeon-rx-5300), TB | [MSI RX 5500 XT MECH OC 4GB](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G-OC), HDMI & DP |
   | **Native Resolution** | 5120 x 2880 | 5120 x 2880 |
   | **Firewire Ports** | None | None |
   | **Expansion Slot** | SDXC SD Card | Upgradeable |
   | **Wi-Fi** | 802.11ac (Broadcom) | 802.11ac (Broadcom) |
   | **Bluetooth** | 5.0 | 5.0 via BCM94360CD |
   | **Standard Storage** | 256 GB SSD | Upgradeable |
+
+- Suggest Hardware
+  - Processors
+    - [Intel® Core™ i5-10500 Processor](https://ark.intel.com/content/www/us/en/ark/products/199277/intel-core-i510500-processor-12m-cache-up-to-4-50-ghz.html)
+  - Motherboard
+    - B5XX or Z5XX or any 11th/10th Gen Motherboard. ie: [Gigabyte Vision Z590](https://www.gigabyte.com/Motherboard/Z590-VISION-D-rev-10#kf)
+  - RAM
+    - Any equivalent DDR4 2666/2400/2133 MHz memory modules (recommend 2666 Mhz)
+  - Storage
+    - Any equivalent NVMe with PCIe 3.0 Support ie: [WD Black SN750](https://www.westerndigital.com/en-ap/products/internal-drives/wd-black-sn750-se-nvme-ssd#WDS500G1B0E))
+  - Wi-Fi
+    - [Fenvi T919](https://www.fenvi.com/product_detail_16.html), BCM94360CD
+  - GPU
+    - [MSI RX 5500 XT MECH OC 4GB](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G-OC)
+
+
+  
   
 ### EFI
 
