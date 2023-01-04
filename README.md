@@ -108,7 +108,7 @@ EFI
   - MCHC
     - Memory Controller Hub Configuration (Cosmetics)
   - PXSX
-    - Patched PCI Bridge for `GFX0`
+    - Patched PCI Bridge for GFX0
   - PGMM
     - Processor Gaussian Mixture Model (Cosmetics)
   - SBUS
