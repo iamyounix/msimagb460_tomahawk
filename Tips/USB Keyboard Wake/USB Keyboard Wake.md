@@ -31,7 +31,7 @@ Set wake by adding the property of `acpi-wake-type` | `data` | `01` to USB devic
 
 **Method 2**
 
-Set Virtual USB Devices to route proper wake event from loaded [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) to acpi mapped usb devices. This method using combine proper instruction from acpi from assiociated kext with `acpi-wake-type` and `acpi-wake-gpe`. Create new SSDT by pasting this code to any `.asl` equivalent editor and save it as `.dsl`. before editing, please make sure to check the path of your USB devices. You may need this code below:
+Set virtual USB devices to route the proper wake event from [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) loaded USBWakeFixup.kext to acpi-mapped USB devices. This method combines proper instruction from acpi from the associated kext with "acpi-wake-type" and "acpi-wake-gpe." Create a new SSDT by pasting this code into any ".asl" equivalent editor and saving it as ".dsl." Before editing, please make sure to check the path of your USB devices.
 
 ```asl
 /**
@@ -65,7 +65,7 @@ DefinitionBlock ("", "SSDT", 2, "OSY86 ", "USBW", 0x00001000)
 }
 ```
 
-In order to make multiple usb device work with this method. Use code as below:
+In order to make multiple USB devices work with this method, use the code as shown below:
 
 ```asl
 /**
