@@ -8,268 +8,298 @@
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
 
+## Table of Content
+
+- [Introduction](#introduction)
+  
+- [Devices Specification](#devices-specification)
+  
+- [OpenCore](#opencore)
+  
+  - [ACPI](#acpi)
+    
+  - [Booter](#booter)
+    
+  - [DeviceProperties](#deviceproperties)
+    
+  - [Kernel](#kernel)
+    
+  - [Misc](#misc)
+    
+  - [PlatformInfo](#platforminfo)
+    
+  - [UEFI](#uefi)
+    
+- [Changelog](#changelog)
+  
+- [Tips](#tips)
+  
+- [Credits](#credits)
+  
 ### Introduction
 
-This is an Hackintosh EFI template that I built according to my generic computer specifications. Before start, please...
+This is my current EFI clone that I built according to my hardware. Feel free to read my content. If you have a similar build but different settings, you might consider checking this out. Before read, below is the best way to checkout the latest OpenCore guide and news
 
-- Refer official [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for better understanding.
-- Checkout Dortania Monthly [Post](https://dortania.github.io) to get latest news from developer directly.
-
+- [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) "Getting Started"
+- Checkout latest [post](https://dortania.github.io), news and update directly from developer
+  
 ### Devices Specification
 
-- Real iMac20,1 vs My Hack
+- Hardware and Differences
+  
+  | **Hardware** | **Real iMac** | **My Hack** |
+  | --- | --- | --- |
+  | **Motherboard** | Apple Custom | MSI MAG B460 Tomahawk |
+  | **Processor** | Core i5 10500 | i5 10400 |
+  | **Series** | 10th Gen | 10th Gen |
+  | **Code Name** | Comet Lake | Comet Lake |
+  | **Socket** | LGA1200 | LGA1200 |
+  | **Core** | 6   | 6   |
+  | **Thread** | 12  | 12  |
+  | **Base Freq** | 3.1 GHz | 2.9 GHz |
+  | **Turbo Boost** | 4.5 GHz | 4.3 GHz |
+  | **ROM/FW Type** | EFI | EFI / Legacy |
+  | **T2 Sec. Chip** | Yes | No  |
+  | **RAM** | Up to 2666 MHz DDR4 SDRAM | Up to 2666 MHz DDR4 SDRAM |
+  | **iGPU** | Intel UHD 630 | Intel UHD 630 |
+  | **dGPU** | Radeon Pro 5300 4GB  (TB) | MSI RX 5500 XT Mech OC 4GB (HDMI & DP) |
+  | **Native Resolution** | 5120 x 2880 | 5120 x 2880 |
+  | **Firewire Ports** | None | None |
+  | **Expansion Slot** | SDXC SD Card | Upgradeable |
+  | **Wi-Fi** | 802.11ac (Broadcom) | 802.11ac (Broadcom) |
+  | **Bluetooth** | 5.0 | 5.0 via BCM94360CD |
+  | **Standard Storage** | 256 GB SSD | Upgradeable |
+  
+### OpenCore
 
- **Hardware**          | **Real iMac**             | **My Hack**                           | **Others**                                                 
------------------------|---------------------------|---------------------------------------|-------------------------------------------------------------
- **Motherboard**       | Apple Custom              | MSI MAG B460 Tomahawk                 | -                                                            
- **Processor**         | Core i5 10500             | Core i5 10400                         | -                                                           
- **Series**            | 10th Gen                  | 10th Gen                              | -                                                            
- **Code Name**         | Comet Lake                | Comet Lake                            | -                                                           
- **Socket**            | LGA1200                   | LGA1200                               | -                                                           
- **Core**              | 6                         | 6                                     | -                                                           
- **Thread**            | 12                        | 12                                    | -                                                           
- **Base Freq**         | 3.1 GHz                   | 2.9 GHz                               | - 0.2                                                       
- **Turbo Boost**       | 4.5 GHz                   | 4.3 GHz                               | - 0.2                                                       
- **ROM/FW Type**       | EFI                       | EFI / Legacy                          | -                                                            
- **T2 Sec. Chip**      | Yes (Custom by Apple)     | No                                    | Generic i5 10500 has no T2 Security Chip.     
- **RAM**               | Up to 2666 MHz DDR4 SDRAM | Up to 2666 MHz DDR4 SDRAM             | -                                                           
- **iGPU**              | Intel UHD 630             | Intel UHD 630                         | -                                                           
- **dGPU**              | Radeon Pro 5300 4GB + TB  | MSI RX 5500 XT Mech OC 4GB + HDMI, DP | Both is GDDR6. RX 5500 XT bottleneck on 10th Gen Processor
- **Native Resolution** | 5120 x 2880               | 5120 x 2880                           | Hackintosh require 5k monitor support for max resolution
- **Firewire Ports**    | None                      | None                                  | -                                                           
- **Expansion Slot**    | SDXC SD Card              | Upgradeable                           | -                                                           
- **Wi-Fi**             | 802.11ac                  | 802.11ac by Fenvi T919 (BCM94360CD)   | Native                                                      
- **Bluetooth**         | 5.0                       | 5.0 via BCM94360CD                    | Fenvi T919 require USB port                                 
- **Standard Storage**  | 256 GB SSD                | Upgradeable                           | -                  
- 
-### Structure
-
+- Structure
+  
 ```zsh
 EFI
 ├── BOOT
-│   └── BOOTx64.efi
+│   └── BOOTx64.efi                     // Modern BIOS firmware
 └── OC
     ├── ACPI
-    │   └── SSDT-EXT.aml
-    ├── config.plist
+    │   └── SSDT-EXT.aml                // Additional ACPI extension
+    ├── config.plist                    // OpenCore configuration list
     ├── Drivers
-    │   ├── HfsPlus.efi
-    │   ├── OpenCanopy.efi
-    │   ├── OpenRuntime.efi
-    │   └── ResetNvramEntry.efi
+    │   ├── HfsPlus.efi                 // HFS+ EFI driver
+    │   ├── OpenCanopy.efi              // OpenCore entry driver
+    │   ├── OpenRuntime.efi             // OpenCore firmware driver
+    │   └── ResetNvramEntry.efi         // OpenCore NVRAM reset plugin
     ├── Kexts
-    │   ├── AppleALC.kext
-    │   ├── IntelMausi.kext
-    │   ├── Lilu.kext
-    │   ├── LucyRTL8125Ethernet.kext
-    │   ├── SMCProcessor.kext
-    │   ├── SMCSuperIO.kext
-    │   ├── USBMap.kext
-    │   ├── VirtualSMC.kext
-    │   └── WhateverGreen.kext
-    ├── OpenCore.efi
+    │   ├── AppleALC.kext               // Audio
+    │   ├── IntelMausi.kext             // Ethernet
+    │   ├── Lilu.kext                   // Arbitrary Kernel Library
+    │   ├── LucyRTL8125Ethernet.kext    // Ethernet     
+    │   ├── SMCProcessor.kext           // SMC plugin for processor
+    │   ├── SMCSuperIO.kext             // IO SMC Plugin
+    │   ├── USBMap.kext                 // Mapped USB Port
+    │   ├── VirtualSMC.kext             // Virtual SMC
+    │   └── WhateverGreen.kext          // Graphic Solution
+    ├── OpenCore.efi                    // Bootloader plugins
     ├── Resources
-    │   ├── Audio
-    │   ├── Font
-    │   ├── Image
+    │   ├── Audio                       // Audio library
+    │   ├── Font                        // Font library
+    │   ├── Image                       // Image library
     │   │   └── Acidanthera
     │   │       ├── Chardonnay
     │   │       ├── GoldenGate
     │   │       └── Syrah
-    │   └── Label
+    │   └── Label                        // Label library
     └── Tools
 ```
 
 #### ACPI
 
-[SSDT-EXT](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/SSDT/SSDT-EXT.dsl) contain:
-
-| Input | Details |
-|---|---|
-| AWAC | System clock fix on Z390, B460, Z490 motherboards |
-| EC | Fake Embedded Controller as an alternative EC controller, also prevents actual AppleACPIEC from being loaded on macOS. |
-| MCHC | Memory Controller Hub Configuration (Cosmetics) |
-| PXSX | Patched PCI Bridge for GFX0 |
-| PGMM | Processor Gaussian Mixture Model (Cosmetics) |
-| SBUS | Patched System BUS |
-| TSUB | Thermal Subsystem (Cosmetics) |
-| USBX | Patched USB Power Management (Required for USBMap.kext) |
+- [SSDT-EXT](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/SSDT/SSDT-EXT.dsl) contain:
+  
+  - AWAC
+    - System clock fix on Z390, B460, Z490 motherboards
+  - EC
+    - Fake Embedded Controller as an alternative EC controller, also prevents actual `AppleACPIEC` from being loaded on macOS
+  - MCHC
+    - Memory Controller Hub Configuration (Cosmetics)
+  - PXSX
+    - Patched PCI Bridge for `GFX0`
+  - PGMM
+    - Processor Gaussian Mixture Model (Cosmetics)
+  - SBUS
+    - Patched System BUS
+  - TSUB
+    - Thermal Subsystem (Cosmetics)
+  - USBX
+    - Patched USB Power Management
 
 #### Booter
 
-Quirks
-
-| Input | Option |
-|---|---|
-| AvoidRuntimeDefrag | Yes |
-| DevirtualiseMmio | Yes |
-| EnableSafeModeSlide | Yes |
-| ProvideCustomSlide | Yes |
-| SyncRuntimePermissions | Yes |
-| ProvideMaxSlide | 0 |
-| ResizeAppleGpuBars | -1 |
+- Quirks
+  
+| Input | Type | Value |
+| --- | --- | --- |
+| AvoidRuntimeDefrag | boolean | Yes |
+| DevirtualiseMmio | boolean | Yes |
+| EnableSafeModeSlide | boolean | Yes |
+| ProvideCustomSlide | boolean | Yes |
+| SyncRuntimePermissions | boolean | Yes |
+| ProvideMaxSlide | number | 0   |
+| ResizeAppleGpuBars | number | -1  |
 
 > **Note**: Other than above is `No`
 
 #### DeviceProperties
 
-Checkout [here](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/DeviceProperties/deviceproperties.plist).
+Please see the entire patch [here](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/DeviceProperties/deviceproperties.plist).
+
+> **Note**: The format is in XML.
 
 #### Kernel
 
-Kexts
-
+- Kernel extension used for this build.
+  
 | Kext | Details |
-|---|---|
-| AppleALC | An open source kernel extension enabling native macOS HD audio for not officially supported codecs without any filesystem modifications. AppleALCU can be used for systems with digital-only audio. |
-| IntelMausi | Intel onboard LAN driver for macOS |
-| Lilu | An open source kernel extension bringing a platform for arbitrary kext, library, and program patching throughout the system for macOS. |
-| LucyRTL8125Ethernet | A macOS driver for Realtek RTL8125 2.5GBit Ethernet Controllers |
-| USBMap | USB Port configuration. Require [USBMap](https://github.com/corpnewt/USBMap) or [USBToolbox](https://github.com/USBToolBox/tool) |
-| VirtualSMC | Advanced Apple SMC emulator in the kernel. Requires [Lilu](https://github.com/acidanthera/Lilu) for full functioning. Include with SMCProcessor & SMCSuperIO. |
-| Whatevergreen | [Lilu](https://github.com/acidanthera/Lilu) plugin providing patches to select GPUs on macOS. Requires Lilu 1.5.6 or newer. |
+| --- | --- |
+| **AppleALC** | An open source kernel extension enabling native macOS HD audio for not officially supported codecs without any filesystem modifications. AppleALCU can be used for systems with digital-only audio. |
+| **IntelMausi** | Intel onboard LAN driver for macOS |
+| **Lilu** | An open source kernel extension bringing a platform for arbitrary kext, library, and program patching throughout the system for macOS. |
+| **LucyRTL8125Ethernet** | A macOS driver for Realtek RTL8125 2.5GBit Ethernet Controllers |
+| **USBMap** | USB Port configuration. Require [USBMap](https://github.com/corpnewt/USBMap) or [USBToolbox](https://github.com/USBToolBox/tool) |
+| **VirtualSMC** | Advanced Apple SMC emulator in the kernel. Requires [Lilu](https://github.com/acidanthera/Lilu) for full functioning. Include with SMCProcessor & SMCSuperIO. |
+| **Whatevergreen** | [Lilu](https://github.com/acidanthera/Lilu) plugin providing patches to select GPUs on macOS. Requires Lilu 1.5.6 or newer. |
 
-Patch
+- Patch
 
-| Input | Type | Details |
-|---|---|---|
-| Arch | String | x86_64 |
-| Base | String |  |
-| Comment | String | Enable TRIM for SSD \| Catalina + |
-| Count | Number | 0 |
-| Enabled | Boolean | Yes |
-| Find | Data | 00415050 4C452053 534400 |
-| Identifier | String | com.apple.iokit.IOAHCIBlockStorage |
-| Limit | Number | 0 |
-| Mask | Data |  |
-| MaxKernel | String |  |
-| MinKernel | String |  |
-| Replace | Data | 00000000 00000000 000000 |
-| ReplaceMask | Data |  |
-| Skip | Data |  |
+| Input | Type | Value |
+| --- | --- | --- |
+| Arch | string | x86_64 |
+| Base | string |     |
+| Comment | string | Enable TRIM for SSD \\| Catalina + |
+| Count | number | 0   |
+| Enabled | boolean | Yes |
+| Find | data | 00415050 4C452053 534400 |
+| Identifier | string | com.apple.iokit.IOAHCIBlockStorage |
+| Limit | number | 0   |
+| Mask | data |     |
+| MaxKernel | string |     |
+| MinKernel | string |     |
+| Replace | data | 00000000 00000000 000000 |
+| ReplaceMask | data |     |
+| Skip | data |     |
 
-Quirks
-
-| Input | Option |
-|---|---|
-| AppleXcpmCfgLock | Boolean | Yes |
-| DisableIoMapper | Boolean | Yes |
-| PanicNoKextDump | Boolean | Yes |
-| PowerTimeoutKernelPanic | Boolean | Yes |
-| SetApfsTrimTimeout | Number | 0 |
+- Quirks
+  
+| Input | Type | Value |
+| --- | --- | --- |
+| AppleXcpmCfgLock | boolean | Yes |
+| DisableIoMapper | boolean | Yes |
+| PanicNoKextDump | boolean | Yes |
+| PowerTimeoutKernelPanic | boolean | Yes |
+| SetApfsTrimTimeout | number | 0   |
 
 > **Note**: Other than above is `No`
 
 #### Misc
 
-| Input | Type | Details |
-|---|---|---|
-| ConsoleAttributes | Boolean | Yes |
-| HibernateMode | Boolean | Yes |
-| HideAuxiliary | String | Auto |
-| LauncherOption | String | Full |
-| LauncherPath | String | Default |
-| PickerAttributes | Number | 147 |
-| PickerMode | String | External |
-| PickerVariant | String | Acidanthera\GoldenGate |
-| ShowPicker | Boolean | Yes |
-| TakeoffDelay | Number | 0 |
-| Timeout | Number | 5 |
+| Input | Type | Value |
+| --- | --- | --- |
+| ConsoleAttributes | boolean | Yes |
+| HibernateMode | boolean | Yes |
+| HideAuxiliary | string | Auto |
+| LauncherOption | string | Full |
+| LauncherPath | string | Default |
+| PickerAttributes | number | 147 |
+| PickerMode | string | External |
+| PickerVariant | string | Acidanthera\GoldenGate |
+| ShowPicker | boolean | Yes |
+| TakeoffDelay | number | 0   |
+| Timeout | number | 5   |
 
 > **Note**: Other than above is `No`
 
 #### PlatformInfo
 
-**SMBIOS:** [iMac20,1](https://everymac.com/systems/apple/imac/specs/imac-core-i5-3.1-6-core-27-inch-retina-5k-2020-specs.html)
-        
+- SMBIOS: [iMac20,1](https://everymac.com/systems/apple/imac/specs/imac-core-i5-3.1-6-core-27-inch-retina-5k-2020-specs.html)
+  
 #### UEFI
 
-APFS
+- APFS
+  
+| Input | Type | Value |
+| --- | --- | --- |
+| EnableJumpstart | boolean | Yes |
+| HideVerbose | boolean | Yes |
+| MinDate | number | 0   |
+| MinVolume | number | 0   |
 
-| Input | Type | Details |
-|---|---|---|
-| EnableJumpstart | Boolean | Yes |
-| HideVerbose | Boolean | Yes |
-| MinDate | Number | 0 |
-| MinVolume | Number | 0 |
+- Drivers
+  
+| Input | Type | Value |
+| --- | --- | --- |
+| Enable | boolean | Yes |
+| Path | boolean | HFSPlus.efi |
 
-Drivers
+| Input | Type | Value |
+| --- | --- | --- |
+| Enable | boolean | Yes |
+| Path | boolean | OpenRuntime.efi |
 
-- HFSPlus
+| Input | Type | Value |
+| --- | --- | --- |
+| Enable | boolean | Yes |
+| Path | boolean | HFSPlus.efi |
 
-| Input | Type | Details |
-|---|---|---|
-| Enable | Boolean | Yes |
-| Path | Boolean | HFSPlus.efi |
-
-- OpenRuntime
-
-| Input | Type | Details |
-|---|---|---|
-| Enable | Boolean | Yes |
-| Path | Boolean | OpenRuntime.efi |
-
-- OpenCanopy
-
-| Input | Type | Details |
-|---|---|---|
-| Enable | Boolean | Yes |
-| Path | Boolean | HFSPlus.efi |
-
-- ResetNvramEntry
-
-| Input | Type | Details |
-|---|---|---|
-| Enable | Boolean | Yes |
-| Path | Boolean | ResetNvramEntry.efi |
+| Input | Type | Value |
+| --- | --- | --- |
+| Enable | boolean | Yes |
+| Path | boolean | ResetNvramEntry.efi |
 
 - Input
 
-| Input | Type | Details |
-|---|---|---|
-| KeyForgetThreshold | Number | 5 |
-| LeySupport | Boolean | Yes |
-| KeySupportMode | Boolean | Auto |
-| PointerSupportMode | String | ASUS |
-| TimerResolution | Number | 50000 |
+| Input | Type | Value |
+| --- | --- | --- |
+| KeyForgetThreshold | number | 5   |
+| LeySupport | boolean | Yes |
+| KeySupportMode | boolean | Auto |
+| PointerSupportMode | string | ASUS |
+| TimerResolution | number | 50000 |
 
 > **Note**: Other than above is `No`
 
 - Output
 
-| Input | Type | Details |
-|---|---|---|
-| GopPassThrough | String | Disable |
-| ProvideConsoleGop | Boolean | Yes |
-| Resolution | String | max |
-| TextRenderer| String | BuiltinGraphics |
-| UIScale | Number | - |
+| Input | Type | Value |
+| --- | --- | --- |
+| GopPassThrough | string | Disable |
+| ProvideConsoleGop | boolean | Yes |
+| Resolution | string | max |
+| TextRenderer | string | BuiltinGraphics |
+| UIScale | number | -   |
 
 > **Note**: Other than above is `No`
 
 - ProtocolOverrides
 
-| Input | Type | Details |
-|---|---|---|
-| FirmwareVolume | Boolean | Yes |
+| Input | Type | Value |
+| --- | --- | --- |
+| FirmwareVolume | boolean | Yes |
 
 > **Note**: Other than above is `No`
 
 Quirks
 
-| Input | Type | Details |
-|---|---|---|
-| EnableVectorAcceleration | Boolean | Yes |
-| ExitBootServicesDelay | Number | 0 |
-| RequestBootVarRouting | Boolean | Yes |
-| ResizeGpuBars | Number | -1 |
-| TscSyncTimeout| Number | 0 |
+| Input | Type | Value |
+| --- | --- | --- |
+| EnableVectorAcceleration | boolean | Yes |
+| ExitBootServicesDelay | number | 0   |
+| RequestBootVarRouting | boolean | Yes |
+| ResizeGpuBars | number | -1  |
+| TscSyncTimeout | number | 0   |
 
 > **Note**: Other than above is `No`
 
 ## Changelog
 
-**[0.8.8](https://github.com/acidanthera/OpenCorePkg/releases)** 
+**[0.8.8](https://github.com/acidanthera/OpenCorePkg/releases)**
 
 - Updated underlying EDK II package to edk2-stable202211
 - Updated AppleKeyboardLayouts.txt from macOS 13.1
@@ -285,28 +315,27 @@ Quirks
 - Corrected OpenDuet build on Apple Silicon
 - Added SD card device path support for boot device selection
 
-**My Build** 
+## My Build
 
 - [Release](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8release.zip)
 - [Debug](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8debug.zip)
 - [Both](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8both.dmg)
 
-> **Note**: SMBIOS is censored by [OC-Anonymizer](https://github.com/dreamwhite/OC-Anonymizer), Thanks to [dreamwhite](https://github.com/dreamwhite).
+> **Note**: SMBIOS is censored by [OC-Anonymizer](https://github.com/dreamwhite/OC-Anonymizer)
 
-**Patches** 
-  
+## Patches
+
 - permanent `agdpmod=pikera` via IGPU DeviceProperties.
 - permanent `acpi-wake-type` via XHCI and PXSX DeviceProperties.
 - patched `ATY,Python` FB for MSI RX 5500 XT Mech OC 4GB.
 - less acpi code
 
-
-## Other Guide
+## Tips
 
 - [Rename Devices](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Guide/Rename%20Devices/Rename%20Devices.md)
 - [Missing Bridge](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Guide/Missing%20Bridge/Missing%20Bridge.md)
 - [USB keyboard Wake](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Guide/USB%20Keyboard%20Wake/USB%20Keyboard%20Wake.md)
 
-### Credits
+## Credits
 
-#### [Acidanthera](https://github.com/acidanthera) | [Dortania](https://github.com/dortania)
+#### [Acidanthera](https://github.com/acidanthera) | [Dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dreamwhite).
