@@ -93,7 +93,7 @@ EFI
     │   ├── IntelMausi.kext             // Ethernet
     │   ├── Lilu.kext                   // Arbitrary Kernel Library
     │   ├── LucyRTL8125Ethernet.kext    // Ethernet     
-    │   ├── SMCProcessor.kext           // SMC plugin for processor
+    │   ├── SMCProcessor.kext           // Processor SMC plugins
     │   ├── SMCSuperIO.kext             // IO SMC Plugin
     │   ├── USBMap.kext                 // Mapped USB Port
     │   ├── VirtualSMC.kext             // Virtual SMC
