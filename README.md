@@ -46,7 +46,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   | **Base Freq** | 3.1 GHz | 2.9 GHz |
   | **Turbo Boost** | 4.5 GHz | 4.3 GHz |
   | **ROM / FW Type** | EFI | EFI / Legacy |
-  | **T2 Sec. Chip** | Yes | No (OpenCore) |
+  | **T2 Sec. Chip** | Yes | No |
   | **RAM** | Up to 2666 MHz DDR4 SDRAM | Up to 2666 MHz DDR4 SDRAM |
   | **iGPU** | [Intel UHD 630](https://ark.intel.com/content/www/us/en/ark/products/graphics/126790/intel-uhd-graphics-630.html) | [Intel UHD 630](https://ark.intel.com/content/www/us/en/ark/products/graphics/126790/intel-uhd-graphics-630.html) |
   | **dGPU** | [Radeon Pro 5300 4GB](https://www.amd.com/en/products/graphics/amd-radeon-rx-5300), TB | [MSI RX 5500 XT MECH OC 4GB](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G-OC), HDMI & DP |
