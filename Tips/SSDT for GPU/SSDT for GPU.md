@@ -99,29 +99,6 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
                                 })
                             }
                         }
-
-                        Device (HDAU)
-                        {
-                            Name (_ADR, Zero)  // _ADR: Address
-                            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-                            {
-                                If ((Arg2 == Zero))
-                                {
-                                    Return (Buffer ()
-                                    {
-                                         0x03                                             // .
-                                    })
-                                }
-
-                                Return (Package ()
-                                {
-                                    "AAPL,slot-name", 
-                                    "Slot- 1", 
-                                    "model", 
-                                    "Navi 10 HDMI Audio"
-                                })
-                            }
-                        }
                     }
                 }
             }
