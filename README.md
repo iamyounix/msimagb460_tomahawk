@@ -111,7 +111,7 @@ EFI
     └── Tools
 ```
 
-> **Note**: Get OC binary resource [here](https://github.com/acidanthera/OcBinaryData)
+> **Note**: Get OC binary resource and additional EFI drivers [here](https://github.com/acidanthera/OcBinaryData)
 
 #### ACPI
 
