@@ -107,7 +107,7 @@ EFI
     │   │       ├── Chardonnay
     │   │       ├── GoldenGate
     │   │       └── Syrah
-    │   └── Label                        // Label library
+    │   └── Label                       // Label library
     └── Tools
 ```
 
