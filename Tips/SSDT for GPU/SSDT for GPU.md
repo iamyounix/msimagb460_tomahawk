@@ -3,7 +3,7 @@
 SSDT for GPUs is not as complicated as it seems. It is used for several reasons. Either to
 
 - spoof and
-- improve. 
+- improve 
 
 As example, `agdpmod=pikera`and is often injected via NVRAM. There are two permanent ways to get permanent injection effects: either through 
 
