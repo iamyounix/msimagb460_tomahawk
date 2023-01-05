@@ -1,7 +1,7 @@
 /*
 * The code defines a number of external devices, such as the PCI0 device and the LPCB device, as well as a number of internal devices, such as the EC device and the MCHC device. It also defines a number of methods, such as the _INI method and the _DSM method, which are used to initialize and configure the devices and perform other tasks. One notable feature of the code is the use of the "If(_OSI("Darwin"))" construct, which checks whether the operating system is Darwin (i.e., MacOS). This allows the code to behave differently depending on the operating system that is running on the system. Overall, the purpose of this code is to provide the operating system with information about the hardware and software configuration of the system and to define methods for controlling and managing power and configuration settings on the system.
 */
-DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
+DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
 {
     External (_SB_.PCI0, DeviceObj)
     External (_SB_.PCI0.LPCB, DeviceObj)
@@ -42,12 +42,9 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
                 }
             }
 
-            If (_OSI ("Darwin"))
+            Device (MCHC)
             {
-                Device (MCHC)
-                {
-                    Name (_ADR, Zero)  // _ADR: Address
-                }
+                Name (_ADR, Zero)  // _ADR: Address
             }
 
             Scope (PEG0)
@@ -61,12 +58,9 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
                 }
             }
 
-            If (_OSI ("Darwin"))
+            Device (PGMM)
             {
-                Device (PGMM)
-                {
-                    Name (_ADR, 0x00080000)  // _ADR: Address
-                }
+                Name (_ADR, 0x00080000)  // _ADR: Address
             }
 
             Scope (SBUS)
@@ -83,13 +77,13 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
                         {
                             If (!Arg2)
                             {
-                                Return (Buffer ()
+                                Return (Buffer (One)
                                 {
                                      0x03                                             // .
                                 })
                             }
 
-                            Return (Package ()
+                            Return (Package (0x02)
                             {
                                 "address", 
                                 Zero
@@ -111,12 +105,9 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
                 }
             }
 
-            If (_OSI ("Darwin"))
+            Device (TSUB)
             {
-                Device (TSUB)
-                {
-                    Name (_ADR, 0x00140002)  // _ADR: Address
-                }
+                Name (_ADR, 0x00140002)  // _ADR: Address
             }
         }
 
@@ -127,13 +118,13 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
             {
                 If ((Arg2 == Zero))
                 {
-                    Return (Buffer ()
+                    Return (Buffer (One)
                     {
                          0x03                                             // .
                     })
                 }
 
-                Return (Package ()
+                Return (Package (0x08)
                 {
                     "kUSBSleepPowerSupply", 
                     0x13EC, 
