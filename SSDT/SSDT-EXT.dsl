@@ -77,13 +77,13 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
                         {
                             If (!Arg2)
                             {
-                                Return (Buffer (One)
+                                Return (Buffer ()
                                 {
                                      0x03                                             // .
                                 })
                             }
 
-                            Return (Package (0x02)
+                            Return (Package ()
                             {
                                 "address", 
                                 Zero
@@ -118,13 +118,13 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
             {
                 If ((Arg2 == Zero))
                 {
-                    Return (Buffer (One)
+                    Return (Buffer ()
                     {
                          0x03                                             // .
                     })
                 }
 
-                Return (Package (0x08)
+                Return (Package ()
                 {
                     "kUSBSleepPowerSupply", 
                     0x13EC, 
