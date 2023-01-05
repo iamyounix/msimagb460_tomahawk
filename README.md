@@ -70,9 +70,6 @@ This is my current EFI clone that I built according to my hardware. Feel free to
     - [Fenvi T919](https://www.fenvi.com/product_detail_16.html), BCM94360CD
   - GPU
     - [MSI RX 5500 XT MECH OC 4GB](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G-OC)
-
-
-  
   
 ### EFI
 
