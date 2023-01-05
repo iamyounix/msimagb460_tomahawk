@@ -77,39 +77,41 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   
 ```zsh
 EFI
-├── BOOT
+├── BOOT 
 │   └── BOOTx64.efi                     // Modern BIOS firmware
-└── OC
-    ├── ACPI
-    │   └── SSDT-EXT.aml                // Additional ACPI extension
-    ├── config.plist                    // OpenCore configuration list
-    ├── Drivers
-    │   ├── HfsPlus.efi                 // HFS+ EFI driver
-    │   ├── OpenCanopy.efi              // OpenCore entry driver
-    │   ├── OpenRuntime.efi             // OpenCore firmware driver
-    │   └── ResetNvramEntry.efi         // OpenCore NVRAM reset plugin
-    ├── Kexts
-    │   ├── AppleALC.kext               // Audio
-    │   ├── IntelMausi.kext             // Ethernet
-    │   ├── Lilu.kext                   // Arbitrary Kernel Library
-    │   ├── LucyRTL8125Ethernet.kext    // Ethernet     
-    │   ├── SMCProcessor.kext           // Processor SMC plugins
-    │   ├── SMCSuperIO.kext             // IO SMC Plugin
-    │   ├── USBMap.kext                 // Mapped USB Port
-    │   ├── VirtualSMC.kext             // Virtual SMC
-    │   └── WhateverGreen.kext          // Graphic Solution
-    ├── OpenCore.efi                    // Bootloader plugins
-    ├── Resources
-    │   ├── Audio                       // Audio library
-    │   ├── Font                        // Font library
-    │   ├── Image                       // Image library
-    │   │   └── Acidanthera
-    │   │       ├── Chardonnay
-    │   │       ├── GoldenGate
-    │   │       └── Syrah
-    │   └── Label                       // Label library
+└── OC 
+    ├── ACPI                            // ACPI Library
+    │   └── SSDT-EXT.aml
+    ├── config.plist                    // OpenCore configuration
+    ├── Drivers                         // Drivers Library
+    │   ├── HfsPlus.efi             
+    │   ├── OpenCanopy.efi             
+    │   ├── OpenRuntime.efi          
+    │   └── ResetNvramEntry.efi     
+    ├── Kexts                           // Kernel extensions
+    │   ├── AppleALC.kext    
+    │   ├── IntelMausi.kext         
+    │   ├── Lilu.kext                 
+    │   ├── LucyRTL8125Ethernet.kext  
+    │   ├── SMCProcessor.kext       
+    │   ├── SMCSuperIO.kext         
+    │   ├── USBMap.kext          
+    │   ├── VirtualSMC.kext         
+    │   └── WhateverGreen.kext       
+    ├── OpenCore.efi 
+    ├── Resources                       // Binary Resource
+    │   ├── Audio                     
+    │   ├── Font                 
+    │   ├── Image                  
+    │   │   └── Acidanthera             // Theme Library
+    │   │       ├── Chardonnay 
+    │   │       ├── GoldenGate 
+    │   │       └── Syrah 
+    │   └── Label
     └── Tools
 ```
+
+> **Note**: Get OC binary resource [here](https://github.com/acidanthera/OcBinaryData)
 
 #### ACPI
 
