@@ -65,7 +65,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   - RAM
     - Any equivalent DDR4 2666/2400/2133 MHz memory modules (recommend 2666 Mhz)
   - Storage
-    - Any equivalent NVMe with PCIe 3.0 Support ie: [WD Black SN750](https://www.westerndigital.com/en-ap/products/internal-drives/wd-black-sn750-se-nvme-ssd#WDS500G1B0E))
+    - Any equivalent NVMe with PCIe 3.0 Support ie: [WD Black SN750](https://www.westerndigital.com/en-ap/products/internal-drives/wd-black-sn750-se-nvme-ssd#WDS500G1B0E)
   - Wi-Fi
     - [Fenvi T919](https://www.fenvi.com/product_detail_16.html), BCM94360CD
   - GPU
