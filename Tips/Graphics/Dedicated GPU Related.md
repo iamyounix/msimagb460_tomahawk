@@ -1,4 +1,4 @@
-# GPU Related
+# Dedicated GPU Related
 
 As example, `agdpmod=pikera`and is often injected via NVRAM. There are two permanent ways to get permanent injection effects: either through 
 
