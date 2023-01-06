@@ -335,10 +335,13 @@ Quirks
 
 ## Tips
 
-- [Rename Devices](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/Rename%20Devices/Rename%20Devices.md)
+- [Ambient Light Sensor Enable](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/Ambient%20Light%20Sensor%20Enable/Ambient%20Light%20Sensor.md)
+- [GPU Related](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/SSDT%20for%20GPU/SSDT%20for%20GPU.md)
 - [Missing Bridge](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/Missing%20Bridge/Missing%20Bridge.md)
+- [Rename Devices](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/Rename%20Devices/Rename%20Devices.md)
 - [USB keyboard Wake](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/USB%20Keyboard%20Wake/USB%20Keyboard%20Wake.md)
-- [SSDT for GPU](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/SSDT%20for%20GPU/SSDT%20for%20GPU.md)
+
+
 
 ## Credits
 
