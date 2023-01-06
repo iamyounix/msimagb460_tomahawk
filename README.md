@@ -336,7 +336,7 @@ Quirks
 ## Tips
 
 - [Ambient Light Sensor Enable](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/Ambient%20Light%20Sensor%20Enable/Ambient%20Light%20Sensor.md)
-- [Graphics](https://github.com/theofficialcopypaste/MSIB460Tomahawk/tree/main/Tips/Graphics)
+- [Graphics](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/Graphics/Dedicated%20GPU%20Related.md)
 - [Missing Bridge](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/Missing%20Bridge/Missing%20Bridge.md)
 - [Rename Devices](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/Rename%20Devices/Rename%20Devices.md)
 - [USB keyboard Wake](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/USB%20Keyboard%20Wake/USB%20Keyboard%20Wake.md)
