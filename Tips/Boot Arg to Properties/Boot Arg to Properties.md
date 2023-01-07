@@ -130,3 +130,30 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
 > **Note**: On my experience, `agdpmod=pikera` can work on:
 > - GFX0 via ACPI
 > - IGPU via DeviceProperties
+
+## Audio Layout
+
+#### Method
+
+Set audio layout
+
+- boot arg = `alcid=x`, ie: `alcid=1`
+- DeviceProperties = `layout-id` | `data` | `0x000000`, ie: `layout-id` | `data` | `01000000`
+
+## Apple GuC Firmware
+
+#### Method
+
+Force loading of Apple GuC firmware
+
+- boot arg = `igfxfw=2`
+- DeviceProperties = `igfxfw` | `data` | `02000000`
+
+## IGPU Online
+
+#### Method
+
+Force online status on all displays
+
+- boot arg = `igfx0nln=1`
+- DeviceProperties = `igfxonln` | `data` | `01000000`
