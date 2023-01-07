@@ -1,4 +1,4 @@
-# Boot Args to Properties
+# Boot Arg to Properties
 
 ## AGDPMod Pikera
 
