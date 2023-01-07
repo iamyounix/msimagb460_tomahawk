@@ -4,7 +4,7 @@
 
 ### History
 
-A long time ago, [Pike R. Alpha](https://github.com/Piker-Alpha) blogged about the changes in the AGDP (Apple Graphics Device Policy) and had to came up with a workaround for an issue in AppleGraphicsDevicePolicy.kext so that we could use a MacPro6,1 board-id/model combination, without the usual hang with a black screen. He presents an alternative route for this and this time it is a patch that can be used with Clover’s kext patching feature. Below is an example:
+A long time ago, [Pike R. Alpha](https://github.com/Piker-Alpha) blogged about the changes in the AGDP (Apple Graphics Device Policy) and had to came up with a workaround for an issue in AppleGraphicsDevicePolicy.kext so that we could use a MacPro6,1 board-id/model combination, without the usual hang with a black screen. It is an alternative route for this and this time it is a patch that can be used with Clover’s kext patching feature. Below is an example:
 
 ```zml
 <key>KextsToPatch</key>        
