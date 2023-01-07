@@ -1,11 +1,11 @@
 # Hackintosh: MSI MAG B460 Tomahawk
 
-[![Bootloader](https://img.shields.io/badge/Bootloader-OpenCore-yellow)](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/releases)
-[![Version](https://img.shields.io/badge/Version-0.8.7-white)](https://github.com/acidanthera/OpenCorePkg/releases)
-[![MOnterey](https://img.shields.io/badge/Compatible-Monterey-purple)](https://www.apple.com/ge/macos/monterey/)
-[![Ventura](https://img.shields.io/badge/Compatible-Ventura-orange)](https://www.apple.com/my/macos/ventura/)
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
+[![Bootloader](https://img.shields.io/badge/Bootloader-OpenCore-yellow)](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/releases)
+[![MOnterey](https://img.shields.io/badge/Compatible-Monterey-purple)](https://www.apple.com/ge/macos/monterey/)
+[![Ventura](https://img.shields.io/badge/Compatible-Ventura-orange)](https://www.apple.com/my/macos/ventura/)
+[![Version](https://img.shields.io/badge/Version-0.8.7-white)](https://github.com/acidanthera/OpenCorePkg/releases)
 
 ## Table of Content
 
@@ -304,25 +304,25 @@ Quirks
 
 **[0.8.8](https://github.com/acidanthera/OpenCorePkg/releases)**
 
-- Updated underlying EDK II package to edk2-stable202211
+- Added Linux support to QemuBuild.command used for Duet debugging
+- Added prebuilt mtoc universal binary with Apple Silicon support
+- Added SD card device path support for boot device selection
+- Added `.contentVisibility` to hide and disable boot entries
+- Built in new secure PE/COFF loader
+- Corrected OpenDuet build on Apple Silicon
+- Fixed intermittent prelinking failures caused by XML corruption when kext blocking is enabled
+- Fixed `Kernel` -> `Block` entries not being processed if one was skipped due to `Arch`
+- Removed magic Acidanthera sequence from OpenCore files used for picker hiding
 - Updated AppleKeyboardLayouts.txt from macOS 13.1
 - Updated builtin firmware versions for SMBIOS and the rest
 - Updated ocvalidate to allow duplicate tool if FullNvramAccess is different
-- Fixed `Kernel` -> `Block` entries not being processed if one was skipped due to `Arch`
-- Fixed intermittent prelinking failures caused by XML corruption when kext blocking is enabled
-- Removed magic Acidanthera sequence from OpenCore files used for picker hiding
-- Added `.contentVisibility` to hide and disable boot entries
-- Added Linux support to QemuBuild.command used for Duet debugging
-- Built in new secure PE/COFF loader
-- Added prebuilt mtoc universal binary with Apple Silicon support
-- Corrected OpenDuet build on Apple Silicon
-- Added SD card device path support for boot device selection
+- Updated underlying EDK II package to edk2-stable202211
 
 ## My Build
 
-- [Release](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8release.zip)
-- [Debug](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8debug.zip)
 - [Both](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8both.dmg)
+- [Debug](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8debug.zip)
+- [Release](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases/download/Release/OC_0.8.8release.zip)
 
 > **Note**: SMBIOS is censored by [OC-Anonymizer](https://github.com/dreamwhite/OC-Anonymizer)
 
