@@ -1,11 +1,37 @@
-# Dedicated GPU Related
+# Boot Args to Properties
 
-As example, `agdpmod=pikera`and is often injected via NVRAM. There are two permanent ways to get permanent injection effects: either through 
+## AGDPMod Pikera
+
+### History
+
+A long time ago [Pike R. Alpha](https://github.com/Piker-Alpha) blogged about the changes in the AGDP (Apple Graphics Device Policy) and had to came up with a workaround for an issue in AppleGraphicsDevicePolicy.kext so that we could use a MacPro6,1 board-id/model combination, without the usual hang with a black screen. He presents an alternative route for this and this time it is a patch that can be used with Clover’s kext patching feature. Below is an example:
+
+```zml
+<key>KextsToPatch</key>        
+<array>
+    <dict>
+        <key>Comment</key>
+        <string>AppleGraphicsDevicePolicy (board-id) Patch (c) Pike R. Alpha</string>
+        <key>Find</key>
+        <data>
+        Ym9hcmQtaWQ=
+        </data>
+        <key>Name</key>
+        <string>AppleGraphicsDevicePolicy</string>
+        <key>Replace</key>
+        <data>
+        Ym9hcmQtaXg=
+        </data>
+</dict>
+</array>
+```
+
+Basically, this patch search for “board-id” and replace it with “board-ix” – or anything that we want to use instead. Original thread: [Patching AppleGraphicsDevicePolicy](https://pikeralpha.wordpress.com/2015/11/23/patching-applegraphicsdevicepolicy-kext/). Nowadays, this patch is integrated with [Whatevergreen.kext](https://github.com/acidanthera/WhateverGreen). This is modern patch with a lot of improvements. This days, normally  `agdpmod=pikera` is often injected via NVRAM. There are two permanent ways to get permanent injection effects: either through 
 
 - DeviceProperties or
 -  ACPI
 
-## Method 1
+### Method 1
 
 - Inject properties via DeviceProperties (config.plist). Below is an example:
 
@@ -49,7 +75,9 @@ As example, `agdpmod=pikera`and is often injected via NVRAM. There are two perma
 
 ie: `adgpmod` | `data` | `70696b65726100`
 
-## Method 2
+> **Note**: `pikera` (text) is equivalent to `70696B657261` (hex) and `cGlrZXJh` (base64). The reason it became `cGlrZXJhAA==` (base64) and `70696B65726100` (hex) is because of this patch consist of `0` bit for workspace. 
+
+### Method 2
 
 - Inject properties via ACPI (SSDTs). This is an example of Navi14 based GPU:
 
@@ -80,15 +108,13 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
                                 {
                                     Return (Buffer ()
                                     {
-                                         0x03                                             // .
+                                         0x03
                                     })
                                 }
 
                                 Return (Package ()
-                                {
-                                    "AAPL,slot-name", 
-                                    "Slot- 1", 
-                                    "agdpmod", 
+                                { 
+                                    "agdpmod",
                                     "pikera"
                                 })
                             }
