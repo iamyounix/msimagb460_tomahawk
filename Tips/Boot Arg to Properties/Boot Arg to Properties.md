@@ -26,7 +26,7 @@ A long time ago, [Pike R. Alpha](https://github.com/Piker-Alpha) blogged about t
 </array>
 ```
 
-Basically, this patch search for “board-id” and replace it with “board-ix” – or anything that we want to use instead. Original thread: [Patching AppleGraphicsDevicePolicy](https://pikeralpha.wordpress.com/2015/11/23/patching-applegraphicsdevicepolicy-kext/). Nowadays, this patch is integrated with [Whatevergreen.kext](https://github.com/acidanthera/WhateverGreen). This is modern patch with a lot of improvements. This days, normally  `agdpmod=pikera` is often injected via NVRAM. There are two permanent ways to get permanent injection effects: either through 
+Basically, this patch search for “board-id” and replace it with “board-ix” – or anything that we want to use instead. Original thread: [Patching AppleGraphicsDevicePolicy](https://pikeralpha.wordpress.com/2015/11/23/patching-applegraphicsdevicepolicy-kext/). Nowadays, this patch is integrated with [Whatevergreen.kext](https://github.com/acidanthera/WhateverGreen). This is modern patch with a lot of improvements. Today, `agdpmod=pikera` is often injected via NVRAM. There are two permanent ways to get permanent injection effects: either through 
 
 - DeviceProperties or
 -  ACPI
