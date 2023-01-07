@@ -137,8 +137,11 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
 
 Set audio layout
 
-- boot arg = `alcid=x`, ie: `alcid=1`
-- DeviceProperties = `layout-id` | `data` | `0x000000`, ie: `layout-id` | `data` | `01000000`
+- boot arg = `alcid=n`. 
+> **Note**: The `n` is for numeric.
+- DeviceProperties = `layout-id` | `data` | `0n000000`
+
+ie: `layout-id` | `data` | `01000000`
 
 ## Apple GuC Firmware
 
