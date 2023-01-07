@@ -57,7 +57,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   | **Bluetooth** | 5.0 | 5.0 via BCM94360CD |
   | **Standard Storage** | 256 GB SSD | Upgradeable |
 
-- Suggested Hardware
+- Suggested Hardware to copy iMac20,1
   - Processors
     - [Intel® Core™ i5-10500 Processor](https://ark.intel.com/content/www/us/en/ark/products/199277/intel-core-i510500-processor-12m-cache-up-to-4-50-ghz.html)
   - Motherboard
