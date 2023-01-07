@@ -152,6 +152,15 @@ Force loading of Apple GuC firmware
 - boot arg = `igfxfw=2`
 - DeviceProperties = `igfxfw` | `data` | `02000000`
 
+## Enable Metal
+
+#### Method
+
+Force enable Metal support on Intel for offline rendering
+
+- boot arg = `igfxmetal=1`
+- DeviceProperties = `enable-metal` | `data` | `01000000`
+
 ## IGPU Online
 
 #### Method
