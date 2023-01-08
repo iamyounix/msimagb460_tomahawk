@@ -1,14 +1,23 @@
 /*
 * The code defines a number of external devices, such as the PCI0 device and the LPCB device, as well as a number of internal devices, such as the EC device and the MCHC device. It also defines a number of methods, such as the _INI method and the _DSM method, which are used to initialize and configure the devices and perform other tasks. One notable feature of the code is the use of the "If(_OSI("Darwin"))" construct, which checks whether the operating system is Darwin (i.e., MacOS). This allows the code to behave differently depending on the operating system that is running on the system. Overall, the purpose of this code is to provide the operating system with information about the hardware and software configuration of the system and to define methods for controlling and managing power and configuration settings on the system.
 */
-DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
+DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
 {
     External (_SB_.PCI0, DeviceObj)
     External (_SB_.PCI0.LPCB, DeviceObj)
     External (_SB_.PCI0.PEG0, DeviceObj)
     External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
     External (_SB_.PCI0.SBUS, DeviceObj)
+    External (ALSE, UnknownObj)
     External (STAS, IntObj)
+
+    Scope (\)
+    {
+        If (_OSI ("Darwin"))
+        {
+            ALSE = 0x02
+        }
+    }
 
     Scope (\_SB)
     {
@@ -27,7 +36,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
                 Device (EC)
                 {
                     Name (_HID, EisaId ("PNP0C09") /* Embedded Controller Device */)  // _HID: Hardware ID
-                    Name (_UID, Zero)  // _UID: Unique ID
+                    Name (_CID, "boot-ec")  // _CID: Compatible ID
                     Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
                         If (_OSI ("Darwin"))
@@ -42,7 +51,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
                 }
             }
 
-            Device (MCHC)
+            Device (DRAM)
             {
                 Name (_ADR, Zero)  // _ADR: Address
             }
@@ -67,8 +76,8 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
             {
                 Device (BUS0)
                 {
-                    Name (_ADR, Zero)  // _ADR: Address
                     Name (_CID, "smbus")  // _CID: Compatible ID
+                    Name (_ADR, Zero)  // _ADR: Address
                     Device (DVL0)
                     {
                         Name (_ADR, 0x57)  // _ADR: Address
@@ -79,14 +88,14 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00000001)
                             {
                                 Return (Buffer ()
                                 {
-                                     0x03                                             // .
+                                     0x57                                             // W
                                 })
                             }
 
                             Return (Package ()
                             {
                                 "address", 
-                                Zero
+                                0x57
                             })
                         }
                     }
