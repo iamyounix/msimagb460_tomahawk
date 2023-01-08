@@ -36,7 +36,6 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
                 Device (EC)
                 {
                     Name (_HID, EisaId ("PNP0C09") /* Embedded Controller Device */)  // _HID: Hardware ID
-                    Name (_CID, "boot-ec")  // _CID: Compatible ID
                     Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
                         If (_OSI ("Darwin"))
