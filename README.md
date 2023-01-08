@@ -348,6 +348,9 @@ Quirks
 ![Screenshot 2023-01-08 at 11 02 36 PM](https://user-images.githubusercontent.com/72515939/211203652-b424c0f0-57f3-4ed5-b83a-113144d025c2.png)
 ![Screenshot 2023-01-08 at 11 02 44 PM](https://user-images.githubusercontent.com/72515939/211203655-ad4ba3c9-7873-4b56-b49a-6b603c019e28.png)
 ![Screenshot 2023-01-08 at 11 03 44 PM](https://user-images.githubusercontent.com/72515939/211203659-fd068e4f-41bb-4c0a-b694-f06f4b5737ff.png)
+
+- Multiboot Capable? **Yes!**
+
 ![Screenshot 2023-01-08 at 11 42 52 PM](https://user-images.githubusercontent.com/72515939/211205718-a1962bcc-c1c9-4999-b44f-70be349aa870.png)
 ![Screenshot_20230108_234715](https://user-images.githubusercontent.com/72515939/211205948-3b8cc5a3-5d7e-4812-b18f-8699d91c6db3.png)
 
