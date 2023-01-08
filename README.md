@@ -21,6 +21,7 @@
   - [UEFI](#uefi)
 - [Changelog](#changelog)
 - [Tips](#tips)
+- [Results](#results)
 - [Credits](#credits)
   
 ### Introduction
@@ -339,7 +340,12 @@ Quirks
 - [Rename Devices](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/Rename%20Devices/Rename%20Devices.md)
 - [USB keyboard Wake](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/Tips/USB%20Keyboard%20Wake/USB%20Keyboard%20Wake.md)
 
+## Results
 
+![Screenshot 2023-01-08 at 10 57 39 PM](https://user-images.githubusercontent.com/72515939/211203649-80fb3ce1-4f21-4568-95ce-e10ac404b876.png)
+![Screenshot 2023-01-08 at 11 02 36 PM](https://user-images.githubusercontent.com/72515939/211203652-b424c0f0-57f3-4ed5-b83a-113144d025c2.png)
+![Screenshot 2023-01-08 at 11 02 44 PM](https://user-images.githubusercontent.com/72515939/211203655-ad4ba3c9-7873-4b56-b49a-6b603c019e28.png)
+![Screenshot 2023-01-08 at 11 03 44 PM](https://user-images.githubusercontent.com/72515939/211203659-fd068e4f-41bb-4c0a-b694-f06f4b5737ff.png)
 
 ## Credits
 
