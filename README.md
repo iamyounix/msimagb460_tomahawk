@@ -124,16 +124,16 @@ EFI
 	- System clock fix on Z390, B460, Z490 motherboards
   - EC
 	- Fake Embedded Controller as an alternative EC controller, also prevents actual `AppleACPIEC` from being loaded on macOS
-  - MCHC
-	- Memory Controller Hub Configuration (Cosmetics)
+  - DRAM
+	- Dynamic Random Access Memory 
   - PXSX
 	- Patched PCI Bridge for GFX0
   - PGMM
-	- Processor Gaussian Mixture Model (Cosmetics)
+	- Processor Gaussian Mixture Model
   - SBUS
 	- Patched System BUS
   - TSUB
-	- Thermal Subsystem (Cosmetics)
+	- Thermal Subsystem
   - USBX
 	- Patched USB Power Management
 
