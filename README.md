@@ -322,7 +322,7 @@ Quirks
 
 - [Release](https://github.com/theofficialcopypaste/MSIB460Tomahawk/releases)
 
-> **Note**: SMBIOS is censored by [OC-Anonymizer](https://github.com/dreamwhite/OC-Anonymizer). This will include OC config v`0.8.7`, v`0.8.8` and v`0.8.8 debug`
+> **Note**: SMBIOS is censored by [OC-Anonymizer](https://github.com/dreamwhite/OC-Anonymizer). This will include OC config `v0.8.7`, v`0.8.8` and `v0.8.8 debug`
 
 ## Patches
 
