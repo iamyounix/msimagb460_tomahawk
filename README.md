@@ -60,17 +60,17 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 - Suggested Hardware to copy iMac20,1
   - Processors
-    - [Intel® Core™ i5-10500 Processor](https://ark.intel.com/content/www/us/en/ark/products/199277/intel-core-i510500-processor-12m-cache-up-to-4-50-ghz.html)
+	- [Intel® Core™ i5-10500 Processor](https://ark.intel.com/content/www/us/en/ark/products/199277/intel-core-i510500-processor-12m-cache-up-to-4-50-ghz.html)
   - Motherboard
-    - B5XX or Z5XX or any 11th/10th Gen Motherboard. ie: [Gigabyte Vision Z590](https://www.gigabyte.com/Motherboard/Z590-VISION-D-rev-10#kf)
+	- B5XX or Z5XX or any 11th/10th Gen Motherboard. ie: [Gigabyte Vision Z590](https://www.gigabyte.com/Motherboard/Z590-VISION-D-rev-10#kf)
   - RAM
-    - Any equivalent DDR4 2666/2400/2133 MHz memory modules (recommend 2666 Mhz)
+	- Any equivalent DDR4 2666/2400/2133 MHz memory modules (recommend 2666 Mhz)
   - Storage
-    - Any equivalent NVMe with PCIe 3.0 Support ie: [WD Black SN750](https://www.westerndigital.com/en-ap/products/internal-drives/wd-black-sn750-se-nvme-ssd#WDS500G1B0E)
+	- Any equivalent NVMe with PCIe 3.0 Support ie: [WD Black SN750](https://www.westerndigital.com/en-ap/products/internal-drives/wd-black-sn750-se-nvme-ssd#WDS500G1B0E)
   - Wi-Fi
-    - [Fenvi T919](https://www.fenvi.com/product_detail_16.html), BCM94360CD
+	- [Fenvi T919](https://www.fenvi.com/product_detail_16.html), BCM94360CD
   - GPU
-    - [MSI RX 5500 XT MECH OC 4GB](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G-OC)
+	- [MSI RX 5500 XT MECH OC 4GB](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G-OC)
   
 ### EFI
 
@@ -81,35 +81,35 @@ EFI
 ├── BOOT 
 │   └── BOOTx64.efi                     // Modern BIOS firmware
 └── OC 
-    ├── ACPI                            // ACPI Library
-    │   └── SSDT-EXT.aml
-    ├── config.plist                    // OpenCore configuration
-    ├── Drivers                         // Drivers Library
-    │   ├── HfsPlus.efi             
-    │   ├── OpenCanopy.efi             
-    │   ├── OpenRuntime.efi          
-    │   └── ResetNvramEntry.efi     
-    ├── Kexts                           // Kernel extensions
-    │   ├── AppleALC.kext    
-    │   ├── IntelMausi.kext         
-    │   ├── Lilu.kext                 
-    │   ├── LucyRTL8125Ethernet.kext  
-    │   ├── SMCProcessor.kext       
-    │   ├── SMCSuperIO.kext         
-    │   ├── USBMap.kext          
-    │   ├── VirtualSMC.kext         
-    │   └── WhateverGreen.kext       
-    ├── OpenCore.efi 
-    ├── Resources                       // Binary Resource
-    │   ├── Audio                     
-    │   ├── Font                 
-    │   ├── Image                  
-    │   │   └── Acidanthera             // Theme Library
-    │   │       ├── Chardonnay 
-    │   │       ├── GoldenGate 
-    │   │       └── Syrah 
-    │   └── Label
-    └── Tools
+	├── ACPI                            // ACPI Library
+	│   └── SSDT-EXT.aml
+	├── config.plist                    // OpenCore configuration
+	├── Drivers                         // Drivers Library
+	│   ├── HfsPlus.efi             
+	│   ├── OpenCanopy.efi             
+	│   ├── OpenRuntime.efi          
+	│   └── ResetNvramEntry.efi     
+	├── Kexts                           // Kernel extensions
+	│   ├── AppleALC.kext    
+	│   ├── IntelMausi.kext         
+	│   ├── Lilu.kext                 
+	│   ├── LucyRTL8125Ethernet.kext  
+	│   ├── SMCProcessor.kext       
+	│   ├── SMCSuperIO.kext         
+	│   ├── USBMap.kext          
+	│   ├── VirtualSMC.kext         
+	│   └── WhateverGreen.kext       
+	├── OpenCore.efi 
+	├── Resources                       // Binary Resource
+	│   ├── Audio                     
+	│   ├── Font                 
+	│   ├── Image                  
+	│   │   └── Acidanthera             // Theme Library
+	│   │       ├── Chardonnay 
+	│   │       ├── GoldenGate 
+	│   │       └── Syrah 
+	│   └── Label
+	└── Tools
 ```
 
 > **Note**: Get OC binary resource and additional EFI drivers [here](https://github.com/acidanthera/OcBinaryData)
@@ -118,22 +118,24 @@ EFI
 
 - [SSDT-EXT](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/SSDT/SSDT-EXT.dsl) contain:
   
+  - ALSD
+	- Ambient Light Sensor attached to `AppleLMUController` (ACPI0008)
   - AWAC
-    - System clock fix on Z390, B460, Z490 motherboards
+	- System clock fix on Z390, B460, Z490 motherboards
   - EC
-    - Fake Embedded Controller as an alternative EC controller, also prevents actual `AppleACPIEC` from being loaded on macOS
+	- Fake Embedded Controller as an alternative EC controller, also prevents actual `AppleACPIEC` from being loaded on macOS
   - MCHC
-    - Memory Controller Hub Configuration (Cosmetics)
+	- Memory Controller Hub Configuration (Cosmetics)
   - PXSX
-    - Patched PCI Bridge for GFX0
+	- Patched PCI Bridge for GFX0
   - PGMM
-    - Processor Gaussian Mixture Model (Cosmetics)
+	- Processor Gaussian Mixture Model (Cosmetics)
   - SBUS
-    - Patched System BUS
+	- Patched System BUS
   - TSUB
-    - Thermal Subsystem (Cosmetics)
+	- Thermal Subsystem (Cosmetics)
   - USBX
-    - Patched USB Power Management
+	- Patched USB Power Management
 
 #### Booter
 
