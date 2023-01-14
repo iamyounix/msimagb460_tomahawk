@@ -31,6 +31,11 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
 
         Scope (PCI0)
         {
+            Device (DRAM)
+            {
+                Name (_ADR, Zero)  // _ADR: Address
+            }
+            
             Scope (LPCB)
             {
                 Device (EC)
@@ -50,10 +55,6 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
                 }
             }
 
-            Device (DRAM)
-            {
-                Name (_ADR, Zero)  // _ADR: Address
-            }
 
             Scope (PEG0)
             {
