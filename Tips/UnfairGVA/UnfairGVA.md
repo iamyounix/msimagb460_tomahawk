@@ -1,7 +1,7 @@
-unfairgva = 1 -> enables DRM on old CPUID
-unfairgva = 2 ->Relax HDCP requirements
-unfairgva = 1+2 = 3 -> enables the two options above
-unfairgva = 4 -> Inject the iMacPro1,1 board ID
-unfairgva = 4+1 = 5 -> enables the options 4 and 1
-unfairgva = 4+2 = 6 -> enables the options 4 and 2
-unfairgva = 4+2+1 = 7 -> enables all
+- unfairgva = 1 -> enables DRM on old CPUID
+- unfairgva = 2 ->Relax HDCP requirements
+- unfairgva = 1+2 = 3 -> enables the two options above
+- unfairgva = 4 -> Inject the iMacPro1,1 board ID
+- unfairgva = 4+1 = 5 -> enables the options 4 and 1
+- unfairgva = 4+2 = 6 -> enables the options 4 and 2
+- unfairgva = 4+2+1 = 7 -> enables all
