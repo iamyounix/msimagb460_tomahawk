@@ -1,4 +1,3 @@
-
 /*!
  * The code defines a number of external devices, such as the PCI0 device and
  * the LPCB device, as well as a number of internal devices, such as the EC
