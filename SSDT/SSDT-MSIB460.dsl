@@ -2,7 +2,7 @@
  * The code defines a number of external devices, such as the PCI0 device and
  * the LPCB device, as well as a number of internal devices, such as the EC
  * device and the MCHC device. It also defines a number of methods, such as the
- * _INI method and the _DSM method, which are used to initialise and configure
+ * '_INI' method and the '_DSM' method, which are used to initialise and configure
  * the devices and perform other tasks. One notable feature of the code is the
  * use of the "If(_OSI("Darwin"))" construct, which checks whether the operating
  * system is Darwin (i.e., MacOS). This allows the code to behave differently
