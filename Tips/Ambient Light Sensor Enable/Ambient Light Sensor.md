@@ -34,3 +34,5 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x414C5345)
             ALSE = 0x02
         }
     }
+}
+```
