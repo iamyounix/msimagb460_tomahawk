@@ -6,7 +6,7 @@ system is Darwin (i.e., MacOS). This allows the code to behave differently depen
 purpose of this code is to provide the operating system with information about the hardware and software configuration of the system and to define methods
 for controlling and managing power and configuration settings on the system.
 */
-DefinitionBlock ("", "SSDT", 2, "CpyPst", "EXT", 0x00455854)
+DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
 {
     External (_SB_.PCI0, DeviceObj)
     External (_SB_.PCI0.LPCB, DeviceObj)
