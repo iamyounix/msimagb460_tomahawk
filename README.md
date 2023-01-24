@@ -62,35 +62,39 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 	
 <summary>Detailed Hardware</summary>
 
-+ 00:00.0 Host bridge: Intel Corporation Comet Lake-S 6c Host Bridge/DRAM Controller (rev 05)
-+ 00:01.0 PCI bridge: Intel Corporation 6th-10th Gen Core Processor PCIe Controller (x16) (rev 05)
-+ 00:02.0 Display controller: Intel Corporation CometLake-S GT2 [UHD Graphics 630] (rev 05)
-+ 00:08.0 System peripheral: Intel Corporation Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen Core Processor Gaussian Mixture Model
-+ 00:14.0 USB controller: Intel Corporation Comet Lake PCH-V USB Controller
-+ 00:14.2 Signal processing controller: Intel Corporation Comet Lake PCH-V Thermal Subsystem
-+ 00:16.0 Communication controller: Intel Corporation Comet Lake PCH-V HECI Controller
-+ 00:17.0 SATA controller: Intel Corporation 400 Series Chipset Family SATA AHCI Controller
-+ 00:1b.0 PCI bridge: Intel Corporation Device a3e9 (rev f0)
-+ 00:1b.4 PCI bridge: Intel Corporation Comet Lake PCI Express Root Port #21 (rev f0)
-+ 00:1c.0 PCI bridge: Intel Corporation Device a392 (rev f0)
-+ 00:1c.4 PCI bridge: Intel Corporation Comet Lake PCI Express Root Port #05 (rev f0)
-+ 00:1c.6 PCI bridge: Intel Corporation Device a396 (rev f0)
-+ 00:1d.0 PCI bridge: Intel Corporation Comet Lake PCI Express Root Port 9 (rev f0)
-+ 00:1f.0 ISA bridge: Intel Corporation B460 Chipset LPC/eSPI Controller
-+ 00:1f.2 Memory controller: Intel Corporation Cannon Lake PCH Power Management Controller
-+ 00:1f.3 Audio device: Intel Corporation Comet Lake PCH-V cAVS
-+ 00:1f.4 SMBus: Intel Corporation Comet Lake PCH-V SMBus Host Controller
-+ 00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (11) I219-V
-+ 01:00.0 PCI bridge: Advanced Micro Devices, Inc. [AMD/ATI] Navi 10 XL Upstream Port of PCI Express Switch (rev c5)
-+ 02:00.0 PCI bridge: Advanced Micro Devices, Inc. [AMD/ATI] Navi 10 XL Downstream Port of PCI Express Switch
-+ 03:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Navi 14 [Radeon RX 5500/5500M / Pro 5500M] (rev c5)
-+ 03:00.1 Audio device: Advanced Micro Devices, Inc. [AMD/ATI] Navi 10 HDMI Audio
-+ 04:00.0 USB controller: ASMedia Technology Inc. Device 3241
-+ 05:00.0 Non-Volatile memory controller: Kingston Technology Company, Inc. A2000 NVMe SSD (rev 03)
-+ 06:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8125 2.5GbE Controller (rev 04)
-+ 07:00.0 USB controller: VIA Technologies, Inc. VL805/806 xHCI USB 3.0 Controller (rev 01)
-+ 08:00.0 Network controller: Broadcom Inc. and subsidiaries BCM4360 802.11ac Wireless Network Adapter (rev 03)
-+ 09:00.0 Non-Volatile memory controller: Kingston Technology Company, Inc. A2000 NVMe SSD (rev 03)
+```zsh
+DEBUG   VID  DID  SVID SDID ASPM   Vendor Name                    Device Name                                        Class Name           SubClass Name        IOReg Name      IOReg IOName    Device Path
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+00:00.0 8086 9B53 1462 7C81 Disabl Intel Corporation              Comet Lake-S 6c Host Bridge/DRAM Controller        Bridge               Host bridge           /PCI0@0/DRAM@0 pci8086,9b53    PciRoot(0x0)/Pci(0x0,0x0) 
+00:01.0 8086 1901 007F 0000 Disabl Intel Corporation              6th-10th Gen Core Processor PCIe Controller (x16)  Bridge               PCI bridge            /PCI0@0/PEG0@1 pci-bridge      PciRoot(0x0)/Pci(0x1,0x0) 
+00:02.0 8086 3E9B 1462 7C81 Disabl Intel Corporation              Intel CoffeeLake-H GT2 [UHD Graphics 630]          Display controller   Display controller    /PCI0@0/IGPU@2 display         PciRoot(0x0)/Pci(0x2,0x0) 
+00:08.0 8086 1911 1462 7C81 Disabl Intel Corporation              Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen  Generic system perip System peripheral     /PCI0@0/PGMM@8 pci8086,1911    PciRoot(0x0)/Pci(0x8,0x0) 
+00:14.0 8086 A3AF 1462 7C81 Disabl Intel Corporation              Comet Lake PCH-V USB Controller                    Serial bus controlle USB controller        /PCI0@0/XHC@14 pci8086,a3af    PciRoot(0x0)/Pci(0x14,0x0) 
+00:14.2 8086 A3B1 8086 7270 Disabl Intel Corporation              Comet Lake PCH-V Thermal Subsystem                 Signal processing co Signal processing co CI0@0/TSUB@14,2 pci8086,a3b1    PciRoot(0x0)/Pci(0x14,0x2) 
+00:16.0 8086 A3BA 1462 7C81 Disabl Intel Corporation              Comet Lake PCH-V HECI Controller                   Communication contro Communication contro /PCI0@0/IMEI@16 pci8086,a3ba    PciRoot(0x0)/Pci(0x16,0x0) 
+00:17.0 8086 A382 1462 7C81 Disabl Intel Corporation              400 Series Chipset Family SATA AHCI Controller     Mass storage control SATA controller      /PCI0@0/SAT0@17 pci8086,a382    PciRoot(0x0)/Pci(0x17,0x0) 
+00:1B.0 8086 A3E9 0000 0000 Disabl Intel Corporation              Comet Lake PCI Express Root Port #19               Bridge               PCI bridge           /PCI0@0/RP19@1B pci-bridge      PciRoot(0x0)/Pci(0x1B,0x0) 
+00:1B.4 8086 A3EB 0000 0000 Disabl Intel Corporation              Comet Lake PCI Express Root Port #21               Bridge               PCI bridge           CI0@0/RP21@1B,4 pci-bridge      PciRoot(0x0)/Pci(0x1B,0x4) 
+00:1C.0 8086 A392 0000 0000 Disabl Intel Corporation              Comet Lake PCI Express Root Port #03               Bridge               PCI bridge           /PCI0@0/RP03@1C pci-bridge      PciRoot(0x0)/Pci(0x1C,0x0) 
+00:1C.4 8086 A394 0000 0000 Disabl Intel Corporation              Comet Lake PCI Express Root Port #05               Bridge               PCI bridge           CI0@0/RP05@1C,4 pci-bridge      PciRoot(0x0)/Pci(0x1C,0x4) 
+00:1C.6 8086 A396 0000 0000 Disabl Intel Corporation              Comet Lake PCI Express Root Port #07               Bridge               PCI bridge           CI0@0/RP07@1C,6 pci-bridge      PciRoot(0x0)/Pci(0x1C,0x6) 
+00:1D.0 8086 A398 0000 0000 Disabl Intel Corporation              Comet Lake PCI Express Root Port 9                 Bridge               PCI bridge           /PCI0@0/RP09@1D pci-bridge      PciRoot(0x0)/Pci(0x1D,0x0) 
+00:1F.0 8086 A3C8 1462 7C81 Disabl Intel Corporation              B460 Chipset LPC/eSPI Controller                   Bridge               ISA bridge           /PCI0@0/LPCB@1F pci8086,a3c8    PciRoot(0x0)/Pci(0x1F,0x0) 
+00:1F.2 8086 A3A1 1462 7C81 Disabl Intel Corporation              Cannon Lake PCH Power Management Controller        Memory controller    Memory controller    CI0@0/PPMC@1F,2 pci8086,a3a1    PciRoot(0x0)/Pci(0x1F,0x2) 
+00:1F.3 8086 A3F0 1462 EC81 Disabl Intel Corporation              Comet Lake PCH-V cAVS                              Multimedia controlle Audio device         CI0@0/HDEF@1F,3 pci8086,a3f0    PciRoot(0x0)/Pci(0x1F,0x3) 
+00:1F.4 8086 A3A3 1462 7C81 Disabl Intel Corporation              Comet Lake PCH-V SMBus Host Controller             Serial bus controlle SMBus                CI0@0/SBUS@1F,4 pci8086,a3a3    PciRoot(0x0)/Pci(0x1F,0x4) 
+00:1F.6 8086 0D4D 1462 7C81 Disabl Intel Corporation              Ethernet Connection (11) I219-V                    Network controller   Ethernet controller  CI0@0/GLAN@1F,6 ethernet        PciRoot(0x0)/Pci(0x1F,0x6) 
+01:00.0 1002 1478 007F 0000 Disabl Advanced Micro Devices, Inc. [ Navi 10 XL Upstream Port of PCI Express Switch     Bridge               PCI bridge           0/PEG0@1/PEGP@0 pci-bridge      PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0) 
+05:00.0 2646 2263 2646 2263 Disabl Kingston Technology Company, I A2000 NVMe SSD                                     Mass storage control Non-Volatile memory  P21@1B,4/PXSX@0 pci2646,2263    PciRoot(0x0)/Pci(0x1B,0x4)/Pci(0x0,0x0) 
+04:00.0 1B21 3241 1462 7C81 Disabl ASMedia Technology Inc.        ASM3241 USB 3.2 Host Controller                    Serial bus controlle USB controller       /RP19@1B/PXSX@0 pci1b21,3241    PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0) 
+09:00.0 2646 2263 2646 2263 Disabl Kingston Technology Company, I A2000 NVMe SSD                                     Mass storage control Non-Volatile memory  /RP09@1D/PXSX@0 pci2646,2263    PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0) 
+07:00.0 1106 3483 1106 3483 Disabl VIA Technologies, Inc.         VL805/806 xHCI USB 3.0 Controller                  Serial bus controlle USB controller       P05@1C,4/PXSX@0 pci1106,3483    PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0) 
+06:00.0 10EC 8125 1462 7C81 Disabl Realtek Semiconductor Co., Ltd RTL8125 2.5GbE Controller                          Network controller   Ethernet controller  /RP03@1C/PXSX@0 ethernet        PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0) 
+02:00.0 1002 1479 007F 0000 Disabl Advanced Micro Devices, Inc. [ Navi 10 XL Downstream Port of PCI Express Switch   Bridge               PCI bridge           1/PEGP@0/PXSX@0 pci-bridge      PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0) 
+08:00.0 14E4 43A0 106B 0111 Disabl Broadcom Inc. and subsidiaries BCM4360 802.11ac Wireless Network Adapter          Network controller   Network controller   P07@1C,6/PXSX@0 pci14e4,43a0    PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0) 
+03:00.0 1002 7340 1462 3822 Disabl Advanced Micro Devices, Inc. [ Navi 14 [Radeon RX 5500/5500M / Pro 5500M]         Display controller   VGA compatible contr 0/PXSX@0/GFX0@0 display         PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0) 
+03:00.1 1002 AB38 1462 3822 Disabl Advanced Micro Devices, Inc. [ Navi 10 HDMI Audio                                 Multimedia controlle Audio device         PXSX@0/HDAU@0,1 pci1002,ab38    PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1) 
+```
 
 </details>	
 
