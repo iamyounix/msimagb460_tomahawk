@@ -128,7 +128,7 @@ EFI
 │   └── BOOTx64.efi                     // Modern BIOS firmware
 └── OC 
 	├── ACPI                            // ACPI Library
-	│   └── SSDT-EXT.aml
+	│   └── SSDT-MSIB460.aml
 	├── config.plist                    // OpenCore configuration
 	├── Drivers                         // Drivers Library
 	│   ├── HfsPlus.efi             
@@ -162,7 +162,7 @@ EFI
 
 #### ACPI
 
-- [SSDT-EXT](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/SSDT/SSDT-EXT.dsl) contain:
+- [SSDT-MSIB460 Sample A](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/SSDT/SSDT's/SSDT-MSIB460_Sample%20A.dsl) contain:
   
   - ALSD
 	- Ambient Light Sensor attached to `AppleLMUController` (ACPI0008)
