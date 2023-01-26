@@ -152,7 +152,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
 				 * - AppleSMBusController (Aids with correct temperature, fan, voltage, ICH, etc readings)
 				 * - AppleSMBusPCI (Same idea as AppleSMBusController except for low bandwidth PCI devices)
 				 * - Memory Reporting (Aids in proper memory reporting and can aid in getting better kernel
-				 * panic details if memory related) and etc.
+				 *   panic details if memory related) and etc.
 				 */
 				
 				Scope (SBUS)
