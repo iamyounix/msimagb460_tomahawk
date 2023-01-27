@@ -4,7 +4,7 @@ Refer: [Dortania - Keyboard Wake Issues](https://dortania.github.io/OpenCore-Pos
 
 ## Three Method
 
-So the ideal method is to declare the XHCI Controller to be an ACPI wake device, as we don't have compatible ECs for macOS to handle proper wake calls.
+So the ideal method is to declare the `XHCI Controller` to be an ACPI wake device, as we don't have compatible ECs for macOS to handle proper wake calls.
 
 - **Method 1:** Set `acpi-wake-type` to all usb devices.
 - **Method 2:** Set Virtual USB Devices to route proper wake event from loaded [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) to acpi mapped usb devices.
@@ -19,11 +19,11 @@ So the ideal method is to declare the XHCI Controller to be an ACPI wake device,
 
 **Method 2**
 
-- Set virtual USB devices to route the proper wake event from [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) loaded USBWakeFixup.kext to acpi-mapped USB devices. This method combines proper instruction from acpi from the associated kext with "acpi-wake-type" and "acpi-wake-gpe." Create a new SSDT by pasting this code into any ".asl" equivalent editor and saving it as ".dsl." Before editing, please make sure to check the path of your USB devices.
+- Set virtual USB devices to route the proper wake event from [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) loaded USBWakeFixup.kext to acpi-mapped USB devices. This method combines proper instruction from acpi from the associated kext with `acpi-wake-type` and `acpi-wake-gpe`. Create a new SSDT by pasting this code into any ".asl" equivalent editor and saving it as ".dsl." Before editing, please make sure to check the path of your USB devices.
 
-- In this particular SSDT, the code defines an external method called "_PRW", which stands for "Power Resources for Wake", and an internal device called USBW. The "USBW" device has two properties: "_HID", which stands for "Hardware ID," and "_UID", which stands for "Unique ID." 
-- The code also defines a method called "_PRW" that returns the value of the "_PRW" method of the "XHC" device in the "PCI0" scope. This method appears to be used to control the power management of the "USBW" device. The code also includes an "If" statement that checks whether the operating system is Darwin (i.e., MacOS) using the "_OSI ("Darwin"))" function. 
-- If the operating system is Darwin, the code enables the "USBW" device. Otherwise, the device is not enabled. Overall, this SSDT appears to be defining a device and method for managing the power state of a USB device, with the device and method being enabled only on MacOS. However, this SSDT require "USBWakeFixup.kext" to work.
+- In this particular SSDT, the code defines an external method called `_PRW`, which stands for "Power Resources for Wake", and an internal device called `USBW`. The `USBW` device has two properties: `_HID`, which stands for "Hardware ID," and `_UID`, which stands for "Unique ID". 
+- The code also defines a method called `_PRW` that returns the value of the `_PRW` method of the `XHC` device in the `PCI0` scope. This method appears to be used to control the power management of the "USBW" device. The code also includes an `If` statement that checks whether the operating system is Darwin (i.e., MacOS) using the `_OSI ("Darwin"))` function. 
+- If the operating system is Darwin, the code enables the `USBW` device. Otherwise, the device is not enabled. Overall, this SSDT appears to be defining a device and method for managing the power state of a USB device, with the device and method being enabled only on MacOS. However, this SSDT require [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) to work.
 
     ```asl
     DefinitionBlock ("", "SSDT", 2, "OSY86 ", "USBW", 0x00001000)
@@ -47,10 +47,10 @@ So the ideal method is to declare the XHCI Controller to be an ACPI wake device,
     }
     ```
 
-- In this particular SSDT, the code defines three external devices: PCI0.XHC, PCI0.RP05.PXSX, and PCI0.RP19.PXSX. It also defines three external methods "_PRW" for each of the three devices. The code also defines three internal devices, "USB0", "USB1", and "USB2".
-- Each of these devices has three properties, "_HID", which stands for "Hardware ID," _UID, which stands for "Unique ID," and "_PRW", which stands for "Power Resources for Wake." The "_PRW" method for each of these devices returns the value of the "_PRW" method of one of the external devices. The code also includes an "If" statement that checks whether the operating system is Darwin (i.e., MacOS) using the "_OSI ("Darwin"))" function.
-- If the operating system is Darwin, the code enables the three devices and their corresponding "_PRW" methods. Otherwise, the devices and methods are not enabled. Overall, this SSDT appears to be defining three virtual devices and their corresponding power management methods for managing the power state of USB devices on a system running MacOS.
-- The devices and methods are intended to control the power state of the USB devices on the motherboard and on a PCIe card. Same as above, this SSDT require USBWakeFixup.kext to work. In order to make multiple USB devices work with this method, use the code as shown below:
+- In this particular SSDT, the code defines three external devices: `PCI0.XHC`, `PCI0.RP05.PXSX`, and `PCI0.RP19.PXSX`. It also defines three external methods `_PRW` for each of the three devices. The code also defines three internal devices, `USB0`, `USB1`, and `USB2`.
+- Each of these devices has three properties, `_HID`, which stands for "Hardware ID, `_UID`, which stands for "Unique ID," and `_PRW`, which stands for "Power Resources for Wake". The `_PRW` method for each of these devices returns the value of the `_PRW` method of one of the external devices. The code also includes an `If` statement that checks whether the operating system is Darwin (i.e., MacOS) using the `_OSI ("Darwin"))` function.
+- If the operating system is Darwin, the code enables the three devices and their corresponding `_PRW` methods. Otherwise, the devices and methods are not enabled. Overall, this SSDT appears to be defining three virtual devices and their corresponding power management methods for managing the power state of USB devices on a system running MacOS.
+- The devices and methods are intended to control the power state of the USB devices on the motherboard and on a PCIe card. Same as above, this SSDT require [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) to work. In order to make multiple USB devices work with this method, use the code as shown below:
 
     ```asl
     DefinitionBlock ("", "SSDT", 2, "CpyPst", "USBPW", 0x00001001)
