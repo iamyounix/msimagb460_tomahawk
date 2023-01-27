@@ -76,7 +76,7 @@ So the ideal method is to declare the XHCI Controller to be an ACPI wake device,
 
                 Device (USB1) // Virtual Wake Device #2
                 {
-                    Name (_HID, "PNP0D10" /* XHCI USB Controller with debug */)  // _HID: Hardware ID
+                    Name (_HID, "PNP0D11" /* XHCI USB Controller with debug */)  // _HID: Hardware ID
                     Name (_UID, "WAKE")  // _UID: Unique ID
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
@@ -86,7 +86,7 @@ So the ideal method is to declare the XHCI Controller to be an ACPI wake device,
 
                 Device (USB2) // Virtual Wake Device #3
                 {
-                    Name (_HID, "PNP0D10" /* XHCI USB Controller with debug */)  // _HID: Hardware ID
+                    Name (_HID, "PNP0D12" /* XHCI USB Controller with debug */)  // _HID: Hardware ID
                     Name (_UID, "WAKE")  // _UID: Unique ID
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
