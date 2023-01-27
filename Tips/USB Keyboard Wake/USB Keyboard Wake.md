@@ -2,13 +2,6 @@
 
 Refer: [Dortania - Keyboard Wake Issues](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#keyboard-wake-issues)
 
-**Table of Contents**
-
-- [Three method to fix Sleep and Wake Issues](#threemethodtofuxsleepandwakeissues)
-	- [Method 1](*method1)
-	- [Method 2](*method2)
-	- [Method 3](*method3)
-
 ## Three Method to fix Sleep and Wake Issues
 
 So the ideal method is to declare the `XHCI Controller` to be an ACPI wake device, as we don't have compatible ECs for macOS to handle proper wake calls.
