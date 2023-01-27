@@ -73,7 +73,7 @@ This code demonstrates how to rename any device that macOS does not recognize. 
 	- Where is the best location for `If (_OSI ("Darwin"))` arguement?. Depends, As long `If (_OSI ("Darwin"))` is fitted without an error, this arguement will work fine. If you have multiple device, below is the best way to get an idea about it. However, do not place this arguement before System Bus `\_SB`. 
 
         ```asl
-        DefinitionBlock ("", "SSDT", 2, "CpyPst", "MCHC", 0x4D434843)
+        DefinitionBlock ("", "SSDT", 2, "CpyPst", "XXXX", 0x4D434843)
         {
             External (_SB_.PCI0, DeviceObj)
 
