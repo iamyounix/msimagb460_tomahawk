@@ -24,11 +24,13 @@ Table of Contents
 
 ## Introduction
 
-This is my current EFI clone that I built according to my hardware. Feel free to read my content. If you have a similar build but different settings, you might consider checking this out. Before read, below is the best way to checkout the latest OpenCore guide and news
+This is my current EFI clone that I built according to my hardware. Feel free to read my content. If you have a similar build but different settings, you might consider checking this out. Before read, below is the best way to checkout the latest OpenCore guide and news. 
 
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) "Getting Started"
 - Checkout latest [post](https://dortania.github.io), news and update directly from developer
-  
+
+> **Reminder**: Since I only boot Linux and macOS, my ACPI code would be less (lack of `Else," numerous OS `Zero` and `0xFF` methods). This will result in issues with Windows. If you need help dual- or multiple-booting other operating systems, especially Windows, please get in touch with me.
+
 ### Devices
 
 - 400 Series Chipset Family SATA AHCI Controller
