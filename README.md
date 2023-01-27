@@ -29,7 +29,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) "Getting Started"
 - Checkout latest [post](https://dortania.github.io), news and update directly from developer
 
-> **Reminder**: Since I only boot Linux and macOS, my ACPI code would be less (lack of `Else," numerous OS `Zero` and `0xFF` methods). This will result in issues with Windows. If you need help dual- or multiple-booting other operating systems, especially Windows, please get in touch with me.
+> **Reminder**: Since I only boot Linux and macOS, my ACPI code would be less (lack of `Else`, numerous OS `Zero` and `0xFF` methods). This will result in issues with Windows. If you need help dual- or multiple-booting other operating systems, especially Windows, please get in touch with me.
 
 ### Devices
 
