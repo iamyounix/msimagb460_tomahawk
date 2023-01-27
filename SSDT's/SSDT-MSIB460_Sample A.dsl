@@ -14,7 +14,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
 	
 	/*
 	 * Hey, lets clean up ACPI code. This is an example how we can clean up multiple
-	 * device / device properties in a single SSDT.
+	 * device / device properties in single SSDT.
 	 */
 
 	External (_SB_.PCI0, DeviceObj)
