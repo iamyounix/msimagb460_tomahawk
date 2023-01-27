@@ -2,7 +2,7 @@
 
 Refer: [Dortania - Keyboard Wake Issues](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#keyboard-wake-issues)
 
-## Three method
+## Three Method
 
 So the ideal method is to declare the XHCI Controller to be an ACPI wake device, as we don't have compatible ECs for macOS to handle proper wake calls.
 
@@ -19,7 +19,7 @@ So the ideal method is to declare the XHCI Controller to be an ACPI wake device,
 
 **Method 2**
 
-Set virtual USB devices to route the proper wake event from [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) loaded USBWakeFixup.kext to acpi-mapped USB devices. This method combines proper instruction from acpi from the associated kext with "acpi-wake-type" and "acpi-wake-gpe." Create a new SSDT by pasting this code into any ".asl" equivalent editor and saving it as ".dsl." Before editing, please make sure to check the path of your USB devices.
+- Set virtual USB devices to route the proper wake event from [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) loaded USBWakeFixup.kext to acpi-mapped USB devices. This method combines proper instruction from acpi from the associated kext with "acpi-wake-type" and "acpi-wake-gpe." Create a new SSDT by pasting this code into any ".asl" equivalent editor and saving it as ".dsl." Before editing, please make sure to check the path of your USB devices.
 
 - In this particular SSDT, the code defines an external method called "_PRW", which stands for "Power Resources for Wake", and an internal device called USBW. The "USBW" device has two properties: "_HID", which stands for "Hardware ID," and "_UID", which stands for "Unique ID." 
 - The code also defines a method called "_PRW" that returns the value of the "_PRW" method of the "XHC" device in the "PCI0" scope. This method appears to be used to control the power management of the "USBW" device. The code also includes an "If" statement that checks whether the operating system is Darwin (i.e., MacOS) using the "_OSI" ("Darwin") function. 
