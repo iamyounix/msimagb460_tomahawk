@@ -73,7 +73,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 #### ACPI
 
-* SSDT-MSIB460.aml
+* [SSDT-MSIB460.aml](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/SSDT/SSDT-MSIB460_Sample%20B.dsl)
 
 #### Booter
 
