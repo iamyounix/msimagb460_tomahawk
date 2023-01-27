@@ -105,15 +105,15 @@ So the ideal method is to declare the XHCI Controller to be an ACPI wake device,
 
 **Method 3**
 
-- Apply **Method 1** and **Method 2** as above and add "SSDT-USBX.aml", make sure "USBX" has this code as shown below:
-	- [x] `kUSBSleepPowerSupply`, `0x13EC`
+- Apply **Method 1** and **Method 2** as above and add `SSDT-USBX.aml`, make sure `USBX` has this code as shown below:
+    - [x] `kUSBSleepPowerSupply`, `0x13EC`
     - [x] `kUSBSleepPortCurrentLimit`, `0x0834`
     - [x] `kUSBWakePowerSupply`, `0x13EC`
     - [x] `kUSBWakePortCurrentLimit`, `0x0834`
 
-- Edit your "USBMap.kext" by opening "Info.plist" and add similar "USBX" properties as shown above to all USB devices. Below is an example:
-	- XHC
-		- IOProviderMergeProperties
+- Edit your `USBMap.kext` by opening "Info.plist" and add similar `USBX` properties as shown above to all USB devices. Below is an example:
+	- `XHC`
+		- `IOProviderMergeProperties`
             - `kUSBSleepPowerSupply` - `number` - `5100`
             - `kUSBSleepPortCurrentLimit` - `number` - `2100`
             - `kUSBWakePowerSupply` - `number` - `5100`
