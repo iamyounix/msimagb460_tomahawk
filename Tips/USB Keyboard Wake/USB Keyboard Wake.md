@@ -8,7 +8,7 @@ So the ideal method is to declare the `XHCI Controller` to be an ACPI wake devic
 
 - **Method 1:** Set `acpi-wake-type` to all usb devices.
 - **Method 2:** Set Virtual USB Devices to route proper wake event from loaded [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) to acpi mapped usb devices.
-- **Method 3:** Combination of both (include fix USBMap sleep and wake properties). Sometimes macOS resist to call wake and sleep properties.
+- **Method 3:** Combination of USBMap.kext and ACPI. Sometimes macOS resist to call wake and sleep properties.
 
 **Method 1**
 
@@ -105,11 +105,16 @@ So the ideal method is to declare the `XHCI Controller` to be an ACPI wake devic
 
 **Method 3**
 
-- Apply **Method 1** and **Method 2** as above and add `SSDT-USBX.aml`, make sure `USBX` has this code as shown below:
+- Generate `SSDT-USBX.aml` using (https://github.com/corpnewt/SSDTTime), make sure `USBX` has this code as shown below:
     - [x] `kUSBSleepPowerSupply`, `0x13EC`
     - [x] `kUSBSleepPortCurrentLimit`, `0x0834`
     - [x] `kUSBWakePowerSupply`, `0x13EC`
     - [x] `kUSBWakePortCurrentLimit`, `0x0834`
+
+- Set wake by adding the property of `acpi-wake-type=01` to USB devices via DeviceProperties in config.plist. ie:
+
+  - PciRoot(0x0)/Pci(0x14,0x0)
+    * `acpi-wake-type` - `Data` - `01`
 
 - Edit your `USBMap.kext` by opening "Info.plist" and add similar `USBX` properties as shown above to all USB devices. Below is an example:
 	- `XHC`
@@ -119,7 +124,7 @@ So the ideal method is to declare the `XHCI Controller` to be an ACPI wake devic
             - `kUSBWakePowerSupply` - `number` - `5100`
             - `kUSBWakePortCurrentLimit` - `number` - `2100`
 
-- This method use both combination of USBMap.kext and ACPI. Good Luck!
+- Load `USBMap.kext` and `SSDT-USBX.aml`. Good Luck!
 
 ### Credits
 
