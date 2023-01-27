@@ -6,13 +6,13 @@ Refer: [Dortania - Keyboard Wake Issues](https://dortania.github.io/OpenCore-Pos
 
 So the ideal method is to declare the XHCI Controller to be an ACPI wake device, as we don't have compatible ECs for macOS to handle proper wake calls.
 
-- **Method 1:** Set "acpi-wake-type" to all usb devices.
+- **Method 1:** Set `acpi-wake-type` to all usb devices.
 - **Method 2:** Set Virtual USB Devices to route proper wake event from loaded [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) to acpi mapped usb devices.
 - **Method 3:** Combination of both (include fix USBMap sleep and wake properties). Sometimes macOS resist to call wake and sleep properties.
 
 **Method 1**
 
-- Set wake by adding the property of "acpi-wake-type=01" to USB devices via DeviceProperties in config.plist. ie:
+- Set wake by adding the property of `acpi-wake-type=01` to USB devices via DeviceProperties in config.plist. ie:
 
   - PciRoot(0x0)/Pci(0x14,0x0)
     * `acpi-wake-type` - `Data` - `01`
