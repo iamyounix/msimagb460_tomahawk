@@ -1,4 +1,4 @@
-# Add Missing Devices and Rename
+# Rename and Add Missing Devices
 
 ## Renaming Devices
 
