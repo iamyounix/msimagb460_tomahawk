@@ -105,7 +105,7 @@ So the ideal method is to declare the XHCI Controller to be an ACPI wake device,
 
 **Method 3**
 
-- Apple **Method 1** and **Method 2** as above and add "SSDT-USBX.aml", make sure "USBX" has this code as shown below:
+- Apply **Method 1** and **Method 2** as above and add "SSDT-USBX.aml", make sure "USBX" has this code as shown below:
 	- [x] `kUSBSleepPowerSupply`, `0x13EC`
     - [x] `kUSBSleepPortCurrentLimit`, `0x0834`
     - [x] `kUSBWakePowerSupply`, `0x13EC`
