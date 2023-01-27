@@ -110,6 +110,51 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
     - [x] `kUSBWakePowerSupply`, `0x13EC`
     - [x] `kUSBWakePortCurrentLimit`, `0x0834`
 
+- Below is an eexample of SSDT-USBX:
+
+    ```
+    DefinitionBlock ("", "SSDT", 2, "CpyPst", "USBX", 0x12345678)
+    {
+        Scope (\_SB)
+        {		 
+            If (_OSI ("Darwin"))
+            {
+                Device (USBX)
+                {
+                    Name (_ADR, Zero)  // _ADR: Address
+                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                    {
+                        If ((Arg2 == Zero))
+                        {
+                            Return (Buffer ()
+                            {
+                                0x03
+                            })
+                        }
+        
+                        Return (Package ()
+                        {
+                            "kUSBSleepPowerSupply", 
+                            0x13EC, 
+                            "kUSBSleepPortCurrentLimit", 
+                            0x0834, 
+                            "kUSBWakePowerSupply", 
+                            0x13EC, 
+                            "kUSBWakePortCurrentLimit", 
+                            0x0834
+                        })
+                    }
+        
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        Return (0x0F)
+                    }
+                }
+            }
+        }
+    }
+    ```
+
 - Set wake by adding the property of `acpi-wake-type=01` to USB devices via DeviceProperties in config.plist. ie:
 
   - `PciRoot(0x0)/Pci(0x14,0x0)`
