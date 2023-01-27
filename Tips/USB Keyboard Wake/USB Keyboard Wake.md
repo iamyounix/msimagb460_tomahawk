@@ -13,7 +13,7 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
 
 - Set wake by adding the property of `acpi-wake-type=01` to USB devices via DeviceProperties in config.plist. ie:
 
-  - PciRoot(0x0)/Pci(0x14,0x0)
+  - `PciRoot(0x0)/Pci(0x14,0x0)`
     * `acpi-wake-type` - `Data` - `01`
 
 **Method 2**
@@ -112,7 +112,7 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
 
 - Set wake by adding the property of `acpi-wake-type=01` to USB devices via DeviceProperties in config.plist. ie:
 
-  - PciRoot(0x0)/Pci(0x14,0x0)
+  - `PciRoot(0x0)/Pci(0x14,0x0)`
     * `acpi-wake-type` - `Data` - `01`
 
 - Edit your `USBMap.kext` by opening `Info.plist` and add similar `USBX` properties as shown above to all USB devices. Below is an example:
