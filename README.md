@@ -245,7 +245,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
         - Fix unrecognize `pci-bridge` connected to GFX0 (Navi14).
         - Clean single SSDT.
         - Better device rename via ACPI.
-        - Fix USB Properties. Now all `4` properties is properly inject using `USBMap.kext` and `SSDT-MSIB460.aml`.
+        - Fix USB properties. Now all `4` properties is properly inject using `USBMap.kext` and `SSDT-MSIB460.aml`.
 
 ### History
 
