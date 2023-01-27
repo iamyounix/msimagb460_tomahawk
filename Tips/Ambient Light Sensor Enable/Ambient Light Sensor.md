@@ -16,7 +16,7 @@
 
 ![Screenshot_20230106_175531](https://user-images.githubusercontent.com/72515939/210977256-8cd8f9a4-e46d-498d-a439-7fd7a91f9d40.png)
 
-- If exist, check the value. As example `0x02` is to enable. If nothing return, the value is `0x08`
+- If exist, check the value. As example `0x02` is to enable. If nothing return, the value is `0x0B`
 
 ![Screenshot_20230106_175444](https://user-images.githubusercontent.com/72515939/210977281-1e68af0d-1fe9-46bc-9b7f-99e2a52cfafa.png)
 
