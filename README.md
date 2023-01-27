@@ -20,7 +20,9 @@ Table of Contents
 		* [PlatformInfo](#platforminfo)
 		* [UEFI](#uefi)
 	* [Changelog](#changelog)
-	* [Credits](#credits)
+	* [Update](#update)
+	* [History](#history)
+* [Credits](#credits)
 
 ## Introduction
 
@@ -254,6 +256,6 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
         - [x] `kUSBWakePowerSupply`, `0x13EC`
         - [ ] `kUSBWakePortCurrentLimit`, `0x0834`
 
-## Credits
+# Credits
 
 * [Acidanthera](https://github.com/acidanthera) | [Dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dreamwhite)
