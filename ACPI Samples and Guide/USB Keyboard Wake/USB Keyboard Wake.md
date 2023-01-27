@@ -110,7 +110,7 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
     - [x] `kUSBWakePowerSupply`, `0x13EC`
     - [x] `kUSBWakePortCurrentLimit`, `0x0834`
 
-- Below is an eexample of SSDT-USBX:
+- Below is an example of SSDT-USBX:
 
     ```asl
     DefinitionBlock ("", "SSDT", 2, "CpyPst", "USBX", 0x12345678)
