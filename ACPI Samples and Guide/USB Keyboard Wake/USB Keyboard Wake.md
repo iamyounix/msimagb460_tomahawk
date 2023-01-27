@@ -112,7 +112,7 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
 
 - Below is an eexample of SSDT-USBX:
 
-    ```
+    ```asl
     DefinitionBlock ("", "SSDT", 2, "CpyPst", "USBX", 0x12345678)
     {
         Scope (\_SB)
