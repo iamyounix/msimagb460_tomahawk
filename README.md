@@ -167,7 +167,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 #### PlatformInfo
 
-- SMBIOS: [iMac20,1](https://everymac.com/systems/apple/imac/specs/imac-core-i5-3.1-6-core-27-inch-retina-5k-2020-specs.html)
+* SMBIOS: [iMac20,1](https://everymac.com/systems/apple/imac/specs/imac-core-i5-3.1-6-core-27-inch-retina-5k-2020-specs.html)
 
 #### UEFI
 
@@ -218,7 +218,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 ### Changelog
 
-* **[0.8.8](https://github.com/acidanthera/OpenCorePkg/releases)**
+* **[OpenCore 0.8.8](https://github.com/acidanthera/OpenCorePkg/releases)**
     - Added Linux support to QemuBuild.command used for Duet debugging
     - Added prebuilt mtoc universal binary with Apple Silicon support
     - Added SD card device path support for boot device selection
@@ -232,6 +232,27 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - Updated builtin firmware versions for SMBIOS and the rest
     - Updated ocvalidate to allow duplicate tool if FullNvramAccess is different
     - Updated underlying EDK II package to edk2-stable202211
+
+### Update
+
+January 28, 2023 2:02 AM
+
+* Certain stupid acpi code and config.plist injection is removed for stability.
+    - Permanent `agdpmod=pikera` via IGPU.
+    - Fix unrecognize `pci-bridge` connected to GFX0 (Navi14).
+    - Clean single SSDT.
+    - Better device rename via ACPI.
+    - Fix USB Properties. Now all `4` properties is properly inject using `USBMap.kext` and `SSDT-MSIB460.aml`.
+
+### History
+
+December 15, 2022 4:02 PM
+
+* My EFI, `MSI0.8.7` got an issue since Monterey only inject 2/4 properties (wake & sleep). `USBX` has `4` properties as usual but still inject only `2/4` properties.
+	- [x] `kUSBSleepPowerSupply`, `0x13EC`
+	- [ ] `kUSBSleepPortCurrentLimit`, `0x0834`
+	- [x] `kUSBWakePowerSupply`, `0x13EC`
+	- [ ] `kUSBWakePortCurrentLimit`, `0x0834`
 
 ## Credits
 
