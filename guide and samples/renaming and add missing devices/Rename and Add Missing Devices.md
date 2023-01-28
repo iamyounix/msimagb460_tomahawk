@@ -17,100 +17,100 @@
 
     -   This code demonstrates how to rename any device that is not properly shown in IORegistryExplorer. As an example, the device appears as `pci8086,4321@0`. Do note that this is just cosmetic. This patch will not affect AppleACPI properties or calling certain kexts to load.
 
-    ```asl
-    DefinitionBlock ("", "SSDT", 2, "CpyPst", "DRAM", 0x12345678)
-    {
-        External (_SB_.PCI0, DeviceObj)
-
-        Scope (\_SB)
+        ```asl
+        DefinitionBlock ("", "SSDT", 2, "CpyPst", "DRAM", 0x12345678)
         {
-            Scope (PCI0)
-            {
-                Device (DRAM)
-                {
-                    Name (_ADR, Zero)
-                }
-            }
-        }
-    }
-    ```
+            External (_SB_.PCI0, DeviceObj)
 
--   **Example B: Unrecognize device with address**
-
-    -   This code demonstrates how to rename any device that is not properly shown in IORegistryExplorer. As an example, the device appears as `pci8086,1234@08`, which have an address. To fix this, look at your DSDT and find proper address according to the devices. Do note that this is just cosmetic. This patch will not affect AppleACPI properties or calling certain kexts to load. However, devices with addresses may make your machine unbootable.
-
-    ```asl
-    DefinitionBlock ("", "SSDT", 2, "CpyPst", "PGMM", 0x12345678)
-    {
-        External (_SB_.PCI0, DeviceObj)
-
-        Scope (\_SB)
-        {
-            Scope (PCI0)
-            {
-                Device (PGMM)
-                {
-                    Name (_ADR, 0x00080000)
-                }
-            }
-        }
-    }
-    ```
-
--   **If (\_OSI ("Darwin")) implementation**
-
-    -   The `If (_OSI ("Darwin"))` statement tests whether the operating system is Darwin (which is the operating system used by macOS). If the operating system is `Darwin`, the block of code defined within the `If` statement will be executed. This block of code includes a Device statement, which defines a device object. The device object is named `MCHC` and has a single method, `_ADR`, with a value of `Zero`. So if another operating system other than macOS, this device is not rename.
-
-    ```asl
-    DefinitionBlock ("", "SSDT", 2, "CpyPst", "MCHC", 0x12345678)
-    {
-        External (_SB_.PCI0, DeviceObj)
-
-        Scope (\_SB)
-        {
-            Scope (PCI0)
-            {
-                If (_OSI ("Darwin"))
-                {
-                    Device (MCHC)
-                    {
-                        Name (_ADR, Zero)  // _ADR: Address
-                    }
-                }
-            }
-        }
-    }
-    ```
-
--   **If (\_OSI ("Darwin")) location**
-
-    -   Where is the best location for `If (_OSI ("Darwin"))` arguement?. Depends, As long `If (_OSI ("Darwin"))` is fitted without an error, this arguement will work fine. If you have multiple device, below is the best way to get an idea about it. However, do not place this arguement before System Bus `\_SB`.
-
-    ```asl
-    DefinitionBlock ("", "SSDT", 2, "CpyPst", "XXXX", 0x12345678)
-    {
-        External (_SB_.PCI0, DeviceObj)
-
-        Scope (\_SB)
-        {
-            If (_OSI ("Darwin"))
+            Scope (\_SB)
             {
                 Scope (PCI0)
                 {
                     Device (DRAM)
                     {
-                        Name (_ADR, Zero)  // _ADR: Address
-                    }
-
-                    Device (PGMM)
-                    {
-                        Name (_ADR, 0x00080000)  // _ADR: Address
+                        Name (_ADR, Zero)
                     }
                 }
             }
         }
-    }
-    ```
+        ```
+
+-   **Example B: Unrecognize device with address**
+
+    -   This code demonstrates how to rename any device that is not properly shown in IORegistryExplorer. As an example, the device appears as `pci8086,1234@08`, which have an address. To fix this, look at your DSDT and find proper address according to the devices. Do note that this is just cosmetic. This patch will not affect AppleACPI properties or calling certain kexts to load. However, devices with addresses may make your machine unbootable.
+
+        ```asl
+        DefinitionBlock ("", "SSDT", 2, "CpyPst", "PGMM", 0x12345678)
+        {
+            External (_SB_.PCI0, DeviceObj)
+
+            Scope (\_SB)
+            {
+                Scope (PCI0)
+                {
+                    Device (PGMM)
+                    {
+                        Name (_ADR, 0x00080000)
+                    }
+                }
+            }
+        }
+        ```
+
+-   **If (\_OSI ("Darwin")) implementation**
+
+    -   The `If (_OSI ("Darwin"))` statement tests whether the operating system is Darwin (which is the operating system used by macOS). If the operating system is `Darwin`, the block of code defined within the `If` statement will be executed. This block of code includes a Device statement, which defines a device object. The device object is named `MCHC` and has a single method, `_ADR`, with a value of `Zero`. So if another operating system other than macOS, this device is not rename.
+
+        ```asl
+        DefinitionBlock ("", "SSDT", 2, "CpyPst", "MCHC", 0x12345678)
+        {
+            External (_SB_.PCI0, DeviceObj)
+
+            Scope (\_SB)
+            {
+                Scope (PCI0)
+                {
+                    If (_OSI ("Darwin"))
+                    {
+                        Device (MCHC)
+                        {
+                            Name (_ADR, Zero)  // _ADR: Address
+                        }
+                    }
+                }
+            }
+        }
+        ```
+
+-   **If (\_OSI ("Darwin")) location**
+
+    -   Where is the best location for `If (_OSI ("Darwin"))` arguement?. Depends, As long `If (_OSI ("Darwin"))` is fitted without an error, this arguement will work fine. If you have multiple device, below is the best way to get an idea about it. However, do not place this arguement before System Bus `\_SB`.
+
+        ```asl
+        DefinitionBlock ("", "SSDT", 2, "CpyPst", "XXXX", 0x12345678)
+        {
+            External (_SB_.PCI0, DeviceObj)
+
+            Scope (\_SB)
+            {
+                If (_OSI ("Darwin"))
+                {
+                    Scope (PCI0)
+                    {
+                        Device (DRAM)
+                        {
+                            Name (_ADR, Zero)  // _ADR: Address
+                        }
+
+                        Device (PGMM)
+                        {
+                            Name (_ADR, 0x00080000)  // _ADR: Address
+                        }
+                    }
+                }
+            }
+        }
+        ```
 
 -   **Rename with "If (\_OSI ("Darwin")) implementation"**
 
