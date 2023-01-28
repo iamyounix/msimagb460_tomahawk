@@ -263,4 +263,4 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 # Credits
 
-* [Acidanthera](https://github.com/acidanthera) | [Dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dreamwhite)
+* [acidanthera](https://github.com/acidanthera) | [dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dreamwhite)
