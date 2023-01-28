@@ -23,7 +23,7 @@
       - [UEFI](#uefi)
     + [Changelog](#changelog)
     + [Update](#update)
-    + [Fix](#fix)
+    + [Additional Fix](#additional-fix)
   * [History](#history)
 - [Credits](#credits)
 <!-- TOC end -->
@@ -507,7 +507,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
         - Fix USB properties. Now all `4` properties is properly inject using `USBMap.kext` and `SSDT-MSIB460.aml`.
 
 
-### Fix
+### Additional Fix
 
 * Several guide related to this project
     * [Rename and Add Missing Device](https://github.com/theofficialcopypaste/MSIB460Tomahawk/tree/main/Samples%20and%20Guide/Rename%20and%20Add%20Missing%20Devices)
