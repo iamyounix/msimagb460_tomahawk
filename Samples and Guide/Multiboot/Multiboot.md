@@ -1,12 +1,8 @@
 # Multiboot
 
-![OpenCore](https://img.shields.io/badge/Bootloader-OpenCore-purple)
-![OS](https://img.shields.io/badge/OS1-Linux-white)
-![OS](https://img.shields.io/badge/OS2-Windows-blue)
-![OS](https://img.shields.io/badge/OS3-macOS-orange)
+![GUIDE](https://img.shields.io/badge/Guide-ACPI-purple)
+![OperatingSystem](https://img.shields.io/badge/OS-Hackintosh-blue)
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
-![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
-![Information](https://img.shields.io/badge/Information-Guide-yellow)
 
 **Table of contents**
 
