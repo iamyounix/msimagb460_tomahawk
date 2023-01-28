@@ -22,7 +22,8 @@
       - [PlatformInfo](#platforminfo)
       - [UEFI](#uefi)
     + [Additional Fix](#additional-fix)
-    + [Changelog](#changelog) - OpenCore v0.8.8
+    + [Changelog](#changelog)
+    	+ [OpenCore 0.8.8](https://github.com/acidanthera/OpenCorePkg/releases)
     + [Update](#update)
   * [History](#history)
 - [Credits](#credits)
