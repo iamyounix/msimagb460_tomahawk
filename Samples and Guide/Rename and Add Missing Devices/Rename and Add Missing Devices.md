@@ -1,8 +1,12 @@
-# Rename and Add Missing Devices
+# Renaming and Add Missing Devices
+
+![GUIDE](https://img.shields.io/badge/Guide-ACPI-purple)
+![OperatingSystem](https://img.shields.io/badge/OS-Hackintosh-blue)
+![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 
 **Table of contents**
 
-- [Rename and Add Missing Devices](#rename-and-add-missing-devices)
+- [Renaming and Add Missing Devices](#renaming-and-add-missing-devices)
   - [Renaming Devices](#renaming-devices)
   - [Add Missing Devices](#add-missing-devices)
 - [Credits](#credits)
