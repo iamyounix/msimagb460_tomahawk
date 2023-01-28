@@ -23,7 +23,7 @@
       - [UEFI](#uefi)
     + [Changelog](#changelog)
     + [Update](#update)
-    + [History](#history)
+  * [History](#history)
 - [Credits](#credits)
 <!-- TOC end -->
 <!-- TOC --><a name="introduction"></a>
@@ -505,7 +505,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
         - Better device rename via ACPI.
         - Fix USB properties. Now all `4` properties is properly inject using `USBMap.kext` and `SSDT-MSIB460.aml`.
 
-### History
+## History
 
 * December 15, 2022 4:02 PM
     * My EFI, `MSI0.8.7` got an issue since Monterey only inject 2/4 properties (wake & sleep). `USBX` has `4` properties as usual but still inject only `2/4` properties.
