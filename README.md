@@ -66,7 +66,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 -   **ACPI**
 
-    * [SSDT-MSIB460.aml](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/disassembled%20ASL%20sample/ssdt-b460-sample-full.dsl)
+    * [SSDT-MSIB460.aml](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/disassembled%20ASL%20sample/ssdt-b460-sample-full.dsl)
 
 -   **Booter**
     -   Quirks
