@@ -1,4 +1,9 @@
 # Rename and Add Missing Devices
+Table of contents
+
+- [Rename and Add Missing Devices](#rename-and-add-missing-devices)
+  - [Renaming Devices](#renaming-devices)
+  - [Add Missing Devices](#add-missing-devices)
 
 ## Renaming Devices
 
@@ -134,6 +139,7 @@
 			}
 		}
 		```
+
 
 ## Add Missing Devices
 
