@@ -101,39 +101,39 @@
     - Rename existing devices, with `If (_OSI ("Darwin"))` implementation. In other cases, there is also a way to name an existing device. As an example `SAT0` to `SATA`. This is the best example for naming an existing devices.This block of code includes another Scope statement and two Device objects. The first Scope statement creates a namespace for the SAT0 object, and the second Scope statement defines a Method object named `_STA` for the `SAT0` object.
 	- The `_STA` object is a predefined method that is used to retrieve the current status of a device. The method is defined as taking no arguments and returning a value of `Zero`. The second Device object is named `SATA` and has two methods: `_ADR` and `_STA`. The `_ADR` method assigns the value `0x001F0002` to the `_ADR` method. The specific meaning of this value depends on the device and is defined by the device's hardware or firmware. The `_STA` method is identical to the `_STA` method defined for the `SAT0` object, with the exception that it returns a value of `0x0F` instead of `Zero`.
 
-    ```asl
-    DefinitionBlock ("", "SSDT", 2, "CpyPst", "SATA", 0x53415441)
-    {
-        External (_SB_.PCI0, DeviceObj)
-        External (_SB_.PCI0.SAT0, DeviceObj)
+		```asl
+		DefinitionBlock ("", "SSDT", 2, "CpyPst", "SATA", 0x53415441)
+		{
+			External (_SB_.PCI0, DeviceObj)
+			External (_SB_.PCI0.SAT0, DeviceObj)
 
-        Scope (\_SB)
-        {
-            Scope (PCI0)
-            {
-                If (_OSI ("Darwin"))
-                {
-                    Scope (SAT0)
-                    {
-                        Method (_STA, 0, NotSerialized)  // _STA: Status
-                        {
-                            Return (Zero)
-                        }
-                    }
+			Scope (\_SB)
+			{
+				Scope (PCI0)
+				{
+					If (_OSI ("Darwin"))
+					{
+						Scope (SAT0)
+						{
+							Method (_STA, 0, NotSerialized)  // _STA: Status
+							{
+								Return (Zero)
+							}
+						}
 
-                    Device (SATA)
-                    {
-                        Name (_ADR, 0x001F0002)  // _ADR: Address
-                        Method (_STA, 0, NotSerialized)  // _STA: Status
-                        {
-                            Return (0x0F)
-                        }
-                    }
-                }
-            }
-        }
-    }
-    ```
+						Device (SATA)
+						{
+							Name (_ADR, 0x001F0002)  // _ADR: Address
+							Method (_STA, 0, NotSerialized)  // _STA: Status
+							{
+								Return (0x0F)
+							}
+						}
+					}
+				}
+			}
+		}
+		```
 
 ## Add Missing Devices
 
@@ -142,28 +142,28 @@
 
 	- The `PXSX` device has a single property, named `_ADR`, which is set to a value of zero. The `_ADR` property stands for `Address` and is used to specify the address of the device in the system's hardware address space. Overall, this SSDT appears to be defining a device tree that describes the hardware configuration of the system. The purpose of the code is to provide the operating system with information about the hardware components that are present in the system and their locations in the hardware address space.
 
-    ```asl
-    DefinitionBlock ("", "SSDT", 2, "CpyPst", "PXSX", 0x50585358)
-    {
-        External (_SB_.PCI0, DeviceObj)
-        External (_SB_.PCI0.PEG0, DeviceObj)
-        External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
+		```asl
+		DefinitionBlock ("", "SSDT", 2, "CpyPst", "PXSX", 0x50585358)
+		{
+			External (_SB_.PCI0, DeviceObj)
+			External (_SB_.PCI0.PEG0, DeviceObj)
+			External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
 
-        Scope (\_SB)
-        {
-            Scope (PCI0)
-            {
-                Scope (PEG0)
-                {
-                    Scope (PEGP)
-                    {
-                        Device (PXSX)
-                        {
-                            Name (_ADR, Zero)  // _ADR: Address
-                        }
-                    }
-                }
-            }
-        }
-    }
-    ```
+			Scope (\_SB)
+			{
+				Scope (PCI0)
+				{
+					Scope (PEG0)
+					{
+						Scope (PEGP)
+						{
+							Device (PXSX)
+							{
+								Name (_ADR, Zero)  // _ADR: Address
+							}
+						}
+					}
+				}
+			}
+		}
+		```
