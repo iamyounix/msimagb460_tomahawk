@@ -168,8 +168,9 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
         -   `acpi-wake-type` - `Data` - `01`
 
 -   Edit your `USBMap.kext` by opening `Info.plist` and add similar `USBX` properties as shown above to all USB devices. Below is an example:
-	-   `XHC`
-		-   `IOProviderMergeProperties`
+	
+    -   `XHC`
+        -   `IOProviderMergeProperties`
             -   `kUSBSleepPowerSupply` - `number` - `5100`
             -   `kUSBSleepPortCurrentLimit` - `number` - `2100`
             -   `kUSBWakePowerSupply` - `number` - `5100`
