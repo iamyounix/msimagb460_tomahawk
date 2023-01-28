@@ -1,5 +1,9 @@
 # USB Wake and Sleep
 
+![GUIDE](https://img.shields.io/badge/Guide-ACPI-purple)
+![OperatingSystem](https://img.shields.io/badge/OS-Hackintosh-blue)
+![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
+
 **Table of contents**
 
 - [USB Wake and Sleep](#usb-wake-and-sleep)
