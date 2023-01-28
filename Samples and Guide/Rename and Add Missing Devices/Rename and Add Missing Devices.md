@@ -1,5 +1,5 @@
 # Rename and Add Missing Devices
-Table of contents
+**Table of contents**
 
 - [Rename and Add Missing Devices](#rename-and-add-missing-devices)
   - [Renaming Devices](#renaming-devices)
