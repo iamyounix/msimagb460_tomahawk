@@ -26,16 +26,6 @@
     + [History](#history)
 - [Credits](#credits)
 <!-- TOC end -->
-<!-- TOC --><a name="hackintosh-msi-mag-b460-tomahawk"></a>
-# Hackintosh: MSI MAG B460 Tomahawk
-
-![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
-![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
-[![Bootloader](https://img.shields.io/badge/Bootloader-OpenCore-yellow)](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/releases)
-[![MOnterey](https://img.shields.io/badge/Compatible-Monterey-purple)](https://www.apple.com/ge/macos/monterey/)
-[![Ventura](https://img.shields.io/badge/Compatible-Ventura-orange)](https://www.apple.com/my/macos/ventura/)
-[![Version](https://img.shields.io/badge/Version-0.8.7-white)](https://github.com/acidanthera/OpenCorePkg/releases)
-
 <!-- TOC --><a name="introduction"></a>
 ## Introduction
 
