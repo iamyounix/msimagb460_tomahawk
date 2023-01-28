@@ -1,4 +1,4 @@
-# Hackintosh Multiboot Tips
+# iHack Multiboot
 
 ![OpenCore](https://img.shields.io/badge/Bootloader-OpenCore-purple)
 ![OS](https://img.shields.io/badge/OS1-Linux-white)
@@ -10,7 +10,7 @@
 
 **Table of contents**
 
-- [Hackintosh Multiboot Tips](#hackintosh-multiboot-tips)
+- [iHack Multiboot](#ihack-multiboot)
   - [Multiboot with OpenCore](#multiboot-with-opencore)
   - [Prevent ACPI Injection in Other Operating Systems](#prevent-acpi-injection-in-other-operating-systems)
   - [Unmount Un-supported Storage Formats Automatically](#unmount-un-supported-storage-formats-automatically)
