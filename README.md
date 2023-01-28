@@ -7,22 +7,7 @@
 [![Ventura](https://img.shields.io/badge/Compatible-Ventura-orange)](https://www.apple.com/my/macos/ventura/)
 [![Version](https://img.shields.io/badge/Version-0.8.7-white)](https://github.com/acidanthera/OpenCorePkg/releases)
 
-Table of Contents
-
-* [Introduction](#introduction)
-	* [Devices](#devices)
-	* [Configuration](#configuration)
-		* [ACPI](#acpi)
-		* [Booter](#booter)
-		* [DeviceProperties](#deviceproperties)
-		* [Kext](#kext)
-		* [Misc](#misc)
-		* [PlatformInfo](#platforminfo)
-		* [UEFI](#uefi)
-	* [Changelog](#changelog)
-	* [Update](#update)
-	* [History](#history)
-* [Credits](#credits)
+[TOC]
 
 ## Introduction
 
