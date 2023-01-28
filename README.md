@@ -23,6 +23,7 @@
       - [UEFI](#uefi)
     + [Changelog](#changelog)
     + [Update](#update)
+    + [Fix](#fix)
   * [History](#history)
 - [Credits](#credits)
 <!-- TOC end -->
@@ -504,6 +505,14 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
         - Clean single SSDT.
         - Better device rename via ACPI.
         - Fix USB properties. Now all `4` properties is properly inject using `USBMap.kext` and `SSDT-MSIB460.aml`.
+
+
+### Fix
+
+* Several guide related to this project
+    * [Rename and Add Missing Device](https://github.com/theofficialcopypaste/MSIB460Tomahawk/tree/main/Samples%20and%20Guide/Rename%20and%20Add%20Missing%20Devices)
+    * [USB Keyboard Wake](https://github.com/theofficialcopypaste/MSIB460Tomahawk/tree/main/Samples%20and%20Guide/USB%20Keyboard%20Wake)
+
 
 ## History
 
