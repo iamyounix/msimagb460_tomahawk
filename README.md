@@ -381,15 +381,15 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 #### Kext
 
 * Add
-    - [x] AppleALC.kext
-    - [x] IntelMausi.kext
-    - [x] Lilu.kext
-    - [x] LucyRTL8125Ethernet.kext
-    - [x] SMCProcessor.kext
-    - [x] SMCSuperIO.kext
-    - [x] USBMap.kext
-    - [x] VirtualSMC.kext
-    - [x] WhateverGreen.kext
+    - [x] [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases)
+    - [x] [IntelMausi.kext](https://github.com/acidanthera/IntelMausi/releases)
+    - [x] [Lilu.kext](https://github.com/acidanthera/Lilu/releases)
+    - [x] [LucyRTL8125Ethernet.kext](https://github.com/Mieze/LucyRTL8125Ethernet/releases)
+    - [x] [SMCProcessor.kext](https://github.com/acidanthera/VirtualSMC/releases)
+    - [x] [SMCSuperIO.kext](https://github.com/acidanthera/VirtualSMC/releases)
+    - [x] [USBMap.kext](https://github.com/theofficialcopypaste/MSIB460Tomahawk/tree/main/Kexts)
+    - [x] [VirtualSMC.kext](https://github.com/acidanthera/VirtualSMC/releases)
+    - [x] [WhateverGreen.kext](https://github.com/acidanthera/WhateverGreen/releases)
 * Patch
     - Arch - string - `x86_64`
     - Comment - string - `Enable SSD TRIM`
