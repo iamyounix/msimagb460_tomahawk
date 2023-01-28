@@ -7,7 +7,7 @@
 [![Ventura](https://img.shields.io/badge/Compatible-Ventura-orange)](https://www.apple.com/my/macos/ventura/)
 [![Version](https://img.shields.io/badge/Version-0.8.7-white)](https://github.com/acidanthera/OpenCorePkg/releases)
 
-# Table of contents
+**Table of contents**
 
 - [Hackintosh: MSI MAG B460 Tomahawk](#hackintosh-msi-mag-b460-tomahawk)
   - [Introduction](#introduction)
