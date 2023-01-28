@@ -222,12 +222,13 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 ## Update
 
 * January 28, 2023 2:02 AM
-    * Certain stupid acpi code and config.plist injection is removed for stability.
-        - Permanent `agdpmod=pikera` via IGPU.
-        - Fix unrecognize `pci-bridge` connected to GFX0 (Navi14).
-        - Clean single SSDT.
-        - Better device rename via ACPI.
-        - Fix USB properties. Now all `4` properties is properly inject using `USBMap.kext` and `SSDT-MSIB460.aml`.
+    - [ ] Remove certain stupid ACPI code and config.plist injection for better stability.
+    - [ ] Permanent `agdpmod=pikera` via IGPU.
+    - [ ] Fix unrecognize `pci-bridge` connected to GFX0 (Navi14).
+    - [ ] Clean single SSDT.
+    - [ ] Better device rename via ACPI.
+    - [ ] Fix USB properties. Now all `4` properties is properly inject using `USBMap.kext` and `SSDT-MSIB460.aml`.
+    
 # Credits
 
 * [acidanthera](https://github.com/acidanthera) | [dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dreamwhite)
