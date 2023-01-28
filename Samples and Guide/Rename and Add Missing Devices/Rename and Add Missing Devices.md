@@ -4,7 +4,7 @@
 - [Rename and Add Missing Devices](#rename-and-add-missing-devices)
   - [Renaming Devices](#renaming-devices)
   - [Add Missing Devices](#add-missing-devices)
-  - 
+
 ## Renaming Devices
 
 - **Example A: Unrecognize device without address**
