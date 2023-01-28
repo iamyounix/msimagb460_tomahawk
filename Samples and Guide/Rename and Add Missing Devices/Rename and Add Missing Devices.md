@@ -86,7 +86,7 @@
                         {
                             Name (_ADR, Zero)  // _ADR: Address
                         }
-                        
+
                         Device (PGMM)
                         {
                             Name (_ADR, 0x00080000)  // _ADR: Address
