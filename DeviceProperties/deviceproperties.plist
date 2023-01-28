@@ -9,90 +9,78 @@
 			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
 			<dict>
 				<key>@0,name</key>
-				<string>ATY,Python</string>
+				<data>QVRZLFB5dGhvbg==</data>
 				<key>@1,name</key>
-				<string>ATY,Python</string>
+				<data>QVRZLFB5dGhvbg==</data>
 				<key>@2,name</key>
-				<string>ATY,Python</string>
+				<data>QVRZLFB5dGhvbg==</data>
 				<key>@3,name</key>
-				<string>ATY,Python</string>
+				<data>QVRZLFB5dGhvbg==</data>
 				<key>AAPL,slot-name</key>
-				<string>Slot- 1</string>
+				<data>U2xvdC0gMQ==</data>
 				<key>ATY,EFIVersion</key>
-				<string>31.0.120.26.3</string>
-				<key>ATY,EFIVersionB</key>
-				<string>113-EXT37635-001</string>
-				<key>ATY,Rom#</key>
-				<string>113-MSITV382MH.161</string>
-				<key>ATY,copyright</key>
-				<string>Copyright AMD Inc. All Rights Reserved. 2005-2019</string>
+				<data>MzEuMC4xMjAuMjYuMw==</data>
+				<key>device_type</key>
+				<data>QVRZLFB5dGhvblBhcmVudA==</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
-				<string>Slot- 1</string>
+				<data>U2xvdC0gMQ==</data>
 				<key>model</key>
-				<string>Navi 10 HDMI Audio</string>
+				<data>TmF2aSAxMCBIRE1JIEF1ZGlv</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x14,0x0)</key>
 			<dict>
 				<key>acpi-wake-type</key>
-				<data>
-				AQ==
-				</data>
+				<data>AQ==</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)</key>
 			<dict>
 				<key>acpi-wake-type</key>
-				<data>
-				AQ==
-				</data>
+				<data>AQ==</data>
+				<key>model</key>
+				<data>QVNNZWRpYSBUZWNobm9sb2d5IEFTTTMyNDEgVVNCIDMuMCBYSENJIENvbnRyb2xsZXI=</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
-				<string>Slot- 3</string>
+				<data>U2xvdC0gMw==</data>
 				<key>acpi-wake-type</key>
-				<data>
-				AQ==
-				</data>
+				<data>AQ==</data>
 				<key>model</key>
-				<string>VL805/806 xHCI USB 3.0 Controller</string>
+				<data>Vkw4MDUvODA2IHhIQ0kgVVNCIDMuMCBDb250cm9sbGVy</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
-				<string>Slot- 2</string>
+				<data>U2xvdC0gMg==</data>
 				<key>model</key>
-				<string>BCM4360 802.11ac Wireless Network Adapter</string>
+				<data>QkNNNDM2MCA4MDIuMTFhYyBXaXJlbGVzcyBOZXR3b3JrIEFkYXB0ZXI=</data>
+				<key>name</key>
+				<data>YWlycG9ydA==</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
 			<dict>
 				<key>layout-id</key>
-				<data>
-				AQAAAA==
-				</data>
+				<data>AQAAAA==</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
+				<key>AAPL,ig-platform-id</key>
+				<data>AwCSPg==</data>
 				<key>AAPL,slot-name</key>
-				<string>Slot- 0</string>
+				<data>U2xvdC0gMA==</data>
 				<key>agdpmod</key>
-				<data>
-				cGlrZXJhAA==
-				</data>
+				<data>cGlrZXJhAA==</data>
+				<key>device-id</key>
+				<data>mz4AAA==</data>
 				<key>enable-metal</key>
-				<data>
-				AQAAAA==
-				</data>
+				<data>AQAAAA==</data>
 				<key>igfxfw</key>
-				<data>
-				AgAAAA==
-				</data>
+				<data>AgAAAA==</data>
 				<key>igfxonln</key>
-				<data>
-				AQAAAA==
-				</data>
+				<data>AQAAAA==</data>
 			</dict>
 		</dict>
 		<key>Delete</key>
