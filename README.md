@@ -213,7 +213,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 ### History
 
 * December 15, 2022 4:02 PM
-    * This hack got an issue since Monterey only inject 2/4 properties (wake & sleep). `USBX` has `4` properties as usual but still inject only `2/4` properties.
+    * This hack got an issue since Monterey only inject 2/4 properties (wake & sleep). `USBX` has `4` properties as usual but still inject `2/4` properties.
         - [x] `kUSBSleepPowerSupply`, `0x13EC`
         - [ ] `kUSBSleepPortCurrentLimit`, `0x0834`
         - [x] `kUSBWakePowerSupply`, `0x13EC`
