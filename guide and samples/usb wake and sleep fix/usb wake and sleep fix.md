@@ -1,4 +1,4 @@
-# USB Wake and Sleep
+# USB Wake and Sleep Fix
 
 ![GUIDE](https://img.shields.io/badge/Guide-ACPI-purple)
 ![OperatingSystem](https://img.shields.io/badge/OS-Hackintosh-blue)
@@ -6,7 +6,7 @@
 
 **Table of contents**
 
-- [USB Wake and Sleep](#usb-wake-and-sleep)
+- [USB Wake and Sleep Fix](#usb-wake-and-sleep-fix)
   - [Three Method to fix Sleep and Wake Issues](#three-method-to-fix-sleep-and-wake-issues)
     - [Method 1](#method-1)
     - [Method 2](#method-2)
