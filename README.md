@@ -1,4 +1,4 @@
-# MSI MAG B460 Tomahawk iHack
+# iHack MSI MAG B460 Tomahawk
 
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
@@ -9,7 +9,7 @@
 
 **Table of contents**
 
-- [MSI MAG B460 Tomahawk iHack](#msi-mag-b460-tomahawk-ihack)
+- [iHack MSI MAG B460 Tomahawk](#ihack-msi-mag-b460-tomahawk)
   - [Introduction](#introduction)
     - [Devices](#devices)
     - [Plist Configuration](#plist-configuration)
