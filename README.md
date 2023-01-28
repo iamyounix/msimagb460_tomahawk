@@ -7,15 +7,14 @@
 [![Ventura](https://img.shields.io/badge/Compatible-Ventura-orange)](https://www.apple.com/my/macos/ventura/)
 [![Version](https://img.shields.io/badge/Version-0.8.7-white)](https://github.com/acidanthera/OpenCorePkg/releases)
 
-**Table of Contents**
+**Table of contents**
 
 - [Hackintosh: MSI MAG B460 Tomahawk](#hackintosh-msi-mag-b460-tomahawk)
   - [Introduction](#introduction)
     - [Devices](#devices)
     - [Plist Configuration](#plist-configuration)
-    - [Update](#update)
     - [History](#history)
-  - [Changelog](#changelog)
+  - [Update](#update)
 - [Credits](#credits)
 
 ## Introduction
@@ -211,16 +210,6 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
             > **Note**: Other than above is `No`
 
-### Update
-
-* January 28, 2023 2:02 AM
-    * Certain stupid acpi code and config.plist injection is removed for stability.
-        - Permanent `agdpmod=pikera` via IGPU.
-        - Fix unrecognize `pci-bridge` connected to GFX0 (Navi14).
-        - Clean single SSDT.
-        - Better device rename via ACPI.
-        - Fix USB properties. Now all `4` properties is properly inject using `USBMap.kext` and `SSDT-MSIB460.aml`.
-
 ### History
 
 * December 15, 2022 4:02 PM
@@ -230,23 +219,15 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
         - [x] `kUSBWakePowerSupply`, `0x13EC`
         - [ ] `kUSBWakePortCurrentLimit`, `0x0834`
 
-## Changelog
+## Update
 
-* **[OpenCore 0.8.8](https://github.com/acidanthera/OpenCorePkg/releases)**
-    - Added Linux support to QemuBuild.command used for Duet debugging
-    - Added prebuilt mtoc universal binary with Apple Silicon support
-    - Added SD card device path support for boot device selection
-    - Added `.contentVisibility` to hide and disable boot entries
-    - Built in new secure PE/COFF loader
-    - Corrected OpenDuet build on Apple Silicon
-    - Fixed intermittent prelinking failures caused by XML corruption when kext blocking is enabled
-    - Fixed `Kernel` -> `Block` entries not being processed if one was skipped due to `Arch`
-    - Removed magic Acidanthera sequence from OpenCore files used for picker hiding
-    - Updated AppleKeyboardLayouts.txt from macOS 13.1
-    - Updated builtin firmware versions for SMBIOS and the rest
-    - Updated ocvalidate to allow duplicate tool if FullNvramAccess is different
-    - Updated underlying EDK II package to edk2-stable202211
-
+* January 28, 2023 2:02 AM
+    * Certain stupid acpi code and config.plist injection is removed for stability.
+        - Permanent `agdpmod=pikera` via IGPU.
+        - Fix unrecognize `pci-bridge` connected to GFX0 (Navi14).
+        - Clean single SSDT.
+        - Better device rename via ACPI.
+        - Fix USB properties. Now all `4` properties is properly inject using `USBMap.kext` and `SSDT-MSIB460.aml`.
 # Credits
 
 * [acidanthera](https://github.com/acidanthera) | [dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dreamwhite)
