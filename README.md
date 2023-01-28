@@ -22,7 +22,7 @@
       - [PlatformInfo](#platforminfo)
       - [UEFI](#uefi)
     + [Additional Fix](#additional-fix)
-    + [Changelog](#changelog)
+    + [Changelog](#changelog) - OpenCore v0.8.8
     + [Update](#update)
   * [History](#history)
 - [Credits](#credits)
