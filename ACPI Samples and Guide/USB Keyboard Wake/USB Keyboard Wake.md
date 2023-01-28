@@ -168,6 +168,8 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
             - `kUSBWakePowerSupply` - `number` - `5100`
             - `kUSBWakePortCurrentLimit` - `number` - `2100`
 
+![Screenshot 2023-01-28 at 8 09 19 AM](https://user-images.githubusercontent.com/72515939/215228604-ff365c9b-b8ef-4ed1-874b-5759a510042e.png)
+
 - Load `USBMap.kext` and `SSDT-USBX.aml`. Good Luck!
 
 ### Credits
