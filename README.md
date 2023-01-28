@@ -12,7 +12,7 @@
 - [Hackintosh: MSI MAG B460 Tomahawk](#hackintosh-msi-mag-b460-tomahawk)
   - [Introduction](#introduction)
     - [Devices](#devices)
-    - [Configuration](#configuration)
+    - [Config](#config)
       - [ACPI](#acpi)
       - [Booter](#booter)
       - [DeviceProperties](#deviceproperties)
@@ -68,7 +68,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 > **Note**: Device with `striketrough` mark is untouched, no acpi, kext and config.plist patch required.
 
-### Configuration
+### Config
 
 Settings should be based on the type of CPU, motherboard, and GPU. This is a Comet Lake, B460, and AMD Navi 14 configuration via `config.plist`.
 
