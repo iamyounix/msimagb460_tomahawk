@@ -140,6 +140,8 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - `igfxfw` - data - `02000000`
     - `igfxonln` - data - `01000000`
 
+> **Note**: Check device properties in plist layout [here](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/DeviceProperties/deviceproperties.plist)
+
 <!-- TOC --><a name="kext"></a>
 #### Kext
 
