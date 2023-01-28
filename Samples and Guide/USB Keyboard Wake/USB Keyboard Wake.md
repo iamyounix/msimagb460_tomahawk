@@ -1,6 +1,13 @@
-# USB Keyboard Wake
+# USB Wake and Sleep
 
-Refer: [Dortania - Keyboard Wake Issues](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#keyboard-wake-issues)
+**Table of contents**
+- [USB Wake and Sleep](#usb-wake-and-sleep)
+  - [Three Method to fix Sleep and Wake Issues](#three-method-to-fix-sleep-and-wake-issues)
+    - [Method 1](#method-1)
+    - [Method 2](#method-2)
+    - [Method 3](#method-3)
+  - [Special Thanks!](#special-thanks)
+- [Credits](#credits)
 
 ## Three Method to fix Sleep and Wake Issues
 
@@ -9,14 +16,14 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
 - **Method 2:** Set Virtual USB Devices to route proper wake event from loaded [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) to acpi mapped usb devices.
 - **Method 3:** Combination of USBMap.kext and ACPI. Sometimes macOS resist to call wake and sleep properties.
 
-**Method 1**
+### Method 1
 
 - Set wake by adding the property of `acpi-wake-type=01` to USB devices via DeviceProperties in config.plist. ie:
 
   - `PciRoot(0x0)/Pci(0x14,0x0)`
     * `acpi-wake-type` - `Data` - `01`
 
-**Method 2**
+### Method 2
 
 - Set virtual USB devices to route the proper wake event from [USBWakeFixup.kext](https://github.com/osy/USBWakeFixup) loaded USBWakeFixup.kext to acpi-mapped USB devices. This method combines proper instruction from acpi from the associated kext with `acpi-wake-type` and `acpi-wake-gpe`. Create a new SSDT by pasting this code into any ".asl" equivalent editor and saving it as ".dsl." Before editing, please make sure to check the path of your USB devices.
 
@@ -102,7 +109,7 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
 ![Screenshot 2022-12-31 at 9 48 19 PM](https://user-images.githubusercontent.com/72515939/210138923-184a21bd-bbd8-4ce2-8b09-2d941fc6493f.png)
 
 
-**Method 3**
+### Method 3
 
 - Generate `SSDT-USBX.aml` using [SSDTTime](https://github.com/corpnewt/SSDTTime), make sure `USBX` has this code as shown below:
     - [x] `kUSBSleepPowerSupply`, `0x13EC`
@@ -174,6 +181,10 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
 
 - Load `USBMap.kext` and `SSDT-USBX.aml`. Good Luck!
 
-### Credits
+## Special Thanks!
 
-[Acidanthera](https://github.com/acidanthera/) | [osy](https://github.com/osy)
+[USBToolbox](https://github.com/USBToolBox/tool)
+
+# Credits
+
+[Acidanthera](https://github.com/acidanthera/) | [benbaker76](https://github.com/benbaker76/Hackintool) | [Dortania](https://dortania.github.io) | [osy](https://github.com/osy)
