@@ -72,16 +72,16 @@ Multi-boot or Multi-booting is the act of installing multiple operating systems 
 
         - Add `UUID="Volume UUID" none ntfs rw,noauto`. Below is an example:
 
-                    ```zsh
-                    #
-                    # Warning - this file should only be modified with vifs(8)
-                    #
-                    # Failure to do so is unsupported and may be destructive.
-                    #
-                    UUID=5EB38DF0-4018-4876-8983-B48D089C91C7 none ntfs rw,noauto 
-                    ~
-                    ~
-                    ```
+            ```zsh
+            #
+            # Warning - this file should only be modified with vifs(8)
+            #
+            # Failure to do so is unsupported and may be destructive.
+            #
+            UUID=5EB38DF0-4018-4876-8983-B48D089C91C7 none ntfs rw,noauto 
+            ~
+            ~
+            ```
 
         - Hit `Esc` to stop editing and press `Shift` + `ZZ` (twice) to exit `vifs`.
 
