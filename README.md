@@ -5,17 +5,18 @@
 [![Bootloader](https://img.shields.io/badge/Bootloader-OpenCore-yellow)](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/releases)
 [![MOnterey](https://img.shields.io/badge/Compatible-Monterey-purple)](https://www.apple.com/ge/macos/monterey/)
 [![Ventura](https://img.shields.io/badge/Compatible-Ventura-orange)](https://www.apple.com/my/macos/ventura/)
-[![Version](https://img.shields.io/badge/Version-0.8.7-white)](https://github.com/acidanthera/OpenCorePkg/releases)
+[![Version](https://img.shields.io/badge/Version-0.8.8-white)](https://github.com/acidanthera/OpenCorePkg/releases)
 
-**Table of contents**
+## Table of contents
 
 - [iHack MSI MAG B460 Tomahawk](#ihack-msi-mag-b460-tomahawk)
+  - [Table of contents](#table-of-contents)
   - [Introduction](#introduction)
     - [Devices](#devices)
     - [Plist Configuration](#plist-configuration)
     - [History](#history)
   - [Update](#update)
-- [Credits](#credits)
+  - [Credits](#credits)
 
 ## Introduction
 
@@ -229,6 +230,6 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
   - [ ] Better device rename via ACPI.
   - [ ] Fix USB properties. Now all `4` properties is properly inject using `USBMap.kext` and `SSDT-MSIB460.aml`.
 
-# Credits
+## Credits
 
 - [acidanthera](https://github.com/acidanthera) | [dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dreamwhite)
