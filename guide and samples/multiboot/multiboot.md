@@ -23,11 +23,11 @@ Multi-boot or Multi-booting is the act of installing multiple operating systems 
 
     - The first operating system need to install:
 
-            | Which 1st | Working?    |
-            |-----------|-------------|
-            | Linux     | ~~Yes~~, No |
-            | macOS     | ~~Yes~~, No |
-            | Windows   | Yes, ~~No~~ |
+        | Which 1st | Working?    |
+        |-----------|-------------|
+        | Linux     | ~~Yes~~, No |
+        | macOS     | ~~Yes~~, No |
+        | Windows   | Yes, ~~No~~ |
 
 - Why Windows first? Windows will share the EFI with other operating systems and cause an error if one of systems breaks. Sometimes, windows overwriting other operating partition / system structure since GPT disk format require EFI partition.
 - Another issue we need to take care is:
