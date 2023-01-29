@@ -7,16 +7,14 @@
 [![Ventura](https://img.shields.io/badge/Compatible-Ventura-orange)](https://www.apple.com/my/macos/ventura/)
 [![Version](https://img.shields.io/badge/Version-0.8.8-white)](https://github.com/acidanthera/OpenCorePkg/releases)
 
-## Table of contents
+Table of contents
 
-- [iHack MSI MAG B460 Tomahawk](#ihack-msi-mag-b460-tomahawk)
-  - [Table of contents](#table-of-contents)
-  - [Introduction](#introduction)
-    - [Devices](#devices)
-    - [Plist Configuration](#plist-configuration)
-    - [History](#history)
-  - [Update](#update)
-  - [Credits](#credits)
+- [Introduction](#introduction)
+  - [Devices](#devices)
+  - [Plist Configuration](#plist-configuration)
+  - [History](#history)
+- [Update](#update)
+- [Credits](#credits)
 
 ## Introduction
 
