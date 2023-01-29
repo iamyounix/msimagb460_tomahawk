@@ -42,7 +42,7 @@ Multi-boot or Multi-booting is the act of installing multiple operating systems 
 
       - To prevent `BSOD` issues when booting into Windows.
 
-             ![OSI Darwin](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
+        ![OSIDarwin](https://user-images.githubusercontent.com/72515939/202378529-b787b94e-2744-4a81-9bba-3b1ac78d93fa.png)
   - Quirks
     - Combining SSDT with `If _OSI ("Darwin")` implementation with OpenCore quirks is the best approach in multiboot. Below is required quirks needed:
 
