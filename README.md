@@ -13,6 +13,7 @@ Table of contents
   - [Devices](#devices)
   - [Plist Configuration](#plist-configuration)
   - [History](#history)
+- [Guide and Samples](#guide-and-samples)
 - [Update](#update)
 - [Credits](#credits)
 
@@ -225,6 +226,16 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - [ ] `kUSBSleepPortCurrentLimit`, `0x0834`
     - [x] `kUSBWakePowerSupply`, `0x13EC`
     - [ ] `kUSBWakePortCurrentLimit`, `0x0834`
+
+## Guide and Samples
+
+- Below is relevan guide and samples for Hackintosh:
+  - [Ambient Light Sensor](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/ambient%20light%20sensor/ambient%20light%20sensor.md)
+  - [Disassembled ASL Sample](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/tree/main/guide%20and%20samples/disassembled%20ASL%20sample)
+  - [Renaming and Add Missing Devices](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/renaming%20and%20add%20missing%20devices/Rename%20and%20Add%20Missing%20Devices.md)
+  - [Multiboot](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/multiboot/multiboot.md)
+  - [Transferring Opencore to Clover](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/transferring%20opencore%20to%20clover/transferring%20opencore%20to%20clover.md)
+  - [USB Wake and Sleep Fix](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/usb%20wake%20and%20sleep%20fix/usb%20wake%20and%20sleep%20fix.md)
 
 ## Update
 
