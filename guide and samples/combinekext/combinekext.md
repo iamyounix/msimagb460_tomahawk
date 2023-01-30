@@ -29,14 +29,14 @@ Below is the easiest way and effective method to achieve proper USB port mapping
 
 1. Add proper information under IOKitPersonalities in our USBMap.kext as below:
    - `IOKitPersonalities`
-   - `XHCI-Unsupported`
-   - `CFBundleIdentifier` - `string` - `com.apple.driver.usb.AppleUSBXHPCI`
-   - `IOClass` - `string` - `AppleUSBXHCISPT`
-   - `IOPCIPauseCompatible` - `boolean` - `True`
-   - `IOPCIPrimaryMatch` - `string` - `0xa3af8086`
-   - `IOPCITunnelCompatible` - `boolean` - `True`
-   - `IOProbeScore` - `number` - `1000`
-   - `IOProviderClass` - `string` - `IOPCIDevice`
+     - `XHCI-Unsupported`
+       - `CFBundleIdentifier` - `string` - `com.apple.driver.usb.AppleUSBXHPCI`
+       - `IOClass` - `string` - `AppleUSBXHCISPT`
+       - `IOPCIPauseCompatible` - `boolean` - `True`
+       - `IOPCIPrimaryMatch` - `string` - `0xa3af8086`
+       - `IOPCITunnelCompatible` - `boolean` - `True`
+       - `IOProbeScore` - `number` - `1000`
+       - `IOProviderClass` - `string` - `IOPCIDevice`
 
 2. Save Info.plist and load kext to our bootloader as usual.
 
