@@ -68,6 +68,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
   - [SSDT-MSIB460.aml](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/disassembled%20ASL%20sample/ssdt-b460-sample-full.dsl)
 
 - **Booter**
+
   - Quirks
     - AvoidRuntimeDefrag - boolean - `Yes`
     - DevirtualiseMmio - boolean - `Yes`
@@ -76,7 +77,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - SyncRuntimePermissions - boolean - `Yes`
     - ProvideMaxSlide - number - `0`
     - ResizeAppleGpuBars - number - `-1`
-        > **Note**: Other than above is `No`
+      > **Note**: Other than above is `No`
 
 - **DeviceProperties**
   - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
@@ -107,7 +108,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - `AAPL,slot-name` - data - `536C6F742D2030`
     - `agdpmod` - data - `70696B65726100`
     - `device-id` - data - `9B3E0000`
-    - `enable-metal` - data - `01000000
+    - `enable-metal` - data - `01000000`
     - `igfxfw` - data - `02000000`
     - `igfxonln` - data - `01000000`
 
@@ -161,15 +162,18 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 > **Note**: Other than above is `No`
 
 - **PlatformInfo**
+
   - SMBIOS: [iMac20,1](https://everymac.com/systems/apple/imac/specs/imac-core-i5-3.1-6-core-27-inch-retina-5k-2020-specs.html)
 
 - **UEFI**
+
   - APFS
     - EnableJumpstart - boolean - `Yes`
     - HideVerbose - boolean - `Yes`
     - MinDate - number - `0`
     - MinVolume - number - `0`
   - Drivers
+
     - Path - boolean - `HFSPlus.efi`
     - Path - boolean - `OpenRuntime.efi`
     - Path - boolean - `HFSPlus.efi`
@@ -178,6 +182,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     > **Note**: Enable - `boolean` all driver as `Yes`
 
   - Input
+
     - KeyForgetThreshold - number - `5`
     - LeySupport - boolean - `Yes`
     - KeySupportMode - boolean - `Auto`
@@ -187,6 +192,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     > **Note**: Other than above is `No`
 
   - Output
+
     - GopPassThrough - string - `Disable`
     - ProvideConsoleGop - boolean - `Yes`
     - Resolution - string - `max`
@@ -196,11 +202,13 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     > **Note**: Other than above is `No`
 
   - ProtocolOverrides
+
     - FirmwareVolume - boolean - `Yes`
 
     > **Note**: Other than above is `No`
 
   - Quirks
+
     - EnableVectorAcceleration - boolean - `Yes`
     - ExitBootServicesDelay - number - `0`
     - RequestBootVarRouting - boolean - `Yes`
