@@ -226,6 +226,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 ## Guide and Samples
 
 - Below is relevan guide and samples for Hackintosh:
+
   - [Ambient Light Sensor](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/ambient%20light%20sensor/ambient%20light%20sensor.md)
   - [Disassembled ASL Sample](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/tree/main/guide%20and%20samples/disassembled%20ASL%20sample)
   - [Renaming and Add Missing Devices](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/renaming%20and%20add%20missing%20devices/Rename%20and%20Add%20Missing%20Devices.md)
