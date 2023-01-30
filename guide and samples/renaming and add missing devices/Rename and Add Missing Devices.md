@@ -185,4 +185,7 @@ Table of contents
 
 ## Credits
 
-[acidanthera](https://github.com/acidanthera/) | [dortania](https://dortania.github.io)
+[acidanthera][Acidanthera] | [dortania][Dortania]
+
+[Acidanthera]: https://github.com/acidanthera/
+[Dortania]: https://dortania.github.io
