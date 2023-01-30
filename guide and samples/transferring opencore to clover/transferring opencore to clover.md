@@ -102,7 +102,7 @@ Same as OpenCore, nothing change. Use the same `.aml` file as provided except pa
   
 ## config.plist Settings (SMBIOS, Quirks and Others)
 
-The distinction between the two configurations is shown below. Normally, OpenCore and Clover Quirks is the same.. Check all the Quirks needed and compare. 
+The distinction between the two configurations is shown below. Normally, OpenCore and Clover Quirks is the same. Check all the Quirks needed and compare. 
 
 - OpenCore
   - [opencore_config.plist](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/transferring%20opencore%20to%20clover/opencore_config.plist)
@@ -115,7 +115,7 @@ The distinction between the two configurations is shown below. Normally, OpenCor
 Use OCAuxiliary to transfer respective SMBIOS to another bootloader `config.plist`.
 
 - Step 1, Head to `PI` (Platform Info).
-- Step 2, Export SMBIOS to a Clover configut=ration file
+- Step 2, Export SMBIOS to a Clover configuration file
 
 ![Screenshot 2023-01-30 at 10 28 16 AM](https://user-images.githubusercontent.com/72515939/215377592-637c6b67-9d85-43e7-b155-9140dbc833cf.png)
 
