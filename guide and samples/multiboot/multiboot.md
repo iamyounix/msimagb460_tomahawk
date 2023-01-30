@@ -1,6 +1,5 @@
 # Multiboot
 
-![GUIDE](https://img.shields.io/badge/Guide-ACPI-purple)
 ![OperatingSystem](https://img.shields.io/badge/OS-Hackintosh-blue)
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 

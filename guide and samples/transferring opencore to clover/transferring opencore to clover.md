@@ -1,5 +1,8 @@
 # Transferring OpenCore to Clover
 
+![OperatingSystem](https://img.shields.io/badge/OS-Hackintosh-blue)
+![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
+
 Table of contents
 
 - [Introduction](#introduction)
