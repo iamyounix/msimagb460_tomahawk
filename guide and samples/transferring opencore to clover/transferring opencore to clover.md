@@ -105,10 +105,10 @@ Same as OpenCore, nothing change. Use the same `.aml` file as provided except pa
 The distinction between the two configurations is shown below. Normally, OpenCore and Clover Quirks is the same.. Check all the Quirks needed and compare. 
 
 - OpenCore
-  - /Volumes/Tools/github/ihackmsimagb460tomahawk/guide and samples/transferring opencore to clover/opencore_config.plist
+  - [opencore_config.plist](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/transferring%20opencore%20to%20clover/opencore_config.plist)
   
 - Clover
-  - /Volumes/Tools/github/ihackmsimagb460tomahawk/guide and samples/transferring opencore to clover/clover_config.plist
+  - [clover_config.plist](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/transferring%20opencore%20to%20clover/clover_config.plist)
   
 ### Transferring SMBIOS
 
@@ -117,13 +117,13 @@ Use OCAuxiliary to transfer respective SMBIOS to another bootloader `config.plis
 - Step 1, Head to `PI` (Platform Info).
 - Step 2, Export SMBIOS to a Clover configut=ration file
 
-/Volumes/Tools/github/ihackmsimagb460tomahawk/guide and samples/transferring opencore to clover/Screenshot 2023-01-30 at 10.28.16 AM.png
+![Screenshot 2023-01-30 at 10 28 16 AM](https://user-images.githubusercontent.com/72515939/215377592-637c6b67-9d85-43e7-b155-9140dbc833cf.png)
 
 - Step 3, Select Clover Config file (*.plist) option
 - Step 4, Choose Clover config.plist respectively.
 - Step 5, Open the file. This method will transfer your current OpenCore SMBIOS to Clover config. 
 
-/Volumes/Tools/github/ihackmsimagb460tomahawk/guide and samples/transferring opencore to clover/Screenshot 2023-01-30 at 10.30.35 AM.png
+![Screenshot 2023-01-30 at 10 30 35 AM](https://user-images.githubusercontent.com/72515939/215377609-d0e8f2e1-618c-4d83-afd6-3a0bc9638479.png)
 
 ## Credits
 
