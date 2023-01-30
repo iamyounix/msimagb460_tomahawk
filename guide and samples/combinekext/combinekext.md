@@ -11,7 +11,7 @@ Table of contents
 It is possible to mix some Kexts. Only associated kexts can do this, though. We shall integrate codeless kexts in this example. The possible kext is displayed below.
 
 - [XHCI-Unsupported.kext][XHCI-Unsupported Download]
-- USBMap.kext / USBPorts.kext
+- USBMap.kext using [USBToolbox][USBToolbox Download] or USBPorts.kext using [Hackintool][Hackintool Download]
 
 ## USBMap
 
@@ -42,6 +42,7 @@ Below is the easiest way and effective method to achieve proper USB port mapping
 
 > **Note**: IOPCIPrimaryMatch must referred to our device-id and vendor-id.
 
+[Hackintool Download]: https://github.com/benbaker76/Hackintool
 [Propertree Download]: https://github.com/corpnewt/ProperTree
 [USBToolbox Download]: https://github.com/USBToolBox/tool
 [XHCI-Unsupported Details]: https://user-images.githubusercontent.com/72515939/215503473-d3eecbbb-43f4-47f9-a246-fa32c697e606.png

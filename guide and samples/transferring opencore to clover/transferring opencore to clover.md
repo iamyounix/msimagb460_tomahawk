@@ -35,96 +35,76 @@ The `BOOTx64.efi` is the default bootloader when nothing else works (BootNext, B
 
 Here is the difference: As its drivers, OpenCore uses `OpenCore.efi`. While `CLOVERX64.efi` serves as Clover's driver file. Below is the difference:
 
-- OpenCore 
-  - `EFI`\ `OC` \ `OpenCore.efi`
-  
-- Clover 
-  - `EFI`\ `Clover` \ `CLOVERX64.efi`
-	
+1. OpenCore : `EFI`\ `OC` \ `OpenCore.efi`
 
-## 	UEFI Drivers
+2. Clover : `EFI`\ `Clover` \ `CLOVERX64.efi`
+
+##  UEFI Drivers
 
 This is my working Hackintosh example for my iHack MSI B460M Tomahawk with Intel® Comet Lake 10400:
 
-- OpenCore 
+- OpenCore : `EFI`\ `OC` \ `Drivers` \ `XXXXX.efi`
   - HFSPlus.efi
   - OpenCanopy.efi
   - OpenRuntime.efi
   - ResetNvramEntry.efi
-  
-> **Folder**: `EFI`\ `OC` \ `Drivers` \ `XXXXX.efi`
-  
-- Clover 
+
+- Clover : `EFI`\ `CLOVER` \ `drivers` \ `UEFI` \ `XXXXX.efi`
   - ApfsDriverLoader.efi
   - EnglishDxe.efi
   - HFSPlus.efi
   - OcQuirks.efi
   - OpenRuntime.efi
-  
-> **Folder**: `EFI`\ `CLOVER` \ `drivers` \ `UEFI` \ `XXXXX.efi`
+  - File Path:
 
 ## Kexts
 
 In this case, both bootloaders shared the same kexts. However, all kexts need to be placed differently in their respective folders.
 
-- OpenCore 
-  - `EFI`\ `OC` \ `Kext` \ `XXXXX.kext` (General)
-  
-- Clover 
-  - `EFI`\ `CLOVER` \ `kexts` \ `Other` \ `XXXXX.kext` (General)
-  - `EFI`\ `CLOVER` \ `kexts` \ `nn` \ `XXXXX.kext` (Specific & Optional)
-  	- Folder number ie: `nn` is respective folder based on macOS version. ie: `12` for Monterey and `13` for Ventura.
-	
+- OpenCore : `EFI`\ `OC` \ `Kext` \ `XXXXX.kext` (General)
+
+- Clover : `EFI`\ `CLOVER` \ `kexts` \ `Other` \ `XXXXX.kext`  or `EFI`\ `CLOVER` \ `kexts` \ `nn` \ `XXXXX.kext` 
+
+  > **Note** : `nn` is respective folder based on macOS version. ie: `12` for Monterey and `13` for Ventura.
+
 ## Tools
 
 Please refer to the developer guide and tools for the bootloaders you use, as they may have a different approach. Below is an example based on this build:
 
-- OpenCore 
-  - NIL
-  
-> **Folder**: `EFI`\ `OC` \ `Tools` \ `XXXXX.efi`
-  
-- Clover 
-  - bsdmesg.efi
-  - ControlMsrE2.efi
-  - Shell32.efi
-  - Shell64.efi
-  - Shell64U.efi
-  
-> **Folder**: `EFI`\ `CLOVER` \ `tools` \ `XXXXX.efi` 
+1. OpenCore : `EFI`\ `OC` \ `Tools` \ `XXXXX.efi`
+2. Clover : `EFI`\ `CLOVER` \ `tools` \ `XXXXX.efi` 
+   - bsdmesg.efi
+   - ControlMsrE2.efi
+   - Shell32.efi
+   - Shell64.efi
+   - Shell64U.efi
 
 ## SSDT's
 
 Same as OpenCore, nothing change. Use the same `.aml` file as provided except path.
 
-- OpenCore
-  - `EFI`\ `OC` \ `ACPI` \ `XXXXX.aml`
-  
-- Clover
-  - `EFI`\ `CLOVER` \ `ACPI` \ `patched` \ `XXXXX.aml`
-  
+1. OpenCore : `EFI`\ `OC` \ `ACPI` \ `XXXXX.aml`
+2. Clover : `EFI`\ `CLOVER` \ `ACPI` \ `patched` \ `XXXXX.aml`
+
 ## config.plist Settings (SMBIOS, Quirks and Others)
 
 The distinction between the two configurations is shown below. Normally, OpenCore and Clover Quirks is the same. Check all the Quirks needed and compare. 
 
-- OpenCore
-  - [opencore_config.plist][OC.plist]
-  
-- Clover
-  - [clover_config.plist][Clover.plist]
-  
+1. OpenCore : [opencore_config.plist][OC.plist]
+2. Clover : [clover_config.plist][Clover.plist]
+
 ### Transferring SMBIOS
 
 Use OCAuxiliary to transfer respective SMBIOS to another bootloader `config.plist`.
 
-- Step 1, Head to `PI` (Platform Info).
-- Step 2, Export SMBIOS to a Clover configuration file
+1. Head to `PI` (Platform Info).
+2. Export SMBIOS to a Clover configuration file.
 
 ![Step 1 & 2][Step 1 and 2]
 
-- Step 3, Select Clover Config file (*.plist) option
-- Step 4, Choose Clover config.plist respectively.
-- Step 5, Open the file. This method will transfer your current OpenCore SMBIOS to Clover config. 
+3. Select Clover Config file (*.plist) option.
+4. Choose Clover config.plist respectively.
+5. Open the file. This method will transfer your current OpenCore SMBIOS to Clover config. 
 
 ![Step 3,4 and 5][Step 3,4 and 5]
 
