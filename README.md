@@ -206,7 +206,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - Path - boolean - `HFSPlus.efi`
     - Path - boolean - `ResetNvramEntry.efi`
 
-    > **Note**: Enable - `boolean` all driver as `Yes`
+      > **Note**: Enable - `boolean` all driver as `Yes`
 
   - Input
   
@@ -216,7 +216,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - PointerSupportMode - string - `ASUS`
     - TimerResolution - number - `50000`
 
-    > **Note**: Other than above is `No`
+      > **Note**: Other than above is `No`
 
   - Output
   
@@ -226,13 +226,13 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - TextRenderer - string - `BuiltinGraphics`
     - UIScale - number - `-1`
 
-    > **Note**: Other than above is `No`
+      > **Note**: Other than above is `No`
 
   - ProtocolOverrides
   
     - FirmwareVolume - boolean - `Yes`
 
-    > **Note**: Other than above is `No`
+      > **Note**: Other than above is `No`
 
   - Quirks
   
@@ -242,7 +242,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - ResizeGpuBars - number - `-1`
     - TscSyncTimeout - number - `0`
 
-    > **Note**: Other than above is `No`
+      > **Note**: Other than above is `No`
 
 ### History
 
