@@ -173,8 +173,8 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - HideVerbose - boolean - `Yes`
     - MinDate - number - `0`
     - MinVolume - number - `0`
+  
   - Drivers
-
     - Path - boolean - `HFSPlus.efi`
     - Path - boolean - `OpenRuntime.efi`
     - Path - boolean - `HFSPlus.efi`
@@ -183,7 +183,6 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     > **Note**: Enable - `boolean` all driver as `Yes`
 
   - Input
-
     - KeyForgetThreshold - number - `5`
     - LeySupport - boolean - `Yes`
     - KeySupportMode - boolean - `Auto`
@@ -193,7 +192,6 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     > **Note**: Other than above is `No`
 
   - Output
-
     - GopPassThrough - string - `Disable`
     - ProvideConsoleGop - boolean - `Yes`
     - Resolution - string - `max`
@@ -203,13 +201,11 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     > **Note**: Other than above is `No`
 
   - ProtocolOverrides
-
     - FirmwareVolume - boolean - `Yes`
 
     > **Note**: Other than above is `No`
 
   - Quirks
-
     - EnableVectorAcceleration - boolean - `Yes`
     - ExitBootServicesDelay - number - `0`
     - RequestBootVarRouting - boolean - `Yes`
