@@ -71,6 +71,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 - **Booter**
 
   - Quirks
+  
     - AvoidRuntimeDefrag - boolean - `Yes`
     - DevirtualiseMmio - boolean - `Yes`
     - EnableSafeModeSlide - boolean - `Yes`
@@ -81,30 +82,46 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
       > **Note**: Other than above is `No`
 
 - **DeviceProperties**
+
   - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
+  
     - `@0,name` to `@3,name` - data - `4154592C507974686F6E`
     - `AAPL,slot-name` - data - `536C6F742D2031`
     - `ATY,EFIVersion` - data - `33312E302E3132302E32362E33`
     - `device_type` - data - `4154592C507974686F6E506172656E74`
+
   - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
+  
     - `AAPL,slot-name` - data - `536C6F742D2031`
     - `model` - data - `4E6176692031302048444D4920417564696F`
+  
   - PciRoot(0x0)/Pci(0x14,0x0)
+  
     - `acpi-wake-type` - data - `01`
+  
   - PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)
+  
     - `acpi-wake-type` - data - `01`
     - `model` - data `41534D6564696120546563686E6F6C6F67792041534D333234312055534220332E30205848434920436F6E74726F6C6C6572`
+  
   - PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)
+  
     - `AAPL,slot-name` - data - `536C6F742D2033`
     - `acpi-wake-type` - data - `01`
     - `model` - data - `564C3830352F38303620784843492055534220332E3020436F6E74726F6C6C6572`
+  
   - PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)
+  
     - `AAPL,slot-name` - data - `536C6F742D2032`
     - `model` - data - `42434D34333630203830322E3131616320576972656C657373204E6574776F726B2041646170746572`
     - `name` - data - `616972706F7274`
+  
   - PciRoot(0x0)/Pci(0x1F,0x3)
+  
     - `layout-id` - data - `01000000`
+  
   - PciRoot(0x0)/Pci(0x2,0x0)
+  
     - `AAPL,ig-platform-id` - data - `0300923E`
     - `AAPL,slot-name` - data - `536C6F742D2030`
     - `agdpmod` - data - `70696B65726100`
@@ -116,7 +133,9 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 > **Note**: Check device properties in plist layout [here](https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/DeviceProperties/deviceproperties.plist).
 
 - **Kext**
+
   - Add
+  
     - [x] AppleALC.kext
     - [x] IntelMausi.kext
     - [x] Lilu.kext
@@ -126,7 +145,9 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - [x] USBMap.kext
     - [x] VirtualSMC.kext
     - [x] WhateverGreen.kext
+
   - Patch
+
     - Arch - string - `x86_64`
     - Comment - string - `Enable SSD TRIM`
     - Count - number - `0`
@@ -139,6 +160,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 > **Note**: Others than above should remain as empty
 
 - Quirks
+  
   - AppleXcpmCfgLock - boolean - `Yes`
   - DisableIoMapper - boolean - `Yes`
   - PanicNoKextDump - boolean - `Yes`
@@ -148,6 +170,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 > **Note**: Others than shall remain as `No`
 
 - **Misc**
+
   - ConsoleAttributes - boolean - `Yes`
   - HibernateMode - boolean - `Yes`
   - HideAuxiliary - string - `Auto`
@@ -169,12 +192,14 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 - **UEFI**
 
   - APFS
+  
     - EnableJumpstart - boolean - `Yes`
     - HideVerbose - boolean - `Yes`
     - MinDate - number - `0`
     - MinVolume - number - `0`
   
   - Drivers
+  
     - Path - boolean - `HFSPlus.efi`
     - Path - boolean - `OpenRuntime.efi`
     - Path - boolean - `HFSPlus.efi`
@@ -183,6 +208,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     > **Note**: Enable - `boolean` all driver as `Yes`
 
   - Input
+  
     - KeyForgetThreshold - number - `5`
     - LeySupport - boolean - `Yes`
     - KeySupportMode - boolean - `Auto`
@@ -192,6 +218,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     > **Note**: Other than above is `No`
 
   - Output
+  
     - GopPassThrough - string - `Disable`
     - ProvideConsoleGop - boolean - `Yes`
     - Resolution - string - `max`
@@ -201,11 +228,13 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     > **Note**: Other than above is `No`
 
   - ProtocolOverrides
+  
     - FirmwareVolume - boolean - `Yes`
 
     > **Note**: Other than above is `No`
 
   - Quirks
+  
     - EnableVectorAcceleration - boolean - `Yes`
     - ExitBootServicesDelay - number - `0`
     - RequestBootVarRouting - boolean - `Yes`
@@ -217,7 +246,9 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 ### History
 
 - December 15, 2022 4:02 PM
+
   - This hack got an issue since Monterey only inject 2/4 properties (wake & sleep). `USBX` has `4` properties as usual but still inject `2/4` properties.
+  
     - [x] `kUSBSleepPowerSupply`, `0x13EC`
     - [ ] `kUSBSleepPortCurrentLimit`, `0x0834`
     - [x] `kUSBWakePowerSupply`, `0x13EC`
@@ -237,6 +268,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 ## Update
 
 - January 28, 2023 2:02 AM
+
   - [ ] Remove certain stupid ACPI code and config.plist injection for better stability.
   - [ ] Permanent `agdpmod=pikera` via `IGPU`.
   - [ ] Fix unrecognize `pci-bridge` connected to `GFX0`.
