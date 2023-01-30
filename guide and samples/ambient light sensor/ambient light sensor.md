@@ -9,8 +9,8 @@ Table of contents
 - [What is ALSD?](#what-is-alsd)
 - [What is ALSE?](#what-is-alse)
 - [Enabling AppleLMUController](#enabling-applelmucontroller)
-  - [Method 1](method1)
-  - [Method 2](method2)
+  - [Method 1](#method1)
+  - [Method 2](#method2)
 - [Credits](#credits)
 
 ## What is ALSD?
