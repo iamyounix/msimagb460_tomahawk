@@ -79,6 +79,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - SyncRuntimePermissions - boolean - `Yes`
     - ProvideMaxSlide - number - `0`
     - ResizeAppleGpuBars - number - `-1`
+  
       > **Note**: Other than above is `No`
 
 - **DeviceProperties**
