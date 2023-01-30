@@ -279,7 +279,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 ## Credits
 
-- [acidanthera](https://github.com/acidanthera) | [dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dreamwhite)
+[acidanthera](https://github.com/acidanthera) | [dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dreamwhite)
 
 [Ambient Light Sensor]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/ambient%20light%20sensor/ambient%20light%20sensor.md
 [Combine Kext]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/combinekext/combinekext.md
