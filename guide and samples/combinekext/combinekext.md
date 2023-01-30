@@ -1,5 +1,10 @@
 # Combine Kext
 
+Table of contents
+
+- [USBMap](#usbmap)
+- [Adding XHCIUnsupport to USBMap.kext](#adding-xhciunsupport-to-usbmapkext)
+
 Certain kext is possible to combine. However, only certain kext which is related able to do so. In this case, we will combine codeless kext. Below is the possible kext:
 
 - [XHCI-Unsupported.kext](https://github.com/RehabMan/OS-X-USB-Inject-All) + USBMap.kext / USBPorts.kext
@@ -13,6 +18,7 @@ Below is the easiest way and effective method to achieve proper USB port mapping
 - Find Info.plist inside USBMap.kext and open with respective app such as [Xplist](https://github.com/ic005k/Xplist) or [ProperTree](https://github.com/corpnewt/ProperTree).
 
 ## Adding XHCIUnsupport to USBMap.kext
+
 - Add proper information under IOKitPersonalities in our USBMap.kext as below:
 
   - `IOKitPersonalities`
@@ -29,6 +35,8 @@ Below is the easiest way and effective method to achieve proper USB port mapping
 
 - Then, all followe by your usb device as default. Do not touch anything. Below is an example:
 
-![Screenshot 2023-01-30 at 10 07 38 PM](https://user-images.githubusercontent.com/72515939/215503473-d3eecbbb-43f4-47f9-a246-fa32c697e606.png)
+![Screenshot 2023-01-30 at 10 07 38 PM][def]
 
 - Save Info.plist and load kext to our bootloader as usual.
+
+[def]: https://user-images.githubusercontent.com/72515939/215503473-d3eecbbb-43f4-47f9-a246-fa32c697e606.png
