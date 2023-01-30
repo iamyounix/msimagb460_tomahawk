@@ -181,10 +181,6 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
        - `kUSBWakePowerSupply` - `number` - `5100`
        - `kUSBWakePortCurrentLimit` - `number` - `2100`
 
-![Method3.0][Method3.0]
-![Method3.1][Method3.1]
-![Method3.2][Method3.2]
-
 5. Load `USBMap.kext` and `SSDT-USBX.aml`. Good Luck!
 
 ## Special Thanks
@@ -198,9 +194,6 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
 [Acidanthera]: https://github.com/acidanthera/
 [benbaker76]: https://github.com/benbaker76/Hackintool
 [Dortania]: https://dortania.github.io
-[Method3.0]: https://user-images.githubusercontent.com/72515939/215228604-ff365c9b-b8ef-4ed1-874b-5759a510042e.png
-[Method3.1]: https://user-images.githubusercontent.com/72515939/215229033-58f80468-08c5-4b74-a0c7-35dbce31f924.png
-[Method3.2]: https://user-images.githubusercontent.com/72515939/215228989-50ff204e-4ba4-42ef-b859-62fe9b842fad.png
 [osy]: https://github.com/osy
 [Results1]: https://user-images.githubusercontent.com/72515939/210138919-1f6494d4-b0a6-4f56-8734-30687da97250.png
 [Results2]: https://user-images.githubusercontent.com/72515939/210138921-26ad44fe-b1dd-4693-a2ce-bad248f9abba.png

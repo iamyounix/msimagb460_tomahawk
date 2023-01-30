@@ -45,6 +45,5 @@ Below is the easiest way and effective method to achieve proper USB port mapping
 [Hackintool Download]: https://github.com/benbaker76/Hackintool
 [Propertree Download]: https://github.com/corpnewt/ProperTree
 [USBToolbox Download]: https://github.com/USBToolBox/tool
-[XHCI-Unsupported Details]: https://user-images.githubusercontent.com/72515939/215503473-d3eecbbb-43f4-47f9-a246-fa32c697e606.png
 [XHCI-Unsupported Download]: https://github.com/RehabMan/OS-X-USB-Inject-All
 [Xplist Download]: https://github.com/ic005k/Xplist
