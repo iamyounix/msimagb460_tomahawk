@@ -2,8 +2,11 @@
 
 Table of contents
 
+- [Introduction](#introduction)
 - [USBMap](#usbmap)
 - [Intergrate XHCI-Unsupported Info to USBMap.kext](#intergrate-xhci-unsupported-info-to-usbmapkext)
+
+## Introduction
 
 Certain kext is possible to combine. However, only certain kext which is related able to do so. In this case, we will combine codeless kext. Below is the possible kext:
 
@@ -33,7 +36,7 @@ Below is the easiest way and effective method to achieve proper USB port mapping
   
 > **Note**: IOPCIPrimaryMatch must referred to our device-id and vendor-id.
 
-- Then, all followe by your usb device as default. Do not touch anything. Below is an example:
+- Below is an example:
 
 ![XHCI-Unsupported Details][XHCI-Unsupported Details]
 
