@@ -41,7 +41,7 @@ Here is the difference: As its drivers, OpenCore uses `OpenCore.efi`. While `CLO
 
 ## UEFI Drivers
 
-This is my working Hackintosh example for my iHack MSI B460M Tomahawk with Intel® Comet Lake 10400:
+UEFI drivers differencies:
 
 - OpenCore : `EFI`\ `OC` \ `Drivers` \ `XXXXX.efi`
   - HFSPlus.efi
