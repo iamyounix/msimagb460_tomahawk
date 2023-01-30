@@ -13,7 +13,7 @@ Certain kext is possible to combine. However, only certain kext which is related
 
 Below is the easiest way and effective method to achieve proper USB port mapping. To do so...
 
-- Download [USBToolbox][USBToolbox Download] in `.exe` format, boot into Windows. Windows 10 or 11 64-bit are recommended for the full feature set (companion port binding, port type guessing.). Windows 8 may work, Windows 7 and below will very likely crash. `32-bi`t is not supported, macOS needs `64-bit` anyway. Windows PE works. Some device names may not be as descriptive but if you really don't want to install Windows, you can create a Windows PE USB and hit `Shift` + `F10` to open `cmd`, then run the program.
+- Download [USBToolbox][USBToolbox Download] in `.exe` format, boot into Windows. Windows 10 or 11 64-bit are recommended for the full feature set (companion port binding, port type guessing.). Windows 8 may work, Windows 7 and below will very likely crash. `32-bit` is not supported, macOS needs `64-bit` anyway. Windows PE works. Some device names may not be as descriptive but if you really don't want to install Windows, you can create a Windows PE USB and hit `Shift` + `F10` to open `cmd`, then run the program.
 - Then, generate USBMap.kext.
 - Find Info.plist inside USBMap.kext and open with respective app such as [Xplist][Xplist Download] or [ProperTree][Propertree Download].
 
@@ -35,13 +35,13 @@ Below is the easiest way and effective method to achieve proper USB port mapping
 
 - Then, all followe by your usb device as default. Do not touch anything. Below is an example:
 
-![Screenshot 2023-01-30 at 10 07 38 PM][def]
+![Screenshot 2023-01-30 at 10 07 38 PM][Screenshot]
 
 - Save Info.plist and load kext to our bootloader as usual.
 
 [Adding XHCU-Unsupported TOC]: #adding-xhciunsupport-to-usbmapkext
-[def]: https://user-images.githubusercontent.com/72515939/215503473-d3eecbbb-43f4-47f9-a246-fa32c697e606.png
 [Propertree Download]: https://github.com/corpnewt/ProperTree
+[Screenshot]: https://user-images.githubusercontent.com/72515939/215503473-d3eecbbb-43f4-47f9-a246-fa32c697e606.png
 [USBMap TOC]: #usbmap
 [USBToolbox Download]: https://github.com/USBToolBox/tool
 [XHCI-Unsupportted Download]: https://github.com/RehabMan/OS-X-USB-Inject-All

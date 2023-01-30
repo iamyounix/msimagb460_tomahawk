@@ -30,21 +30,22 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 - ~~400 Series Chipset Family SATA AHCI Controller~~
 - ~~6th-10th Gen Core Processor PCIe Controller (x16)~~
-- ASM3241 USB 3.2 Host Controller
 - ~~B460 Chipset LPC/eSPI Controller~~
-- BCM4360 802.11ac Wireless Network Adapter
 - ~~Cannon Lake PCH Power Management Controller~~
 - ~~Comet Lake PCH-V HECI Controller~~
-- Comet Lake PCH-V SMBus Host Controller
-- Comet Lake PCH-V Thermal Subsystem
-- Comet Lake PCH-V USB Controller
-- Comet Lake PCH-V cAVS
 - ~~Comet Lake PCI Express Root Port #03~~
 - ~~Comet Lake PCI Express Root Port #05~~
 - ~~Comet Lake PCI Express Root Port #07~~
 - ~~Comet Lake PCI Express Root Port #09~~
 - ~~Comet Lake PCI Express Root Port #19~~
 - ~~Comet Lake PCI Express Root Port #21~~
+- ~~Navi 10 XL Upstream Port of PCI Express Switch~~
+- ASM3241 USB 3.2 Host Controller
+- BCM4360 802.11ac Wireless Network Adapter
+- Comet Lake PCH-V cAVS
+- Comet Lake PCH-V SMBus Host Controller
+- Comet Lake PCH-V Thermal Subsystem
+- Comet Lake PCH-V USB Controller
 - Comet Lake-S 6c Host Bridge/DRAM Controller
 - Ethernet Connection (11) I219-V
 - Intel CoffeeLake-H GT2 (UHD Graphics 630 Headless)
@@ -52,7 +53,6 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 - Kingston A2000 NVMe SSD2
 - Navi 10 HDMI Audio
 - Navi 10 XL Downstream Port of PCI Express Switch
-- ~~Navi 10 XL Upstream Port of PCI Express Switch~~
 - Navi 14 Radeon RX 5500/5500M / Pro 5500M
 - RTL8125 2.5GbE Controller
 - VL805/806 xHCI USB 3.0 Controller
@@ -260,9 +260,10 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 - Below is relevan guide and samples for Hackintosh:
 
   - [Ambient Light Sensor][Ambient Light Sensor]
+  - [Combine Kext][Combine Kext]
   - [Disassembled ASL Sample][Disassemble SSDT Sample]
-  - [Renaming and Add Missing Devices][Renaming and Add Missing Devices]
   - [Multiboot][Multiboot]
+  - [Renaming and Add Missing Devices][Renaming and Add Missing Devices]
   - [Transferring Opencore to Clover][Transferring OpenCore to Clover]
   - [USB Wake and Sleep Fix][USB Wake and Sleep Fix]
 
@@ -282,6 +283,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 - [acidanthera](https://github.com/acidanthera) | [dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dreamwhite)
 
 [Ambient Light Sensor]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/ambient%20light%20sensor/ambient%20light%20sensor.md
+[Combine Kext]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/combinekext/combinekext.md
 [Credits]: #credits
 [Device Properties Samples]: https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/DeviceProperties/deviceproperties.plist
 [Devices]: #devices
