@@ -262,7 +262,6 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
   - [Ambient Light Sensor][Ambient Light Sensor]
   - [Combine Kext][Combine Kext]
   - [Disassembled ASL Sample][Disassemble SSDT Sample]
-  - [Multiboot][Multiboot]
   - [Renaming and Add Missing Devices][Renaming and Add Missing Devices]
   - [Transferring Opencore to Clover][Transferring OpenCore to Clover]
   - [USB Wake and Sleep Fix][USB Wake and Sleep Fix]
@@ -292,7 +291,6 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 [Guide and Samples]: #guide-and-samples
 [History]: #history
 [Intro]: #introduction
-[Multiboot]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/multiboot/multiboot.md
 [News by Developer]: https://dortania.github.io
 [OpenCore Install Guide]: https://dortania.github.io/OpenCore-Install-Guide/
 [Plist Configuration]: #plist-configuration

@@ -2,12 +2,12 @@
 
 Table of contents
 
-- [USBMap][USBMap TOC]
-- [Intergrate XHCI-Unsupported Info to USBMap.kext][Intergrate XHCI-Unsupported Info to USBMap.kext TOC]
+- [USBMap](#usbmap)
+- [Intergrate XHCI-Unsupported Info to USBMap.kext](#intergrate-xhci-unsupported-info-to-usbmapkext)
 
 Certain kext is possible to combine. However, only certain kext which is related able to do so. In this case, we will combine codeless kext. Below is the possible kext:
 
-- [XHCI-Unsupported.kext][XHCI-Unsupportted Download] + USBMap.kext / USBPorts.kext
+- [XHCI-Unsupported.kext][XHCI-Unsupported Download] + USBMap.kext / USBPorts.kext
 
 ## USBMap
 
@@ -17,7 +17,7 @@ Below is the easiest way and effective method to achieve proper USB port mapping
 - Then, generate USBMap.kext.
 - Find Info.plist inside USBMap.kext and open with respective app such as [Xplist][Xplist Download] or [ProperTree][Propertree Download].
 
-## Intergrate XHCIUnsupported Info to USBMap.kext
+## Intergrate XHCI-Unsupported Info to USBMap.kext
 
 - Add proper information under IOKitPersonalities in our USBMap.kext as below:
 
@@ -35,14 +35,12 @@ Below is the easiest way and effective method to achieve proper USB port mapping
 
 - Then, all followe by your usb device as default. Do not touch anything. Below is an example:
 
-![Screenshot 2023-01-30 at 10 07 38 PM][Screenshot]
+![XHCI-Unsupported Details][XHCI-Unsupported Details]
 
 - Save Info.plist and load kext to our bootloader as usual.
 
-[Intergrate XHCI-Unsupported Info to USBMap.kext TOC]: #intergrate-xhci-unsupported-info-to-usbmap.kext
 [Propertree Download]: https://github.com/corpnewt/ProperTree
-[Screenshot]: https://user-images.githubusercontent.com/72515939/215503473-d3eecbbb-43f4-47f9-a246-fa32c697e606.png
-[USBMap TOC]: #usbmap
 [USBToolbox Download]: https://github.com/USBToolBox/tool
-[XHCI-Unsupportted Download]: https://github.com/RehabMan/OS-X-USB-Inject-All
+[XHCI-Unsupported Details]: https://user-images.githubusercontent.com/72515939/215503473-d3eecbbb-43f4-47f9-a246-fa32c697e606.png
+[XHCI-Unsupported Download]: https://github.com/RehabMan/OS-X-USB-Inject-All
 [Xplist Download]: https://github.com/ic005k/Xplist
