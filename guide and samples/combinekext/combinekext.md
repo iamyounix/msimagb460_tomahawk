@@ -27,5 +27,8 @@ Below is the easiest way and effective method to achieve proper USB port mapping
   
 > **Note**: IOPCIPrimaryMatch must referred to our device-id and vendor-id.
 
-- Then, all followe by your usb device as default. Do not touch anything.
+- Then, all followe by your usb device as default. Do not touch anything. Below is an example:
+
+![Screenshot 2023-01-30 at 10 07 38 PM](https://user-images.githubusercontent.com/72515939/215503473-d3eecbbb-43f4-47f9-a246-fa32c697e606.png)
+
 - Save Info.plist and load kext to our bootloader as usual.
