@@ -57,7 +57,7 @@ Table of contents
 
 > **Note**: Recommended if `_HID` `ACPI0008` is not exist in DSDT.
 
-- Creating fake `ALSO` doesn't affect current ambient light sensor in original ACPI. However, correcting `variable` exist in multiple places may affect other components while achieving our desired effect. When there is an ambient light sensor device in the original ACPI, the name may not be ALSD, although no other name has been found yet. If so, adjust the path in the SSDT accordingly. Below is the an example code:
+- Creating fake `ALSO` doesn't affect current ambient light sensor in original ACPI. However, correcting `variable` exist in multiple places may affect other components while achieving our desired effect. When there is an ambient light sensor device in the original ACPI, the name may not be ALSD, although no other name has been found yet. If so, adjust the path in the SSDT accordingly. Below is an example:
 
   ```asl
   DefinitionBlock ("", "SSDT", 2, "ACDT", "ALS0", 0)
