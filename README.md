@@ -9,20 +9,20 @@
 
 Table of contents
 
-- [Introduction][Intro]
-  - [Devices][Devices]
-  - [Plist Configuration][Plist Configuration]
-  - [History][History]
-- [Guide and Samples][Guide and Samples]
-- [Update][Update]
-- [Credits][Credits]
+- [Introduction](#introduction)
+  - [Devices](#devices)
+  - [Plist Configuration](#plist-configuration)
+  - [History](#history)
+- [Guide and Samples](#guide-and-samples)
+- [Update](#update)
+- [Credits](#credits)
 
 ## Introduction
 
 This is my current EFI clone that I built according to my hardware. Feel free to read my content. If you have a similar build but different settings, you might consider checking this out. Before read, below is the best way to checkout the latest OpenCore guide and news.
 
-- [Dortania][OpenCore Install Guide] "Getting Started".
-- Checkout latest [post][News by Developer], news and update directly from developer.
+- [Dortania][ocgettingstarted] "Getting Started".
+- Checkout latest [post][devnews], news and update directly from developer.
 
 > **Reminder**: Since I only boot Linux and macOS, my ACPI code would be less (lack of `Else`, numerous OS `Zero` and `0xFF` methods). This will result in issues with Windows. If you need help dual- or multiple-booting other operating systems, especially Windows, please get in touch with me.
 
@@ -66,7 +66,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 - **ACPI**
 
-  - [SSDT-MSIB460.aml][SSDT-MSIB460]
+  - [SSDT-MSIB460.aml][ssdt-b460]
 
 - **Booter**
 
@@ -131,7 +131,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - `igfxfw` - data - `02000000`
     - `igfxonln` - data - `01000000`
 
-> **Note**: Check device properties in plist layout [here][Device Properties Samples].
+> **Note**: Check device properties in plist layout [here][dev-prop-samples].
 
 - **Kext**
 
@@ -188,7 +188,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 - **PlatformInfo**
 
-  - SMBIOS: [iMac20,1][EveryMac iMac20,1]
+  - SMBIOS: [iMac20,1][smbiosimac20,1]
 
 - **UEFI**
 
@@ -259,12 +259,12 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 - Below is relevan guide and samples for Hackintosh:
 
-  - [Ambient Light Sensor][Ambient Light Sensor]
-  - [Combine Kext][Combine Kext]
-  - [Disassembled ASL Sample][Disassemble SSDT Sample]
-  - [Renaming and Add Missing Devices][Renaming and Add Missing Devices]
-  - [Transferring Opencore to Clover][Transferring OpenCore to Clover]
-  - [USB Wake and Sleep Fix][USB Wake and Sleep Fix]
+  - [Ambient Light Sensor][als]
+  - [Combine Kext][combine-kext]
+  - [Disassembled ASL Sample][dis-ssdt-sample]
+  - [Renaming and Add Missing Devices][rename&miss]
+  - [Transferring Opencore to Clover][oc2clvr]
+  - [USB Wake and Sleep Fix][wake&sleep]
 
 ## Update
 
@@ -279,23 +279,19 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 ## Credits
 
-[acidanthera](https://github.com/acidanthera) | [dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dreamwhite)
+[acidanthera][dev0] | [dortania][dev-group0] | [dreamwhite][dev1]
 
-[Ambient Light Sensor]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/ambient%20light%20sensor/ambient%20light%20sensor.md
-[Combine Kext]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/combinekext/combinekext.md
-[Credits]: #credits
-[Device Properties Samples]: https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/DeviceProperties/deviceproperties.plist
-[Devices]: #devices
-[Disassemble SSDT Sample]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/tree/main/guide%20and%20samples/disassembled%20ASL%20sample
-[EveryMac iMac20,1]: https://everymac.com/systems/apple/imac/specs/imac-core-i5-3.1-6-core-27-inch-retina-5k-2020-specs.html
-[Guide and Samples]: #guide-and-samples
-[History]: #history
-[Intro]: #introduction
-[News by Developer]: https://dortania.github.io
-[OpenCore Install Guide]: https://dortania.github.io/OpenCore-Install-Guide/
-[Plist Configuration]: #plist-configuration
-[Renaming and Add Missing Devices]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/renaming%20and%20add%20missing%20devices/Rename%20and%20Add%20Missing%20Devices.md
-[SSDT-MSIB460]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/disassembled%20ASL%20sample/ssdt-b460-sample-full.dsl
-[Transferring OpenCore to Clover]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/transferring%20opencore%20to%20clover/transferring%20opencore%20to%20clover.md
-[Update]: #update
-[USB Wake and Sleep Fix]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/usb%20wake%20and%20sleep%20fix/usb%20wake%20and%20sleep%20fix.md
+[als]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/ambient%20light%20sensor/ambient%20light%20sensor.md
+[combine-kext]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/combinekext/combinekext.md
+[dev-group0]: https://github.com/dortania
+[dev-prop-samples]: https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/DeviceProperties/deviceproperties.plist
+[dev0]: https://github.com/acidanthera
+[dev1]: https://github.com/dreamwhite
+[devnews]: https://dortania.github.io
+[dis-ssdt-sample]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/tree/main/guide%20and%20samples/disassembled%20ASL%20sample
+[oc2clvr]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/transferring%20opencore%20to%20clover/transferring%20opencore%20to%20clover.md
+[ocgettingstarted]: https://dortania.github.io/OpenCore-Install-Guide/
+[rename&miss]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/renaming%20and%20add%20missing%20devices/Rename%20and%20Add%20Missing%20Devices.md
+[smbiosimac20,1]: https://everymac.com/systems/apple/imac/specs/imac-core-i5-3.1-6-core-27-inch-retina-5k-2020-specs.html
+[ssdt-b460]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/disassembled%20ASL%20sample/ssdt-b460-sample-full.dsl
+[wake&sleep]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/usb%20wake%20and%20sleep%20fix/usb%20wake%20and%20sleep%20fix.md

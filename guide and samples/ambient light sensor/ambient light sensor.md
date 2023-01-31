@@ -6,10 +6,10 @@
 
 Table of contents
 
-- [What is ALSD?][What is ALSD]
-- [What is ALSE?][What is ALSE]
-- [Enabling AppleLMUController][Enable AppleLMUController]
-- [Credits][Credits]
+- [What is ALSD?](#what-is-alsd)
+- [What is ALSE?](#what-is-alse)
+- [Enabling AppleLMUController](#enabling-applelmucontroller)
+- [Credits](#credits)
 
 ## What is ALSD?
 
@@ -29,11 +29,11 @@ Since `ALSD` and `ALSE` is connected to each other, it is easy to call `AppleLMU
 
 2. Find `ALSE.`
 
-   ![ALSE][ALSE]
+   ![ALSE][alse]
 
 3. If exist, check the value. As example `0x02` is to enable. If nothing return, the value is `0x0B`
 
-   ![ALSE0x02][ALSE0x02]
+   ![ALSE0x02][alse2bit]
 
 4. Below is conjunction method from `ALSE` to call `AppleLMUController` which is connected to `ALSD` / `ALS0`
 
@@ -94,13 +94,9 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "ALS0", 0x12345678)
 
 ## Credits
 
-[acidanthera][Acidanthera] | [dortania][Dortania]
+[acidanthera][dev0] | [dortania][dev-group0]
 
-[Acidanthera]: https://github.com/acidanthera/
-[ALSE]: https://user-images.githubusercontent.com/72515939/210977256-8cd8f9a4-e46d-498d-a439-7fd7a91f9d40.png
-[ALSE0x02]: https://user-images.githubusercontent.com/72515939/210977281-1e68af0d-1fe9-46bc-9b7f-99e2a52cfafa.png
-[Credits]: #credits
-[Dortania]: https://dortania.github.io
-[Enable AppleLMUController]: #enabling-applelmucontroller
-[What is ALSD]: #what-is-alsd
-[What is ALSE]: #what-is-alse
+[alse]: https://user-images.githubusercontent.com/72515939/210977256-8cd8f9a4-e46d-498d-a439-7fd7a91f9d40.png
+[alse2bit]: https://user-images.githubusercontent.com/72515939/210977281-1e68af0d-1fe9-46bc-9b7f-99e2a52cfafa.png
+[dev-group0]: https://dortania.github.io
+[dev0]: https://github.com/acidanthera/

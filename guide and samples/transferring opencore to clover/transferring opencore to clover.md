@@ -90,8 +90,8 @@ Same as OpenCore, nothing change. Use the same `.aml` file as provided except pa
 
 The distinction between the two configurations is shown below. Normally, OpenCore and Clover Quirks is the same. Check all the Quirks needed and compare.
 
-1. OpenCore : [opencore_config.plist][OC.plist]
-2. Clover : [clover_config.plist][Clover.plist]
+1. OpenCore : [opencore_config.plist][oc.plist]
+2. Clover : [clover_config.plist][clvr.plist]
 
 ### Transferring SMBIOS
 
@@ -103,18 +103,18 @@ Use OCAuxiliary to transfer respective SMBIOS to another bootloader `config.plis
 4. Choose Clover config.plist respectively.
 5. Open the file. This method will transfer your current OpenCore SMBIOS to Clover config.
 
-![Step 1 & 2][Step 1 and 2]
-![Step 3,4 and 5][Step 3,4 and 5]
+![Step 1 & 2][step1and2]
+![Step 3,4 and 5][step3,4and5]
 
 ## Credits
 
-[acidanthera][Acidanthera] | [dortania][Dortania] | [ic005k][ic005k - ocauxiliary] | [5T33Z0][5T33Z0 Guide]
+[acidanthera][dev0] | [dortania][dev-group0] | [ic005k][dev2] | [5T33Z0][dev1]
 
-[5T33Z0 Guide]: https://github.com/5T33Z0
-[Acidanthera]: https://github.com/acidanthera
-[Clover.plist]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/transferring%20opencore%20to%20clover/clover_config.plist
-[Dortania]: https://github.com/dortania
-[ic005k - ocauxiliary]: https://github.com/ic005k
-[OC.plist]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/transferring%20opencore%20to%20clover/opencore_config.plist
-[Step 1 and 2]: https://user-images.githubusercontent.com/72515939/215377592-637c6b67-9d85-43e7-b155-9140dbc833cf.png
-[Step 3,4 and 5]: https://user-images.githubusercontent.com/72515939/215377609-d0e8f2e1-618c-4d83-afd6-3a0bc9638479.png
+[clvr.plist]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/transferring%20opencore%20to%20clover/clover_config.plist
+[dev-group0]: https://github.com/dortania
+[dev0]: https://github.com/acidanthera
+[dev1]: https://github.com/5T33Z0
+[dev2]: https://github.com/ic005k
+[oc.plist]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/transferring%20opencore%20to%20clover/opencore_config.plist
+[step1and2]: https://user-images.githubusercontent.com/72515939/215377592-637c6b67-9d85-43e7-b155-9140dbc833cf.png
+[step3,4and5]: https://user-images.githubusercontent.com/72515939/215377609-d0e8f2e1-618c-4d83-afd6-3a0bc9638479.png

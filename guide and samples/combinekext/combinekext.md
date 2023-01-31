@@ -5,23 +5,24 @@ Table of contents
 - [Introduction](#introduction)
 - [USBMap](#usbmap)
 - [Intergrate XHCI-Unsupported Info to USBMap.kext](#intergrate-xhci-unsupported-info-to-usbmapkext)
+- [Credits](#credits)
 
 ## Introduction
 
 It is possible to mix some Kexts. Only associated kexts can do this, though. We shall integrate codeless kexts in this example. The possible kext is displayed below.
 
-- [XHCI-Unsupported.kext][XHCI-Unsupported Download]
-- USBMap.kext using [USBToolbox][USBToolbox Download] or USBPorts.kext using [Hackintool][Hackintool Download]
+- [XHCI-Unsupported.kext][xhciunsupport]
+- USBMap.kext using [USBToolbox][usbtoolbox-download] or USBPorts.kext using [Hackintool][hackintool-download]
 
 ## USBMap
 
 Below is the easiest way and effective method to achieve proper USB port mapping. To do so...
 
-1. Download [USBToolbox][USBToolbox Download] in `.exe` format, boot into Windows.
+1. Download [USBToolbox][usbtoolbox-download] in `.exe` format, boot into Windows.
 
 2. Then, generate USBMap.kext.
 
-3. Find Info.plist inside USBMap.kext and open with respective app such as [Xplist][Xplist Download] or [ProperTree][Propertree Download].
+3. Find Info.plist inside USBMap.kext and open with respective app such as [Xplist][plisteditor1] or [ProperTree][plisteditor2].
 
 > **Note**: Windows 10 or 11 64-bit are recommended for the full feature set (companion port binding, port type guessing.). Windows 8 may work, Windows 7 and below will very likely crash. `32-bit` is not supported, macOS needs `64-bit` anyway. Windows PE works. Some device names may not be as descriptive but if you really don't want to install Windows, you can create a Windows PE USB and hit `Shift` + `F10` to open `cmd`, then run the program.
 
@@ -42,8 +43,14 @@ Below is the easiest way and effective method to achieve proper USB port mapping
 
 > **Note**: IOPCIPrimaryMatch must referred to our device-id and vendor-id.
 
-[Hackintool Download]: https://github.com/benbaker76/Hackintool
-[Propertree Download]: https://github.com/corpnewt/ProperTree
-[USBToolbox Download]: https://github.com/USBToolBox/tool
-[XHCI-Unsupported Download]: https://github.com/RehabMan/OS-X-USB-Inject-All
-[Xplist Download]: https://github.com/ic005k/Xplist
+## Credits
+
+[acidanthera][dev0] | [dortania][dev-group0]
+
+[dev-group0]: https://dortania.github.io
+[dev0]: https://github.com/acidanthera/
+[hackintool-download]: https://github.com/benbaker76/Hackintool
+[plisteditor1]: https://github.com/ic005k/Xplist
+[plisteditor2]: https://github.com/corpnewt/ProperTree
+[usbtoolbox-download]: https://github.com/USBToolBox/tool
+[xhciunsupport]: https://github.com/RehabMan/OS-X-USB-Inject-All
