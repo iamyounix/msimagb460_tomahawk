@@ -4,7 +4,7 @@ Table of contents
 
 - [Introduction](#introduction)
 - [USBMap](#usbmap)
-- [Intergrate XHCI-Unsupported Info to USBMap.kext](#intergrate-xhci-unsupported-info-to-usbmapkext)
+- [Integrate XHCI-Unsupported Info to USBMap.kext](#integrate-xhci-unsupported-info-to-usbmapkext)
 - [Credits](#credits)
 
 ## Introduction
@@ -24,9 +24,9 @@ Below is the easiest way and effective method to achieve proper USB port mapping
 
 3. Find Info.plist inside USBMap.kext and open with respective app such as [Xplist][plisteditor1] or [ProperTree][plisteditor2].
 
-> **Note**: Windows 10 or 11 64-bit are recommended for the full feature set (companion port binding, port type guessing.). Windows 8 may work, Windows 7 and below will very likely crash. `32-bit` is not supported, macOS needs `64-bit` anyway. Windows PE works. Some device names may not be as descriptive but if you really don't want to install Windows, you can create a Windows PE USB and hit `Shift` + `F10` to open `cmd`, then run the program.
+> **Note**: Windows 10 or 11 64-bit are recommended for the full feature set (companion port binding, port type guessing.). Windows 8 may work, Windows 7 and below will very likely crash. `32-bit` is not supported, macOS needs `64-bit` anyway. Windows PE works. Some device names may not be as descriptive but if you really don't want to install Windows, you can create a Windows PE USB and hit `Shift` + `F10` to open `cmd`, then run the program. Markdon
 
-## Intergrate XHCI-Unsupported Info to USBMap.kext
+## Integrate XHCI-Unsupported Info to USBMap.kext
 
 1. Add proper information under IOKitPersonalities in our USBMap.kext as below:
    - `IOKitPersonalities`
