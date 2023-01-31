@@ -43,7 +43,7 @@ Below is the easiest way and effective method to achieve proper USB port mapping
 
 > **Note**: IOPCIPrimaryMatch must referred to our device-id and vendor-id.
 
-![xhciunsupport](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/combinekext/pictures/xhci-unsupport.png)
+![xhci-unsupport](https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/combinekext/etc/xhci-unsupport.png)
 
 ## Credits
 
