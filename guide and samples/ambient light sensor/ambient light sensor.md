@@ -76,6 +76,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "ALS0", 0x12345678)
                     0x012C
                 }
             })
+            
             Method (_STA, 0, NotSerialized)
             {
                 If (_OSI ("Darwin"))
