@@ -3,8 +3,8 @@
 Table of contents
 
 - [Introduction](#introduction)
-- [USBMap](#usbmap)
-- [Integrate XHCI-Unsupported Info to USBMap.kext](#integrate-xhci-unsupported-info-to-usbmapkext)
+  - [USBMap](#usbmap)
+  - [Integrate XHCI-Unsupported Info to USBMap.kext](#integrate-xhci-unsupported-info-to-usbmapkext)
 - [Credits](#credits)
 
 ## Introduction
@@ -14,7 +14,7 @@ It is possible to mix some Kexts. Only associated kexts can do this, though. We 
 - [XHCI-Unsupported.kext][xhciunsupport]
 - USBMap.kext using [USBToolbox][usbtoolbox-download] or USBPorts.kext using [Hackintool][hackintool-download]
 
-## USBMap
+### USBMap
 
 Below is the easiest way and effective method to achieve proper USB port mapping. To do so...
 
@@ -26,7 +26,7 @@ Below is the easiest way and effective method to achieve proper USB port mapping
 
 > **Note**: Windows 10 or 11 64-bit are recommended for the full feature set (companion port binding, port type guessing.). Windows 8 may work, Windows 7 and below will very likely crash. `32-bit` is not supported, macOS needs `64-bit` anyway. Windows PE works. Some device names may not be as descriptive but if you really don't want to install Windows, you can create a Windows PE USB and hit `Shift` + `F10` to open `cmd`, then run the program. Markdon
 
-## Integrate XHCI-Unsupported Info to USBMap.kext
+### Integrate XHCI-Unsupported Info to USBMap.kext
 
 1. Add proper information under IOKitPersonalities in our USBMap.kext as below:
    - `IOKitPersonalities`
