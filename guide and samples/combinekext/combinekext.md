@@ -56,4 +56,4 @@ Below is the easiest way and effective method to achieve proper USB port mapping
 [plisteditor2]: https://github.com/corpnewt/ProperTree
 [usbtoolbox-download]: https://github.com/USBToolBox/tool
 [xhciunsupport]: https://github.com/RehabMan/OS-X-USB-Inject-All
-[xhcipics]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/combinekext/etc/xhci-unsupport.png
+[xhcipics]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/9c230e8cd87d64116aa4d22d0ccd01d7eeeccf42/guide%20and%20samples/combinekext/etc/xhci-unsupported.png
