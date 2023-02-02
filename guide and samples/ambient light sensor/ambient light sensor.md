@@ -41,7 +41,6 @@ Since `ALSD` and `ALSE` is connected to each other, it is easy to call `AppleLMU
    DefinitionBlock ("", "SSDT", 2, "CpyPst", "ALSE", 0x12345678)
    {
        External (ALSE, UnknownObj)
-       External (STAS, IntObj)
    
        Scope (\)
        {
