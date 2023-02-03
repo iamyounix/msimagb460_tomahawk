@@ -1,22 +1,25 @@
-/*!
- * ACPI Definition Block is a structural representation of the power management
- * and device settings of a computer system, defined in a specific format and
- * syntax and stored in the firmware of the system. It is read by the operating
- * system to configure the system's power management and device settings.
+/*
+ * Intel ACPI Component Architecture
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
+ * 
+ * Disassembling to symbolic ASL+ operators
  *
- * Note: Certain device is handled by specific kext. ie: HDEF - "AppleALC.kext"
- * IGPU - "Whatevergreen.kext". Do not rename known device. Renaming doesn't
- * affect performance. Less code used is recommended.
+ * Disassembly of iASL6dCFhK.aml, Sat Feb  4 04:07:06 2023
+ *
+ * Original Table Header:
+ *     Signature        "SSDT"
+ *     Length           0x00000406 (1030)
+ *     Revision         0x02
+ *     Checksum         0xF7
+ *     OEM ID           "MSI"
+ *     OEM Table ID     "B460"
+ *     OEM Revision     0x42343630 (1110718000)
+ *     Compiler ID      "INTL"
+ *     Compiler Version 0x20200925 (538970405)
  */
- 
 DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
 {
-	
-	/*
-	 * Hey, lets clean up ACPI code. This is an example how we can clean up multiple
-	 * device / device properties in single SSDT.
-	 */
-
 	External (_SB_.PCI0, DeviceObj)
 	External (_SB_.PCI0.GLAN, DeviceObj)
 	External (_SB_.PCI0.LPCB, DeviceObj)
@@ -33,61 +36,26 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
 	External (_SB_.PCI0.SAT0, DeviceObj)
 	External (_SB_.PCI0.SBUS, DeviceObj)
 	External (STAS, IntObj)
-	
-	/*
-	 * System BUS
-	 */
-	 
+
 	Scope (\_SB)
 	{
-		/*
-		 * "If (_OSI ("Darwin"))" is a preprocessor directive in C or C++ that checks
-		 * if the target operating system is Darwin (macOS), which is the core of the open-source
-		 * operating system macOS. This directive is used to include or exclude specific
-		 * sections of code that are specific to Darwin-based systems. If the target system
-		 * is Darwin, the code within the if statement will be executed, otherwise
-		 * it will be ignored. Normally, "Else" is required when other OSe's is installed. 
-		 * This workaround is better solution to use "less acpi code" in multiple device with
-		 * in the same root.
-		 */
-		 
 		If (_OSI ("Darwin"))
 		{
-			
-		/*
-		 * This is a workaround to patch "If ((STAS == Zero))" in DSDT.
-		 * AWAC/RTC0 system clocks fix found on newer hardware. ie: B360, B365, H310, 
-		 * Z370 (Gigabyte and AsRock boards with newer BIOS versions), Z390, B460, Z490,
-		 * X99, and X299. 
-		 */
-		
 			Method (_INI, 0, NotSerialized)  // _INI: Initialize
 			{
 				STAS = One
 			}
 		}
-		
+
 		If (_OSI ("Darwin"))
 		{
-			/*
-			 * PCI Root Bridge
-			 */
-			 
 			Scope (PCI0)
 			{
-				/*
-				Enabling DRAM instead of MCHC.
-				*/
-				
 				Device (DRAM)
 				{
 					Name (_ADR, Zero)  // _ADR: Address
 				}
-				
-				/*
-				Rename GLAN to LAN0 (EN0).
-				*/
-				
+
 				Scope (GLAN)
 				{
 					Method (_STA, 0, NotSerialized)  // _STA: Status
@@ -95,7 +63,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
 						Return (Zero)
 					}
 				}
-				
+
 				Device (LAN0)
 				{
 					Name (_ADR, 0x001F0006)  // _ADR: Address
@@ -104,24 +72,12 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
 						Return (0x0F)
 					}
 				}
-				
-				/*
-				Low Pin Count BUS.
-				*/
 
 				Scope (LPCB)
 				{
-					
-					/*
-					 * Fake Embedded Controller for Hackintosh Purpose. On desktops, the EC (or better known as
-					 * the embedded controller) isn't compatible with AppleACPIEC driver, this is a workaround 
-					 * to disable this device when running macOS. Desktops will want real EC off, and a fake EC 
-					 * created.
-					 */
-					
 					Device (EC)
 					{
-						Name (_HID, EisaId ("ACID001") /* Embedded Controller Device */)  // _HID: Hardware ID
+						Name (_HID, "ACID0001")  // _HID: Hardware ID
 						Method (_STA, 0, NotSerialized)  // _STA: Status
 						{
 							Return (0x0F)
@@ -133,171 +89,118 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
 				{
 					Scope (PEGP)
 					{
-						
-						/*
-						 * Workaround to fix missing ACPI device. This is a PCI bridge device present on PEGP.
-						 * Normally seen as "pci-bridge" in I/O Registry.
-						 */
-						 
 						Device (PXSX)
 						{
 							Name (_ADR, Zero)  // _ADR: Address
 						}
 					}
 				}
-				
-				/*
-				 * Workaround to fix missing ACPI device. Normally seen as "pci8086,XXXX" in I/O Registry.
-				 */
 
 				Device (PGMM)
 				{
 					Name (_ADR, 0x00080000)  // _ADR: Address
 				}
-				
-				/*
-				 * ACPI Patch to handles the System Management Bus, which has many functions like:
-				 * - AppleSMBusController (Aids with correct temperature, fan, voltage, ICH, etc readings)
-				 * - AppleSMBusPCI (Same idea as AppleSMBusController except for low bandwidth PCI devices)
-				 * - Memory Reporting (Aids in proper memory reporting and can aid in getting better kernel
-				 * 	 panic details if memory related) and etc.
-				 */
-				
-				Scope (SBUS)
-				{
-					Device (BUS0)
-					{
-						Name (_CID, "smbus")  // _CID: Compatible ID
-						Name (_ADR, Zero)  // _ADR: Address
-						Device (DVL0)
-						{
-							Name (_ADR, 0x57)  // _ADR: Address
-							Name (_CID, "diagsvault")  // _CID: Compatible ID
-							Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+
+				Scope(SBUS) {
+					Device(BUS0) {
+						Name(_CID, "smbus") // _CID: Compatible ID
+						Name(_ADR, Zero) // _ADR: Address
+						Device(DVL0) {
+							Name(_ADR, 0x57) // _ADR: Address
+							Name(_CID, "diagsvault") // _CID: Compatible ID
+							Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
 							{
-								If (!Arg2)
-								{
-									Return (Buffer ()
-									{
-										 0x57
-									})
-								}
-	
-								Return (Package ()
-								{
-									"address", 
-									0x57
-								})
+								Return(0x0F)
 							}
 						}
-	
+
+						Method(_STA, 0, NotSerialized) // _STA: Status
+						{
+							Return(0x0F)
+						}
+					}
+				}
+
+				Scope (RP03)
+				{
+					Scope (PXSX)
+					{
+						Method (_STA, 0, NotSerialized)  // _STA: Status
+						{
+							Return (Zero)
+						}
+					}
+
+					Device (LAN1)
+					{
+						Name (_ADR, Zero)  // _ADR: Address
 						Method (_STA, 0, NotSerialized)  // _STA: Status
 						{
 							Return (0x0F)
 						}
 					}
 				}
-				
-				/*
-				Cosmetics: Rename PXSX to LAN1 (EN1).
-				*/
-				
-				Scope (RP03)
-				{
-					Scope (PXSX)
-					{
-						Method (_STA, 0, NotSerialized)
-					   {
-						   Return (Zero)
-					   }
-					}
-				
-					Device (LAN1)
-					{   
-						Name (_ADR, Zero)
-						Method (_STA, 0, NotSerialized)
-						{
-							Return (0x0F)
-						}
-					}
-				}
-				
-				/*
-				Cosmetics: Rename PXSX to ARPT (EN2).
-				*/
-				
+
 				Scope (RP07)
 				{
 					Scope (PXSX)
 					{
-						Method (_STA, 0, NotSerialized)
-					   {
-						   Return (Zero)
-					   }
+						Method (_STA, 0, NotSerialized)  // _STA: Status
+						{
+							Return (Zero)
+						}
 					}
-				
+
 					Device (ARPT)
-					{   
-						Name (_ADR, Zero)
-						Method (_STA, 0, NotSerialized)
+					{
+						Name (_ADR, Zero)  // _ADR: Address
+						Method (_STA, 0, NotSerialized)  // _STA: Status
 						{
 							Return (0x0F)
 						}
 					}
 				}
-				
-				/*
-				Cosmetics: Rename PXSX to ANS1 (NVME2).
-				*/
-	
+
 				Scope (RP09)
 				{
 					Scope (PXSX)
 					{
-						Method (_STA, 0, NotSerialized)
-					   {
-						   Return (Zero)
-					   }
+						Method (_STA, 0, NotSerialized)  // _STA: Status
+						{
+							Return (Zero)
+						}
 					}
-			
+
 					Device (ANS1)
-					{   
-						Name (_ADR, Zero)
-						Method (_STA, 0, NotSerialized)
+					{
+						Name (_ADR, Zero)  // _ADR: Address
+						Method (_STA, 0, NotSerialized)  // _STA: Status
 						{
 							Return (0x0F)
 						}
 					}
 				}
-				
-				/*
-				Cosmetics: Rename PXSX to ANS2 (NVME2).
-				*/
-	
+
 				Scope (RP21)
 				{
 					Scope (PXSX)
 					{
-						Method (_STA, 0, NotSerialized)
-					   {
-						   Return (Zero)
-					   }
+						Method (_STA, 0, NotSerialized)  // _STA: Status
+						{
+							Return (Zero)
+						}
 					}
-			
+
 					Device (ANS2)
-					{   
-						Name (_ADR, Zero)
-						Method (_STA, 0, NotSerialized)
+					{
+						Name (_ADR, Zero)  // _ADR: Address
+						Method (_STA, 0, NotSerialized)  // _STA: Status
 						{
 							Return (0x0F)
 						}
 					}
 				}
-				
-				/*
-				Cosmetics: Rename SATO to SATA (Disk).
-				*/
-				
+
 				Scope (SAT0)
 				{
 					Method (_STA, 0, NotSerialized)  // _STA: Status
@@ -305,31 +208,23 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
 						Return (Zero)
 					}
 				}
-				
+
 				Device (SATA)
 				{
 					Name (_ADR, 0x00170000)  // _ADR: Address
-					Method (_STA, 0, NotSerialized)
+					Method (_STA, 0, NotSerialized)  // _STA: Status
 					{
 						Return (0x0F)
 					}
 				}
-				
-				/*
-				 * Workaround to fix missing ACPI device. Normally seen as "pci8086,XXXX" in I/O Registry.
-				 */
-			
-				Device (TSUB)
+
+				Device (THSS)
 				{
 					Name (_ADR, 0x00140002)  // _ADR: Address
 				}
 			}
 		}
-		
-		/*
-		 * Workaround to fix USB Power Management/Power Properties for Skylake and newer.
-		 */
-				 
+
 		If (_OSI ("Darwin"))
 		{
 			Device (USBX)
@@ -339,13 +234,13 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
 				{
 					If ((Arg2 == Zero))
 					{
-						Return (Buffer ()
+						Return (Buffer (One)
 						{
-							 0x03
+							 0x03                                             // .
 						})
 					}
-	
-					Return (Package ()
+
+					Return (Package (0x08)
 					{
 						"kUSBSleepPowerSupply", 
 						0x13EC, 
@@ -357,7 +252,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
 						0x0834
 					})
 				}
-	
+
 				Method (_STA, 0, NotSerialized)  // _STA: Status
 				{
 					Return (0x0F)
@@ -366,3 +261,4 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
 		}
 	}
 }
+
