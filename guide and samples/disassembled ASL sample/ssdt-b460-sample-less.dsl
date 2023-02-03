@@ -8,29 +8,26 @@
  * IGPU - "Whatevergreen.kext". Do not rename known device. Renaming doesn't
  * affect performance. Less code used is recommended.
  */
- 
-DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
-{
-	
+
+DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x42343630) {
+
 	/*
 	 * Hey, lets clean up ACPI code. This is an example how we can clean up multiple
-	 * device / device properties in single SSDT.
+	 * device / device properties is single SSDT.
 	 */
 
-	External (_SB_.PCI0, DeviceObj)
-	External (_SB_.PCI0.GLAN, DeviceObj)
-	External (_SB_.PCI0.LPCB, DeviceObj)
-	External (_SB_.PCI0.PEG0, DeviceObj)
-	External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
-	External (_SB_.PCI0.SBUS, DeviceObj)
-	External (STAS, IntObj)
-	
+	External(_SB_.PCI0, DeviceObj)
+	External(_SB_.PCI0.LPCB, DeviceObj)
+	External(_SB_.PCI0.PEG0, DeviceObj)
+	External(_SB_.PCI0.PEG0.PEGP, DeviceObj)
+	External(_SB_.PCI0.SBUS, DeviceObj)
+	External(STAS, IntObj)
+
 	/*
 	 * System BUS
 	 */
-	 
-	Scope (\_SB)
-	{
+
+	Scope(\_SB) {
 		/*
 		 * "If (_OSI ("Darwin"))" is a preprocessor directive in C or C++ that checks
 		 * if the target operating system is Darwin (macOS), which is the core of the open-source
@@ -41,90 +38,80 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
 		 * This workaround is better solution to use "less acpi code" in multiple device with
 		 * in the same root.
 		 */
-		 
-		If (_OSI ("Darwin"))
-		{
-			
-		/*
-		 * This is a workaround to patch "If ((STAS == Zero))" in DSDT.
-		 * AWAC/RTC0 system clocks fix found on newer hardware. ie: B360, B365, H310, 
-		 * Z370 (Gigabyte and AsRock boards with newer BIOS versions), Z390, B460, Z490,
-		 * X99, and X299. 
-		 */
-		
-			Method (_INI, 0, NotSerialized)  // _INI: Initialize
+
+		If(_OSI("Darwin")) {
+
+			/*
+			 * This is a workaround to patch "If ((STAS == Zero))" in DSDT.
+			 * AWAC/RTC0 system clocks fix found on newer hardware. ie: B360, B365, H310, 
+			 * Z370 (Gigabyte and AsRock boards with newer BIOS versions), Z390, B460, Z490,
+			 * X99, and X299. 
+			 */
+
+			Method(_INI, 0, NotSerialized) // _INI: Initialize
 			{
 				STAS = One
 			}
 		}
-		
-		If (_OSI ("Darwin"))
-		{
+
+		If(_OSI("Darwin")) {
 			/*
 			 * PCI Root Bridge
 			 */
-			 
-			Scope (PCI0)
-			{
+
+			Scope(PCI0) {
 				/*
 				Enabling DRAM instead of MCHC.
 				*/
-				
-				Device (DRAM)
-				{
-					Name (_ADR, Zero)  // _ADR: Address
+
+				Device(DRAM) {
+					Name(_ADR, Zero) // _ADR: Address
 				}
-				
+
 				/*
 				Low Pin Count BUS.
 				*/
 
-				Scope (LPCB)
-				{
-					
+				Scope(LPCB) {
+
 					/*
 					 * Fake Embedded Controller for Hackintosh Purpose. On desktops, the EC (or better known as
 					 * the embedded controller) isn't compatible with AppleACPIEC driver, this is a workaround 
 					 * to disable this device when running macOS. Desktops will want real EC off, and a fake EC 
 					 * created.
 					 */
-					
-					Device (EC)
-					{
-						Name (_HID, EisaId ("ACID001") /* Embedded Controller Device */)  // _HID: Hardware ID
-						Method (_STA, 0, NotSerialized)  // _STA: Status
+
+					Device(EC) {
+						Name (_HID, "ACID0001")  // _HID: Hardware ID
+						Method(_STA, 0, NotSerialized) // _STA: Status
 						{
-							Return (0x0F)
+							Return(0x0F)
 						}
 					}
 				}
 
-				Scope (PEG0)
-				{
-					Scope (PEGP)
-					{
-						
+				Scope(PEG0) {
+					Scope(PEGP) {
+
 						/*
 						 * Workaround to fix missing ACPI device. This is a PCI bridge device present on PEGP.
 						 * Normally seen as "pci-bridge" in I/O Registry.
 						 */
-						 
-						Device (PXSX)
-						{
-							Name (_ADR, Zero)  // _ADR: Address
+
+						Device(PXSX) {
+							Name(_ADR, Zero) // _ADR: Address
 						}
 					}
 				}
-				
+
 				/*
 				 * Workaround to fix missing ACPI device. Normally seen as "pci8086,XXXX" in I/O Registry.
 				 */
 
-				Device (PGMM)
-				{
-					Name (_ADR, 0x00080000)  // _ADR: Address
+				Device(PGMM) {
+					Name(_ADR, 0x00080000) // _ADR: Address
 				}
-				
+
 				/*
 				 * ACPI Patch to handles the System Management Bus, which has many functions like:
 				 * - AppleSMBusController (Aids with correct temperature, fan, voltage, ICH, etc readings)
@@ -132,90 +119,70 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x42343630)
 				 * - Memory Reporting (Aids in proper memory reporting and can aid in getting better kernel
 				 * 	 panic details if memory related) and etc.
 				 */
-				
-				Scope (SBUS)
-				{
-					Device (BUS0)
-					{
-						Name (_CID, "smbus")  // _CID: Compatible ID
-						Name (_ADR, Zero)  // _ADR: Address
-						Device (DVL0)
-						{
-							Name (_ADR, 0x57)  // _ADR: Address
-							Name (_CID, "diagsvault")  // _CID: Compatible ID
-							Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+
+				Scope(SBUS) {
+					Device(BUS0) {
+						Name(_CID, "smbus") // _CID: Compatible ID
+						Name(_ADR, Zero) // _ADR: Address
+						Device(DVL0) {
+							Name(_ADR, 0x57) // _ADR: Address
+							Name(_CID, "diagsvault") // _CID: Compatible ID
+							Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
 							{
-								If (!Arg2)
-								{
-									Return (Buffer ()
-									{
-										 0x57
-									})
-								}
-	
-								Return (Package ()
-								{
-									"address", 
-									0x57
-								})
+								Return(0x0F)
 							}
 						}
-	
-						Method (_STA, 0, NotSerialized)  // _STA: Status
+
+						Method(_STA, 0, NotSerialized) // _STA: Status
 						{
-							Return (0x0F)
+							Return(0x0F)
 						}
 					}
 				}
-				
+
 				/*
 				 * Workaround to fix missing ACPI device. Normally seen as "pci8086,XXXX" in I/O Registry.
 				 */
-			
-				Device (TSUB)
-				{
-					Name (_ADR, 0x00140002)  // _ADR: Address
+
+				Device(THSS) {
+					Name(_ADR, 0x00140002) // _ADR: Address
 				}
 			}
 		}
-		
+
 		/*
 		 * Workaround to fix USB Power Management/Power Properties for Skylake and newer.
 		 */
-				 
-		If (_OSI ("Darwin"))
-		{
-			Device (USBX)
-			{
-				Name (_ADR, Zero)  // _ADR: Address
-				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+
+		If(_OSI("Darwin")) {
+			Device(USBX) {
+				Name(_ADR, Zero) // _ADR: Address
+				Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
 				{
-					If ((Arg2 == Zero))
-					{
-						Return (Buffer ()
-						{
-							 0x03
+					If((Arg2 == Zero)) {
+						Return(Buffer() {
+							0x03
 						})
 					}
-	
-					Return (Package ()
-					{
-						"kUSBSleepPowerSupply", 
-						0x13EC, 
-						"kUSBSleepPortCurrentLimit", 
-						0x0834, 
-						"kUSBWakePowerSupply", 
-						0x13EC, 
-						"kUSBWakePortCurrentLimit", 
+
+					Return(Package() {
+						"kUSBSleepPowerSupply",
+						0x13EC,
+						"kUSBSleepPortCurrentLimit",
+						0x0834,
+						"kUSBWakePowerSupply",
+						0x13EC,
+						"kUSBWakePortCurrentLimit",
 						0x0834
 					})
 				}
-	
-				Method (_STA, 0, NotSerialized)  // _STA: Status
+
+				Method(_STA, 0, NotSerialized) // _STA: Status
 				{
-					Return (0x0F)
+					Return(0x0F)
 				}
 			}
 		}
 	}
 }
+
