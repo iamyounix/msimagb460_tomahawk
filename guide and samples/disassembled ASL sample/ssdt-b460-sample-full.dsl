@@ -1,23 +1,3 @@
-/*
- * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20200925 (64-bit version)
- * Copyright (c) 2000 - 2020 Intel Corporation
- * 
- * Disassembling to symbolic ASL+ operators
- *
- * Disassembly of iASL6dCFhK.aml, Sat Feb  4 04:07:06 2023
- *
- * Original Table Header:
- *     Signature        "SSDT"
- *     Length           0x00000406 (1030)
- *     Revision         0x02
- *     Checksum         0xF7
- *     OEM ID           "MSI"
- *     OEM Table ID     "B460"
- *     OEM Revision     0x42343630 (1110718000)
- *     Compiler ID      "INTL"
- *     Compiler Version 0x20200925 (538970405)
- */
 DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x42343630) {
 	External(_SB_.PCI0, DeviceObj)
 	External(_SB_.PCI0.GLAN, DeviceObj)
