@@ -190,7 +190,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
   - SMBIOS: [iMac20,1][smbiosimac20,1]
 
-> **Note**: Refer real iMac20,1 Apple. Inc [BIOS Vendor]([iMac20,1](References/BIOSVendor:%20%22Apple%20Inc.%22.yml))
+> **Note**: Refer real iMac20,1 Apple. Inc [BIOS Vendor][apple.Inc-iMac20,1-biosvendor]
 
 - **UEFI**
 
@@ -285,6 +285,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 [acidanthera][dev0] | [dortania][dev-group0] | [dreamwhite][dev1]
 
 [als]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/ambient%20light%20sensor/ambient%20light%20sensor.md
+[apple.Inc-iMac20,1-biosvendor]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/References/BIOSVendor:%20%22Apple%20Inc.%22.yml
 [applealc]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/AppleALC.kext
 [combine-kext]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/combine%20kext/combine%20kext.md
 [dev-group0]: https://github.com/dortania
