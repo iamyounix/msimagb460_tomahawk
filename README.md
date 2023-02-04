@@ -263,6 +263,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
   - [Combine Kext][combine-kext]
   - [Disassembled ASL Sample][dis-ssdt-sample]
   - [Renaming and Add Missing Devices][rename&miss]
+  - [SBUS and MCHC][sbusmchc]
   - [Transferring Opencore to Clover][oc2clvr]
   - [USB Wake and Sleep Fix][wake&sleep]
 
@@ -292,6 +293,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 [oc2clvr]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/transferring%20opencore%20to%20clover/transferring%20opencore%20to%20clover.md
 [ocgettingstarted]: https://dortania.github.io/OpenCore-Install-Guide/
 [rename&miss]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/renaming%20and%20add%20missing%20devices/Rename%20and%20Add%20Missing%20Devices.md
+[sbusmchc]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/sbus%20and%20mchc/sbus%20and%20mchc.md
 [smbiosimac20,1]: https://everymac.com/systems/apple/imac/specs/imac-core-i5-3.1-6-core-27-inch-retina-5k-2020-specs.html
 [ssdt-b460]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/disassembled%20ASL%20sample/ssdt-b460-sample-full.dsl
 [wake&sleep]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/usb%20wake%20and%20sleep%20fix/usb%20wake%20and%20sleep%20fix.md
