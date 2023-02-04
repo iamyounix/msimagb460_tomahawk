@@ -137,15 +137,15 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
   - Add
   
-    - [x] AppleALC.kext
-    - [x] IntelMausi.kext
-    - [x] Lilu.kext
-    - [x] LucyRTL8125Ethernet.kext
-    - [x] SMCProcessor.kext
-    - [x] SMCSuperIO.kext
-    - [x] USBMap.kext
-    - [x] VirtualSMC.kext
-    - [x] WhateverGreen.kext
+    - [x] [AppleALC.kext][applealc]
+    - [x] [IntelMausi][intelmausi]
+    - [x] [Lilu][lilu]
+    - [x] [LucyRTL8125Ethernet][lucyrtl8125Ethernet]
+    - [x] [SMCProcessor][smcprocessor]
+    - [x] [SMCSuperIO][smcsuperio]
+    - [x] [USBMap][usbmap]
+    - [x] [VirtualSMC][virtualsmc]
+    - [x] [WhateverGreen][whatevergreen]
 
   - Patch
 
@@ -283,6 +283,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 [acidanthera][dev0] | [dortania][dev-group0] | [dreamwhite][dev1]
 
 [als]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/ambient%20light%20sensor/ambient%20light%20sensor.md
+[applealc]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/AppleALC.kext
 [combine-kext]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/combine%20kext/combine%20kext.md
 [dev-group0]: https://github.com/dortania
 [dev-prop-samples]: https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/DeviceProperties/deviceproperties.plist
@@ -290,10 +291,18 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 [dev1]: https://github.com/dreamwhite
 [devnews]: https://dortania.github.io
 [dis-ssdt-sample]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/tree/main/guide%20and%20samples/disassembled%20ASL%20sample
+[intelmausi]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/IntelMausi.kext
+[lilu]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/Lilu.kext
+[lucyrtl8125Ethernet]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/LucyRTL8125Ethernet.kext
 [oc2clvr]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/transferring%20opencore%20to%20clover/transferring%20opencore%20to%20clover.md
 [ocgettingstarted]: https://dortania.github.io/OpenCore-Install-Guide/
 [rename&miss]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/renaming%20and%20add%20missing%20devices/Rename%20and%20Add%20Missing%20Devices.md
 [sbusmchc]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/sbus%20and%20mchc/sbus%20and%20mchc.md
 [smbiosimac20,1]: https://everymac.com/systems/apple/imac/specs/imac-core-i5-3.1-6-core-27-inch-retina-5k-2020-specs.html
+[smcprocessor]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/SMCProcessor.kext/Contents
+[smcsuperio]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/SMCSuperIO.kext
 [ssdt-b460]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/disassembled%20ASL%20sample/ssdt-b460-sample-full.dsl
+[usbmap]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/USBMap.kext
+[virtualsmc]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/VirtualSMC.kext
 [wake&sleep]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/usb%20wake%20and%20sleep%20fix/usb%20wake%20and%20sleep%20fix.md
+[whatevergreen]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/WhateverGreen.kext
