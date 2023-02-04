@@ -32,6 +32,8 @@ Device (_SB)
 }
 ```
 
+> **Note**: Simple, but not working on Mac. 
+
 - Real Mac (iMac19,1)
 
 ```asl
