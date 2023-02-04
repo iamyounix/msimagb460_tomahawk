@@ -32,7 +32,7 @@ Device (_SB)
 }
 ```
 
-> **Note**: Simple, but not working on Mac. 
+> **Note**: Simple, but not working on Mac.
 
 - Real Mac (iMac19,1)
 
