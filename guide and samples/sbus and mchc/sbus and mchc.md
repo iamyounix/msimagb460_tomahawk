@@ -64,47 +64,46 @@ Device (_SB)
 ### SBUS and MCHC Fix
 
 ```asl
-DefinitionBlock("", "SSDT", 2, "CpyPst", "SBUSMCHC", 0x00010000)
+DefinitionBlock ("", "SSDT", 2, "CpyPst", "SBUSMCHC", 0x00010000)
 {
-	External(\_SB.PCI0, DeviceObj)
-	External(\_SB.PCI0.SBUS, DeviceObj)
-	
-	Scope(\_SB) 
-	{
-		If(_OSI("Darwin"))
-		{
-			Scope(PCI0) 
-			{
-				Device(MCHC) 
-				{
-					Name(_ADR, Zero)
-				}
-				
-				Scope(SBUS) 
-				{
-					Device(BUS0) 
-					{
-						Name(_ADR, Zero)
-						Name(_CID, "smbus")
-						Device(DVL0) 
-						{
-							Name(_ADR, 0x57)
-							Name(_CID, "diagsvault")
-							Method(_DSM, 4, NotSerialized)
-							{
-								Return(0x0F)
-							}
-						}
-						
-						Method(_STA, Zero, NotSerialized)
-						{
-							Return(0x0F)
-						}
-					}
-				}
-			}
-		}
-	}
+    External (_SB_.PCI0, DeviceObj)
+    External (_SB_.PCI0.SBUS, DeviceObj)
+
+    Scope (\_SB)
+    {
+        If (_OSI ("Darwin"))
+        {
+            Scope (PCI0)
+            {
+                Device (MCHC)
+                {
+                    Name (_ADR, Zero)  // _ADR: Address
+                }
+
+                Scope (SBUS)
+                {
+                    Device (BUS0)
+                    {
+                        Name (_ADR, Zero)  // _ADR: Address
+                        Name (_CID, "smbus")  // _CID: Compatible ID
+                        Device (DVL0)
+                        {
+                            Name (_ADR, 0x57)  // _ADR: Address
+                            Name (_CID, "diagsvault")  // _CID: Compatible ID
+                            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                            {
+                                Return (0x0F)
+                            }
+                        }
+
+                        Method (_STA, 0, NotSerialized)  // _STA: Status
+                        {
+                            Return (0x0F)
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 ```
-
