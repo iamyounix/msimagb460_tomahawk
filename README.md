@@ -190,6 +190,8 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
   - SMBIOS: [iMac20,1][smbiosimac20,1]
 
+> **Note**: Refer real iMac20,1 Apple. Inc [BIOS Vendor]([iMac20,1](References/BIOSVendor:%20%22Apple%20Inc.%22.yml))
+
 - **UEFI**
 
   - APFS
