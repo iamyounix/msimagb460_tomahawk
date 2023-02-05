@@ -200,7 +200,7 @@ Microsoft has reserved the vendor ID `PNP` for devices that are compatible with 
 - **PNP0D80** - `*` Windows-compatible system power management controller
 
 > **Note**: `_CID` marked with `*` will be used to fix stubborn USB devices
-> 
+
 Below is another code that I made to patch USB Power Issue to certain USB device. Just tested this code with no issues. Let me know if this code doesnt work. Below is an example.
 
 ```asl
