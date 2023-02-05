@@ -10,6 +10,7 @@ Table of contents
   - [Method 1](#method-1)
   - [Method 2](#method-2)
   - [Method 3](#method-3)
+  - [USBX (Power Management Issue)](#usbx-power-management-issue)
 - [Special Thanks!](#special-thanks)
 - [Credits](#credits)
 
@@ -182,6 +183,105 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
        - `kUSBWakePortCurrentLimit` - `number` - `2100`
 
 5. Load `USBMap.kext` and `SSDT-USBX.aml`. Good Luck!
+
+### USBX (Power Management Issue)
+
+Microsoft has reserved the vendor ID `PNP` for devices that are compatible with inbox drivers shipped with Windows. Windows defines a number of device IDs for use with this vendor ID that can be used to load the Windows-provided driver for a device. A separate object, the Compatible ID `_CID` object, is used to return these identifiers. Windows always prefers Hardware IDs (returned by `_HID`) over Compatible IDs (returned by `_CID`) in INF matching and driver selection. This preference allows the Windows-provided driver to be treated as a default driver if a vendor-provided device-specific driver is not available. The Compatible IDs in the following table are newly created for use with SoC platforms.
+
+- **PNP0C40** - Windows-compatible button array
+- **PNP0C50** - HID-over-I2C compliant device
+- **PNP0C60** - Convertible laptop display sensor device
+- **PNP0C70** - Dock sensor device
+- **PNP0D10** - `*` XHCI-compliant USB controller with standard debug
+- **PNP0D15** - XHCI-compliant USB controller without standard debug
+- **PNP0D20** - EHCI-compliant USB controller without standard debug
+- **PNP0D25** - EHCI-compliant USB controller with standard debug
+- **PNP0D40** - SDA standard-compliant SD host controller
+- **PNP0D80** - `*` Windows-compatible system power management controller
+
+> **Note**: `_CID` marked with `*` will be used to fix stubborn USB devices
+> 
+Below is another code that I made to patch USB Power Issue to certain USB device. Just tested this code with no issues. Let me know if this code doesnt work. Below is an example.
+
+```asl
+DefinitionBlock ("", "SSDT", 2, "CpyPst", "USBX", 0x00002000)
+{
+    External (_SB_.PCI0.RP05.PXSX, DeviceObj)
+    External (_SB_.PCI0.RP19.PXSX, DeviceObj)
+    External (_SB_.PCI0.XHC_, DeviceObj)
+
+    Scope (\_SB)
+    {
+        If (_OSI ("Darwin"))
+        {
+            Device (USBX)
+            {
+                Name (_HID, "PNP0D80" /* Windows-compatible System Power Management Controller */)  // _HID: Hardware ID
+                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                {
+                    If ((Arg2 == Zero))
+                    {
+                        Return (Buffer (One)
+                        {
+                             0x03                                             // .
+                        })
+                    }
+
+                    Return (Package (0x08)
+                    {
+                        "kUSBSleepPowerSupply", 
+                        0x13EC, 
+                        "kUSBSleepPortCurrentLimit", 
+                        0x0834, 
+                        "kUSBWakePowerSupply", 
+                        0x13EC, 
+                        "kUSBWakePortCurrentLimit", 
+                        0x0834
+                    })
+                }
+
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0F)
+                }
+            }
+
+            Scope (\_SB.PCI0.XHC)
+            {
+                Name (_HID, "PNP0D10" /* XHCI USB Controller with debug */)  // _HID: Hardware ID
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0B)
+                }
+
+                Notify (USBX, 0x80) // Status Change
+            }
+
+            Scope (\_SB.PCI0.RP05.PXSX)
+            {
+                Name (_HID, "PNP0D10" /* XHCI USB Controller with debug */)  // _HID: Hardware ID
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0B)
+                }
+
+                Notify (USBX, 0x80) // Status Change
+            }
+
+            Scope (\_SB.PCI0.RP19.PXSX)
+            {
+                Name (_HID, "PNP0D10" /* XHCI USB Controller with debug */)  // _HID: Hardware ID
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0B)
+                }
+
+                Notify (USBX, 0x80) // Status Change
+            }
+        }
+    }
+}
+```
 
 ## Special Thanks
 
