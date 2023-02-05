@@ -52,4 +52,4 @@ It is possible to mix some Kexts. Only associated kexts can do this, though. We 
 [dev0]: https://github.com/acidanthera/
 [usbtoolbox-download]: https://github.com/USBToolBox/tool
 [xhciunsupport]: https://github.com/RehabMan/OS-X-USB-Inject-All
-[xhcipics]: etc/xhci-unsupported.png
+[xhcipics]: image/xhci-unsupported.png

@@ -37,46 +37,44 @@ Since `ALSD` and `ALSE` is connected to each other, it is easy to call `AppleLMU
 
 4. Below is conjunction method from `ALSE` to call `AppleLMUController` which is connected to `ALSD` / `ALS0`
 
-   ```asl
-   DefinitionBlock ("", "SSDT", 2, "CpyPst", "ALSE", 0x12345678)
-   {
-       External (ALSE, UnknownObj)
-   
-       Scope (\)
-       {
-           If (_OSI ("Darwin"))
-           {
-               ALSE = 0x02
-           }
-       }
-   }
-   ```
+    ```asl
+    DefinitionBlock ("", "SSDT", 2, "CpyPst", "ALSE", 0x00002000)
+    {
+        External (ALSE, UnknownObj)
+    
+        Scope (\)
+        {
+            If (_OSI ("Darwin"))
+            {
+                ALSE = 0x02
+            }
+        }
+    }
+    ```
 
 ### Method 2 : Recommended if `_HID` `ACPI0008` is not exist in DSDT
 
 Creating fake `ALSO` doesn't affect current ambient light sensor in original ACPI. However, correcting `variable` exist in multiple places may affect other components while achieving our desired effect. When there is an ambient light sensor device in the original ACPI, the name may not be ALSD, although no other name has been found yet. If so, adjust the path in the SSDT accordingly. Below is an example:
 
 ```asl
-DefinitionBlock ("", "SSDT", 2, "CpyPst", "ALS0", 0x12345678)
+DefinitionBlock ("", "SSDT", 2, "CpyPst", "ALS0", 0x00002000)
 {
     Scope (_SB)
     {
         Device (ALS0)
         {
-            Name (_HID, "ACPI0008")
-            Name (_CID, "smc-als")
-            Name (_ALI, 0x012C)
-            Name (_ALR, Package (0x01)
-            Name (_ALR, Package (0x01)) 
+            Name (_HID, "ACPI0008" /* Ambient Light Sensor Device */)  // _HID: Hardware ID
+            Name (_CID, "smc-als")  // _CID: Compatible ID
+            Name (_ALI, 0x012C)  // _ALI: Ambient Light Illuminance
+            Name (_ALR, Package (0x01)  // _ALR: Ambient Light Response
             {
                 Package (0x02)
                 {
-                    0x64,
+                    0x64, 
                     0x012C
                 }
             })
-            
-            Method (_STA, 0, NotSerialized)
+            Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 If (_OSI ("Darwin"))
                 {

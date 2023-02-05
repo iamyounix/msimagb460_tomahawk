@@ -127,7 +127,7 @@ Table of contents
                 Scope (PCI0)
                 {
                     If (_OSI ("Darwin"))
-                        {
+                    {
                         Scope (SAT0)
                         {
                             Method (_STA, 0, NotSerialized)  // _STA: Status
