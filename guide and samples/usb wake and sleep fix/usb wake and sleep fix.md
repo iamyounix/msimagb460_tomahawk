@@ -216,7 +216,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "USBX", 0x00002000)
         {
             Device (USBX)
             {
-                Name (_HID, "PNP0D80" /* Windows-compatible System Power Management Controller */)  // _HID: Hardware ID
+                Name (_ADR, Zero)  // _ADR: Address
                 Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
                     If ((Arg2 == Zero))
