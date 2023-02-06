@@ -276,9 +276,9 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 - [HDAU][HDAU]
 - [HDEF][HDEF]
 - [IGPU][IGPU]
-- [RP05.PXSX][RP05.PXSX] * USB
-- [RP19.PXSX][RP19.PXSX] * USB
-- [XHCI][XHCI] * USB
+- [RP05.PXSX][RP05.PXSX] `*` USB
+- [RP19.PXSX][RP19.PXSX] `*` USB
+- [XHCI][XHCI] `*` USB
   
 ## Update
 
