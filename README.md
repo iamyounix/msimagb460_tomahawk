@@ -271,16 +271,14 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 ## MSI-B460 Plist Dump
 
-- Below is relevan guide and samples for Hackintosh:
-
-  - [AGPM][AGPM]
-  - [GFX0][GFX0]
-  - [HDAU][HDAU]
-  - [HDEF][HDEF]
-  - [IGPU][IGPU]
-  - [RP05.PXSX][RP05.PXSX] * USB
-  - [RP19.PXSX][RP19.PXSX] * USB
-  - [XHCI][XHCI] * USB
+- [AGPM][AGPM]
+- [GFX0][GFX0]
+- [HDAU][HDAU]
+- [HDEF][HDEF]
+- [IGPU][IGPU]
+- [RP05.PXSX][RP05.PXSX] * USB
+- [RP19.PXSX][RP19.PXSX] * USB
+- [XHCI][XHCI] * USB
   
 ## Update
 
