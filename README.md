@@ -269,6 +269,19 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
   - [Transferring Opencore to Clover][oc2clvr]
   - [USB Wake and Sleep Fix][wake&sleep]
 
+## MSI-B460 Plist Dump
+
+- Below is relevan guide and samples for Hackintosh:
+
+  - [AGPM][AGPM]
+  - [GFX0][GFX0]
+  - [HDAU][HDAU]
+  - [HDEF][HDEF]
+  - [IGPU][IGPU]
+  - [RP05.PXSX][RP05.PXSX] * USB
+  - [RP19.PXSX][RP19.PXSX] * USB
+  - [XHCI][XHCI] * USB
+  
 ## Update
 
 - January 28, 2023 2:02 AM
@@ -284,6 +297,14 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 [acidanthera][dev0] | [dortania][dev-group0] | [dreamwhite][dev1]
 
+[AGPM]: msib460-plistdump/AGPM.plist
+[GFX0]: msib460-plistdump/GFX0.plist
+[HDAU]: msib460-plistdump/HDAU.plist
+[HDEF]: msib460-plistdump/HDEF.plist
+[IGPU]: msib460-plistdump/IGPU.plist
+[RP05.PXSX]: msib460-plistdump/RP05.PXSX.plist
+[RP19.PXSX]: msib460-plistdump/RP19.PXSX.plist
+[XHCI]: msib460-plistdump/XHCI.plist
 [als]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/ambient%20light%20sensor/ambient%20light%20sensor.md
 [apple.Inc-iMac20,1-biosvendor]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/References/BIOSVendor:%20%22Apple%20Inc.%22.yml
 [applealc]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/AppleALC.kext
