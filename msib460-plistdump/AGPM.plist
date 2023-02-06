@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.driver.AGPM</string>
+	<key>CFBundleIdentifierKernel</key>
+	<string>com.apple.driver.AGPM</string>
+	<key>IOClass</key>
+	<string>AGPMController</string>
+	<key>IOMatchCategory</key>
+	<string>IODefaultMatchCategory</string>
+	<key>IONameMatch</key>
+	<string>AGPMEnabler</string>
+	<key>IONameMatched</key>
+	<string>AGPMEnabler</string>
+	<key>IOPersonalityPublisher</key>
+	<string>com.apple.driver.AGPM</string>
+	<key>IOProbeScore</key>
+	<integer>0</integer>
+	<key>IOProviderClass</key>
+	<string>IOPlatformPluginDevice</string>
+	<key>Machine</key>
+	<dict>
+		<key>iMac20,1</key>
+		<dict>
+			<key>GFX0</key>
+			<dict>
+				<key>AGDCEnabled</key>
+				<integer>1</integer>
+				<key>Heuristic</key>
+				<dict>
+					<key>ID</key>
+					<integer>-1</integer>
+				</dict>
+				<key>control-id</key>
+				<integer>17</integer>
+				<key>max-power-state</key>
+				<integer>15</integer>
+				<key>min-power-state</key>
+				<integer>0</integer>
+			</dict>
+			<key>IGPU</key>
+			<dict>
+				<key>Heuristic</key>
+				<dict>
+					<key>EnableOverride</key>
+					<integer>0</integer>
+					<key>ID</key>
+					<integer>2</integer>
+				</dict>
+				<key>control-id</key>
+				<integer>16</integer>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
