@@ -14,6 +14,7 @@ Table of contents
   - [Plist Configuration](#plist-configuration)
   - [History](#history)
 - [Guide and Samples](#guide-and-samples)
+- [MSI-B460 Plist Dump](#msi-b460-plist-dump)
 - [Update](#update)
 - [Credits](#credits)
 
