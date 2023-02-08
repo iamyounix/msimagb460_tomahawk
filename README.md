@@ -67,7 +67,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 - **ACPI**
 
-  - [SSDT-MSIB460.aml][ssdt-b460]
+  - Check out my [SSDT-MSIB460][ssdt-b460] in `aml` format to download or view [readable][dsl] `dsl` format to verify first.
 
 - **Booter**
 
@@ -310,6 +310,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 [dev1]: https://github.com/dreamwhite
 [devnews]: https://dortania.github.io
 [dis-ssdt-sample]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/tree/main/guide%20and%20samples/disassembled%20ASL%20sample
+[dsl]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/disassembled%20ASL%20sample/ssdt-b460-sample-less.dsl
 [intelmausi]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/IntelMausi.kext
 [lilu]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/Lilu.kext
 [lucyrtl8125Ethernet]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/LucyRTL8125Ethernet.kext
@@ -320,7 +321,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 [smbiosimac20,1]: https://everymac.com/systems/apple/imac/specs/imac-core-i5-3.1-6-core-27-inch-retina-5k-2020-specs.html
 [smcprocessor]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/SMCProcessor.kext/Contents
 [smcsuperio]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/SMCSuperIO.kext
-[ssdt-b460]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/disassembled%20ASL%20sample/ssdt-b460-sample-full.dsl
+[ssdt-b460]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/acpi/SSDT-MSIB460.aml
 [usbmap]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/USBMap.kext
 [virtualsmc]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/VirtualSMC.kext
 [wake&sleep]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/usb%20wake%20and%20sleep%20fix/usb%20wake%20and%20sleep%20fix.md
