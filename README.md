@@ -81,7 +81,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - ProvideMaxSlide - number - `0`
     - ResizeAppleGpuBars - number - `-1`
   
-      > **Note**: Other than above is `No`
+  > **Note**: Other than above is `No`
 
 - **DeviceProperties**
 
@@ -159,7 +159,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - Limit - number - `0`
     - Replace - data - `00000000 00000000 000000`
 
-> **Note**: Others than above should remain as empty
+  > **Note**: Others than above should remain as empty
 
 - Quirks
   
@@ -277,9 +277,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 - [HDAU][HDAU]
 - [HDEF][HDEF]
 - [IGPU][IGPU]
-- [RP05.PXSX][RP05.PXSX] `*` USB
-- [RP19.PXSX][RP19.PXSX] `*` USB
-- [XHCI][XHCI] `*` USB
+- [XHCI][XHCI]
   
 ## Update
 
@@ -301,8 +299,6 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 [HDAU]: msib460-plistdump/HDAU.plist
 [HDEF]: msib460-plistdump/HDEF.plist
 [IGPU]: msib460-plistdump/IGPU.plist
-[RP05.PXSX]: msib460-plistdump/RP05.PXSX.plist
-[RP19.PXSX]: msib460-plistdump/RP19.PXSX.plist
 [XHCI]: msib460-plistdump/XHCI.plist
 [als]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/ambient%20light%20sensor/ambient%20light%20sensor.md
 [apple.Inc-iMac20,1-biosvendor]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/References/BIOSVendor:%20%22Apple%20Inc.%22.yml
