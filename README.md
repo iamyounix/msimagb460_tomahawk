@@ -326,3 +326,4 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 [virtualsmc]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/VirtualSMC.kext
 [wake&sleep]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/usb%20wake%20and%20sleep%20fix/usb%20wake%20and%20sleep%20fix.md
 [whatevergreen]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/WhateverGreen.kext
+
