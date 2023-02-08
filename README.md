@@ -67,7 +67,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 - **ACPI**
 
-  - Check out my [SSDT-MSIB460][ssdt-b460] in `aml` format to download or view [readable][dsl] `dsl` format to verify first.
+  - Check out my SSDT in `aml` format to [download][aml] or view [readable][dsl] `dsl` format to verify first.
 
 - **Booter**
 
@@ -301,6 +301,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 [IGPU]: msib460-plistdump/IGPU.plist
 [XHCI]: msib460-plistdump/XHCI.plist
 [als]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/ambient%20light%20sensor/ambient%20light%20sensor.md
+[aml]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/acpi/SSDT-MSIB460.aml
 [apple.Inc-iMac20,1-biosvendor]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/References/BIOSVendor:%20%22Apple%20Inc.%22.yml
 [applealc]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/AppleALC.kext
 [combine-kext]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/combine%20kext/combine%20kext.md
@@ -321,7 +322,6 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 [smbiosimac20,1]: https://everymac.com/systems/apple/imac/specs/imac-core-i5-3.1-6-core-27-inch-retina-5k-2020-specs.html
 [smcprocessor]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/SMCProcessor.kext/Contents
 [smcsuperio]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/SMCSuperIO.kext
-[ssdt-b460]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/acpi/SSDT-MSIB460.aml
 [usbmap]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/USBMap.kext
 [virtualsmc]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/VirtualSMC.kext
 [wake&sleep]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/usb%20wake%20and%20sleep%20fix/usb%20wake%20and%20sleep%20fix.md
