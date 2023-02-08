@@ -138,7 +138,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
   - Add
   
-    - [x] [AppleALC.kext][applealc]
+    - [x] [AppleALC][applealc]
     - [x] [IntelMausi][intelmausi]
     - [x] [Lilu][lilu]
     - [x] [LucyRTL8125Ethernet][lucyrtl8125Ethernet]
