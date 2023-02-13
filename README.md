@@ -69,7 +69,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
   - Check out my SSDT in `aml` format to [download][aml] or view [readable][dsl] `dsl` format to verify first. Below is my example:
   
-  ![acpi](https://user-images.githubusercontent.com/72515939/218389743-629c091a-7bed-444c-b873-676882247247.png)
+  ![acpi][acpi]
 
 
 - **Booter**
@@ -297,12 +297,8 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 [acidanthera][dev0] | [dortania][dev-group0] | [dreamwhite][dev1]
 
+[acpi]: https://user-images.githubusercontent.com/72515939/218389743-629c091a-7bed-444c-b873-676882247247.png
 [AGPM]: msib460-plistdump/AGPM.plist
-[GFX0]: msib460-plistdump/GFX0.plist
-[HDAU]: msib460-plistdump/HDAU.plist
-[HDEF]: msib460-plistdump/HDEF.plist
-[IGPU]: msib460-plistdump/IGPU.plist
-[XHCI]: msib460-plistdump/XHCI.plist
 [als]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/ambient%20light%20sensor/ambient%20light%20sensor.md
 [aml]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/acpi/SSDT-MSIB460.aml
 [apple.Inc-iMac20,1-biosvendor]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/References/BIOSVendor:%20%22Apple%20Inc.%22.yml
@@ -315,6 +311,10 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 [devnews]: https://dortania.github.io
 [dis-ssdt-sample]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/tree/main/guide%20and%20samples/disassembled%20ASL%20sample
 [dsl]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/disassembled%20ASL%20sample/ssdt-b460-sample-less.dsl
+[GFX0]: msib460-plistdump/GFX0.plist
+[HDAU]: msib460-plistdump/HDAU.plist
+[HDEF]: msib460-plistdump/HDEF.plist
+[IGPU]: msib460-plistdump/IGPU.plist
 [intelmausi]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/IntelMausi.kext
 [lilu]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/Lilu.kext
 [lucyrtl8125Ethernet]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/LucyRTL8125Ethernet.kext
@@ -329,4 +329,5 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 [virtualsmc]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/VirtualSMC.kext
 [wake&sleep]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/usb%20wake%20and%20sleep%20fix/usb%20wake%20and%20sleep%20fix.md
 [whatevergreen]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/WhateverGreen.kext
+[XHCI]: msib460-plistdump/XHCI.plist
 
