@@ -67,7 +67,10 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 - **ACPI**
 
-  - Check out my SSDT in `aml` format to [download][aml] or view [readable][dsl] `dsl` format to verify first.
+  - Check out my SSDT in `aml` format to [download][aml] or view [readable][dsl] `dsl` format to verify first. Below is my example:
+  
+  ![acpi](https://user-images.githubusercontent.com/72515939/218389743-629c091a-7bed-444c-b873-676882247247.png)
+
 
 - **Booter**
 
