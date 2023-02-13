@@ -125,10 +125,7 @@ DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x42343630) {
 						Device(DVL0) {
 							Name(_ADR, 0x57) // _ADR: Address
 							Name(_CID, "diagsvault") // _CID: Compatible ID
-							Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
-							{
-								Return(0x0F)
-							}
+							
 						}
 
 						Method(_STA, 0, NotSerialized) // _STA: Status
@@ -149,25 +146,7 @@ DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x42343630) {
 
 			Device(USBX) {
 				Name(_ADR, Zero) // _ADR: Address
-				Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
-				{
-					If((Arg2 == Zero)) {
-						Return(Buffer() {
-							0x03
-						})
-					}
-
-					Return(Package() {
-						"kUSBSleepPowerSupply",
-						0x13EC,
-						"kUSBSleepPortCurrentLimit",
-						0x0834,
-						"kUSBWakePowerSupply",
-						0x13EC,
-						"kUSBWakePortCurrentLimit",
-						0x0834
-					})
-				}
+				
 
 				Method(_STA, 0, NotSerialized) // _STA: Status
 				{
@@ -177,4 +156,3 @@ DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x42343630) {
 		}
 	}
 }
-
