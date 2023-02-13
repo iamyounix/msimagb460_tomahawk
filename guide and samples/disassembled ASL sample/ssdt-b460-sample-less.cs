@@ -52,9 +52,7 @@ DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x42343630) {
 			{
 				STAS = One
 			}
-		}
 
-		If(_OSI("Darwin")) {
 			/*
 			 * PCI Root Bridge
 			 */
@@ -148,13 +146,7 @@ DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x42343630) {
 					Name(_ADR, 0x00140002) // _ADR: Address
 				}
 			}
-		}
 
-		/*
-		 * Workaround to fix USB Power Management/Power Properties for Skylake and newer.
-		 */
-
-		If(_OSI("Darwin")) {
 			Device(USBX) {
 				Name(_ADR, Zero) // _ADR: Address
 				Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
