@@ -11,7 +11,7 @@ Table of contents
 
 There are various common problems with hackintosh. Our frequent problem is with the USB device. This problem depends on the USB device's internal design and architecture. As always, year after year, the various changes were made to enhance speed, stability, and some other aspects. However, the concept of the device for most manufacturers remains the same. 
 
-`USB Bus` &rarr; `USB Hub` &rarr; `Ports` &rarr; `Port Chain (If exist)`
+`USB Bus` &rarr; `USB Hub` &rarr; `Ports` &rarr; `Port Chain` (If exist)
 
 ### Do we need this?
 
