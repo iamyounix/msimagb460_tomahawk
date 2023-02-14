@@ -3,31 +3,31 @@
 Table of contents
 
 - [Introduction](#introduction)
-  - [Check if we need XHCI-Unsupported](#check-if-we-need-xhci-unsupported)
-  - [Integrate XHCI-Unsupported Info to USBMap.kext](#integrate-xhci-unsupported-info-to-usbmapkext)
+  - [Do we need this?](#check-if-we-need-xhci-unsupported)
+  - [Integration](#integration)
 - [Credits](#credits)
 
 ## Introduction
 
-It is possible to mix some Kexts. Only associated kexts can do this, though. We shall integrate codeless kexts in this example. ie: [XHCI-Unsupported.kext][xhciunsupport] + [USBMap.kext][usbtoolbox-download].
+There are various common problems with hackintosh. Our frequent problem is with the USB device. This problem depends on the USB device's internal design and architecture. As always, year after year, the various changes were made to enhance speed, stability, and some other aspects. However, the concept of the device for most manufacturers remains the same. 
 
-### Check if we need XHCI-Unsupported
+`USB Bus` -> `USB Hub` -> `Ports` -> `Port Chain (If exist)`
 
-1. Certain Intel XHCI controllers are not supported natively and require an injector. For these systems, install [XHCI-Unsupported.kext][xhciunsupport]. The native support depends by version, you can check location below to see if your XHCI is supported natively. The reason to do this is because 
+### Do we need this?
 
-   - / System / Library / Extensions / IOUSBHostFamily.kext / Contents / Plugins / AppleUSBXHCIPCI.kext /Contents / Info.plist
+1. Due to these changes, power and speed are not stable. These symptoms can be detected by using our Swiss Army knife, Hackintool, and observing each USB device inserted in certain slots to see if it is blipping or not. If yes, we need this hack. Certain Intel XHCI controllers are not supported natively and require an injector. The majority of USB issues for hackintosh are caused by USB Bus, which is out of sync with macOS requirements. The native support depends by version, you can check location below as an example:
 
-2. There is no harm to use it even if native support exists. 
+   - / `System` / `Library` / `Extensions` / `IOUSBHostFamily.kext` / `Contents` / `Plugins` / `AppleUSBXHCIPCI.kext` / `Contents` / `Info.plist`
 
-3. Typical xHCI needing XHCI-unsupported.kext:
+2. Typical known XHCIs needing this method include:
    1. X99-series chipset XHC controller, `8086:8d31`
-   2. 200-series chipset XHC controller, `8086:a2af` (depends on macOS version)
+   2. 200-series chipset XHC controller, `8086:a2af`
    3. 300-series chipset XHC controller `8086:a36d` or `8086:9ded`
-   4. certain 400-series chipset XHC controller, `8086:a3af`
+   4. 400-series chipset XHC controller, `8086:a3af`
 
-### Integrate XHCI-Unsupported Info to USBMap.kext
+### Integration
 
-- Add proper information under IOKitPersonalities in our USBMap.kext as below:
+- Add proper information under IOKitPersonalities in our `USBMap.kext` as below:
   - `IOKitPersonalities`
     - `AppleUSBXHCISPT`
       - `CFBundleIdentifier` - `string` - `com.apple.driver.usb.AppleUSBXHPCI`
