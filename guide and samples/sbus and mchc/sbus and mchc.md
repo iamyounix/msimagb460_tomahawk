@@ -91,9 +91,6 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "SBUSMCHC", 0x00010000)
                             Name (_ADR, 0x57)  // _ADR: Address
                             Name (_CID, "diagsvault")  // _CID: Compatible ID
                             Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-                            {
-                                Return (0x0F)
-                            }
                         }
 
                         Method (_STA, 0, NotSerialized)  // _STA: Status
