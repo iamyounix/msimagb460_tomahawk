@@ -25,7 +25,7 @@ Device (_SB)
 
             Return (Buffer (One)
             {
-                 0x00                                             // .
+                 0x00
             })
         }
     }
@@ -56,7 +56,7 @@ Device (_SB)
             SBAR,   11
         }
 
-        Bla...bla..bla..
+        bla...bla..bla..
 ```
 
 > **Note**: Similar, but complicated.
@@ -104,3 +104,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "SBUSMCHC", 0x00010000)
     }
 }
 ```
+
+### Results
+
+![sbus-bus0](sbusfix.png)
