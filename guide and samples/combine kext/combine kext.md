@@ -38,8 +38,6 @@ It is possible to mix some Kexts. Only associated kexts can do this, though. We 
       - `IOProbeScore` - `number` - `5000`
       - `IOProviderClass` - `string` - `IOPCIDevice`
 
-![xhcipics][xhcipics]
-
 - Save Info.plist and load kext to our bootloader as usual.
 
 > **Note**: IOPCIPrimaryMatch must referred to our device-id and vendor-id.
@@ -52,4 +50,3 @@ It is possible to mix some Kexts. Only associated kexts can do this, though. We 
 [dev0]: https://github.com/acidanthera/
 [usbtoolbox-download]: https://github.com/USBToolBox/tool
 [xhciunsupport]: https://github.com/RehabMan/OS-X-USB-Inject-All
-[xhcipics]: image/xhci-unsupported.png
