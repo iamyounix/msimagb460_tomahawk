@@ -38,7 +38,7 @@ Since `ALSD` and `ALSE` is connected to each other, it is easy to call `AppleLMU
 4. Below is conjunction method from `ALSE` to call `AppleLMUController` which is connected to `ALSD` / `ALS0`
 
     ```asl
-    DefinitionBlock ("", "SSDT", 2, "CpyPst", "ALSE", 0x00002000)
+    DefinitionBlock ("", "SSDT", 2, "CpyPst", "ALSE", 0x12345678)
     {
         External (ALSE, UnknownObj)
     
@@ -57,7 +57,7 @@ Since `ALSD` and `ALSE` is connected to each other, it is easy to call `AppleLMU
 Creating fake `ALSO` doesn't affect current ambient light sensor in original ACPI. However, correcting `variable` exist in multiple places may affect other components while achieving our desired effect. When there is an ambient light sensor device in the original ACPI, the name may not be ALSD, although no other name has been found yet. If so, adjust the path in the SSDT accordingly. Below is an example:
 
 ```asl
-DefinitionBlock ("", "SSDT", 2, "CpyPst", "ALS0", 0x00002000)
+DefinitionBlock ("", "SSDT", 2, "CpyPst", "ALS0", 0x12345678)
 {
     Scope (_SB)
     {
