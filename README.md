@@ -12,7 +12,6 @@ Table of contents
 - [Introduction](#introduction)
   - [Devices](#devices)
   - [Plist Configuration](#plist-configuration)
-  - [History](#history)
 - [Guide and Samples](#guide-and-samples)
 - [MSI-B460 Plist Dump](#msi-b460-plist-dump)
 - [Update](#update)
@@ -22,10 +21,50 @@ Table of contents
 
 This is my current EFI clone that I built according to my hardware. Feel free to read my content. If you have a similar build but different settings, you might consider checking this out. Before read, below is the best way to checkout the latest OpenCore guide and news.
 
-- [Dortania][ocgettingstarted] "Getting Started".
-- Checkout latest [post][devnews], news and update directly from developer.
+- [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) Getting Started.
+- Checkout latest [post](https://dortania.github.io), news and update directly from developer.
 
-> **Reminder**: Since I only boot Linux and macOS, my ACPI code would be less (lack of `Else`, numerous OS `Zero` and `0xFF` methods). This will result in issues with Windows. If you need help dual- or multiple-booting other operating systems, especially Windows, please get in touch with me.
+> **Reminder**: Since my build boot only Linux and macOS, my ACPI code would be less / different (lack of `Else`, `Zero` and `0xFF` methods), may cause an issue in Windows. If you need help in dual- or multiple-booting, especially Windows, add acpi method as example below:
+
+**Enable on Mac:**
+
+```asl
+Device (XXXX)
+{
+    Name/HID/ADR
+    Method (_XXX, 0, NotSerialized)  // _STA: Status
+    {
+        If (_OSI ("Darwin"))
+        {
+            Return (0x0F) //  Enable
+        }
+        Else
+        {
+            Return (Zero) //  Disable
+        }
+    }
+}
+```
+
+**Disable on Mac:**
+
+```asl
+Device (XXXX)
+{
+    Name/HID/ADR
+    Method (_XXX, 0, NotSerialized)  // _STA: Status
+    {
+        If (_OSI ("Darwin"))
+        {
+            Return (Zero) //  Disable
+        }
+        Else
+        {
+            Return (0x0F) //  Enable
+        }
+    }
+}
+```
 
 ### Devices
 
@@ -67,10 +106,9 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 - **ACPI**
 
-  - Check out my SSDT in `aml` format to [download][aml] or view [readable][dsl] `dsl` format to verify first. Below is my example:
-  
-  ![acpi][acpi]
+  - Check out my [sample](Guide%20&%20Samples/ACPI%20Samples/ssdt-b460-sample-less.dsl).
 
+![Alt text](Guide%20&%20Samples/ACPI%20Samples/ssdt-samples.png)
 
 - **Booter**
 
@@ -141,15 +179,15 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
   - Add
   
-    - [x] [AppleALC][applealc]
-    - [x] [IntelMausi][intelmausi]
-    - [x] [Lilu][lilu]
-    - [x] [LucyRTL8125Ethernet][lucyrtl8125Ethernet]
-    - [x] [SMCProcessor][smcprocessor]
-    - [x] [SMCSuperIO][smcsuperio]
-    - [x] [USBMap][usbmap]
-    - [x] [VirtualSMC][virtualsmc]
-    - [x] [WhateverGreen][whatevergreen]
+    - [x] [AppleALC](Kexts/AppleALC.kext)
+    - [x] [IntelMausi](Kexts/IntelMausi.kext)
+    - [x] [Lilu](Kexts/Lilu.kext)
+    - [x] [LucyRTL8125Ethernet](Kexts/LucyRTL8125Ethernet.kext)
+    - [x] [SMCProcessor](Kexts/SMCProcessor.kext)
+    - [x] [SMCSuperIO](Kexts/SMCSuperIO.kext)
+    - [x] [USBMap](Kexts/USBMap.kext)
+    - [x] [VirtualSMC](Kexts/VirtualSMC.kext)
+    - [x] [WhateverGreen](Kexts/WhateverGreen.kext)
 
   - Patch
 
@@ -192,9 +230,9 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 - **PlatformInfo**
 
-  - SMBIOS: [iMac20,1][smbiosimac20,1]
+  - SMBIOS: [iMac20,1](https://everymac.com/ultimate-mac-lookup/?search_keywords=iMac20,1)
 
-> **Note**: Refer real iMac20,1 Apple. Inc [BIOS Vendor][apple.Inc-iMac20,1-biosvendor]
+> **Note**: Refer real iMac20,1 Apple. Inc [BIOS Vendor](BIOS/BIOSVendor:%20%22Apple%20Inc.%22.yml)
 
 - **UEFI**
 
@@ -250,37 +288,23 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
   > **Note**: Other than above is `No`
 
-### History
-
-- December 15, 2022 4:02 PM
-
-  - This hack got an issue since Monterey only inject 2/4 properties (wake & sleep). `USBX` has `4` properties as usual but still inject `2/4` properties.
-  
-    - [x] `kUSBSleepPowerSupply`, `0x13EC`
-    - [ ] `kUSBSleepPortCurrentLimit`, `0x0834`
-    - [x] `kUSBWakePowerSupply`, `0x13EC`
-    - [ ] `kUSBWakePortCurrentLimit`, `0x0834`
-
 ## Guide and Samples
 
 - Below is relevan guide and samples for Hackintosh:
 
-  - [Ambient Light Sensor][als]
-  - [XHCI Unsupported Advance][xhci-unsupported-advance]
-  - [Disassembled ASL Sample][dis-ssdt-sample]
-  - [Renaming and Add Missing Devices][rename&miss]
-  - [SBUS and MCHC][sbusmchc]
-  - [Transferring Opencore to Clover][oc2clvr]
-  - [USB Wake and Sleep Fix][wake&sleep]
+  - [ACPI Samples](Guide%20&%20Samples/ACPI%20Samples)
+  - [Ambient Light Sensors](Guide%20&%20Samples/Ambient%20Light%20Sensors%20)
+  - [Fix SBUS & MCHC](Guide%20&%20Samples/Fix%20SBUS%20&%20MCHC)
+  - [Rename & Add Missing Devices](Guide%20&%20Samples/Rename%20&%20Missing%20Devices)
+  - [Transferring Data from OpenCore to Clover](Guide%20&%20Samples/Transferring%20Data%20from%20OpenCore%20to%20Clover)
+  - [USB Devices Related Fix](Guide%20&%20Samples/USB%20Devices%20Related%20Fix)
 
-## MSI-B460 Plist Dump
+- Plist example dump
 
-- [AGPM][AGPM]
-- [GFX0][GFX0]
-- [HDAU][HDAU]
-- [HDEF][HDEF]
-- [IGPU][IGPU]
-- [XHCI][XHCI]
+  - [AGPM](My%20Build%20Plist%20Dump/AGPM.plist) &rarr; [GFX0](My%20Build%20Plist%20Dump/GFX0.plist) &rarr; [HDAU](My%20Build%20Plist%20Dump/HDAU.plist) &rarr; [HDEF](My%20Build%20Plist%20Dump/HDEF.plist) &rarr; [IGPU](My%20Build%20Plist%20Dump/IGPU.plist) &rarr; [RP05.PXSX](My%20Build%20Plist%20Dump/RP05.PXSX.plist) &rarr; [RP09.PXSX](My%20Build%20Plist%20Dump/RP19.PXSX.plist) &rarr; [XHCI](My%20Build%20Plist%20Dump/XHCI.plist)
+
+  
+
   
 ## Update
 
@@ -295,39 +319,4 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 ## Credits
 
-[acidanthera][dev0] | [dortania][dev-group0] | [dreamwhite][dev1]
-
-[acpi]: https://user-images.githubusercontent.com/72515939/218389743-629c091a-7bed-444c-b873-676882247247.png
-[AGPM]: msib460-plistdump/AGPM.plist
-[als]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/ambient%20light%20sensor/ambient%20light%20sensor.md
-[aml]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/acpi/SSDT-MSIB460.aml
-[apple.Inc-iMac20,1-biosvendor]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/References/BIOSVendor:%20%22Apple%20Inc.%22.yml
-[applealc]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/AppleALC.kext
-[xhci-unsupported-advance]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/usb/xhci%20unsupported%20advance.md
-[dev-group0]: https://github.com/dortania
-[dev-prop-samples]: https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/DeviceProperties/deviceproperties.plist
-[dev0]: https://github.com/acidanthera
-[dev1]: https://github.com/dreamwhite
-[devnews]: https://dortania.github.io
-[dis-ssdt-sample]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/tree/main/guide%20and%20samples/disassembled%20ASL%20sample
-[dsl]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/disassembled%20ASL%20sample/ssdt-b460-sample-less.dsl
-[GFX0]: msib460-plistdump/GFX0.plist
-[HDAU]: msib460-plistdump/HDAU.plist
-[HDEF]: msib460-plistdump/HDEF.plist
-[IGPU]: msib460-plistdump/IGPU.plist
-[intelmausi]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/IntelMausi.kext
-[lilu]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/Lilu.kext
-[lucyrtl8125Ethernet]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/LucyRTL8125Ethernet.kext
-[oc2clvr]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/transferring%20opencore%20to%20clover/transferring%20opencore%20to%20clover.md
-[ocgettingstarted]: https://dortania.github.io/OpenCore-Install-Guide/
-[rename&miss]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/renaming%20and%20add%20missing%20devices/Rename%20and%20Add%20Missing%20Devices.md
-[sbusmchc]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/sbus%20and%20mchc/sbus%20and%20mchc.md
-[smbiosimac20,1]: https://everymac.com/systems/apple/imac/specs/imac-core-i5-3.1-6-core-27-inch-retina-5k-2020-specs.html
-[smcprocessor]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/SMCProcessor.kext/Contents
-[smcsuperio]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/SMCSuperIO.kext
-[usbmap]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/USBMap.kext
-[virtualsmc]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/VirtualSMC.kext
-[wake&sleep]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/usb%20wake%20and%20sleep%20fix/usb%20wake%20and%20sleep%20fix.md
-[whatevergreen]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/WhateverGreen.kext
-[XHCI]: msib460-plistdump/XHCI.plist
-
+[acidanthera](https://github.com/acidanthera/) | [dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel)
