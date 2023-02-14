@@ -29,7 +29,7 @@ There are various common problems with hackintosh. Our frequent problem is with 
 
 1. Check device detail before we start. We will use [Comet Lake PCH-V USB Controller](https://devicehunt.com/view/type/pci/vendor/8086/device/A3AF) as an example.
 
-2. Add proper information under IOKitPersonalities in our `USBMap.kext` as below:
+2. Add proper information under `IOKitPersonalities` in our `USBMap.kext` as below:
   - `IOKitPersonalities`
     - `AppleUSBXHCISPT`
       - `CFBundleIdentifier` &rarr; `string` &rarr; `com.apple.driver.usb.AppleUSBXHPCI`
