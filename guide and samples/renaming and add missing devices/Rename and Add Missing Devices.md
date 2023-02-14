@@ -158,7 +158,7 @@ Table of contents
   - The `PXSX` device has a single property, named `_ADR`, which is set to a value of zero. The `_ADR` property stands for `Address` and is used to specify the address of the device in the systems hardware address space. Overall, this SSDT appears to be defining a device tree that describes the hardware configuration of the system. The purpose of the code is to provide the operating system with information about the hardware components that are present in the system and their locations in the hardware address space.
 
     ```asl
-    DefinitionBlock ("", "SSDT", 2, "CpyPst", "PXSX", 0x50585358)
+    DefinitionBlock ("", "SSDT", 2, "CpyPst", "PXSX", 0x12345678)
     {
         External (_SB_.PCI0, DeviceObj)
         External (_SB_.PCI0.PEG0, DeviceObj)
