@@ -303,7 +303,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 [aml]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/acpi/SSDT-MSIB460.aml
 [apple.Inc-iMac20,1-biosvendor]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/References/BIOSVendor:%20%22Apple%20Inc.%22.yml
 [applealc]: theofficialcopypaste/ihackmsimagb460tomahawk/kexts/AppleALC.kext
-[xhci-unsupported-advance]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/combine%20kext/xhci%20unsupported%20advance.md
+[xhci-unsupported-advance]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/usb/xhci%20unsupported%20advance.md
 [dev-group0]: https://github.com/dortania
 [dev-prop-samples]: https://github.com/theofficialcopypaste/MSIB460Tomahawk/blob/main/DeviceProperties/deviceproperties.plist
 [dev0]: https://github.com/acidanthera
