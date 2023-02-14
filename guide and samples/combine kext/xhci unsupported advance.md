@@ -3,7 +3,7 @@
 Table of contents
 
 - [Introduction](#introduction)
-  - [Do we need this?](#check-if-we-need-xhci-unsupported)
+  - [Do we need this?](#do-we-need-this)
   - [Integration](#integration)
 - [Credits](#credits)
 
@@ -20,10 +20,10 @@ There are various common problems with hackintosh. Our frequent problem is with 
    - `System` &rarr; `Library` &rarr; `Extensions` &rarr; `IOUSBHostFamily.kext` &rarr; `Contents` &rarr; `Plugins` &rarr; `AppleUSBXHCIPCI.kext` &rarr; `Contents` &rarr; `Info.plist`
 
 2. Typical known XHCIs needing this method include:
-   1. X99-series chipset XHC controller, `8086:8d31`
-   2. 200-series chipset XHC controller, `8086:a2af`
-   3. 300-series chipset XHC controller `8086:a36d` or `8086:9ded`
-   4. 400-series chipset XHC controller, `8086:a3af`
+   -  X99-series chipset XHC controller &rarr; `8086:8d31`
+   -  200-series chipset XHC controller &rarr; `8086:a2af`
+   -  300-series chipset XHC controller &rarr; `8086:a36d` or `8086:9ded`
+   -  400-series chipset XHC controller &rarr; `8086:a3af`
 
 ### Integration
 
