@@ -36,7 +36,7 @@ Device (XXXX)
     {
         If (_OSI ("Darwin"))
         {
-            Return (0x0F) //  Enable
+            Return (0xFF) //  Enable
         }
         Else
         {
@@ -60,7 +60,7 @@ Device (XXXX)
         }
         Else
         {
-            Return (0x0F) //  Enable
+            Return (0xFF) //  Enable
         }
     }
 }
