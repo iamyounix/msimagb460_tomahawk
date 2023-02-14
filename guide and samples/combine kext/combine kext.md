@@ -9,15 +9,15 @@ Table of contents
 
 ## Introduction
 
-It is possible to mix some Kexts. Only associated kexts can do this, though. We shall integrate codeless kexts in this example. ie: [XHCI-Unsupported.kext][xhciunsupport] + [USBMap.kext][usbtoolbox-download]
+It is possible to mix some Kexts. Only associated kexts can do this, though. We shall integrate codeless kexts in this example. ie: [XHCI-Unsupported.kext][xhciunsupport] + [USBMap.kext][usbtoolbox-download].
 
 ### Check if we need XHCI-Unsupported
 
-1. Certain Intel XHCI controllers are not supported natively and require an injector. For these systems, install XHCI-unsupported.kext. The native support depends by version, you can check location below to see if your XHCI is supported natively.
+1. Certain Intel XHCI controllers are not supported natively and require an injector. For these systems, install [XHCI-Unsupported.kext][xhciunsupport]. The native support depends by version, you can check location below to see if your XHCI is supported natively. The reason to do this is because 
 
    - / System / Library / Extensions / IOUSBHostFamily.kext / Contents / Plugins / AppleUSBXHCIPCI.kext /Contents / Info.plist
 
-2. XHCI-unsupported.kext uses a lower `IOProbeScore (1000)` than the native Info.plist, there is no harm in installing it even if native support exists.
+2. There is no harm to use it even if native support exists. 
 
 3. Typical xHCI needing XHCI-unsupported.kext:
    1. X99-series chipset XHC controller, `8086:8d31`
@@ -29,13 +29,13 @@ It is possible to mix some Kexts. Only associated kexts can do this, though. We 
 
 - Add proper information under IOKitPersonalities in our USBMap.kext as below:
   - `IOKitPersonalities`
-    - `XHCI-Unsupported`
+    - `AppleUSBXHCISPT`
       - `CFBundleIdentifier` - `string` - `com.apple.driver.usb.AppleUSBXHPCI`
       - `IOClass` - `string` - `AppleUSBXHCISPT`
       - `IOPCIPauseCompatible` - `boolean` - `True`
       - `IOPCIPrimaryMatch` - `string` - `0xa3af8086`
       - `IOPCITunnelCompatible` - `boolean` - `True`
-      - `IOProbeScore` - `number` - `1000`
+      - `IOProbeScore` - `number` - `5000`
       - `IOProviderClass` - `string` - `IOPCIDevice`
 
 ![xhcipics][xhcipics]
