@@ -297,7 +297,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
   - [Fix SBUS & MCHC](Guide%20&%20Samples/Fix%20SBUS%20&%20MCHC/Fix%20SBUS%20&%20MCHC.md)
   - [Rename & Add Missing Devices](Guide%20&%20Samples/Rename%20&%20Add%20Missing%20Devices/Rename%20&%20Add%20Missing%20Devices.md)
   - [Transferring Data from OpenCore to Clover](Guide%20&%20Samples/Transferring%20Data%20from%20OpenCore%20to%20Clover/Transferring%20Data%20from%20OpenCore%20to%20Clover.md)
-  - [USB Fix Wake](Guide%20&%20Samples/USB%20Devices%20Related%20Fix/Fix%20Wake.md)
+  - [XHCI Fix Wake](Guide%20&%20Samples/USB%20Devices%20Related%20Fix/XHCI%20Fix%20Wake.md)
   - [XHCI Unsupported Advance](Guide%20&%20Samples/USB%20Devices%20Related%20Fix/XHCI%20Unsupported%20Advance.md)
 
 - Plist example dump
