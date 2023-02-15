@@ -1,5 +1,11 @@
 # Fix SBUS and MCHC
 
+
+Table of contents
+
+- [Fix SBUS and MCHC](#fix-sbus-and-mchc)
+  - [Introduction](#introduction)
+
 ## Introduction
 
 The System Management Bus (abbreviated to `SBUS`, `SMBus` or `SMB`) is a single-ended simple two-wire bus for the purpose of lightweight communication. Most commonly it is found in computer motherboards for communication with the power source for `ON/OFF` instructions.
