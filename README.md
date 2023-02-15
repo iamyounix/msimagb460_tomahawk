@@ -292,12 +292,13 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 - Below is relevan guide and samples for Hackintosh:
 
-  - [ACPI Samples](Guide%20&%20Samples/ACPI%20Samples)
-  - [Ambient Light Sensors](Guide%20&%20Samples/Ambient%20Light%20Sensors%20)
-  - [Fix SBUS & MCHC](Guide%20&%20Samples/Fix%20SBUS%20&%20MCHC)
-  - [Rename & Add Missing Devices](Guide%20&%20Samples/Rename%20&%20Missing%20Devices)
-  - [Transferring Data from OpenCore to Clover](Guide%20&%20Samples/Transferring%20Data%20from%20OpenCore%20to%20Clover)
-  - [USB Devices Related Fix](Guide%20&%20Samples/USB%20Devices%20Related%20Fix)
+  - [ACPI Samples](Guide%20&%20Samples/ACPI%20Samples/ssdt-b460-sample-less.dsl)
+  - [Ambient Light Sensors](Guide%20&%20Samples/Ambient%20Light%20Sensors/Ambient%20Light%20Sensors.md)
+  - [Fix SBUS & MCHC](Guide%20&%20Samples/Fix%20SBUS%20&%20MCHC/Fix%20SBUS%20&%20MCHC.md)
+  - [Rename & Add Missing Devices](Guide%20&%20Samples/Rename%20&%20Add%20Missing%20Devices/Rename%20&%20Add%20Missing%20Devices.md)
+  - [Transferring Data from OpenCore to Clover](Guide%20&%20Samples/Transferring%20Data%20from%20OpenCore%20to%20Clover/Transferring%20Data%20from%20OpenCore%20to%20Clover.md)
+  - [USB Fix Wake](Guide%20&%20Samples/USB%20Devices%20Related%20Fix/Fix%20Wake.md)
+  - [XHCI Unsupported Advance](Guide%20&%20Samples/USB%20Devices%20Related%20Fix/XHCI%20Unsupported%20Advance.md)
 
 - Plist example dump
 
