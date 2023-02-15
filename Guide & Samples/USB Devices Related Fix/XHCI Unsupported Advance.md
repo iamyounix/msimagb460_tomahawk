@@ -41,7 +41,8 @@ There are various common problems with hackintosh. Our frequent problem is with 
     - `IOProbeScore` &rarr; `number` &rarr; `5000`
     - `IOProviderClass` &rarr; `string` &rarr; `IOPCIDevice`
 
-  ![xhciunsupported-advance](uxhciunsupported-advance.png)
+  ![xhci](uxhciunsupported-advance.PNG)
+
 3. Save `Info.plist` and load kext to our bootloader as usual.
 
 ## Credits
