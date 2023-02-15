@@ -31,7 +31,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 ```asl
 Device (XXXX)
 {
-    Name/HID/ADR
+    Name CID/HID/ADR/XXX
     Method (_XXX, 0, NotSerialized)  // _STA: Status
     {
         If (_OSI ("Darwin"))
@@ -51,7 +51,7 @@ Device (XXXX)
 ```asl
 Device (XXXX)
 {
-    Name/HID/ADR
+    Name CID/HID/ADR/XXX
     Method (_XXX, 0, NotSerialized)  // _STA: Status
     {
         If (_OSI ("Darwin"))
@@ -303,9 +303,6 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
   - [AGPM](My%20Build%20Plist%20Dump/AGPM.plist) &rarr; [GFX0](My%20Build%20Plist%20Dump/GFX0.plist) &rarr; [HDAU](My%20Build%20Plist%20Dump/HDAU.plist) &rarr; [HDEF](My%20Build%20Plist%20Dump/HDEF.plist) &rarr; [IGPU](My%20Build%20Plist%20Dump/IGPU.plist) &rarr; [RP05.PXSX](My%20Build%20Plist%20Dump/RP05.PXSX.plist) &rarr; [RP09.PXSX](My%20Build%20Plist%20Dump/RP19.PXSX.plist) &rarr; [XHCI](My%20Build%20Plist%20Dump/XHCI.plist)
 
-  
-
-  
 ## Update
 
 - January 28, 2023 2:02 AM
