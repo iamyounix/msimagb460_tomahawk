@@ -108,7 +108,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
   - Check out my [sample](Guide%20&%20Samples/ACPI%20Samples/ssdt-b460-sample-less.dsl).
 
-![Alt text](Guide%20&%20Samples/ACPI%20Samples/ssdt-samples.png)
+  ![Alt text](Guide%20&%20Samples/ACPI%20Samples/ssdt-samples.png)
 
 - **Booter**
 
