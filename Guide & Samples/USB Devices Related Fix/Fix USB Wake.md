@@ -1,6 +1,6 @@
 # USB Wake and Sleep Fix
 
-![GUIDE](https://img.shields.io/badge/Guide-ACPI-purple)
+![GUIDE](https://img.shields.io/badge/Guide-USB-purple)
 ![OperatingSystem](https://img.shields.io/badge/OS-Hackintosh-blue)
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 
@@ -127,6 +127,5 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
 [res1]: https://user-images.githubusercontent.com/72515939/210138919-1f6494d4-b0a6-4f56-8734-30687da97250.png
 [res2]: https://user-images.githubusercontent.com/72515939/210138921-26ad44fe-b1dd-4693-a2ce-bad248f9abba.png
 [res3]: https://user-images.githubusercontent.com/72515939/210138923-184a21bd-bbd8-4ce2-8b09-2d941fc6493f.png
-[ssdttime]: https://github.com/corpnewt/SSDTTime
 [usbtoolbox]: https://github.com/USBToolBox/tool
 [usbwakefix]: https://github.com/osy/USBWakeFixup

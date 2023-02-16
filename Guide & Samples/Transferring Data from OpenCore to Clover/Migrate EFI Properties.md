@@ -1,5 +1,6 @@
-# Transferring OpenCore to Clover
+# Migrate EFI Properties
 
+![GUIDE](https://img.shields.io/badge/Guide-Migration-purple)
 ![OperatingSystem](https://img.shields.io/badge/OS-Hackintosh-blue)
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 

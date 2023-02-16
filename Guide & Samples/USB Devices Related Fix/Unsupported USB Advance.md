@@ -1,4 +1,8 @@
-# XHCI Unsupported Advance
+# Unsupported USB Advance
+
+![GUIDE](https://img.shields.io/badge/Guide-USB-purple)
+![OperatingSystem](https://img.shields.io/badge/OS-Hackintosh-blue)
+![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 
 Table of contents
 
@@ -12,6 +16,8 @@ Table of contents
 There are various common problems with hackintosh. Our frequent problem is with the USB device. This problem depends on the USB device's internal design and architecture. As always, year after year, the various changes were made to enhance speed, stability, and some other aspects. However, the concept of the device for most manufacturers remains the same.
 
 `USB Bus` &rarr; `USB Hub` &rarr; `Ports` &rarr; `Port Chain` (If exist)
+
+> **Note**: Explained method is inspired from [XHCI-Unsupported.kext](https://github.com/RehabMan/OS-X-USB-Inject-All)
 
 ### Do we need this?
 
@@ -31,23 +37,18 @@ There are various common problems with hackintosh. Our frequent problem is with 
 
 2. Add proper information under `IOKitPersonalities` in our `USBMap.kext` as below:
 
-- `IOKitPersonalities`
-  - `AppleUSBXHCISPT`
-    - `CFBundleIdentifier` &rarr; `string` &rarr; `com.apple.driver.usb.AppleUSBXHPCI`
-    - `IOClass` &rarr; `string` &rarr; `AppleUSBXHCISPT`
-    - `IOPCIPauseCompatible` &rarr; `boolean` &rarr; `True`
-    - `IOPCIPrimaryMatch` &rarr; `string` &rarr; `0xa3af8086` (refer to your usb device / vendor id)
-    - `IOPCITunnelCompatible` &rarr; `boolean` &rarr; `True`
-    - `IOProbeScore` &rarr; `number` &rarr; `5000`
-    - `IOProviderClass` &rarr; `string` &rarr; `IOPCIDevice`
-
-  ![xhci](uxhciunsupported-advance.PNG)
+   - [IOKitPersonalities](uxhciunsupported-advance.PNG)
+     - AppleUSBXHCISPT
+       - `CFBundleIdentifier` &rarr; `string` &rarr; `com.apple.driver.usb.AppleUSBXHPCI`
+       - `IOClass` &rarr; `string` &rarr; `AppleUSBXHCISPT`
+       - `IOPCIPauseCompatible` &rarr; `boolean` &rarr; `True`
+       - `IOPCIPrimaryMatch` &rarr; `string` &rarr; `0xa3af8086` (refer to your usb device / vendor id)
+       - `IOPCITunnelCompatible` &rarr; `boolean` &rarr; `True`
+       - `IOProbeScore` &rarr; `number` &rarr; `5000`
+       - `IOProviderClass` &rarr; `string` &rarr; `IOPCIDevice`
 
 3. Save `Info.plist` and load kext to our bootloader as usual.
 
 ## Credits
 
-[acidanthera][dev0] | [benbaker76](dev1) | [dortania][dev-group0]
-
-[dev0]: https://github.com/acidanthera/
-[dev-group0]: https://dortania.github.io
+[Acidanthera](https://github.com/acidanthera/) | [Dortania](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel) | [RehabMan](https://github.com/RehabMan)
