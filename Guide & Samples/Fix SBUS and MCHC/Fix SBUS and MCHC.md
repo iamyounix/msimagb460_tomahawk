@@ -6,8 +6,11 @@
 
 Table of contents
 
-- [Fix SBUS and MCHC](#fix-sbus-and-mchc)
-  - [Introduction](#introduction)
+- [Introduction](#introduction)
+  - [Differencies](#differencies)
+  - [SBUS and MCHC Fix](#sbus-and-mchc-fix)
+  - [Verify Patch](#verify-patch)
+- [Credits](#credits)
 
 ## Introduction
 
@@ -114,6 +117,26 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "SBUSMCHC", 0x00010000)
 }
 ```
 
-### Results
+### Verify Patch
+
+- Copy and paste code below to the Terminal. Hit Enter
+
+```zsh
+kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"
+```
+
+- Results
+
+```zsh
+Executing: /usr/bin/kmutil showloaded
+No variant specified, falling back to release
+  117    0 0xffffff7f98f8e000 0x1000     0x1000     com.apple.driver.AppleSMBusPCI (1.0.14d1) C1AA2399-471C-3658-9ED3-A15CCE483B5C <16 7 6 3>
+  119    1 0xffffff7f98f82000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) B08EB2EC-D580-35FD-B4C7-9F883C6E669E <118 16 15 7 6 3>
+
+```
 
 ![sbus-bus0](sbusfix.png)
+
+## Credits
+
+[acidanthera](https://github.com/acidanthera/) | [dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel)
