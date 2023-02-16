@@ -296,9 +296,9 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 - Guide
   - [Ambient Light Sensors](Guide%20&%20Samples/Ambient%20Light%20Sensors/Ambient%20Light%20Sensors.md)
   - [Fix SBUS and MCHC](Guide%20&%20Samples/Fix%20SBUS%20and%20MCHC/Fix%20SBUS%20and%20MCHC.md)
-  - [Rename and Add Missing Devices](Guide%20&%20Samples/Rename%20&%20Add%20Missing%20Devices/Rename%20&%20Add%20Missing%20Devices.md)
-  - [Migrate EFI Properties](Guide%20&%20Samples/Migrate%20EFI%20Properties/Migrate%20EFI%20Properties.md)
   - [Fix USB Wake](Guide%20&%20Samples/USB%20Devices%20Related%20Fix/Fix%20USB%20Wake.md)
+  - [Migrate EFI Properties](Guide%20&%20Samples/Migrate%20EFI%20Properties/Migrate%20EFI%20Properties.md)
+  - [Rename and Add Missing Devices](Guide%20&%20Samples/Rename%20&%20Add%20Missing%20Devices/Rename%20&%20Add%20Missing%20Devices.md)
   - [Unsupported USB Advance](Guide%20&%20Samples/USB%20Devices%20Related%20Fix/Unsupported%20USB%20Advance.md)
   
 - Plist Dump
@@ -307,14 +307,47 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 ## Update
 
-- January 28, 2023 2:02 AM
+- February 17, 2023 6:19 AM [OC](https://github.com/acidanthera/OpenCorePkg) ver: [0.8.9](https://github.com/acidanthera/OpenCorePkg/releases)
 
-  - [x] Remove certain stupid ACPI code and config.plist injection for better stability.
-  - [x] Permanent `agdpmod=pikera` via `IGPU`.
-  - [x] Fix unrecognize `pci-bridge` connected to `GFX0`.
-  - [x] Clean single SSDT.
-  - [x] Better device rename via ACPI.
-  - [x] Fix USB properties. Now all `4` properties is properly inject using `USBMap.kext` and `SSDT-MSIB460.aml`.
+  - [x] Clean ACPI code
+  - [x] Fix Incorrect RX 5500 XT identification after adding new GPU ids to WhateverGreen [#2192](https://github.com/acidanthera/bugtracker/issues/2192)
+  - [x] Proper rename `pci-bridge` devices:
+
+    ```asl
+    Scope(\_SB) {
+        If(_OSI("Darwin")) {
+            Scope(PCI0) {
+                Scope(LPCB) {
+                    Device(EC) {
+                        Name(_HID, "ACID0001") // _HID: Hardware ID
+                        Method(_STA, Zero, NotSerialized) // _STA: Status
+                        {
+                            Return(0x0F)
+                        }
+                    }
+                }
+
+                Scope(PEG0) {
+                    Scope(PEGP) {
+                        Method(_STA, Zero, NotSerialized) // _STA: Status
+                        {
+                            Return(Zero)
+                        }
+                    }
+
+                    Device(EGP0) {
+                        Name(_ADR, Zero) // _ADR: Address
+                        Name(_CID, "pci-bridge") // _CID: Compatible ID
+                        Device(EGP1) {
+                            Name(_ADR, Zero) // _ADR: Address
+                            Name(_CID, "pci-bridge") // _CID: Compatible ID
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ```
 
 ## Credits
 
