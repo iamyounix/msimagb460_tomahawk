@@ -297,7 +297,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
   
 - Plist Dump
 
-  - [AGPM](My%20Build%20Plist%20Dump/AGPM.plist) | [GFX0](My%20Build%20Plist%20Dump/GFX0.plist) | [HDAU](My%20Build%20Plist%20Dump/HDAU.plist) | [HDEF](My%20Build%20Plist%20Dump/HDEF.plist) | [IGPU](My%20Build%20Plist%20Dump/IGPU.plist) | [RP05.PXSX](My%20Build%20Plist%20Dump/RP05.PXSX.plist) | [RP09.PXSX](My%20Build%20Plist%20Dump/RP19.PXSX.plist) | [XHCI](My%20Build%20Plist%20Dump/XHCI.plist)
+  - [AGPM](Plist%20Dump/AGPM.plist) | [GFX0](Plist%20Dump/GFX0.plist) | [HDAU](Plist%20Dump/HDAU.plist) | [HDEF](Plist%20Dump/HDEF.plist) | [IGPU](Plist%20Dump/IGPU.plist) | [RP05.PXSX](Plist%20Dump/RP05.PXSX.plist) | [RP09.PXSX](Plist%20Dump/RP19.PXSX.plist) | [XHCI](Plist%20Dump/XHCI.plist)
 
 ## Update
 
