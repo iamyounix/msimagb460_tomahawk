@@ -297,11 +297,13 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
   - [Ambient Light Sensors](Guide%20&%20Samples/Ambient%20Light%20Sensors/Ambient%20Light%20Sensors.md)
   - [Fix SBUS and MCHC](Guide%20&%20Samples/Fix%20SBUS%20and%20MCHC/Fix%20SBUS%20and%20MCHC.md)
   - [Rename and Add Missing Devices](Guide%20&%20Samples/Rename%20&%20Add%20Missing%20Devices/Rename%20&%20Add%20Missing%20Devices.md)
-
-
+  - [Migrate EFI Properties](Guide%20&%20Samples/Migrate%20EFI%20Properties/Migrate%20EFI%20Properties.md)
+  - [Fix USB Wake](Guide%20&%20Samples/USB%20Devices%20Related%20Fix/Fix%20USB%20Wake.md)
+  - [Unsupported USB Advance](Guide%20&%20Samples/USB%20Devices%20Related%20Fix/Unsupported%20USB%20Advance.md)
+  
 - Plist Dump
 
-  - [AGPM](My%20Build%20Plist%20Dump/AGPM.plist) &rarr; [GFX0](My%20Build%20Plist%20Dump/GFX0.plist) &rarr; [HDAU](My%20Build%20Plist%20Dump/HDAU.plist) &rarr; [HDEF](My%20Build%20Plist%20Dump/HDEF.plist) &rarr; [IGPU](My%20Build%20Plist%20Dump/IGPU.plist) &rarr; [RP05.PXSX](My%20Build%20Plist%20Dump/RP05.PXSX.plist) &rarr; [RP09.PXSX](My%20Build%20Plist%20Dump/RP19.PXSX.plist) &rarr; [XHCI](My%20Build%20Plist%20Dump/XHCI.plist)
+  - [AGPM](My%20Build%20Plist%20Dump/AGPM.plist) | [GFX0](My%20Build%20Plist%20Dump/GFX0.plist) | [HDAU](My%20Build%20Plist%20Dump/HDAU.plist) | [HDEF](My%20Build%20Plist%20Dump/HDEF.plist) | [IGPU](My%20Build%20Plist%20Dump/IGPU.plist) | [RP05.PXSX](My%20Build%20Plist%20Dump/RP05.PXSX.plist) | [RP09.PXSX](My%20Build%20Plist%20Dump/RP19.PXSX.plist) | [XHCI](My%20Build%20Plist%20Dump/XHCI.plist)
 
 ## Update
 
