@@ -67,37 +67,41 @@ Device (XXXX)
 
 ### Devices
 
-- ~~400 Series Chipset Family SATA AHCI Controller~~
-- ~~6th-10th Gen Core Processor PCIe Controller (x16)~~
-- ~~B460 Chipset LPC/eSPI Controller~~
-- ~~Cannon Lake PCH Power Management Controller~~
-- ~~Comet Lake PCH-V HECI Controller~~
-- ~~Comet Lake PCI Express Root Port #03~~
-- ~~Comet Lake PCI Express Root Port #05~~
-- ~~Comet Lake PCI Express Root Port #07~~
-- ~~Comet Lake PCI Express Root Port #09~~
-- ~~Comet Lake PCI Express Root Port #19~~
-- ~~Comet Lake PCI Express Root Port #21~~
-- ~~Navi 10 XL Upstream Port of PCI Express Switch~~
-- ASM3241 USB 3.2 Host Controller
-- BCM4360 802.11ac Wireless Network Adapter
-- Comet Lake PCH-V cAVS
-- Comet Lake PCH-V SMBus Host Controller
-- Comet Lake PCH-V Thermal Subsystem
-- Comet Lake PCH-V USB Controller
-- Comet Lake-S 6c Host Bridge/DRAM Controller
-- Ethernet Connection (11) I219-V
-- Intel CoffeeLake-H GT2 (UHD Graphics 630 Headless)
-- Kingston A2000 NVMe SSD1
-- Kingston A2000 NVMe SSD2
-- Navi 10 HDMI Audio
-- Navi 10 XL Downstream Port of PCI Express Switch
-- Navi 14 Radeon RX 5500/5500M / Pro 5500M
-- RTL8125 2.5GbE Controller
-- VL805/806 xHCI USB 3.0 Controller
-- Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen
+- **Untouched**
+  - 400 Series Chipset Family SATA AHCI Controller
+  - 6th-10th Gen Core Processor PCIe Controller (x16)
+  - B460 Chipset LPC/eSPI Controller
+  - Cannon Lake PCH Power Management Controller
+  - Comet Lake PCH-V HECI Controller
+  - Comet Lake PCI Express Root Port #03
+  - Comet Lake PCI Express Root Port #05
+  - Comet Lake PCI Express Root Port #07
+  - Comet Lake PCI Express Root Port #09
+  - Comet Lake PCI Express Root Port #19
+  - Comet Lake PCI Express Root Port #21
+  - Navi 10 XL Upstream Port of PCI Express Switch
+  -
 
-> **Note**: Device with `striketrough` mark is untouched, no acpi, kext and config.plist patch required.
+> **Note**: Device above is untouched, no acpi, kext and config.plist **patch** required.
+
+- **Touched**
+  - ASM3241 USB 3.2 Host Controller
+  - BCM4360 802.11ac Wireless Network Adapter
+  - Comet Lake PCH-V cAVS
+  - Comet Lake PCH-V SMBus Host Controller
+  - Comet Lake PCH-V Thermal Subsystem
+  - Comet Lake PCH-V USB Controller
+  - Comet Lake-S 6c Host Bridge/DRAM Controller
+  - Ethernet Connection (11) I219-V
+  - Intel CoffeeLake-H GT2 (UHD Graphics 630 Headless)
+  - Kingston A2000 NVMe SSD1
+  - Kingston A2000 NVMe SSD2
+  - Navi 10 HDMI Audio
+  - Navi 10 XL Downstream Port of PCI Express Switch
+  - Navi 14 Radeon RX 5500/5500M / Pro 5500M
+  - RTL8125 2.5GbE Controller
+  - VL805/806 xHCI USB 3.0 Controller
+  - Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen
 
 ### Plist Configuration
 
@@ -107,7 +111,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
   - Check out my [sample](Guide%20&%20Samples/ACPI%20Samples/ssdt-b460-sample-less.dsl).
 
-  ![Alt text](Guide%20&%20Samples/ACPI%20Samples/ssdt-samples.png)
+
 
 - **Booter**
 
