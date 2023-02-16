@@ -74,7 +74,6 @@ Device(XXXX) {
   - Comet Lake PCI Express Root Port #19
   - Comet Lake PCI Express Root Port #21
   - Navi 10 XL Upstream Port of PCI Express Switch
-  -
 
 > **Note**: Device above is untouched, no acpi, kext and config.plist **patch** required.
 
