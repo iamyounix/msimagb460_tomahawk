@@ -28,18 +28,15 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 **Enable on Mac:**
 
 ```asl
-Device (XXXX)
-{
-    Name CID/HID/ADR/XXX
-    Method (_XXX, 0, NotSerialized)  // _STA: Status
+Device(XXXX) {
+    Name CID / HID / ADR / XXX
+    Method(_XXX, 0, NotSerialized) // _STA: Status
     {
-        If (_OSI ("Darwin"))
-        {
-            Return (0xFF) //  Enable
+        If(_OSI("Darwin")) {
+            Return(0xFF) //  Enable
         }
-        Else
-        {
-            Return (Zero) //  Disable
+        Else {
+            Return(Zero) //  Disable
         }
     }
 }
@@ -48,18 +45,15 @@ Device (XXXX)
 **Disable on Mac:**
 
 ```asl
-Device (XXXX)
-{
-    Name CID/HID/ADR/XXX
-    Method (_XXX, 0, NotSerialized)  // _STA: Status
+Device(XXXX) {
+    Name CID / HID / ADR / XXX
+    Method(_XXX, 0, NotSerialized) // _STA: Status
     {
-        If (_OSI ("Darwin"))
-        {
-            Return (Zero) //  Disable
+        If(_OSI("Darwin")) {
+            Return(Zero) //  Disable
         }
-        Else
-        {
-            Return (0xFF) //  Enable
+        Else {
+            Return(0xFF) //  Enable
         }
     }
 }
