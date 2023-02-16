@@ -3,7 +3,7 @@
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
 [![Bootloader](https://img.shields.io/badge/Bootloader-OpenCore-yellow)](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/releases)
-[![MOnterey](https://img.shields.io/badge/Compatible-Monterey-purple)](https://www.apple.com/ge/macos/monterey/)
+[![Monterey](https://img.shields.io/badge/Compatible-Monterey-purple)](https://www.apple.com/ge/macos/monterey/)
 [![Ventura](https://img.shields.io/badge/Compatible-Ventura-orange)](https://www.apple.com/my/macos/ventura/)
 [![Version](https://img.shields.io/badge/Version-0.8.8-white)](https://github.com/acidanthera/OpenCorePkg/releases)
 
@@ -13,7 +13,6 @@ Table of contents
   - [Devices](#devices)
   - [Plist Configuration](#plist-configuration)
 - [Guide and Samples](#guide-and-samples)
-- [MSI-B460 Plist Dump](#msi-b460-plist-dump)
 - [Update](#update)
 - [Credits](#credits)
 
@@ -173,7 +172,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - `igfxfw` - data - `02000000`
     - `igfxonln` - data - `01000000`
 
-> **Note**: Check device properties in plist layout [here][dev-prop-samples].
+> **Note**: Check device properties in plist layout [here](Device%20Properties/deviceproperties.plist)
 
 - **Kext**
 
@@ -300,7 +299,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
   - [XHCI Fix Wake](Guide%20&%20Samples/USB%20Devices%20Related%20Fix/XHCI%20Fix%20Wake.md)
   - [XHCI Unsupported Advance](Guide%20&%20Samples/USB%20Devices%20Related%20Fix/XHCI%20Unsupported%20Advance.md)
 
-- Plist example dump
+- Plist Dump
 
   - [AGPM](My%20Build%20Plist%20Dump/AGPM.plist) &rarr; [GFX0](My%20Build%20Plist%20Dump/GFX0.plist) &rarr; [HDAU](My%20Build%20Plist%20Dump/HDAU.plist) &rarr; [HDEF](My%20Build%20Plist%20Dump/HDEF.plist) &rarr; [IGPU](My%20Build%20Plist%20Dump/IGPU.plist) &rarr; [RP05.PXSX](My%20Build%20Plist%20Dump/RP05.PXSX.plist) &rarr; [RP09.PXSX](My%20Build%20Plist%20Dump/RP19.PXSX.plist) &rarr; [XHCI](My%20Build%20Plist%20Dump/XHCI.plist)
 
