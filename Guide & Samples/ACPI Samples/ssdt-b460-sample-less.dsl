@@ -9,7 +9,7 @@
  * affect performance. Less code used is recommended.
  */
 
-DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x42343630) {
+DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x00002000) {
 
     /*
      * Hey, lets clean up ACPI code. This is an example how we can clean up multiple
@@ -88,16 +88,29 @@ DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x42343630) {
                     }
                 }
 
+                /*
+                * Dedicated GPU Path
+                */
+
                 Scope(PEG0) {
                     Scope(PEGP) {
+                        Method(_STA, Zero, NotSerialized) // _STA: Status
+                        {
+                            Return(Zero)
+                        }
+                    }
 
-                        /*
-                         * Workaround to fix missing ACPI device. This is a PCI bridge device present on PEGP.
-                         * Normally seen as "pci-bridge" in I/O Registry.
-                         */
+                    /*
+                    * Workaround to fix missing ACPI device. This is a PCI bridge device present on PEGP.
+                    * Normally seen as "pci-bridge" in I/O Registry.
+                    */
 
-                        Device(PXSX) {
+                    Device(EGP0) {
+                        Name(_ADR, Zero) // _ADR: Address
+                        Name(_CID, "pci-bridge") // _CID: Compatible ID
+                        Device(EGP1) {
                             Name(_ADR, Zero) // _ADR: Address
+                            Name(_CID, "pci-bridge") // _CID: Compatible ID
                         }
                     }
                 }
@@ -123,6 +136,9 @@ DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x42343630) {
                         Name(_CID, "smbus") // _CID: Compatible ID
                         Name(_ADR, Zero) // _ADR: Address
                         Device(DVL0) {
+                            /*
+                             * 0x57 = 87 in Decimal
+                             */
                             Name(_ADR, 0x57) // _ADR: Address
                             Name(_CID, "diagsvault") // _CID: Compatible ID
                         }
@@ -143,6 +159,10 @@ DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x42343630) {
                 }
             }
 
+            /*
+            * Workaround to fix USB Power Properties
+            */
+
             Device(USBX) {
                 Name(_ADR, Zero) // _ADR: Address
                 Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
@@ -153,15 +173,19 @@ DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x42343630) {
                         })
                     }
 
+                    /*
+                    * Power Properties
+                    */
+
                     Return(Package(0x08) {
                         "kUSBSleepPowerSupply",
-                        0x13EC,
+                        0x13EC, // Decimal = 5100
                         "kUSBSleepPortCurrentLimit",
-                        0x0834,
+                        0x0834, // Decimal = 52100
                         "kUSBWakePowerSupply",
-                        0x13EC,
+                        0x13EC, // Decimal = 5100
                         "kUSBWakePortCurrentLimit",
-                        0x0834
+                        0x0834 // Decimal = 52100
                     })
                 }
 
