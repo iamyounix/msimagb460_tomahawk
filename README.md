@@ -293,7 +293,8 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 ## Guide and Samples
 
-- Below is relevan guide and samples for Hackintosh:
+- Guide
+  - [Ambient Light Sensors](Guide%20&%20Samples/Ambient%20Light%20Sensors/Ambient%20Light%20Sensors.md)
 
 - Plist Dump
 
