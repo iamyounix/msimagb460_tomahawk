@@ -387,6 +387,12 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
   log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "SMC"
   ```
 
+  - Wake
+
+  ```zsh
+  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "wake"
+  ```
+
 ## Credits
 
 [Acidanthera](https://github.com/acidanthera/) | [Dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel)
