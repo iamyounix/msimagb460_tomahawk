@@ -185,17 +185,6 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - [x] [VirtualSMC](Kexts/VirtualSMC.kext)
     - [x] [WhateverGreen](Kexts/WhateverGreen.kext)
 
-  - Patch
-
-    - Arch - string - `x86_64`
-    - Comment - string - `Enable SSD TRIM`
-    - Count - number - `0`
-    - Enabled - boolean - `Yes`
-    - Find - data - `00415050 4C452053 534400`
-    - Identifier - string - `com.apple.iokit.IOAHCIBlockStorage`
-    - Limit - number - `0`
-    - Replace - data - `00000000 00000000 000000`
-
   > **Note**: Others than above should remain as empty
 
 - Quirks
@@ -206,7 +195,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
   - PowerTimeoutKernelPanic - boolean - `Yes`
   - SetApfsTrimTimeout - number - `0`
 
-> **Note**: Others than shall remain as `No`
+  > **Note**: Others than shall remain as `No`
 
 - **Misc**
 
@@ -222,13 +211,13 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
   - TakeoffDelay - number - `0`
   - Timeout - number - `5`
 
-> **Note**: Other than above is `No`
+  > **Note**: Other than above is `No`
 
 - **PlatformInfo**
 
   - SMBIOS: [iMac20,1](https://everymac.com/ultimate-mac-lookup/?search_keywords=iMac20,1)
 
-> **Note**: Refer real iMac20,1 Apple. Inc [BIOS Vendor](BIOS/BIOSVendor:%20%22Apple%20Inc.%22.yml)
+  > **Note**: Refer real iMac20,1 Apple. Inc [BIOS Vendor](BIOS/BIOSVendor:%20%22Apple%20Inc.%22.yml)
 
 - **UEFI**
 
@@ -341,7 +330,6 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 - Plist Dump
 
   - [AGPM](Plist%20Dump/AGPM.plist) | [GFX0](Plist%20Dump/GFX0.plist) | [HDAU](Plist%20Dump/HDAU.plist) | [HDEF](Plist%20Dump/HDEF.plist) | [IGPU](Plist%20Dump/IGPU.plist) | [RP05.PXSX](Plist%20Dump/RP05.PXSX.plist) | [RP09.PXSX](Plist%20Dump/RP19.PXSX.plist) | [XHCI](Plist%20Dump/XHCI.plist)
-
 
 ## Credits
 
