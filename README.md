@@ -331,6 +331,62 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
   - [AGPM](Plist%20Dump/AGPM.plist) | [GFX0](Plist%20Dump/GFX0.plist) | [HDAU](Plist%20Dump/HDAU.plist) | [HDEF](Plist%20Dump/HDEF.plist) | [IGPU](Plist%20Dump/IGPU.plist) | [RP05.PXSX](Plist%20Dump/RP05.PXSX.plist) | [RP09.PXSX](Plist%20Dump/RP19.PXSX.plist) | [XHCI](Plist%20Dump/XHCI.plist)
 
+- Check PCI Configuration
+
+  - ACPI
+
+  ```zsh
+  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "ACPI"
+  ```
+
+  - PCI0
+
+  ```zsh
+  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "PCI0"
+  ```
+
+  - GFX0
+
+  ```zsh
+  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "GFX0"
+  ```
+
+  - IGPU
+
+  ```zsh
+  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "IGPU"
+  ```
+
+  - USB
+
+  ```zsh
+  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "USB"
+  ```
+
+  - AGPM
+
+  ```zsh
+  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "AGPM"
+  ```
+
+  - EC
+
+  ```zsh
+  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "EC"
+  ```
+
+  - SB
+
+  ```zsh
+  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "SB"
+  ```
+
+  - SMC
+
+  ```zsh
+  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "SMC"
+  ```
+
 ## Credits
 
 [Acidanthera](https://github.com/acidanthera/) | [Dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel)
