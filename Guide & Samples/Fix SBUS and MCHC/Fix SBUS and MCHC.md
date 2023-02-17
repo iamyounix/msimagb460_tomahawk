@@ -139,4 +139,4 @@ No variant specified, falling back to release
 
 ## Credits
 
-[acidanthera](https://github.com/acidanthera/) | [dortania](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel)
+[Acidanthera](https://github.com/acidanthera/) | [Dortania](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel)

@@ -118,7 +118,7 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
 
 ## Credits
 
-[acidanthera][dev0] | [benbaker76][dev1] | [dortania][dev-group0] | [osy][dev2]
+[Acidanthera][dev0] | [benbaker76][dev1] | [Dortania][dev-group0] | [osy][dev2]
 
 [dev-group0]: https://dortania.github.io
 [dev0]: https://github.com/acidanthera/

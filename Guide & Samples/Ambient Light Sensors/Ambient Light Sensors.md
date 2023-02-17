@@ -92,7 +92,7 @@ DefinitionBlock ("", "SSDT", 2, "CpyPst", "ALS0", 0x12345678)
 
 ## Credits
 
-[acidanthera][dev0] | [dortania][dev-group0]
+[Acidanthera][dev0] | [Dortania][dev-group0]
 
 [alse]: https://user-images.githubusercontent.com/72515939/210977256-8cd8f9a4-e46d-498d-a439-7fd7a91f9d40.png
 [alse2bit]: https://user-images.githubusercontent.com/72515939/210977281-1e68af0d-1fe9-46bc-9b7f-99e2a52cfafa.png

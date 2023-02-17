@@ -109,7 +109,7 @@ Use OCAuxiliary to transfer respective SMBIOS to another bootloader `config.plis
 
 ## Credits
 
-[acidanthera][dev0] | [dortania][dev-group0] | [ic005k][dev2] | [5T33Z0][dev1]
+[Acidanthera][dev0] | [Dortania][dev-group0] | [ic005k][dev2] | [5T33Z0][dev1]
 
 [clvr.plist]: https://github.com/theofficialcopypaste/ihackmsimagb460tomahawk/blob/main/guide%20and%20samples/transferring%20opencore%20to%20clover/clover_config.plist
 [dev-group0]: https://github.com/dortania
