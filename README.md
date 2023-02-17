@@ -25,7 +25,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 > **Reminder**: Since my build boot only Linux and macOS, my ACPI code would be less / different (lack of `Else`, `Zero` and `0xFF` methods), and may cause an issue in booting Windows. If you need help in dual- or multiple-booting, especially Windows, add `Zero` and `0xFF` method to patched device as example below:
 
-**Enable on Mac:**
+**Enable Device on Darwin Kernel:**
 
 ```asl
 Device(XXXX) {
@@ -42,7 +42,7 @@ Device(XXXX) {
 }
 ```
 
-**Disable on Mac:**
+**Disable Device on Darwin Kernel:**
 
 ```asl
 Device(XXXX) {
