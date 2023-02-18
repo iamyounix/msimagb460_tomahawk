@@ -396,127 +396,127 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
   - Debug Log
 
   ```zsh
-    #######################################################
- #                OpenCore Log Results                 #
-#######################################################
+      #######################################################
+  #                OpenCore Log Results                 #
+  #######################################################
 
-{
-  "oc_version": "DBG-089-2023-02-12",
-  "booted_os": "Apple Inc. macOS 11.0",
-  "booted_kernel": "21.6.0",
-  "cpus": [
-    "Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz"
-  ],
-  "smbios": "Acidanthera model iMac20,1",
-  "mat_support": "1",
-  "mmio_devirt": [
-    "0xE0000000 (3758096384)",
-    "0xFE000000 (4261412864)",
-    "0xFEC00000 (4273995776)",
-    "0xFED00000 (4275044352)",
-    "0xFEE00000 (4276092928)",
-    "0xFF000000 (4278190080)"
-  ],
-  "usable_slides": "147/256",
-  "valid_slides": "0-18, 128-255",
-  "acpi_add": [
-    "SSDT -> B460"
-  ],
-  "device_properties_add": {
-    "PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)": [
-      "@0,name",
-      "@1,name",
-      "@2,name",
-      "@3,name",
-      "AAPL,slot-name",
-      "ATY,EFIVersion",
-      "device_type"
+  {
+    "oc_version": "DBG-089-2023-02-12",
+    "booted_os": "Apple Inc. macOS 11.0",
+    "booted_kernel": "21.6.0",
+    "cpus": [
+      "Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz"
     ],
-    "PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)": [
-      "AAPL,slot-name",
-      "model"
+    "smbios": "Acidanthera model iMac20,1",
+    "mat_support": "1",
+    "mmio_devirt": [
+      "0xE0000000 (3758096384)",
+      "0xFE000000 (4261412864)",
+      "0xFEC00000 (4273995776)",
+      "0xFED00000 (4275044352)",
+      "0xFEE00000 (4276092928)",
+      "0xFF000000 (4278190080)"
     ],
-    "PciRoot(0x0)/Pci(0x14,0x0)": [
-      "acpi-wake-type"
+    "usable_slides": "147/256",
+    "valid_slides": "0-18, 128-255",
+    "acpi_add": [
+      "SSDT -> B460"
     ],
-    "PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)": [
-      "acpi-wake-type",
-      "model"
+    "device_properties_add": {
+      "PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)": [
+        "@0,name",
+        "@1,name",
+        "@2,name",
+        "@3,name",
+        "AAPL,slot-name",
+        "ATY,EFIVersion",
+        "device_type"
+      ],
+      "PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)": [
+        "AAPL,slot-name",
+        "model"
+      ],
+      "PciRoot(0x0)/Pci(0x14,0x0)": [
+        "acpi-wake-type"
+      ],
+      "PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)": [
+        "acpi-wake-type",
+        "model"
+      ],
+      "PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)": [
+        "AAPL,slot-name",
+        "acpi-wake-type",
+        "model"
+      ],
+      "PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)": [
+        "AAPL,slot-name",
+        "model",
+        "name"
+      ],
+      "PciRoot(0x0)/Pci(0x1F,0x3)": [
+        "layout-id"
+      ],
+      "PciRoot(0x0)/Pci(0x2,0x0)": [
+        "AAPL,ig-platform-id",
+        "AAPL,slot-name",
+        "agdpmod",
+        "device-id",
+        "enable-metal",
+        "igfxfw",
+        "igfxonln"
+      ]
+    },
+    "kernel_add": [
+      "IntelMausi.kext v1.0.7",
+      "Lilu.kext v1.6.3",
+      "LucyRTL8125Ethernet.kext v1.1.0",
+      "USBMap.kext v1.1",
+      "VirtualSMC.kext v1.3.0",
+      "WhateverGreen.kext v1.6.4",
+      "AppleALC.kext v1.7.9",
+      "SMCProcessor.kext v1.3.0",
+      "SMCSuperIO.kext v1.3.0"
     ],
-    "PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)": [
-      "AAPL,slot-name",
-      "acpi-wake-type",
-      "model"
+    "nvram_add": {
+      "4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14": [
+        "DefaultBackgroundColor"
+      ],
+      "4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102": [
+        "rtc-blacklist"
+      ],
+      "7C436110-AB2A-4BBB-A880-FE41995C9F82": [
+        "ForceDisplayRotationInEFI",
+        "SystemAudioVolume",
+        "boot-args",
+        "csr-active-config",
+        "prev-lang:kbd",
+        "run-efi-updater"
+      ]
+    },
+    "nvram_delete": {
+      "4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14": [
+        "DefaultBackgroundColor"
+      ],
+      "4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102": [
+        "rtc-blacklist"
+      ],
+      "7C436110-AB2A-4BBB-A880-FE41995C9F82": [
+        "boot-args",
+        "ForceDisplayRotationInEFI"
+      ]
+    },
+    "uefi_drivers": [
+      "HfsPlus.efi",
+      "OpenRuntime.efi",
+      "ResetNvramEntry.efi"
     ],
-    "PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)": [
-      "AAPL,slot-name",
-      "model",
-      "name"
+    "picker_entries": [
+      "Macintosh [Apple12:Apple]",
+      "NO NAME [Auto]"
     ],
-    "PciRoot(0x0)/Pci(0x1F,0x3)": [
-      "layout-id"
-    ],
-    "PciRoot(0x0)/Pci(0x2,0x0)": [
-      "AAPL,ig-platform-id",
-      "AAPL,slot-name",
-      "agdpmod",
-      "device-id",
-      "enable-metal",
-      "igfxfw",
-      "igfxonln"
-    ]
-  },
-  "kernel_add": [
-    "IntelMausi.kext v1.0.7",
-    "Lilu.kext v1.6.3",
-    "LucyRTL8125Ethernet.kext v1.1.0",
-    "USBMap.kext v1.1",
-    "VirtualSMC.kext v1.3.0",
-    "WhateverGreen.kext v1.6.4",
-    "AppleALC.kext v1.7.9",
-    "SMCProcessor.kext v1.3.0",
-    "SMCSuperIO.kext v1.3.0"
-  ],
-  "nvram_add": {
-    "4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14": [
-      "DefaultBackgroundColor"
-    ],
-    "4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102": [
-      "rtc-blacklist"
-    ],
-    "7C436110-AB2A-4BBB-A880-FE41995C9F82": [
-      "ForceDisplayRotationInEFI",
-      "SystemAudioVolume",
-      "boot-args",
-      "csr-active-config",
-      "prev-lang:kbd",
-      "run-efi-updater"
-    ]
-  },
-  "nvram_delete": {
-    "4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14": [
-      "DefaultBackgroundColor"
-    ],
-    "4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102": [
-      "rtc-blacklist"
-    ],
-    "7C436110-AB2A-4BBB-A880-FE41995C9F82": [
-      "boot-args",
-      "ForceDisplayRotationInEFI"
-    ]
-  },
-  "uefi_drivers": [
-    "HfsPlus.efi",
-    "OpenRuntime.efi",
-    "ResetNvramEntry.efi"
-  ],
-  "picker_entries": [
-    "Macintosh [Apple12:Apple]",
-    "NO NAME [Auto]"
-  ],
-  "booted_entry": "2. Macintosh"
-}
-```
+    "booted_entry": "2. Macintosh"
+  }
+  ```
 
 ## Credits
 
