@@ -336,61 +336,61 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
   - ACPI
 
   ```zsh
-  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "ACPI"
+  log show --last boot | grep ACPI
   ```
 
   - PCI0
 
   ```zsh
-  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "PCI0"
+  log show --last boot | grep PCI0
   ```
 
   - GFX0
 
   ```zsh
-  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "GFX0"
+  log show --last boot | grep GFX0
   ```
 
   - IGPU
 
   ```zsh
-  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "IGPU"
+  log show --last boot | grep IGPU
   ```
 
   - USB
 
   ```zsh
-  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "USB"
+  log show --last boot | grep USB
   ```
 
   - AGPM
 
   ```zsh
-  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "AGPM"
+  log show --last boot | grep AGPM
   ```
 
   - EC
 
   ```zsh
-  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "EC"
+  log show --last boot | grep EC
   ```
 
   - SB
 
   ```zsh
-  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "SB"
+  log show --last boot | grep SB
   ```
 
   - SMC
 
   ```zsh
-  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "SMC"
+  log show --last boot | grep SMC
   ```
 
   - Wake
 
   ```zsh
-  log show --predicate "processID == 0" --start $(date "+%Y-%m-%d") --debug | grep "wake"
+  log show --last boot | grep wake
   ```
 
   - Debug Log
