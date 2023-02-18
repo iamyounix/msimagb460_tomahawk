@@ -321,6 +321,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 ## Guide and Samples
 
 - Guide
+
   - [Ambient Light Sensors](Guide%20&%20Samples/Ambient%20Light%20Sensors/Ambient%20Light%20Sensors.md)
   - [Fix SBUS and MCHC](Guide%20&%20Samples/Fix%20SBUS%20and%20MCHC/Fix%20SBUS%20and%20MCHC.md)
   - [Fix USB Wake](Guide%20&%20Samples/USB%20Devices%20Related%20Fix/Fix%20USB%20Wake.md)
@@ -332,7 +333,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
   - [AGPM](Plist%20Dump/AGPM.plist) | [GFX0](Plist%20Dump/GFX0.plist) | [HDAU](Plist%20Dump/HDAU.plist) | [HDEF](Plist%20Dump/HDEF.plist) | [IGPU](Plist%20Dump/IGPU.plist) | [RP05.PXSX](Plist%20Dump/RP05.PXSX.plist) | [RP09.PXSX](Plist%20Dump/RP19.PXSX.plist) | [XHCI](Plist%20Dump/XHCI.plist)
 
-- Check PCI Configuration
+- Last Boot
 
   - ACPI
 
