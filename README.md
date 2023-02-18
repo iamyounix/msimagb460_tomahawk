@@ -1,4 +1,4 @@
-# iHack MSI MAG B460 Tomahawk
+# IHack MSI MAG B460 Tomahawk
 
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
@@ -520,4 +520,4 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 ## Credits
 
-[Acidanthera](https://github.com/acidanthera/) | [Dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel)
+[Acidanthera](https://github.com/acidanthera/) | [corpnewt](https://github.com/corpnewt) | [Dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel)
