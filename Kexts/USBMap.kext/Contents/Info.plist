@@ -90,8 +90,6 @@
 						<integer>3</integer>
 						<key>port</key>
 						<data>BgAAAA==</data>
-						<key>Comment</key>
-						<string>USB2.0 Hub</string>
 					</dict>
 					<key>HS05</key>
 					<dict>
