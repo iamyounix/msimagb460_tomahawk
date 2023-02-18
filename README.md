@@ -14,6 +14,7 @@ Table of contents
   - [Plist Configuration](#plist-configuration)
   - [Update](#update)
 - [Guide and Samples](#guide-and-samples)
+- [Screenshot](#screenshot)
 - [Credits](#credits)
 
 ## Introduction
@@ -517,6 +518,36 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     "booted_entry": "2. Macintosh"
   }
   ```
+
+
+## Screenshot
+
+- **Hardware Overview**
+![Alt text](Devices/Screenshot%202023-02-18%20at%207.51.12%20PM.png)
+- **Audio**
+![Alt text](Devices/Screenshot%202023-02-18%20at%207.51.22%20PM.png)
+- **Bluetooth Controller**
+![Alt text](Devices/Screenshot%202023-02-18%20at%207.51.29%20PM.png)
+- **HD Web Camera**
+![Alt text](Devices/Screenshot%202023-02-18%20at%207.51.34%20PM.png)
+- **Ethernet**
+![Alt text](Devices/Screenshot%202023-02-18%20at%207.51.48%20PM.png)
+- **Dedicated GPU**
+![Alt text](Devices/Screenshot%202023-02-18%20at%207.51.56%20PM.png)
+- **Memory**
+![Alt text](Devices/Screenshot%202023-02-18%20at%207.52.00%20PM.png)
+- **NVMe**
+![Alt text](Devices/Screenshot%202023-02-18%20at%207.52.15%20PM.png)
+- **PCI**
+![Alt text](Devices/Screenshot%202023-02-18%20at%207.52.23%20PM.png)
+- **System Power Settings**
+![Alt text](Devices/Screenshot%202023-02-18%20at%207.52.35%20PM.png)
+- **SATA**
+![Alt text](Devices/Screenshot%202023-02-18%20at%207.52.44%20PM.png)
+- **Volume**
+![Alt text](Devices/Screenshot%202023-02-18%20at%207.52.57%20PM.png)
+- **USB**
+![Alt text](Devices/Screenshot%202023-02-18%20at%207.53.13%20PM.png)
 
 ## Credits
 
