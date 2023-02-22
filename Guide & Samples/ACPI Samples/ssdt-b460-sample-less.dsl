@@ -181,11 +181,11 @@ DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x00002000) {
                         "kUSBSleepPowerSupply",
                         0x13EC, // Decimal = 5100
                         "kUSBSleepPortCurrentLimit",
-                        0x0834, // Decimal = 52100
+                        0x0834, // Decimal = 2100
                         "kUSBWakePowerSupply",
                         0x13EC, // Decimal = 5100
                         "kUSBWakePortCurrentLimit",
-                        0x0834 // Decimal = 52100
+                        0x0834 // Decimal = 2100
                     })
                 }
 
