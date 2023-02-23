@@ -24,7 +24,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) Getting Started.
 - Checkout latest [post](https://dortania.github.io), news and update directly from developer.
 
-> **Reminder**: Since my build boot only Linux and macOS, my ACPI code would be less / different (lack of `Else`, `Zero` and `0xFF` methods), and may cause an issue in booting Windows. If you need help in dual- or multiple-booting, especially Windows, add `Zero` and `0xFF` method to patched device as example below:
+> **Reminder**: Since my build boot only Linux and macOS, my ACPI code would be less / different (lack of `Else`, `Zero` and `0x0F` methods), and may cause an issue in booting Windows. If you need help in dual- or multiple-booting, especially Windows, add `Zero` and `0xFF` method to patched device as example below:
 
 **Enable Device on Darwin Kernel:**
 
@@ -34,7 +34,7 @@ Device(XXXX) {
     Method(_XXX, 0, NotSerialized) // _STA: Status
     {
         If(_OSI("Darwin")) {
-            Return(0xFF) //  Enable
+            Return(0x0F) //  Enable
         }
         Else {
             Return(Zero) //  Disable
@@ -54,7 +54,7 @@ Device(XXXX) {
             Return(Zero) //  Disable
         }
         Else {
-            Return(0xFF) //  Enable
+            Return(0x0F) //  Enable
         }
     }
 }
