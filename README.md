@@ -312,10 +312,8 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
                     Device(EGP0) {
                         Name(_ADR, Zero) // _ADR: Address
-                        Name(_CID, "pci-bridge") // _CID: Compatible ID
                         Device(EGP1) {
                             Name(_ADR, Zero) // _ADR: Address
-                            Name(_CID, "pci-bridge") // _CID: Compatible ID
                         }
                     }
                 }
