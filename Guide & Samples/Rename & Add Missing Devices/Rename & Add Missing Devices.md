@@ -150,6 +150,12 @@ Table of contents
     }
     ```
 
+- **Using config.plist patch section**
+
+  - This is the simplest way to rename device via config.plist. This method need to be done in ACPI/Patch section. Below is an example how to do this. However, this method need to be done carefully. 
+
+    ![plistpatch](plist%20patch.png)
+
 ## Add Missing Devices
 
 - **Example: Missing PCI Bridge**
