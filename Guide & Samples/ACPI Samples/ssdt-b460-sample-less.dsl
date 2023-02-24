@@ -107,10 +107,8 @@ DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x00002000) {
 
                     Device(EGP0) {
                         Name(_ADR, Zero) // _ADR: Address
-                        Name(_CID, "pci-bridge") // _CID: Compatible ID
                         Device(EGP1) {
                             Name(_ADR, Zero) // _ADR: Address
-                            Name(_CID, "pci-bridge") // _CID: Compatible ID
                         }
                     }
                 }
