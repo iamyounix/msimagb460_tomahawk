@@ -42,7 +42,7 @@
 
 - Using `vt`
 
-    `lspci -vt` 
+    `lspci -vt`
 
     ```zsh
     -[0000:00]-+-00.0  Intel Corporation Comet Lake-S 6c Host Bridge/DRAM Controller
@@ -105,3 +105,71 @@
     Slot 6 PCIe 0000:00:1c.7
     Slot 7 PCIe 0000:00:1e.0
     ```
+
+- Print slot designation, tag and etc
+
+Example:
+
+```powershell
+Get-WmiObject -class "Win32_SystemSlot"
+```
+
+Output:
+
+```powershell
+SlotDesignation : Slot1 / X16PCIEXP
+Tag             : System Slot 0    
+SupportsHotPlug : False
+Status          : OK
+Shared          : False
+PMESignal       : True
+MaxDataWidth    : 10
+
+SlotDesignation : Slot2 / X1PCIEXP1
+Tag             : System Slot 1    
+SupportsHotPlug : False
+Status          : OK
+Shared          : False
+PMESignal       : True
+MaxDataWidth    : 5
+
+SlotDesignation : Slot3 / X1PCIEXP2
+Tag             : System Slot 2    
+SupportsHotPlug : False
+Status          : OK
+Shared          : False
+PMESignal       : True
+MaxDataWidth    : 5
+
+SlotDesignation : Slot4 / X4PCIEXP
+Tag             : System Slot 3
+SupportsHotPlug : False
+Status          : OK
+Shared          : False
+PMESignal       : True
+MaxDataWidth    : 7
+
+SlotDesignation : Slot5 / M2 WLAN/BT
+Tag             : System Slot 4
+SupportsHotPlug : False
+Status          : OK
+Shared          : False
+PMESignal       : True
+MaxDataWidth    : 5
+
+SlotDesignation : Slot6 / M2 SSD1
+Tag             : System Slot 5
+SupportsHotPlug : False
+Status          : OK
+Shared          : False
+PMESignal       : True
+MaxDataWidth    : 7
+
+SlotDesignation : Slot7 / M2 SSD2
+Tag             : System Slot 6
+SupportsHotPlug : False
+Status          : OK
+Shared          : False
+PMESignal       : True
+MaxDataWidth    : 7
+```
