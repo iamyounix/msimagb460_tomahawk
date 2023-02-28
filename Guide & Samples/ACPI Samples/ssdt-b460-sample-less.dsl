@@ -9,9 +9,9 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 
     Scope (\_SB)
     {
-        Method (_INI, 0, NotSerialized)  // _INI: Initialize
+        If (_OSI ("Darwin"))
         {
-            If (_OSI ("Darwin"))
+            Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
                 STAS = One
             }
@@ -23,14 +23,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
-                        If (_OSI ("Darwin"))
-                        {
-                            Return (0x0F)
-                        }
-                        Else
-                        {
-                            Return (Zero)
-                        }
+                        Return (0x0F)
                     }
                 }
 
@@ -41,14 +34,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
                         Name (_HID, "ACID0001")  // _HID: Hardware ID
                         Method (_STA, 0, NotSerialized)  // _STA: Status
                         {
-                            If (_OSI ("Darwin"))
-                            {
-                                Return (0x0F)
-                            }
-                            Else
-                            {
-                                Return (Zero)
-                            }
+                            Return (0x0F)
                         }
                     }
                 }
@@ -59,14 +45,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
                     {
                         Method (_STA, 0, NotSerialized)  // _STA: Status
                         {
-                            If (_OSI ("Darwin"))
-                            {
-                                Return (Zero)
-                            }
-                            Else
-                            {
-                                Return (0x0F)
-                            }
+                            Return (Zero)
                         }
                     }
 
@@ -80,14 +59,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 
                         Method (_STA, 0, NotSerialized)  // _STA: Status
                         {
-                            If (_OSI ("Darwin"))
-                            {
-                                Return (0x0F)
-                            }
-                            Else
-                            {
-                                Return (Zero)
-                            }
+                            Return (0x0F)
                         }
                     }
                 }
@@ -95,17 +67,6 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
                 Device (PGMM)
                 {
                     Name (_ADR, 0x00080000)  // _ADR: Address
-                    Method (_STA, 0, NotSerialized)  // _STA: Status
-                    {
-                        If (_OSI ("Darwin"))
-                        {
-                            Return (0x0F)
-                        }
-                        Else
-                        {
-                            Return (Zero)
-                        }
-                    }
                 }
 
                 Scope (SBUS)
@@ -122,14 +83,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 
                         Method (_STA, 0, NotSerialized)  // _STA: Status
                         {
-                            If (_OSI ("Darwin"))
-                            {
-                                Return (0x0F)
-                            }
-                            Else
-                            {
-                                Return (Zero)
-                            }
+                            Return (0x0F)
                         }
                     }
                 }
@@ -139,14 +93,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
                     Name (_ADR, 0x00140002)  // _ADR: Address
                     Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
-                        If (_OSI ("Darwin"))
-                        {
-                            Return (0x0F)
-                        }
-                        Else
-                        {
-                            Return (Zero)
-                        }
+                        Return (0x0F)
                     }
                 }
             }
