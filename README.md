@@ -97,7 +97,7 @@ Device(XXXX) {
   - VL805/806 xHCI USB 3.0 Controller
   - Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen
 
-> **Note**: Here is our device [detail](Devices/Slot.md) dumped via linux. For proper `AAPL,slot-name` placement, open Windows PowerShell and paste this code in terminal. 
+> **Note**: Here is our device [detail](Devices/Slot.md) dumped via linux. For proper `AAPL,slot-name` placement, open Windows PowerShell and paste this code in terminal.
 
   ```powershell
   Get-WmiObject -class "Win32_SystemSlot"
