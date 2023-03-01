@@ -25,6 +25,7 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
 - Set wake by adding the property of `acpi-wake-type=01` to USB devices via DeviceProperties in config.plist. ie:
   - `PciRoot(0x0)/Pci(0x14,0x0)`
     - `acpi-wake-type` - `Data` - `01`
+    - `acpi-wake-gpe` - `Data` - `6D`
 
 ### Method 2
 
