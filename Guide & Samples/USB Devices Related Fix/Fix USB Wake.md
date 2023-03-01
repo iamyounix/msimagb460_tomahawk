@@ -29,6 +29,8 @@ So, the ideal method is to declare the `XHCI Controller` to be an ACPI wake devi
     - `acpi-wake-gpe` - `Data` - `69` for PXSX
     - `acpi-wake-type` - `Data` - `01`
 
+    ![usb-related](usb-related.png)
+
 ### Method 2
 
 1. Set virtual USB devices to route the proper wake event from [USBWakeFixup.kext][usbwakefix] loaded USBWakeFixup.kext to acpi-mapped USB devices. This method combines proper instruction from acpi from the associated kext with `acpi-wake-type` and `acpi-wake-gpe`. Create a new SSDT by pasting this code into any ".asl" equivalent editor and saving it as ".dsl." Before editing, please make sure to check the path of your USB devices.
