@@ -103,21 +103,18 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 						Device (EGP1)
 						{
 							Name (_ADR, Zero)  // _ADR: Address
-						}
-
-						Method (_STA, 0, NotSerialized)  // _STA: Status
-						{
-							Return (0x0F)
+							Method (_STA, 0, NotSerialized)  // _STA: Status
+							{
+								Return (0x0F)
+							}
 						}
 					}
 				}
-				/**The snippet's outer-most scope is called Scope (PEG0). Within this scope, there are child scopes and devices. The first child
-				scope nested in Scope (PEG0) is called Scope (PEGP), which contains the _STA method. This method defines an optional status word
-				that can be used to determine whether the device is present in the system. If the method returns a non-zero value, then the device
-				is considered present. In this case, the status word is set to Zero, implying that the device is not present. The next child device
-				of Scope (PEG0) is Device (EGP0) which contains the _ADR object with a value of Zero. This indicates that the device has no physical
-				address. It also has another child device called Device (EGP1) with the same _ADR value. Finally, the Device (EGP0) contains the _STA
-				method again with a return value of 0xF. This indicates that the device is present in the system and is active.
+				/**The code begins with the Scope object (PEG0). This simply defines a block of code between braces. Within the Scope, there are
+				two other objects - Method and Device. The Method object contains a method called _STA - this stands for Status and returns a return
+				value of 0 (Zero) when executed. The Device object (EGP0) defines a device. Within that is another Device object (EGP1) which also
+				has a Method (_STA) that returns a return value of 0x0F when executed. Both Method objects share the same Name property - _ADR which
+				stands for Address. The Address should always be set to 0 (zero).
 				**/
 				Device (PGMM)
 				{
