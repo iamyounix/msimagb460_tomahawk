@@ -9,7 +9,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 	 * -	The fourth parameter "MSI", specifies the manufacturer name for the device.
 	 * -	The fifth parameter "B460", specifies the model information for the device.
 	 * -	The sixth parameter 0x00002000, is a hexadecimal value which specifics the ACPI Object Revision number associated with the 
-	 * 		device.
+	 * 	device.
 	 */
 	External (_SB_.PCI0, DeviceObj)
 	External (_SB_.PCI0.LPCB, DeviceObj)
@@ -19,19 +19,9 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 	External (STAS, IntObj)
 	/* The code snippet is from the ACPI Specification Version 6.2, which provides an interface for Operating System (OS) to communicate
 	 * with computer hardware. The following definitions are external objects in an ASL program.
-	 * -	External (SB.PCI0, DeviceObj): This object is used to represent a PCI bus in the system. It connects all PCI devices in the system.
-	 * -	External (SB.PCI0.LPCB, DeviceObj): This object represents the Low Pin Count Bridge device located on the PCI bus.
-	 * 		It connects low pin-count devices such as COM port, audio devices, and other items.
-	 * -	External (SB.PCI0.PEG0, DeviceObj): This object represents the PCI Express Graphics (PEG) device located on the PCI bus.
-	 * 		It connects graphics cards, displays, and other items.
-	 * -	External (SB.PCI0.PEG0.PEGP, DeviceObj): This object represents the PCI Express Graphics Processor (GPU).
-	 * 		It is the processing unit responsible for driving displays connected to the PCIe bus.
-	 * -	External (SB.PCI0.SBUS, DeviceObj): This object represents the System Bus node in the system. It serves as the primary
-	 * 		communication path between different components in the system.
-	 * -	External (STAS, IntObj): This object represents the System Time/Alarm Status register that holds time related values
 	 */
 	Scope (\_SB)
-	/* The code Scope (\_SB) is a statement in the Advanced Configuration and Power Interface (ACPI) Specification language to indicate
+	/* The code Scope "(\_SB)" is a statement in the Advanced Configuration and Power Interface (ACPI) Specification language to indicate
 	 * which namespace (Scope) should be used for the following statements. In this particular case, \_SB denotes the System Bus option,
 	 * which refers to ACPI variables and operations that play a role in system-wide operations.
 	 */
@@ -46,7 +36,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 			{
 				STAS = One
 			}
-			/*  The method you have included begins with Method (_INI, 0, NotSerialized) - this specifying that the method does not require
+			/*  The method you have included begins with "_INI, 0, NotSerialized" - this specifying that the method does not require
 			 * any parameters and will not return a value. It also tells the compiler that the block of code should not be serialized. The line
 			 * following the headers specifies a StoreAccessAs operation. This line reads STAS = One, which means it stores the value 1 in the 
 			 * local variable STAS. This method is used to initialize some internal variables before this portion of code is executed.
@@ -113,7 +103,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 				/* The code begins with the Scope object (PEG0). This simply defines a block of code between braces. Within the Scope, there are
 				 * two other objects - Method and Device. The Method object contains a method called _STA - this stands for Status and returns a return
 				 * value of 0 (Zero) when executed. The Device object (EGP0) defines a device. Within that is another Device object (EGP1) which also
-				 * has a Method (_STA) that returns a return value of 0x0F when executed. Both Method objects share the same Name property - _ADR which
+				 * has a "_STA" that returns a return value of 0x0F when executed. Both Method objects share the same Name property - _ADR which
 				 * stands for Address. The Address should always be set to 0 (zero).
 				 */
 				Device (PGMM)
@@ -146,9 +136,9 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 					}
 				}
 				/* The _SBUS device is specified inside the Scope block and it defines a physical connection or bus in the system. Within the _SBUS
-				 * Device() block, two devices are defined: _BUS0 and _DVL0. The _CID field of _BUS0 receives the string "smbus", while the _ADR field
+				 * block, two devices are defined: _BUS0 and _DVL0. The _CID field of _BUS0 receives the string "smbus", while the _ADR field
 				 * of both CDL0 and _BUS0 specifies the address of the respective device. This address is expressed by hexadecimal notation (0x53 for
-				 * _BUS0 and 0x57 for _DVL0, which correspond to decimal 87). The _STA method contains the status of _SBUS. It returns the binary value
+				 * "_BUS0" and "0x57" for "_DVL0", which correspond to decimal 87). The _STA method contains the status of _SBUS. It returns the binary value
 				 * 0x0F, which corresponds to decimal 15 and means enabled.
 				 */
 				Device (THSS)
@@ -231,6 +221,3 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 		 */
 	}
 }
-/* This ASL code is commented and optimised using AI.
- */
-
