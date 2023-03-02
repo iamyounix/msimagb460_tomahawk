@@ -122,6 +122,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 				Device (PGMM)
 				{
 					Name (_ADR, 0x00080000)  // _ADR: Address
+					/**Use 0x0008 instead of using 0x00080000, this will rename the device properly and hide the IOreg registry.**/
 				}
 				/**Device referred to as PGMM. It uses the ACPI Object Name (_ADR) which is used to define its address. The address itself is "0x00080000".
 				Any instructions which use this device will reference this address.
