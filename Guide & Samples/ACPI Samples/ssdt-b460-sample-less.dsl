@@ -216,4 +216,5 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 		**/
 	}
 }
+/** This ASL code is commented and optimised using AI.**/
 
