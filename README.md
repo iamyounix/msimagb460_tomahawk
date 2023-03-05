@@ -366,6 +366,13 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 - **USB**
 ![Alt text](Devices/Screenshot%202023-02-18%20at%207.53.13%20PM.png)
 
+
+## Suggestion
+
+- Install important apps
+
+`zsh/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && brew install --cask appcleaner hackintool iterm2 maciasl monitorcontrol mos onyx uninstallpkg visual-studio-code && brew install aria2`
+
 ## Credits
 
 [Acidanthera](https://github.com/acidanthera/) | [corpnewt](https://github.com/corpnewt) | [Dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel)
