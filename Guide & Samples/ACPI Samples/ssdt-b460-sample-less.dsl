@@ -67,7 +67,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 						Name (_HID, "ACID0001")  // _HID: Hardware ID
 						Method (_STA, 0, NotSerialized)  // _STA: Status
 						{
-							Return (0x0F)
+							Return (Zero)
 						}
 					}
 				}
