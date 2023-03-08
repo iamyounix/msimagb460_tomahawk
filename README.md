@@ -109,7 +109,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 - **ACPI**
 
-  - Check out my [sample](Guide%20&%20Samples/ACPI%20Samples/SSDT-B460.dsl).
+  - Check out my [sample](Guide%20&%20Samples/ACPI%20Samples/SSDT-MSIB460.dsl).
 
     ![Samples](Guide%20&%20Samples/ACPI%20Samples/ssdt-samples.png)
 
