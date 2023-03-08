@@ -70,13 +70,31 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 							Return (Zero)
 						}
 					}
+				
+					/* The Scope statement defines a named ACPI scope object, the acronym for which is LPCB. An ACPI device object with an associated
+					 * EC (Embedded Controller) object. This objects has the hardware ID attribute _HID, which is set to 'ACID0001'. The second statement
+					 * within the scope is the Name statement. This statement defines an attribute object, with the object name _HID and the value set 
+					 * as "ACID0001". The final statement inside the scope is the Method statement which defines a named method, the name of which is _STA.
+					 * This method has an integer return value, the value being 0x0F indicating that the device is enabled.
+					 */
+				 	Device (FWHD)
+					{
+						Name (_HID, EisaId ("INT0800") /* Intel 82802 Firmware Hub Device */)  // _HID: Hardware ID
+						Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+						{
+							Memory32Fixed (ReadOnly,
+								0xFF000000,         // Address Base
+								0x01000000,         // Address Length
+								)
+						})
+						Method (_STA, 0, NotSerialized)  // _STA: Status
+						{
+							Return (0x0F)
+						}
+					}
+					/* Adds fake Firmware Hub Device (FWHD) to IOReg. Used by almost every intel-based Mac.
+					 */
 				}
-				/* The Scope statement defines a named ACPI scope object, the acronym for which is LPCB. An ACPI device object with an associated
-				 * EC (Embedded Controller) object. This objects has the hardware ID attribute _HID, which is set to 'ACID0001'. The second statement
-				 * within the scope is the Name statement. This statement defines an attribute object, with the object name _HID and the value set 
-				 * as "ACID0001". The final statement inside the scope is the Method statement which defines a named method, the name of which is _STA.
-				 * This method has an integer return value, the value being 0x0F indicating that the device is enabled.
-				 */
 				Scope (PEG0)
 				{
 					Scope (PEGP)
