@@ -120,9 +120,9 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
 - **DeviceProperties**
 
-  UseLinux to configure proper slot:
+  Use Linux to configure proper slot:
 
-  `dmidecode`
+  `sudo dmidecode`
 
   ```zsh
   Handle 0x0004, DMI type 8, 9 bytes
