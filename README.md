@@ -137,7 +137,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - `ATY,EFIVersion` - string - `31.0.120.26.3`
     - `device_type` - string - `ATY,PythonParent`
 
-  To patch `AAPL00,override-no-connect`, grab [edid-refreshrate-patcher](https://github.com/iamyounix/edid-refreshrate-patcher) using Linux and follow instruction below. We will assume download folder is in Desktop.
+  To patch `AAPL00,override-no-connect`, grab [edid-refreshrate-patcher](https://github.com/iamyounix/edid-refreshrate-patcher) using Linux and follow instruction below. We will assume downloaded file & folder is in Desktop.
 
   ```zsh
   cd /home/yourname/Desktop/EDID-RefreshRate-Patcher && python3 patcher.py
