@@ -75,7 +75,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 					 * EC (Embedded Controller) object. This objects has the hardware ID attribute _HID, which is set to 'ACID0001'. The second statement
 					 * within the scope is the Name statement. This statement defines an attribute object, with the object name _HID and the value set 
 					 * as "ACID0001". The final statement inside the scope is the Method statement which defines a named method, the name of which is _STA.
-					 * This method has an integer return value, the value being 0x0F indicating that the device is enabled.
+					 * This method has an integer return value, the value being Zero indicating that the device is disabled.
 					 */
 				 	Device (FWHD)
 					{
