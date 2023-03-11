@@ -97,12 +97,6 @@ Device(XXXX) {
   - VL805/806 xHCI USB 3.0 Controller
   - Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen
 
-> **Note**: Here is our device [detail](Devices/Slot.md) dumped via linux. For proper `AAPL,slot-name` placement, open Windows PowerShell and paste this code in terminal.
-
-  ```powershell
-  Get-WmiObject -class "Win32_SystemSlot"
-  ```
-
 ### Plist Configuration
 
 Settings should be based on the type of CPU, motherboard, and GPU. This is a Comet Lake, B460, and AMD Navi 14 configuration via `config.plist`.
@@ -131,45 +125,50 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
   - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
   
-    - `@0,name` to `@3,name` - data - `4154592C507974686F6E`
-    - `AAPL,slot-name` - data - `536C6F742D2031`
-    - `ATY,EFIVersion` - data - `33312E302E3132302E32362E33`
-    - `device_type` - data - `4154592C507974686F6E506172656E74`
+    - `@0,name` to `@3,name` - string - `ATY,Python`
+    - `AAPL,slot-name` - string - `Slot- 1.0`
+    - `AAPL00,override-no-connect` - data - `Your dumped EDID from Linux` (Optional)
+    - `ATY,EFIVersion` - string - `31.0.120.26.3`
+    - `device_type` - string - `ATY,PythonParent`
 
   - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
   
-    - `AAPL,slot-name` - data - `536C6F742D2031`
-    - `model` - data - `4E6176692031302048444D4920417564696F`
+    - `AAPL,slot-name` - string - `Slot- 1.1`
+    - `model` - string - `Navi 10 HDMI Audio`
   
   - PciRoot(0x0)/Pci(0x14,0x0)
   
+    - `AAPL,slot-name` - string - `Slot- 14.0`
     - `acpi-wake-type` - data - `01`
+    - `model` - string - `Comet Lake PCH-V USB Controller`
   
   - PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)
   
+    - `AAPL,slot-name` - string - `Slot- 1B.0`
     - `acpi-wake-type` - data - `01`
-    - `model` - data `41534D6564696120546563686E6F6C6F67792041534D333234312055534220332E30205848434920436F6E74726F6C6C6572`
+    - `model` - string `ASM3241 USB 3.2 USB Controller`
   
   - PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)
   
-    - `AAPL,slot-name` - data - `536C6F742D2033`
+    - `AAPL,slot-name` - string - `Slot- 1C.4`
     - `acpi-wake-type` - data - `01`
-    - `model` - data - `564C3830352F38303620784843492055534220332E3020436F6E74726F6C6C6572`
+    - `model` - string - `VL805/806 USB 3.0 Controller`
   
   - PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)
   
-    - `AAPL,slot-name` - data - `536C6F742D2032`
-    - `model` - data - `42434D34333630203830322E3131616320576972656C657373204E6574776F726B2041646170746572`
-    - `name` - data - `616972706F7274`
+    - `AAPL,slot-name` - string - `Slot- 1C.6`
+    - `model` - string - `BCM4360 802.11ac Wireless Network Adapter`
   
   - PciRoot(0x0)/Pci(0x1F,0x3)
   
+    - `AAPL,slot-name` - string - `Slot- 1F.3`
     - `layout-id` - data - `01000000`
+    - `model` - string - `Comet Lake PCH-V Converged Audio Voice Speech`
   
   - PciRoot(0x0)/Pci(0x2,0x0)
   
     - `AAPL,ig-platform-id` - data - `0300923E`
-    - `AAPL,slot-name` - data - `536C6F742D2030`
+    - `AAPL,slot-name` - string - `Slot- 2.0`
     - `agdpmod` - data - `70696B65726100`
     - `device-id` - data - `9B3E0000`
     - `enable-metal` - data - `01000000`
