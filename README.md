@@ -114,7 +114,7 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
     - ProvideCustomSlide - boolean - `Yes`
     - SyncRuntimePermissions - boolean - `Yes`
     - ProvideMaxSlide - number - `0`
-    - ResizeAppleGpuBars - number - `-1` (2020+ BIOS Notes: When enabling Above4G, Resizable BAR Support may become an available on some Z490 and newer motherboards. Please ensure that Booter -> Quirks -> ResizeAppleGpuBars is set to `0` if this is enabled.)
+    - ResizeAppleGpuBars - number - `-1` (2020+ BIOS Notes: When enabling Above4G, Resizable BAR Support may become an available on some Z490 and newer motherboards. Please ensure that `Booter` -> `Quirks` -> `ResizeAppleGpuBars` is set to `0` if this is enabled.)
   
   > **Note**: Other than above is `No`
 
