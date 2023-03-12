@@ -1,4 +1,4 @@
-# Fix SBUS and MCHC
+# EDID Fix
 
 ![GUIDE](https://img.shields.io/badge/Guide-EDIDFix-purple)
 ![OperatingSystem](https://img.shields.io/badge/OS-Hackintosh-blue)
@@ -6,7 +6,12 @@
 
 Table of contents
 
-
+- [Introduction](#introduction)
+  - [Step 1](#step-1)
+  - [Step 2](#step-2)
+  - [Step 3](#step-3)
+  - [Step 4](#step-4)
+- [Credits](#credits)
 
 ## Introduction
 
