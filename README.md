@@ -75,7 +75,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
         -   `@2,name` - string - `ATY,Python`
         -   `@3,name` - string - `ATY,Python`
         -   `AAPL,slot-name` - string - `J6B2` <sup>or <code>Slot- 1</code></sup>
-        -   `AAPL00,override-no-connect` - data - `Your dumped EDID from Linux` (Optional)
+        -   `AAPL00,override-no-connect` - data - `Your dumped EDID from Linux`<sup>Optional</sup>
         -   `ATY,EFIVersion` - string - `31.0.120.26.3`
         -   `device_type` - string - `ATY,PythonParent`
 
