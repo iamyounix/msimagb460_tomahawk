@@ -229,7 +229,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 ### Changelog
 
--   March 11, 2023 6:19 AM [OC](https://github.com/acidanthera/OpenCorePkg) ver: [0.9.0](https://github.com/acidanthera/OpenCorePkg/releases)
+-   March 11, 2023 6:19 AM [OC](https://github.com/acidanthera/OpenCorePkg) ver: [0.9.0](https://github.com/acidanthera/OpenCorePkg/releases)<sup>Latest</sup>
 
     -   [x] Add fake FWHD (only run on macOS)
     -   [x] Clean ACPI code
