@@ -65,4 +65,4 @@ Do note, `AAPL00,override-no-connect` can be use in dGPU and iGPU. Below is and 
 
 ## Credits
 
-[Acidanthera](https://github.com/acidanthera/) | [Dortania](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel)
+[Acidanthera](https://github.com/acidanthera/) | [BlvckBytes](https://github.com/BlvckBytes/EDID-RefreshRate-Patcher) | [Dortania](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel)
