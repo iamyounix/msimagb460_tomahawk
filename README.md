@@ -127,15 +127,15 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
   - Add
 
-    - [x] [AppleALC](Kexts/AppleALC.kext)
-    - [x] [IntelMausi](Kexts/IntelMausi.kext)
-    - [x] [Lilu](Kexts/Lilu.kext)
-    - [x] [LucyRTL8125Ethernet](Kexts/LucyRTL8125Ethernet.kext)
-    - [x] [SMCProcessor](Kexts/SMCProcessor.kext)
-    - [x] [SMCSuperIO](Kexts/SMCSuperIO.kext)
-    - [x] [USBMap](Kexts/USBMap.kext)<sup>require USBMap or USBToolbox</sup>
-    - [x] [VirtualSMC](Kexts/VirtualSMC.kext)
-    - [x] [WhateverGreen](Kexts/WhateverGreen.kext)
+    - [AppleALC](Kexts/AppleALC.kext)
+    - [IntelMausi](Kexts/IntelMausi.kext)
+    - [Lilu](Kexts/Lilu.kext)
+    - [LucyRTL8125Ethernet](Kexts/LucyRTL8125Ethernet.kext)
+    - [SMCProcessor](Kexts/SMCProcessor.kext)
+    - [SMCSuperIO](Kexts/SMCSuperIO.kext)
+    - [USBMap](Kexts/USBMap.kext)<sup>require USBMap or USBToolbox</sup>
+    - [VirtualSMC](Kexts/VirtualSMC.kext)
+    - [WhateverGreen](Kexts/WhateverGreen.kext)
     > **Note**: Others than above should remain as empty
 
 - Quirks
@@ -220,8 +220,8 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 - March 11, 2023 6:19 AM [OC](https://github.com/acidanthera/OpenCorePkg) ver: [0.9.0](https://github.com/acidanthera/OpenCorePkg/releases) <sup>Latest</sup>
 
-  - [x] Add fake FWHD (only run on macOS)
-  - [x] Clean ACPI code
+  - Add fake FWHD (only run on macOS)
+  - Clean ACPI code
 
 ## Guide and Samples
 
