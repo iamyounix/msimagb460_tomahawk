@@ -62,9 +62,9 @@ This is my current EFI clone that I built according to my hardware. Feel free to
         -   ProvideCustomSlide - boolean - `Yes`
         -   SyncRuntimePermissions - boolean - `Yes`
         -   ProvideMaxSlide - number - `0`
-        -   ResizeAppleGpuBars - number - `-1`
+        -   ResizeAppleGpuBars - number - `-1` <sup>When enabling `Above4G`, `Resizable BAR Support` may become an available on some Z490 and newer motherboards. Please ensure that `Booter` - `Quirks` - `ResizeAppleGpuBars` is set to `0` if this is enabled.</sup>
 
-    > **Note**: When enabling `Above4G`, `Resizable BAR Support` may become an available on some Z490 and newer motherboards. Please ensure that `Booter` - `Quirks` - `ResizeAppleGpuBars` is set to `0` if this is enabled. Other than above is `No`
+    > **Note**: Other than above is `No`
 
 -   **DeviceProperties**
 
@@ -74,14 +74,14 @@ This is my current EFI clone that I built according to my hardware. Feel free to
         -   `@1,name` - string - `ATY,Python`
         -   `@2,name` - string - `ATY,Python`
         -   `@3,name` - string - `ATY,Python`
-        -   `AAPL,slot-name` - string - `J6B2` / `Slot- 1`
+        -   `AAPL,slot-name` - string - `J6B2` <sup>or <code>Slot- 1</code></sup>
         -   `AAPL00,override-no-connect` - data - `Your dumped EDID from Linux` (Optional)
         -   `ATY,EFIVersion` - string - `31.0.120.26.3`
         -   `device_type` - string - `ATY,PythonParent`
 
     -   PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
 
-        -   `AAPL,slot-name` - string - `J6B2` / `Slot- 1`
+        -   `AAPL,slot-name` - string - `J6B2` <sup>or <code>Slot- 1</code></sup>
         -   `model` - string - `Navi 10 HDMI Audio`
 
     -   PciRoot(0x0)/Pci(0x14,0x0)
@@ -98,13 +98,13 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
     -   PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)
 
-        -   `AAPL,slot-name` - string - `J6D1` / `Slot- 2`
+        -   `AAPL,slot-name` - string - `J6D1` <sup>or <code>Slot- 2</code></sup>
         -   `acpi-wake-type` - data - `01`
         -   `model` - string - `VL805/806 USB 3.0 Controller`
 
     -   PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)
 
-        -   `AAPL,slot-name` - string - `J8B4` / `Slot- 3`
+        -   `AAPL,slot-name` - string - `J8B4` <sup>or <code>Slot- 3</code></sup>
         -   `model` - string - `BCM4360 802.11ac Wireless Network Adapter`
 
     -   PciRoot(0x0)/Pci(0x1F,0x3)
@@ -135,7 +135,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
         -   [x] [LucyRTL8125Ethernet](Kexts/LucyRTL8125Ethernet.kext)
         -   [x] [SMCProcessor](Kexts/SMCProcessor.kext)
         -   [x] [SMCSuperIO](Kexts/SMCSuperIO.kext)
-        -   [x] [USBMap](Kexts/USBMap.kext)
+        -   [x] [USBMap](Kexts/USBMap.kext)<sup>require USBMap or USBToolbox</sup>
         -   [x] [VirtualSMC](Kexts/VirtualSMC.kext)
         -   [x] [WhateverGreen](Kexts/WhateverGreen.kext)
 
@@ -160,7 +160,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
     -   LauncherPath - string - `Default`
     -   PickerAttributes - number - `147`
     -   PickerMode - string - `External`
-    -   PickerVariant - string - `Acidanthera\GoldenGate` or `your custom theme`
+    -   PickerVariant - string - `Acidanthera\GoldenGate` <sup>or Custom Theme</sup>
     -   ShowPicker - boolean - `Yes`
     -   TakeoffDelay - number - `0`
     -   Timeout - number - `5`
@@ -179,8 +179,8 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
         -   EnableJumpstart - boolean - `Yes`
         -   HideVerbose - boolean - `Yes`
-        -   MinDate - number - `0` (use `-1` for Catalina)
-        -   MinVolume - number - `0` (use `-1` for Catalina)
+        -   MinDate - number - `0` <sup>use <code>-1</code>for Catalina</sup>
+        -   MinVolume - number - `0` <sup>use <code>-1</code>for Catalina</sup>
 
     -   Drivers
 
@@ -238,7 +238,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 -   Guide
 
-    -   [Ambient Light Sensors](Guide%20&%20Samples/Ambient%20Light%20Sensors/Ambient%20Light%20Sensors.md)
+    -   [Ambient Light Sensors](Guide%20&%20Samples/Ambient%20Light%20Sensors/Ambient%20Light%20Sensors.md)<sup>Optional</sup>
     -   [Fix SBUS and MCHC](Guide%20&%20Samples/Fix%20SBUS%20and%20MCHC/Fix%20SBUS%20and%20MCHC.md)
     -   [Fix USB Wake](Guide%20&%20Samples/USB%20Devices%20Related%20Fix/Fix%20USB%20Wake.md)
     -   [Migrate EFI Properties](Guide%20&%20Samples/Migrate%20EFI%20Properties/Migrate%20EFI%20Properties.md)
