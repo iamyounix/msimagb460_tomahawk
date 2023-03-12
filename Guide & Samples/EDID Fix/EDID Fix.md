@@ -1,6 +1,6 @@
 # Fix SBUS and MCHC
 
-![GUIDE](https://img.shields.io/badge/Guide-SBUS&MCHC-purple)
+![GUIDE](https://img.shields.io/badge/Guide-EDIDFix-purple)
 ![OperatingSystem](https://img.shields.io/badge/OS-Hackintosh-blue)
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 
