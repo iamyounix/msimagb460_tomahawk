@@ -61,48 +61,30 @@ Device(XXXX) {
 
 ### Devices
 
--   **Untouched**
-    -   400 Series Chipset Family SATA AHCI Controller
-    -   6th-10th Gen Core Processor PCIe Controller (x16)
-    -   B460 Chipset LPC/eSPI Controller
-    -   Cannon Lake PCH Power Management Controller
-    -   Comet Lake PCH-V HECI Controller
-    -   Comet Lake PCI Express Root Port #03
-    -   Comet Lake PCI Express Root Port #05
-    -   Comet Lake PCI Express Root Port #07
-    -   Comet Lake PCI Express Root Port #09
-    -   Comet Lake PCI Express Root Port #19
-    -   Comet Lake PCI Express Root Port #21
-    -   Navi 10 XL Upstream Port of PCI Express Switch
+-   **Out of the box**
+    -   ASM3241 USB 3.2 Host Controller. <sup>Works without Port Mapping; 1 x Bus, 1 x Hosts, 2 x Ports.</sup>
+    -   400 Series Chipset Family SATA AHCI Controller.
+    -   BCM4360 802.11ac Wireless Network Adapter. <sup>Fenvi-T919</sup>
+    -   Kingston A2000 NVMe SSD1.
+    -   Kingston A2000 NVMe SSD2.
+    -   Navi 10 HDMI Audio. <sup>plist patch is available, but not required</sup
+    -   VL805/806 xHCI USB 3.0 Controller. <sup>Works without Port Mapping; 1 x Bus, 2 x Hosts, 4 x Ports.</sup>
 
-> **Note**: Device above is untouched, no acpi, kext and config.plist **patch** required.
-
--   **Touched**
-    -   ASM3241 USB 3.2 Host Controller
-    -   BCM4360 802.11ac Wireless Network Adapter
-    -   Comet Lake PCH-V cAVS
-    -   Comet Lake PCH-V SMBus Host Controller
-    -   Comet Lake PCH-V Thermal Subsystem
-    -   Comet Lake PCH-V USB Controller
-    -   Comet Lake-S 6c Host Bridge/DRAM Controller
-    -   Ethernet Connection (11) I219-V
-    -   Intel CoffeeLake-H GT2 (UHD Graphics 630 Headless)
-    -   Kingston A2000 NVMe SSD1
-    -   Kingston A2000 NVMe SSD2
-    -   Navi 10 HDMI Audio
-    -   Navi 10 XL Downstream Port of PCI Express Switch
-    -   Navi 14 Radeon RX 5500/5500M / Pro 5500M
-    -   RTL8125 2.5GbE Controller
-    -   VL805/806 xHCI USB 3.0 Controller
-    -   Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen
+-   **Non-Native**
+    -   Comet Lake PCH-V Converged Audio Voice Speech. <sup>require plist patch</sup>
+    -   Comet Lake PCH-V SMBus Host Controller. <sup>require acpi patch</sup>
+    -   Comet Lake PCH-V USB Controller. <sup>require additional kext; 1 x Bus, 2 x Hosts, 4 x Ports. With Port Mapping</sup>
+    -   Comet Lake-S 6c Host Bridge/DRAM Controller. <sup>require acpi patch</sup>
+    -   Ethernet Connection (11) I219-V. <sup>require additional kext</sup>
+    -   Intel UHD Graphics 630 Headless. <sup>require plist patch</sup>
+    -   Navi 14 Radeon RX 5500 XT. <sup>require plist patch</sup>
+    -   RTL8125 2.5GbE Controller. <sup>require additional kext</sup>
 
 ### Plist Configuration
 
-Settings should be based on the type of CPU, motherboard, and GPU. This is a Comet Lake, B460, and AMD Navi 14 configuration via `config.plist`.
-
 -   **ACPI**
 
-    -   Check out my [sample](Guide%20&%20Samples/ACPI%20Samples/SSDT-MSIB460.dsl).
+    -   [SSDT-MSIB460](Guide%20&%20Samples/ACPI%20Samples/SSDT-MSIB460.dsl).
 
 -   **Booter**
 
@@ -114,9 +96,9 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
         -   ProvideCustomSlide - boolean - `Yes`
         -   SyncRuntimePermissions - boolean - `Yes`
         -   ProvideMaxSlide - number - `0`
-        -   ResizeAppleGpuBars - number - `-1` (2020+ BIOS Notes: When enabling Above4G, Resizable BAR Support may become an available on some Z490 and newer motherboards. Please ensure that `Booter` -> `Quirks` -> `ResizeAppleGpuBars` is set to `0` if this is enabled.)
+        -   ResizeAppleGpuBars - number - `-1`
 
-    > **Note**: Other than above is `No`
+    > **Note**: When enabling `Above4G`, `Resizable BAR Support` may become an available on some Z490 and newer motherboards. Please ensure that `Booter` - `Quirks` - `ResizeAppleGpuBars` is set to `0` if this is enabled. Other than above is `No`
 
 -   **DeviceProperties**
 
@@ -126,14 +108,14 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
         -   `@1,name` - string - `ATY,Python`
         -   `@2,name` - string - `ATY,Python`
         -   `@3,name` - string - `ATY,Python`
-        -   `AAPL,slot-name` - string - `J6B2`
+        -   `AAPL,slot-name` - string - `J6B2` / `Slot- 1`
         -   `AAPL00,override-no-connect` - data - `Your dumped EDID from Linux` (Optional)
         -   `ATY,EFIVersion` - string - `31.0.120.26.3`
         -   `device_type` - string - `ATY,PythonParent`
 
     -   PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
 
-        -   `AAPL,slot-name` - string - `J6B2`
+        -   `AAPL,slot-name` - string - `J6B2` / `Slot- 1`
         -   `model` - string - `Navi 10 HDMI Audio`
 
     -   PciRoot(0x0)/Pci(0x14,0x0)
@@ -150,13 +132,13 @@ Settings should be based on the type of CPU, motherboard, and GPU. This is a Com
 
     -   PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)
 
-        -   `AAPL,slot-name` - string - `J6D1`
+        -   `AAPL,slot-name` - string - `J6D1` / `Slot- 2`
         -   `acpi-wake-type` - data - `01`
         -   `model` - string - `VL805/806 USB 3.0 Controller`
 
     -   PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)
 
-        -   `AAPL,slot-name` - string - `J8B4`
+        -   `AAPL,slot-name` - string - `J8B4` / `Slot- 3`
         -   `model` - string - `BCM4360 802.11ac Wireless Network Adapter`
 
     -   PciRoot(0x0)/Pci(0x1F,0x3)
