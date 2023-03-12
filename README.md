@@ -20,44 +20,10 @@ Table of contents
 
 This is my current EFI clone that I built according to my hardware. Feel free to read my content. If you have a similar build but different settings, you might consider checking this out. Before read, below is the best way to checkout the latest OpenCore guide and news.
 
--   [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) Getting Started.
--   Checkout latest [post](https://dortania.github.io), news and update directly from developer.
+-   [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) Getting Started. <sup>Get Started</sup>
+-   Checkout latest [post](https://dortania.github.io), news and update directly from developer. <sup>Anouncement</sup>
 
-> **Reminder**: Since my build boot only Linux and macOS, my ACPI code would be less / different (lack of `Else`, `Zero` and `0x0F` methods), and may cause an issue in booting Windows. If you need help or ACPI related issue in dual- or multiple-booting, especially Windows; add `Zero` and `0xFF` method to patched device as example below:
-
-**Enable Device on Darwin Kernel:**
-
-```asl
-Device(XXXX) {
-    Name CID / HID / ADR / XXX
-    Method(_XXX, 0, NotSerialized) // _STA: Status
-    {
-        If(_OSI("Darwin")) {
-            Return(0x0F) //  Enable
-        }
-        Else {
-            Return(Zero) //  Disable
-        }
-    }
-}
-```
-
-**Disable Device on Darwin Kernel:**
-
-```asl
-Device(XXXX) {
-    Name CID / HID / ADR / XXX
-    Method(_XXX, 0, NotSerialized) // _STA: Status
-    {
-        If(_OSI("Darwin")) {
-            Return(Zero) //  Disable
-        }
-        Else {
-            Return(0x0F) //  Enable
-        }
-    }
-}
-```
+> **Note**: This EFI has been tested on Linux, MacOS, and Windows. Due to 'If(_OSI("Darwin"))' is injected after 'PCI0,' the patch only works on macOS. Other than that, Windows and Linux will not be affected.
 
 ### Devices
 
