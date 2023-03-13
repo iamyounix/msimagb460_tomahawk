@@ -28,15 +28,17 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 	{
 		If (_OSI ("Darwin"))
 		{
-		/*  The above snippet of code is written in ASL (Abstract Syntax Language), and it is an example of a conditional statement.
+		/* The above snippet of code is written in ASL (Abstract Syntax Language), and it is an example of a conditional statement.
 		 * It checks to see if the client's operating system is Darwin, and if it is, it executes a specific set of instructions.
 		 * This kind of construct is commonly used in programming when certain conditions have to be met in order for the code to be executed.
+		 * This is another way to boot other os since If (_OSI ("Darwin")) programmed before "PCI0". With this, "Else" is not needed to manipulate other OS
+		 * (Other than Darwin).
 		 */
 			Method (_INI, 0, NotSerialized)  // _INI: Initialize
 			{
 				STAS = One
 			}
-			/*  The method you have included begins with "_INI, 0, NotSerialized" - this specifying that the method does not require
+			/* The method you have included begins with "_INI, 0, NotSerialized" - this specifying that the method does not require
 			 * any parameters and will not return a value. It also tells the compiler that the block of code should not be serialized. The line
 			 * following the headers specifies a StoreAccessAs operation. This line reads STAS = One, which means it stores the value 1 in the 
 			 * local variable STAS. This method is used to initialize some internal variables before this portion of code is executed.
@@ -44,7 +46,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 			 * value of 1 so the rest of the instructions can be run correctly.
 			 */
 			Scope (PCI0)
-			/*  This code is written in the ASL programming language and is used to declare a scope associated with a Power Control Unit
+			/* This code is written in the ASL programming language and is used to declare a scope associated with a Power Control Unit
 			 * (PCU). The scope is defined by the brackets that follow the Scope command and contains instructions for controlling resources
 			 * associated with the PCU.
 			 */
