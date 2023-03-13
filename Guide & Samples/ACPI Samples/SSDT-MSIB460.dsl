@@ -229,10 +229,10 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 				 */
 			}
 		}
-		/* This code block defines a device called USBX, and contains methods that are designed to manage its life cycle. The Name assignment determines
-		 * the address of the thread within a computer hierarchy, while the Method definition refers to an executable operation. The first Method command 
-		 * (_DSM: Device-Specific Method) contains an If statement. This checks whether the 2nd argument passed to this function is equal to zero. If it is,
-		 * it returns a buffer of 3 bytes, representing the decimal number 3. The second Method command (_STA: Status) simply returns the decimal number 15
+		/* This code block defines a virtual device called USBX, and contains methods that are designed to manage its life cycle. Originaly exist on real mac
+		 * The Name assignment determines the address of the thread within a computer hierarchy, while the Method definition refers to an executable operation.
+		 * The first Method command (_DSM: Device-Specific Method) contains an If statement. This checks whether the 2nd argument passed to this function is equal to zero.
+		 * If it is, it returns a buffer of 3 bytes, representing the decimal number 3. The second Method command (_STA: Status) simply returns the decimal number 15
 		 * (in hexadecimal value 0x0F), which indicates the enabling status of the device.
 		 */
 	}
