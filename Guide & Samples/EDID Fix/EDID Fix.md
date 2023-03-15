@@ -29,7 +29,7 @@ Parse `xrandr` information using the command. Open Terminal, type, and hit Enter
 xrandr --props
 ```
 
-![XRANDREDID](XRANDR%20EDID.png)
+![xrandr](../../Images/XRANDR%20EDID.png)
 
 We will see a bunch of information related to our monitor. Then...
 
