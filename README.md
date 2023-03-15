@@ -136,7 +136,6 @@ This is my current EFI clone that I built according to my hardware. Feel free to
     - [USBMap](Kexts/USBMap.kext)<sup>require USBMap or USBToolbox</sup>
     - [VirtualSMC](Kexts/VirtualSMC.kext)
     - [WhateverGreen](Kexts/WhateverGreen.kext)
-    > **Note**: Others than above should remain as empty
 
 - Quirks
 
