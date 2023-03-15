@@ -15,19 +15,21 @@ Table of contents
 
 ## Introduction
 
-This guide will help us patch the correct EDID for iGPU and dGPU, especially using OpenCore configuration. Plist using the `AAPL00,override-no-connect` variable.
+This guide will help us patch the correct EDID for iGPU and dGPU, especially when using the OpenCore configuration. Plist using the "AAPL00, override-no-connect` variable.
 
 ### Step 1
 
-Boot into Linux. This patch requires Python to be installed..
+Boot into Linux. This patch requires Python to be installed.
 
 ### Step 2
 
-Parse `xrandr` information using the command. Open Terminal, type, and hit Enter.:
+Parse `xrandr` information using the command. Open Terminal, type, and hit Enter:
 
 ```zsh
 xrandr --props
 ```
+
+![XRANDREDID](XRANDR%20EDID.png)
 
 We will see a bunch of information related to our monitor. Then...
 
@@ -70,4 +72,4 @@ Do note, `AAPL00,override-no-connect` can be use in dGPU and iGPU. Below is and 
 
 ## Credits
 
-[Acidanthera](https://github.com/acidanthera/) | [BlvckBytes](https://github.com/BlvckBytes/EDID-RefreshRate-Patcher) | [Dortania](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel)
+[BlvckBytes](https://github.com/BlvckBytes/EDID-RefreshRate-Patcher)
