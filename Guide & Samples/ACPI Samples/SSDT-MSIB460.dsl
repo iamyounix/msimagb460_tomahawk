@@ -108,22 +108,55 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 					}
 
 					Device (EGP0)
-					/* pci-bridge
-					 */
 					{
-						Name (_ADR, Zero)  // _ADR: Address
-						Device (EGP1)
 						/* pci-bridge
 						 */
+						Name (_ADR, Zero)  // _ADR: Address
+						Device (EGP1)
 						{
+							/* pci-bridge
+							 */
 							Name (_ADR, Zero)  // _ADR: Address
-							Method (_STA, 0, NotSerialized)  // _STA: Status
+							Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
 							{
-								Return (0x0F)
+								Return (GPRW (0x69, 0x04))
 							}
+					
+							Device (GFX0)
+							{
+								/* DGPU
+								 */
+								Name (_ADR, Zero)  // _ADR: Address
+								Device (LCD)
+								{
+									/* Display Simulation
+									 */
+									Method (_ADR, 0, NotSerialized)  // _ADR: Address
+									{
+										Return (0x0100)
+										/*Mimic iMac Display
+										 */
+									}
+									Name (_CID, "monitor")  // _CID: Compatible ID
+									/* compatible display (optional)
+									 */
+								}
+							}
+							Device (HDAU)
+							{
+								/* High Definition Audio via HDMi/DP
+								 */
+								 Name (_ADR, One)  // _ADR: Address
+							}
+						}
+					
+						Method (_STA, 0, NotSerialized)  // _STA: Status
+						{
+							Return (0x0F)
 						}
 					}
 				}
+
 				/* The code begins with the Scope object (PEG0). This simply defines a block of code between braces. Within the Scope, there are
 				 * two other objects - Method and Device. The Method object contains a method called _STA - this stands for Status and returns a return
 				 * value of 0 (Zero) when executed. The Device object (EGP0) defines a device. Within that is another Device object (EGP1) which also
