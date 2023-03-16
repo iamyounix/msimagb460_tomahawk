@@ -108,9 +108,13 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 					}
 
 					Device (EGP0)
+					/* pci-bridge
+					 */
 					{
 						Name (_ADR, Zero)  // _ADR: Address
 						Device (EGP1)
+						/* pci-bridge
+						 */
 						{
 							Name (_ADR, Zero)  // _ADR: Address
 							Method (_STA, 0, NotSerialized)  // _STA: Status
@@ -127,6 +131,8 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 				 * stands for Address. The Address should always be set to 0 (zero).
 				 */
 				Device (PGMM)
+				/* Optional
+				 */
 				{
 					Name (_ADR, 0x00080000)  // _ADR: Address
 				}
@@ -158,19 +164,33 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 								Return (Package ()
 								{
 									"address", 
-									Zero, 
+									0x57,
+									/* Not require if "Name (_ADR, 0x57)  // _ADR: Address" is used
+									 */
 									"command", 
-									Zero, 
+									Zero,
+									/* Required
+									 */ 
 									"fault-len", 
-									0x04, 
+									0x04,
+									/* Required
+									 */ 
 									"fault-off", 
-									0x03, 
+									0x03,
+									/* Required
+									 */ 
 									"refnum", 
-									Zero, 
+									Zero,
+									/* Required
+									 */ 
 									"type", 
-									0x49324300, 
+									0x49324300,
+									/* Important: Reference to I2C device which normal in 10th Gen. iMac19/ 10th Gen below mostly using BLCT.
+									 */ 
 									"version", 
 									0x03
+									/* Required
+									 */
 								/* Package is required to fully optimise SBUS configuration, especially on 10th Generation which most require BUS and I2C device.
 								 */		
 								})
@@ -226,11 +246,17 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 					Return (Package ()
 					{
 						"refnum", 
-						Zero, 
+						Zero,
+						/* Cosmetics
+						 */ 
 						"type", 
-						0x49324300, 
+						0x49324300,
+						/* Important: Reference to I2C device
+						 */ 
 						"version", 
 						0x03
+						/* Just cosmetics
+						 */
 					})
 				}
 			}
