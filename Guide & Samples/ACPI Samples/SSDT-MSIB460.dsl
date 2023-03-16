@@ -16,6 +16,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 	External (_SB_.PCI0.PEG0, DeviceObj)
 	External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
 	External (_SB_.PCI0.SBUS, DeviceObj)
+	External (GPRW, MethodObj)    // 2 Arguments
 	External (STAS, IntObj)
 	/* The code snippet is from the ACPI Specification Version 6.2, which provides an interface for Operating System (OS) to communicate
 	 * with computer hardware. The following definitions are external objects in an ASL program.
