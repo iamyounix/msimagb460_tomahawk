@@ -79,7 +79,7 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 					 * as "ACID0001". The final statement inside the scope is the Method statement which defines a named method, the name of which is _STA.
 					 * This method has an integer return value, the value being Zero indicating that the device is disabled.
 					 */
-				 	Device (FWHD)
+					 Device (FWHD)
 					{
 						Name (_HID, EisaId ("INT0800") /* Intel 82802 Firmware Hub Device */)  // _HID: Hardware ID
 						Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
@@ -142,17 +142,48 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 						Device (DVL0)
 						{
 							Name (_ADR, 0x57)  // _ADR: Address
-							/* Decimal: 87
-							 */
 							Name (_CID, "diagsvault")  // _CID: Compatible ID
+							Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+							{
+								If (!Arg2)
+								{
+									Return (Buffer ()
+									{
+										 0x57
+										/* This patch is fix only for Hackintosh purpose. real iMac is "Zero"
+										 */
+									})
+								}
+				
+								Return (Package ()
+								{
+									"address", 
+									Zero, 
+									"command", 
+									Zero, 
+									"fault-len", 
+									0x04, 
+									"fault-off", 
+									0x03, 
+									"refnum", 
+									Zero, 
+									"type", 
+									0x49324300, 
+									"version", 
+									0x03
+								/* Package is required to fully optimise SBUS configuration, especially on 10th Generation which most require BUS and I2C device.
+								 */		
+								})
+							}
 						}
-
+				
 						Method (_STA, 0, NotSerialized)  // _STA: Status
 						{
-							Return (0x0F)	//	Decimal: 15 (Enable)
+							Return (0x0F)
 						}
 					}
 				}
+
 				/* The _SBUS device is specified inside the Scope block and it defines a physical connection or bus in the system. Within the _SBUS
 				 * block, two devices are defined: _BUS0 and _DVL0. The _CID field of _BUS0 receives the string "smbus", while the _ADR field
 				 * of both CDL0 and _BUS0 specifies the address of the respective device. This address is expressed by hexadecimal notation (0x53 for
@@ -174,68 +205,100 @@ DefinitionBlock ("", "SSDT", 2, "MSI", "B460", 0x00002000)
 				 * method is called, it will return the decimal value 15, enabling the device.
 				 */
 			}
-		}
-		
-		Device (USBX)
-		{
-			Name (_ADR, Zero)  // _ADR: Address
-			Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+			
+			Device (PNLF)
 			{
-				If ((Arg2 == Zero))
-				/* If the argument Arg2 is equal to the value Zero
-				 */
+				Name (_ADR, Zero)  // _ADR: Address
+				Name (_HID, EisaId ("APP0002"))  // _HID: Hardware ID
+				Name (_CID, "backlight")  // _CID: Compatible ID
+				Name (_UID, 0x10)  // _UID: Unique ID
+				Name (_STA, 0x0B)  // _STA: Status
+				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 				{
-					Return (Buffer ()
-					/* An array buffer from a given length.
-					 */
+					If ((Arg2 == Zero))
 					{
-						 0x03 // 1B
-						 /* Decimal, 3
-						 */
+						Return (Buffer ()
+						{
+							 0x03
+						})
+					}
+			
+					Return (Package ()
+					{
+						"refnum", 
+						Zero, 
+						"type", 
+						0x49324300, 
+						"version", 
+						0x03
 					})
 				}
-				
-				Return (Package ()
-				{
-					"kUSBSleepPowerSupply",
-					/* Specifies the power supply's voltage in millivolt for low current during sleep
-					 */
-					0x13EC,
-					/* Decimal, 5100
-					 */
-					"kUSBSleepPortCurrentLimit",
-					/* Specifies the port current limit in milliamps during sleep
-					 */
-					0x0834,
-					/* Decimal, 2100
-					 */
-					"kUSBWakePowerSupply",
-					/* Specifies the power supply's voltage in millivolts for full current while awake
-					 */
-					0x13EC,
-					/* Decimal, C5100
-					 */
-					"kUSBWakePortCurrentLimit",
-					/* Specifies the port current limit in milliamps while awake
-					 */	
-					0x0834
-					/* Decimal, 2100
-					 */
-				})
 			}
-
-			Method (_STA, 0, NotSerialized)  // _STA: Status
+			/* This is not virtual device. Mostly on regular board exist using LNSL = PNLF (\_SB_.PNLF)
+			 * 0x49324300 is referred to I2C device which calling "AppleMCCSControlGibraltar/AppleMCCSParameterHandler". 
+			 * This code is still WIP, in order to control backlight in desktop. 
+			 */
+			Device (USBX)
 			{
-				Return (0x0F)
-				/* Decimal, 15 (Enable)
-				 */
+				Name (_ADR, Zero)  // _ADR: Address
+				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+				{
+					If ((Arg2 == Zero))
+					/* If the argument Arg2 is equal to the value Zero
+				 	*/
+					{
+						Return (Buffer ()
+						/* An array buffer from a given length.
+					 	*/
+						{
+						 	0x03 // 1B
+						 	/* Decimal, 3
+						 	*/
+						})
+					}
+					
+					Return (Package ()
+					{
+						"kUSBSleepPowerSupply",
+						/* Specifies the power supply's voltage in millivolt for low current during sleep
+					 	*/
+						0x13EC,
+						/* Decimal, 5100
+					 	*/
+						"kUSBSleepPortCurrentLimit",
+						/* Specifies the port current limit in milliamps during sleep
+					 	*/
+						0x0834,
+						/* Decimal, 2100
+					 	*/
+						"kUSBWakePowerSupply",
+						/* Specifies the power supply's voltage in millivolts for full current while awake
+					 	*/
+						0x13EC,
+						/* Decimal, C5100
+					 	*/
+						"kUSBWakePortCurrentLimit",
+						/* Specifies the port current limit in milliamps while awake
+					 	*/	
+						0x0834
+						/* Decimal, 2100
+					 	*/
+					})
+				}
+	
+				Method (_STA, 0, NotSerialized)  // _STA: Status
+				{
+					Return (0x0F)
+					/* Decimal, 15 (Enable)
+				 	*/
+				}
 			}
+			/* This code block defines a virtual device called USBX, and contains methods that are designed to manage its life cycle. Originaly exist on real mac
+		 	 * The Name assignment determines the address of the thread within a computer hierarchy, while the Method definition refers to an executable operation.
+		 	 * The first Method command (_DSM: Device-Specific Method) contains an If statement. This checks whether the 2nd argument passed to this function is equal to zero.
+		 	 * If it is, it returns a buffer of 3 bytes, representing the decimal number 3. The second Method command (_STA: Status) simply returns the decimal number 15
+		 	 * (in hexadecimal value 0x0F), which indicates the enabling status of the device.
+		 	 */
 		}
-		/* This code block defines a virtual device called USBX, and contains methods that are designed to manage its life cycle. Originaly exist on real mac
-		 * The Name assignment determines the address of the thread within a computer hierarchy, while the Method definition refers to an executable operation.
-		 * The first Method command (_DSM: Device-Specific Method) contains an If statement. This checks whether the 2nd argument passed to this function is equal to zero.
-		 * If it is, it returns a buffer of 3 bytes, representing the decimal number 3. The second Method command (_STA: Status) simply returns the decimal number 15
-		 * (in hexadecimal value 0x0F), which indicates the enabling status of the device.
-		 */
 	}
 }
