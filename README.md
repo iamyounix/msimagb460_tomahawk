@@ -50,7 +50,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 - **ACPI**
 
-  - [SSDT-MSIB460](Guide%20&%20Samples/ACPI%20Samples/SSDT-MSIB460.dsl).
+  - [SSDT-MSIB460](Guide%20&%20Samples/ACPI%20Samples/SSDT-MSIB460.dsl). Refer [ACPI Spec 6.4](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html) for more info.
 
 - **Booter**
 
