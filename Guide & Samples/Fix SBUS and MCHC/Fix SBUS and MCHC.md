@@ -16,7 +16,7 @@ Table of contents
 ### Fixing SBUS
 
 <div align="justify">There is no auto-generated SSDT that can compile MCHC and SBUS. Here, we need to do this manually. Head to <a href="https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus.html">Dortania SMBus Support</a>
-. Do note that fixing SMBus or SBus is sometimes not required due to differences in architecture. If Ioreg properly showing an address, master (SMBUS + AppleSMBusPCI), host (BUS0 + AppleSMBusControllerICH) and slave (BLC0/DVL0/any name), consider we don't need this fix.</div>
+. Do note that fixing SMBus or SBus is sometimes not required due to differences in architecture. If Ioreg properly showing an address, <b>master</b> (SMBUS + AppleSMBusPCI), <b>host</b> (BUS0 + AppleSMBusControllerICH) and <b>slave</b> (BLC0/DVL0/any name), consider we don't need this fix.</div>
 
 ### Enhancement
 
