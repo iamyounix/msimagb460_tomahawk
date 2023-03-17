@@ -64,7 +64,7 @@ Since `ALSD` and `ALSE` is connected to each other, it is easy to call `AppleLMU
     
 #### Method 2 : Recommended if `_HID` `ACPI0008` is not exist in DSDT
 
-<div align="justify">Creating fake <code>ALS0</code> doesn't affect current ambient light sensor in original ACPI. However, correcting variable exist in multiple places may affect other components while achieving our desired effect. When there is an ambient light sensor device in the original ACPI, the name may not be ALSD, although no other name has been found yet.</div>
+<div align="justify">Creating fake <code>ALS0</code> doesn't affect current ambient light sensor in original ACPI. However, correcting variable exist in multiple places may affect other components while achieving our desired effect. When there is an ambient light sensor device in the original ACPI, the name may not be <code>ALSD</code>, although no other name has been found yet.</div>
 
 1. Open [Maciasl](https://github.com/acidanthera/MaciASL/releases) / [Xiasl](https://github.com/ic005k/Xiasl/releases)
 
