@@ -30,7 +30,7 @@ Table of contents
 Below is our template to enhance SMBus. Copy this template and generate it as an SSDT (.aml).
 
 ```asl
-DefinitionBlock ("", "SSDT", 2, "SBUSv1", "Younix", 0x00001003)
+DefinitionBlock ("", "SSDT", 2, "SBUSv2", "Younix", 0x00001004)
 {
     External (_SB_.PCI0, DeviceObj)
     External (_SB_.PCI0.SBUS, DeviceObj)
@@ -41,36 +41,31 @@ DefinitionBlock ("", "SSDT", 2, "SBUSv1", "Younix", 0x00001003)
         {
             Scope (PCI0)
             {
+                Device (MCHC)
+                {
+                    Name (_ADR, Zero)  // _ADR: Address
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        Return (0x0F)
+                    }
+                }
+
                 Scope (SBUS)
                 {
                     Device (BUS0)
                     {
-                        Name (_CID, "smbus")
-                        Name (_ADR, Zero)
+                        Name (_ADR, Zero)  // _ADR: Address
+                        Name (_CID, "smbus")  // _CID: Compatible ID
                         Device (DVL0)
                         {
-                            Name (_ADR, 0x57)
-                            Name (_CID, "diagsvault")
-                            Method (_DSM, 4, NotSerialized)
+                            Name (_ADR, 0x57)  // _ADR: Address
+                            Name (_CID, "diagsvault")  // _CID: Compatible ID
+                            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                             {
-                                If (!Arg2)
+                                Return (Package (0x08)
                                 {
-                                    Return (Buffer ()
-                                    {
-                                         0x57
-                                    })
-                                }
-
-                                Return (Package ()
-                                {
-                                    "address", 
-                                    0x57, 
                                     "command", 
                                     Zero, 
-                                    "fault-len", 
-                                    0x04, 
-                                    "fault-off", 
-                                    0x03, 
                                     "refnum", 
                                     Zero, 
                                     "type", 
@@ -101,19 +96,28 @@ DefinitionBlock ("", "SSDT", 2, "SBUSv2", "Younix", 0x00001004)
     External (_SB_.PCI0, DeviceObj)
     External (_SB_.PCI0.SBUS, DeviceObj)
 
-    Scope(\_SB)
+    Scope (\_SB)
     {
         If (_OSI ("Darwin"))
         {
-            Scope(PCI0)
+            Scope (PCI0)
             {
-                Scope(SBUS)
+                Device (MCHC)
                 {
-                    Device(BUS0)
+                    Name (_ADR, Zero)  // _ADR: Address
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
-                        Name(_ADR, Zero)
-                        Name(_CID, "smbus")
-                        Device(DVL0)
+                        Return (0x0F)
+                    }
+                }
+
+                Scope (SBUS)
+                {
+                    Device (BUS0)
+                    {
+                        Name (_ADR, Zero)  // _ADR: Address
+                        Name (_CID, "smbus")  // _CID: Compatible ID
+                        Device (DVL0)
                         {
                             Name(_ADR, 0x57)
                             Name(_CID, "diagsvault")
@@ -135,9 +139,9 @@ DefinitionBlock ("", "SSDT", 2, "SBUSv2", "Younix", 0x00001004)
                             }
                         }
 
-                        Method(_STA, 0, NotSerialized)
+                        Method (_STA, 0, NotSerialized)  // _STA: Status
                         {
-                            Return(0x0F)
+                            Return (0x0F)
                         }
                     }
                 }
