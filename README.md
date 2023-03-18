@@ -235,4 +235,4 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 ## Credits
 
-[Acidanthera](https://github.com/acidanthera/) \| [corpnewt](https://github.com/corpnewt) \| [Dortania](https://github.com/dortania) \| [dreamwhite](https://github.com/dortania) \| [khronokernel](https://github.com/khronokernel)
+[Acidanthera](https://github.com/acidanthera/) \| [corpnewt](https://github.com/corpnewt) \| [Dortania](https://github.com/dortania) \| [dreamwhite](https://github.com/dortania) \| [khronokernel](https://github.com/khronokernel) | [tomeko.net](http://tomeko.net/index.php?lang=en)
