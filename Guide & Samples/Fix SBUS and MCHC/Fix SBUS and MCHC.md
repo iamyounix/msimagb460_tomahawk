@@ -87,69 +87,6 @@ DefinitionBlock ("", "SSDT", 2, "SBUSv2", "Younix", 0x00001004)
     }
 }
 ```
-
-This is my optimised code, but still don't have time to test.
-
-```asl
-DefinitionBlock ("", "SSDT", 2, "SBUSv2", "Younix", 0x00001004)
-{
-    External (_SB_.PCI0, DeviceObj)
-    External (_SB_.PCI0.SBUS, DeviceObj)
-
-    Scope (\_SB)
-    {
-        If (_OSI ("Darwin"))
-        {
-            Scope (PCI0)
-            {
-                Device (MCHC)
-                {
-                    Name (_ADR, Zero)  // _ADR: Address
-                    Method (_STA, 0, NotSerialized)  // _STA: Status
-                    {
-                        Return (0x0F)
-                    }
-                }
-
-                Scope (SBUS)
-                {
-                    Device (BUS0)
-                    {
-                        Name (_ADR, Zero)  // _ADR: Address
-                        Name (_CID, "smbus")  // _CID: Compatible ID
-                        Device (DVL0)
-                        {
-                            Name(_ADR, 0x57)
-                            Name(_CID, "diagsvault")
-                            Method(_DSM, 4, NotSerialized)
-                            {
-                               /* The _DSM method can be simplified by returning a Package directly instead 
-                                * of using an "If" statement to check for the Arg2 parameter. Since Arg2 is
-                                * not used in this method, this check is unnecessary */
-                                Return(Package()
-                                {
-                                   /* Remove the fault-len and fault-off keys. These keys are used for error
-                                    * reporting and are not necessary for the operation of the device. Removing
-                                    * them can simplify the code and reduce the SSDT size */
-                                    "command", Zero,
-                                    "refnum", Zero,
-                                    "type", 0x49324300,
-                                    "version", 0x03
-                                })
-                            }
-                        }
-
-                        Method (_STA, 0, NotSerialized)  // _STA: Status
-                        {
-                            Return (0x0F)
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-```
  
 ![sbus-bus0](sbusfix.png)
 
