@@ -183,7 +183,6 @@ DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x00002000) {
                     Return(0x0F)
                 }
             }
-
         }
     }
 }
