@@ -67,16 +67,29 @@ DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x00002000) {
                             Device(GFX0) {
 
                                 Name(_ADR, Zero) // _ADR: Address
+								Method(_STA, 0, NotSerialized) // _STA: Status
+								{
+									Return(0x0F)
+								}
+
                                 Device(LCD) {
                                     Method(_ADR, 0, NotSerialized) // _ADR: Address
                                     {
                                         Return(0x0100)
                                     }
                                     Name(_CID, "monitor") // _CID: Compatible ID
+									Method(_STA, 0, NotSerialized) // _STA: Status
+									{
+										Return(0x0F)
+									}
                                 }
                             }
                             Device(HDAU) {
                                 Name(_ADR, One) // _ADR: Address
+								Method(_STA, 0, NotSerialized) // _STA: Status
+								{
+									Return(0x0F)
+								}
                             }
                         }
 
@@ -138,7 +151,6 @@ DefinitionBlock("", "SSDT", 2, "MSI", "B460", 0x00002000) {
             }
 
             Device(PNLF) {
-                Name(_ADR, Zero) // _ADR: Address
                 Name(_HID, EisaId("APP0002")) // _HID: Hardware ID
                 Name(_CID, "backlight") // _CID: Compatible ID
                 Name(_UID, 0x10) // _UID: Unique ID
