@@ -6,6 +6,8 @@
 [![macOS](https://img.shields.io/badge/Compatible-Catalina/Monterey/Ventura-orange)](https://www.apple.com/ge/macos/monterey/)
 [![Version](https://img.shields.io/badge/Version-0.9.0-white)](https://github.com/acidanthera/OpenCorePkg/releases)
 
+![stats](https://user-images.githubusercontent.com/72515939/227037983-8127f79c-5726-4803-92fb-a69bd87a3e9f.png)
+
 Table of contents
 
 - [Introduction](#introduction)
@@ -220,8 +222,6 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
   - Add fake FWHD (only run on macOS)
   - Clean ACPI code
-
-![ihack20](https://user-images.githubusercontent.com/72515939/227037045-02828441-769a-474e-800f-684b09111dc2.png)
 
 ## Guide and Samples
 
