@@ -6,8 +6,6 @@
 [![macOS](https://img.shields.io/badge/Compatible-Catalina/Monterey/Ventura-orange)](https://www.apple.com/ge/macos/monterey/)
 [![Version](https://img.shields.io/badge/Version-0.9.0-white)](https://github.com/acidanthera/OpenCorePkg/releases)
 
-![stats](https://user-images.githubusercontent.com/72515939/227037983-8127f79c-5726-4803-92fb-a69bd87a3e9f.png)
-
 Table of contents
 
 - [Introduction](#introduction)
@@ -51,7 +49,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 - **ACPI**
 
-  - [SSDT-MSIB460](Guide%20&%20Samples/ACPI%20Samples/SSDT-MSIB460.dsl). Refer [ACPI Spec 6.4](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html) for more info.
+  - [SSDT-MSIB460](Guide%20&%20Samples/ACPI%20Samples/SSDT-MSIB460.dsl). Refer [ACPI Spec 6.4](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html) for more info. Not sure? Click [here](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#add).
 
 - **Booter**
 
@@ -140,8 +138,8 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 - Quirks
 
-  - AppleXcpmCfgLock - boolean - `Yes`
-  - DisableIoMapper - boolean - `Yes`
+  - AppleXcpmCfgLock - boolean - `NO` <sup>Not needed if CFG-Lock is disabled in the BIOS</sup>
+  - DisableIoMapper - boolean - `Yes`<sup>Not needed if VT-D is disabled in the BIOS</sup>
   - PanicNoKextDump - boolean - `Yes`
   - PowerTimeoutKernelPanic - boolean - `Yes`
   - SetApfsTrimTimeout - number - `0`
@@ -151,7 +149,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
   - ConsoleAttributes - boolean - `Yes`
   - HibernateMode - boolean - `Yes`
-  - HideAuxiliary - string - `Auto`
+  - HideAuxiliary - string - `Auto`<sup>Press space to show macOS recovery and other auxiliary entries</sup>
   - LauncherOption - string - `Full`
   - LauncherPath - string - `Default`
   - PickerAttributes - number - `147`
@@ -222,6 +220,8 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
   - Add fake FWHD (only run on macOS)
   - Clean ACPI code
+
+![stats](https://user-images.githubusercontent.com/72515939/227103631-fdc4fd05-2275-454d-99c5-f6dc38c3d30e.png)
 
 ## Guide and Samples
 
