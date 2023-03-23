@@ -221,7 +221,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   - Add fake FWHD (only run on macOS)
   - Clean ACPI code
 
-![stats](https://user-images.githubusercontent.com/72515939/227103631-fdc4fd05-2275-454d-99c5-f6dc38c3d30e.png)
+![scrsht](https://user-images.githubusercontent.com/72515939/227203289-8f1d963e-83c9-42ff-8d7f-5cd2bb079b5d.png)
 
 ## Guide and Samples
 
