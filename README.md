@@ -11,6 +11,7 @@ Table of contents
 - [Introduction](#introduction)
   - [Devices](#devices)
   - [Plist Configuration](#plist-configuration)
+  - [Unmount Unsupport Partition Format](#unmount-unsupport-partition-format)
   - [BIOS Settings](#bios-settings)
   - [Changelog](#changelog)
 - [Guide and Samples](#guide-and-samples)
@@ -227,6 +228,39 @@ This is my current EFI clone that I built according to my hardware. Feel free to
     - TscSyncTimeout - number - `0`
     > **Note**: Other than above is `No`
 
+### Unmount Unsupport Partition Format
+
+- If needed, we can unmount unneeded partition format such as NTFS/others.
+
+  - Run `sudo vifs` and enter your password.  Use `i` as input and `ESC` to exit any input. Hit `Shift + ZZ` to exit. Below is an example:
+
+  ```zsh
+  #
+  # Warning - this file should only be modified with vifs(8)
+  #
+  # Failure to do so is unsupported and may be destructive.
+  #
+  UUID=A8EAAAFA-98EB-40DB-8457-40255E27E9D4 none ntfs rw,noauto // Windows NTFS
+  UUID=4717D07E-B328-4084-85CF-F87C5D0015E7 none ntfs rw,noauto // Storage NTFS
+  ~                                                                               
+  ~                                                                               
+  ~                                                                               
+  ~                                                                               
+  ~                                                                               
+  ~                                                                               
+  ~                                                                               
+  ~                                                                               
+  ~                                                                               
+  ~                                                                               
+  ~                                                                               
+  ~                                                                               
+  ~                                                                               
+  ~                                                                               
+  ~                                                                               
+  ~                                                                               
+  "/etc/fstab" 7L, 279B
+  ```
+  
 ### BIOS Settings
 
 - **Disable**
@@ -259,39 +293,6 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   - Clean ACPI code
 
 ![scrsht](https://user-images.githubusercontent.com/72515939/227203289-8f1d963e-83c9-42ff-8d7f-5cd2bb079b5d.png)
-
-### Unmount NTFS
-
-- If needed, we can unmount unneeded partition format such as NTFS/others.
-
-  - Run `sudo vifs` and enter your password.  Use `i` as input and `ESC` to exit any input. Hit `Shift + ZZ` to exit. Below is an example:
-
-  ```zsh
-  #
-  # Warning - this file should only be modified with vifs(8)
-  #
-  # Failure to do so is unsupported and may be destructive.
-  #
-  UUID=A8EAAAFA-98EB-40DB-8457-40255E27E9D4 none ntfs rw,noauto // Windows NTFS
-  UUID=4717D07E-B328-4084-85CF-F87C5D0015E7 none ntfs rw,noauto // Storage NTFS
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  "/etc/fstab" 7L, 279B
-  ```
   
 ## Guide and Samples
 
