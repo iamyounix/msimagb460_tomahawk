@@ -233,16 +233,16 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
   - Fast Boot
   - Secure Boot
-  - VT-d (can be enabled if you set DisableIoMapper to YES)
+  - VT-d (can be enabled if you set DisableIoMapper to `YES`)
   - CSM
-  - Intel SGX (enable if multiboot on linux)
-  - Intel Platform Trust
+  - Intel SGX (enable if multiboot on Linux)
+  - Intel Platform Trust/TPM (enable if multiboot with Windows)
   - CFG Lock
 
 - **Enable**
 
-  - VT-x Tech (DisableIOMapper = Yes)
-  - VT-d Tech (DisableIOMapper = Yes)
+  - VT-x Tech (DisableIOMapper = `Yes`)
+  - VT-d Tech (DisableIOMapper = `Yes`)
   - Above 4G Decoding
   - Quirks (ResizeAppleGpuBars is set to `0` if this is enabled)
   - Hyper-Threading
