@@ -76,17 +76,21 @@ This is my current EFI clone that I built according to my hardware. Feel free to
     - `AAPL00,override-no-connect` - data - `Your dumped EDID from Linux`<sup>Optional. Refer [EDID Fix](Guide%20&%20Samples/EDID%20Fix/EDID%20Fix.md)</sup>
     - `ATY,EFIVersion` - string - `31.0.120.26.3`
     - `device_type` - string - `ATY,PythonParent`
+    
+    ![gpu](https://user-images.githubusercontent.com/72515939/227340743-faf333ac-161b-488e-af7f-aa0b74febcd4.png)
 
   - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
 
     - `AAPL,slot-name` - string - `J6B2` <sup>or <code>Slot- 1</code></sup>
     - `model` - string - `Navi 10 HDMI Audio`
+    
+    ![dpaudio](https://user-images.githubusercontent.com/72515939/227341081-9173d0f7-fde1-4315-ba33-3b17843c2e3e.png)
 
   - PciRoot(0x0)/Pci(0x14,0x0)
 
     - `AAPL,slot-name` - string - `Onboard`
     - `acpi-wake-type` - data - `01`
-    - `model` - string - `Comet Lake PCH-V USB Controller`
+    - `model` - string - `Comet Lake PCH-V USB Controller
 
   - PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)
 
@@ -99,17 +103,23 @@ This is my current EFI clone that I built according to my hardware. Feel free to
     - `AAPL,slot-name` - string - `J6D1` <sup>or <code>Slot- 2</code></sup>
     - `acpi-wake-type` - data - `01`
     - `model` - string - `VL805/806 USB 3.0 Controller`
+    
+    ![usb](https://user-images.githubusercontent.com/72515939/227341492-f32d3491-8496-4c8d-88d5-9fc87a9e65cc.png)
 
   - PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)
 
     - `AAPL,slot-name` - string - `J8B4` <sup>or <code>Slot- 3</code></sup>
     - `model` - string - `BCM4360 802.11ac Wireless Network Adapter`
+    
+    ![wifi](https://user-images.githubusercontent.com/72515939/227341968-bfaa23fd-0038-4835-b4a2-a706becf9168.png)
 
   - PciRoot(0x0)/Pci(0x1F,0x3)
 
     - `AAPL,slot-name` - string - `Onboard`
     - `layout-id` - data - `01000000`
     - `model` - string - `Comet Lake PCH-V Converged Audio Voice Speech`
+    
+    ![built-in_audio](https://user-images.githubusercontent.com/72515939/227342197-c6985fc2-06d8-4d4a-ac48-2dbfcae17068.png)
 
   - PciRoot(0x0)/Pci(0x2,0x0)
 
@@ -121,6 +131,8 @@ This is my current EFI clone that I built according to my hardware. Feel free to
     - `igfxfw` - data - `02000000`
     - `igfxonln` - data - `01000000`
     > **Note**: Check device properties in plist layout [here](Device%20Properties/deviceproperties.plist)
+    
+    ![uhd630](https://user-images.githubusercontent.com/72515939/227342411-7d82aab1-cf28-4503-85cb-c6e5317c4403.png)
 
 - **Kext**
 
@@ -213,6 +225,30 @@ This is my current EFI clone that I built according to my hardware. Feel free to
     - ResizeGpuBars - number - `-1`
     - TscSyncTimeout - number - `0`
     > **Note**: Other than above is `No`
+
+### BIOS Settings
+
+- **Disable**
+
+  - Fast Boot
+  - Secure Boot
+  - VT-d (can be enabled if you set DisableIoMapper to YES)
+  - CSM
+  - Intel SGX (enable if multiboot on linux)
+  - Intel Platform Trust
+  - CFG Lock
+
+- **Enable**
+
+  - VT-x Tech (DisableIOMapper = Yes)
+  - VT-d Tech (DisableIOMapper = Yes)
+  - Above 4G Decoding
+  - Quirks (ResizeAppleGpuBars is set to `0` if this is enabled)
+  - Hyper-Threading
+  - EHCI/XHCI Hand-off
+  - OS type: Windows 8.1/10 UEFI Mode (some motherboards may require "Other OS" instead)
+  - DVMT Pre-Allocated(iGPU Memory): 64MB
+  - AHCI Mode
 
 ### Changelog
 
