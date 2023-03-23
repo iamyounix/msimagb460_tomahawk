@@ -54,24 +54,38 @@ DefinitionBlock ("", "SSDT", 2, "SBUSv2", "Younix", 0x00001004)
                 {
                     Device (BUS0)
                     {
-                        Name (_ADR, Zero)  // _ADR: Address
                         Name (_CID, "smbus")  // _CID: Compatible ID
+                        Name (_ADR, Zero)  // _ADR: Address
                         Device (DVL0)
                         {
                             Name (_ADR, 0x57)  // _ADR: Address
                             Name (_CID, "diagsvault")  // _CID: Compatible ID
                             Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                             {
-                                Return (Package (0x08)
+                                If (!Arg2)
                                 {
+                                    Return (Buffer (One)
+                                    {
+                                         0x57                                             // W
+                                    })
+                                }
+
+                                Return (Package (0x0E)
+                                {
+                                    "address", 
+                                    0x57, 
                                     "command", 
                                     Zero, 
+                                    "fault-len", 
+                                    0x04, 
+                                    "fault-off", 
+                                    0x03, 
                                     "refnum", 
                                     Zero, 
                                     "type", 
                                     0x49324300, 
                                     "version", 
-                                    0x03
+                                    Zero
                                 })
                             }
                         }
