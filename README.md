@@ -11,6 +11,7 @@ Table of contents
 - [Introduction](#introduction)
   - [Devices](#devices)
   - [Plist Configuration](#plist-configuration)
+  - [BIOS Settings](#bios-settings)
   - [Changelog](#changelog)
 - [Guide and Samples](#guide-and-samples)
 - [Credits](#credits)
