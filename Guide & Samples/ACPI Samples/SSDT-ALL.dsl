@@ -154,7 +154,6 @@ DefinitionBlock("", "SSDT", 2, "Younix", "B460", 0x00002000) {
                 Name(_HID, EisaId("APP0002")) // _HID: Hardware ID
                 Name(_CID, "backlight") // _CID: Compatible ID
                 Name(_UID, 0x10) // _UID: Unique ID
-                Name(_STA, 0x0B) // _STA: Status
                 Method(_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
                 {
                     If((Arg2 == Zero)) {
@@ -169,6 +168,11 @@ DefinitionBlock("", "SSDT", 2, "Younix", "B460", 0x00002000) {
                         "type",0x49324300,
                         "version",0x03
                     })
+                }
+                
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0B)
                 }
             }
 
