@@ -52,6 +52,12 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 - **ACPI**
 
   - [SSDT-MSIB460](Guide%20&%20Samples/ACPI%20Samples/SSDT-MSIB460.dsl). Refer [ACPI Spec 6.4](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html) for more info. Not sure? Click [here](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#add).
+  
+  - Why this SSDT is different? `If (_OSI ("Darwin"))` is placed after `\_SB` and before `PCI0`. What it does, all acpi patches will load if Darwin kernel is executed, other OSes; Windows and Linux will not affect. In simple mean, just like [btwise - OC No ACPI](https://gitee.com/btwise/OpenCore_NO_ACPI) and [OpenCore NDK](
+https://github.com/n-d-k). Then enable `CustomSMBIOSGuid` = `Fals`e and `UpdateSMBIOSMode` = `Custom`. 
+
+  ![OC No ACPI](https://user-images.githubusercontent.com/72515939/228397367-2f8b1c0e-9807-4e46-9107-7c182e17ee01.png)
+
 
 - **Booter**
 
