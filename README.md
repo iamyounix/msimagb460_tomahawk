@@ -53,9 +53,19 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
   - [SSDT-ALL](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl). Refer [ACPI Spec 6.4](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html) for more info. Not sure? Click [here](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#add).
   
-  - We can set `CustomSMBIOSGuid` = `False` and `UpdateSMBIOSMode` = `Custom` quirks to prevent acpi injection to another OS (Multiboot/Dualboot). 
+  - We can set `CustomSMBIOSGuid` = `True` and `UpdateSMBIOSMode` = `Custom` quirks to prevent acpi injection to another OS (Multiboot/Dualboot). 
 
-  ![OC No ACPI](https://user-images.githubusercontent.com/72515939/228397367-2f8b1c0e-9807-4e46-9107-7c182e17ee01.png)
+  ![oc_no_acpi](https://user-images.githubusercontent.com/72515939/228397367-2f8b1c0e-9807-4e46-9107-7c182e17ee01.png)
+  
+    - `CustomSMBIOSGuid` = `True`
+    
+  ![cstm_smbios_guid](https://user-images.githubusercontent.com/72515939/228692165-15a7eab6-0943-4bf1-9a52-99003cfca432.png)
+  
+    - `UpdateSMBIOSMode` = `Custom`
+    
+  ![upd_smbiosmode](https://user-images.githubusercontent.com/72515939/228692166-7d16b3db-3485-4dc1-a888-2604658740aa.png)
+
+
 
 - **Booter**
 
@@ -114,6 +124,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
     - `model` - string - `VL805/806 USB 3.0 Controller`
 
     ![usb](https://user-images.githubusercontent.com/72515939/227341492-f32d3491-8496-4c8d-88d5-9fc87a9e65cc.png)
+    ![usb_hackintool](https://user-images.githubusercontent.com/72515939/228692952-0b2fedcd-de86-4a74-8a07-e96b8be233a3.png)
 
   - PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)
 
@@ -138,7 +149,6 @@ This is my current EFI clone that I built according to my hardware. Feel free to
     - `igfxfw` - data - `02000000`
     - `igfxonln` - data - `01000000`
    
-
     ![uhd630](https://user-images.githubusercontent.com/72515939/227342411-7d82aab1-cf28-4503-85cb-c6e5317c4403.png)
     
   - Example:
@@ -151,15 +161,15 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
   - Add
 
-    - [AppleALC](Kexts/AppleALC.kext)
-    - [IntelMausi](Kexts/IntelMausi.kext)
-    - [Lilu](Kexts/Lilu.kext)
-    - [LucyRTL8125Ethernet](Kexts/LucyRTL8125Ethernet.kext)
-    - [SMCProcessor](Kexts/SMCProcessor.kext)
-    - [SMCSuperIO](Kexts/SMCSuperIO.kext)
-    - [USBMap](Kexts/USBMap.kext)<sup>require USBMap or USBToolbox</sup>
-    - [VirtualSMC](Kexts/VirtualSMC.kext)
-    - [WhateverGreen](Kexts/WhateverGreen.kext)
+    - [AppleALC](Kexts/AppleALC.kext)<sup>ALCS1200A audio</sup>
+    - [IntelMausi](Kexts/IntelMausi.kext)<sup>Ethernet0</sup>
+    - [Lilu](Kexts/Lilu.kext)<sup>Arbitrary kext and process patching on macOS</sup>
+    - [LucyRTL8125Ethernet](Kexts/LucyRTL8125Ethernet.kext)<sup>Ethernet1</sup>
+    - [SMCProcessor](Kexts/SMCProcessor.kext)<sup>VirtualSMC plugins</sup>
+    - [SMCSuperIO](Kexts/SMCSuperIO.kext)<sup>VirtualSMC plugins</sup>
+    - [USBMap](Kexts/USBMap.kext)<sup>Choosen 15 USB Port</sup>
+    - [VirtualSMC](Kexts/VirtualSMC.kext)<sup>Lilu plugins</sup>
+    - [WhateverGreen](Kexts/WhateverGreen.kext)<sup>Lilu plugins</sup>
 
 - Quirks
 
