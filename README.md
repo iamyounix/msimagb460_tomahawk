@@ -138,13 +138,15 @@ This is my current EFI clone that I built according to my hardware. Feel free to
     - `enable-metal` - data - `01000000`
     - `igfxfw` - data - `02000000`
     - `igfxonln` - data - `01000000`
-    > **Note**: Check device properties in plist layout [here](Device%20Properties/deviceproperties.plist)
+   
 
     ![uhd630](https://user-images.githubusercontent.com/72515939/227342411-7d82aab1-cf28-4503-85cb-c6e5317c4403.png)
     
   - Example:
 
     ![dev_props](https://user-images.githubusercontent.com/72515939/228690668-19ce1c9a-de29-4c24-b79a-e4c7bff22a17.png)
+    
+    > **Note**: Check device properties in plist layout [here](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Device%20Properties/dev_props.plist)
 
 - **Kext**
 
@@ -187,7 +189,6 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 - **PlatformInfo**
 
   - SMBIOS: [iMac20,1](https://everymac.com/ultimate-mac-lookup/?search_keywords=iMac20,1)
-    > **Note**: Refer real iMac20,1 Apple. Inc [BIOS Vendor](BIOS/BIOSVendor:%20%22Apple%20Inc.%22.yml)
 
 - **UEFI**
 
@@ -252,22 +253,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   #
   UUID=A8EAAAFA-98EB-40DB-8457-40255E27E9D4 none ntfs rw,noauto // Windows NTFS
   UUID=4717D07E-B328-4084-85CF-F87C5D0015E7 none ntfs rw,noauto // Storage NTFS
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
-  ~                                                                               
+  ~  
   "/etc/fstab" 7L, 279B
   ```
   
