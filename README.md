@@ -75,12 +75,15 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
   - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
 
+    - `@0,display-dual-link` - string - `01000000`
     - `@0,name` - string - `ATY,Python`
     - `@1,name` - string - `ATY,Python`
     - `@2,name` - string - `ATY,Python`
     - `@3,name` - string - `ATY,Python`
     - `AAPL,slot-name` - string - `J6B2` <sup>or <code>Slot- 1</code></sup>
     - `AAPL00,override-no-connect` - data - `Your dumped EDID from Linux`<sup>Optional. Refer [EDID Fix](Guide%20&%20Samples/EDID%20Fix/EDID%20Fix.md)</sup>
+    - `AAPL01,override-no-connect` - data - `Your dumped EDID from Linux`<sup>Optional. Refer [EDID Fix](Guide%20&%20Samples/EDID%20Fix/EDID%20Fix.md)</sup>
+    - `ATY,bin_image` - string - `Your dumped GPU bin image (if any)`<sup>Optional and not needed on Big Sur and above</sup>
     - `ATY,EFIVersion` - string - `31.0.120.26.3`
     - `device_type` - string - `ATY,PythonParent`
 
@@ -138,6 +141,10 @@ This is my current EFI clone that I built according to my hardware. Feel free to
     > **Note**: Check device properties in plist layout [here](Device%20Properties/deviceproperties.plist)
 
     ![uhd630](https://user-images.githubusercontent.com/72515939/227342411-7d82aab1-cf28-4503-85cb-c6e5317c4403.png)
+    
+  - Example:
+
+    ![example](https://user-images.githubusercontent.com/72515939/228468406-fad254cc-4ff6-4b30-94ed-5991e370cf6e.png)
 
 - **Kext**
 
