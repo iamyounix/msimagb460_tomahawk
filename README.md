@@ -144,7 +144,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
     
   - Example:
 
-    ![example](https://user-images.githubusercontent.com/72515939/228468406-fad254cc-4ff6-4b30-94ed-5991e370cf6e.png)
+    ![dev_props](https://user-images.githubusercontent.com/72515939/228690668-19ce1c9a-de29-4c24-b79a-e4c7bff22a17.png)
 
 - **Kext**
 
