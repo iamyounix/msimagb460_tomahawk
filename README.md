@@ -34,7 +34,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   - BCM4360 802.11ac Wireless Network Adapter. <sup>Fenvi-T919</sup>
   - Kingston A2000 NVMe SSD1.
   - Kingston A2000 NVMe SSD2.
-  - Navi 10 HDMI Audio. <sup>plist patch is available, but not required</sup
+  - Navi 10 HDMI Audio. <sup>plist patch is available, but not required</sup>
   - VL805/806 xHCI USB 3.0 Controller. <sup>Works without Port Mapping; 1 x Bus, 2 x Hosts, 4 x Ports.</sup>
 
 - **Non-Native**
