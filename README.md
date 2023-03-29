@@ -308,6 +308,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 - Guide
 
+  - [ACPI Samples - SSDT ALL](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl)
   - [Ambient Light Sensors](Guide%20&%20Samples/Ambient%20Light%20Sensors/Ambient%20Light%20Sensors.md) <sup>Optional</sup>
   - [EDID Fix](Guide%20&%20Samples/EDID%20Fix/EDID%20Fix.md) <sup>Optional</sup>
   - [Fix SBUS and MCHC](Guide%20&%20Samples/Fix%20SBUS%20and%20MCHC/Fix%20SBUS%20and%20MCHC.md) <sup>Required</sup>
