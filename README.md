@@ -51,7 +51,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 - **ACPI**
 
-  - [SSDT-MSIB460](Guide%20&%20Samples/ACPI%20Samples/SSDT-MSIB460.dsl). Refer [ACPI Spec 6.4](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html) for more info. Not sure? Click [here](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#add).
+  - [SSDT-ALL](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl). Refer [ACPI Spec 6.4](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html) for more info. Not sure? Click [here](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#add).
   
   - Why this SSDT is different? `If (_OSI ("Darwin"))` is placed after `\_SB` and before `PCI0`. What it does, all acpi patches will load if Darwin kernel is executed, and other OSes; Windows and Linux will not affect. In simple mean, just like [btwise - OC No ACPI](https://gitee.com/btwise/OpenCore_NO_ACPI) and [OpenCore NDK](
 <https://github.com/n-d-k>). Then enable `CustomSMBIOSGuid` = `False` and `UpdateSMBIOSMode` = `Custom`.
