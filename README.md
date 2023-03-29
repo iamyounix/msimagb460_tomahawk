@@ -11,7 +11,7 @@ Table of contents
 - [Introduction](#introduction)
   - [Devices](#devices)
   - [Plist Configuration](#plist-configuration)
-  - [Unmount Unsupport Partition Format](#unmount-unsupport-partition-format)
+  - [Unmount Unsupported Partition Format](#unmount-unsupported-partition-format)
   - [BIOS Settings](#bios-settings)
   - [Changelog](#changelog)
 - [Guide and Samples](#guide-and-samples)
@@ -22,7 +22,7 @@ Table of contents
 This is my current EFI clone that I built according to my hardware. Feel free to read my content. If you have a similar build but different settings, you might consider checking this out. Before read, below is the best way to checkout the latest OpenCore guide and news.
 
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) Getting Started. <sup>Get Started</sup>
-- Checkout latest [post](https://dortania.github.io), news and update directly from developer. <sup>Anouncement</sup>
+- Checkout latest [post](https://dortania.github.io), news and update directly from the developer. <sup>Announcement</sup>
 
 > **Note**: This EFI has been tested on Linux, MacOS, and Windows. Due to 'If(_OSI("Darwin"))' is injected after 'PCI0,' the patch only works on macOS. Other than that, Windows and Linux will not be affected.
 
@@ -53,11 +53,10 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
   - [SSDT-MSIB460](Guide%20&%20Samples/ACPI%20Samples/SSDT-MSIB460.dsl). Refer [ACPI Spec 6.4](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html) for more info. Not sure? Click [here](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#add).
   
-  - Why this SSDT is different? `If (_OSI ("Darwin"))` is placed after `\_SB` and before `PCI0`. What it does, all acpi patches will load if Darwin kernel is executed, other OSes; Windows and Linux will not affect. In simple mean, just like [btwise - OC No ACPI](https://gitee.com/btwise/OpenCore_NO_ACPI) and [OpenCore NDK](
-https://github.com/n-d-k). Then enable `CustomSMBIOSGuid` = `False` and `UpdateSMBIOSMode` = `Custom`. 
+  - Why this SSDT is different? `If (_OSI ("Darwin"))` is placed after `\_SB` and before `PCI0`. What it does, all acpi patches will load if Darwin kernel is executed, and other OSes; Windows and Linux will not affect. In simple mean, just like [btwise - OC No ACPI](https://gitee.com/btwise/OpenCore_NO_ACPI) and [OpenCore NDK](
+<https://github.com/n-d-k>). Then enable `CustomSMBIOSGuid` = `False` and `UpdateSMBIOSMode` = `Custom`.
 
   ![OC No ACPI](https://user-images.githubusercontent.com/72515939/228397367-2f8b1c0e-9807-4e46-9107-7c182e17ee01.png)
-
 
 - **Booter**
 
@@ -84,14 +83,14 @@ https://github.com/n-d-k). Then enable `CustomSMBIOSGuid` = `False` and `UpdateS
     - `AAPL00,override-no-connect` - data - `Your dumped EDID from Linux`<sup>Optional. Refer [EDID Fix](Guide%20&%20Samples/EDID%20Fix/EDID%20Fix.md)</sup>
     - `ATY,EFIVersion` - string - `31.0.120.26.3`
     - `device_type` - string - `ATY,PythonParent`
-    
+
     ![gpu](https://user-images.githubusercontent.com/72515939/227340743-faf333ac-161b-488e-af7f-aa0b74febcd4.png)
 
   - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
 
     - `AAPL,slot-name` - string - `J6B2` <sup>or <code>Slot- 1</code></sup>
     - `model` - string - `Navi 10 HDMI Audio`
-    
+
     ![dpaudio](https://user-images.githubusercontent.com/72515939/227341081-9173d0f7-fde1-4315-ba33-3b17843c2e3e.png)
 
   - PciRoot(0x0)/Pci(0x14,0x0)
@@ -111,14 +110,14 @@ https://github.com/n-d-k). Then enable `CustomSMBIOSGuid` = `False` and `UpdateS
     - `AAPL,slot-name` - string - `J6D1` <sup>or <code>Slot- 2</code></sup>
     - `acpi-wake-type` - data - `01`
     - `model` - string - `VL805/806 USB 3.0 Controller`
-    
+
     ![usb](https://user-images.githubusercontent.com/72515939/227341492-f32d3491-8496-4c8d-88d5-9fc87a9e65cc.png)
 
   - PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)
 
     - `AAPL,slot-name` - string - `J8B4` <sup>or <code>Slot- 3</code></sup>
     - `model` - string - `BCM4360 802.11ac Wireless Network Adapter`
-    
+
     ![wifi](https://user-images.githubusercontent.com/72515939/227341968-bfaa23fd-0038-4835-b4a2-a706becf9168.png)
 
   - PciRoot(0x0)/Pci(0x1F,0x3)
@@ -126,7 +125,7 @@ https://github.com/n-d-k). Then enable `CustomSMBIOSGuid` = `False` and `UpdateS
     - `AAPL,slot-name` - string - `Onboard`
     - `layout-id` - data - `01000000`
     - `model` - string - `Comet Lake PCH-V Converged Audio Voice Speech`
-    
+
     ![built-in_audio](https://user-images.githubusercontent.com/72515939/227342197-c6985fc2-06d8-4d4a-ac48-2dbfcae17068.png)
 
   - PciRoot(0x0)/Pci(0x2,0x0)
@@ -139,7 +138,7 @@ https://github.com/n-d-k). Then enable `CustomSMBIOSGuid` = `False` and `UpdateS
     - `igfxfw` - data - `02000000`
     - `igfxonln` - data - `01000000`
     > **Note**: Check device properties in plist layout [here](Device%20Properties/deviceproperties.plist)
-    
+
     ![uhd630](https://user-images.githubusercontent.com/72515939/227342411-7d82aab1-cf28-4503-85cb-c6e5317c4403.png)
 
 - **Kext**
@@ -234,7 +233,7 @@ https://github.com/n-d-k). Then enable `CustomSMBIOSGuid` = `False` and `UpdateS
     - TscSyncTimeout - number - `0`
     > **Note**: Other than above is `No`
 
-### Unmount Unsupport Partition Format
+### Unmount Unsupported Partition Format
 
 - If needed, we can unmount unneeded partition format such as NTFS/others.
 
