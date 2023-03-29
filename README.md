@@ -130,10 +130,8 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
   - PciRoot(0x0)/Pci(0x2,0x0)
 
-    - `AAPL,ig-platform-id` - data - `0300923E`
     - `AAPL,slot-name` - string - `Onboard`
     - `agdpmod` - data - `70696B65726100`
-    - `device-id` - data - `9B3E0000`
     - `enable-metal` - data - `01000000`
     - `igfxfw` - data - `02000000`
     - `igfxonln` - data - `01000000`
