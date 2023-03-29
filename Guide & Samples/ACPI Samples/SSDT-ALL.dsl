@@ -1,4 +1,4 @@
-DefinitionBlock ("", "SSDT", 2, "Younix", "Patch", 0x00002000)
+DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 {
     External (_SB_.PCI0, DeviceObj)
     External (_SB_.PCI0.LPCB, DeviceObj)
@@ -67,11 +67,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "Patch", 0x00002000)
                                 Name (_ADR, One)  // _ADR: Address
                             }
                         }
-
-                        Method (_STA, 0, NotSerialized)  // _STA: Status
-                        {
-                            Return (0x0F)
-                        }
                     }
                 }
 
@@ -98,13 +93,13 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "Patch", 0x00002000)
                             {
                                 If (!Arg2)
                                 {
-                                    Return (Buffer (One)
+                                    Return (Buffer ()
                                     {
                                          0x57                                             // W
                                     })
                                 }
 
-                                Return (Package (0x0A)
+                                Return (Package ()
                                 {
                                     "address", 
                                     0x57, 
@@ -144,24 +139,18 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "Patch", 0x00002000)
                 Name (_UID, 0x13)  // _UID: Unique ID
                 Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
-                    If ((Arg2 == Zero))
+                    If (!Arg2)
                     {
-                        Return (Buffer (One)
+                        Return (Buffer ()
                         {
                              0x03                                             // .
                         })
                     }
 
-                    Return (Package (0x08)
+                    Return (Package ()
                     {
-                        "address", 
-                        Zero, 
-                        "refnum", 
-                        Zero, 
                         "type", 
-                        0x49324300, 
-                        "version", 
-                        Zero
+                        0x49324300
                     })
                 }
 
@@ -176,15 +165,15 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "Patch", 0x00002000)
                 Name (_ADR, Zero)  // _ADR: Address
                 Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
-                    If ((Arg2 == Zero))
+                    If (!Arg2)
                     {
-                        Return (Buffer (One)
+                        Return (Buffer ()
                         {
                              0x03                                             // .
                         })
                     }
 
-                    Return (Package (0x08)
+                    Return (Package ()
                     {
                         "kUSBSleepPowerSupply", 
                         0x13EC, 
