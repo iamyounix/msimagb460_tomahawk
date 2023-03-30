@@ -106,7 +106,9 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
     ![gpu](https://user-images.githubusercontent.com/72515939/227340743-faf333ac-161b-488e-af7f-aa0b74febcd4.png)
 
-    > **Note**: `@x,name` - string - `ATY,Keeelback` + `device_type` - string - `ATY,KeelbackParent` + [SMBUS](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) + [PNLF](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) may enable `display0`/`AppleBacklightDisplay`.
+    > **Note**: `@x,name` - string - `ATY,Keeelback` + `device_type` - string - `ATY,KeelbackParent` + [SMBUS](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) + [PNLF](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) may enable `display0`/`AppleBacklightDisplay`. See picture below:
+    
+    ![keelback](https://user-images.githubusercontent.com/72515939/228712281-353e3251-c129-4cf5-a3b2-c989c76fdfd3.png)
 
   - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
 
