@@ -56,7 +56,7 @@ Scope (_SB.PCI0) <---- Here and above, still can affect other OSes, except the d
 ```asl
 Scope (\_SB) <---- Here and above, still can affect other OSes, except the device declared as "Scope", not "Device".
 {
-    If (_OSI ("Darwin")) <---- On and OFF variable will only affect if Darwin Kernel is loaded.
+    If (_OSI ("Darwin")) <---- On and OFF variable will only affect if Darwin Kernel is loaded. Other OS will always Off.
     {
         Scope (PCI0)
         {
