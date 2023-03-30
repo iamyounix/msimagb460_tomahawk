@@ -25,7 +25,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) Getting Started. <sup>Get Started</sup>
 - Checkout latest [post](https://dortania.github.io), news and update directly from the developer. <sup>Announcement</sup>
 
-> **Note**: This EFI has been tested on Linux, MacOS, and Windows. Due to 'If(_OSI("Darwin"))' is injected before 'PCI0,' importantpatched devices only works on macOS. Other than that, Windows and Linux will not be affected. No BSOD on Windows!. This is what we want...
+> **Note**: This EFI has been tested on Linux, MacOS, and Windows. Due to 'If(_OSI("Darwin"))' is injected before 'PCI0,' importantpatched devices only works on macOS. Other than that, Windows and Linux will not be affected. No BSOD on Windows!. This is what we want. Check example below:
 
 **Example:**
 
