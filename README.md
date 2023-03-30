@@ -42,7 +42,7 @@ Scope (_SB.PCI0) <---- Here and above, still can affect other OSes, except it is
             {
                 Return (0x0F) <---- On
             }
-            Else
+            Else <---- Other OS than Darwin?
             {
                 Return (Zero) <---- Off
             }
