@@ -75,7 +75,7 @@ Scope (\_SB) <-- Here and above, still can affect other OSes, except the device 
 }
 ```
 
-As results, optimised version is always safe to be used on others, also has an ability to prevent BSOD on Windows. So...decide!
+As results, optimised version is always safe to be used on other OS, also has an ability to prevent BSOD on Windows. So...decide!
 
 ### Devices
 
