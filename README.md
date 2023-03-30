@@ -40,11 +40,11 @@ Scope (_SB.PCI0) <-- Here and above, still can affect other OSes, except the dev
         Name (_ADR, Zero)  // _ADR: Address
         Method (_STA, 0, NotSerialized)  // _STA: Status <-- Here and above still can affect other OS.
         {
-            If (_OSI ("Darwin")) <---- On and OFF variable will not affect until the end of the script.
+            If (_OSI ("Darwin")) <-- On and OFF variable will not affect until the end of the script.
             {
                 Return (0x0F) <-- On
             }
-            Else <---- Other OS than Darwin?
+            Else <-- Other OS than Darwin?
             {
                 Return (Zero) <-- Off
             }
