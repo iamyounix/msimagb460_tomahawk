@@ -31,7 +31,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 - Standard
 ```asl
-Scope (_SB.PCI0) <---- Here and above, still can affect other OSes, except it is declared as "Scope", not "Device".
+Scope (_SB.PCI0) <---- Here and above, still can affect other OSes, except the device declared as "Scope", not "Device".
 {
     Device (XXXX) <---- Whether macOS/Darwin Kernel is loaded or not, the device is always enabled. 
     {
@@ -54,7 +54,7 @@ Scope (_SB.PCI0) <---- Here and above, still can affect other OSes, except it is
 - Optimised
 
 ```asl
-Scope (\_SB) <---- Here and above, still can affect other OSes, except it is declared as "Scope", not "Device".
+Scope (\_SB) <---- Here and above, still can affect other OSes, except the device declared as "Scope", not "Device".
 {
     If (_OSI ("Darwin")) <---- On and OFF variable will only affect if Darwin Kernel is loaded.
     {
