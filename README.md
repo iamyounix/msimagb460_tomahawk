@@ -60,7 +60,7 @@ Scope (\_SB) <-- Here and above, still can affect other OSes, except the device 
 {
     If (_OSI ("Darwin")) <-- "On" and "OFF" variable only affect if Darwin Kernel is loaded. 
     {                         Other OS will always declared as "Off" without "Return (Zero)".
-        Scope (PCI0) <-- Only loaded if Darwin Kernel loaded. Since the device declared as "Scope", other OS not affect.
+        Scope (PCI0) <-- Since the device declared as "Scope", other OS not affect.
         {
             Device (XXXX) <-- The device only enable if macOS/Darwin Kernel loaded.
             {
