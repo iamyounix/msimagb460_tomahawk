@@ -40,7 +40,7 @@ Scope (_SB.PCI0) <-- Here and above, still can affect other OSes, except the dev
         Name (_ADR, Zero)  // _ADR: Address
         Method (_STA, 0, NotSerialized)  // _STA: Status <-- Here and above still can affect other OS.
         {
-            If (_OSI ("Darwin")) <-- On and OFF variable will not affect until the end of the script.
+            If (_OSI ("Darwin")) <-- On and OFF variable.
             {
                 Return (0x0F) <-- On
             }
@@ -74,6 +74,8 @@ Scope (\_SB) <-- Here and above, still can affect other OSes, except the device 
     }
 }
 ```
+
+As results, optimised version is always safe to be used on others, also has an ability to prevent BSOD on Windows. So...decide!
 
 ### Devices
 
