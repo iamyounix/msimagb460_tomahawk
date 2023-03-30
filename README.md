@@ -29,6 +29,8 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 **Example:**
 
+*Remark: OSI = Operating System Interface*
+
 - Standard
 ```asl
 Scope (_SB.PCI0) <-- Here and above, still can affect other OSes, except the device declared as "Scope", not "Device".
