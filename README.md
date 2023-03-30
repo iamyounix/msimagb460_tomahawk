@@ -63,19 +63,17 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
   - [SSDT-ALL](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl). Refer [ACPI Spec 6.4](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html) for more info. Not sure? Click [here](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#add).
   
-  - We can set `CustomSMBIOSGuid` = `True` and `UpdateSMBIOSMode` = `Custom` quirks to prevent acpi injection to another OS (Multiboot/Dualboot). 
+  - We can set `CustomSMBIOSGuid` = `True` and `UpdateSMBIOSMode` = `Custom` quirks to prevent acpi injection to another OS (Multiboot/Dualboot).
 
   ![oc_no_acpi](https://user-images.githubusercontent.com/72515939/228397367-2f8b1c0e-9807-4e46-9107-7c182e17ee01.png)
   
-    - `CustomSMBIOSGuid` = `True`
-    
+  - `CustomSMBIOSGuid` = `True`
+
   ![cstm_smbios_guid](https://user-images.githubusercontent.com/72515939/228692165-15a7eab6-0943-4bf1-9a52-99003cfca432.png)
   
-    - `UpdateSMBIOSMode` = `Custom`
-    
+  - `UpdateSMBIOSMode` = `Custom`
+
   ![upd_smbiosmode](https://user-images.githubusercontent.com/72515939/228692166-7d16b3db-3485-4dc1-a888-2604658740aa.png)
-
-
 
 - **Booter**
 
@@ -95,18 +93,20 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
 
     - `@0,display-dual-link` - string - `01000000`
-    - `@0,name` - string - `ATY,Python`
-    - `@1,name` - string - `ATY,Python`
-    - `@2,name` - string - `ATY,Python`
-    - `@3,name` - string - `ATY,Python`
+    - `@0,name` - string - `ATY,Python` / `ATY,Boa` / `ATY,Keelback`
+    - `@1,name` - string - `ATY,Python` / `ATY,Boa` / `ATY,Keelback`
+    - `@2,name` - string - `ATY,Python` / `ATY,Boa` / `ATY,Keelback`
+    - `@3,name` - string - `ATY,Python` / `ATY,Boa` / `ATY,Keelback`
     - `AAPL,slot-name` - string - `J6B2` <sup>or <code>Slot- 1</code></sup>
     - `AAPL00,override-no-connect` - data - `Your dumped EDID from Linux`<sup>Optional. Refer [EDID Fix](Guide%20&%20Samples/EDID%20Fix/EDID%20Fix.md)</sup>
     - `AAPL01,override-no-connect` - data - `Your dumped EDID from Linux`<sup>Optional. Refer [EDID Fix](Guide%20&%20Samples/EDID%20Fix/EDID%20Fix.md)</sup>
     - `ATY,bin_image` - string - `Your dumped GPU bin image (if any)`<sup>Optional and not needed on Big Sur and above</sup>
     - `ATY,EFIVersion` - string - `31.0.120.26.3`
-    - `device_type` - string - `ATY,PythonParent`
+    - `device_type` - string - `ATY,PythonParent` / `ATY,BoaParent` / `ATY,KeelbackParent`
 
     ![gpu](https://user-images.githubusercontent.com/72515939/227340743-faf333ac-161b-488e-af7f-aa0b74febcd4.png)
+
+    > **Note**: `@x,name` - string - `ATY,Keeelback` + `device_type` - string - `ATY,KeelbackParent` + [SMBUS](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) + [PNLF](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) mayy enable `display0`/`AppleBacklightDisplay`.
 
   - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
 
@@ -158,13 +158,13 @@ This is my current EFI clone that I built according to my hardware. Feel free to
     - `enable-metal` - data - `01000000`
     - `igfxfw` - data - `02000000`
     - `igfxonln` - data - `01000000`
-   
+
     ![uhd630](https://user-images.githubusercontent.com/72515939/227342411-7d82aab1-cf28-4503-85cb-c6e5317c4403.png)
-    
+
   - Example:
 
     ![dev_props](https://user-images.githubusercontent.com/72515939/228690668-19ce1c9a-de29-4c24-b79a-e4c7bff22a17.png)
-    
+
     > **Note**: Check device properties in plist layout [here](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Device%20Properties/dev_props.plist)
 
 - **Kext**
