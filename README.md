@@ -31,20 +31,20 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 - Standard
 ```asl
-Scope (_SB.PCI0) <---- Here and above, still can affect other OSes, except the device declared as "Scope", not "Device".
+Scope (_SB.PCI0) <-- Here and above, still can affect other OSes, except the device declared as "Scope", not "Device".
 {
-    Device (XXXX) <---- Whether macOS/Darwin Kernel is loaded or not, the device is always enabled. 
+    Device (XXXX) <-- Whether macOS/Darwin Kernel is loaded or not, the device is always enable. 
     {
         Name (_ADR, Zero)  // _ADR: Address
-        Method (_STA, 0, NotSerialized)  // _STA: Status <---- Here and above still can affect other OS.
+        Method (_STA, 0, NotSerialized)  // _STA: Status <-- Here and above still can affect other OS.
         {
             If (_OSI ("Darwin")) <---- On and OFF variable will not affect until the end of the script.
             {
-                Return (0x0F) <---- On
+                Return (0x0F) <-- On
             }
             Else <---- Other OS than Darwin?
             {
-                Return (Zero) <---- Off
+                Return (Zero) <-- Off
             }
         }
     }
@@ -54,18 +54,18 @@ Scope (_SB.PCI0) <---- Here and above, still can affect other OSes, except the d
 - Optimised
 
 ```asl
-Scope (\_SB) <---- Here and above, still can affect other OSes, except the device declared as "Scope", not "Device".
+Scope (\_SB) <-- Here and above, still can affect other OSes, except the device declared as "Scope", not "Device".
 {
-    If (_OSI ("Darwin")) <---- On and OFF variable will only affect if Darwin Kernel is loaded. Other OS will always Off without "Return (Zero)".
-    {
+    If (_OSI ("Darwin")) <-- "On" and "OFF" variable only affect if Darwin Kernel is loaded. 
+    {                         Other OS will always declared as "Off" without "Return (Zero)".
         Scope (PCI0)
         {
-            Device (XXXX) <---- The device only enable if macOS/Darwin Kernel loaded.
+            Device (XXXX) <-- The device only enable if macOS/Darwin Kernel loaded.
             {
                 Name (_ADR, Zero)  // _ADR: Address
                 Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
-                    Return (0x0F) <---- On
+                    Return (0x0F) <-- On
                 }
             }
         }
