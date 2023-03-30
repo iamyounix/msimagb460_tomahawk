@@ -308,6 +308,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
   ![scrsht](https://user-images.githubusercontent.com/72515939/228696528-14d9dc55-dfc1-470d-a46d-4a1516470720.png)
   ![arch](https://user-images.githubusercontent.com/72515939/228697345-3e11763f-9556-434f-b401-0af9a11a3bb4.png)
+  ![windows](https://user-images.githubusercontent.com/72515939/228697904-247b77f1-5c1b-4eaf-bb34-3f075f2635fb.png)
   
 ## Guide and Samples
 
