@@ -306,7 +306,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
   - Clean and optimised ACPI code
 
-![scrsht](https://user-images.githubusercontent.com/72515939/227203289-8f1d963e-83c9-42ff-8d7f-5cd2bb079b5d.png)
+  ![scrsht](https://user-images.githubusercontent.com/72515939/228696528-14d9dc55-dfc1-470d-a46d-4a1516470720.png)
   
 ## Guide and Samples
 
