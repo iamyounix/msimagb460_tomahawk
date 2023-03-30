@@ -312,6 +312,12 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   ![arch](https://user-images.githubusercontent.com/72515939/228697345-3e11763f-9556-434f-b401-0af9a11a3bb4.png)
   ![windows](https://user-images.githubusercontent.com/72515939/228697904-247b77f1-5c1b-4eaf-bb34-3f075f2635fb.png)
   
+  - Still working on brightness fix iMac20,1 using ACPI and plist patch.
+  
+  Uploading Screen Recording 2023-03-30 at 10.56.31 AM.mov…
+
+  Uploading Screen Recording 2023-03-30 at 10.59.00 AM.mov…
+
 ## Guide and Samples
 
 - Guide
