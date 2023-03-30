@@ -25,7 +25,50 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) Getting Started. <sup>Get Started</sup>
 - Checkout latest [post](https://dortania.github.io), news and update directly from the developer. <sup>Announcement</sup>
 
-> **Note**: This EFI has been tested on Linux, MacOS, and Windows. Due to 'If(_OSI("Darwin"))' is injected after 'PCI0,' the patch only works on macOS. Other than that, Windows and Linux will not be affected.
+> **Note**: This EFI has been tested on Linux, MacOS, and Windows. Due to 'If(_OSI("Darwin"))' is injected before 'PCI0,' importantpatched devices only works on macOS. Other than that, Windows and Linux will not be affected. No BSOD on Windows!. This is what we want...
+
+Example:
+
+```asl
+Scope (_SB.PCI0) <---- Here and above, still can affect other OSes, except it is declared as "Scope", not "Device".
+{
+    Device (MCHC) <---- Whether macOS/Darwin Kernel is loaded or not, the device is always enabled. 
+    {
+        Name (_ADR, Zero)  // _ADR: Address
+        Method (_STA, 0, NotSerialized)  // _STA: Status <---- Here and above still can affect other OS.
+        {
+            If (_OSI ("Darwin")) <---- On and OFF variable will not affect until the end of the script.
+            {
+                Return (0x0F) <---- On
+            }
+            Else
+            {
+                Return (Zero) <---- Off
+            }
+        }
+    }
+}
+````
+
+````asl
+Scope (\_SB) <---- Here and above, still can affect other OSes, except it is declared as "Scope", not "Device".
+{
+    If (_OSI ("Darwin")) <---- On and OFF variable will only affect if Darwin Kernel is loaded.
+    {
+        Scope (PCI0)
+        {
+            Device (MCHC) <---- The device only enable if macOS/Darwin Kernel loaded.
+            {
+                Name (_ADR, Zero)  // _ADR: Address
+                Method (_STA, 0, NotSerialized)  // _STA: Status
+                {
+                    Return (0x0F) <---- On
+                }
+            }
+        }
+    }
+}
+```
 
 ### Devices
 
