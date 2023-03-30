@@ -10,6 +10,7 @@ Table of contents
 
 - [Introduction](#introduction)
   - [Devices](#devices)
+  - [Structure](#structure)
   - [Plist Configuration](#plist-configuration)
   - [Unmount Unsupported Partition Format](#unmount-unsupported-partition-format)
   - [BIOS Settings](#bios-settings)
@@ -46,6 +47,15 @@ This is my current EFI clone that I built according to my hardware. Feel free to
   - Intel UHD Graphics 630 Headless. <sup>require plist patch</sup>
   - Navi 14 Radeon RX 5500 XT. <sup>require plist patch</sup>
   - RTL8125 2.5GbE Controller. <sup>require additional kext</sup>
+
+### Structure
+
+![1](https://user-images.githubusercontent.com/72515939/228694404-e105ce6f-128b-4a35-98c9-81a9f8ac8914.png)
+![2](https://user-images.githubusercontent.com/72515939/228694410-a08afbb7-0c65-404f-975a-0934245548cb.png)
+![3](https://user-images.githubusercontent.com/72515939/228694417-edb9a4d6-45f5-4fec-86fb-40e96075b574.png)
+![4](https://user-images.githubusercontent.com/72515939/228694420-b30a1d7e-b1d6-4ec7-ac4b-a7e90a27714d.png)
+![5](https://user-images.githubusercontent.com/72515939/228694425-87a38234-1c78-46a4-bfc2-74d53112cae9.png)
+![tree](https://user-images.githubusercontent.com/72515939/228694864-fc549194-8096-41c1-8702-3bf9d04b7155.png)
 
 ### Plist Configuration
 
