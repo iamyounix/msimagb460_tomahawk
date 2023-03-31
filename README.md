@@ -158,8 +158,8 @@ As results, optimised version is always safe to be used on other OS, and also ca
     > **Note**:
     >
     > 1. Choosing Framebuffer:
-    >     - `ATY,Python`: working great on non-iMac Display (tested)
-    >     - `ATY,Keelback`: working great on real iMac Display (tested)
+    >     - `ATY,Python`: working great on non-iMac Display (tested) - Desktop
+    >     - `ATY,Keelback`: working great on real iMac Display (tested) - Mobile
     >     - `ATY,Boa`: Not tested
     > 2. `@x,name` - string - `ATY,Keeelback` + `device_type` - string - `ATY,KeelbackParent` + [SMBUS with I2C properties injected](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) + [PNLF with proper UID, properties and type injected](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) may enable `display0`/`AppleBacklightDisplay`. While `ATY,Python` just calling `display0`/`AppleDisplay` See picture below:
 
