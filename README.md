@@ -161,9 +161,12 @@ As results, optimised version is always safe to be used on other OS, also has an
     >     * `ATY,Python`: working great on non-iMac Display (tested)
     >     * `ATY,Keelback`: working great on real iMac Display (tested)
     >     * `ATY,Boa`: Not tested
-    > 2.  `@x,name` - string - `ATY,Keeelback` + `device_type` - string - `ATY,KeelbackParent` + [SMBUS with I2C properties injected](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) + [PNLF with proper UID, properties and type injected](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) may enable `display0`/`AppleBacklightDisplay`. See picture below:
+    > 2.  `@x,name` - string - `ATY,Keeelback` + `device_type` - string - `ATY,KeelbackParent` + [SMBUS with I2C properties injected](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) + [PNLF with proper UID, properties and type injected](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) may enable `display0`/`AppleBacklightDisplay`. While `ATY,Python` just calling `display0`/`AppleDisplay` See picture below:
     
+    - **ATY,Keelback**
     ![keelback](https://user-images.githubusercontent.com/72515939/228712281-353e3251-c129-4cf5-a3b2-c989c76fdfd3.png)
+    - **ATY,Python**
+    ![python](https://user-images.githubusercontent.com/72515939/229042930-5bcdca3f-60f2-48a5-ba11-dd23f19aca22.png)
 
   - PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
 
