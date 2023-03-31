@@ -25,55 +25,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) Getting Started. <sup>Get Started</sup>
 - Checkout latest [post](https://dortania.github.io), news and update directly from the developer. <sup>Announcement</sup>
 
-> **Note**: This EFI has been tested on Linux, MacOS, and Windows. Due to 'If(_OSI("Darwin"))' is injected before 'PCI0,' importantpatched devices only works on macOS. Other than that, Windows and Linux will not be affected. No BSOD on Windows!. This is what we want. Check example below:
-
-**Example:**
-
-*Remark: OSI = Operating System Interface*
-
-- Standard
-```asl
-Scope (_SB.PCI0) <-- Here and above, still can affect other OSes, except the device declared as "Scope", not "Device".
-{
-    Device (XXXX) <-- Whether macOS/Darwin Kernel is loaded or not, the device is always enable. 
-    {
-        Name (_ADR, Zero)  // _ADR: Address
-        Method (_STA, 0, NotSerialized)  // _STA: Status <-- Here and above still can affect other OS.
-        {
-            If (_OSI ("Darwin")) <-- On and OFF variable.
-            {
-                Return (0x0F) <-- On
-            }
-            Else <-- Other OS than Darwin?
-            {
-                Return (Zero) <-- Off
-            }
-        }
-    }
-}
-```
-
-- Optimised
-
-```asl
-Scope (\_SB) <-- Here and above, still can affect other OSes, except the device declared as "Scope", not "Device".
-{
-    If (_OSI ("Darwin")) <-- "On" and "OFF" variable only affect if Darwin Kernel is loaded. 
-    {                         Other OS will always declared as "Off" without "Return (Zero)".
-        Scope (PCI0) <-- Since the device declared as "Scope", other OS not affect.
-        {
-            Device (XXXX) <-- The device only enable if macOS/Darwin Kernel loaded.
-            {
-                Name (_ADR, Zero)  // _ADR: Address
-                Method (_STA, 0, NotSerialized)  // _STA: Status
-                {
-                    Return (0x0F) <-- On
-                }
-            }
-        }
-    }
-}
-```
+> **Note**: This EFI has been tested on Linux, MacOS, and Windows. 
 
 As results, optimised version is always safe to be used on other OS, also has an ability to prevent BSOD on Windows. So...decide!
 
@@ -113,7 +65,7 @@ As results, optimised version is always safe to be used on other OS, also has an
 
   - [SSDT-ALL](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl). Refer [ACPI Spec 6.4](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html) for more info. Not sure? Click [here](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#add).
   
-  - We can set `CustomSMBIOSGuid` = `True` and `UpdateSMBIOSMode` = `Custom` quirks to prevent acpi injection to another OS (Multiboot/Dualboot).
+  - We can set `CustomSMBIOSGuid` = `True` and `UpdateSMBIOSMode` = `Custom` quirks to prevent acpi injection to another OS (Multiboot/Dualboot). Even works better with OSI/Operating System Interface placement.
 
   ![oc_no_acpi](https://user-images.githubusercontent.com/72515939/228397367-2f8b1c0e-9807-4e46-9107-7c182e17ee01.png)
   
@@ -124,6 +76,53 @@ As results, optimised version is always safe to be used on other OS, also has an
   - `UpdateSMBIOSMode` = `Custom`
 
   ![upd_smbiosmode](https://user-images.githubusercontent.com/72515939/228692166-7d16b3db-3485-4dc1-a888-2604658740aa.png)
+  
+  - OSI Placement
+
+    * Standard
+    
+    ```asl
+    Scope (_SB.PCI0) <-- Here and above, still can affect other OSes, except the device declared as "Scope", not "Device".
+    {
+        Device (XXXX) <-- Whether macOS/Darwin Kernel is loaded or not, the device is always enable. 
+        {
+            Name (_ADR, Zero)  // _ADR: Address
+            Method (_STA, 0, NotSerialized)  // _STA: Status <-- Here and above still can affect other OS.
+            {
+                If (_OSI ("Darwin")) <-- On and OFF variable.
+                {
+                    Return (0x0F) <-- On
+                }
+                Else <-- Other OS than Darwin?
+                {
+                    Return (Zero) <-- Off
+                }
+            }
+        }
+    }
+    ```
+
+    * Optimised
+
+    ```asl
+    Scope (\_SB) <-- Here and above, still can affect other OSes, except the device declared as "Scope", not "Device".
+    {
+        If (_OSI ("Darwin")) <-- "On" and "OFF" variable only affect if Darwin Kernel is loaded. 
+        {                         Other OS will always declared as "Off" without "Return (Zero)".
+            Scope (PCI0) <-- Since the device declared as "Scope", other OS not affect.
+            {
+                Device (XXXX) <-- The device only enable if macOS/Darwin Kernel loaded.
+                {
+                    Name (_ADR, Zero)  // _ADR: Address
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        Return (0x0F) <-- On
+                    }
+                }
+            }
+        }
+    }
+    ```
 
 - **Booter**
 
