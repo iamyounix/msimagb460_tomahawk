@@ -61,7 +61,7 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 - **ACPI**
 
-  - [SSDT-ALL](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl). Refer [ACPI Spec 6.4](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html) for more info. Not sure? Click [here](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#add).
+  - [SSDT-YNXB460](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-YNXB460.dsl). Refer [ACPI Spec 6.4](https://uefi.org/htmlspecs/ACPI_Spec_6_4_html/index.html) for more info. Not sure? Click [here](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#add).
   
   - We can set `CustomSMBIOSGuid` = `True` and `UpdateSMBIOSMode` = `Custom` quirks to prevent acpi injection to another OS (Multiboot/Dualboot). Even works better with OSI/Operating System Interface placement.
 
