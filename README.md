@@ -156,7 +156,12 @@ As results, optimised version is always safe to be used on other OS, also has an
 
     ![gpu](https://user-images.githubusercontent.com/72515939/227340743-faf333ac-161b-488e-af7f-aa0b74febcd4.png)
 
-    > **Note**: `@x,name` - string - `ATY,Keeelback` + `device_type` - string - `ATY,KeelbackParent` + [SMBUS with I2C properties injected](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) + [PNLF with proper UID, properties and type injected](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) may enable `display0`/`AppleBacklightDisplay`. See picture below:
+    > **Note**: 
+    > 1.  Choosing Framebuffer:
+    >     * `ATY,Python`: working great on non-iMac Display (tested)
+    >     * `ATY,Keelback`: working great on real iMac Display (tested)
+    >     * `ATY,Boa`: Not tested
+    > 2.  `@x,name` - string - `ATY,Keeelback` + `device_type` - string - `ATY,KeelbackParent` + [SMBUS with I2C properties injected](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) + [PNLF with proper UID, properties and type injected](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) may enable `display0`/`AppleBacklightDisplay`. See picture below:
     
     ![keelback](https://user-images.githubusercontent.com/72515939/228712281-353e3251-c129-4cf5-a3b2-c989c76fdfd3.png)
 
