@@ -20,14 +20,14 @@ Table of contents
 
 ## Introduction
 
-This is my current EFI clone that I built according to my hardware. Feel free to read my content. If you have a similar build but different settings, you might consider checking this out. Before read, below is the best way to checkout the latest OpenCore guide and news.
+This is my current EFI clone that I built according to my hardware. Feel free to read my content. If you have a similar build but different settings, you might consider checking this out. Before read, below is the best way to check out the latest OpenCore guide and news.
 
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) Getting Started. <sup>Get Started</sup>
 - Checkout latest [post](https://dortania.github.io), news and update directly from the developer. <sup>Announcement</sup>
 
-> **Note**: This EFI has been tested on Linux, MacOS, and Windows. 
+> **Note**: This EFI has been tested on Linux, MacOS, and Windows.
 
-As results, optimised version is always safe to be used on other OS, also has an ability to prevent BSOD on Windows. So...decide!
+As results, optimised version is always safe to be used on other OS, and also can prevent BSOD on Windows. So...decide!
 
 ### Devices
 
@@ -79,8 +79,8 @@ As results, optimised version is always safe to be used on other OS, also has an
   
   - OSI Placement
 
-    * Standard
-    
+    - Standard
+
     ```asl
     Scope (_SB.PCI0) <-- Here and above, still can affect other OSes, except the device declared as "Scope", not "Device".
     {
@@ -102,7 +102,7 @@ As results, optimised version is always safe to be used on other OS, also has an
     }
     ```
 
-    * Optimised
+    - Optimized
 
     ```asl
     Scope (\_SB) <-- Here and above, still can affect other OSes, except the device declared as "Scope", not "Device".
@@ -155,13 +155,14 @@ As results, optimised version is always safe to be used on other OS, also has an
 
     ![gpu](https://user-images.githubusercontent.com/72515939/227340743-faf333ac-161b-488e-af7f-aa0b74febcd4.png)
 
-    > **Note**: 
-    > 1.  Choosing Framebuffer:
-    >     * `ATY,Python`: working great on non-iMac Display (tested)
-    >     * `ATY,Keelback`: working great on real iMac Display (tested)
-    >     * `ATY,Boa`: Not tested
-    > 2.  `@x,name` - string - `ATY,Keeelback` + `device_type` - string - `ATY,KeelbackParent` + [SMBUS with I2C properties injected](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) + [PNLF with proper UID, properties and type injected](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) may enable `display0`/`AppleBacklightDisplay`. While `ATY,Python` just calling `display0`/`AppleDisplay` See picture below:
-    
+    > **Note**:
+    >
+    > 1. Choosing Framebuffer:
+    >     - `ATY,Python`: working great on non-iMac Display (tested)
+    >     - `ATY,Keelback`: working great on real iMac Display (tested)
+    >     - `ATY,Boa`: Not tested
+    > 2. `@x,name` - string - `ATY,Keeelback` + `device_type` - string - `ATY,KeelbackParent` + [SMBUS with I2C properties injected](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) + [PNLF with proper UID, properties and type injected](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/Guide%20%26%20Samples/ACPI%20Samples/SSDT-ALL.dsl) may enable `display0`/`AppleBacklightDisplay`. While `ATY,Python` just calling `display0`/`AppleDisplay` See picture below:
+
     - **ATY,Keelback**
     ![keelback](https://user-images.githubusercontent.com/72515939/228712281-353e3251-c129-4cf5-a3b2-c989c76fdfd3.png)
     - **ATY,Python**
@@ -384,4 +385,4 @@ As results, optimised version is always safe to be used on other OS, also has an
 
 ## Credits
 
-[Acidanthera](https://github.com/acidanthera/) \| [corpnewt](https://github.com/corpnewt) \| [Dortania](https://github.com/dortania) \| [dreamwhite](https://github.com/dortania) \| [khronokernel](https://github.com/khronokernel) | [tomeko.net](http://tomeko.net/index.php?lang=en)
+[Acidanthera](https://github.com/acidanthera/) | [corpnewt](https://github.com/corpnewt) | [Dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel) | [tomeko.net](http://tomeko.net/index.php?lang=en)
