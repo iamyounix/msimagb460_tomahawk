@@ -55,11 +55,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                             Device (GFX0)
                             {
                                 Name (_ADR, Zero)  // _ADR: Address
-                                Device (LCD)
-                                {
-                                    Name (_ADR, 0x0104)  // _ADR: Address
-                                    Name (_CID, "PNP09FF")  // _CID: Compatible ID
-                                }
                             }
 
                             Device (HDAU)
