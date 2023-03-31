@@ -14,7 +14,7 @@ Table of contents
   - [Tools](#tools)
   - [SSDT's](#ssdts)
   - [config.plist Settings (SMBIOS, Quirks and Others)](#configplist-settings-smbios-quirks-and-others)
-  - [Credits](#credits)
+- [Credits](#credits)
 
 ## Introduction
 
