@@ -27,8 +27,6 @@ This is my current EFI clone that I built according to my hardware. Feel free to
 
 > **Note**: This EFI has been tested on Linux, MacOS, and Windows.
 
-As results, optimised version is always safe to be used on other OS, and also can prevent BSOD on Windows. So...decide!
-
 ### Devices
 
 - **Out of the box**
