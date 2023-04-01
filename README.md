@@ -19,7 +19,6 @@ Table of contents:
   - [Misc](#misc)
   - [PlatformInfo](#platforminfo)
   - [UEFI](#uefi)
-  - [Complete EFI Structure](#complete-efi-structure)
   - [BIOS Requirement](#bios-requirement)
 - [Tips](#tips)
   - [Unmount Unsupported Partition Format](#unmount-unsupported-partition-format)
@@ -32,9 +31,7 @@ Table of contents:
 
 - [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/) - Official
 - [Dortania's Announcement](https://dortania.github.io/) - Official
-- [Clover Wiki](https://github.com/CloverHackyColor/CloverBootloader/wiki) or [SourceForge Clover Wiki](https://sourceforge.net/p/cloverefiboot/wiki/Home/) - Official
 - [OC Little Translate](https://github.com/5T33Z0/OC-Little-Translated) - Non Official
-- [Clover Crate](https://github.com/5T33Z0/Clover-Crate) - Non Official
 
 > **Note**: This build has been tested on Linux, MacOS, and Windows.
 
@@ -62,8 +59,6 @@ Table of contents:
 > **Tips**: Identifying hardware and devices is easier with Linux.
 >
 > - Open Linux Terminal: Use `lspci`. The `lspci` command is a utility for displaying information about PCI buses in the system and devices connected to them.
-
-  ![lspci](https://user-images.githubusercontent.com/72515939/229264431-aff473e9-07a5-4a3c-878b-46fe2af8799e.png)
 
 ## Config.plist
 
@@ -203,10 +198,6 @@ All we is needed is .plist editor. below is the best free tools to start with:
   - `igfxfw` - data - `02000000`
   - `igfxonln` - data - `01000000`
 
-- Example:
-
-  ![plist](https://user-images.githubusercontent.com/72515939/229265036-2ee10416-8aec-4e73-be71-6d85bbdbcafb.png)
-
 ### Kext
 
 - [AppleALC](Kexts/AppleALC.kext)
@@ -304,10 +295,6 @@ All we is needed is .plist editor. below is the best free tools to start with:
   - TscSyncTimeout - number - `0`
 
   > **Note**: Other than above is `No`
-
-### Complete EFI Structure
-
-![structure](library/Images/tree.png)
 
 ### BIOS Requirement
 
