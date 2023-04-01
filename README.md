@@ -300,10 +300,10 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
   - Fast Boot
   - Secure Boot
-  - VT-d or VT-x or both
+  - VT-d / VT-x
   - CSM
   - Intel SGX
-  - Intel Platform Trust/TPM
+  - Intel Platform Trust / TPM
   - CFG Lock
 
 - **Enable**
