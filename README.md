@@ -68,7 +68,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
 - [Propertree](https://github.com/corpnewt/ProperTree) is a cross platform application to modify `.plist` file format. Requirement needed:
   - Windows, [Python](https://www.python.org/downloads/) to be installed.
   - Mac's, [Homebrew](https://brew.sh/) and install [python-tk@3.10](https://formulae.brew.sh/formula/python-tk@3.10#default) especially on BigSur, Monterey and Ventura. Please `brew install python-tk@3.10` using terminal.
-  - Linux, none. Most disto is built in with it.
+  - Linux, none. Most linux distro is built in with it.
 
 ### ACPI
 
