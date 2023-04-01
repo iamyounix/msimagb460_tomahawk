@@ -76,19 +76,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 ### ACPI
 
-- As mention above, this build uses the Intel i5 10400, which is the Comet Lake variant. A little addition is needed. We start generating SSDT using [SSDTTime](https://github.com/corpnewt/SSDTTime). The required SSDT is:
-  
-  - SSDT-EC-USBX.aml (Required)
-  - SSDT-AWAC.aml (Required)
-  - SSDT-PLUG.aml (Not Required on latest build macOS Monterey)
-  - SSDT-RHUB.aml (Depends on Motherboard/USB Controller)
-  - SSDT-MCHC-SBUS.aml (Optional)
-  
-  ![ssdttime](https://user-images.githubusercontent.com/72515939/229264569-8ad0e3d3-fafb-4a30-bd8b-2a7f4624c498.png)
-
-- Select `P` will dump DSDT. This will automatically load DSDT before we select required SSDT.
-
-- Then, select `2` (FakeEC), `4` (USBX), `5` (PluginType), `7` (RTC/AWAC), and `8` (USB Reset). For this build, i have made several upgrades by merging all existing SSDTs and modifying properties that are not documented by Dortania's. Refer [SSDT-BNXB460](custom_ssdt/SSDT-YNXB460.dsl) samples. Here is my references - [OC Little Translate](https://github.com/5T33Z0/OC-Little-Translated) for more info. Here's an example of regular vs optimized.
+- For this build, i have made several upgrades by merging all existing SSDTs and modifying properties that are not documented by Dortania's. Refer [SSDT-BNXB460](custom_ssdt/SSDT-YNXB460.dsl) samples. Here is my references - [OC Little Translate](https://github.com/5T33Z0/OC-Little-Translated) for more info. Here's an example of regular vs optimized.
 
   **Regular**
 
@@ -149,7 +137,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
   - ProvideCustomSlide - boolean - `Yes`
   - SyncRuntimePermissions - boolean - `Yes`
   - ProvideMaxSlide - number - `0`
-  - ResizeAppleGpuBars - number - `-1` <sup>When enabling `Above4G`, `Resizable BAR Support` may become available on some Z490 and newer motherboards. Please ensure that `Booter` - `Quirks` - `ResizeAppleGpuBars` is set to `0` if this is enabled.</sup>
+  - ResizeAppleGpuBars - number - `-1` (When enabling `Above4G`, `Resizable BAR Support` may become available on some Z490 and newer motherboards. Please ensure that `Booter` - `Quirks` - `ResizeAppleGpuBars` is set to `0` if this is enabled)
   > **Note**: Other than above is `No`
 
 ### DeviceProperties
