@@ -8,6 +8,24 @@
 
 Table of contents:
 
+- [Introduction](#introduction)
+- [About this build](#about-this-build)
+- [Config.plist](#configplist)
+  - [ACPI](#acpi)
+  - [Booter](#booter)
+  - [DeviceProperties](#deviceproperties)
+  - [Kext](#kext)
+  - [Quirks](#quirks)
+  - [Misc](#misc)
+  - [PlatformInfo](#platforminfo)
+  - [UEFI](#uefi)
+  - [Complete EFI Structure](#complete-efi-structure)
+  - [BIOS Requirement](#bios-requirement)
+- [Tips](#tips)
+  - [Unmount Unsupported Partition Format](#unmount-unsupported-partition-format)
+- [Changelog](#changelog)
+- [Credits](#credits)
+
 ## Introduction
 
 **Author:** This is the EFI from a previous version of my Hackintosh desktop. The construction isn't ideal, but it does the job. Never blame me if there is an issue or malfunction.   Although this project carries some risk. Please read Dortania's official documents and my explanations for about this build, then shouldn't have any issues. Please do so at your own risk. Below are the best references you should read:
