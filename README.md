@@ -20,8 +20,6 @@ Table of contents:
   - [PlatformInfo](#platforminfo)
   - [UEFI](#uefi)
   - [BIOS Requirement](#bios-requirement)
-- [Tips](#tips)
-  - [Unmount Unsupported Partition Format](#unmount-unsupported-partition-format)
 - [Changelog](#changelog)
 - [Credits](#credits)
 
@@ -317,30 +315,6 @@ All we is needed is .plist editor. below is the best free tools to start with:
   - OS type: Windows 8.1/10 UEFI Mode (some motherboards may require "Other OS" instead)
   - DVMT Pre-Allocated(iGPU Memory): 64MB
   - AHCI Mode
-
-## Tips
-
-### Unmount Unsupported Partition Format
-
-- If needed, we can unmount unneeded partition format such as NTFS/others.
-
-  - Run `sudo vifs` and enter your password.
-  
-  - Use `i` as input and `ESC` to exit any input. Below is an example:
-
-    ```zsh
-    #
-    # Warning - this file should only be modified with vifs(8)
-    #
-    # Failure to do so is unsupported and may be destructive.
-    #
-    UUID=A8EAAAFA-98EB-40DB-8457-40255E27E9D4 none ntfs rw,noauto // Windows NTFS
-    UUID=4717D07E-B328-4084-85CF-F87C5D0015E7 none ntfs rw,noauto // Storage NTFS
-    ~  
-    "/etc/fstab" 7L, 279B
-    ```
-
-  - Hit `Shift + ZZ` to exit.
 
 ## Changelog
 
