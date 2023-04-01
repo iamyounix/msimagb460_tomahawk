@@ -10,6 +10,7 @@ Table of contents:
 
 - [Introduction](#introduction)
 - [About this build](#about-this-build)
+- [Structure](#structure)
 - [Config.plist](#configplist)
   - [ACPI](#acpi)
   - [Booter](#booter)
@@ -55,6 +56,10 @@ Table of contents:
   - RTL8125 2.5GbE Controller.
 
 > **Tips**: Identifying hardware and devices is easier with Linux. Open Linux Terminal: Use `lspci`. The `lspci` command is a utility for displaying information about PCI buses in the system and devices connected to them.
+
+## Structure
+
+![2023-04-01 at 15 47 10 - Cyan Alpaca](https://user-images.githubusercontent.com/72515939/229273147-c593f67c-f11a-4521-b20b-15cd18dcf831.gif)
 
 ## Config.plist
 
