@@ -117,7 +117,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 - If we want to start from scratch, please refer to this [section](https://dortania.github.io/Getting-Started-With-ACPI/).
 
-- For this build, several upgrades for all SSDTs have been done by merging all existing SSDTs and changing some important properties that are not documented by Dortania's. Refer [SSDT-BNXB460](../Guide/ACPI%20Samples/SSDT-YNXB460.dsl) samples.
+- For this build, several upgrades for all SSDTs have been done by merging all existing SSDTs and changing some important properties that are not documented by Dortania's. Refer [SSDT-BNXB460](custom_ssdt/SSDT-YNXB460.dsl) samples.
 
 - Check out [OC Little Translate](https://github.com/5T33Z0/OC-Little-Translated) for more info.
 
