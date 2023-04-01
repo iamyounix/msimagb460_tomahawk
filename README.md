@@ -250,7 +250,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 - Example:
 
-  ![Propertree Lists](../library/Images/plist.png)
+  ![plist](library/Images/plist.png)
 
 ### Kext
 
@@ -294,7 +294,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 - SMBIOS: [iMac20,1](https://everymac.com/ultimate-mac-lookup/?search_keywords=iMac20,1). Please generate SMBIOS using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
 
-  ![Alt text](../library/Images/gensmbios.png)
+  ![gensmbios](library/Images/gensmbios.png)
 
 > **Note**: Enable `Kernel` `Quirks` - `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` - `Generic` - `UpdateSMBIOSMode` = `Custom` to prevent ACPI break on other OSes. This is likely needed when dual or multibooting and using standard SSDT provided by - [Dortania's](https://dortania.github.io/OpenCore-Install-Guide/) and [SSDTTime](https://github.com/corpnewt/SSDTTime). Both quirks can break in the future and so we only recommend this option in the event of certain software breaking in other OSes. For best stability, disabling this is the best choice. Do note, this build using custom SSDT. So, disabling both quirks will not break other OSes.
 
@@ -354,7 +354,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 ### Complete EFI Structure
 
-![Folder Structure](../Library/Images/tree.png)
+![structure](library/Images/tree.png)
 
 ### BIOS Requirement
 
@@ -384,19 +384,23 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 - If needed, we can unmount unneeded partition format such as NTFS/others.
 
-  - Run `sudo vifs` and enter your password.  Use `i` as input and `ESC` to exit any input. Hit `Shift + ZZ` to exit. Below is an example:
+  - Run `sudo vifs` and enter your password.
+  
+  - Use `i` as input and `ESC` to exit any input. Below is an example:
 
-  ```zsh
-  #
-  # Warning - this file should only be modified with vifs(8)
-  #
-  # Failure to do so is unsupported and may be destructive.
-  #
-  UUID=A8EAAAFA-98EB-40DB-8457-40255E27E9D4 none ntfs rw,noauto // Windows NTFS
-  UUID=4717D07E-B328-4084-85CF-F87C5D0015E7 none ntfs rw,noauto // Storage NTFS
-  ~  
-  "/etc/fstab" 7L, 279B
-  ```
+    ```zsh
+    #
+    # Warning - this file should only be modified with vifs(8)
+    #
+    # Failure to do so is unsupported and may be destructive.
+    #
+    UUID=A8EAAAFA-98EB-40DB-8457-40255E27E9D4 none ntfs rw,noauto // Windows NTFS
+    UUID=4717D07E-B328-4084-85CF-F87C5D0015E7 none ntfs rw,noauto // Storage NTFS
+    ~  
+    "/etc/fstab" 7L, 279B
+    ```
+
+  - Hit `Shift + ZZ` to exit.
 
 ## Changelog
 
