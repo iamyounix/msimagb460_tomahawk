@@ -1,4 +1,4 @@
-# ⌘ MSI MAG B460 TOMAHAWK ⌘
+# MSI MAG B460 TOMAHAWK
 
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
@@ -324,4 +324,4 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 ## Credits
 
-[Acidanthera](https://github.com/acidanthera/) | [corpnewt](https://github.com/corpnewt) | [Dortania](https://github.com/dortania) | [dreamwhite](https://github.com/dortania) | [khronokernel](https://github.com/khronokernel) | [tomeko.net](http://tomeko.net/index.php?lang=en)
+[Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel) ⌘ [tomeko.net](http://tomeko.net/index.php?lang=en)
