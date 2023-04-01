@@ -364,8 +364,8 @@ All we is needed is .plist editor. below is the best free tools to start with:
   - Secure Boot
   - VT-d or VT-x or both
   - CSM
-  - Intel SGX (enable if multiboot on Linux)
-  - Intel Platform Trust/TPM (enable if multiboot with Windows)
+  - Intel SGX
+  - Intel Platform Trust/TPM
   - CFG Lock
 
 - **Enable**
