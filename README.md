@@ -54,9 +54,7 @@ Table of contents:
   - Navi 14 Radeon RX 5500 XT.
   - RTL8125 2.5GbE Controller.
 
-> **Tips**: Identifying hardware and devices is easier with Linux.
->
-> - Open Linux Terminal: Use `lspci`. The `lspci` command is a utility for displaying information about PCI buses in the system and devices connected to them.
+> **Tips**: Identifying hardware and devices is easier with Linux. Open Linux Terminal: Use `lspci`. The `lspci` command is a utility for displaying information about PCI buses in the system and devices connected to them.
 
 ## Config.plist
 
