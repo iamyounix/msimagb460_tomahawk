@@ -198,15 +198,15 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 ### Kext
 
-- [AppleALC](Kexts/AppleALC.kext)
-- [IntelMausi](Kexts/IntelMausi.kext)
-- [Lilu](Kexts/Lilu.kext)
-- [LucyRTL8125Ethernet](Kexts/LucyRTL8125Ethernet.kext)
-- [SMCProcessor](Kexts/SMCProcessor.kext)<
-- [SMCSuperIO](Kexts/SMCSuperIO.kext)
-- [USBMap](Kexts/USBMap.kext)
-- [VirtualSMC](Kexts/VirtualSMC.kext)
-- [WhateverGreen](Kexts/WhateverGreen.kext)
+- [AppleALC](https://github.com/acidanthera/AppleALC)
+- [IntelMausi](https://github.com/acidanthera/IntelMausi)
+- [Lilu](https://github.com/acidanthera/Lilut)
+- [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)
+- [SMCProcessor](https://github.com/acidanthera/VirtualSMC)
+- [SMCSuperIO](https://github.com/acidanthera/VirtualSMC)
+- [USBMap](https://github.com/USBToolBox/tool)
+- [VirtualSMC](https://github.com/acidanthera/VirtualSMC)
+- [WhateverGreen](https://github.com/acidanthera/WhateverGreen)
 
 ### Quirks
 
