@@ -1,4 +1,4 @@
-# MSI MAG B460 TOMAHAWK
+# ⌘ MSI MAG B460 TOMAHAWK ⌘
 
 ![Check](https://img.shields.io/badge/Status-Pass-brightgreen)
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
@@ -6,7 +6,7 @@
 [![macOS](https://img.shields.io/badge/Compatible-Catalina/Monterey/Ventura-orange)](https://www.apple.com/ge/macos/monterey/)
 [![Version](https://img.shields.io/badge/Version-0.9.0-white)](https://github.com/acidanthera/OpenCorePkg/releases)
 
-⌘ Table of contents:
+Table of contents:
 
 - [Introduction](#introduction)
 - [About this build](#about-this-build)
