@@ -205,7 +205,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 - Example:
 
-  ![plist](library/Images/plist.png)
+  ![plist](https://user-images.githubusercontent.com/72515939/229265036-2ee10416-8aec-4e73-be71-6d85bbdbcafb.png)
 
 ### Kext
 
@@ -248,8 +248,6 @@ All we is needed is .plist editor. below is the best free tools to start with:
 ### PlatformInfo
 
 - SMBIOS: [iMac20,1](https://everymac.com/ultimate-mac-lookup/?search_keywords=iMac20,1). Please generate SMBIOS using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
-
-  ![gensmbios](library/Images/gensmbios.png)
 
 > **Note**: Enable `Kernel` `Quirks` - `CustomSMBIOSGuid` = `Yes` and `PlatformInfo` - `Generic` - `UpdateSMBIOSMode` = `Custom` to prevent ACPI break on other OSes. This is likely needed when dual or multibooting and using standard SSDT provided by - [Dortania's](https://dortania.github.io/OpenCore-Install-Guide/) and [SSDTTime](https://github.com/corpnewt/SSDTTime). Both quirks can break in the future and so we only recommend this option in the event of certain software breaking in other OSes. For best stability, disabling this is the best choice. Do note, this build using custom SSDT. So, disabling both quirks will not break other OSes.
 
