@@ -323,8 +323,16 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 - March 11, 2023 6:19 AM [OC](https://github.com/acidanthera/OpenCorePkg) ver: [0.9.0](https://github.com/acidanthera/OpenCorePkg/releases)
 
-  - Clean and optimised ACPI code
+  - [Clean](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/custom_ssdt/SSDT-YNXB460.dsl) and [optimised](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/custom_ssdt/SSDT-YNXB460.dsl) ACPI code
+  - SBUS enhancement
+  
+  ![sbusenhancement](https://user-images.githubusercontent.com/72515939/229358443-0e8526df-c8b3-4ffb-8989-8aa81118dd06.png)
 
+  - Prevent ACPI injection to other OSes with early OSI method
+  
+  ![OSI](https://user-images.githubusercontent.com/72515939/229358778-bb9e4494-59b6-49a2-ad9e-e26f466170fd.png)
+  ![arch](https://user-images.githubusercontent.com/72515939/229358647-64343830-0801-40aa-9c53-96f629731e0a.png)
+  
 ## Credits
 
 [Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel) ⌘ [tomeko.net](http://tomeko.net/index.php?lang=en)
