@@ -11,7 +11,7 @@ Table of contents:
 - [Introduction](#introduction)
 - [About this build](#about-this-build)
 - [Structure](#structure)
-- [Config.plist](#configplist)
+- [config.plist](#configplist)
   - [ACPI](#acpi)
   - [Booter](#booter)
   - [DeviceProperties](#deviceproperties)
@@ -61,7 +61,7 @@ Table of contents:
 
 ![EFI_tree](https://user-images.githubusercontent.com/72515939/229323541-263fffd8-0636-4015-96fc-a641dc90a3c0.png)
 
-## Config.plist
+## config.plist
 
 All we is needed is .plist editor. below is the best free tools to start with:
 
