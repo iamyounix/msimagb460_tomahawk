@@ -59,7 +59,7 @@ Table of contents:
 
 ## Structure
 
-![2023-04-01 at 15 47 10 - Cyan Alpaca](https://user-images.githubusercontent.com/72515939/229273147-c593f67c-f11a-4521-b20b-15cd18dcf831.gif)
+![EFI_tree](https://user-images.githubusercontent.com/72515939/229323541-263fffd8-0636-4015-96fc-a641dc90a3c0.png)
 
 ## Config.plist
 
