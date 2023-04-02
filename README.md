@@ -325,8 +325,9 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 - March 11, 2023 6:19 AM [OC](https://github.com/acidanthera/OpenCorePkg) ver: [0.9.0](https://github.com/acidanthera/OpenCorePkg/releases)
 
-  - No NVRAM boot-arg required. All patches done via [DeviceProperties](#deviceproperties)
+  - Clean [Resolution and Verbose](https://dortania.github.io/OpenCore-Post-Install/cosmetic/verbose.html)
   - [Clean](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/custom_ssdt/SSDT-YNXB460.dsl) and [optimised](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/custom_ssdt/SSDT-YNXB460.dsl) ACPI code
+  - No NVRAM boot-arg required. All patches done via [DeviceProperties](#deviceproperties)
   - SBUS enhancement
   
   ![sbusenhancement](https://user-images.githubusercontent.com/72515939/229358443-0e8526df-c8b3-4ffb-8989-8aa81118dd06.png)
