@@ -55,11 +55,13 @@ Table of contents:
   - Navi 14 Radeon RX 5500 XT.
   - RTL8125 2.5GbE Controller.
 
+![lspci](https://user-images.githubusercontent.com/72515939/229358960-0c594360-f692-4200-9d83-7265147df0d1.png)
+
 > **Tips**: Identifying hardware and devices is easier with Linux. Open Linux Terminal: Use `lspci`. The `lspci` command is a utility for displaying information about PCI buses in the system and devices connected to them.
 
 ## Structure
 
-![EFI_tree](https://user-images.githubusercontent.com/72515939/229323541-263fffd8-0636-4015-96fc-a641dc90a3c0.png)
+![tree](https://user-images.githubusercontent.com/72515939/229359066-44764b2f-e073-48ae-8efa-6347d0ee41fe.png)
 
 ## config.plist
 
@@ -323,6 +325,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 - March 11, 2023 6:19 AM [OC](https://github.com/acidanthera/OpenCorePkg) ver: [0.9.0](https://github.com/acidanthera/OpenCorePkg/releases)
 
+  - No NVRAM boot-arg required. All patches done via [DeviceProperties](#deviceproperties)
   - [Clean](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/custom_ssdt/SSDT-YNXB460.dsl) and [optimised](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/custom_ssdt/SSDT-YNXB460.dsl) ACPI code
   - SBUS enhancement
   
