@@ -213,6 +213,8 @@ All we is needed is .plist editor. below is the best free tools to start with:
 - [VirtualSMC](https://github.com/acidanthera/VirtualSMC)
 - [WhateverGreen](https://github.com/acidanthera/WhateverGreen)
 
+> **Note**: Check out `release` and `debug` kext [here](https://dortania.github.io/builds/)
+
 ### Quirks
 
 - AppleXcpmCfgLock - boolean - `NO`
