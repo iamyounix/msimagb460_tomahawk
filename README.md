@@ -140,7 +140,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 ### DeviceProperties
 
-- [PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/device_plist/GFX0.plist)
+- [PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/GFX0%20(MSI%20RX%205500%20XT%204GB).plist)
 
   - `@0,display-dual-link` - string - `01000000`
   - `@0,name` - string - `ATY,Python` / `ATY,Boa` / `ATY,Keelback`
@@ -160,40 +160,40 @@ All we is needed is .plist editor. below is the best free tools to start with:
   > - `ATY,Keelback`: Mobile
   > - `ATY,Boa`: Unknown
 
-- [PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/device_plist/HDAU.plist)
+- [PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/HDAU%20(Navi%2010%20HDMI%20Audio).plist)
 
   - `AAPL,slot-name` - string - `Slot- 1`
 
-- [PciRoot(0x0)/Pci(0x14,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/device_plist/XHC.plist)
+- [PciRoot(0x0)/Pci(0x14,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/XHC%20(Comet%20Lake%20PCH-V%20USB%20Controller).plist)
 
   - `AAPL,slot-name` - string - `Onboard`
   - `acpi-wake-type` - data - `01`
   - `model` - string - `Comet Lake PCH-V USB Controller`
 
-- [PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/device_plist/PXSX2.plist)
+- [PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/RP19.PXSX%20(ASM%203241%20USB%20Controller).plist)
 
   - `AAPL,slot-name` - string - `Onboard`
   - `acpi-wake-type` - data - `01`
   - `model` - string `ASM3241 USB 3.2 USB Controller`
 
-- [PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/device_plist/PXSX1.plist)
+- [PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/RP05.PXSX%20(VL805:806%20USB%203.0%20Controller).plist)
 
   - `AAPL,slot-name` - string - `Slot- 2`
   - `acpi-wake-type` - data - `01`
   - `model` - string - `VL805/806 USB 3.0 Controller`
 
-- [PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)](https://www.fenvi.com/product_detail_16.html)
+- [PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/RP07.PXSX%20(BCM94360%20Wireless).plist)
 
   - `AAPL,slot-name` - string - `Slot- 3`
   - `model` - string - `BCM4360 802.11ac Wireless Network Adapter`
 
-- [PciRoot(0x0)/Pci(0x1F,0x3)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/device_plist/HDEF.plist)
+- [PciRoot(0x0)/Pci(0x1F,0x3)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/HDEF%20(ALCS1200A).plist)
 
   - `AAPL,slot-name` - string - `Onboard`
   - `layout-id` - data - `01000000`
   - `model` - string - `Comet Lake PCH-V Converged Audio Voice Speech`
 
-- [PciRoot(0x0)/Pci(0x2,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/device_plist/IGPU.plist)
+- [PciRoot(0x0)/Pci(0x2,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/IGPU%20(UHD%20630).plist)
 
   - `AAPL,slot-name` - string - `Onboard`
   - `agdpmod` - data - `70696B65726100`
