@@ -182,7 +182,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
   - `acpi-wake-type` - data - `01`
   - `model` - string - `VL805/806 USB 3.0 Controller`
 
-- PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)
+- [PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)](https://www.fenvi.com/product_detail_16.html)
 
   - `AAPL,slot-name` - string - `Slot- 3`
   - `model` - string - `BCM4360 802.11ac Wireless Network Adapter`
