@@ -140,7 +140,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 ### DeviceProperties
 
-- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)
+- [PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/device_plist/GFX0.plist)
 
   - `@0,display-dual-link` - string - `01000000`
   - `@0,name` - string - `ATY,Python` / `ATY,Boa` / `ATY,Keelback`
@@ -160,23 +160,23 @@ All we is needed is .plist editor. below is the best free tools to start with:
   > - `ATY,Keelback`: Mobile
   > - `ATY,Boa`: Unknown
 
-- PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)
+- [PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/device_plist/HDAU.plist)
 
   - `AAPL,slot-name` - string - `Slot- 1`
 
-- PciRoot(0x0)/Pci(0x14,0x0)
+- [PciRoot(0x0)/Pci(0x14,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/device_plist/XHC.plist)
 
   - `AAPL,slot-name` - string - `Onboard`
   - `acpi-wake-type` - data - `01`
   - `model` - string - `Comet Lake PCH-V USB Controller`
 
-- PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)
+- [PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/device_plist/PXSX2.plist)
 
   - `AAPL,slot-name` - string - `Onboard`
   - `acpi-wake-type` - data - `01`
   - `model` - string `ASM3241 USB 3.2 USB Controller`
 
-- PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)
+- [PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/device_plist/PXSX1.plist)
 
   - `AAPL,slot-name` - string - `Slot- 2`
   - `acpi-wake-type` - data - `01`
@@ -193,7 +193,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
   - `layout-id` - data - `01000000`
   - `model` - string - `Comet Lake PCH-V Converged Audio Voice Speech`
 
-- PciRoot(0x0)/Pci(0x2,0x0)
+- [PciRoot(0x0)/Pci(0x2,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/device_plist/IGPU.plist)
 
   - `AAPL,slot-name` - string - `Onboard`
   - `agdpmod` - data - `70696B65726100`
