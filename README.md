@@ -187,7 +187,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
   - `AAPL,slot-name` - string - `Slot- 3`
   - `model` - string - `BCM4360 802.11ac Wireless Network Adapter`
 
-- PciRoot(0x0)/Pci(0x1F,0x3)
+- [PciRoot(0x0)/Pci(0x1F,0x3)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/device_plist/HDEF.plist)
 
   - `AAPL,slot-name` - string - `Onboard`
   - `layout-id` - data - `01000000`
