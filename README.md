@@ -26,7 +26,7 @@ Table of contents:
 
 ## Introduction
 
-**Author:** This is the EFI from a previous version of my Hackintosh desktop. The construction isn't ideal, but it does the job. Never blame me if there is an issue or malfunction.   Although this project carries some risk. Please read Dortania's official documents and my explanations for about this build, then shouldn't have any issues. Please do so at your own risk. Below are the best references you should read:
+**Author:** This is my EFI from a previous version of my Hackintosh desktop. The construction isn't ideal, but it does the job. Never blame me if there is an issue or malfunction.   Although this project carries some risk. Please read Dortania's official documents and my explanations for about this build, then shouldn't have any issues. Please do so at your own risk. Below are the best references you should read:
 
 - [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/) - Official
 - [Dortania's Announcement](https://dortania.github.io/) - Official
@@ -74,7 +74,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
 ### ACPI
 
-- For this build, i have made several upgrades by merging all existing SSDTs and modifying properties that are not documented by Dortania's. Refer [SSDT-BNXB460](custom_ssdt/SSDT-YNXB460.dsl) samples. Here is my references - [OC Little Translate](https://github.com/5T33Z0/OC-Little-Translated) for more info. Here's an example of regular vs optimized.
+- For this build, i have made several upgrades by merging all existing SSDTs and modifying properties that are not documented by Dortania's. Refer [SSDT-YNXB460](custom_ssdt/SSDT-YNXB460.dsl) samples. Here is my references - [OC Little Translate](https://github.com/5T33Z0/OC-Little-Translated) for more info. Here's an example of regular vs optimized.
 
   **Regular**
 
