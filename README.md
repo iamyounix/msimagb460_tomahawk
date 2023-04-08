@@ -23,6 +23,7 @@ Table of contents:
   - [BIOS Requirement](#bios-requirement)
 - [Changelog](#changelog)
 - [Credits](#credits)
+- [Additional References](#additional-references)
 
 ## Introduction
 
@@ -341,6 +342,8 @@ All we is needed is .plist editor. below is the best free tools to start with:
 ## Credits
 
 [Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel) ⌘ [tomeko.net](http://tomeko.net/index.php?lang=en)
+
+## Additional References
 
 [^1]: [macOS Monterey 12.3 broke Radeon Family](https://www.tonymacx86.com/threads/rx-6600-xt-henbury-framebuffer-and-zero-rpm-in-monterey-12-3.319526/#post-2314148)
 [^2]: [Refresh Rate Patcher](https://github.com/iamyounix/edid_refreshrate_patcher)
