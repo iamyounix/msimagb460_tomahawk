@@ -143,14 +143,14 @@ All we is needed is .plist editor. below is the best free tools to start with:
 - [PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/GFX0%20(MSI%20RX%205500%20XT%204GB).plist)
 
   - `@0,display-dual-link` - string - `01000000`
-  - `@0,name` - string - `ATY,Python` / `ATY,Boa` / `ATY,Keelback`
-  - `@1,name` - string - `ATY,Python` / `ATY,Boa` / `ATY,Keelback`
-  - `@2,name` - string - `ATY,Python` / `ATY,Boa` / `ATY,Keelback`
-  - `@3,name` - string - `ATY,Python` / `ATY,Boa` / `ATY,Keelback`
+  - `@0,name` - string - `ATY,Python` / `ATY,Boa` / `ATY,Keelback`[^1]
+  - `@1,name` - string - `ATY,Python` / `ATY,Boa` / `ATY,Keelback`[^1]
+  - `@2,name` - string - `ATY,Python` / `ATY,Boa` / `ATY,Keelback`[^1]
+  - `@3,name` - string - `ATY,Python` / `ATY,Boa` / `ATY,Keelback`[^1]
   - `AAPL,slot-name` - string - `Slot- 1`
-  - `AAPL00,override-no-connect` - data - `Your dumped EDID from Linux` - Optional.
-  - `AAPL01,override-no-connect` - data - `Your dumped EDID from Linux` - Optional.
-  - `ATY,bin_image` - string - `Your dumped GPU bin image (if any)`
+  - `AAPL00,override-no-connect` - data - `Your dumped EDID from Linux` - Optional.[^2]
+  - `AAPL01,override-no-connect` - data - `Your dumped EDID from Linux` - Optional.[^2]
+  - `ATY,bin_image` - string - `Your dumped GPU bin image (if any)`[^3]
   - `ATY,EFIVersion` - string - `31.0.120.26.3`
   - `device_type` - string - `ATY,PythonParent` / `ATY,BoaParent` / `ATY,KeelbackParent`
 
@@ -167,19 +167,19 @@ All we is needed is .plist editor. below is the best free tools to start with:
 - [PciRoot(0x0)/Pci(0x14,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/XHC%20(Comet%20Lake%20PCH-V%20USB%20Controller).plist)
 
   - `AAPL,slot-name` - string - `Onboard`
-  - `acpi-wake-type` - data - `01`
+  - `acpi-wake-type` - data - `01`[^4]
   - `model` - string - `Comet Lake PCH-V USB Controller`
 
 - [PciRoot(0x0)/Pci(0x1B,0x0)/Pci(0x0,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/RP19.PXSX%20(ASM%203241%20USB%20Controller).plist)
 
   - `AAPL,slot-name` - string - `Onboard`
-  - `acpi-wake-type` - data - `01`
+  - `acpi-wake-type` - data - `01`[^4]
   - `model` - string `ASM3241 USB 3.2 USB Controller`
 
 - [PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/RP05.PXSX%20(VL805:806%20USB%203.0%20Controller).plist)
 
   - `AAPL,slot-name` - string - `Slot- 2`
-  - `acpi-wake-type` - data - `01`
+  - `acpi-wake-type` - data - `01`[^4]
   - `model` - string - `VL805/806 USB 3.0 Controller`
 
 - [PciRoot(0x0)/Pci(0x1C,0x6)/Pci(0x0,0x0)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/RP07.PXSX%20(BCM94360%20Wireless).plist)
@@ -197,9 +197,9 @@ All we is needed is .plist editor. below is the best free tools to start with:
 
   - `AAPL,slot-name` - string - `Onboard`
   - `agdpmod` - data - `70696B65726100`
-  - `enable-metal` - data - `01000000`
-  - `igfxfw` - data - `02000000`
-  - `igfxonln` - data - `01000000`
+  - `enable-metal` - data - `01000000`[^5]
+  - `igfxfw` - data - `02000000`[^5]
+  - `igfxonln` - data - `01000000`[^5]
 
 ### Kext
 
@@ -341,3 +341,9 @@ All we is needed is .plist editor. below is the best free tools to start with:
 ## Credits
 
 [Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel) ⌘ [tomeko.net](http://tomeko.net/index.php?lang=en)
+
+[^1]: [macOS Monterey 12.3 broke Radeon Family](https://www.tonymacx86.com/threads/rx-6600-xt-henbury-framebuffer-and-zero-rpm-in-monterey-12-3.319526/#post-2314148)
+[^2]: [Refresh Rate Patcher](https://github.com/iamyounix/edid_refreshrate_patcher)
+[^3]: [AMD RX6000 Success, working on macOS](https://www.tonymacx86.com/threads/success-amd-rx6000-series-working-in-macos.306736/page-109)
+[^4]: [Keyboard wake Issues](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#keyboard-wake-issues)
+[^5]: [Whatevergreen Boot Args](https://github.com/acidanthera/WhateverGreen#intel-hd-graphics)
