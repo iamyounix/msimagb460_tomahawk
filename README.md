@@ -155,12 +155,84 @@ All we is needed is .plist editor. below is the best free tools to start with:
   - `ATY,EFIVersion` - string - `31.0.120.26.3`
   - `device_type` - string - `ATY,PythonParent` / `ATY,BoaParent` / `ATY,KeelbackParent`
 
-  > **Note**: Choosing Framebuffer:
-  >
-  > - `ATY,Python`: Desktop
-  > - `ATY,Keelback`: Mobile
-  > - `ATY,Boa`: Unknown
-
+    - **ATY,Keelback / Radeon 5300**
+  
+    ```xml
+     <key>DeviceProperties</key>
+      <dict>
+          <key>Add</key>
+          <dict>
+              <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+              <dict>
+                  <key>@0,name</key>
+                  <string>ATY,Keelback</string>
+                  <key>@1,name</key>
+                  <string>ATY,Keelback</string>
+                  <key>@2,name</key>
+                  <string>ATY,Keelback</string>
+                  <key>@3,name</key>
+                  <string>ATY,Keelback</string>
+                  <key>ATY,EFIVersion</key>
+                  <string>01.01.190</string>
+                  <key>device_type</key>
+                  <string>ATY,KeelbackParent</string>
+              </dict>
+          </dict>
+      </dict>
+    ```
+    
+    - **ATY,Python / Radeon 5500**
+    
+    ```xml
+    <key>DeviceProperties</key>
+    <dict>
+        <key>Add</key>
+        <dict>
+            <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+            <dict>
+                <key>@0,name</key>
+                <string>ATY,Python</string>
+                <key>@1,name</key>
+                <string>ATY,Python</string>
+                <key>@2,name</key>
+                <string>ATY,Python</string>
+                <key>@3,name</key>
+                <string>ATY,Python</string>
+                <key>ATY,EFIVersion</key>
+                <string>01.01.231</string>
+                <key>device_type</key>
+                <string>ATY,PythonParent</string>
+            </dict>
+        </dict>
+    </dict>
+    ```
+    
+    - **ATY,Boa / ???**
+    
+    ```xml
+    <key>DeviceProperties</key>
+    <dict>
+        <key>Add</key>
+        <dict>
+            <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+            <dict>
+                <key>@0,name</key>
+                <string>ATY,Boa</string>
+                <key>@1,name</key>
+                <string>ATY,Boa</string>
+                <key>@2,name</key>
+                <string>ATY,Boa</string>
+                <key>@3,name</key>
+                <string>ATY,Boa</string>
+                <key>ATY,EFIVersion</key>
+                <string>01.01.231</string>
+                <key>device_type</key>
+                <string>ATY,BoaParent</string>
+            </dict>
+        </dict>
+    </dict>
+    ```
+    
 - [PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/HDAU%20(Navi%2010%20HDMI%20Audio).plist)
 
   - `AAPL,slot-name` - string - `Slot- 1`
