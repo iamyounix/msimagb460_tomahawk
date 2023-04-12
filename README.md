@@ -207,7 +207,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
     </dict>
     ```
     
-    - **ATY,Boa / ???**
+    - **ATY,Boa / Radeon 5300M**
     
     ```xml
     <key>DeviceProperties</key>
