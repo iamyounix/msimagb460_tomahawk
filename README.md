@@ -16,7 +16,6 @@ Table of contents:
   - [Booter](#booter)
   - [DeviceProperties](#deviceproperties)
   - [Kext](#kext)
-  - [Quirks](#quirks)
   - [Misc](#misc)
   - [PlatformInfo](#platforminfo)
   - [UEFI](#uefi)
@@ -184,9 +183,9 @@ All we is needed is .plist editor. below is the best free tools to start with:
           </dict>
       </dict>
     ```
-    
+
     - **ATY,Python / Radeon 5500**
-    
+
     ```xml
     <key>DeviceProperties</key>
     <dict>
@@ -210,9 +209,9 @@ All we is needed is .plist editor. below is the best free tools to start with:
         </dict>
     </dict>
     ```
-    
+
     - **ATY,Boa / Radeon 5300M**
-    
+
     ```xml
     <key>DeviceProperties</key>
     <dict>
@@ -236,7 +235,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
         </dict>
     </dict>
     ```
-    
+
 - [PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)](https://github.com/iamyounix/msimag_b460tmhwk/blob/main/deviceplist_detail/HDAU%20(Navi%2010%20HDMI%20Audio).plist)
 
   - `AAPL,slot-name` - string - `Slot- 1`
@@ -278,8 +277,6 @@ All we is needed is .plist editor. below is the best free tools to start with:
   - `igfxfw` - data - `02000000`[^5]
   - `igfxonln` - data - `01000000`[^5]
 
-  ![dev_props](https://user-images.githubusercontent.com/72515939/231612993-e1eff387-fdf5-4997-b1a5-9c2973510a7f.png)
-
 ### Kext
 
 - [AppleALC](https://github.com/acidanthera/AppleALC)
@@ -292,11 +289,7 @@ All we is needed is .plist editor. below is the best free tools to start with:
 - [VirtualSMC](https://github.com/acidanthera/VirtualSMC)
 - [WhateverGreen](https://github.com/acidanthera/WhateverGreen)
 
-![kernel](https://user-images.githubusercontent.com/72515939/231613119-2e0e6077-3b45-4d76-a94d-c5240ad256de.png)
-
-> **Note![kext](https://user-images.githubusercontent.com/72515939/231612242-0c022691-58ea-465f-9a2c-e61c9b64097e.png)
-
-**: Check out `release` and `debug` kext [here](https://dortania.github.io/builds/)
+> **Note![**: Check out `release` and `debug` kext [here](https://dortania.github.io/builds/)
 
 - Quirks
 
@@ -306,8 +299,6 @@ All we is needed is .plist editor. below is the best free tools to start with:
   - PowerTimeoutKernelPanic - boolean - `Yes`
   - SetApfsTrimTimeout - number - `0`
 
-  ![kernel_quirks](https://user-images.githubusercontent.com/72515939/231612559-4213b511-cd37-45a1-9445-2c4128694db2.png)
-
   > **Note**: Others than shall remain as `No`
 
 - Scheme
@@ -316,8 +307,6 @@ All we is needed is .plist editor. below is the best free tools to start with:
   - FuzzuMatch - boolean - `Yes`
   - KernelArch - string - `x86_64`
   - KernelCache - string - `Auto`
-
-  ![scheme](https://user-images.githubusercontent.com/72515939/231613223-2951b5de-6600-40b8-8df1-0bca6368dfc8.png)  
 
 ### Misc
 
@@ -329,16 +318,11 @@ All we is needed is .plist editor. below is the best free tools to start with:
   - LauncherOption - string - `Full`
   - LauncherPath - string - `Default`
   - PickerAttributes - number - `147`
-
-  ![picker_att](https://user-images.githubusercontent.com/72515939/231613530-8e5b7191-d503-4b1a-9448-528ca1a45513.png)
-
   - PickerMode - string - `External`
   - PickerVariant - string - `Acidanthera\GoldenGate`
   - ShowPicker - boolean - `Yes`
   - TakeoffDelay - number - `0`
   - Timeout - number - `5`
-  
-  ![misc_boot](https://user-images.githubusercontent.com/72515939/231613644-5d863f51-8801-4785-8938-76063abc00b3.png) 
 
   > **Note**: Other than above is `No`
   
@@ -349,26 +333,35 @@ All we is needed is .plist editor. below is the best free tools to start with:
 - Security
 
   - AllowSetDefault - boolean - `Yes`
-  - BlackllistAppleUpdate - boolean - `Yes`
-  - DmgLoading - string - `Signed`
-  - Vault - string - `Optional`
-  - SecureBootModel - string - `j185`
   - ApECID - number - `0`
   - AuthRestart - boolen - `No`
-  - HaltLevel - number - `2147483648`
+  - BlackllistAppleUpdate - boolean - `Yes`
+  - DmgLoading - string - `Signed`
   - ExposeSensitiveData - number - `3`
-  
-  ![expose](https://user-images.githubusercontent.com/72515939/231614477-a68f805f-b4b3-4b8d-bb3c-248e772c9f28.png)
-  
+  - HaltLevel - number - `2147483648`
   - ScanPolicy- number - `2690819`
-  
-  ![scanpolicy](https://user-images.githubusercontent.com/72515939/231614552-fb1f992a-cc4f-4d3d-a49d-cfa3d8e4914d.png)
+  - SecureBootModel - string - `j185`
+  - Vault - string - `Optional`
 
   > **Note**: Others, do not touch.
 
 - Serial
 
-![serial](https://user-images.githubusercontent.com/72515939/231614755-8b4be3f1-0e64-40da-a0bf-943f25250bc3.png)
+  - BaudRate - boolean - `115200`
+  - ClockRate - number - `1843200`
+  - DetectCable - boolen - `No`
+  - ExtendedTxFifoSize - number - `64`
+  - FifoControl - number - `7`
+  - LineControl - number - `3`
+  - PciDeviceInfo - data - `FF`
+  - RegisterAccessWidth - number - `8`
+  - RegisterBase - number - `1016`
+  - RegisterStride - number - `1`
+  - UseHardwareFlowControl - boolean - `No`
+  - UseMmio - boolean - `No`
+
+- Init - boolean - `No`
+- Serial - override - `No`
 
 ### PlatformInfo
 
