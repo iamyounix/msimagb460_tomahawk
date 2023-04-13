@@ -139,8 +139,6 @@ All we is needed is .plist editor. below is the best free tools to start with:
   - ProvideMaxSlide - number - `0`
   - ResizeAppleGpuBars - number - `-1` (When enabling `Above4G`, `Resizable BAR Support` may become available on some Z490 and newer motherboards. Please ensure that `Booter` - `Quirks` - `ResizeAppleGpuBars` is set to `0` if this is enabled)
   > **Note**: Other than above is `No`
-  
-  ![booter_quirks](https://user-images.githubusercontent.com/72515939/231611884-471af92a-2ba1-4833-8b05-dfc24bd1d980.png)
 
 ### DeviceProperties
 
