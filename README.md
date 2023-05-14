@@ -100,19 +100,6 @@ Table of contents:
   - OpenCore `v0.9.2`.
   - Without `plugin-type 1`. XCPM is enable by default. Refer: https://github.com/acidanthera/bugtracker/issues/2013
 
-
-  **Catalina - :**
-
-  - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102 / revpatch / diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
-  - Add NVMe/SSD Trim patch for Catalina.
-  - Add USB Port limit patch `1` and `2`. Useful before performing USB Port Mapping. Refer `Kernel` / `Patch` / `1` and `2`
-  - Clean and Optimised ACPI code.
-  - Desktop `Quirks` presets.
-  - iMac20,1 SMBIOS.
-  - MinDate and MinVersion is set to `-1`.
-  - OpenCore `v0.9.2`.
-  - With`plugin-type 1`. Require to enable XCPM.
-
 ## Credits
 
 [Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel) ⌘ [tomeko.net](http://tomeko.net/index.php?lang=en) ⌘ [sqlec](https://apple.sqlsec.com/6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/)
