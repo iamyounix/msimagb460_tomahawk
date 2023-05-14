@@ -35,7 +35,7 @@ Table of contents:
   - Navi 10 HDMI Audio.
 
 - **Non-Native**
-  - Comet Lake PCH-V Converged Audio Voice Speech. Requires [AppleALC](https://github.com/acidanthera/AppleALC).
+  - Comet Lake PCH-V Converged Audio Voice Speech (ALCS1200A). Requires [AppleALC](https://github.com/acidanthera/AppleALC).
   - Comet Lake PCH-V SMBus Host Controller. Requires ACPI (SSDT) Patch. Also known as `SSDT-SBUS`.
   - Comet Lake PCH-V USB Controller. Requires [USBMap](https://github.com/USBToolBox/tool) Port Mapping.
   - Comet Lake-S 6c Host Bridge/DRAM Controller. Requires ACPI (SSDT) Patch. Also known as `SSDT-MCHC`.
