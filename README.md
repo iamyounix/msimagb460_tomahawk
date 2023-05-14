@@ -87,7 +87,7 @@ Table of contents:
 
 ## Changelog
 
-- May 14, 2023 2:44 PM [OC](https://github.com/acidanthera/OpenCorePkg) ver: [0.9.2](https://github.com/acidanthera/OpenCorePkg/releases)
+- May 14, 2023 2:44 PM [OC](https://github.com/acidanthera/OpenCorePkg) [0.9.2](https://github.com/acidanthera/OpenCorePkg/releases)
 
 **Monterey + :**
   
