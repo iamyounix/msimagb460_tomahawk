@@ -10,8 +10,7 @@ Table of contents:
 
 - [Introduction](#introduction)
 - [About this build](#about-this-build)
-  - [Kext Used](#kext-used)
-  - [BIOS Requirement](#bios-requirement)
+- [Kext Used](#kext-used)
 - [Changelog](#changelog)
 - [Credits](#credits)
 
@@ -45,7 +44,7 @@ Table of contents:
   - Navi 14 Radeon RX 5500 XT.
   - RTL8125 2.5GbE Controller.
 
-### Kext Used
+## Kext Used
 
 - [AppleALC](https://github.com/acidanthera/AppleALC)
 - [IntelMausi](https://github.com/acidanthera/IntelMausi)
@@ -60,7 +59,7 @@ Table of contents:
 - [VirtualSMC](https://github.com/acidanthera/VirtualSMC)
 - [WhateverGreen](https://github.com/acidanthera/WhateverGreen)
 
-> **Note![**: Check out `release` and `debug` kext [here](https://dortania.github.io/builds/)
+> **Note**: Check out `release` and `debug` kext [here](https://dortania.github.io/builds/)
 
 ## Changelog
 
@@ -75,7 +74,7 @@ Table of contents:
 - iMac20,1 SMBIOS.
 - MinDate and MinVersion is set to `0`.
 - OpenCore `v0.9.2`.
-- Without `plugin-type 1`. XCPM is enable by default. Refer: https://github.com/acidanthera/bugtracker/issues/2013
+- Without `plugin-type 1`. XCPM is enable by default. Refer: <https://github.com/acidanthera/bugtracker/issues/2013>
 
 **Catalina :**
   
