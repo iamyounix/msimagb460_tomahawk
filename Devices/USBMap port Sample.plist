@@ -39,7 +39,7 @@
 			<key>IOProviderClass</key>
 			<string>IOPCIDevice</string>
 			<key>name</key>
-			<string>USB1 Support Module</string>
+			<string>XHC Support Module</string>
 		</dict>
 		<key>iMac20,1-PXSX-INT</key>
 		<dict>
