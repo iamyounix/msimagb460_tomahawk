@@ -34,7 +34,6 @@ Table of contents:
   - Kingston A2000 NVMe SSD1.
   - Kingston A2000 NVMe SSD2.
   - Navi 10 HDMI Audio.
-  - VL805/806 xHCI USB 3.0 Controller.
 
 - **Non-Native**
   - Comet Lake PCH-V Converged Audio Voice Speech.
@@ -62,28 +61,6 @@ Table of contents:
 - [WhateverGreen](https://github.com/acidanthera/WhateverGreen)
 
 > **Note![**: Check out `release` and `debug` kext [here](https://dortania.github.io/builds/)
-
-### BIOS Requirement
-
-- **Disable**
-
-  - Fast Boot
-  - Secure Boot
-  - VT-d / VT-x (can be enable in case of dual booting, DisableIoMapper = YES / DisableIoMapperMapping = YES). 
-  - CSM
-  - Intel SGX
-  - Intel Platform Trust / TPM
-  - CFG Lock
-
-- **Enable**
-
-  - Above 4G Decoding
-  - Quirks (ResizeAppleGpuBars is set to `0` if this is enabled)
-  - Hyper-Threading
-  - EHCI/XHCI Hand-off
-  - OS type: Windows 8.1/10 UEFI Mode (some motherboards may require "Other OS" instead)
-  - DVMT Pre-Allocated(iGPU Memory): 64MB
-  - AHCI Mode
 
 ## Changelog
 
