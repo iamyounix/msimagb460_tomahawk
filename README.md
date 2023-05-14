@@ -10,7 +10,7 @@ Table of contents:
 
 - [Introduction](#introduction)
 - [About this build](#about-this-build)
-- [Kext Used](#kext-used)
+- [Kexts Used](#kext-used)
 - [Changelog](#changelog)
 - [Credits](#credits)
 
@@ -44,7 +44,7 @@ Table of contents:
   - Navi 14 Radeon RX 5500 XT.
   - RTL8125 2.5GbE Controller.
 
-## Kext Used
+## Kexts Used
 
 - [AppleALC](https://github.com/acidanthera/AppleALC)
 - [IntelMausi](https://github.com/acidanthera/IntelMausi)
