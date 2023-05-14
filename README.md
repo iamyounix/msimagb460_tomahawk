@@ -14,7 +14,6 @@ Table of contents:
   - [BIOS Requirement](#bios-requirement)
 - [Changelog](#changelog)
 - [Credits](#credits)
-- [Additional References](#additional-references)
 
 ## Introduction
 
@@ -70,7 +69,7 @@ Table of contents:
 
   - Fast Boot
   - Secure Boot
-  - VT-d / VT-x
+  - VT-d / VT-x (can be enable in case of dual booting, DisableIoMapper = YES / DisableIoMapperMapping = YES). 
   - CSM
   - Intel SGX
   - Intel Platform Trust / TPM
@@ -117,11 +116,3 @@ Table of contents:
 ## Credits
 
 [Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel) ⌘ [tomeko.net](http://tomeko.net/index.php?lang=en) ⌘ [sqlec](https://apple.sqlsec.com/6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/)
-
-## Additional References
-
-[^1]: [macOS Monterey 12.3 broke Radeon Family](https://www.tonymacx86.com/threads/rx-6600-xt-henbury-framebuffer-and-zero-rpm-in-monterey-12-3.319526/#post-2314148)
-[^2]: [Refresh Rate Patcher](https://github.com/iamyounix/edid_refreshrate_patcher)
-[^3]: [AMD RX6000 Success, working on macOS](https://www.tonymacx86.com/threads/success-amd-rx6000-series-working-in-macos.306736/page-109)
-[^4]: [Keyboard wake Issues](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#keyboard-wake-issues)
-[^5]: [Whatevergreen Boot Args](https://github.com/acidanthera/WhateverGreen#intel-hd-graphics)
