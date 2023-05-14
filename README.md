@@ -35,14 +35,16 @@ Table of contents:
   - Navi 10 HDMI Audio.
 
 - **Non-Native**
-  - Comet Lake PCH-V Converged Audio Voice Speech.
-  - Comet Lake PCH-V SMBus Host Controller.
-  - Comet Lake PCH-V USB Controller.
-  - Comet Lake-S 6c Host Bridge/DRAM Controller.
-  - Ethernet Connection (11) I219-V.
-  - Intel UHD Graphics 630 Headless.
-  - Navi 14 Radeon RX 5500 XT.
-  - RTL8125 2.5GbE Controller.
+  - Comet Lake PCH-V Converged Audio Voice Speech. Require [AppleALC](https://github.com/acidanthera/AppleALC).
+  - Comet Lake PCH-V SMBus Host Controller. Require ACPI (SSDT) Patch. Also known as SSDT-SBUS.
+  - Comet Lake PCH-V USB Controller. Require [USBMap](https://github.com/USBToolBox/tool) Port Mapping.
+  - Comet Lake-S 6c Host Bridge/DRAM Controller. Require ACPI (SSDT) Patch. Also known as SSDT-MCHC.
+  - Ethernet Connection (11) I219-V. Require [IntelMausi](https://github.com/acidanthera/IntelMausi).
+  - Intel UHD Graphics 630 Headless. Require DeviceProperties Patch. (`agdpmod` = `pikera` / `agdpmod` = `70696B65726100`)
+  - Navi 14 Radeon RX 5500 XT. Require DeviceProperties Patch & [WhateverGreen](https://github.com/acidanthera/WhateverGreen).
+  - RTL8125 2.5GbE Controller. Require [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet).
+
+  ![DeviceProperties](Pictures/DeviceProperties.png)
 
 ## Kexts Used
 
