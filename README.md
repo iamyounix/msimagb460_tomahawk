@@ -22,7 +22,7 @@ Table of contents:
 
 - [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/) - Official
 - [Dortania's Announcement](https://dortania.github.io/) - Official
-- [OC Little Translate](https://github.com/5T33Z0/OC-Little-Translated) - Non Official
+- [OC Little Translate](https://github.com/5T33Z0/OC-Little-Translated) - 3rd Party References
 
 > **Note**: This build has been tested on Linux, MacOS, and Windows.
 
