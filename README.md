@@ -35,31 +35,31 @@ Table of contents:
   - Navi 10 HDMI Audio.
 
 - **Non-Native**
-  - Comet Lake PCH-V Converged Audio Voice Speech. Require [AppleALC](https://github.com/acidanthera/AppleALC).
-  - Comet Lake PCH-V SMBus Host Controller. Require ACPI (SSDT) Patch. Also known as SSDT-SBUS.
-  - Comet Lake PCH-V USB Controller. Require [USBMap](https://github.com/USBToolBox/tool) Port Mapping.
-  - Comet Lake-S 6c Host Bridge/DRAM Controller. Require ACPI (SSDT) Patch. Also known as SSDT-MCHC.
-  - Ethernet Connection (11) I219-V. Require [IntelMausi](https://github.com/acidanthera/IntelMausi).
-  - Intel UHD Graphics 630 Headless. Require DeviceProperties Patch. (`agdpmod` = `pikera` / `agdpmod` = `70696B65726100`)
-  - Navi 14 Radeon RX 5500 XT. Require DeviceProperties Patch & [WhateverGreen](https://github.com/acidanthera/WhateverGreen).
-  - RTL8125 2.5GbE Controller. Require [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet).
+  - Comet Lake PCH-V Converged Audio Voice Speech. Requires [AppleALC](https://github.com/acidanthera/AppleALC).
+  - Comet Lake PCH-V SMBus Host Controller. Requires ACPI (SSDT) Patch. Also known as `SSDT-SBUS`.
+  - Comet Lake PCH-V USB Controller. Requires [USBMap](https://github.com/USBToolBox/tool) Port Mapping.
+  - Comet Lake-S 6c Host Bridge/DRAM Controller. Requires ACPI (SSDT) Patch. Also known as `SSDT-MCHC`.
+  - Ethernet Connection (11) I219-V. Requires [IntelMausi](https://github.com/acidanthera/IntelMausi).
+  - Intel UHD Graphics 630 Headless. Requires DeviceProperties Patch. (`agdpmod` = `pikera` / `agdpmod` = `70696B65726100`)
+  - Navi 14 Radeon RX 5500 XT. Requires DeviceProperties Patch & [WhateverGreen](https://github.com/acidanthera/WhateverGreen).
+  - RTL8125 2.5GbE Controller. Requires [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet).
 
   ![DeviceProperties](Pictures/DeviceProperties.png)
 
 ## Kexts Used
 
-- [AppleALC](https://github.com/acidanthera/AppleALC)
-- [IntelMausi](https://github.com/acidanthera/IntelMausi)
-- [Lilu](https://github.com/acidanthera/Lilu)
-- [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)
-- [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) To disables uninitialized disk warning in Finder
-- [RadeonSensor.kext](https://github.com/aluveitie/RadeonSensor)
-- [SMCRadeonGPU.kext](https://github.com/aluveitie/RadeonSensor) RadeonSensor Plugin
-- [SMCProcessor](https://github.com/acidanthera/VirtualSMC) VirtualSMC Plugin
-- [SMCSuperIO](https://github.com/acidanthera/VirtualSMC) VirtualSMC Plugin
-- [USBMap](https://github.com/USBToolBox/tool)
-- [VirtualSMC](https://github.com/acidanthera/VirtualSMC)
-- [WhateverGreen](https://github.com/acidanthera/WhateverGreen)
+- [AppleALC](https://github.com/acidanthera/AppleALC). An open source kernel extension enabling native macOS HD audio for not officially supported codecs without any filesystem modifications. AppleALCU can be used for systems with digital-only audio.
+- [IntelMausi](https://github.com/acidanthera/IntelMausi). Intel onboard LAN driver for macOS
+- [Lilu](https://github.com/acidanthera/Lilu). An open source kernel extension bringing a platform for arbitrary kext, library, and program patching throughout the system for macOS.
+- [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet). Enable RTL8125 2.5GbE Controller
+- [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents). To disables uninitialized disk warning in Finder
+- [RadeonSensor.kext](https://github.com/aluveitie/RadeonSensor). Provide GPU temperature to a dedicated gadget without relying on FakeSMC being installed and can therefore be used with VirtualSMC instead.
+- [SMCRadeonGPU.kext](https://github.com/aluveitie/RadeonSensor). RadeonSensor Plugin.
+- [SMCProcessor](https://github.com/acidanthera/VirtualSMC). VirtualSMC Processor Plugin.
+- [SMCSuperIO](https://github.com/acidanthera/VirtualSMC). VirtualSMC IO Plugin.
+- [USBMap](https://github.com/USBToolBox/tool). Mapped USB Port (15 Port).
+- [VirtualSMC](https://github.com/acidanthera/VirtualSMC). Advanced Apple SMC emulator in the kernel. Requires Lilu.
+- [WhateverGreen](https://github.com/acidanthera/WhateverGreen). Lilu plugin providing patches to select GPUs on macOS. Requires Lilu.
 
 > **Note**: Check out `release` and `debug` kext [here](https://dortania.github.io/builds/)
 
