@@ -26,7 +26,6 @@ Table of contents:
 ## About this build
 
 -   **Native**
-
     -   ASM3241 USB 3.2 Host Controller.
     -   400 Series Chipset Family SATA AHCI Controller.
     -   BCM4360 802.11ac Wireless Network Adapter.
@@ -35,7 +34,6 @@ Table of contents:
     -   Navi 10 HDMI Audio.
 
 -   **Require Patch**
-
     -   Comet Lake PCH-V Converged Audio Voice Speech (ALCS1200A) + [AppleALC](https://github.com/acidanthera/AppleALC)
     -   Comet Lake PCH-V SMBus Host Controller + [SSDT-SBUS](https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus.html)
     -   Comet Lake PCH-V USB Controller + [USBMap](https://github.com/USBToolBox/tool)
@@ -69,7 +67,6 @@ Table of contents:
 **Changelog** 👍
 
 -   [Big Sur +](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/bigsur+_0.9.2.zip)
-
     -   Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
     -   Add NVMe/SSD Trim patch (default is disable)
     -   Clean and Optimised ACPI code.
@@ -90,7 +87,7 @@ Table of contents:
     -   MinDate and MinVersion is set to `-1`.
     -   OpenCore [0.9.2](https://github.com/acidanthera/OpenCorePkg/releases).
     -   Stable `RX5500XT Mech OC 4GB` plist patch cia config.plist.
-    -   USB Port LImit Removal (10.15.X). Useful for performing USB Port Mapping (Post Process)
+    -   USB Port Limit Removal (10.15.X). Useful for performing USB Port Mapping (Post Process)
     -   With `plugin-type 1` to enable native XCPM.
 
 > **Note** : This project use pre-generated iMac20,1 SMBIOS. Please generate your own using [ACAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) or [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)..
