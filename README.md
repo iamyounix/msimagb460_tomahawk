@@ -90,6 +90,10 @@ Table of contents:
 - USB Port LImit Removal (10.15.X). Useful for performing USB Port Mapping (Post Process)
 - With `plugin-type 1` to enable native XCPM.
 
+**Tested with dualboot:**
+
+![arch](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/42d2b969-9b29-41a8-adc6-8bcaeae8bd0c)
+
 ## Credits
 
 [Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel) ⌘ [tomeko.net](http://tomeko.net/index.php?lang=en) ⌘ [sqlec](https://apple.sqlsec.com/6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/)
