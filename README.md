@@ -43,9 +43,9 @@ Table of contents:
   - Navi 14 Radeon RX 5500 XT + Additional patch with [WhateverGreen](https://github.com/acidanthera/WhateverGreen)
   - RTL8125 2.5GbE Controller + [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)
 
-    ![device_properties](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/f5cd940f-00de-4c38-b1a3-0d4fca85d351)
+  ![device_properties](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/f5cd940f-00de-4c38-b1a3-0d4fca85d351)
 
-    > **Note**: This build requires `agdpmod=pikera,` which replaces `board-id` with `board-ix`, the most common for Navi variants GPU's to fix the black screen issue. `agdpmod` = `pikera` / `agdpmod` = `70696B65726100` is injected via IGPU.
+  > **Note**: This build requires `agdpmod=pikera,` which replaces `board-id` with `board-ix`, the most common for Navi variants GPU's to fix the black screen issue. `agdpmod` = `pikera` / `agdpmod` = `70696B65726100` is injected via IGPU.
 
 ## Kexts
 
