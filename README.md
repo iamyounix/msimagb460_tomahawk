@@ -44,7 +44,7 @@ Table of contents:
   - Navi 14 Radeon RX 5500 XT. Requires DeviceProperties Patch & [WhateverGreen](https://github.com/acidanthera/WhateverGreen).
   - RTL8125 2.5GbE Controller. Requires [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet).
 
-  ![DeviceProperties](Pictures/DeviceProperties.png)
+  ![DeviceProperties](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/44974d82-b536-45cc-8274-d5faca6f7233)
 
 ## Kexts Used
 
@@ -93,6 +93,8 @@ Table of contents:
 **Tested with dualboot:**
 
 ![arch](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/42d2b969-9b29-41a8-adc6-8bcaeae8bd0c)
+
+![mac](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/b5fda91a-ac01-42b3-8312-168cbbbd0bc0)
 
 ## Credits
 
