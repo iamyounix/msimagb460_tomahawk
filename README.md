@@ -67,7 +67,7 @@ Table of contents:
 
 - May 14, 2023 2:44 PM [OC](https://github.com/acidanthera/OpenCorePkg) [0.9.2](https://github.com/acidanthera/OpenCorePkg/releases)
 
-**Big Sur, Monterey, Ventura :**
+**Big Sur, Monterey and Ventura :**
   
 - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
 - Add NVMe/SSD Trim patch (default is disable)
@@ -76,7 +76,8 @@ Table of contents:
 - iMac20,1 SMBIOS.
 - MinDate and MinVersion is set to `0`.
 - OpenCore `v0.9.2`.
-- Without `plugin-type 1`. XCPM is enable by default. Refer: <https://github.com/acidanthera/bugtracker/issues/2013>
+- Stable `RX5500XT Mech OC 4GB` plist patch cia config.plist.
+- Without `plugin-type 1`. XCPM is enable by default. Refer: https://github.com/acidanthera/bugtracker/issues/2013
 
 **Catalina :**
   
@@ -87,8 +88,11 @@ Table of contents:
 - iMac20,1 SMBIOS.
 - MinDate and MinVersion is set to `-1`.
 - OpenCore `v0.9.2`.
+- Standard `RX5500XT Mech OC 4GB` plist patch cia config.plist.
 - USB Port LImit Removal (10.15.X). Useful for performing USB Port Mapping (Post Process)
 - With `plugin-type 1` to enable native XCPM.
+
+> **Note**: Please change SMBIOS accordingly.
 
 **Tested with dualboot:**
 
