@@ -77,7 +77,7 @@ This is my EFI from a previous version of my Hackintosh desktop. The constructio
   - OpenCore [0.9.2](https://github.com/acidanthera/OpenCorePkg/releases).
   - Stable `RX5500XT Mech OC 4GB` plist patch cia config.plist.
   - Support Big Sur, Monterey and Ventura.
-  - Without `plugin-type 1`. XCPM is enable by default. Refer:
+  - Without `plugin-type 1`. XCPM is enable by default.
 
 - [Catalina](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/catalina_0.9.2.zip)
 
