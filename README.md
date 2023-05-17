@@ -68,16 +68,16 @@ This is my EFI from a previous version of my Hackintosh desktop. The constructio
 
 - [Big Sur +](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/bigsur+_0.9.2.zip)
 
-  - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
+  - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist
   - Add NVMe/SSD Trim patch (default is disable)
   - Clean and Optimised ACPI code.
-  - Desktop `Quirks` presets.
-  - iMac20,1 SMBIOS.
-  - MinDate and MinVersion is set to `0`.
-  - OpenCore [0.9.2](https://github.com/acidanthera/OpenCorePkg/releases).
-  - Stable `RX5500XT Mech OC 4GB` plist patch cia config.plist.
-  - Support Big Sur, Monterey and Ventura.
-  - Without `plugin-type 1`. XCPM is enable by default.
+  - Desktop `Quirks` presets
+  - iMac20,1 SMBIOS
+  - MinDate and MinVersion is set to `0`
+  - OpenCore [0.9.2](https://github.com/acidanthera/OpenCorePkg/releases)
+  - Stable `RX5500XT Mech OC 4GB` plist patch cia config.plist
+  - Support Big Sur, Monterey and Ventura
+  - Without `plugin-type 1`. XCPM is enable by default
 
 - [Catalina](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/catalina_0.9.2.zip)
 
@@ -86,9 +86,9 @@ This is my EFI from a previous version of my Hackintosh desktop. The constructio
   - Clean and Optimised ACPI code.
   - Desktop `Quirks` presets.
   - iMac20,1 SMBIOS.
-  - MinDate and MinVersion is set to `-1`.
-  - OpenCore [0.9.2](https://github.com/acidanthera/OpenCorePkg/releases).
-  - Stable `RX5500XT Mech OC 4GB` plist patch cia config.plist.
+  - MinDate and MinVersion is set to `-1`
+  - OpenCore [0.9.2](https://github.com/acidanthera/OpenCorePkg/releases)
+  - Stable `RX5500XT Mech OC 4GB` plist patch cia config.plist
   - USB Port Limit Removal (10.15.X). Useful for performing USB Port Mapping (Post Process)
   - With `plugin-type 1` to enable native XCPM.
 
@@ -102,4 +102,4 @@ This is my EFI from a previous version of my Hackintosh desktop. The constructio
 
 ## Credits
 
-⌘ [Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel) ⌘ [tomeko.net](http://tomeko.net/index.php?lang=en) ⌘ [sqlec](https://apple.sqlsec.com/6-%E5%AE%9E%E7%94%A8%E5%A7%BF%E5%8A%BF/)
+⌘ [Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel)
