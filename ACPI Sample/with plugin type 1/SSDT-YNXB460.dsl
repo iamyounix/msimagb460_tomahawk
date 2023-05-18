@@ -97,7 +97,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                         Name (_ADR, Zero)  // _ADR: Address
                         Device (DVL0)
                         {
-                            Name (_ADR, Zero)  // _ADR: Address
+                            Name (_ADR, 0x77)  // _ADR: Address
                             Name (_CID, "diagsvault")  // _CID: Compatible ID
                         }
                     }
