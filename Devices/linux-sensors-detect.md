@@ -1,3 +1,4 @@
+```
 younix@archlinux:~ ➜ sudo sensors-detect
 [sudo] password for younix: 
 # sensors-detect version 3.6.0+git
@@ -1041,3 +1042,4 @@ Driver `nct6683':
 Do you want to generate /etc/conf.d/lm_sensors? (YES/no): YES
 Created symlink /etc/systemd/system/multi-user.target.wants/lm_sensors.service → /usr/lib/systemd/system/lm_sensors.service.
 younix@archlinux:~ ➜ 
+```
