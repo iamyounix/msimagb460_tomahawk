@@ -100,7 +100,7 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
 
 :arrow_forward: **Tested with dualboot:**
 
-![arch](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3090c714-bf69-440b-8cd9-3633d4c67ff4)
+![arch](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3c1b7e37-a72f-4617-8cda-63241384e500)
 
 ![mac](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/40b8af18-a092-4a5c-ac2f-f2e37a4ebed2)
 
@@ -122,7 +122,7 @@ Use only needed drivers. Sort the drivers may improve boot speed.
 
 ### MMIO Whitelist:
 
-MMIO stands for Memory-Mapped Input/Output. It's a method to perform I/O processes between the CPU and peripheral devices of a computer. The memory and registers of the I/O devices are mapped to (and associated with) address values. MMIO whitelist is a security feature that controls access to certain memory addresses in a computer system, allowing access only to specific processes or devices that have been explicitly granted permission and denying access to all others. FThis patch may improve stability. Refer [5T33Z0 - MMIO Whitelist Guide](https://github.com/5T33Z0/OC-Little-Translated/tree/main/12_MMIO_Whitelist) for more info
+MMIO stands for Memory-Mapped Input/Output. It's a method to perform I/O processes between the CPU and peripheral devices of a computer. The memory and registers of the I/O devices are mapped to (and associated with) address values. MMIO whitelist is a security feature that controls access to certain memory addresses in a computer system, allowing access only to specific processes or devices that have been explicitly granted permission and denying access to all others. This patch may improve stability. Refer [5T33Z0 - MMIO Whitelist](https://github.com/5T33Z0/OC-Little-Translated/tree/main/12_MMIO_Whitelist) for more info
 
 ![mmiowhitelist](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/a7f8b000-64c5-4d19-8edd-52ef6e00fa00)
 
