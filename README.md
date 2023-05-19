@@ -106,7 +106,7 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
 
 Sorting important kexts shall improve `debug` log and `data` injection.
 
-![sort](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/12afd08e-862b-43b1-8d5f-638d2061f5b6)e USB.
+![sort](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/12afd08e-862b-43b1-8d5f-638d2061f5b6)
 
 ## Credits
 
