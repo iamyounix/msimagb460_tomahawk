@@ -98,8 +98,6 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
 
 ![arch](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3090c714-bf69-440b-8cd9-3633d4c67ff4)
 
-![mac](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/b5fda91a-ac01-42b3-8312-168cbbbd0bc0)
-
 ## Credits
 
 ⌘ [Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel)
