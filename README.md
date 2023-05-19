@@ -13,6 +13,8 @@ Table of contents:
 - [Kexts](#kexts)
 - [Tips](#tips)
   - [Sorting Kexts](#sorting-kexts)
+  - [Drivers](#drivers)
+  - [MMIO Whitelist](#mmio-whitelist)
 - [Credits](#credits)
 
 ## Introduction
@@ -118,6 +120,12 @@ Use only needed drivers. Sort the drivers may improve boot speed.
 
 ![drivers_plist](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/079acaa1-5ec7-4e41-922e-b608e185f523)
 
+### MMIO Whitelist:
+
+MMIO stands for Memory-Mapped Input/Output. It's a method to perform I/O processes between the CPU and peripheral devices of a computer. The memory and registers of the I/O devices are mapped to (and associated with) address values. MMIO whitelist is a security feature that controls access to certain memory addresses in a computer system, allowing access only to specific processes or devices that have been explicitly granted permission and denying access to all others. FThis patch may improve stability. Refer [5T33Z0 - MMIO Whitelist Guide](https://github.com/5T33Z0/OC-Little-Translated/tree/main/12_MMIO_Whitelist) for more info
+
+![mmiowhitelist](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/a7f8b000-64c5-4d19-8edd-52ef6e00fa00)
+
 ## Credits
 
-⌘ [Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel)
+⌘ [Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel) ⌘ [5T33Z0](https://github.com/5T33Z0)
