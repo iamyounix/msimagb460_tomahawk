@@ -100,6 +100,8 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
 
 ![arch](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3090c714-bf69-440b-8cd9-3633d4c67ff4)
 
+![mac](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/40b8af18-a092-4a5c-ac2f-f2e37a4ebed2)
+
 ## Tips
 
 ### Sorting Kexts:
