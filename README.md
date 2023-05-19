@@ -94,7 +94,7 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
   - USB Port Limit Removal (10.15.X). Useful for performing USB Port Mapping (Post Process)
   - With `plugin-type 1` to enable native XCPM.
 
-> **Note**: This project use pre-generated iMac20,1 SMBIOS. Please generate your own using [ACAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) or [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)..
+> **Note**: This project use pre-generated iMac20,1 SMBIOS. Please generate your own using [ACAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) or [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
 
 :arrow_forward: **Tested with dualboot:**
 
@@ -109,6 +109,14 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
 Sorting important kexts shall improve `debug` log and `data` injection.
 
 ![sort](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/12afd08e-862b-43b1-8d5f-638d2061f5b6)
+
+### Drivers:
+
+Use only needed drivers. Sort the drivers may improve boot speed.
+
+![drivers](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/d263cd52-3b99-49d0-a40f-b6b15b494dfe)
+
+![drivers_plist](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/079acaa1-5ec7-4e41-922e-b608e185f523)
 
 ## Credits
 
