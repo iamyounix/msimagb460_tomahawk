@@ -11,6 +11,8 @@ Table of contents:
 - [Introduction](#introduction)
 - [About this build](#about-this-build)
 - [Kexts](#kexts)
+- [Tips](#tips)
+  - [Sorting Kexts](#sorting-kexts)
 - [Credits](#credits)
 
 ## Introduction
@@ -97,6 +99,14 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
 :arrow_forward: **Tested with dualboot:**
 
 ![arch](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3090c714-bf69-440b-8cd9-3633d4c67ff4)
+
+## Tips
+
+### Sorting Kexts:
+
+Sorting important kexts shall improve `debug` log and `data` injection.
+
+![sort](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/12afd08e-862b-43b1-8d5f-638d2061f5b6)e USB.
 
 ## Credits
 
