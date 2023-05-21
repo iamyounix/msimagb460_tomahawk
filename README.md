@@ -10,6 +10,7 @@ Table of contents:
 
 - [Introduction](#introduction)
 - [About this build](#about-this-build)
+- [Folders and Files](#folders-and-files)
 - [Kexts](#kexts)
 - [Tips](#tips)
   - [Sorting Kexts](#sorting-kexts)
@@ -52,6 +53,10 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
 - RTL8125 2.5GbE Controller + [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)
 
 > **Note**: This project requires `agdpmod=pikera,` which replaces the Navi variant GPU's `board-id` with `board-ix` in order to fix the black screen issue [originated](https://pikeralpha.wordpress.com/2015/11/23/patching-applegraphicsdevicepolicy-kext/) by [Piker R. Alpha](https://github.com/Piker-Alpha). Do not confuse; certain `agdpmod` features via [WhateverGreen](https://github.com/acidanthera/WhateverGreen) can be injected into both iGPU and dGPU. Best combination may improve stability.
+
+## Folders and Files
+
+![tree](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/bbcf7a87-b4c8-4f27-b7de-2070c3a28680)
 
 ## Kexts
 
