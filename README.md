@@ -156,6 +156,15 @@ Use this properties to enable multitab gpu's. Requirement:
 
 ![GPUtab](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3f7d7626-4b39-440b-a053-33737df848f9)
 
+- Check using any 4k videos using [Youtube](https://www.youtube.com/) ie: [COSTA RICA IN 4K 60fps HDR (ULTRA HD)](https://www.youtube.com/watch?v=LXb3EKWsInQ&t=153s).
+- Play video and select 4k Resolution.
+
+![Screenshot 2023-05-24 at 12 32 43 AM](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/def828d3-824f-427a-bf6a-70206cdad33a)
+
+- If GPU Time for iGPU is higher than other GPU ie: AMD, your quicksync works perfect.
+
+![quicksync](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/e6b12a81-3704-45d8-afc5-200672ace430)
+
 ## Credits
 
 ⌘ [Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel) ⌘ [5T33Z0](https://github.com/5T33Z0)
