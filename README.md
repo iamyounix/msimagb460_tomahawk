@@ -75,7 +75,20 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
 
 :arrow_forward: **Changelog**
 
-- [Big Sur +](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/big.sur.+_0.9.2.zip)
+- [Big Sur + (-d) / debug](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.-d.zip)
+    - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
+    - Add NVMe/SSD Trim patch (default is disable)
+    - Clean and Optimised ACPI code.
+    - Desktop `Quirks` presets.
+    - Export debug info.
+    - iMac20,1 SMBIOS.
+    - MinDate and MinVersion is set to `0`.
+    - OpenCore `v0.9.2`.
+    - Stable `RX5500XT Mech OC 4GB` plist patch via config.plist.
+    - Support Big Sur, Monterey and Ventura.
+    - Without `plugin-type 1`. XCPM is enable by default. Refer: https://github.com/acidanthera/bugtracker/issues/2013
+
+- [Big Sur +](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.zip)
     - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
     - Add NVMe/SSD Trim patch (default is disable)
     - Clean and Optimised ACPI code.
@@ -83,11 +96,11 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
     - iMac20,1 SMBIOS.
     - MinDate and MinVersion is set to `0`.
     - OpenCore `v0.9.2`.
-    - Stable `RX5500XT Mech OC 4GB` plist patch cia config.plist.
+    - Stable `RX5500XT Mech OC 4GB` plist patch via config.plist.
     - Support Big Sur, Monterey and Ventura.
     - Without `plugin-type 1`. XCPM is enable by default. Refer: https://github.com/acidanthera/bugtracker/issues/2013
 
-- [Catalina](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/catalina_0.9.2.zip) 
+- [Catalina](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Catalina.zip) 
     - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
     - Add NVMe/SSD Trim patch (default is enable)
     - Clean and Optimised ACPI code.
@@ -95,7 +108,7 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
     - iMac20,1 SMBIOS.
     - MinDate and MinVersion is set to `-1`.
     - OpenCore `v0.9.2`.
-    - Stable `RX5500XT Mech OC 4GB` plist patch cia config.plist.
+    - Stable `RX5500XT Mech OC 4GB` plist patch via config.plist.
     - USB Port LImit Removal (10.15.X). Useful for performing USB Port Mapping (Post Process)
     - With `plugin-type 1` to enable native XCPM.
 
