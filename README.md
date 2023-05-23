@@ -145,7 +145,12 @@ MMIO stands for Memory-Mapped Input/Output. It's a method to perform I/O process
 
 ### Enable Multi Tab GPU:
 
-Use this properties to enable multitab gpu's. Change iGPU  `AAPL,slot-name` to `Slot- 0` and dGPU  `AAPL,slot-name` to `Slot- 1`.
+Use this properties to enable multitab gpu's. Requirement:
+
+- Change iGPU  `AAPL,slot-name` to `Slot- 0` and dGPU  `AAPL,slot-name` to `Slot- 1`.
+- Add `device-id` to `9B3E0000`
+- Add `enable-metal` to `01000000
+- Add `force-online` to `01000000`
 
 ![properties_igpu](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/5fde038a-7549-46bb-96af-b1500f3d02e5)
 
