@@ -183,6 +183,8 @@ No variant specified, falling back to release
   166    1 0xffffff7f98f81000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) E4F2BA31-6A3A-3690-A863-80A993E08DF0 <165 16 15 7 6 3>
 ```
 
+![sbus_ioreg](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/02c9851c-3a29-4a1d-84ba-aba3917c0861)
+
 ## Credits
 
 ⌘ [Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel) ⌘ [5T33Z0](https://github.com/5T33Z0)
