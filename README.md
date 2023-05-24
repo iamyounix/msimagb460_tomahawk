@@ -195,7 +195,7 @@ Scope (SBUS)
 
 ![sbus_ioreg](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/02c9851c-3a29-4a1d-84ba-aba3917c0861)
 
-- As shown in the picture above, `AppleSMBusController` and `AppleSMBUSPCI` are not loaded via ioreg. However, both load normally by using the cusing command below:
+- As shown in the picture above, `AppleSMBusController` and `AppleSMBUSPCI` are not loaded via ioreg. However, both load normally by using the command as below:
 
 - Copy and paste this command, `kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"`. The result will shown as below:
 
