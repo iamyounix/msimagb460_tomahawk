@@ -17,6 +17,7 @@ Table of contents:
   - [Drivers](#drivers)
   - [MMIO Whitelist](#mmio-whitelist)
   - [Enable Multi Tab GPU](#enable-multi-tab-gpu)
+  - [SBUS](#sbus)
 - [Credits](#credits)
 
 ## Introduction
@@ -164,6 +165,23 @@ Use this properties to enable multitab gpu's. Requirement:
 - If GPU Time for iGPU is higher than other GPU ie: AMD, your quicksync works perfect.
 
 ![quicksync](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/e6b12a81-3704-45d8-afc5-200672ace430)
+
+### SBUS:
+
+Most 8th Gen and above actually do not require `SSDT-SBUS`. Try to load your EFI without this patch. Check both the `AppleSMBusController` and `AppleSMBUSPCI` kexts using `System Reports` / `Software` / `Extensions`. If both loads, it means your `SBUS` is working natively without any patches.
+
+![sbus](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/40104077-2b06-4c54-a35f-d96898b6c498)
+
+Use this command to check:
+
+`kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"` and the result will appear as below:
+
+```zsh
+Executing: /usr/bin/kmutil showloaded
+No variant specified, falling back to release
+  150    0 0xffffff7f98f8d000 0x1000     0x1000     com.apple.driver.AppleSMBusPCI (1.0.14d1) 76173829-8756-3746-9516-A60DABEB950C <16 7 6 3>
+  166    1 0xffffff7f98f81000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) E4F2BA31-6A3A-3690-A863-80A993E08DF0 <165 16 15 7 6 3>
+```
 
 ## Credits
 
