@@ -80,41 +80,41 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
 **Changelog** 👍
 
 - [Big Sur + debug](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.debug.zip)
-    - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
-    - Add NVMe/SSD Trim patch (default is disable)
-    - Clean and Optimised ACPI code.
-    - Desktop `Quirks` presets.
-    - Export debug info.
-    - iMac20,1 SMBIOS.
-    - MinDate and MinVersion is set to `0`.
-    - OpenCore `v0.9.2`.
-    - Stable `RX5500XT Mech OC 4GB` plist patch via config.plist.
-    - Support Big Sur, Monterey and Ventura.
-    - Without `plugin-type 1`. XCPM is enable by default. Refer: https://github.com/acidanthera/bugtracker/issues/2013
+  - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
+  - Add NVMe/SSD Trim patch (default is disable)
+  - Clean and Optimised ACPI code.
+  - Desktop `Quirks` presets.
+  - Export debug info.
+  - iMac20,1 SMBIOS.
+  - MinDate and MinVersion is set to `0`.
+  - OpenCore `v0.9.2`.
+  - Stable `RX5500XT Mech OC 4GB` plist patch via config.plist.
+  - Support Big Sur, Monterey and Ventura.
+  - Without `plugin-type 1`. XCPM is enable by default. Refer: <https://github.com/acidanthera/bugtracker/issues/2013>
 
 - [Big Sur +](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.zip)
-    - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
-    - Add NVMe/SSD Trim patch (default is disable)
-    - Clean and Optimised ACPI code.
-    - Desktop `Quirks` presets.
-    - iMac20,1 SMBIOS.
-    - MinDate and MinVersion is set to `0`.
-    - OpenCore `v0.9.2`.
-    - Stable `RX5500XT Mech OC 4GB` plist patch via config.plist.
-    - Support Big Sur, Monterey and Ventura.
-    - Without `plugin-type 1`. XCPM is enable by default. Refer: https://github.com/acidanthera/bugtracker/issues/2013
+  - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
+  - Add NVMe/SSD Trim patch (default is disable)
+  - Clean and Optimised ACPI code.
+  - Desktop `Quirks` presets.
+  - iMac20,1 SMBIOS.
+  - MinDate and MinVersion is set to `0`.
+  - OpenCore `v0.9.2`.
+  - Stable `RX5500XT Mech OC 4GB` plist patch via config.plist.
+  - Support Big Sur, Monterey and Ventura.
+  - Without `plugin-type 1`. XCPM is enable by default. Refer: <https://github.com/acidanthera/bugtracker/issues/2013>
 
-- [Catalina](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Catalina.zip) 
-    - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
-    - Add NVMe/SSD Trim patch (default is enable)
-    - Clean and Optimised ACPI code.
-    - Desktop `Quirks` presets.
-    - iMac20,1 SMBIOS.
-    - MinDate and MinVersion is set to `-1`.
-    - OpenCore `v0.9.2`.
-    - Stable `RX5500XT Mech OC 4GB` plist patch via config.plist.
-    - USB Port LImit Removal (10.15.X). Useful for performing USB Port Mapping (Post Process)
-    - With `plugin-type 1` to enable native XCPM.
+- [Catalina](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Catalina.zip)
+  - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
+  - Add NVMe/SSD Trim patch (default is enable)
+  - Clean and Optimised ACPI code.
+  - Desktop `Quirks` presets.
+  - iMac20,1 SMBIOS.
+  - MinDate and MinVersion is set to `-1`.
+  - OpenCore `v0.9.2`.
+  - Stable `RX5500XT Mech OC 4GB` plist patch via config.plist.
+  - USB Port LImit Removal (10.15.X). Useful for performing USB Port Mapping (Post Process)
+  - With `plugin-type 1` to enable native XCPM.
 
 > **Note** : This project use pre-generated iMac20,1 SMBIOS. Please generate your own using [ACAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) or [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
 
@@ -126,13 +126,13 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
 
 ## Tips
 
-### Sorting Kexts:
+### Sorting Kexts
 
 Sorting important kexts shall improve `debug` log and `data` injection.
 
 ![sort](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/12afd08e-862b-43b1-8d5f-638d2061f5b6)
 
-### Drivers:
+### Drivers
 
 Use only needed drivers. Sort the drivers may improve boot speed.
 
@@ -140,13 +140,13 @@ Use only needed drivers. Sort the drivers may improve boot speed.
 
 ![drivers_plist](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/079acaa1-5ec7-4e41-922e-b608e185f523)
 
-### MMIO Whitelist:
+### MMIO Whitelist
 
 MMIO stands for Memory-Mapped Input/Output. It's a method to perform I/O processes between the CPU and peripheral devices of a computer. The memory and registers of the I/O devices are mapped to (and associated with) address values. MMIO whitelist is a security feature that controls access to certain memory addresses in a computer system, allowing access only to specific processes or devices that have been explicitly granted permission and denying access to all others. This patch may improve stability. Refer [5T33Z0 - MMIO Whitelist](https://github.com/5T33Z0/OC-Little-Translated/tree/main/12_MMIO_Whitelist) for more info
 
 ![mmiowhitelist](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/a7f8b000-64c5-4d19-8edd-52ef6e00fa00)
 
-### Enable Multi Tab GPU:
+### Enable Multi Tab GPU
 
 Use this properties to enable multitab gpu's. Requirement:
 
@@ -169,9 +169,9 @@ Use this properties to enable multitab gpu's. Requirement:
 
 ![quicksync](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/e6b12a81-3704-45d8-afc5-200672ace430)
 
-### SBUS:
+### SBUS
 
-Most 8th Gen and above actually do not require `SSDT-SBUS`. Try to load EFI without this patch. 
+Most 8th Gen and above actually do not require `SSDT-SBUS`. Try to load EFI without this patch.
 
 ```dsl
 Scope (SBUS)
@@ -198,7 +198,6 @@ Scope (SBUS)
 - As shown in the picture above, `AppleSMBusController` and `AppleSMBUSPCI` are not loaded via ioreg. However, both load normally by using the cusing command below:
 
 - Copy and paste this command, `kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"`. The result will shown as below:
-
 
 ```zsh
 Executing: /usr/bin/kmutil showloaded
