@@ -46,7 +46,7 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
 :arrow_forward: **Requires Patching**
 
 - Comet Lake PCH-V Converged Audio Voice Speech (ALCS1200A) + [AppleALC](https://github.com/acidanthera/AppleALC)
-- Comet Lake PCH-V SMBus Host Controller + [SSDT-SBUS](https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus.html)
+- Comet Lake PCH-V SMBus Host Controller + [SSDT-SBUS](https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus.html) - See [here](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/README.md#sbus)
 - Comet Lake PCH-V USB Controller + [USBMap](https://github.com/USBToolBox/tool)
 - Comet Lake-S 6c Host Bridge/DRAM Controller + [SSDT-MCHC](https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus.html)
 - Ethernet Connection (11) I219-V + [IntelMausi](https://github.com/acidanthera/IntelMausi)
