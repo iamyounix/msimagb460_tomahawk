@@ -77,7 +77,9 @@ This is my EFI from a previous version of my Hackintosh desktop. This project is
 
 :arrow_forward: **Changelog**
 
-- [Big Sur + (-d) / debug](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.-d.zip)
+**Changelog** 👍
+
+- [Big Sur + debug](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.debug.zip)
     - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
     - Add NVMe/SSD Trim patch (default is disable)
     - Clean and Optimised ACPI code.
@@ -148,12 +150,13 @@ MMIO stands for Memory-Mapped Input/Output. It's a method to perform I/O process
 
 Use this properties to enable multitab gpu's. Requirement:
 
-- Change iGPU  `AAPL,slot-name` to `Slot- 0` and dGPU  `AAPL,slot-name` to `Slot- 1`.
-- Add `device-id` to `9B3E0000`
-- Add `enable-metal` to `01000000`
-- Add `force-online` to `01000000`
+- Change iGPU  `AAPL,slot-name` to `Slot- 0` (Slot attach directly to CPU)
+- Add `AAPL,ig-platform-id` data `0300C59B` / `0300C89B` (headless Comet Lake platform)
+- Add `device-id` data `9B3E0000`  (Kaby Lake device id is required to properly rename GPU as UHD 630 on Comet Lake platform)
+- Add `enable-metal` data `01000000` (enable metal)
+- Add `force-online` data `01000000` (always enable for offline rendering)
 
-![properties_igpu](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/5fde038a-7549-46bb-96af-b1500f3d02e5)
+![igpu_properties](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/b13a2c27-dcaf-4b63-aa8d-c7f96ecc5b19)
 
 ![GPUtab](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3f7d7626-4b39-440b-a053-33737df848f9)
 
@@ -168,13 +171,34 @@ Use this properties to enable multitab gpu's. Requirement:
 
 ### SBUS:
 
-Most 8th Gen and above actually do not require `SSDT-SBUS`. Try to load your EFI without this patch. Check both the `AppleSMBusController` and `AppleSMBUSPCI` kexts using `System Reports` / `Software` / `Extensions`. If both loads, it means your `SBUS` is working natively without any patches.
+Most 8th Gen and above actually do not require `SSDT-SBUS`. Try to load EFI without this patch. 
+
+```dsl
+Scope (SBUS)
+{
+    Device (BUS0)
+    {
+        Name (_CID, "smbus")  // _CID: Compatible ID
+        Name (_ADR, Zero)  // _ADR: Address
+        Device (DVL0)
+        {
+            Name (_ADR, Zero)  // _ADR: Address
+            Name (_CID, "diagsvault")  // _CID: Compatible ID
+        }
+    }
+}
+```
+
+- Check both the `AppleSMBusController` and `AppleSMBUSPCI` kexts using `System Reports` / `Software` / `Extensions`. If both loads, it means your `SBUS` is working natively without any patches.
 
 ![sbus](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/40104077-2b06-4c54-a35f-d96898b6c498)
 
-Use this command to check:
+![sbus_ioreg](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/02c9851c-3a29-4a1d-84ba-aba3917c0861)
 
-`kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"` and the result will appear as below:
+- As shown in the picture above, `AppleSMBusController` and `AppleSMBUSPCI` are not loaded via ioreg. However, both load normally by using the cusing command below:
+
+- Copy and paste this command, `kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"`. The result will shown as below:
+
 
 ```zsh
 Executing: /usr/bin/kmutil showloaded
@@ -182,8 +206,6 @@ No variant specified, falling back to release
   150    0 0xffffff7f98f8d000 0x1000     0x1000     com.apple.driver.AppleSMBusPCI (1.0.14d1) 76173829-8756-3746-9516-A60DABEB950C <16 7 6 3>
   166    1 0xffffff7f98f81000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) E4F2BA31-6A3A-3690-A863-80A993E08DF0 <165 16 15 7 6 3>
 ```
-
-![sbus_ioreg](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/02c9851c-3a29-4a1d-84ba-aba3917c0861)
 
 ## Credits
 
