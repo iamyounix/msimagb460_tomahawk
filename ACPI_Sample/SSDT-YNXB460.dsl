@@ -14,6 +14,8 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 
 	Scope (\_SB)    // System BUS 
 	{
+		
+		//	Enable ACPI Injection if Darwin Kernel load
 		If (_OSI ("Darwin"))
 		{
 			
@@ -132,7 +134,8 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 					})
 				}
 			}
-			
+
+			// Enable STA_ Method to all device listed	
 			Method (_STA, 0, NotSerialized)  // _STA: Status
 			{
 				Return (0x0F)
