@@ -9,18 +9,19 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 	External (_SB_.PCI0.SBUS, DeviceObj)
 	*/
 	
+    /* // Remove this part for Big Sur and above
 	External (_SB_.PR00, DeviceObj)
+    */
+    
 	External (STAS, IntObj)
 
 	Scope (\_SB)    // System BUS 
 	{
-		
-		//	Enable ACPI Injection if Darwin Kernel load
 		If (_OSI ("Darwin"))
 		{
 			
 			/* // Remove this part for Big Sur and above
-			Scope (PR00)
+			Scope (PR00)    //    Processor
 			{
 				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 				{
@@ -32,7 +33,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 						})
 					}
 
-					Return (Package (0x02)
+					Return (Package (0x02)    // XNU's CPU Power Management
 					{
 						"plugin-type", 
 						One
@@ -134,7 +135,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 					})
 				}
 			}
-
+			
 			// Enable STA_ Method to all device listed	
 			Method (_STA, 0, NotSerialized)  // _STA: Status
 			{
