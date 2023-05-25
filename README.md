@@ -172,23 +172,7 @@ Use this properties to enable multitab gpu's. Requirement:
 
 ### SBUS
 
-Most 8th Gen and above actually do not require `SSDT-SBUS`. Try to load EFI without this patch.
-
-```dsl
-Scope (SBUS)
-{
-    Device (BUS0)
-    {
-        Name (_CID, "smbus")  // _CID: Compatible ID
-        Name (_ADR, Zero)  // _ADR: Address
-        Device (DVL0)
-        {
-            Name (_ADR, Zero)  // _ADR: Address
-            Name (_CID, "diagsvault")  // _CID: Compatible ID
-        }
-    }
-}
-```
+Most 8th Gen and above actually do not require `SSDT-SBUS`. Try to load EFI without this patch. Refer [here](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/ACPI_Sample/SSDT-YNXB460.dsl) as an example.
 
 - Check `AppleSMBusController` and `AppleSMBUSPCI` kexts using `System Reports` / `Software` / `Extensions`. If both loads, it means your `SBUS` is working natively without any patches.
 
