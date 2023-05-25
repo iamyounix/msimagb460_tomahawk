@@ -56,7 +56,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 					Name (_ADR, Zero)  // _ADR: Address
 				}
 
-				Scope (LPCB)
+				Scope (LPCB)	// Low Pin Count Board
 				{
 					Device (EC)    //  Fake Embedded Controller
 					{
@@ -105,7 +105,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 				}
 				*/
 					
-				Device (THSS)    // Rename from pci8086,a3b1 
+				Device (THSS)    // Rename from pci8086,a3b1 (Thermal Subsystem)
 				{
 					Name (_ADR, 0x00140002)  // _ADR: Address
 				}
@@ -127,13 +127,13 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 					Return (Package ()    // Apple Power Properties
 					{
 						"kUSBSleepPowerSupply", 
-						0x13EC, 
+						0x13EC,	// Decimal = 5100
 						"kUSBSleepPortCurrentLimit", 
-						0x0834, 
+						0x0834,	// Decimal = 2100 
 						"kUSBWakePowerSupply", 
-						0x13EC, 
+						0x13EC,	// Decimal = 5100 
 						"kUSBWakePortCurrentLimit", 
-						0x0834
+						0x0834	// Decimal = 2100
 					})
 				}
 			}
