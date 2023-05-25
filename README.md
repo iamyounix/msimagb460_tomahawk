@@ -190,7 +190,7 @@ Scope (SBUS)
 }
 ```
 
-- Check both the `AppleSMBusController` and `AppleSMBUSPCI` kexts using `System Reports` / `Software` / `Extensions`. If both loads, it means your `SBUS` is working natively without any patches.
+- Check `AppleSMBusController` and `AppleSMBUSPCI` kexts using `System Reports` / `Software` / `Extensions`. If both loads, it means your `SBUS` is working natively without any patches.
 
 ![sbus](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/40104077-2b06-4c54-a35f-d96898b6c498)
 
