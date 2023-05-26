@@ -194,15 +194,7 @@ No variant specified, falling back to release
 ## Results
 
 ![hardware](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/e462231a-8feb-4ad0-a0c6-d91c606ecde7)
-![audio](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/75ce43a6-1fb7-4e5b-b344-de0044d6726a)
-![blth](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/aa6353a4-cd40-445e-9f49-281b50032a89)
-![camera](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/0c329f27-2654-4fd5-8928-607012b4ca90)
-![ethernet](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/05948be3-6052-44fa-b3c1-8fbf4418d8d3)
-![graphics](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/89d1513d-cd43-46b4-ae0a-ecf7c4f06245)
-![memory](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/d51a329d-e33e-4333-b50d-e372bd626a7d)
-![pci](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/b1db02d5-a5b9-4715-a0e3-09a50e1f1093)
-![sata](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/bab49ed5-5121-4151-950a-743e62b7b63a)
-![usb](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/310c966d-3d78-4575-bf27-f3f06f91fecd)
+![archlinux](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/017134c6-1e00-492d-b918-7d20abad7c2e)
 
 ## Credits
 
