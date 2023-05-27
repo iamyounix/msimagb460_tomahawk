@@ -54,10 +54,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                             Device (GFX0)
                             {
                                 Name (_ADR, Zero)  // _ADR: Address
-                                Method (DDC, 0, NotSerialized)
-                                {
-                                    Return (0x0F)
-                                }
                             }
 
                             Device (HDAU)
