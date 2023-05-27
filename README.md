@@ -59,7 +59,41 @@ This is my EFI from Hackintosh desktop. This project isn't ideal, but it does th
 
 ## Folders and Files
 
-![tree](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/bbcf7a87-b4c8-4f27-b7de-2070c3a28680)
+```zsh
+drwxr-xr-x    - younix 23 May 23:53  EFI
+drwxr-xr-x    - younix 23 May 23:53 ├──  BOOT
+.rw-r--r--  25k younix 13 May 08:18 │  └──  BOOTx64.efi
+drwxr-xr-x    - younix 25 May 11:05 └──  OC
+drwxr-xr-x    - younix 25 May 19:50    ├──  ACPI
+.rw-r--r--  442 younix 25 May 19:50    │  └──  SSDT-YNXB460.aml
+drwxr-xr-x    - younix 23 May 23:53    ├──  Drivers
+.rwxrwxrwx  38k younix 26 Feb 08:23    │  ├──  HfsPlus.efi
+.rwxrwxrwx 102k younix  8 May 23:53    │  ├──  OpenCanopy.efi
+.rwxrwxrwx  25k younix  8 May 23:53    │  ├──  OpenRuntime.efi
+.rwxrwxrwx  45k younix  8 May 23:53    │  ├──  ResetNvramEntry.efi
+.rwxrwxrwx  45k younix  8 May 23:53    │  └──  ToggleSipEntry.efi
+drwxr-xr-x    - younix 23 May 23:53    ├──  Kexts
+drwxr-xr-x    - younix 23 May 23:53    │  ├──  AppleALC.kext
+drwxr-xr-x    - younix 23 May 23:53    │  ├──  IntelMausi.kext
+drwxr-xr-x    - younix 23 May 23:53    │  ├──  Lilu.kext
+drwxr-xr-x    - younix 23 May 23:53    │  ├──  LucyRTL8125Ethernet.kext
+drwxr-xr-x    - younix 23 May 23:53    │  ├──  RadeonSensor.kext
+drwxr-xr-x    - younix 23 May 23:53    │  ├──  RestrictEvents.kext
+drwxr-xr-x    - younix 23 May 23:53    │  ├──  SMCProcessor.kext
+drwxr-xr-x    - younix 23 May 23:53    │  ├──  SMCRadeonGPU.kext
+drwxr-xr-x    - younix 23 May 23:53    │  ├──  SMCSuperIO.kext
+drwxr-xr-x    - younix 23 May 23:53    │  ├──  USBMap.kext
+drwxr-xr-x    - younix 23 May 23:53    │  ├──  VirtualSMC.kext
+drwxr-xr-x    - younix 23 May 23:53    │  └──  WhateverGreen.kext
+drwxr-xr-x    - younix 23 May 23:53    ├──  Resources
+drwxr-xr-x    - younix 23 May 23:53    │  ├──  Audio
+drwxr-xr-x    - younix 23 May 23:53    │  ├──  Font
+drwxr-xr-x    - younix 23 May 23:53    │  ├──  Image
+drwxr-xr-x    - younix 23 May 23:53    │  └──  Label
+drwxr-xr-x    - younix 23 May 23:53    ├──  Tools
+.rw-r--r--  27k younix 24 May 23:36    ├──  config.plist
+.rw-r--r-- 598k younix 13 May 08:18    └──  OpenCore.efi
+```
 
 ## Kexts
 
@@ -121,9 +155,8 @@ This is my EFI from Hackintosh desktop. This project isn't ideal, but it does th
 
 :arrow_forward: **Tested with dualboot:**
 
-![arch](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3c1b7e37-a72f-4617-8cda-63241384e500)
-
 ![mac](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/40b8af18-a092-4a5c-ac2f-f2e37a4ebed2)
+![arch](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3c1b7e37-a72f-4617-8cda-63241384e500)
 
 ## Tips
 
