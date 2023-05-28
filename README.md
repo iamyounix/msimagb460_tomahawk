@@ -112,10 +112,6 @@ drwxr-xr-x    - younix 23 May 23:53    ├──  Tools
 
 :arrow_forward: **Changelog**
 
-**Changelog** 👍
-
-**Changelog** 👍
-
 - [Big Sur + debug](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.debug.dmg)
     - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
     - Add NVMe/SSD Trim patch (default is disable)
