@@ -121,7 +121,7 @@ drwxr-xr-x    - younix 23 May 23:53    ├──  Tools
     - Add NVMe/SSD Trim patch (default is disable)
     - Clean and Optimised ACPI code.
     - Desktop `Quirks` presets.
-    - Export debug info.
+    - Automatically export debug info on `EFI` partition..
     - iMac20,1 SMBIOS.
     - MinDate and MinVersion is set to `0`.
     - OpenCore `v0.9.2`.
