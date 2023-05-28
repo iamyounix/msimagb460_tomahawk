@@ -141,7 +141,7 @@ drwxr-xr-x    - younix 23 May 23:53    ├──  Tools
     - Support Big Sur, Monterey and Ventura.
     - Without `plugin-type 1`. XCPM is enable by default. Refer: https://github.com/acidanthera/bugtracker/issues/2013
 
-> **Note** : This project use pre-generated iMac20,1 SMBIOS. Please generate your own using [ACAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) or [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
+> **Note** : This project use pre-generated iMac20,1 SMBIOS. Please generate your own using [ACAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) or [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS). This template include `Misc` / `Entries` example.
 
 :arrow_forward: **Tested with dualboot:**
 
