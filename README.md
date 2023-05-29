@@ -20,22 +20,22 @@
 
 -   **Native**
 
-    -   400 Series Chipset Family SATA AHCI Controller
-    -   ASM3241 USB 3.2 Host Controller
+    -   [400 Series Chipset Family SATA AHCI Controller](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/Device/400series_sata.plist)
+    -   [ASM3241 USB 3.2 Host Controller](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/Device/asmediausb_pxsx.plist)
     -   BCM4360 802.11ac Wireless Network Adapter
     -   Comet Lake PCH-V SMBus Host Controller
     -   Comet Lake-S 6c Host Bridge/DRAM Controller
-    -   Intel UHD Graphics 630 (Headless) + `agdpmod` / `data` / `70696b65726100` based on [Piker R. Alpha](https://github.com/Piker-Alpha) agdpmod [patch](https://pikeralpha.wordpress.com/2015/11/23/patching-applegraphicsdevicepolicy-kext/)
+    -   [Intel UHD Graphics 630 (Headless)](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/Device/uhd630_igpu.plist) + `agdpmod` / `data` / `70696b65726100` based on [Piker R. Alpha](https://github.com/Piker-Alpha) agdpmod [patch](https://pikeralpha.wordpress.com/2015/11/23/patching-applegraphicsdevicepolicy-kext/)
     -   Kingston A2000 NVMe SSD1
     -   Kingston A2000 NVMe SSD2
-    -   Navi 10 HDMI Audio
-    -   Navi 14 Radeon RX 5500 XT
+    -   [Navi 10 HDMI Audio](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/Device/amdrx5500xt_hdau.plist)
+    -   [Navi 14 Radeon RX 5500 XT](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/Device/amdrx5500xt_gfx0.plist)
 
 -   **Not Native**
-    -   Comet Lake PCH-V Converged Audio Voice Speech (ALCS1200A)
-    -   Comet Lake PCH-V USB Controller
-    -   Ethernet Connection (11) I219-V
-    -   RTL8125 2.5GbE Controller
+    -   [Comet Lake PCH-V Converged Audio Voice Speech (ALCS1200A)](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/Device/cml_pchv_hdef.plist)
+    -   [Comet Lake PCH-V USB Controller](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/Device/cml_pchv_xhc.plist)
+    -   [Ethernet Connection (11) I219-V](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/Device/intel_i219v_glan.plist)
+    -   [RTL8125 2.5GbE Controller](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/Device/rtl8125_pxsx.plist)
 
 **Base Files**
 
