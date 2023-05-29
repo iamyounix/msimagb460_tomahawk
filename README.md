@@ -184,7 +184,7 @@ This command help us to specify need information in order to build our own hacki
 - **Slot Check**
   - Open Windows Powershell, copy and paste `Get-WmiObject -class "Win32_SystemSlot"`
 
-    **Example:** X16 slot
+    **Example:** PCI x16 Slot
 
     ```powershell
     SlotDesignation : Slot1 / X16PCIEXP // Refer to x16 slot capability
