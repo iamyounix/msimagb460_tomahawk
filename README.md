@@ -67,10 +67,10 @@
         │  ├── 📃 VirtualSMC.kext          // Requires Lilu (OC Base File)
         │  └── 📃 WhateverGreen.kext       // Requires Lilu (OC Base File)
         ├── 📁 Resources
-        │  ├── 🎨 Audio                    // Additional (release)
-        │  ├── 🎨 Font                     // Additional (release)
-        │  ├── 🎨 Image                    // Additional (release)
-        │  └── 🎨 Label                    // Additional (release)
+        │  ├── 📃 Audio                    // Additional (release)
+        │  ├── 📃 Font                     // Additional (release)
+        │  ├── 📃 Image                    // Additional (release)
+        │  └── 📃 Label                    // Additional (release)
         ├── 📁 Tools
         │  ├── 📃 OpenShell.efi            // Requires with debug version (OC Base File)   
         ├── 📃 config.plist                // Configuration  (OC Base File)
@@ -80,10 +80,7 @@
 **Post Process**
 
 -   **Enable GPU Tab in Activity Monitor**
-
-    >  **Disclaimer:** The Framebuffer Data used in this guide is for an Intel UHD 630 – don't use it to fix your iGPU (unless you have a Comet Lake CPU as well). Use the Framebuffer data required for your iGPU instead!
-    >  If you are using a CPU without on-board graphics and/or an SMBIOS which utilizes the GPU for Quick Sync Video and other background tasks – like iMacPro1,1 or MacPro7,1 – don't add an iGPU.
-    
+ 
     -   If the Device Properties of your iGPU and dGPU are configured correctly, you will find the Tab "GPU" in the Activity Monitor App which lists the graphics devices and the tasks/processes assigned to each of them. Use this properties to enable gpu's tab. Requirement:
         -   Change iGPU  `AAPL,slot-name` to `Slot- 0`. Most iGPU attached to this slot.
         -   Add `AAPL,ig-platform-id` data `0300C59B` / `0300C89B` (headless Comet Lake platform)
