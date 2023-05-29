@@ -16,14 +16,6 @@
 - [Post Process](#post-process)
 - [Credits](#credits)
 
-**Changelog:**
-1. Add [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
-2. Add NVMe/SSD Trim patch (default is disable)
-3. Clean and Optimised ACPI code (Single .aml file)
-4. Include `Misc` / `Entries` example. Please change accordingly to your specific needed.
-5. Stable [RX5500XT Mech OC 4GB](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G-OC) patch via config.plist.
-6. Support Big Sur, Monterey and Ventura.
-
 ## Introduction
 
 - This project isn't ideal, but it does the job. Never blame me if there is an issue or malfunction.   Although this project carries some risk. Please read Dortania's official documents and my explanations for about this build, then shouldn't have any issues. Please do so at your own risk. Below are the best references to explore:
