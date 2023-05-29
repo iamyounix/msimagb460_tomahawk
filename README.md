@@ -10,8 +10,8 @@ Table of contents:
 
 - [Introduction](#introduction)
 - [About this build](#about-this-build)
-- [Folders and Files](#folders-and-files)
-- [Kexts](#kexts)
+- [Base Files](#base-files)
+- [Changelog](#changelog)
 - [Tips](#tips)
   - [Sorting Kexts](#sorting-kexts)
   - [Drivers](#drivers)
@@ -58,87 +58,60 @@ This is my EFI from Hackintosh desktop. This project isn't ideal, but it does th
 
 > **Note**: This project requires `agdpmod=pikera,` which replaces the Navi variant GPU's `board-id` with `board-ix` in order to fix the black screen issue [originated](https://pikeralpha.wordpress.com/2015/11/23/patching-applegraphicsdevicepolicy-kext/) by [Piker R. Alpha](https://github.com/Piker-Alpha). Do not confuse; certain `agdpmod` features via [WhateverGreen](https://github.com/acidanthera/WhateverGreen) can be injected into both iGPU and dGPU. Best combination may improve stability.
 
-## Folders and Files
+## Base Files
 
 ```zsh
-drwxr-xr-x    - younix 23 May 23:53  EFI
-drwxr-xr-x    - younix 23 May 23:53 ├──  BOOT
-.rw-r--r--  25k younix 13 May 08:18 │  └──  BOOTx64.efi
-drwxr-xr-x    - younix 25 May 11:05 └──  OC
-drwxr-xr-x    - younix 25 May 19:50    ├──  ACPI
-.rw-r--r--  442 younix 25 May 19:50    │  └──  SSDT-YNXB460.aml
-drwxr-xr-x    - younix 23 May 23:53    ├──  Drivers
-.rwxrwxrwx  38k younix 26 Feb 08:23    │  ├──  HfsPlus.efi
-.rwxrwxrwx 102k younix  8 May 23:53    │  ├──  OpenCanopy.efi
-.rwxrwxrwx  25k younix  8 May 23:53    │  ├──  OpenRuntime.efi
-.rwxrwxrwx  45k younix  8 May 23:53    │  ├──  ResetNvramEntry.efi
-.rwxrwxrwx  45k younix  8 May 23:53    │  └──  ToggleSipEntry.efi
-drwxr-xr-x    - younix 23 May 23:53    ├──  Kexts
-drwxr-xr-x    - younix 23 May 23:53    │  ├──  AppleALC.kext
-drwxr-xr-x    - younix 23 May 23:53    │  ├──  IntelMausi.kext
-drwxr-xr-x    - younix 23 May 23:53    │  ├──  Lilu.kext
-drwxr-xr-x    - younix 23 May 23:53    │  ├──  LucyRTL8125Ethernet.kext
-drwxr-xr-x    - younix 23 May 23:53    │  ├──  RadeonSensor.kext
-drwxr-xr-x    - younix 23 May 23:53    │  ├──  RestrictEvents.kext
-drwxr-xr-x    - younix 23 May 23:53    │  ├──  SMCProcessor.kext
-drwxr-xr-x    - younix 23 May 23:53    │  ├──  SMCRadeonGPU.kext
-drwxr-xr-x    - younix 23 May 23:53    │  ├──  SMCSuperIO.kext
-drwxr-xr-x    - younix 23 May 23:53    │  ├──  USBMap.kext
-drwxr-xr-x    - younix 23 May 23:53    │  ├──  VirtualSMC.kext
-drwxr-xr-x    - younix 23 May 23:53    │  └──  WhateverGreen.kext
-drwxr-xr-x    - younix 23 May 23:53    ├──  Resources
-drwxr-xr-x    - younix 23 May 23:53    │  ├──  Audio
-drwxr-xr-x    - younix 23 May 23:53    │  ├──  Font
-drwxr-xr-x    - younix 23 May 23:53    │  ├──  Image
-drwxr-xr-x    - younix 23 May 23:53    │  └──  Label
-drwxr-xr-x    - younix 23 May 23:53    ├──  Tools
-.rw-r--r--  27k younix 24 May 23:36    ├──  config.plist
-.rw-r--r-- 598k younix 13 May 08:18    └──  OpenCore.efi
+📁 EFI
+├── 📁 BOOT
+│  └── 📃 BOOTx64.efi                  // OC Base File
+└── 📁 OC
+    ├── 📁 ACPI
+    │  └── 📃 SSDT-YNXB460.aml         // An additional patches using Secondary System Description Tables
+    ├── 📁 Drivers
+    │  ├── 📃 HfsPlus.efi              // Compulsory (OC Base File)
+    │  ├── 📃 OpenCanopy.efi           // Additional (release)
+    │  ├── 📃 OpenRuntime.efi          // Compulsory (OC Base File)
+    │  ├── 📃 ResetNvramEntry.efi      // Additional (debug) 
+    │  └── 📃 ToggleSipEntry.efi       // Additional (debug)
+    ├── 📁 Kexts
+    │  ├── 📃 AppleALC.kext            // Requires Lilu (OC Base File)
+    │  ├── 📃 IntelMausi.kext          // Requires Lilu
+    │  ├── 📃 Lilu.kext                // Conpulsory (OC Base File)
+    │  ├── 📃 LucyRTL8125Ethernet.kext // Requires Lilu
+    │  ├── 📃 RadeonSensor.kext        // Requires VirtualSMC
+    │  ├── 📃 RestrictEvents.kext      // Requires Lilu (Lilu Kernel extension)
+    │  ├── 📃 SMCProcessor.kext        // Requires VirtualSMC (OC Base File)
+    │  ├── 📃 SMCRadeonGPU.kext        // Requires RadeonSensor
+    │  ├── 📃 SMCSuperIO.kext          // Requires VirtualSMC
+    │  ├── 📃 USBMap.kext              // Compulsory (can be build using USBToolbox/Windows and USBMap/MacOS)
+    │  ├── 📃 VirtualSMC.kext          // Requires Lilu (OC Base File)
+    │  └── 📃 WhateverGreen.kext       // Requires Lilu (OC Base File)
+    ├── 📁 Resources
+    │  ├── 🎨 Audio                    // Additional (release)
+    │  ├── 🎨 Font                     // Additional (release)
+    │  ├── 🎨 Image                    // Additional (release)
+    │  └── 🎨 Label                    // Additional (release)
+    ├── 📁 Tools
+    │  ├── 📃 OpenShell.efi            // Requires with debug version (OC Base File)   
+    ├── 📃 config.plist                // Configuration  (OC Base File)
+    └── 📃 OpenCore.efi                // OC Base File
 ```
 
-## Kexts
+## Changelog
 
-- [AppleALC](https://github.com/acidanthera/AppleALC) - An open source kernel extension enabling native macOS HD audio for not officially supported codecs without any filesystem modifications. AppleALCU can be used for systems with digital-only audio
-- [IntelMausi](https://github.com/acidanthera/IntelMausi) - Intel onboard LAN driver for macOS
-- [Lilu](https://github.com/acidanthera/Lilu) - An open source kernel extension bringing a platform for arbitrary kext, library, and program patching throughout the system for macOS.
-- [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet) - Enable RTL8125 2.5GbE Controller
-- [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) - To disables uninitialized disk warning in Finder
-- [RadeonSensor.kext](https://github.com/aluveitie/RadeonSensor) - Provide GPU temperature to a dedicated gadget without relying on FakeSMC being installed and can therefore be used with VirtualSMC instead.
-- [SMCRadeonGPU.kext](https://github.com/aluveitie/RadeonSensor) - Radeon GPU Sensor Plugin
-- [SMCProcessor](https://github.com/acidanthera/VirtualSMC) - VirtualSMC Processor Plugin
-- [SMCSuperIO](https://github.com/acidanthera/VirtualSMC) - VirtualSMC IO Plugin
-- [USBMap](https://github.com/USBToolBox/tool) - Mapped USB Port (15 Port)
-- [VirtualSMC](https://github.com/acidanthera/VirtualSMC) - Advanced Apple SMC emulator in the kernel. Requires Lilu
-- [WhateverGreen](https://github.com/acidanthera/WhateverGreen) - Lilu plugin providing patches to select GPUs on macOS. Requires Lilu
+- Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
+- Add NVMe/SSD Trim patch (default is disable)
+- Clean and Optimised ACPI code (Single .aml file)
+- Desktop `Quirks` presets (10th Gen)
+- iMac20,1 SMBIOS.
+- Stable `RX5500XT Mech OC 4GB` plist patch via config.plist.
+- Support Big Sur, Monterey and Ventura.
 
-:arrow_forward: **Changelog**
+**Do Note!**
 
-- [Big Sur + debug](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.debug.dmg)
-    - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
-    - Add NVMe/SSD Trim patch (default is disable)
-    - Clean and Optimised ACPI code.
-    - Desktop `Quirks` presets.
-    - Automatically export debug info on `EFI` partition..
-    - iMac20,1 SMBIOS.
-    - MinDate and MinVersion is set to `0`.
-    - OpenCore `v0.9.2`.
-    - Stable `RX5500XT Mech OC 4GB` plist patch via config.plist.
-    - Support Big Sur, Monterey and Ventura.
-    - Without `plugin-type 1`. XCPM is enable by default. Refer: https://github.com/acidanthera/bugtracker/issues/2013
-
-- [Big Sur +](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.dmg)
-    - Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
-    - Add NVMe/SSD Trim patch (default is disable)
-    - Clean and Optimised ACPI code.
-    - Desktop `Quirks` presets.
-    - iMac20,1 SMBIOS.
-    - MinDate and MinVersion is set to `0`.
-    - OpenCore `v0.9.2`.
-    - Stable `RX5500XT Mech OC 4GB` plist patch via config.plist.
-    - Support Big Sur, Monterey and Ventura.
-    - Without `plugin-type 1`. XCPM is enable by default. Refer: https://github.com/acidanthera/bugtracker/issues/2013
-
-> **Note** : This project use pre-generated iMac20,1 SMBIOS. Please generate your own using [ACAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) or [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS). This template include `Misc` / `Entries` example.
+- This project use pre-generated iMac20,1 SMBIOS. Please generate your own using [ACAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) or [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
+- [Debug](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.debug.dmg) version can greatly help with debugging boot issues, however can add some noticeable delay to boot times(ie. 3-5 seconds to get to the picker). Once installed you can easily transition to [release](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.dmg). Release version provide snappier boot times (no useful DEBUG info provided)
+- This template include `Misc` / `Entries` example. Please change accordingly to your specific needed.
 
 :arrow_forward: **Tested with dualboot:**
 
