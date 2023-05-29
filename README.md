@@ -6,7 +6,7 @@
 [![macOS](https://img.shields.io/badge/Compatible-Catalina/Monterey/Ventura-orange)](https://www.apple.com/ge/macos/monterey/)
 [![Version](https://img.shields.io/badge/Version-0.9.0-white)](https://github.com/acidanthera/OpenCorePkg/releases)
 
-:arrow_forward: Table of contents:
+**Table of contents:**
 
 - [Introduction](#introduction)
 - [Hardware and Devices](#hardware-and-devices)
@@ -18,11 +18,7 @@
 
 ## Introduction
 
-:arrow_forward: **Author**
-
 This is my EFI from Hackintosh desktop. This project isn't ideal, but it does the job. Never blame me if there is an issue or malfunction.   Although this project carries some risk. Please read Dortania's official documents and my explanations for about this build, then shouldn't have any issues. Please do so at your own risk. Below are the best references to explore:
-
-:arrow_forward: **References**
 
 - [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/) - Official
 - [Dortania's Announcement](https://dortania.github.io/) - Official
@@ -30,30 +26,27 @@ This is my EFI from Hackintosh desktop. This project isn't ideal, but it does th
 
 ## Hardware and Devices
 
-:arrow_forward: **Native**
+- **Native**
+  - 400 Series Chipset Family SATA AHCI Controller
+  - ASM3241 USB 3.2 Host Controller
+  - BCM4360 802.11ac Wireless Network Adapter
+  - Comet Lake PCH-V SMBus Host Controller
+  - Comet Lake-S 6c Host Bridge/DRAM Controller
+  - Intel UHD Graphics 630 (Headless) + `agdpmod` / `data` / `70696b65726100` based on [Piker R. Alpha](https://github.com/Piker-Alpha) agdpmod [patch](https://pikeralpha.wordpress.com/2015/11/23/patching-applegraphicsdevicepolicy-kext/)
+  - Kingston A2000 NVMe SSD1
+  - Kingston A2000 NVMe SSD2
+  - Navi 10 HDMI Audio
+  - Navi 14 Radeon RX 5500 XT
 
-- 400 Series Chipset Family SATA AHCI Controller
-- ASM3241 USB 3.2 Host Controller
-- BCM4360 802.11ac Wireless Network Adapter
-- Comet Lake PCH-V SMBus Host Controller
-- Comet Lake-S 6c Host Bridge/DRAM Controller
-- Intel UHD Graphics 630 (Headless) + `agdpmod` `string` `pikera`
-- Kingston A2000 NVMe SSD1
-- Kingston A2000 NVMe SSD2
-- Navi 10 HDMI Audio
-- Navi 14 Radeon RX 5500 XT
-
-:arrow_forward: **Not Native**
-
-- Comet Lake PCH-V Converged Audio Voice Speech (ALCS1200A)
-- Comet Lake PCH-V USB Controller
-- Ethernet Connection (11) I219-V
-
-- RTL8125 2.5GbE Controller + [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)
-
-> **Note**: This project requires `agdpmod=pikera,` which replaces the Navi variant GPU's `board-id` with `board-ix` in order to fix the black screen issue [originated](https://pikeralpha.wordpress.com/2015/11/23/patching-applegraphicsdevicepolicy-kext/) by [Piker R. Alpha](https://github.com/Piker-Alpha). Do not confuse; certain `agdpmod` features via [WhateverGreen](https://github.com/acidanthera/WhateverGreen) can be injected into both iGPU and dGPU. Best combination may improve stability.
+- **Not Native**
+  - Comet Lake PCH-V Converged Audio Voice Speech (ALCS1200A)
+  - Comet Lake PCH-V USB Controller
+  - Ethernet Connection (11) I219-V
+  - RTL8125 2.5GbE Controller
 
 ## Base Files
+
+Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://github.com/acidanthera/OpenCorePkg/releases/), x64 folders.
 
 ```zsh
 📁 EFI
@@ -92,31 +85,24 @@ This is my EFI from Hackintosh desktop. This project isn't ideal, but it does th
     └── 📃 OpenCore.efi                // OC Base File
 ```
 
-## Changelog
-
-- Add [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
-- Add NVMe/SSD Trim patch (default is disable)
-- Clean and Optimised ACPI code (Single .aml file)
-- iMac20,1 SMBIOS.
-- Stable [RX5500XT Mech OC 4GB](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G-OC) patch via config.plist.
-- Support Big Sur, Monterey and Ventura.
-
-**Do Note!**
-
-- This project use pre-generated iMac20,1 SMBIOS. Please generate your own using [ACAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) or [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
-- [Debug](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.debug.dmg) version can greatly help with debugging boot issues, however can add some noticeable delay to boot times(ie. 3-5 seconds to get to the picker). Once installed you can easily transition to [release](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.dmg). Release version provide snappier boot times (no useful DEBUG info provided)
-- This template include `Misc` / `Entries` example. Please change accordingly to your specific needed.
-
-:arrow_forward: **Tested with dualboot:**
-
-![mac](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/40b8af18-a092-4a5c-ac2f-f2e37a4ebed2)
-![arch](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3c1b7e37-a72f-4617-8cda-63241384e500)
+> **Changelog:**
+> 1. Add [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
+> 2. Add NVMe/SSD Trim patch (default is disable)
+> 3. Clean and Optimised ACPI code (Single .aml file)
+> 4. Include `Misc` / `Entries` example. Please change accordingly to your specific needed.
+> 5. Stable [RX5500XT Mech OC 4GB](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G-OC) patch via config.plist.
+> 6. Support Big Sur, Monterey and Ventura.
+> 
+> **Do note,**  This project use pre-generated iMac20,1 SMBIOS. Please generate your own using [ACAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) or [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS). [Debug](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.debug.dmg) version can greatly help with debugging boot issues, however can add some noticeable delay to boot times (ie. 3-5 seconds to get to the picker). Once installed you can easily transition to [release](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Big.Sur.+.dmg). Release version provide snappier boot times (no useful DEBUG info provided).
 
 ## Tips
 
-### Enable Multi Tab GPU
+### Enable GPU Tab in Activity Monitor
 
-Use this properties to enable multitab gpu's. Requirement:
+>  Disclaimer: The Framebuffer Data used in this guide is for an Intel UHD 630 – don't use it to fix your iGPU (unless you have a Comet Lake CPU as well). Use the Framebuffer data required for your iGPU instead!
+If you are using a CPU without on-board graphics and/or an SMBIOS which utilizes the GPU for Quick Sync Video and other background tasks – like iMacPro1,1 or MacPro7,1 – don't add an iGPU. Use the defaults-write method explained in Section 5 instead!
+
+If the Device Properties of your iGPU and dGPU are configured correctly, you will find the Tab "GPU" in the Activity Monitor App which lists the graphics devices and the tasks/processes assigned to each of them. Use this properties to enable gpu's tab. Requirement:
 
 - Change iGPU  `AAPL,slot-name` to `Slot- 0` (Slot attach directly to CPU)
 - Add `AAPL,ig-platform-id` data `0300C59B` / `0300C89B` (headless Comet Lake platform)
