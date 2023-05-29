@@ -18,6 +18,7 @@ Table of contents:
   - [MMIO Whitelist](#mmio-whitelist)
   - [Enable Multi Tab GPU](#enable-multi-tab-gpu)
   - [SBUS](#sbus)
+  - [Useful Windows Command](#useful-windows-command)
 - [Results](#results)
 - [Credits](#credits)
 
@@ -210,6 +211,31 @@ No variant specified, falling back to release
   166    1 0xffffff7f98f81000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) E4F2BA31-6A3A-3690-A863-80A993E08DF0 <165 16 15 7 6 3>
 ```
 
+### Useful Windows command
+
+This command help us to specify need information in order to build our own hackintosh and set `AAPL,slot-name` properly. Please check `SlotDesignation` as references.
+
+- **Slot Check**
+  - Open Windows Powershell, copy and paste `Get-WmiObject -class "Win32_SystemSlot"`
+    
+    **Example:** X16 slot
+    
+    ```powershell
+    SlotDesignation : Slot1 / X16PCIEXP // Refer to x16 slot capability
+    Tag             : System Slot 0 // Use this as references. 
+    SupportsHotPlug : False
+    Status          : OK
+    Shared          : False
+    PMESignal       : True
+    MaxDataWidth    : 10
+    ```
+    
+    Explanation: Slot1 X16PCIEXP is refered to x16 PCI slot capabilities. The exact match for `AAPL,slot-name` is `Slot- 1`. Remember, most     iGPU built-in with processor is considered as `Slot- 0`.
+
+- **Dump most information about hardware**
+  - Open Windows Powershell, copy and paste `Get-WmiObject -class "Win32_PnPEntity"`
+  - Copy all dumped info from Powershell and paste to any text editor as references.
+ 
 ## Results
 
 ![hardware](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/e462231a-8feb-4ad0-a0c6-d91c606ecde7)
