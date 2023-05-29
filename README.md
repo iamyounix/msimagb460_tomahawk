@@ -6,10 +6,10 @@
 [![macOS](https://img.shields.io/badge/Compatible-Catalina/Monterey/Ventura-orange)](https://www.apple.com/ge/macos/monterey/)
 [![Version](https://img.shields.io/badge/Version-0.9.0-white)](https://github.com/acidanthera/OpenCorePkg/releases)
 
-Table of contents:
+:arrow_forward: Table of contents:
 
 - [Introduction](#introduction)
-- [About this build](#about-this-build)
+- [Hardware and Devices](#hardware-and-devices)
 - [Base Files](#base-files)
 - [Changelog](#changelog)
 - [Tips](#tips)
@@ -28,26 +28,27 @@ This is my EFI from Hackintosh desktop. This project isn't ideal, but it does th
 - [Dortania's Announcement](https://dortania.github.io/) - Official
 - [OC Little Translate](https://github.com/5T33Z0/OC-Little-Translated) - 3rd Party References
 
-## About this build
+## Hardware and Devices
 
 :arrow_forward: **Native**
 
-- ASM3241 USB 3.2 Host Controller
 - 400 Series Chipset Family SATA AHCI Controller
+- ASM3241 USB 3.2 Host Controller
 - BCM4360 802.11ac Wireless Network Adapter
+- Comet Lake PCH-V SMBus Host Controller
+- Comet Lake-S 6c Host Bridge/DRAM Controller
+- Intel UHD Graphics 630 (Headless) + `agdpmod` `string` `pikera`
 - Kingston A2000 NVMe SSD1
 - Kingston A2000 NVMe SSD2
 - Navi 10 HDMI Audio
+- Navi 14 Radeon RX 5500 XT
 
-:arrow_forward: **Requires Patching**
+:arrow_forward: **Not Native**
 
-- Comet Lake PCH-V Converged Audio Voice Speech (ALCS1200A) + [AppleALC](https://github.com/acidanthera/AppleALC)
-- Comet Lake PCH-V SMBus Host Controller + [SSDT-SBUS](https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus.html) - Not compulsory, see [here](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/README.md#sbus) for more info
-- Comet Lake PCH-V USB Controller + [USBMap](https://github.com/USBToolBox/tool)
-- Comet Lake-S 6c Host Bridge/DRAM Controller + `DRAM` rename. Also known as [SSDT-MCHC](https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus.html)
-- Ethernet Connection (11) I219-V + [IntelMausi](https://github.com/acidanthera/IntelMausi)
-- Intel UHD Graphics 630 (Headless) + Additional patch with [WhateverGreen](https://github.com/acidanthera/WhateverGreen) + `agdpmod` - `data` - `70696B65726100`
-- Navi 14 Radeon RX 5500 XT + Additional patch with [WhateverGreen](https://github.com/acidanthera/WhateverGreen)
+- Comet Lake PCH-V Converged Audio Voice Speech (ALCS1200A)
+- Comet Lake PCH-V USB Controller
+- Ethernet Connection (11) I219-V
+
 - RTL8125 2.5GbE Controller + [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)
 
 > **Note**: This project requires `agdpmod=pikera,` which replaces the Navi variant GPU's `board-id` with `board-ix` in order to fix the black screen issue [originated](https://pikeralpha.wordpress.com/2015/11/23/patching-applegraphicsdevicepolicy-kext/) by [Piker R. Alpha](https://github.com/Piker-Alpha). Do not confuse; certain `agdpmod` features via [WhateverGreen](https://github.com/acidanthera/WhateverGreen) can be injected into both iGPU and dGPU. Best combination may improve stability.
@@ -163,21 +164,15 @@ No variant specified, falling back to release
   166    1 0xffffff7f98f81000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) E4F2BA31-6A3A-3690-A863-80A993E08DF0 <165 16 15 7 6 3>
 ```
 
-### Sorting Kexts
+### Specific Drivers and Sorting Kexts
 
-Sorting important kexts shall improve `debug` log and `data` injection.
-
-![sort](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/12afd08e-862b-43b1-8d5f-638d2061f5b6)
-
-### Drivers
-
-Use only needed drivers. Sort the drivers may improve boot speed.
+Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging.
 
 ![drivers](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/d263cd52-3b99-49d0-a40f-b6b15b494dfe)
-
 ![drivers_plist](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/079acaa1-5ec7-4e41-922e-b608e185f523)
+![sort](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/12afd08e-862b-43b1-8d5f-638d2061f5b6)
 
-### Useful Windows command
+### Useful PowerShell Command
 
 This command help us to specify need information in order to build our own hackintosh and set `AAPL,slot-name` properly. Please check `SlotDesignation` as references.
 
