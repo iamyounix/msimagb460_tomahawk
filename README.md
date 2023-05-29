@@ -130,7 +130,7 @@ Use this properties to enable multitab gpu's. Requirement:
 - Check using any 4k videos using [Youtube](https://www.youtube.com/) ie: [COSTA RICA IN 4K 60fps HDR (ULTRA HD)](https://www.youtube.com/watch?v=LXb3EKWsInQ&t=153s).
 - Play video and select 4k Resolution.
 
-<p align="center"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/72515939/240360312-def828d3-824f-427a-bf6a-70206cdad33a.png" width="900" height="550"></p>
+<p align="center"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/72515939/240360312-def828d3-824f-427a-bf6a-70206cdad33a.png" width="900" height="500"></p>
 
 - If GPU Time for iGPU is higher than other GPU ie: AMD, your quicksync works perfect.
 
