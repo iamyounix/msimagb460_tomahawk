@@ -44,7 +44,7 @@ This is my EFI from Hackintosh desktop. This project isn't ideal, but it does th
 - Comet Lake PCH-V Converged Audio Voice Speech (ALCS1200A) + [AppleALC](https://github.com/acidanthera/AppleALC)
 - Comet Lake PCH-V SMBus Host Controller + [SSDT-SBUS](https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus.html) - Not compulsory, see [here](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/README.md#sbus) for more info
 - Comet Lake PCH-V USB Controller + [USBMap](https://github.com/USBToolBox/tool)
-- Comet Lake-S 6c Host Bridge/DRAM Controller + `DRAM` rename. Also known as [SSDT-MCHC](https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus.html) 
+- Comet Lake-S 6c Host Bridge/DRAM Controller + `DRAM` rename. Also known as [SSDT-MCHC](https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus.html)
 - Ethernet Connection (11) I219-V + [IntelMausi](https://github.com/acidanthera/IntelMausi)
 - Intel UHD Graphics 630 (Headless) + Additional patch with [WhateverGreen](https://github.com/acidanthera/WhateverGreen) + `agdpmod` - `data` - `70696B65726100`
 - Navi 14 Radeon RX 5500 XT + Additional patch with [WhateverGreen](https://github.com/acidanthera/WhateverGreen)
@@ -183,9 +183,9 @@ This command help us to specify need information in order to build our own hacki
 
 - **Slot Check**
   - Open Windows Powershell, copy and paste `Get-WmiObject -class "Win32_SystemSlot"`
-    
+
     **Example:** X16 slot
-    
+
     ```powershell
     SlotDesignation : Slot1 / X16PCIEXP // Refer to x16 slot capability
     Tag             : System Slot 0 // Use this as references. 
@@ -195,13 +195,13 @@ This command help us to specify need information in order to build our own hacki
     PMESignal       : True
     MaxDataWidth    : 10
     ```
-    
+
     Explanation: Slot1 X16PCIEXP is refered to x16 PCI slot capabilities. The exact match for `AAPL,slot-name` is `Slot- 1`. Remember, most     iGPU built-in with processor is considered as `Slot- 0`.
 
 - **Dump most information about hardware**
   - Open Windows Powershell, copy and paste `Get-WmiObject -class "Win32_PnPEntity"`
   - Copy all dumped info from Powershell and paste to any text editor as references.
- 
+
 ## Results
 
 ![hardware](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/e462231a-8feb-4ad0-a0c6-d91c606ecde7)
