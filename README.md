@@ -13,12 +13,6 @@ Table of contents:
 - [Base Files](#base-files)
 - [Changelog](#changelog)
 - [Tips](#tips)
-  - [Sorting Kexts](#sorting-kexts)
-  - [Drivers](#drivers)
-  - [MMIO Whitelist](#mmio-whitelist)
-  - [Enable Multi Tab GPU](#enable-multi-tab-gpu)
-  - [SBUS](#sbus)
-  - [Useful Windows Command](#useful-windows-command)
 - [Results](#results)
 - [Credits](#credits)
 
@@ -99,12 +93,11 @@ This is my EFI from Hackintosh desktop. This project isn't ideal, but it does th
 
 ## Changelog
 
-- Add `RestrictEvents.kext`. Refer `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` / `revpatch`  / `diskread` to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
+- Add [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
 - Add NVMe/SSD Trim patch (default is disable)
 - Clean and Optimised ACPI code (Single .aml file)
-- Desktop `Quirks` presets (10th Gen)
 - iMac20,1 SMBIOS.
-- Stable `RX5500XT Mech OC 4GB` plist patch via config.plist.
+- Stable [RX5500XT Mech OC 4GB](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G-OC) patch via config.plist.
 - Support Big Sur, Monterey and Ventura.
 
 **Do Note!**
@@ -119,26 +112,6 @@ This is my EFI from Hackintosh desktop. This project isn't ideal, but it does th
 ![arch](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3c1b7e37-a72f-4617-8cda-63241384e500)
 
 ## Tips
-
-### Sorting Kexts
-
-Sorting important kexts shall improve `debug` log and `data` injection.
-
-![sort](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/12afd08e-862b-43b1-8d5f-638d2061f5b6)
-
-### Drivers
-
-Use only needed drivers. Sort the drivers may improve boot speed.
-
-![drivers](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/d263cd52-3b99-49d0-a40f-b6b15b494dfe)
-
-![drivers_plist](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/079acaa1-5ec7-4e41-922e-b608e185f523)
-
-### MMIO Whitelist
-
-MMIO stands for Memory-Mapped Input/Output. It's a method to perform I/O processes between the CPU and peripheral devices of a computer. The memory and registers of the I/O devices are mapped to (and associated with) address values. MMIO whitelist is a security feature that controls access to certain memory addresses in a computer system, allowing access only to specific processes or devices that have been explicitly granted permission and denying access to all others. This patch may improve stability. Refer [5T33Z0 - MMIO Whitelist](https://github.com/5T33Z0/OC-Little-Translated/tree/main/12_MMIO_Whitelist) for more info
-
-![mmiowhitelist](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/a7f8b000-64c5-4d19-8edd-52ef6e00fa00)
 
 ### Enable Multi Tab GPU
 
@@ -157,11 +130,17 @@ Use this properties to enable multitab gpu's. Requirement:
 - Check using any 4k videos using [Youtube](https://www.youtube.com/) ie: [COSTA RICA IN 4K 60fps HDR (ULTRA HD)](https://www.youtube.com/watch?v=LXb3EKWsInQ&t=153s).
 - Play video and select 4k Resolution.
 
-![Screenshot 2023-05-24 at 12 32 43 AM](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/def828d3-824f-427a-bf6a-70206cdad33a)
+<p align="center"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/72515939/240360312-def828d3-824f-427a-bf6a-70206cdad33a.png" width="900" height="550"></p>
 
 - If GPU Time for iGPU is higher than other GPU ie: AMD, your quicksync works perfect.
 
 ![quicksync](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/e6b12a81-3704-45d8-afc5-200672ace430)
+
+### MMIO Whitelist
+
+MMIO stands for Memory-Mapped Input/Output. It's a method to perform I/O processes between the CPU and peripheral devices of a computer. The memory and registers of the I/O devices are mapped to (and associated with) address values. MMIO whitelist is a security feature that controls access to certain memory addresses in a computer system, allowing access only to specific processes or devices that have been explicitly granted permission and denying access to all others. This patch may improve stability. Refer [5T33Z0 - MMIO Whitelist](https://github.com/5T33Z0/OC-Little-Translated/tree/main/12_MMIO_Whitelist) for more info
+
+![mmiowhitelist](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/a7f8b000-64c5-4d19-8edd-52ef6e00fa00)
 
 ### SBUS
 
@@ -183,6 +162,20 @@ No variant specified, falling back to release
   150    0 0xffffff7f98f8d000 0x1000     0x1000     com.apple.driver.AppleSMBusPCI (1.0.14d1) 76173829-8756-3746-9516-A60DABEB950C <16 7 6 3>
   166    1 0xffffff7f98f81000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) E4F2BA31-6A3A-3690-A863-80A993E08DF0 <165 16 15 7 6 3>
 ```
+
+### Sorting Kexts
+
+Sorting important kexts shall improve `debug` log and `data` injection.
+
+![sort](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/12afd08e-862b-43b1-8d5f-638d2061f5b6)
+
+### Drivers
+
+Use only needed drivers. Sort the drivers may improve boot speed.
+
+![drivers](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/d263cd52-3b99-49d0-a40f-b6b15b494dfe)
+
+![drivers_plist](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/079acaa1-5ec7-4e41-922e-b608e185f523)
 
 ### Useful Windows command
 
