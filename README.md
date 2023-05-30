@@ -151,7 +151,7 @@
         -   Slot1 X16PCIEXP is refered to x16 PCI slot capabilities. The exact match for `AAPL,slot-name` is `Slot- 1`. Remember, most iGPU built-in with processor is considered as `Slot- 0`.
         -   Another way is using `Get-WmiObject -class "Win32_PnPEntity"`. Copy all dumped info from Powershell and paste to any text editor as references.
 
--   OpenCanopy Theme
+-   **OpenCanopy Theme**
 
     -   [younix rad theme](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/theme_younix.zip)
 
