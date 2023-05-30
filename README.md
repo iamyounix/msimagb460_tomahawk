@@ -73,7 +73,7 @@
         │  ├── 📃 Image                    // Additional (release)
         │  └── 📃 Label                    // Additional (release)
         ├── 📁 Tools
-        │  ├── 📃 OpenShell.efi            // Requires with debug version (OC Base File)   
+        │  └── 📃 OpenShell.efi            // Requires with debug version (OC Base File)   
         ├── 📃 config.plist                // Configuration  (OC Base File)
         └── 📃 OpenCore.efi                // OC Base File
     ```
