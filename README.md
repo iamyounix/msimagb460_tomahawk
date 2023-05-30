@@ -113,9 +113,26 @@
 
     -   Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging.
 
-    ![drivers](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/d263cd52-3b99-49d0-a40f-b6b15b494dfe)
-    ![drivers_plist](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/079acaa1-5ec7-4e41-922e-b608e185f523)
-    ![sort](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/12afd08e-862b-43b1-8d5f-638d2061f5b6)
+        ```zsh
+        📁 Drivers
+        ├── 📃 HfsPlus.efi              // 1
+        ├── 📃 OpenCanopy.efi           // 2
+        └── 📃 OpenRuntime.efi          // 3
+
+        📁 Kexts
+        ├── 📃 Lilu.kext                // 1
+        ├── 📃 VirtualSMC.kext          // 2          
+        ├── 📃 SMCProcessor.kext        // 3       
+        ├── 📃 SMCSuperIO.kext          // 4         
+        ├── 📃 RadeonSensor.kext        // 5         
+        ├── 📃 SMCRadeonGPU.kext        // 6         
+        ├── 📃 AppleALC.kext            // 7                        
+        ├── 📃 WhateverGreen.kext       // 8         
+        ├── 📃 IntelMausi.kext          // 9          
+        ├── 📃 LucyRTL8125Ethernet.kext // 10 
+        ├── 📃 RestrictEvents.kext      // 11      
+        └── 📃 USBMap.kext              // 12
+        ```
 
 -   **Useful PowerShell Command**
 
