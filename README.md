@@ -133,10 +133,9 @@
 
 -   OpenCanopy Theme
 
-    -   [younix](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/theme_younix.zip)
+    -   [younix rad theme](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/theme_younix.zip)
 
-    ![30012256](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/2b336315-23a6-45ff-99a0-5100bfb8f469)
-    ![30012259](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/05a6afef-0ca2-4b5c-b4b4-ec5e5b45dbb8)
+    ![30073939](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/6c640b15-32a6-4b01-ba5c-307afdb74167)
 
 -   **Credits**
 
