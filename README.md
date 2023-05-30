@@ -40,6 +40,7 @@
 **Base Files**
 
 -   Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://github.com/acidanthera/OpenCorePkg/releases/), x64 folders.
+
     ```zsh
     📁 EFI
     ├── 📁 BOOT
@@ -88,7 +89,7 @@
         -   Add `enable-metal` data `01000000` (enable metal)
         -   Add `force-online` data `01000000` (always enable for offline rendering)
 
-![GPUtab](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3f7d7626-4b39-440b-a053-33737df848f9)
+    ![GPUtab](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3f7d7626-4b39-440b-a053-33737df848f9)
 
 -   **MMIO Whitelist**
 
@@ -99,6 +100,7 @@
     -   Most 8th Gen and above actually do not require `SSDT-SBUS`. 
         -   Try to load EFI without this patch and reboot. Refer [here](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/ACPI_Sample/SSDT-YNXB460.dsl) as an example.
         -   After login, copy and paste this command, `kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"`. The result will shown as below:
+        
             ```zsh
             Executing: /usr/bin/kmutil showloaded
             No variant specified, falling back to release
@@ -119,6 +121,7 @@
 
     -   This command help us to specify need information in order to build our own hackintosh and set `AAPL,slot-name` properly. Please check `SlotDesignation` as references.
         -   Open Windows Powershell, copy and paste `Get-WmiObject -class "Win32_SystemSlot"`. As an example, PCI x16 Slot.
+        
             ```powershell
             SlotDesignation : Slot1 / X16PCIEXP // Refer to x16 slot capability
             Tag             : System Slot 0 // Root Slot connected to SlotDesignation. 
@@ -135,7 +138,7 @@
 
     -   [younix rad theme](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/theme_younix.zip)
 
-    ![30073939](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/6c640b15-32a6-4b01-ba5c-307afdb74167)
+        ![30073939](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/6c640b15-32a6-4b01-ba5c-307afdb74167)
 
     -   Rad Theme Config Example:
         -   PickerAttributes = `147`
