@@ -121,7 +121,7 @@
         -   Open Windows Powershell, copy and paste `Get-WmiObject -class "Win32_SystemSlot"`. As an example, PCI x16 Slot.
             ```powershell
             SlotDesignation : Slot1 / X16PCIEXP // Refer to x16 slot capability
-            Tag             : System Slot 0 // Use this as references. 
+            Tag             : System Slot 0 // Root Slot connected with SlotDesignation. 
             SupportsHotPlug : False
             Status          : OK
             Shared          : False
