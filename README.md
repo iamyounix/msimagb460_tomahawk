@@ -18,7 +18,7 @@
 
 ### Hardware and Devices
 
-Native
+#### Native
 
 - 400 Series Chipset Family SATA AHCI Controller
 - ASM3241 USB 3.2 Host Controller
@@ -31,7 +31,7 @@ Native
 - Navi 10 HDMI Audio]
 - Navi 14 Radeon RX 5500 XT
 
-Not Native
+#### Not Native
 
 - [Comet Lake PCH-V Converged Audio Voice Speech (ALCS1200A)]
 - [Comet Lake PCH-V USB Controller]
