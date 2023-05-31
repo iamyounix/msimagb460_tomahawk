@@ -29,7 +29,7 @@ This project isn't ideal, but it does the job. Never blame me if there is an iss
 
 - [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/) - Official
 - [Dortania's Announcement](https://dortania.github.io/) - Official
-- [OC Little Translate](https://github.com/5T33Z0/OC-Little-Translated) - 3rd Party References
+- [OC Little Translate](https://github.com/5T33Z0/OC-Little-Translated) - 3rd Party
 
 ### Hardware and Devices
 
