@@ -96,7 +96,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
 ### Post Process
 
-#### Enable GPU Tab in Activity Monitor**
+#### Enable GPU Tab in Activity Monitor
 
 - If the Device Properties of your iGPU and dGPU are configured correctly, you will find the Tab "GPU" in the Activity Monitor App which lists the graphics devices and the tasks/processes assigned to each of them. Use this properties to enable gpu's tab. Requirement:
   - Change iGPU  `AAPL,slot-name` to `Slot- 0`. Most iGPU attached to this slot.
