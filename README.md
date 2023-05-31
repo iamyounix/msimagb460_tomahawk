@@ -16,7 +16,7 @@ Table of Contents
     - [Not Native](#not-native)
   - [Base Files](#base-files)
   - [Post Process](#post-process)
-    - [Enable GPU Tab in Activity Monitor**](#enable-gpu-tab-in-activity-monitor)
+    - [Enable GPU Tab in Activity Monitor](#enable-gpu-tab-in-activity-monitor)
     - [MMIO Whitelist](#mmio-whitelist)
     - [SBUS Check](#sbus-check)
     - [Specific Drivers and Sorting Kexts](#specific-drivers-and-sorting-kexts)
