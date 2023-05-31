@@ -73,7 +73,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
     ├── 📁 Kexts
     │  ├── 📃 AppleALC.kext            // Requires Lilu (OC Base File)
     │  ├── 📃 IntelMausi.kext          // Requires Lilu
-    │  ├── 📃 Lilu.kext                // Conpulsory (OC Base File)
+    │  ├── 📃 Lilu.kext                // Compulsory (OC Base File)
     │  ├── 📃 LucyRTL8125Ethernet.kext // Requires Lilu
     │  ├── 📃 RadeonSensor.kext        // Requires VirtualSMC
     │  ├── 📃 RestrictEvents.kext      // Requires Lilu (Lilu Kernel extension)
