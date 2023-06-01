@@ -126,7 +126,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
   - Check `AppleSMBusController` and `AppleSMBUSPCI` kexts using `System Reports` / `Software` / `Extensions`. If both loads, it means your `SBUS` is working natively without any patches.
 
-#### Specific Drivers and Sorting Kexts 
+#### Specific Drivers and Sorting Kexts
 
 - Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stability (Recommended). Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging.
 
@@ -193,7 +193,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
   
   - Our EFI structure shall be like this:
 
-  ```
+  ```zsh
   📁 EFI
   ├── 📁 BOOT
   │   └── 📃 BOOTx64.efi
@@ -281,7 +281,8 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
       ├── 📁 Tools
       │   └── 📃 OpenShell.efi
       └── 📁 config.plist
-    
+  ```
+
 #### Useful PowerShell Command
 
 - This command help us to specify need information in order to build our own hackintosh and set `AAPL,slot-name` properly. Please check `SlotDesignation` as references.
