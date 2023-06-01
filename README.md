@@ -283,7 +283,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
         └── 📁 config.plist
     ```
 
-  - Download [this](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Specific.Drivers.and.Sorting.Kexts.zip) file as an example.
+  - Download [this](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/Sorted%20Kexts%20(Plugins).zip) file as an example.
   
 #### Useful PowerShell Command
 
