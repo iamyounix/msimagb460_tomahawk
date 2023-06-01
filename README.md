@@ -122,12 +122,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
   - Try to load EFI without this patch and reboot. Refer [here](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/ACPI_Sample/SSDT-YNXB460.dsl) as an example.
   - After login, copy and paste this command, `kextstat | grep -E "AppleSMBusController|AppleSMBusPCI"`. The result will shown as below:
 
-    ```zsh
-    Executing: /usr/bin/kmutil showloaded
-    No variant specified, falling back to release
-    150    0 0xffffff7f98f8d000 0x1000     0x1000     com.apple.driver.AppleSMBusPCI (1.0.14d1) 76173829-8756-3746-9516-A60DABEB950C <16 7 6 3>
-    166    1 0xffffff7f98f81000 0x7000     0x7000     com.apple.driver.AppleSMBusController (1.0.18d1) E4F2BA31-6A3A-3690-A863-80A993E08DF0 <165 16 15 7 6 3>
-    ```
+  ![sbus](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/801d1c7b-5102-407c-8373-7d930803750e)
 
   - Check `AppleSMBusController` and `AppleSMBUSPCI` kexts using `System Reports` / `Software` / `Extensions`. If both loads, it means your `SBUS` is working natively without any patches.
 
