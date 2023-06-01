@@ -153,9 +153,9 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
     ```
 
 - Method 2 (Recommended)
-  - Adding `Plugins` folder inside `Lilu.kext` and certain kext to improve stability. Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging.
+  - Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stability. Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging.
 
-  > **Note:**  All kext contain in `Plugins` is the kexts which rely on Lilu.kext
+    > **Note:**  All kexts contained in the `Plugins` folder are the kexts that rely on Lilu.
 
     ```zsh
     📁 Drivers
@@ -212,7 +212,9 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
                         └── 📃 WhateverGreen
     ```
 
-  - Open config.plist using Propertree, and use **OC Clean Snapshot** function (CMD+Shift+R) to capture all kext (include plugins folder). Below is an example:
+  - Open config.plist using [Propertree](https://github.com/corpnewt/ProperTree), and use **OC Clean Snapshot** function (CMD+Shift+R) to capture all kext (include plugins folder). Below is an example:
+  
+  ![propertree_kext example](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/30063d0c-5b94-4e2d-94f5-1e92407eb938)
 
 #### Useful PowerShell Command
 
