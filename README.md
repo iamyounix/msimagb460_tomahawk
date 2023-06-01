@@ -106,6 +106,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
   - Add `force-online` data `01000000` (always enable for offline rendering)
 
   ![GPUtab](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3f7d7626-4b39-440b-a053-33737df848f9)
+  ![quicksync](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/36807524-6733-42b1-8e23-3d9aa1c6ff64)
 
 #### MMIO Whitelist
 
@@ -134,9 +135,9 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
   ```zsh
   📁 Drivers
-  ├── 📃 HfsPlus.efi              // 1
-  ├── 📃 OpenCanopy.efi           // 2
-  └── 📃 OpenRuntime.efi          // 3
+  ├── 📃 HfsPlus.efi                                        // 1
+  ├── 📃 OpenCanopy.efi                                     // 2
+  └── 📃 OpenRuntime.efi                                    // 3
 
   📁 Lilu
   └── Contents
