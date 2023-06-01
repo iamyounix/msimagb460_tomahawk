@@ -126,95 +126,70 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
   - Check `AppleSMBusController` and `AppleSMBUSPCI` kexts using `System Reports` / `Software` / `Extensions`. If both loads, it means your `SBUS` is working natively without any patches.
 
-#### Specific Drivers and Sorting Kexts
+#### Specific Drivers and Sorting Kexts 
 
-- Method 1
-  - Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging.
+- Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stability (Recommended). Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging.
 
-    ```zsh
-    📁 Drivers
-    ├── 📃 HfsPlus.efi              // 1
-    ├── 📃 OpenCanopy.efi           // 2
-    └── 📃 OpenRuntime.efi          // 3
+  > **Note:**  All kexts contained in the `Plugins` folder are the kexts that rely on Lilu.
 
-    📁 Kexts
-    ├── 📃 Lilu.kext                // 1
-    ├── 📃 VirtualSMC.kext          // 2          
-    ├── 📃 SMCProcessor.kext        // 3       
-    ├── 📃 SMCSuperIO.kext          // 4         
-    ├── 📃 RadeonSensor.kext        // 5         
-    ├── 📃 SMCRadeonGPU.kext        // 6         
-    ├── 📃 AppleALC.kext            // 7                        
-    ├── 📃 WhateverGreen.kext       // 8         
-    ├── 📃 IntelMausi.kext          // 9          
-    ├── 📃 LucyRTL8125Ethernet.kext // 10 
-    ├── 📃 RestrictEvents.kext      // 11      
-    └── 📃 USBMap.kext              // 12
-    ```
+  ```zsh
+  📁 Drivers
+  ├── 📃 HfsPlus.efi              // 1
+  ├── 📃 OpenCanopy.efi           // 2
+  └── 📃 OpenRuntime.efi          // 3
 
-- Method 2 (Recommended)
-  - Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stability. Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging.
-
-    > **Note:**  All kexts contained in the `Plugins` folder are the kexts that rely on Lilu.
-
-    ```zsh
-    📁 Drivers
-    ├── 📃 HfsPlus.efi              // 1
-    ├── 📃 OpenCanopy.efi           // 2
-    └── 📃 OpenRuntime.efi          // 3
-
-    📁 Lilu
-    └── Contents
-        ├── 📃 Info.plist
-        ├── 📁 MacOS
-        │   └── 📃 Lilu
-        └── 📁 Plugins                                        // plugin that depends on Lilu.kext
-            ├── 📁 AppleALC.kext
-            │   └── 📁 Contents
-            │       ├── 📃 Info.plist
-            │       └── 📁 MacOS
-            │           └── 📃 AppleALC
-            ├── 📁 RadeonSensor.kext
-            │   └── 📁 Contents
-            │       ├── 📃 Info.plist
-            │       ├── 📁 MacOS
-            │       │   └── 📃 RadeonSensor
-            │       ├── 📁 Plugins                            // plugin that depends on RadeonSensor.kext
-            │       │   └── 📁 SMCRadeonGPU.kext
-            │       │       └── 📁 Contents
-            │       │           ├── 📃 Info.plist
-            │       │           ├── 📁 MacOS
-            │       │           │   └── 📃 SMCRadeonGPU
-            │       │           └── 📁 _CodeSignature
-            │       │               └── 📃 CodeResources
-            │       └── 📁 _CodeSignature
-            │           └── 📃 CodeResources
-            ├── VirtualSMC.kext
-            │   └── Contents
-            │       ├── 📃 Info.plist
-            │       ├── 📁 MacOS
-            │       │   └── 📃 VirtualSMC
-            │       └── Plugins                               // plugin that depends on VirtualSMC.kext
-            │           ├── 📁 SMCProcessor.kext
-            │           │   └── 📃 Contents
-            │           │       ├── 📁 Info.plist
-            │           │       └── MacOS
-            │           │           └── 📃 SMCProcessor
-            │           └── SMCSuperIO.kext
-            │               └── Contents
-            │                   ├── 📃 Info.plist
-            │                   └── 📁 MacOS
-            │                       └── 📃 SMCSuperIO
-            └── 📁 WhateverGreen.kext
-                └── 📁 Contents
-                    ├── 📃 Info.plist
-                    └── 📁 MacOS
-                        └── 📃 WhateverGreen
-    ```
+  📁 Lilu
+  └── Contents
+      ├── 📃 Info.plist
+      ├── 📁 MacOS
+      │   └── 📃 Lilu
+      └── 📁 Plugins                                        // plugin that depends on Lilu.kext
+          ├── 📁 AppleALC.kext
+          │   └── 📁 Contents
+          │       ├── 📃 Info.plist
+          │       └── 📁 MacOS
+          │           └── 📃 AppleALC
+          ├── 📁 RadeonSensor.kext
+          │   └── 📁 Contents
+          │       ├── 📃 Info.plist
+          │       ├── 📁 MacOS
+          │       │   └── 📃 RadeonSensor
+          │       ├── 📁 Plugins                            // plugin that depends on RadeonSensor.kext
+          │       │   └── 📁 SMCRadeonGPU.kext
+          │       │       └── 📁 Contents
+          │       │           ├── 📃 Info.plist
+          │       │           ├── 📁 MacOS
+          │       │           │   └── 📃 SMCRadeonGPU
+          │       │           └── 📁 _CodeSignature
+          │       │               └── 📃 CodeResources
+          │       └── 📁 _CodeSignature
+          │           └── 📃 CodeResources
+          ├── VirtualSMC.kext
+          │   └── Contents
+          │       ├── 📃 Info.plist
+          │       ├── 📁 MacOS
+          │       │   └── 📃 VirtualSMC
+          │       └── Plugins                               // plugin that depends on VirtualSMC.kext
+          │           ├── 📁 SMCProcessor.kext
+          │           │   └── 📃 Contents
+          │           │       ├── 📁 Info.plist
+          │           │       └── MacOS
+          │           │           └── 📃 SMCProcessor
+          │           └── SMCSuperIO.kext
+          │               └── Contents
+          │                   ├── 📃 Info.plist
+          │                   └── 📁 MacOS
+          │                       └── 📃 SMCSuperIO
+          └── 📁 WhateverGreen.kext
+              └── 📁 Contents
+                  ├── 📃 Info.plist
+                  └── 📁 MacOS
+                      └── 📃 WhateverGreen
+  ```
 
   - Open config.plist using [Propertree](https://github.com/corpnewt/ProperTree), and use **OC Clean Snapshot** function (CMD+Shift+R) to capture all kext (include plugins folder). Below is an example:
   
-  ![propertree_kext example](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/30063d0c-5b94-4e2d-94f5-1e92407eb938)
+  ![propertree_lilu_plugins](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/365b7021-7f04-4bfa-bae8-5f15f87bf702)
 
 #### Useful PowerShell Command
 
