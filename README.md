@@ -128,28 +128,91 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
 #### Specific Drivers and Sorting Kexts
 
-- Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging.
+- Method 1
+  - Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging.
 
-  ```zsh
-  📁 Drivers
-  ├── 📃 HfsPlus.efi              // 1
-  ├── 📃 OpenCanopy.efi           // 2
-  └── 📃 OpenRuntime.efi          // 3
+    ```zsh
+    📁 Drivers
+    ├── 📃 HfsPlus.efi              // 1
+    ├── 📃 OpenCanopy.efi           // 2
+    └── 📃 OpenRuntime.efi          // 3
 
-  📁 Kexts
-  ├── 📃 Lilu.kext                // 1
-  ├── 📃 VirtualSMC.kext          // 2          
-  ├── 📃 SMCProcessor.kext        // 3       
-  ├── 📃 SMCSuperIO.kext          // 4         
-  ├── 📃 RadeonSensor.kext        // 5         
-  ├── 📃 SMCRadeonGPU.kext        // 6         
-  ├── 📃 AppleALC.kext            // 7                        
-  ├── 📃 WhateverGreen.kext       // 8         
-  ├── 📃 IntelMausi.kext          // 9          
-  ├── 📃 LucyRTL8125Ethernet.kext // 10 
-  ├── 📃 RestrictEvents.kext      // 11      
-  └── 📃 USBMap.kext              // 12
-  ```
+    📁 Kexts
+    ├── 📃 Lilu.kext                // 1
+    ├── 📃 VirtualSMC.kext          // 2          
+    ├── 📃 SMCProcessor.kext        // 3       
+    ├── 📃 SMCSuperIO.kext          // 4         
+    ├── 📃 RadeonSensor.kext        // 5         
+    ├── 📃 SMCRadeonGPU.kext        // 6         
+    ├── 📃 AppleALC.kext            // 7                        
+    ├── 📃 WhateverGreen.kext       // 8         
+    ├── 📃 IntelMausi.kext          // 9          
+    ├── 📃 LucyRTL8125Ethernet.kext // 10 
+    ├── 📃 RestrictEvents.kext      // 11      
+    └── 📃 USBMap.kext              // 12
+    ```
+
+- Method 2 (Recommended)
+  - Adding `Plugins` folder inside `Lilu.kext` and certain kext to improve stability. Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging.
+
+  > **Note:**  All kext contain in `Plugins` is the kexts which rely on Lilu.kext
+
+    ```zsh
+    📁 Drivers
+    ├── 📃 HfsPlus.efi              // 1
+    ├── 📃 OpenCanopy.efi           // 2
+    └── 📃 OpenRuntime.efi          // 3
+
+    📁 Lilu
+    └── Contents
+        ├── 📃 Info.plist
+        ├── 📁 MacOS
+        │   └── 📃 Lilu
+        └── 📁 Plugins                                        // plugin that depends on Lilu.kext
+            ├── 📁 AppleALC.kext
+            │   └── 📁 Contents
+            │       ├── 📃 Info.plist
+            │       └── 📁 MacOS
+            │           └── 📃 AppleALC
+            ├── 📁 RadeonSensor.kext
+            │   └── 📁 Contents
+            │       ├── 📃 Info.plist
+            │       ├── 📁 MacOS
+            │       │   └── 📃 RadeonSensor
+            │       ├── 📁 Plugins                            // plugin that depends on RadeonSensor.kext
+            │       │   └── 📁 SMCRadeonGPU.kext
+            │       │       └── 📁 Contents
+            │       │           ├── 📃 Info.plist
+            │       │           ├── 📁 MacOS
+            │       │           │   └── 📃 SMCRadeonGPU
+            │       │           └── 📁 _CodeSignature
+            │       │               └── 📃 CodeResources
+            │       └── 📁 _CodeSignature
+            │           └── 📃 CodeResources
+            ├── VirtualSMC.kext
+            │   └── Contents
+            │       ├── 📃 Info.plist
+            │       ├── 📁 MacOS
+            │       │   └── 📃 VirtualSMC
+            │       └── Plugins                               // plugin that depends on VirtualSMC.kext
+            │           ├── 📁 SMCProcessor.kext
+            │           │   └── 📃 Contents
+            │           │       ├── 📁 Info.plist
+            │           │       └── MacOS
+            │           │           └── 📃 SMCProcessor
+            │           └── SMCSuperIO.kext
+            │               └── Contents
+            │                   ├── 📃 Info.plist
+            │                   └── 📁 MacOS
+            │                       └── 📃 SMCSuperIO
+            └── 📁 WhateverGreen.kext
+                └── 📁 Contents
+                    ├── 📃 Info.plist
+                    └── 📁 MacOS
+                        └── 📃 WhateverGreen
+    ```
+
+  - Open config.plist using Propertree, and use **OC Clean Snapshot** function (CMD+Shift+R) to capture all kext (include plugins folder). Below is an example:
 
 #### Useful PowerShell Command
 
