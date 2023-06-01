@@ -283,6 +283,8 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
         └── 📁 config.plist
     ```
 
+  - Download [this](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/Specific.Drivers.and.Sorting.Kexts.zip) file as an example.
+  
 #### Useful PowerShell Command
 
 - This command help us to specify need information in order to build our own hackintosh and set `AAPL,slot-name` properly. Please check `SlotDesignation` as references.
