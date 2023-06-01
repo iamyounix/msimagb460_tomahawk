@@ -187,7 +187,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
                       └── 📃 WhateverGreen
   ```
 
-  - Open config.plist using [Propertree](https://github.com/corpnewt/ProperTree), and use **OC Clean Snapshot** function (`CMD`+`Shift`+`R`) to capture all kext (include plugins folder). Below is an example:
+  - Open config.plist using [Propertree](https://github.com/corpnewt/ProperTree), and use **OC Clean Snapshot** function (`CMD`+`Shift`+`R`) to capture all kext (include plugins folder). [Here](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/kexts.plist) is an example in plist format. Below is the graphical structure:
   
   ![propertree_lilu_plugins](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/365b7021-7f04-4bfa-bae8-5f15f87bf702)
   
