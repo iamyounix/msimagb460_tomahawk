@@ -94,7 +94,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
     │  └── 📃 Label                    // OpenCore Binary Data (release)
     ├── 📁 Tools
     │  └── 📃 OpenShell.efi            // OpenCore Extensible Firmware Interface (debug & release) 
-    ├── 📃 config.plist                // OpenCore Configuration  (debug & release)
+    ├── 📃 config.plist                // OpenCore Configuration (debug & release)
     └── 📃 OpenCore.efi                // OpenCore Extensible Firmware Interface (debug & release)
 ```
 
