@@ -102,7 +102,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
 #### Enable GPU Tab in Activity Monitor
 
-- If the Device Properties of your iGPU and dGPU are configured correctly, you will find the Tab "GPU" in the Activity Monitor App which lists the graphics devices and the tasks/processes assigned to each of them. Use this properties to enable gpu's tab. Requirement:
+- If the Device Properties of iGPU and dGPU are configured correctly, you will find the Tab "GPU" in the Activity Monitor App which lists the graphics devices and the tasks/processes assigned to each of them. Use this properties to enable gpu's tab. Requirement:
   - Change iGPU  `AAPL,slot-name` to `Slot- 0`. Most iGPU attached to this slot.
   - Add `AAPL,ig-platform-id` data `0300C59B` / `0300C89B` (headless Comet Lake platform)
   - Add `device-id` data `9B3E0000`  (Kaby Lake device id is required to properly rename GPU as UHD 630 on Comet Lake platform)
@@ -126,7 +126,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
   ![sbus](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/801d1c7b-5102-407c-8373-7d930803750e)
 
-  - Check `AppleSMBusController` and `AppleSMBUSPCI` kexts using `System Reports` / `Software` / `Extensions`. If both loads, it means your `SBUS` is working natively without any patches. Below is an example:
+  - Check `AppleSMBusController` and `AppleSMBUSPCI` kexts using `System Reports` / `Software` / `Extensions`. If both loads, `SBUS` is working native without any patches. Below is an example:
 
   ![sbus_check](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/a606a15f-4aef-48cc-bd0a-b205ba2fc8b0)
 
