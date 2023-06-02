@@ -305,7 +305,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
 - SIP is enable by default by using release version (`csr-active-config` / `data` / `00000000`).
 
-![sipenabled](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/4c6bf1c8-b3be-4091-89d0-5a831ac73fb0)
+![sipenabled](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3a4f13de-c965-483b-baca-730ef1c56c68)
 
 > **Note:**  Please set `ToggleSIP` to `enable` after switch from `debug` to `release`
 
