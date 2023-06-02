@@ -16,12 +16,10 @@
 - iMac20,1 SMBIOS.
 - Stable [RX5500XT Mech OC 4GB](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G-OC) patch via config.plist.
 - Support Big Sur, Monterey and Ventura.
-
-**Debug** - SIP disabled
+- Debug - SIP disabled
   - boot args
     - `-liludbg`, `-dbgenhdbg`, `-dbgenhiolog`, `-v`, `-vsmcdbg`, `-wegdbg`, `debug=0x100`, `keepsyms=1`, `-revdbg`
-
-**Release** - SIP enabled 
+- Release - SIP enabled 
   - boot args
     - none
 
