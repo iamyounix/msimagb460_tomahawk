@@ -305,6 +305,8 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
 ![sipenabled](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/4c6bf1c8-b3be-4091-89d0-5a831ac73fb0)
 
+> **Note:**  Please set `ToggleSIP` to `enable` after switch from `debug` to `release`
+
 #### Theme
 
 - Get [here](https://github.com/iamyounix/younix_octheme)
