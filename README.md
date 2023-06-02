@@ -60,7 +60,7 @@ This project isn't ideal, but it does the job. Never blame me if there is an iss
 
 ### Base Files
 
-Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://github.com/acidanthera/OpenCorePkg/releases/), x64 folders.
+Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://github.com/acidanthera/OpenCorePkg/releases/) (x64) and [Binary Data](https://github.com/acidanthera/OcBinaryData).
 
 ```zsh
 📁 EFI
@@ -70,7 +70,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
     ├── 📁 ACPI
     │  └── 📃 SSDT-YNXB460.aml         // An additional patches using Secondary System Description Tables
     ├── 📁 Drivers
-    │  ├── 📃 HfsPlus.efi              // OpenCore Extensible Firmware Interface, Binary Package (release)
+    │  ├── 📃 HfsPlus.efi              // OpenCore Extensible Firmware Interface, Binary Data (release)
     │  ├── 📃 OpenCanopy.efi           // OpenCore Extensible Firmware Interface, OpenCore Package (debug & release)
     │  ├── 📃 OpenRuntime.efi          // OpenCore Extensible Firmware Interface, OpenCore Package (debug & release)
     │  ├── 📃 ResetNvramEntry.efi      // OpenCore Extensible Firmware Interface, OpenCore Package (debug & release)
@@ -88,10 +88,10 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
     │  ├── 📃 VirtualSMC.kext          // Compulsory, Lilu extension (debug & release)
     │  └── 📃 WhateverGreen.kext       // Compulsory, Lilu extension (debug & release)
     ├── 📁 Resources
-    │  ├── 📃 Audio                    // OpenCore Binary Package (release)
-    │  ├── 📃 Font                     // OpenCore Binary Package (release)
-    │  ├── 📃 Image                    // OpenCore Binary Package (release)
-    │  └── 📃 Label                    // OpenCore Binary Package (release)
+    │  ├── 📃 Audio                    // OpenCore Binary Data (release)
+    │  ├── 📃 Font                     // OpenCore Binary Data (release)
+    │  ├── 📃 Image                    // OpenCore Binary Data (release)
+    │  └── 📃 Label                    // OpenCore Binary Data (release)
     ├── 📁 Tools
     │  └── 📃 OpenShell.efi            // OpenCore Extensible Firmware Interface (debug & release) 
     ├── 📃 config.plist                // OpenCore Configuration  (debug & release)
