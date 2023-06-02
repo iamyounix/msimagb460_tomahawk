@@ -309,9 +309,9 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
 #### Theme
 
-Get [here](https://github.com/iamyounix/younix_octheme)
+- Get [here](https://github.com/iamyounix/younix_octheme)
 
-![kora_mini](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/879ab643-f1bb-4cbd-b51c-e4bdacc66a75)
+![kora](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/5d30de6f-d4c9-4aa0-9fcf-405898cf6b89)
 
 ## Credits
 
