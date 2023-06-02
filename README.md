@@ -313,7 +313,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
 #### Debug Log
 
-View debug log [here]
+View debug log [here](https://github.com/iamyounix/msimagb460_tomahawk/tree/main/Debug_Log)
 
 ## Credits
 
