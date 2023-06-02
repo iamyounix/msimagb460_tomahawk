@@ -67,33 +67,32 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
     ├── 📁 ACPI
     │  └── 📃 SSDT-YNXB460.aml         // An additional patches using Secondary System Description Tables
     ├── 📁 Drivers
-    │  ├── 📃 HfsPlus.efi              // Compulsory (OC Base File)
-    │  ├── 📃 OpenCanopy.efi           // Additional (release)
-    │  ├── 📃 OpenRuntime.efi          // Compulsory (OC Base File)
-    │  ├── 📃 ResetNvramEntry.efi      // Additional (debug) 
-    │  └── 📃 ToggleSipEntry.efi       // Additional (debug)
+    │  ├── 📃 HfsPlus.efi              // OpenCore Extensible Firmware Interface (release)
+    │  ├── 📃 OpenCanopy.efi           // OpenCore Extensible Firmware Interface (debug & release) 
+    │  ├── 📃 OpenRuntime.efi          // OpenCore Extensible Firmware Interface (debug & release)
+    │  ├── 📃 ResetNvramEntry.efi      // OpenCore Extensible Firmware Interface (debug & release) 
+    │  └── 📃 ToggleSipEntry.efi       // OpenCore Extensible Firmware Interface (debug & release) 
     ├── 📁 Kexts
-    │  ├── 📃 AppleALC.kext            // Requires Lilu (OC Base File)
-    │  ├── 📃 IntelMausi.kext          // Requires Lilu
-    │  ├── 📃 Lilu.kext                // Compulsory (OC Base File)
-    │  ├── 📃 LucyRTL8125Ethernet.kext // Requires Lilu
-    │  ├── 📃 RadeonSensor.kext        // Requires VirtualSMC
-    │  ├── 📃 RestrictEvents.kext      // Requires Lilu (Lilu Kernel extension)
-    │  ├── 📃 SMCProcessor.kext        // Requires VirtualSMC (OC Base File)
-    │  ├── 📃 SMCRadeonGPU.kext        // Requires RadeonSensor
-    │  ├── 📃 SMCSuperIO.kext          // Requires VirtualSMC
+    │  ├── 📃 AppleALC.kext            // Compulsory (OC Base File, debug & release)
+    │  ├── 📃 IntelMausi.kext          // Compulsory (OC Base File, debug & release)
+    │  ├── 📃 Lilu.kext                // Compulsory (OC Base File, debug & release)
+    │  ├── 📃 LucyRTL8125Ethernet.kext // Requires Lilu (OC Base File, release)
+    │  ├── 📃 DebugEnhancer.kext       // An additional Lilu extension (debug)
+    │  ├── 📃 RestrictEvents.kext      // An additional Lilu extension (debug & release)
+    │  ├── 📃 SMCProcessor.kext        // An additional VirtualSMC plugin (debug & release)
+    │  ├── 📃 SMCSuperIO.kext          // An additional VirtualSMC plugin (debug & release)
     │  ├── 📃 USBMap.kext              // Compulsory (can be build using USBToolbox/Windows and USBMap/MacOS)
-    │  ├── 📃 VirtualSMC.kext          // Requires Lilu (OC Base File)
-    │  └── 📃 WhateverGreen.kext       // Requires Lilu (OC Base File)
+    │  ├── 📃 VirtualSMC.kext          // Compulsory Lilu extension (debug)
+    │  └── 📃 WhateverGreen.kext       // Compulsory Lilu (OC Base File)
     ├── 📁 Resources
     │  ├── 📃 Audio                    // Additional (release)
     │  ├── 📃 Font                     // Additional (release)
     │  ├── 📃 Image                    // Additional (release)
     │  └── 📃 Label                    // Additional (release)
     ├── 📁 Tools
-    │  └── 📃 OpenShell.efi            // Requires with debug version (OC Base File)   
-    ├── 📃 config.plist                // Configuration  (OC Base File)
-    └── 📃 OpenCore.efi                // OC Base File
+    │  └── 📃 OpenShell.efi            // OpenCore Extensible Firmware Interface (debug & release) 
+    ├── 📃 config.plist                // OpenCore Configuration  (debug & release)
+    └── 📃 OpenCore.efi                // OpenCore Extensible Firmware Interface (debug & release)
 ```
 
 ### Post Process
@@ -128,68 +127,64 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
 #### Specific Drivers and Sorting Kexts
 
-- Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stability (Recommended). Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging.
+- Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stability (Recommended). Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging. This method requires [Propertree](https://github.com/corpnewt/ProperTree). Below is an example:
 
-  > **Note:**  All kexts contained in the `Plugins` folder are the kexts that rely on Lilu.
+  - Drivers
 
-  ```zsh
-  📁 Drivers
-  ├── 📃 HfsPlus.efi                                        // 1
-  ├── 📃 OpenCanopy.efi                                     // 2
-  └── 📃 OpenRuntime.efi                                    // 3
+    ```zsh
+    📁 Drivers
+    ├── 📃 HfsPlus.efi                                        // 1
+    ├── 📃 OpenCanopy.efi                                     // 2
+    └── 📃 OpenRuntime.efi                                    // 3
+    ```
 
-  📁 Lilu
-  └── Contents
-      ├── 📃 Info.plist
-      ├── 📁 MacOS
-      │   └── 📃 Lilu
-      └── 📁 Plugins                                        // plugin that depends on Lilu.kext
-          ├── 📁 AppleALC.kext
-          │   └── 📁 Contents
-          │       ├── 📃 Info.plist
-          │       └── 📁 MacOS
-          │           └── 📃 AppleALC
-          ├── 📁 RadeonSensor.kext
-          │   └── 📁 Contents
-          │       ├── 📃 Info.plist
-          │       ├── 📁 MacOS
-          │       │   └── 📃 RadeonSensor
-          │       ├── 📁 Plugins                            // plugin that depends on RadeonSensor.kext
-          │       │   └── 📁 SMCRadeonGPU.kext
-          │       │       └── 📁 Contents
-          │       │           ├── 📃 Info.plist
-          │       │           ├── 📁 MacOS
-          │       │           │   └── 📃 SMCRadeonGPU
-          │       │           └── 📁 _CodeSignature
-          │       │               └── 📃 CodeResources
-          │       └── 📁 _CodeSignature
-          │           └── 📃 CodeResources
-          ├── VirtualSMC.kext
-          │   └── Contents
-          │       ├── 📃 Info.plist
-          │       ├── 📁 MacOS
-          │       │   └── 📃 VirtualSMC
-          │       └── Plugins                               // plugin that depends on VirtualSMC.kext
-          │           ├── 📁 SMCProcessor.kext
-          │           │   └── 📃 Contents
-          │           │       ├── 📁 Info.plist
-          │           │       └── MacOS
-          │           │           └── 📃 SMCProcessor
-          │           └── SMCSuperIO.kext
-          │               └── Contents
-          │                   ├── 📃 Info.plist
-          │                   └── 📁 MacOS
-          │                       └── 📃 SMCSuperIO
-          └── 📁 WhateverGreen.kext
-              └── 📁 Contents
-                  ├── 📃 Info.plist
-                  └── 📁 MacOS
-                      └── 📃 WhateverGreen
-  ```
+  - Kext
+
+    ```zsh
+    📁 Lilu
+    └── Contents
+        ├── 📃 Info.plist
+        ├── 📁 MacOS
+        │   └── 📃 Lilu
+        └── 📁 Plugins                                        // release, plugin that depends on Lilu.kext
+            ├── 📁 AppleALC.kext
+            │   └── 📁 Contents
+            │       ├── 📃 Info.plist
+            │       └── 📁 MacOS
+            │           └── 📃 AppleALC
+            ├── 📁 DebugEnhancer.kext
+            │   └── 📁 Contents
+            │       ├── 📃 Info.plist
+            │       └── 📁 MacOS
+            │           └── 📃 DebugEnhancer                  // debug
+            ├── 📁 VirtualSMC.kext
+            │   └── Contents
+            │       ├── 📃 Info.plist
+            │       ├── 📁 MacOS
+            │       │   └── 📃 VirtualSMC
+            │       └── Plugins                               // release, plugin that depends on VirtualSMC.kext
+            │           ├── 📁 SMCProcessor.kext
+            │           │   └── 📃 Contents
+            │           │       ├── 📁 Info.plist
+            │           │       └── MacOS
+            │           │           └── 📃 SMCProcessor
+            │           └── SMCSuperIO.kext
+            │               └── Contents
+            │                   ├── 📃 Info.plist
+            │                   └── 📁 MacOS
+            │                       └── 📃 SMCSuperIO
+            └── 📁 WhateverGreen.kext
+                └── 📁 Contents
+                    ├── 📃 Info.plist
+                    └── 📁 MacOS
+                        └── 📃 WhateverGreen
+    ```
+
+    > **Note:**  All kexts contained in the `Plugins` folder are the kexts that rely on Lilu. `DebugEnhancer.kext` is include with debug version.
 
   - Open config.plist using [Propertree](https://github.com/corpnewt/ProperTree), and use **OC Clean Snapshot** function (`CMD`+`Shift`+`R`) to capture all kext (include plugins folder). [Here](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/kexts.plist) is an example in plist format. Below is the graphical structure:
   
-  ![propertree_lilu_plugins](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/365b7021-7f04-4bfa-bae8-5f15f87bf702)
+  ![Alt text](file:///Users/younix/Desktop/kexts_sort.png)
   
   - Our EFI structure shall be like this:
 
@@ -221,21 +216,11 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
         │   │           │       ├── 📃 Info.plist
         │   │           │       └── 📁 MacOS
         │   │           │           └── AppleALC
-        │   │           ├── 📁 RadeonSensor.kext
-        │   │           │   └── 📁 Contents
-        │   │           │       ├── 📃 Info.plist
-        │   │           │       ├── 📁 MacOS
-        │   │           │       │   └── 📃 RadeonSensor
-        │   │           │       ├── 📁 Plugins
-        │   │           │       │   └── 📁 SMCRadeonGPU.kext
-        │   │           │       │       └── 📁 Contents
-        │   │           │       │           ├── 📃 Info.plist
-        │   │           │       │           ├── 📁 MacOS
-        │   │           │       │           │   └── 📃 SMCRadeonGPU
-        │   │           │       │           └── 📁 _CodeSignature
-        │   │           │       │               └── 📃 CodeResources
-        │   │           │       └── 📁 _CodeSignature
-        │   │           │           └── 📃 CodeResources
+        │   │           ├── 📁 DebugEnhancer.kext
+        │   │           │   └── 📁 Contents
+        │   │           │       ├── 📃 Info.plist
+        │   │           │       └── 📁 MacOS
+        │   │           │           └── 📃 DebugEnhancer
         │   │           ├── 📁 RestrictEvents.kext
         │   │           │   └── 📁 Contents
         │   │           │       ├── 📃 Info.plist
