@@ -94,7 +94,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 					{
 						Name (_CID, "smbus")  // _CID: Compatible ID
 						Name (_ADR, Zero)  // _ADR: Address
-						Device (DVL0)
+						Device (BLC0)
 						{
 							Name (_ADR, Zero)  // _ADR: Address
 							Name (_CID, "smbus-blc")  // _CID: Compatible ID
