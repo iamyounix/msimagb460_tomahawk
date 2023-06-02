@@ -131,7 +131,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                         "kUSBWakePowerSupply", 
                         0x13EC,    // 5100  
                         "kUSBWakePortCurrentLimit", 
-                        0x0834    // 2100 
+                        0x0834     // 2100 
                     })
                 }
             }
