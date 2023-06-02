@@ -113,7 +113,7 @@ Vulnerabilities:
 ```
 ```zsh
 ╭─younix at archlinux in ~ 23-06-02 - 23:58:50
-╰─○ lshw -short
+╰─○ lshw -short // run as "sudo" for more info
 WARNING: you should run this program as super-user.
 H/W path          Device        Class          Description
 ==========================================================
