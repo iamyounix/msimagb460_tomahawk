@@ -307,6 +307,12 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
   - Slot1 X16PCIEXP is refered to x16 PCI slot capabilities. The exact match for `AAPL,slot-name` is `Slot- 1`. Remember, most iGPU built-in with processor is considered as `Slot- 0`.
   - Another way is using `Get-WmiObject -class "Win32_PnPEntity"`. Copy all dumped info from Powershell and paste to any text editor as references.
 
+#### Theme
+
+Get [here](https://github.com/iamyounix/younix_octheme)
+
+![kora_mini](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/879ab643-f1bb-4cbd-b51c-e4bdacc66a75)
+
 ## Credits
 
 ⌘ [Acidanthera](https://github.com/acidanthera/) ⌘ [corpnewt](https://github.com/corpnewt) ⌘ [Dortania](https://github.com/dortania) ⌘ [khronokernel](https://github.com/khronokernel) ⌘ [5T33Z0](https://github.com/5T33Z0)
