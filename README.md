@@ -23,6 +23,9 @@ Table of Contents
     - [SBUS Check](#sbus-check)
     - [Specific Drivers and Sorting Kexts](#specific-drivers-and-sorting-kexts)
     - [Useful PowerShell Command](#useful-powershell-command)
+    - [Enabling and Disabling SIP](#enabling-and-disabling-sip)
+    - [Theme](#theme)
+  - [Debug Log](#debug-log)
 - [Credits](#credits)
 
 ## Introduction
@@ -184,7 +187,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
   - Open config.plist using [Propertree](https://github.com/corpnewt/ProperTree), and use **OC Clean Snapshot** function (`CMD`+`Shift`+`R`) to capture all kext (include plugins folder). [Here](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/kexts.plist) is an example in plist format. Below is the graphical structure:
   
-  ![Alt text](file:///Users/younix/Desktop/kexts_sort.png)
+  ![kexts_sort](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/6a64b331-62f9-431a-96fc-40f543acae43)
   
   - Our EFI structure shall be like this:
 
@@ -292,11 +295,25 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
   - Slot1 X16PCIEXP is refered to x16 PCI slot capabilities. The exact match for `AAPL,slot-name` is `Slot- 1`. Remember, most iGPU built-in with processor is considered as `Slot- 0`.
   - Another way is using `Get-WmiObject -class "Win32_PnPEntity"`. Copy all dumped info from Powershell and paste to any text editor as references.
 
+#### Enabling and Disabling SIP
+
+- SIP is disable by default by using debug mode.
+
+![sipdisabled](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/4621e112-7a6e-4f20-968c-41d67da1babb)
+
+- SIP is enable by default by using release version.
+
+![sipenabled](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/4c6bf1c8-b3be-4091-89d0-5a831ac73fb0)
+
 #### Theme
 
 - Get [here](https://github.com/iamyounix/younix_octheme)
 
 ![kora](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/5d30de6f-d4c9-4aa0-9fcf-405898cf6b89)
+
+#### Debug Log
+
+View debug log [here]
 
 ## Credits
 
