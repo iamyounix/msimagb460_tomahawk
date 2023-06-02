@@ -71,10 +71,10 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
     │  └── 📃 SSDT-YNXB460.aml         // An additional patches using Secondary System Description Tables
     ├── 📁 Drivers
     │  ├── 📃 HfsPlus.efi              // OpenCore Extensible Firmware Interface, Binary Package (release)
-    │  ├── 📃 OpenCanopy.efi           // OpenCore Extensible Firmware Interface, Binary Package (release) 
-    │  ├── 📃 OpenRuntime.efi          // OpenCore Extensible Firmware Interface, Binary Package (release)
-    │  ├── 📃 ResetNvramEntry.efi      // OpenCore Extensible Firmware Interface, Binary Package (release)
-    │  └── 📃 ToggleSipEntry.efi       // OpenCore Extensible Firmware Interface, Binary Package (release) 
+    │  ├── 📃 OpenCanopy.efi           // OpenCore Extensible Firmware Interface, OpenCore Package (debug & release)
+    │  ├── 📃 OpenRuntime.efi          // OpenCore Extensible Firmware Interface, OpenCore Package (debug & release)
+    │  ├── 📃 ResetNvramEntry.efi      // OpenCore Extensible Firmware Interface, OpenCore Package (debug & release)
+    │  └── 📃 ToggleSipEntry.efi       // OpenCore Extensible Firmware Interface, OpenCore Package (debug & release) 
     ├── 📁 Kexts
     │  ├── 📃 AppleALC.kext            // Compulsory Lilu extension (debug & release)
     │  ├── 📃 IntelMausi.kext          // Compulsory, standalone (debug & release)
