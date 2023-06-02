@@ -1,4 +1,4 @@
-onfig Status: cfg=new, avail=yes, need=no, active=unknown
+config Status: cfg=new, avail=yes, need=no, active=unknown
   Attached to: #32 (PCI bridge)
 
 44: PCI 02.0: 0380 Display controller
