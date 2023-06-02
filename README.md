@@ -70,28 +70,28 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
     ├── 📁 ACPI
     │  └── 📃 SSDT-YNXB460.aml         // An additional patches using Secondary System Description Tables
     ├── 📁 Drivers
-    │  ├── 📃 HfsPlus.efi              // OpenCore Extensible Firmware Interface (release)
-    │  ├── 📃 OpenCanopy.efi           // OpenCore Extensible Firmware Interface (debug & release) 
-    │  ├── 📃 OpenRuntime.efi          // OpenCore Extensible Firmware Interface (debug & release)
-    │  ├── 📃 ResetNvramEntry.efi      // OpenCore Extensible Firmware Interface (debug & release) 
-    │  └── 📃 ToggleSipEntry.efi       // OpenCore Extensible Firmware Interface (debug & release) 
+    │  ├── 📃 HfsPlus.efi              // OpenCore Extensible Firmware Interface, Binary Package (release)
+    │  ├── 📃 OpenCanopy.efi           // OpenCore Extensible Firmware Interface, Binary Package (release) 
+    │  ├── 📃 OpenRuntime.efi          // OpenCore Extensible Firmware Interface, Binary Package (release)
+    │  ├── 📃 ResetNvramEntry.efi      // OpenCore Extensible Firmware Interface, Binary Package (release)
+    │  └── 📃 ToggleSipEntry.efi       // OpenCore Extensible Firmware Interface, Binary Package (release) 
     ├── 📁 Kexts
-    │  ├── 📃 AppleALC.kext            // Compulsory (OC Base File, debug & release)
-    │  ├── 📃 IntelMausi.kext          // Compulsory (OC Base File, debug & release)
-    │  ├── 📃 Lilu.kext                // Compulsory (OC Base File, debug & release)
-    │  ├── 📃 LucyRTL8125Ethernet.kext // Requires Lilu (OC Base File, release)
+    │  ├── 📃 AppleALC.kext            // Compulsory Lilu extension (debug & release)
+    │  ├── 📃 IntelMausi.kext          // Compulsory, standalone (debug & release)
+    │  ├── 📃 Lilu.kext                // Compulsory (debug & release)
+    │  ├── 📃 LucyRTL8125Ethernet.kext // Compulsory, standalone (release)
     │  ├── 📃 DebugEnhancer.kext       // An additional Lilu extension (debug)
     │  ├── 📃 RestrictEvents.kext      // An additional Lilu extension (debug & release)
     │  ├── 📃 SMCProcessor.kext        // An additional VirtualSMC plugin (debug & release)
     │  ├── 📃 SMCSuperIO.kext          // An additional VirtualSMC plugin (debug & release)
-    │  ├── 📃 USBMap.kext              // Compulsory (can be build using USBToolbox/Windows and USBMap/MacOS)
-    │  ├── 📃 VirtualSMC.kext          // Compulsory Lilu extension (debug)
-    │  └── 📃 WhateverGreen.kext       // Compulsory Lilu (OC Base File)
+    │  ├── 📃 USBMap.kext              // Compulsory, standalone (refer USBToolbox/Windows and USBMap/MacOS)
+    │  ├── 📃 VirtualSMC.kext          // Compulsory, Lilu extension (debug & release)
+    │  └── 📃 WhateverGreen.kext       // Compulsory, Lilu extension (debug & release)
     ├── 📁 Resources
-    │  ├── 📃 Audio                    // Additional (release)
-    │  ├── 📃 Font                     // Additional (release)
-    │  ├── 📃 Image                    // Additional (release)
-    │  └── 📃 Label                    // Additional (release)
+    │  ├── 📃 Audio                    // OpenCore Binary Package (release)
+    │  ├── 📃 Font                     // OpenCore Binary Package (release)
+    │  ├── 📃 Image                    // OpenCore Binary Package (release)
+    │  └── 📃 Label                    // OpenCore Binary Package (release)
     ├── 📁 Tools
     │  └── 📃 OpenShell.efi            // OpenCore Extensible Firmware Interface (debug & release) 
     ├── 📃 config.plist                // OpenCore Configuration  (debug & release)
@@ -297,11 +297,11 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
 #### Enabling and Disabling SIP
 
-- SIP is disable by default by using debug mode.
+- SIP is disable by default by using debug mode (`csr-active-config` / `data` / `67000000`) - can be refered as `unknown`.
 
 ![sipdisabled](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/4621e112-7a6e-4f20-968c-41d67da1babb)
 
-- SIP is enable by default by using release version.
+- SIP is enable by default by using release version (`csr-active-config` / `data` / `00000000`).
 
 ![sipenabled](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/4c6bf1c8-b3be-4091-89d0-5a831ac73fb0)
 
