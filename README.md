@@ -43,8 +43,8 @@ This project isn't ideal, but it does the job. Never blame me if there is an iss
 **Changelog**
 
 - Add [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
-- Add NVMe/SSD Trim patch (default is disable)
-- Clean and Optimised ACPI code (Single .aml file)
+- Add [DebugEnhancer.kext](https://github.com/acidanthera/DebugEnhancer) to debug version, enable additional debug output in the macOS kernel, originated by [Piker R. Alpha](https://github.com/Piker-Alpha)
+- Clean and Optimised ACPI code (Single `.aml` file)
 - iMac20,1 SMBIOS.
 - Stable [RX5500XT Mech OC 4GB](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G-OC) patch via config.plist.
 - Support Big Sur, Monterey and Ventura.
