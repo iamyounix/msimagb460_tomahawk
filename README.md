@@ -46,7 +46,7 @@ This project isn't ideal, but it does the job. Never blame me if there is an iss
     - `-liludbg`, `-dbgenhdbg`, `-dbgenhiolog`, `-v`, `-vsmcdbg`, `-wegdbg`, `debug=0x100`, `keepsyms=1`, `-revdbg`
 - Release - SIP enabled
   - boot args
-    - none
+    - `none`
 
 **Reminder**
 
