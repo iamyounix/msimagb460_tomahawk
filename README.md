@@ -8,7 +8,7 @@
 
 ![systeminfo_oc](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/5bf2d4e5-3dc1-4e2a-97d3-a7b1d0ce212a)
 
-**Changelog**
+## Changelog
 
 - Add [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
 - Add NVMe/SSD Trim patch (default is disable)
@@ -19,18 +19,18 @@
 - Debug - SIP disabled
   - boot args
     - `-liludbg`, `-dbgenhdbg`, `-dbgenhiolog`, `-v`, `-vsmcdbg`, `-wegdbg`, `debug=0x100`, `keepsyms=1`, `-revdbg`
-- Release - SIP enabled 
+- Release - SIP enabled
   - boot args
     - none
 
-**Reminder**
+## Reminder
 
 - This project use pre-generated iMac20,1 SMBIOS. Please generate your own using [ACAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) or [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
 - Debug version can greatly help with debugging boot issues, however can add some noticeable delay to boot times (ie. 3-5 seconds to get to the picker). Once installed you can easily transition to Release.
 - Release version provide snappier boot times with no useful debug info.
 - This template include `Misc` / `Entries` example. Please change accordingly to your specific needed.
 
-Table of Contents
+## Table of contents
 
 - [Introduction](#introduction)
   - [Hardware and Devices](#hardware-and-devices)
@@ -48,7 +48,7 @@ Table of Contents
   - [Debug Log](#debug-log)
 - [Credits](#credits)
 
-## Introduction
+### Introduction
 
 This project isn't ideal, but it does the job. Never blame me if there is an issue or malfunction.   Although this project carries some risk. Please read Dortania's official documents and my explanations for about this build, then shouldn't have any issues. Please do so at your own risk. Below are the best references to explore:
 
@@ -56,7 +56,7 @@ This project isn't ideal, but it does the job. Never blame me if there is an iss
 - [Dortania's Announcement](https://dortania.github.io/) - Official
 - [OC Little Translate](https://github.com/5T33Z0/OC-Little-Translated) - 3rd Party
 
-### Hardware and Devices
+#### Hardware and Devices
 
 Below is the device info related to this project:
 
@@ -111,6 +111,7 @@ Vulnerabilities:
   Srbds:                 Mitigation; Microcode
   Tsx async abort:       Not affected
 ```
+
 ```zsh
 ╭─younix at archlinux in ~ 23-06-02 - 23:58:50
 ╰─○ lshw -short 
@@ -163,7 +164,7 @@ H/W path          Device        Class          Description
 /0/8                            system         Motherboard registers
 ```
 
-#### Native
+##### Native
 
 - 400 Series Chipset Family SATA AHCI Controller
 - ASM3241 USB 3.2 Host Controller
@@ -177,14 +178,14 @@ H/W path          Device        Class          Description
 - Navi 10 HDMI Audio
 - Navi 14 Radeon RX 5500/5500M / Pro 5500M
 
-#### Not Native
+##### Not Native
 
 - Comet Lake PCH-V USB Controller
 - Comet Lake PCH-V cAVS
 - Ethernet Connection (11) I219-V
 - RTL8125 2.5GbE Controller
 
-### Base Files
+#### Base Files
 
 Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://github.com/acidanthera/OpenCorePkg/releases/) (x64) and [Binary Data](https://github.com/acidanthera/OcBinaryData).
 
@@ -224,9 +225,9 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
     └── 📃 OpenCore.efi                // OpenCore Extensible Firmware Interface (debug & release)
 ```
 
-### Post Process
+#### Post Process
 
-#### Enable GPU Tab in Activity Monitor
+##### Enable GPU Tab in Activity Monitor
 
 - If the Device Properties of iGPU and dGPU are configured correctly, you will find the Tab "GPU" in the Activity Monitor App which lists the graphics devices and the tasks/processes assigned to each of them. Use this properties to enable gpu's tab. Requirement:
   - Change iGPU  `AAPL,slot-name` to `Slot- 0`. Most iGPU attached to this slot.
@@ -238,13 +239,13 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
   ![GPUtab](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3f7d7626-4b39-440b-a053-33737df848f9)
   ![quicksync](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/36807524-6733-42b1-8e23-3d9aa1c6ff64)
 
-#### MMIO Whitelist
+##### MMIO Whitelist
 
 - MMIO stands for Memory-Mapped Input/Output. It's a method to perform I/O processes between the CPU and peripheral devices of a computer. The memory and registers of the I/O devices are mapped to (and associated with) address values. MMIO whitelist is a security feature that controls access to certain memory addresses in a computer system, allowing access only to specific processes or devices that have been explicitly granted permission and denying access to all others. This patch may improve stability. Refer [5T33Z0 - MMIO Whitelist](https://github.com/5T33Z0/OC-Little-Translated/tree/main/12_MMIO_Whitelist) for more info. Example:
 
 ![mmio](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/202260c1-84b4-4645-a2e7-7600a64ad11e)
 
-#### SBUS Check
+##### SBUS Check
 
 - Most 8th Gen and above actually do not require `SSDT-SBUS`.
   - Try to load EFI without this patch and reboot. Refer [here](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/ACPI_Sample/SSDT-YNXB460.dsl) as an example.
@@ -256,7 +257,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
   ![sbus_check](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/a606a15f-4aef-48cc-bd0a-b205ba2fc8b0)
 
-#### Specific Drivers and Sorting Kexts
+##### Specific Drivers and Sorting Kexts
 
 - Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stability (Recommended). Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging. This method requires [Propertree](https://github.com/corpnewt/ProperTree). Below is an example:
 
@@ -405,7 +406,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
   - Download [this](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/Sorted%20Kexts%20(Plugins).zip) file as an example.
   
-#### Useful PowerShell Command
+##### Useful PowerShell Command
 
 - This command help us to specify need information in order to build our own hackintosh and set `AAPL,slot-name` properly. Please check `SlotDesignation` as references.
   - Open Windows Powershell, copy and paste `Get-WmiObject -class "Win32_SystemSlot"`. As an example, PCI x16 Slot.
@@ -423,7 +424,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
   - Slot1 X16PCIEXP is refered to x16 PCI slot capabilities. The exact match for `AAPL,slot-name` is `Slot- 1`. Remember, most iGPU built-in with processor is considered as `Slot- 0`.
   - Another way is using `Get-WmiObject -class "Win32_PnPEntity"`. Copy all dumped info from Powershell and paste to any text editor as references.
 
-#### Enabling and Disabling SIP
+##### Enabling and Disabling SIP
 
 - SIP is disable by default by using debug mode (`csr-active-config` / `data` / `67000000`) - can be refered as `unknown`.
 
@@ -435,7 +436,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
 > **Note:**  Please set `ToggleSIP` to `enable` after switch from `debug` to `release`
 
-#### Theme
+##### Theme
 
 - Get [here](https://github.com/iamyounix/younix_octheme)
 
