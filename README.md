@@ -17,19 +17,19 @@
 ## Table of Content
 
 - [Introduction](#introduction)
-  * [Hardware and Devices](#hardware-and-devices)
-    + [Native](#native)
-    + [Not Native](#not-native)
-  * [Base Files](#base-files)
-  * [Post Process](#post-process)
-    + [Enable GPU Tab in Activity Monitor](#enable-gpu-tab-in-activity-monitor)
-    + [MMIO Whitelist](#mmio-whitelist)
-    + [SBUS Check](#sbus-check)
-    + [Specific Drivers and Sorting Kexts](#specific-drivers-and-sorting-kexts)
+  - [Hardware and Devices](#hardware-and-devices)
+    - [Native](#native)
+    - [Not Native](#not-native)
+  - [Base Files](#base-files)
+  - [Post Process](#post-process)
+    - [Enable GPU Tab in Activity Monitor](#enable-gpu-tab-in-activity-monitor)
+    - [MMIO Whitelist](#mmio-whitelist)
+    - [SBUS Check](#sbus-check)
+    - [Specific Drivers and Sorting Kexts](#specific-drivers-and-sorting-kexts)
       - [Useful PowerShell Command](#useful-powershell-command)
-    + [Enabling and Disabling SIP](#enabling-and-disabling-sip)
-    + [Theme](#theme)
-  * [Debug Log](#debug-log)
+    - [Enabling and Disabling SIP](#enabling-and-disabling-sip)
+    - [Theme](#theme)
+  - [Debug Log](#debug-log)
 - [Credits](#credits)
 
 ## Introduction
@@ -229,13 +229,13 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 #### Disable EC Desktop
 
 - The purpose of `SSDT-EC`
- - On desktops, the `EC` (or better known as the embedded controller) isn't compatible with AppleACPIEC driver, to get around this we disable this device when running macOS. AppleBusPowerController will look for a device named `EC`, so we will want to create a fake device for this kext to load onto.
- - The `AppleBusPowerController` also requires a USBX device to supply USB power properties for Skylake and newer.
+- On desktops, the `EC` (or better known as the embedded controller) isn't compatible with AppleACPIEC driver, to get around this we disable this device when running macOS. AppleBusPowerController will look for a device named `EC`, so we will want to create a fake device for this kext to load onto.
+- The `AppleBusPowerController` also requires a USBX device to supply USB power properties for Skylake and newer.
 
  ![AppleBusPowerController](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/619c269a-9828-4b06-b982-c8cceb136bcc)
 
- - Desktop users are recommended to disable permanently `EC` instead of using fake device. 
-   - **Method 1:** Fake device
+- Desktop users are recommended to disable permanently `EC` instead of using fake device.
+  - **Method 1:** Fake device
 
       ```asl
       DefinitionBlock ("", "SSDT", 2, "CORP ", "SsdtEC", 0x00001000)
@@ -263,30 +263,30 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
       }
       ```
 
-      - Use [SSDTTime](https://github.com/corpnewt/SSDTTime) to generate one if you are lazy or head [here](https://dortania.github.io/Getting-Started-With-ACPI/ssdt-methods/ssdt-easy.html) if you are not sure about this tool.
+    - Use [SSDTTime](https://github.com/corpnewt/SSDTTime) to generate one if you are lazy or head [here](https://dortania.github.io/Getting-Started-With-ACPI/ssdt-methods/ssdt-easy.html) if you are not sure about this tool.
 
-   - **Method 2:** Disable Permanently (Recommended)
+  - **Method 2:** Disable Permanently (Recommended)
 
-        ```asl
-        DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
-        {
+      ```asl
+      DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
+      {
 
-            External (_SB_.PCI0.LPCB.H_EC, IntObj)
+          External (_SB_.PCI0.LPCB.H_EC, IntObj)
 
-            Scope (\_SB)
-            {
-                If (_OSI ("Darwin"))
-                {
-                    Method (_INI, 0, NotSerialized)  // _INI: Initialize
-                    {
-                        \_SB.PCI0.LPCB.H_EC = Zero
-                    }
-                }
-            }
-        }
-        ```
+          Scope (\_SB)
+          {
+              If (_OSI ("Darwin"))
+              {
+                  Method (_INI, 0, NotSerialized)  // _INI: Initialize
+                  {
+                      \_SB.PCI0.LPCB.H_EC = Zero
+                  }
+              }
+          }
+      }
+      ```
 
-      - Check if your DSDT contain `PNP0C09`, check any name related to `EC` (ie: `H_EC` and etc) which contain `_STA` method as `Zero` use above example as template to build up your own. Below is the results:
+    - Check if your DSDT contain `PNP0C09`, check any name related to `EC` (ie: `H_EC` and etc) which contain `_STA` method as `Zero` use above example as template to build up your own. Below is the results:
 
      ![IOReg _without_ec](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/dfc8950a-289a-4a32-9174-270ccc5fbd8a)
 
