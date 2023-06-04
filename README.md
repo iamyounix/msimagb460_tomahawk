@@ -235,7 +235,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
  ![AppleBusPowerController](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/619c269a-9828-4b06-b982-c8cceb136bcc)
 
-- Desktop users are recommended to disable permanently `EC` instead of using fake device.
+> **Note:** Desktop users are recommended to disable permanently `EC` instead of using fake device.
   - **Method 1:** Fake device
 
       ```asl
