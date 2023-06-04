@@ -1,7 +1,7 @@
 DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 {
     External (_SB_.PCI0, DeviceObj)
-    External (_SB_.PCI0.LPCB.H_EC, IntObj)
+    External (_SB_.PCI0.LPCB, DeviceObj)
     External (_SB_.PCI0.PEG0, DeviceObj)
     External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
     External (_SB_.PCI0.SBUS, DeviceObj)
@@ -44,7 +44,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
                 STAS = One
-                \_SB.PCI0.LPCB.H_EC = Zero
             }
 
             Scope (PCI0)
@@ -52,6 +51,14 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                 Device (DRAM)
                 {
                     Name (_ADR, Zero)  // _ADR: Address
+                }
+
+                Scope (LPCB)
+                {
+                    Device (EC)
+                    {
+                        Name (_HID, "ACID0001")  // _HID: Hardware ID
+                    }
                 }
 
                 Scope (PEG0)
@@ -177,4 +184,3 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
         }
     }
 }
-
