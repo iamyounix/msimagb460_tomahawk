@@ -22,6 +22,7 @@
     - [Not Native](#not-native)
   - [Base Files](#base-files)
   - [Post Process](#post-process)
+    - [Disable EC Desktop](#disable-ec-desktop)
     - [Enable GPU Tab in Activity Monitor](#enable-gpu-tab-in-activity-monitor)
     - [MMIO Whitelist](#mmio-whitelist)
     - [SBUS Check](#sbus-check)
