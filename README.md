@@ -226,6 +226,70 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
 ### Post Process
 
+#### Disable EC Desktop
+
+- The purpose of `SSDT-EC`
+ - On desktops, the `EC` (or better known as the embedded controller) isn't compatible with AppleACPIEC driver, to get around this we disable this device when running macOS. AppleBusPowerController will look for a device named `EC`, so we will want to create a fake device for this kext to load onto.
+ - The `AppleBusPowerController` also requires a USBX device to supply USB power properties for Skylake and newer.
+
+ ![AppleBusPowerController](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/619c269a-9828-4b06-b982-c8cceb136bcc)
+
+ - Desktop users are recommended to disable permanently `EC` instead of using fake device. 
+   - **Method 1:** Fake device
+
+      ```asl
+      DefinitionBlock ("", "SSDT", 2, "CORP ", "SsdtEC", 0x00001000)
+      {
+          External (\_SB.PCI0.LPCB, DeviceObj)
+
+          Scope (\_SB.PCI0.LPCB)
+          {
+              Device (EC)
+              {
+                  Name (_HID, "ACID0001")  // _HID: Hardware ID
+                  Method (_STA, 0, NotSerialized)  // _STA: Status
+                  {
+                      If (_OSI ("Darwin"))
+                      {
+                          Return (0x0F)
+                      }
+                      Else
+                      {
+                          Return (Zero)
+                      }
+                  }
+              }
+          }
+      }
+      ```
+
+      - Use [SSDTTime](https://github.com/corpnewt/SSDTTime) to generate one if you are lazy or head [here](https://dortania.github.io/Getting-Started-With-ACPI/ssdt-methods/ssdt-easy.html) if you are not sure about this tool.
+
+   - **Method 2:** Disable Permanently (Recommended)
+
+        ```asl
+        DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
+        {
+
+            External (_SB_.PCI0.LPCB.H_EC, IntObj)
+
+            Scope (\_SB)
+            {
+                If (_OSI ("Darwin"))
+                {
+                    Method (_INI, 0, NotSerialized)  // _INI: Initialize
+                    {
+                        \_SB.PCI0.LPCB.H_EC = Zero
+                    }
+                }
+            }
+        }
+        ```
+
+      - Check if your DSDT contain `PNP0C09`, check any name related to `EC` (ie: `H_EC` and etc) which contain `_STA` method as `Zero` use above example as template to build up your own. Below is the results:
+
+     ![IOReg _without_ec](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/dfc8950a-289a-4a32-9174-270ccc5fbd8a)
+
 #### Enable GPU Tab in Activity Monitor
 
 - If the Device Properties of iGPU and dGPU are configured correctly, you will find the Tab "GPU" in the Activity Monitor App which lists the graphics devices and the tasks/processes assigned to each of them. Use this properties to enable gpu's tab. Requirement:
