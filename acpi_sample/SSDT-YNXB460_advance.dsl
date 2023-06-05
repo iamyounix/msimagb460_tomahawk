@@ -2,7 +2,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 {
     External (_SB_.PCI0, DeviceObj)
     External (_SB_.PCI0.LPCB, DeviceObj)
-    External (_SB_.PCI0.LPCB.H_EC, DeviceObj)
     External (_SB_.PCI0.PEG0, DeviceObj)
     External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
     External (_SB_.PCI0.SBUS, DeviceObj)
@@ -25,9 +24,9 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
     External (_TZ_.FAN4, DeviceObj)
     External (STAS, IntObj)
 
-    Scope (\_SB)
+    If (_OSI ("Darwin"))
     {
-        If (_OSI ("Darwin"))
+        Scope (\_SB)
         {
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
@@ -45,9 +44,9 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                 {
                     If (!Arg2)
                     {
-                        Return (Buffer ()
+                        Return (Buffer (One)
                         {
-                             0x03
+                             0x03                                             // .
                         })
                     }
 
@@ -71,6 +70,32 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                     Device (EC)
                     {
                         Name (_HID, "ACID0001")  // _HID: Hardware ID
+                    }
+
+                    Device (FWHD)
+                    {
+                        Name (_HID, EisaId ("INT0800") /* Intel 82802 Firmware Hub Device */)  // _HID: Hardware ID
+                        Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+                        {
+                            Memory32Fixed (ReadOnly,
+                                0xFF000000,         // Address Base
+                                0x01000000,         // Address Length
+                                )
+                        })
+                        Name (_STA, 0x0F)  // _STA: Status
+                    }
+
+                    Device (PMCR)
+                    {
+                        Name (_HID, EisaId ("APP9876"))  // _HID: Hardware ID
+                        Name (_STA, 0x0B)  // _STA: Status
+                        Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+                        {
+                            Memory32Fixed (ReadWrite,
+                                0xFE000000,         // Address Base
+                                0x00010000,         // Address Length
+                                )
+                        })
                     }
                 }
 
@@ -107,10 +132,10 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                     {
                         Name (_CID, "smbus")  // _CID: Compatible ID
                         Name (_ADR, Zero)  // _ADR: Address
-                        Device (I2C)
+                        Device (BLC0)
                         {
                             Name (_ADR, Zero)  // _ADR: Address
-                            Name (_CID, "i2c_i801")  // _CID: Compatible ID
+                            Name (_CID, "smbus-blc")  // _CID: Compatible ID
                         }
                     }
                 }
@@ -124,15 +149,8 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                 {
                     Scope (RHUB)
                     {
-                        Scope (USR1)
-                        {
-                            Name (_STA, Zero)  // _STA: Status
-                        }
-
-                        Scope (USR2)
-                        {
-                            Name (_STA, Zero)  // _STA: Status
-                        }
+                        Name (USR1._STA, Zero)  // _STA: Status
+                        Name (USR2._STA, Zero)  // _STA: Status
                     }
                 }
 
@@ -146,13 +164,13 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                 {
                     If ((Arg2 == Zero))
                     {
-                        Return (Buffer ()
+                        Return (Buffer (One)
                         {
-                             0x03
+                             0x03                                             // .
                         })
                     }
 
-                    Return (Package ()
+                    Return (Package (0x08)
                     {
                         "kUSBSleepPowerSupply", 
                         0x13EC, 
