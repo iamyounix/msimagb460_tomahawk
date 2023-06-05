@@ -47,7 +47,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                     {
                         Return (Buffer ()
                         {
-                             0x03                                             // .
+                             0x03
                         })
                     }
 
@@ -148,7 +148,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                     {
                         Return (Buffer ()
                         {
-                             0x03                                             // .
+                             0x03
                         })
                     }
 
