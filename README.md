@@ -28,6 +28,7 @@
     - [Specific Drivers and Sorting Kexts](#specific-drivers-and-sorting-kexts)
       - [Useful PowerShell Command](#useful-powershell-command)
     - [Enabling and Disabling SIP](#enabling-and-disabling-sip)
+    - [ACPI](#acpi)
     - [Theme](#theme)
   - [Debug Log](#debug-log)
 - [Credits](#credits)
@@ -455,6 +456,27 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 ![sipenabled](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3a4f13de-c965-483b-baca-730ef1c56c68)
 
 > **Note:**  Please set `ToggleSIP` to `enable` after switch from `debug` to `release`
+
+#### ACPI
+
+- ACPI `_STA` Method value
+
+  - 0x00: Device not present or not enabled.
+  - 0x01: Device present but not enabled.
+  - 0x02: Device present but in an error state.
+  - 0x03: Device present and functioning, but with limited capabilities.
+  - 0x04: Device present but in a power-off state.
+  - 0x05: Device present but in a sleeping or low-power state.
+  - 0x06: Device present and enabled but awaiting a configuration change.
+  - 0x07: Device present and enabled but awaiting a resource allocation.
+  - 0x08: Device present but disabled.
+  - 0x09: Device present and enabled but not functioning correctly.
+  - 0x0A: Device present and enabled but not installed or configured correctly.
+  - 0x0B: Device present and enabled, functioning correctly.
+  - 0x0C: Device present and enabled but with unknown status.
+  - 0x0D: Device present and enabled but with a non-critical failure.
+  - 0x0E: Device present and enabled but with a critical failure.
+  - 0x0F: Device present and enabled, functioning correctly.
 
 #### Theme
 
