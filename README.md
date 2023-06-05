@@ -274,7 +274,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
     }
     ```
     
-    > **Note:** `0x57` / `87` is indicate old address. Use `Zero` instead. Latest `SMBus` use logic `1` / `Yes` and `0` / `No` to perform memory `R/W` Task. As a reference, imac20,1 use `Zero` as an address. 
+    > **Note:** `0x57` / `87` is indicate old address. Use `Zero` instead. Latest `SMBus` use logic `1` / `Yes` and `0` / `No` to perform memory `R/W` Task. As a reference, iMac20,1 use `Zero` as an address. 
 
 
 #### Specific Drivers and Sorting Kexts
