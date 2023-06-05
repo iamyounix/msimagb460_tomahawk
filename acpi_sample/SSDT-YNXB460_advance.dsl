@@ -6,11 +6,14 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
     External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
     External (_SB_.PCI0.SBUS, DeviceObj)
     /*
+    Add this part to remove unwanted USB ports, i.e., USR1, USR2, since macOS doesn't ship with
+    USBR (USB Redirection) devices and has no support for them. In another part, this
+    This method can be used as an alternative method to disable USB port/port mapping.
     External (_SB_.PCI0.XHC_, DeviceObj)
-    */
     External (_SB_.PCI0.XHC_.RHUB, DeviceObj)
     External (_SB_.PCI0.XHC_.RHUB.USR1, DeviceObj)
     External (_SB_.PCI0.XHC_.RHUB.USR2, DeviceObj)
+    */
     External (_SB_.PR00, ProcessorObj)
     External (_TZ_.FAN0, DeviceObj)
     External (_TZ_.FAN1, DeviceObj)
