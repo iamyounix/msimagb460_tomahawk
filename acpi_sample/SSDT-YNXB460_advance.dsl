@@ -66,7 +66,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                         Name (_HID, "ACID0001")  // _HID: Hardware ID
                     }
                 }
-                /*
+                */
 
                 Scope (PEG0)
                 {
