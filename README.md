@@ -256,6 +256,23 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
   ![sbus_check](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/a606a15f-4aef-48cc-bd0a-b205ba2fc8b0)
 
+  - As an additional, use this patch to allow both kexts `AppleSMBusController` and `AppleSMBUSPCI` loader in IOreg. 
+
+    ```asl
+    Scope (SBUS)    // System Management Bus
+    {
+        Device (BUS0)
+        {
+            Name (_CID, "smbus")  // _CID: Compatible ID
+            Name (_ADR, Zero)  // _ADR: Address
+            Device (BLC0)	// Dummy Host
+            {
+                Name (_ADR, Zero)  // _ADR: Address
+                Name (_CID, "smbus-blc")  // _CID: Compatible ID //Dummy compatible
+            }
+        }
+    }
+    ```
 #### Specific Drivers and Sorting Kexts
 
 - Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stability (Recommended). Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging. This method requires [Propertree](https://github.com/corpnewt/ProperTree). Below is an example:
