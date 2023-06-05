@@ -5,7 +5,9 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
     External (_SB_.PCI0.PEG0, DeviceObj)
     External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
     External (_SB_.PCI0.SBUS, DeviceObj)
+    /*
     External (_SB_.PCI0.XHC_, DeviceObj)
+    */
     External (_SB_.PCI0.XHC_.RHUB, DeviceObj)
     External (_SB_.PCI0.XHC_.RHUB.USR1, DeviceObj)
     External (_SB_.PCI0.XHC_.RHUB.USR2, DeviceObj)
