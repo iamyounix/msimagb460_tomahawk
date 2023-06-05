@@ -53,7 +53,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                     Name (_ADR, Zero)  // _ADR: Address
                 }
                 
-                */
+                /*
                 On desktops, the EC (or better known as the embedded controller) isn't compatible with 
                 AppleACPIEC driver, to get around this we disable this device when running macOS AppleBusPowerController
                 will look for a device named EC, here is our Fake EC to satisfy macOS
