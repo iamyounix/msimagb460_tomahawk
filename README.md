@@ -273,6 +273,10 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
         }
     }
     ```
+    
+    > **Note:** `0x57` / `87` is indicate old address. Use `Zero` instead. Latest `SMBus` use logic `1` / `Yes` and `0` / `No` to perform memory `R/W` Task. As a reference, imac20,1 use `Zero` as an address. 
+
+
 #### Specific Drivers and Sorting Kexts
 
 - Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stability (Recommended). Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging. This method requires [Propertree](https://github.com/corpnewt/ProperTree). Below is an example:
