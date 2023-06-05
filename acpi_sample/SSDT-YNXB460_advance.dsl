@@ -109,7 +109,10 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                 {
                     Name (_ADR, 0x00140002)  // _ADR: Address
                 }
-
+                /*
+                Add this part to remove unwanted USB ports, i.e., USR1, USR2, since macOS doesn't ship with
+                USBR (USB Redirection) devices and has no support for them. In another part, this
+                This method can be used as an alternative method to disable USB port/port mapping.
                 Scope (XHC)
                 {
                     Scope (RHUB)
@@ -125,6 +128,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                         }
                     }
                 }
+                */
             }
 
             Scope (\_TZ)
