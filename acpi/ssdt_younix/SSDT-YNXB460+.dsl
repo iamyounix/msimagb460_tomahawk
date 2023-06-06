@@ -1,31 +1,39 @@
+/*
+ * Intel ACPI Component Architecture
+ * AML/ASL+ Disassembler version 20200925 (64-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
+ * 
+ * Disassembling to symbolic ASL+ operators
+ *
+ * Disassembly of iASLbDtCMZ.aml, Wed Jun  7 02:31:23 2023
+ *
+ * Original Table Header:
+ *     Signature        "SSDT"
+ *     Length           0x000002AD (685)
+ *     Revision         0x02
+ *     Checksum         0x07
+ *     OEM ID           "Younix"
+ *     OEM Table ID     "B460"
+ *     OEM Revision     0x00002000 (8192)
+ *     Compiler ID      "INTL"
+ *     Compiler Version 0x20200925 (538970405)
+ */
 DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 {
     External (_SB_.PCI0, DeviceObj)
-    External (_SB_.PCI0.WMI1, DeviceObj)
+    External (_SB_.PCI0.LPCB, DeviceObj)
     External (_SB_.PCI0.XHC_, DeviceObj)
     External (_SB_.PCI0.XHC_.RHUB, DeviceObj)
     External (_SB_.PCI0.XHC_.RHUB.USR1, DeviceObj)
     External (_SB_.PCI0.XHC_.RHUB.USR2, DeviceObj)
-    External (_SB_.PR00, ProcessorObj)
-    External (_SB_.WFDE, DeviceObj)
-    External (_SB_.WFTE, DeviceObj)
-    External (_SB_.WFTF, DeviceObj)
-    External (_SB_.WMIC, DeviceObj)
-    External (_SB_.WMIO, DeviceObj)
-    External (_SB_.WTBT, DeviceObj)
-    External (_TZ_.FAN0, DeviceObj)
-    External (_TZ_.FAN1, DeviceObj)
-    External (_TZ_.FAN2, DeviceObj)
-    External (_TZ_.FAN3, DeviceObj)
-    External (_TZ_.FAN4, DeviceObj)
     
+
     If (_OSI ("Darwin"))
     {
         Scope (\_SB)
         {
             Scope (PCI0)
             {
-                Name (WMI1._STA, Zero)  // _STA: Status
                 Scope (XHC)
                 {
                     Scope (RHUB)
@@ -35,29 +43,12 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                     }
                 }
             }
-
-            Name (WFDE._STA, Zero)  // _STA: Status
-            Name (WFTE._STA, Zero)  // _STA: Status
-            Name (WFTF._STA, Zero)  // _STA: Status
-            Name (WMIC._STA, Zero)  // _STA: Status
-            Name (WMIO._STA, Zero)  // _STA: Status
-            Name (WTBT._STA, Zero)  // _STA: Status
-        }
-
-        Scope (\_TZ)
-        {
-            Name (FAN0._STA, Zero)  // _STA: Status
-            Name (FAN1._STA, Zero)  // _STA: Status
-            Name (FAN2._STA, Zero)  // _STA: Status
-            Name (FAN3._STA, Zero)  // _STA: Status
-            Name (FAN4._STA, Zero)  // _STA: Status
         }
     }
     
-    External (_SB_.PCI0.LPCB, DeviceObj)
     External (_SB_.PCI0.PEG0, DeviceObj)
     External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
-    External (_SB_.PCI0.SBUS, DeviceObj)
+    External (_SB_.PR00, ProcessorObj)
     External (STAS, IntObj)
     External (XPRW, MethodObj)    // 2 Arguments
 
@@ -114,67 +105,9 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 
                 Scope (LPCB)
                 {
-                    Device (DMAC)
-                    {
-                        Name (_HID, EisaId ("PNP0200") /* PC-class DMA Controller */)  // _HID: Hardware ID
-                        Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
-                        {
-                            IO (Decode16,
-                                0x0000,             // Range Minimum
-                                0x0000,             // Range Maximum
-                                0x01,               // Alignment
-                                0x20,               // Length
-                                )
-                            IO (Decode16,
-                                0x0081,             // Range Minimum
-                                0x0081,             // Range Maximum
-                                0x01,               // Alignment
-                                0x11,               // Length
-                                )
-                            IO (Decode16,
-                                0x0093,             // Range Minimum
-                                0x0093,             // Range Maximum
-                                0x01,               // Alignment
-                                0x0D,               // Length
-                                )
-                            IO (Decode16,
-                                0x00C0,             // Range Minimum
-                                0x00C0,             // Range Maximum
-                                0x01,               // Alignment
-                                0x20,               // Length
-                                )
-                            DMA (Compatibility, NotBusMaster, Transfer8_16, )
-                                {4}
-                        })
-                    }
-
                     Device (EC)
                     {
                         Name (_HID, "ACID0001")  // _HID: Hardware ID
-                    }
-
-                    Device (FWHD)
-                    {
-                        Name (_HID, EisaId ("INT0800") /* Intel 82802 Firmware Hub Device */)  // _HID: Hardware ID
-                        Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
-                        {
-                            Memory32Fixed (ReadOnly,
-                                0xFF000000,         // Address Base
-                                0x01000000,         // Address Length
-                                )
-                        })
-                    }
-
-                    Device (PMCR)
-                    {
-                        Name (_HID, EisaId ("APP9876"))  // _HID: Hardware ID
-                        Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
-                        {
-                            Memory32Fixed (ReadWrite,
-                                0xFE000000,         // Address Base
-                                0x00010000,         // Address Length
-                                )
-                        })
                     }
                 }
 
@@ -182,11 +115,9 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                 {
                     Scope (PEGP)
                     {
-                        Name (_CID, "pci-bridge")  // _CID: Compatible ID
                         Device (PBRG)
                         {
                             Name (_ADR, Zero)  // _ADR: Address
-                            Name (_CID, "pci-bridge")  // _CID: Compatible ID
                             Device (GFX0)
                             {
                                 Name (_ADR, Zero)  // _ADR: Address
@@ -205,21 +136,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                     Name (_ADR, 0x00080000)  // _ADR: Address
                 }
 
-                Scope (SBUS)
-                {
-                    Device (BUS0)
-                    {
-                        Name (_ADR, Zero)  // _ADR: Address
-                        Name (_CID, "smbus")  // _CID: Compatible ID
-                        Device (BLC0)
-                        {
-                            Name (_ADR, Zero)  // _ADR: Address
-                            Name (_CID, "smbus-blc")  // _CID: Compatible ID
-                        }
-                    }
-                }
-
-                Device (TSUB)
+                Device (THSS)
                 {
                     Name (_ADR, 0x00140002)  // _ADR: Address
                 }
