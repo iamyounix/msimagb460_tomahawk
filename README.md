@@ -422,8 +422,6 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
   - As we can see by using `kextstat -l | grep -v com.apple`, kext still running as usual. Below is an example:
 
   ![kexstat](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/68f1389b-7b8b-40b1-8017-f3b4225453cd)
-
-  - Download [this](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/Sorted%20Kexts%20(Plugins).zip) file as an example.
   
 #### Useful PowerShell Command
 
