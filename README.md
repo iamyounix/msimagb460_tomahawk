@@ -40,7 +40,7 @@ This project isn't ideal, but it does the job. Never blame me if there is an iss
 - [Dortania's Announcement](https://dortania.github.io/) - Official
 - [OC Little Translate](https://github.com/5T33Z0/OC-Little-Translated) - 3rd Party
 
-**Changelog**
+Changelog
 
 - Add [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
 - Add [DebugEnhancer.kext](https://github.com/acidanthera/DebugEnhancer) to debug version, enable additional debug output in the macOS kernel, originated by [Piker R. Alpha](https://github.com/Piker-Alpha)
@@ -256,7 +256,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
   ![sbus_check](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/a606a15f-4aef-48cc-bd0a-b205ba2fc8b0)
 
-  - Additionally, use this patch to allow both kexts `AppleSMBusController` and `AppleSMBUSPCI` showing up via IOreg. 
+  - Additionally, use this patch to allow both kexts `AppleSMBusController` and `AppleSMBUSPCI` showing up via IOreg.
 
     ```asl
     Scope (SBUS)    // System Management Bus
@@ -265,7 +265,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
         {
             Name (_CID, "smbus")  // _CID: Compatible ID
             Name (_ADR, Zero)  // _ADR: Address
-            Device (BLC0)	// Dummy Host
+            Device (BLC0) // Dummy Host
             {
                 Name (_ADR, Zero)  // _ADR: Address
                 Name (_CID, "smbus-blc")  // _CID: Compatible ID //Dummy compatible
@@ -273,9 +273,8 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
         }
     }
     ```
-    
-    > **Note:** `0x57` / `87` is indicate old address. Use `Zero` instead. Latest `SMBus` use logic `1` / `Yes` and `0` / `No` to perform memory `R/W` Task. As a reference, iMac20,1 use `Zero` as an address. 
 
+    > **Note:** `0x57` / `87` is indicate old address. Use `Zero` instead. Latest `SMBus` use logic `1` / `Yes` and `0` / `No` to perform memory `R/W` Task. As a reference, iMac20,1 use `Zero` as an address.
 
 #### Specific Drivers and Sorting Kexts
 
