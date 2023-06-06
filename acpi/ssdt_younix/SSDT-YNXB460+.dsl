@@ -7,7 +7,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
     External (_SB_.PCI0.XHC_.RHUB.USR1, DeviceObj)
     External (_SB_.PCI0.XHC_.RHUB.USR2, DeviceObj)
     
-
     If (_OSI ("Darwin"))
     {
         Scope (\_SB)
