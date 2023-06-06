@@ -26,7 +26,7 @@
     - [MMIO Whitelist](#mmio-whitelist)
     - [SBUS Check](#sbus-check)
     - [Specific Drivers and Sorting Kexts](#specific-drivers-and-sorting-kexts)
-      - [Useful PowerShell Command](#useful-powershell-command)
+    - [Useful PowerShell Command](#useful-powershell-command)
     - [Enabling and Disabling SIP](#enabling-and-disabling-sip)
     - [Theme](#theme)
   - [Debug Log](#debug-log)
@@ -425,7 +425,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
 
   - Download [this](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/Sorted%20Kexts%20(Plugins).zip) file as an example.
   
-##### Useful PowerShell Command
+#### Useful PowerShell Command
 
 - This command help us to specify need information in order to build our own hackintosh and set `AAPL,slot-name` properly. Please check `SlotDesignation` as references.
   - Open Windows Powershell, copy and paste `Get-WmiObject -class "Win32_SystemSlot"`. As an example, PCI x16 Slot.
