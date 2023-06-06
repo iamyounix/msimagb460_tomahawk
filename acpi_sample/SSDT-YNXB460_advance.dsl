@@ -1,5 +1,7 @@
 DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 {
+
+// Reminder: This SSDT if not for anyone. If you tend to use it, please change it properly according to your need.
     
    /*
     *    Device Disabled Section
