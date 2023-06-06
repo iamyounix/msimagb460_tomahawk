@@ -1,16 +1,14 @@
 DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 {
+    /*
+    Device Disabled Section
+    */
     External (_SB_.PCI0, DeviceObj)
-    External (_SB_.PCI0.LPCB, DeviceObj)
-    External (_SB_.PCI0.PEG0, DeviceObj)
-    External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
-    External (_SB_.PCI0.SBUS, DeviceObj)
     External (_SB_.PCI0.WMI1, DeviceObj)
     External (_SB_.PCI0.XHC_, DeviceObj)
     External (_SB_.PCI0.XHC_.RHUB, DeviceObj)
     External (_SB_.PCI0.XHC_.RHUB.USR1, DeviceObj)
     External (_SB_.PCI0.XHC_.RHUB.USR2, DeviceObj)
-    External (_SB_.PR00, ProcessorObj)
     External (_SB_.WFDE, DeviceObj)
     External (_SB_.WFTE, DeviceObj)
     External (_SB_.WFTF, DeviceObj)
@@ -22,6 +20,49 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
     External (_TZ_.FAN2, DeviceObj)
     External (_TZ_.FAN3, DeviceObj)
     External (_TZ_.FAN4, DeviceObj)
+
+    If (_OSI ("Darwin"))
+    {
+        Scope (\_SB)
+        {
+            Scope (PCI0)
+            {
+                Name (WMI1._STA, Zero)  // _STA: Status
+                Scope (XHC)
+                {
+                    Scope (RHUB)
+                    {
+                        Name (USR1._STA, Zero)  // _STA: Status
+                        Name (USR2._STA, Zero)  // _STA: Status
+                    }
+                }
+            }
+
+            Name (WFDE._STA, Zero)  // _STA: Status
+            Name (WFTE._STA, Zero)  // _STA: Status
+            Name (WFTF._STA, Zero)  // _STA: Status
+            Name (WMIC._STA, Zero)  // _STA: Status
+            Name (WMIO._STA, Zero)  // _STA: Status
+            Name (WTBT._STA, Zero)  // _STA: Status
+        }
+
+        Scope (\_TZ)
+        {
+            Name (FAN0._STA, Zero)  // _STA: Status
+            Name (FAN1._STA, Zero)  // _STA: Status
+            Name (FAN2._STA, Zero)  // _STA: Status
+            Name (FAN3._STA, Zero)  // _STA: Status
+            Name (FAN4._STA, Zero)  // _STA: Status
+        }
+    }
+    /*
+    Device Enabled Section
+    */    
+    External (_SB_.PCI0.LPCB, DeviceObj)
+    External (_SB_.PCI0.PEG0, DeviceObj)
+    External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
+    External (_SB_.PCI0.SBUS, DeviceObj)
+    External (_SB_.PR00, ProcessorObj)
     External (STAS, IntObj)
 
     If (_OSI ("Darwin"))
@@ -31,11 +72,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
                 STAS = One
-            }
-
-            Method (_STA, 0, NotSerialized)  // _STA: Status
-            {
-                Return (0x0F)
             }
 
             Scope (PR00)
@@ -82,13 +118,11 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                                 0x01000000,         // Address Length
                                 )
                         })
-                        Name (_STA, 0x0F)  // _STA: Status
                     }
 
                     Device (PMCR)
                     {
                         Name (_HID, EisaId ("APP9876"))  // _HID: Hardware ID
-                        Name (_STA, 0x0B)  // _STA: Status
                         Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
                         {
                             Memory32Fixed (ReadWrite,
@@ -130,8 +164,8 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                 {
                     Device (BUS0)
                     {
-                        Name (_CID, "smbus")  // _CID: Compatible ID
                         Name (_ADR, Zero)  // _ADR: Address
+                        Name (_CID, "smbus")  // _CID: Compatible ID
                         Device (BLC0)
                         {
                             Name (_ADR, Zero)  // _ADR: Address
@@ -144,17 +178,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                 {
                     Name (_ADR, 0x00140002)  // _ADR: Address
                 }
-
-                Scope (XHC)
-                {
-                    Scope (RHUB)
-                    {
-                        Name (USR1._STA, Zero)  // _STA: Status
-                        Name (USR2._STA, Zero)  // _STA: Status
-                    }
-                }
-
-                Name (WMI1._STA, Zero)  // _STA: Status
             }
 
             Device (USBX)
@@ -184,21 +207,10 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                 }
             }
 
-            Name (WFDE._STA, Zero)  // _STA: Status
-            Name (WFTE._STA, Zero)  // _STA: Status
-            Name (WFTF._STA, Zero)  // _STA: Status
-            Name (WMIC._STA, Zero)  // _STA: Status
-            Name (WMIO._STA, Zero)  // _STA: Status
-            Name (WTBT._STA, Zero)  // _STA: Status
-        }
-
-        Scope (\_TZ)
-        {
-            Name (FAN0._STA, Zero)  // _STA: Status
-            Name (FAN1._STA, Zero)  // _STA: Status
-            Name (FAN2._STA, Zero)  // _STA: Status
-            Name (FAN3._STA, Zero)  // _STA: Status
-            Name (FAN4._STA, Zero)  // _STA: Status
+            Method (_STA, 0, NotSerialized)  // _STA: Status
+            {
+                Return (0x0F)
+            }
         }
     }
 }
