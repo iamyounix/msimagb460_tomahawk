@@ -131,6 +131,11 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                 STAS = One
             }
 
+            Method (_STA, 0, NotSerialized)  // _STA: Status
+            {
+                Return (0x0F)
+            }
+
             Scope (PR00)
             {
                 Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
@@ -325,11 +330,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                         0x0834
                     })
                 }
-            }
-
-            Method (_STA, 0, NotSerialized)  // _STA: Status
-            {
-                Return (0x0F)
             }
         }
     }
