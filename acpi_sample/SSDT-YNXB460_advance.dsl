@@ -1,8 +1,7 @@
 DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 {
-
-// Reminder: This SSDT if not for anyone. If you tend to use it, please change it properly according to your need.
-    
+   // Reminder: This SSDT if not for anyone. If you tend to use it, please change it properly according to your need.
+   
    /*
     *    Device Disabled Section
     */
@@ -64,6 +63,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
             Name (WMIC._STA, Zero)  // _STA: Status
             Name (WMIO._STA, Zero)  // _STA: Status
             Name (WTBT._STA, Zero)  // _STA: Status
+            
         }
 
         Scope (\_TZ)
@@ -73,6 +73,10 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
             Name (FAN2._STA, Zero)  // _STA: Status
             Name (FAN3._STA, Zero)  // _STA: Status
             Name (FAN4._STA, Zero)  // _STA: Status
+            Method (_STA, 0, NotSerialized)  // _STA: Status
+            {
+                Return (0x0F)
+            }
         }
     }
     /*
