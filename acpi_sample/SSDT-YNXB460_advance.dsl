@@ -73,10 +73,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
             Name (FAN2._STA, Zero)  // _STA: Status
             Name (FAN3._STA, Zero)  // _STA: Status
             Name (FAN4._STA, Zero)  // _STA: Status
-            Method (_STA, 0, NotSerialized)  // _STA: Status
-            {
-                Return (0x0F)
-            }
         }
     }
     /*
