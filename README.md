@@ -19,7 +19,7 @@ Table of Contents
 - [Introduction](#introduction)
   - [Hardware and Devices](#hardware-and-devices)
   - [Base Files](#base-files)
-  - [Tips](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/oc_tips/introduction.md)
+  - [Tips](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/oc_tips/tips%20introduction.md)
 - [Credits](#credits)
 
 ## Introduction
