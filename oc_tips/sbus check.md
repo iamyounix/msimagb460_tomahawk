@@ -7,7 +7,7 @@ Most 8th Gen and above actually do not require SSDT-SBUS.
 
   ![sbus](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/801d1c7b-5102-407c-8373-7d930803750e)
 
-- Check AppleSMBusController and AppleSMBUSPCI kexts using System Reports / Software / Extensions. If both loads, SBUS is working native without any patches. Below is an example:
+- Check AppleSMBusController and AppleSMBUSPCI kexts using **System Reports** / **Software** / **Extensions**. If both loads, SBUS is working native without any patches. Below is an example:
 
   ![sbus_check](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/a606a15f-4aef-48cc-bd0a-b205ba2fc8b0)
 
