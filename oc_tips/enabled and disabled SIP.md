@@ -1,11 +1,56 @@
 # Enabling and Disabling SIP
 
-SIP is disable by default by using debug mode (`csr-active-config` / `data` / `67000000`) - can be refered as `unknown`.
+Each NVRAM variable consists of its name, value, attributes (refer to UEFI specification), and its GUID, representing which ‘section’ the NVRAM variable belongs to. The macOS operating system makes use of several GUIDs, including but not limited to:
 
-![sipdisabled](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/4621e112-7a6e-4f20-968c-41d67da1babb)
+- `4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14` - `APPLE_VENDOR_VARIABLE_GUID`
+- `7C436110-AB2A-4BBB-A880-FE41995C9F82` - `APPLE_BOOT_VARIABLE_GUID`
+- `5EDDA193-A070-416A-85EB-2A1181F45B18` - `Apple Hardware Configuration Storage for MacPro7,1`
+- `8BE4DF61-93CA-11D2-AA0D-00E098032B8C` - `EFI_GLOBAL_VARIABLE_GUID`
+- `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` - `OC_VENDOR_VARIABLE_GUID`
 
-SIP is enable by default by using release version (`csr-active-config` / `data` / `00000000`).
+## NVRAM
 
-![sipenabled](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3a4f13de-c965-483b-baca-730ef1c56c68)
+The nvram command can be used to read NVRAM variable values from macOS by concatenating the GUID and name variables separated by a : symbol. For example, nvram:
 
-> **Note:**  Please set `ToggleSIP` to `enable` after switch from `debug` to `release`
+- `7C436110-AB2A-4BBB-A880-FE41995C9F82`
+  - boot-args
+    - data
+    - XXXXXXXX
+
+Flag
+
+- Enable
+  - `00000000` - SIP completely enabled (0x0).
+
+- Disable
+  - `FF030000` - for High Sierra)
+  - `EF070000` - for Mojave/Catalina)
+  - `67080000` - for Big Sur and newer)
+  - `EF0F0000` - for Big Sur and newer. and disables even more security features
+  
+Enable SIP
+
+- Add / `7C436110-AB2A-4BBB-A880-FE41995C9F82` / `csr-active-config` / `data` / `00000000`
+  ![csr-enable](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/080debab-f734-431c-ac20-23e4239ac2ac)  
+
+Disable SIP
+
+- Add / `7C436110-AB2A-4BBB-A880-FE41995C9F82` / `csr-active-config` / `data` / `67000000`
+  ![csr-disable](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/d6eeca18-67c6-406d-9fe6-37f9ba25e673)
+
+  > Note: SIP is disable can be refered also as unknown. Please set ToggleSIP to enable after switch from debug to relea
+
+Check SIP
+
+- Use `csrutil status` on terminal
+
+  ```zsh
+  Configuration:
+  Apple Internal: enabled
+  Kext Signing: disabled
+  Filesystem Protections: disabled
+  Debugging Restrictions: disabled
+  DTrace Restrictions: disabled
+  NVRAM Protections: disabled
+  BaseSystem Verification: disabled
+  ```
