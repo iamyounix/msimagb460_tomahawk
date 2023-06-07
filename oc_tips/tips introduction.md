@@ -6,9 +6,9 @@ The number of Hackintosh enthusiasts is growing. Providing hackintosh informatio
 
 **Here are a few tips:**
 
-- [Enable GPU Tab in Activity Monitor](iamyounix/msimagb460_tomahawk/oc_tips/enable gpu tab in activity monitor.md)
-- [Enabled and Disabled SIP](iamyounix/msimagb460_tomahawk/oc_tips/enabled and disabled SIP.md)
-- [MMIO Whitelist](iamyounix/msimagb460_tomahawk/oc_tips/mmio whitelist.md)
-- [SBUS Check](iamyounix/msimagb460_tomahawk/oc_tips/sbus check.md)
-- [Sorting Drivers and Kexts](iamyounix/msimagb460_tomahawk/oc_tips/sorting drivers and kext.md)
-- [Useful Terminal Command](iamyounix/msimagb460_tomahawk/oc_tips/useful terminal command.md)
+- [Enable GPU Tab in Activity Monitor](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/oc_tips/enable%20gpu%20tab%20in%20activity%20monitor.md)
+- [Enabled and Disabled SIP](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/oc_tips/enabled%20and%20disabled%20SIP.md)
+- [MMIO Whitelist](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/oc_tips/mmio%20whitelist.md)
+- [SBUS Check](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/oc_tips/sbus%20check.md)
+- [Sorting Drivers and Kexts](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/oc_tips/sorting%20drivers%20and%20kext.md)
+- [Useful Terminal Command](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/oc_tips/useful%20terminal%20command.md)
