@@ -1,4 +1,4 @@
-# Useful PowerShell Command
+# Useful Terminal Command
 
 This command help us to specify need information in order to build our own hackintosh and set `AAPL,slot-name` properly. Please check `SlotDesignation` as references.
 
