@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The number of Hackintosh enthusiasts is growing. Providing hackintosh information as the learning curve to hack macOS to generic hardware by yourself. A few years ago, I began with the Ozmosis, Clover, and then finally to OpenCore. Unexpectedly, this community has helped OpenCore flourish. I use this platform as a space for me share my own tips and advice.
+The number of Hackintosh enthusiasts is growing. Providing hackintosh information as the learning curve to hack macOS to generic hardware by yourself. A few years ago, I began with the Ozmosis, Clover, and then finally to OpenCore. Unexpectedly, this community expanded worldwide. Here is a space for me share my own tips and advice.
 
 **Here are a few tips:**
 
