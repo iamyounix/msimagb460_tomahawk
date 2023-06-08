@@ -15,7 +15,7 @@ The nvram command can be used to read NVRAM variable values from macOS by concat
 - `7C436110-AB2A-4BBB-A880-FE41995C9F82`
   - boot-args
     - data
-    - XXXXXXXX
+    - `XXXXXXXX`
 
 Flag
 
@@ -30,16 +30,15 @@ Flag
   
 Enable SIP
 
-- Add / `7C436110-AB2A-4BBB-A880-FE41995C9F82` / `csr-active-config` / `data` / `00000000`
-  ![csr-enable](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/080debab-f734-431c-ac20-23e4239ac2ac)  
+- Add / `7C436110-AB2A-4BBB-A880-FE41995C9F82` / `csr-active-config` / `data` / `00000000` 
 
 Disable SIP
 
-- Add / `7C436110-AB2A-4BBB-A880-FE41995C9F82` / `csr-active-config` / `data` / `67000000`
-  ![csr-disable](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/d6eeca18-67c6-406d-9fe6-37f9ba25e673)
+- Add / `7C436110-AB2A-4BBB-A880-FE41995C9F82` / `csr-active-config` / `data` / `EF0F0000`
+  > Note: SIP is disable can be refered also as unknown.
 
-  > Note: SIP is disable can be refered also as unknown. Please set ToggleSIP to enable after switch from debug to relea
-
+![csr-enable](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/080debab-f734-431c-ac20-23e4239ac2ac)  
+  
 Check SIP
 
 - Use `csrutil status` on terminal
