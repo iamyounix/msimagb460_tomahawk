@@ -7,6 +7,7 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 	External (_SB_.PCI0.TSUB, DeviceObj)
 	External (STAS, IntObj)
 	External (_ADR, MethodObj)
+	External (XPRW, MethodObj) 
 	
 	Method (OSDW, 0, NotSerialized)
 	{
@@ -22,7 +23,17 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 	
 	If (OSDW)
 	{
-        Method (_INI, 0, Serialized)  // _INI: Initialize
+        Method (GPRW, 2)
+		{
+			If (LAnd (Arg0 == 0x69, Arg1 == 0x04))
+			{
+				Store (0x69, Arg0)
+				Store (Zero, Arg1)
+			}
+			Return (Zero)  // Replace with appropriate return value
+		}
+		
+		Method (_INI, 0, Serialized)  // _INI: Initialize
 		{
             If (_ADR == 0x00080000)
             {
