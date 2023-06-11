@@ -47,59 +47,7 @@ Changelog
 
 ### Hardware and Devices
 
-Below is the device info related to this project:
-
-```zsh
-╭─younix at archlinux in ~ 23-06-02 - 23:49:11
-╰─○ lscpu
-Architecture:            x86_64
-  CPU op-mode(s):        32-bit, 64-bit
-  Address sizes:         39 bits physical, 48 bits virtual
-  Byte Order:            Little Endian
-CPU(s):                  12
-  On-line CPU(s) list:   0-11
-Vendor ID:               GenuineIntel
-  Model name:            Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
-    CPU family:          6
-    Model:               165
-    Thread(s) per core:  2
-    Core(s) per socket:  6
-    Socket(s):           1
-    Stepping:            5
-    CPU(s) scaling MHz:  82%
-    CPU max MHz:         4300.0000
-    CPU min MHz:         800.0000
-    BogoMIPS:            5802.42
-    Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe sy
-                         scall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni
-                          pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_dead
-                         line_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single ssbd ibrs ibpb stibp ibrs_enhanc
-                         ed tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap c
-                         lflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp pku ospke 
-                         md_clear flush_l1d arch_capabilities
-Virtualization features: 
-  Virtualization:        VT-x
-Caches (sum of all):     
-  L1d:                   192 KiB (6 instances)
-  L1i:                   192 KiB (6 instances)
-  L2:                    1.5 MiB (6 instances)
-  L3:                    12 MiB (1 instance)
-NUMA:                    
-  NUMA node(s):          1
-  NUMA node0 CPU(s):     0-11
-Vulnerabilities:         
-  Itlb multihit:         KVM: Mitigation: VMX disabled
-  L1tf:                  Not affected
-  Mds:                   Not affected
-  Meltdown:              Not affected
-  Mmio stale data:       Mitigation; Clear CPU buffers; SMT vulnerable
-  Retbleed:              Mitigation; Enhanced IBRS
-  Spec store bypass:     Mitigation; Speculative Store Bypass disabled via prctl
-  Spectre v1:            Mitigation; usercopy/swapgs barriers and __user pointer sanitization
-  Spectre v2:            Mitigation; Enhanced / Automatic IBRS, IBPB conditional, RSB filling, PBRSB-eIBRS SW sequence
-  Srbds:                 Mitigation; Microcode
-  Tsx async abort:       Not affected
-```
+Below is the devices info related to this project:
 
 ```zsh
 ╭─younix at archlinux in ~ 23-06-02 - 23:58:50
@@ -153,26 +101,28 @@ H/W path          Device        Class          Description
 /0/8                            system         Motherboard registers
 ```
 
-#### Native
+#### Working
 
-- 400 Series Chipset Family SATA AHCI Controller
-- ASM3241 USB 3.2 Host Controller
-- BCM4360 802.11ac Wireless Network Adapter
-- Comet Lake PCH-V HECI Controller
-- Comet Lake PCH-V SMBus Host Controller
-- Comet Lake-S 6c Host Bridge/DRAM Controller
-- Comet Lake-S UHD Graphics 630 - Headless + `agdpmod` / `data` / `70696b65726100` based on [Piker R. Alpha](https://github.com/Piker-Alpha) agdpmod [patch](https://pikeralpha.wordpress.com/2015/11/23/patching-applegraphicsdevicepolicy-kext/)
-- KINGSTON SA2000M8500G NVMe SSD No. 1
-- KINGSTON SA2000M8500G NVMe SSD No. 2
-- Navi 10 HDMI Audio
-- Navi 14 Radeon RX 5500/5500M / Pro 5500M
+- 400 Series Chipset Family SATA AHCI Controller - Native
+- ASM3241 USB 3.2 Host Controller - Native
+- BCM4360 802.11ac Wireless Network Adapter - Native
+- Comet Lake PCH-V HECI Controller - Native
+- Comet Lake PCH-V SMBus Host Controller - Native
+- Comet Lake-S UHD Graphics 630 (Headless) - Native
+- KINGSTON SA2000M8500G NVMe SSD No. 1 - Native
+- KINGSTON SA2000M8500G NVMe SSD No. 2 - Native
+- Navi 10 HDMI Audio - Native
+- Navi 14 Radeon RX 5500/5500M / Pro 5500M - Native
 
-#### Not Native
+#### Partial
 
-- Comet Lake PCH-V USB Controller
-- Comet Lake PCH-V cAVS
-- Ethernet Connection (11) I219-V
-- RTL8125 2.5GbE Controller
+- Comet Lake-S 6c Host Bridge/DRAM Controller - Require ACPI enabling using `_STA` Method, `(0x0F)`
+- Comet Lake PCH-V USB Controller - Requires 400 Series [XHCIUnsuported.kext](https://github.com/CrisHotpatch/USBInjectAll) (Integrated with USBMap.kext)
+- Comet Lake PCH-V cAVS - Requires AppleALC - Require [AppleALC](https://github.com/acidanthera/AppleALC)
+- Ethernet Connection (11) I219-V - Requires [IntelMausi](https://github.com/acidanthera/IntelMausi)
+- RTL8125 2.5GbE Controller - Requires [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)
+
+> Note:  The `agdpmod=pikera` boot arg may disable board ID checks on Navi GPUs (RX 5000 and 6000 series); without this, you'll get a black screen, especially on SMBIOS, which is built with dual GPUs. Don't use it if you don't have Navi (i.e., Polaris and Vega cards shouldn't use this). As an alternative, this patch can also be injected via DeviceProperties as `agdpmod` or `data` or `70696b65726100` to any of the two GPUs available. Refer, [here](https://github.com/acidanthera/WhateverGreen).
 
 ### Base Files
 
