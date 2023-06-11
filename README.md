@@ -101,28 +101,35 @@ H/W path          Device        Class          Description
 /0/8                            system         Motherboard registers
 ```
 
-#### Working
+#### Native
 
-- 400 Series Chipset Family SATA AHCI Controller - Native
-- ASM3241 USB 3.2 Host Controller - Native
-- BCM4360 802.11ac Wireless Network Adapter - Native
-- Comet Lake PCH-V HECI Controller - Native
-- Comet Lake PCH-V SMBus Host Controller - Native
-- Comet Lake-S UHD Graphics 630 (Headless) - Native
-- KINGSTON SA2000M8500G NVMe SSD No. 1 - Native
-- KINGSTON SA2000M8500G NVMe SSD No. 2 - Native
-- Navi 10 HDMI Audio - Native
-- Navi 14 Radeon RX 5500/5500M / Pro 5500M - Native
+- Full functioning devices without any additional needs:
+  - 400 Series Chipset Family SATA AHCI Controller
+  - ASM3241 USB 3.2 Host Controller
+  - BCM4360 802.11ac Wireless Network Adapter
+  - Comet Lake PCH-V HECI Controller
+  - Comet Lake PCH-V SMBus Host Controller
+  - Comet Lake-S UHD Graphics 630 (Headless)
+  - KINGSTON SA2000M8500G NVMe SSD No. 1
+  - KINGSTON SA2000M8500G NVMe SSD No. 2
+  - Navi 10 HDMI Audio - Native
+  - Navi 14 Radeon RX 5500/5500M / Pro 5500M
 
+> Note: `agdpmod=pikera` boot arg may disable `board ID` checks on Navi GPUs (RX 5000 and 6000 series); without this, you'll get a black screen, especially on SMBIOS, which is built with dual GPUs. Don't use it if you don't have Navi (i.e., Polaris and Vega cards shouldn't use this). As an alternative, this patch can also be injected via DeviceProperties as `agdpmod` or `data` or `70696b65726100` to any of the two GPUs available. Refer, [here](https://github.com/acidanthera/WhateverGreen).
+> 
 #### Partial
 
-- Comet Lake-S 6c Host Bridge/DRAM Controller - Require ACPI enabling using `_STA` Method, `(0x0F)`
-- Comet Lake PCH-V USB Controller - Requires 400 Series [XHCIUnsuported.kext](https://github.com/CrisHotpatch/USBInjectAll) (Integrated with USBMap.kext)
-- Comet Lake PCH-V cAVS - Requires AppleALC - Require [AppleALC](https://github.com/acidanthera/AppleALC)
-- Ethernet Connection (11) I219-V - Requires [IntelMausi](https://github.com/acidanthera/IntelMausi)
-- RTL8125 2.5GbE Controller - Requires [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)
+- Require Kexts/Patch/ACPI Injections for full functioning:
+  - Comet Lake-S 6c Host Bridge/DRAM Controller - Require ACPI injection using `_STA` Method, `(0x0F)`
+  - Comet Lake PCH-V USB Controller - Requires 400 Series [XHCIUnsuported.kext](https://github.com/CrisHotpatch/USBInjectAll) (Integrated with USBMap.kext)
+  - Comet Lake PCH-V cAVS - Requires AppleALC - Require [AppleALC](https://github.com/acidanthera/AppleALC)
+  - Ethernet Connection (11) I219-V - Requires [IntelMausi](https://github.com/acidanthera/IntelMausi)
+  - RTL8125 2.5GbE Controller - Requires [LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)
 
-> Note:  The `agdpmod=pikera` boot arg may disable board ID checks on Navi GPUs (RX 5000 and 6000 series); without this, you'll get a black screen, especially on SMBIOS, which is built with dual GPUs. Don't use it if you don't have Navi (i.e., Polaris and Vega cards shouldn't use this). As an alternative, this patch can also be injected via DeviceProperties as `agdpmod` or `data` or `70696b65726100` to any of the two GPUs available. Refer, [here](https://github.com/acidanthera/WhateverGreen).
+#### Not Working
+
+- Not Function, No Solution tu Enabling / Partial Enabling the devices
+  - None
 
 ### Base Files
 
