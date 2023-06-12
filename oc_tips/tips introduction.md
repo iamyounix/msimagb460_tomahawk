@@ -1,7 +1,5 @@
 # Tips
 
-## Introduction
-
 The number of Hackintosh enthusiasts is growing. Providing hackintosh information as the learning curve to hack macOS to generic hardware by yourself. A few years ago, I began with the Ozmosis, Clover, and then finally to OpenCore. Unexpectedly, this community expanded worldwide. Here is a space for me share my own tips and advice.
 
 - [Bypass 15 Port Limit](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/oc_tips/bypass%2015%20port%20limit.md)
