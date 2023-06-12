@@ -15,10 +15,10 @@ We can choose either USB Port Mapping using standard USBMap.kext/USBPorts.kext o
 
 Step:
 
-  1. Enable XHCPIPortLimit via config.plist.
+  1. Enable XHCPIPortLimit to `YES` via config.plist.
   ![xhciportlimit](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3fb7b8bf-09fd-4def-987d-b292e31415c1)
 
-  2. Modified USBMap.kext by enabling all port.
+  2. Modified USBMap.kext by enabling all port. Most B400+ motherboard require XHCI-Unsupported properties.
   ![Step 2](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/950ed557-2b15-4d19-958c-fdfd7a9d3ba7)
 
   3. Apply Patch. In this case, i am using Monterey.
