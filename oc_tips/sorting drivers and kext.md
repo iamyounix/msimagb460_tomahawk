@@ -144,3 +144,5 @@ Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stabil
   As we can see by using `kextstat -l | grep -v com.apple`, kext still running as usual. Below is an example:
 
   ![kexstat](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/68f1389b-7b8b-40b1-8017-f3b4225453cd)
+  
+  [Log Check](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/results/debug%20log.md)
