@@ -145,4 +145,4 @@ Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stabil
 
   ![kexstat](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/68f1389b-7b8b-40b1-8017-f3b4225453cd)
   
-  [Log Check](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/results/debug%20log.md)
+  [Log Check](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/results/opencore-2023-06-07-205252.txt)
