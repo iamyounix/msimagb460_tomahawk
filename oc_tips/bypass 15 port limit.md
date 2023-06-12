@@ -11,7 +11,7 @@ So the process of USB mapping is defining your ports to macOS and telling it wha
 - Broken Hot-Plug
 - Even data corruption from XhciPortLimit
 
-Here, this is how we will bypass macOS restriction usb port limit
+We can choose either USB Port Mapping using standard USBMap.kext/USBPorts.kext or bypass macOS restriction usb port limit.
 
 Step:
 
