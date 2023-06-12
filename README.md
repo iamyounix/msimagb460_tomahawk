@@ -30,7 +30,12 @@ This project isn't ideal, but it does the job. Never blame me if there is an iss
 - [Dortania's Announcement](https://dortania.github.io/) - Official
 - [OC Little Translate](https://github.com/5T33Z0/OC-Little-Translated) - 3rd Party
 
-Changelog
+Changelog 0.9.3
+
+- Maintain all properties from 0.9.2
+- Bypass 15 USB Port Limit
+
+Changelog 0.9.2
 
 - Add [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
 - Add [DebugEnhancer.kext](https://github.com/acidanthera/DebugEnhancer) to [debug](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/oc_debug.zip) version, enable additional debug output in the macOS kernel, originated by [Piker R. Alpha](https://github.com/Piker-Alpha)
