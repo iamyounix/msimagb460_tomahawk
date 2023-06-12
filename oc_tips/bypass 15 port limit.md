@@ -21,7 +21,7 @@ Step:
   2. Modified USBMap.kext by enabling all port. Most B400+ motherboard require XHCI-Unsupported properties.
   ![Step 2](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/950ed557-2b15-4d19-958c-fdfd7a9d3ba7)
 
-  3. Apply Patch. In this case, i am using Monterey.
+  3. Apply Patch. In this case, i am using Monterey. For macOS Sonoma, patches is not quaranteed. Refer: https://github.com/acidanthera/bugtracker/issues/2297#issuecomment-1586504398
   ![Step 3](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3dcf25bc-a45d-4704-9094-d9e953f3f678)
 
 Results:
