@@ -2,7 +2,8 @@
 
 Step:
 
-  1. Enable XHCPIPortLimit.
+  1. Enable XHCPIPortLimit via config.plist.
+  ![xhciportlimit](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/3fb7b8bf-09fd-4def-987d-b292e31415c1)
 
   2. Modified USBMap.kext by enabling all port.
   ![Step 2](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/950ed557-2b15-4d19-958c-fdfd7a9d3ba7)
