@@ -3,7 +3,7 @@
 So the process of USB mapping is defining your ports to macOS and telling it what kind they are, the reasons we want to do this are:
 
 - macOS is very bad at guessing what kind of ports you have
-- Some ports may run below their rated speed(3.1 ports running at 2.0)
+- Some ports may run below their rated speed (3.1 ports running at 2.0)
 - Some ports may outright not work
 - Bluetooth not working
 - Certain services like Handoff may not work correctly
