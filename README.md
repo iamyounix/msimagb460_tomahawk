@@ -43,10 +43,10 @@ Changelog 0.9.2
 - iMac20,1 SMBIOS.
 - Stable [RX5500XT Mech OC 4GB](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G-OC) patch via config.plist.
 - Support Big Sur, Monterey and Ventura.
-- Debug - SIP disabled
+- [Debug](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/0.9.3/oc_0.9.3d.zip) - SIP disabled
   - boot args
     - `-liludbg`, `-dbgenhdbg`, `-dbgenhiolog`, `-v`, `-vsmcdbg`, `-wegdbg`, `debug=0x100`, `keepsyms=1`, `-revdbg`
-- Release - SIP enabled
+- [Release](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/0.9.3/oc_0.9.3r.zip) - SIP enabled
   - boot args
     - `none`
 
