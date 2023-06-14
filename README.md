@@ -4,7 +4,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/theofficialcopypaste/ASRockB460MSL-OC?color=blue&label=Issues)
 [![Bootloader](https://img.shields.io/badge/Bootloader-OpenCore-yellow)](https://github.com/theofficialcopypaste/ASRockB460MSL-OC/releases)
 [![macOS](https://img.shields.io/badge/Compatible-Monterey/Ventura-orange)](https://www.apple.com/ge/macos/monterey/)
-[![Version](https://img.shields.io/badge/Version-0.9.2-white)](https://github.com/acidanthera/OpenCorePkg/releases)
+[![Version](https://img.shields.io/badge/Version-0.9.3-white)](https://github.com/acidanthera/OpenCorePkg/releases)
 ![sysinfo](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/c52e5de0-c298-4200-98c5-dc243ea7b334)
 
 > **Note:** Please read, google, and do some research related to your hardware before start.
