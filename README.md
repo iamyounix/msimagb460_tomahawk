@@ -117,7 +117,7 @@ H/W path          Device        Class          Description
   - Comet Lake-S UHD Graphics 630 (Headless)
   - KINGSTON SA2000M8500G NVMe SSD No. 1
   - KINGSTON SA2000M8500G NVMe SSD No. 2
-  - Navi 10 HDMI Audio - Native
+  - Navi 10 HDMI Audio
   - Navi 14 Radeon RX 5500/5500M / Pro 5500M
 
 > Note: `agdpmod=pikera` boot arg may disable `board ID` checks on Navi GPUs (RX 5000 and 6000 series); without this, you'll get a black screen, especially on SMBIOS, which is built with dual GPUs. Don't use it if you don't have Navi (i.e., Polaris and Vega cards shouldn't use this). As an alternative, this patch can also be injected via DeviceProperties as `agdpmod` or `data` or `70696b65726100` to any of the two GPUs available. Refer, [here](https://github.com/acidanthera/WhateverGreen).
