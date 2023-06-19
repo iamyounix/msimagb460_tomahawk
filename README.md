@@ -119,8 +119,7 @@ H/W path          Device        Class          Description
 
 #### Not Working
 
-- Not Function, No Solution tu Enabling / Partial Enabling the devices
-  - None
+- None
 
 ### Base Files
 
