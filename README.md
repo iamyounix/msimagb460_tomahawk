@@ -36,21 +36,6 @@ Changelog 0.9.3
 - Switch USBMap.kext to UTBMap.kext.
 - Maintain all properties from 0.9.2.
 
-Changelog 0.9.2
-
-- Add [RestrictEvents.kext](https://github.com/acidanthera/RestrictEvents) to disables uninitialized disk warning in Finder. ie: swap (linux) via config.plist.
-- Add [DebugEnhancer.kext](https://github.com/acidanthera/DebugEnhancer) to [debug](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/Release/oc_debug.zip) version, enable additional debug output in the macOS kernel, originated by [Piker R. Alpha](https://github.com/Piker-Alpha)
-- Clean and Optimised ACPI code (Single `.aml` file)
-- iMac20,1 SMBIOS.
-- Stable [RX5500XT Mech OC 4GB](https://www.msi.com/Graphics-Card/Radeon-RX-5500-XT-MECH-4G-OC) patch via config.plist.
-- Support Big Sur, Monterey and Ventura.
-- [Debug](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/0.9.3/oc_0.9.3d.zip) - SIP disabled
-  - boot args
-    - `-liludbg`, `-dbgenhdbg`, `-dbgenhiolog`, `-v`, `-vsmcdbg`, `-wegdbg`, `debug=0x100`, `keepsyms=1`, `-revdbg`
-- [Release](https://github.com/iamyounix/msimagb460_tomahawk/releases/download/0.9.3/oc_0.9.3r.zip) - SIP enabled
-  - boot args
-    - `none`
-
 ### Hardware and Devices
 
 Below is the devices info related to this project:
