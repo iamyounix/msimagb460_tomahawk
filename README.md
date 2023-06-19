@@ -176,6 +176,7 @@ Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://
     ├── 📃 config.plist                // OpenCore Configuration (debug & release)
     └── 📃 OpenCore.efi                // OpenCore Extensible Firmware Interface (debug & release)
 ```
+> Note: Binary, drivers, and kexts may change. Refer changelog for more info.
 
 ## Credits
 
