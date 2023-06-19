@@ -140,6 +140,15 @@
 		<dict>
 			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
 			<dict>
+				<key>@0,AAPL,boot-display</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>@0,ATY,EFIDisplay</key>
+				<string>DP1</string>
+				<key>@0,built-in</key>
+				<data>
+				</data>
 				<key>@0,compatible</key>
 				<string>ATY,Python</string>
 				<key>@0,device_type</key>
@@ -230,6 +239,8 @@
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
+				<key># AGDPMod Properties</key>
+				<string>can also be injected via DGPU</string>
 				<key>AAPL,ig-platform-id</key>
 				<data>
 				AwDFmw==
@@ -277,7 +288,7 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string>13.0.0</string>
+				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -295,7 +306,7 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string>8.0.0 </string>
+				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -313,7 +324,7 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string>8.0.0</string>
+				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -321,17 +332,17 @@
 				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
-				<string>XHCI-Unsupported.kext</string>
+				<string>USBToolBox.kext</string>
 				<key>Comment</key>
-				<string>XHCI-Unsupported.kext</string>
+				<string>USBToolBox.kext</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string></string>
+				<string>Contents/MacOS/USBToolBox</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string>19.0.0</string>
+				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -339,7 +350,7 @@
 				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
-				<string>Lilu.kext/Contents/Plugins/AppleALC.kext</string>
+				<string>Lilu.kext/Contents/PlugIns/AppleALC.kext</string>
 				<key>Comment</key>
 				<string>AppleALC.kext</string>
 				<key>Enabled</key>
@@ -349,7 +360,7 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string>8.0.0</string>
+				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -357,7 +368,7 @@
 				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
-				<string>Lilu.kext/Contents/Plugins/DebugEnhancer.kext</string>
+				<string>Lilu.kext/Contents/PlugIns/DebugEnhancer.kext</string>
 				<key>Comment</key>
 				<string>DebugEnhancer.kext</string>
 				<key>Enabled</key>
@@ -375,7 +386,7 @@
 				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
-				<string>Lilu.kext/Contents/Plugins/RestrictEvents.kext</string>
+				<string>Lilu.kext/Contents/PlugIns/RestrictEvents.kext</string>
 				<key>Comment</key>
 				<string>RestrictEvents.kext</string>
 				<key>Enabled</key>
@@ -385,7 +396,7 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string>12.0.0</string>
+				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -393,7 +404,7 @@
 				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
-				<string>Lilu.kext/Contents/Plugins/VirtualSMC.kext</string>
+				<string>Lilu.kext/Contents/PlugIns/VirtualSMC.kext</string>
 				<key>Comment</key>
 				<string>VirtualSMC.kext</string>
 				<key>Enabled</key>
@@ -403,7 +414,7 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string>8.0.0</string>
+				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -411,7 +422,7 @@
 				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
-				<string>Lilu.kext/Contents/Plugins/WhateverGreen.kext</string>
+				<string>Lilu.kext/Contents/PlugIns/WhateverGreen.kext</string>
 				<key>Comment</key>
 				<string>WhateverGreen.kext</string>
 				<key>Enabled</key>
@@ -421,7 +432,7 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string>10.0.0</string>
+				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -429,7 +440,7 @@
 				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
-				<string>Lilu.kext/Contents/Plugins/VirtualSMC.kext/Contents/Plugins/SMCProcessor.kext</string>
+				<string>Lilu.kext/Contents/PlugIns/VirtualSMC.kext/Contents/PlugIns/SMCProcessor.kext</string>
 				<key>Comment</key>
 				<string>SMCProcessor.kext</string>
 				<key>Enabled</key>
@@ -439,7 +450,7 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string>11.0.0</string>
+				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -447,7 +458,7 @@
 				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
-				<string>Lilu.kext/Contents/Plugins/VirtualSMC.kext/Contents/Plugins/SMCSuperIO.kext</string>
+				<string>Lilu.kext/Contents/PlugIns/VirtualSMC.kext/Contents/PlugIns/SMCSuperIO.kext</string>
 				<key>Comment</key>
 				<string>SMCSuperIO.kext</string>
 				<key>Enabled</key>
@@ -457,7 +468,25 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string>10.0.0 </string>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>x86_64</string>
+				<key>BundlePath</key>
+				<string>USBToolBox.kext/Contents/PlugIns/UTBMap.kext</string>
+				<key>Comment</key>
+				<string>UTBMap.kext</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string></string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
