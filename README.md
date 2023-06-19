@@ -32,8 +32,9 @@ This project isn't ideal, but it does the job. Never blame me if there is an iss
 
 Changelog 0.9.3
 
-- Maintain all properties from 0.9.2
 - Bypass 15 USB Port Limit
+- Switch USBMap.kext to UTBMap.kext.
+- Maintain all properties from 0.9.2.
 
 Changelog 0.9.2
 
