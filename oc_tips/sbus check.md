@@ -14,7 +14,7 @@ Most 8th Gen and above actually do not require SSDT-SBUS.
 - Additionally, use this patch to allow both kexts AppleSMBusController and AppleSMBUSPCI showing up via IOreg.
 
     ```asl
-    Scope (SBUS)    // System Management Bus
+    Scope (SBUS)    // Serial BUS
     {
         Device (BUS0)
         {
