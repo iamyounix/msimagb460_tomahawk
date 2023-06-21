@@ -2,6 +2,8 @@
 
 Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stability (Recommended). Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging. This method requires [Propertree](https://github.com/corpnewt/ProperTree). Below is an example:
 
+![Kapture 2023-06-21 at 11 51 09](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/d834ca65-d742-4389-8dc6-3418b31abe64)
+
 - Drivers
 
     ```zsh
