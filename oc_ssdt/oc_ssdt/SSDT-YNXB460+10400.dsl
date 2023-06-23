@@ -1,23 +1,4 @@
-/*
- * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20200925 (64-bit version)
- * Copyright (c) 2000 - 2020 Intel Corporation
- * 
- * Disassembling to symbolic ASL+ operators
- *
- * Disassembly of iASLf2rWMQ.aml, Wed Jun 21 09:48:34 2023
- *
- * Original Table Header:
- *     Signature        "SSDT"
- *     Length           0x00003DCF (15823)
- *     Revision         0x02
- *     Checksum         0xDE
- *     OEM ID           "Younix"
- *     OEM Table ID     "B460"
- *     OEM Revision     0x00002000 (8192)
- *     Compiler ID      "INTL"
- *     Compiler Version 0x20200925 (538970405)
- */
+// Specified only for i5 10400 LGA1200. 
 DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 {
     External (_SB_.PCI0, DeviceObj)
