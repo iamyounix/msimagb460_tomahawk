@@ -2,10 +2,15 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 {
     External (_SB_.PCI0, DeviceObj)
     External (_SB_.PCI0.LPCB, DeviceObj)
+    External (_SB_.PCI0.PEG0, DeviceObj)
+    External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
+    External (_SB_.PCI0.SBUS, DeviceObj)
     External (_SB_.PCI0.XHC_, DeviceObj)
     External (_SB_.PCI0.XHC_.RHUB, DeviceObj)
     External (_SB_.PCI0.XHC_.RHUB.USR1, DeviceObj)
     External (_SB_.PCI0.XHC_.RHUB.USR2, DeviceObj)
+    External (_SB_.PR00, ProcessorObj)
+    External (STAS, IntObj)
     
     If (_OSI ("Darwin"))
     {
@@ -25,13 +30,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
         }
     }
     
-    External (_SB_.PCI0.PEG0, DeviceObj)
-    External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
-    External (_SB_.PCI0.SBUS, DeviceObj)
-    External (_SB_.PR00, ProcessorObj)
-    External (STAS, IntObj)
-    External (XPRW, MethodObj)    // 2 Arguments
-
     If (_OSI ("Darwin"))
     {
         Method (_INI, 0, NotSerialized)  // _INI: Initialize
@@ -43,36 +41,31 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
         {
             Return (0x0F)
         }
+
+        Method (XCPM, 4, NotSerialized) 
+        {
+            If (LEqual (Arg2, Zero)) {
+                Return (Buffer (One) { 0x03 })
+            }
+
+            Return (Package (0x02)
+            {
+                "plugin-type", 
+                One
+            })
+        }
+    }
+
+    If (_OSI ("Darwin"))
+    {
         
         Scope (\_SB)
         {
-            Method (GPRW, 2, NotSerialized)    //    0x6D / 0x69 / 
-            {
-                If ((0x04 == Arg1))
-                {
-                    Return (XPRW (Arg0, 0x03))
-                }
-
-                Return (XPRW (Arg0, Arg1))
-            }
-
             Scope (PR00)
             {
                 Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
-                    If (!Arg2)
-                    {
-                        Return (Buffer ()
-                        {
-                             0x03                                             // .
-                        })
-                    }
-
-                    Return (Package ()
-                    {
-                        "plugin-type", 
-                        One
-                    })
+                    Return (XCPM (Arg0, Arg1, Arg2, Arg3))   
                 }
             }
 
