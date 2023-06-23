@@ -58,7 +58,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 
     If (_OSI ("Darwin"))
     {
-        
         Scope (\_SB)
         {
             Scope (PR00)
