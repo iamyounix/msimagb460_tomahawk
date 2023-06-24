@@ -34,7 +34,7 @@ Changelog 0.9.3
 
 - Bypass 15 USB Port Limit
 - Switch USBMap.kext to UTBMap.kext.
-- Integrate XHCI-Unsupport to UTBMap.kext.
+- Integrate XHCI-Unsupport to UTBMap.kext (unlock all port)
 - Maintain all properties from 0.9.2.
 
 ### Hardware and Devices
