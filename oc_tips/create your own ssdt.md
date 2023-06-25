@@ -74,11 +74,11 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 
     If (_OSI ("Darwin"))
     {
-        Scope (\)
+        Scope (\) // Root
         {
-            Scope (_SB)
+            Scope (_SB)    // System BUS
             {
-                Scope (PCI0)
+                Scope (PCI0)    // PCI Root
                 {
                     Name (SAT0._STA, Zero)  // Disable Device using _STA Method
                 }
