@@ -1,6 +1,6 @@
 # Create Your Own SSDT
 
-> Note: These are some known guides to manipulate ACPI. Any failed results such as boot failure, mmulfuction device, system brick and are not my responsibility. The best move is to use EFI from USB.
+> Note: These are some known guides to manipulate ACPI. Any failed results such as boot failure, mulfuction device, system brick and are not my responsibility. The best move is to use EFI from USB.
 
 ## Operating System Interface Injection
 
