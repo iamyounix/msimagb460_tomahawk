@@ -245,51 +245,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
                         Name (_ADR, 0x00080000)  // _ADR: Address
                     }
 
-                    Scope (RP03)
-                    {
-                        Name (PXSX._STA, Zero)  // _STA: Status
-                        Device (RTLK)
-                        {
-                            Name (_ADR, Zero)  // _ADR: Address
-                        }
-                    }
-
-                    Scope (RP07)
-                    {
-                        Name (PXSX._STA, Zero)  // _STA: Status
-                        Device (ARPT)
-                        {
-                            Name (_ADR, Zero)  // _ADR: Address
-                        }
-                    }
-
-                    Scope (RP09)
-                    {
-                        Name (PXSX._STA, Zero)  // _STA: Status
-                        Device (ANS0)
-                        {
-                            Name (_ADR, Zero)  // _ADR: Address
-                        }
-                    }
-
-                    Scope (RP19)
-                    {
-                        Name (PXSX._STA, Zero)  // _STA: Status
-                        Device (XHC2)
-                        {
-                            Name (_ADR, Zero)  // _ADR: Address
-                        }
-                    }
-
-                    Scope (RP21)
-                    {
-                        Name (PXSX._STA, Zero)  // _STA: Status
-                        Device (ANS1)
-                        {
-                            Name (_ADR, Zero)  // _ADR: Address
-                        }
-                    }
-
                     Name (SAT0._STA, Zero)  // _STA: Status
                     Device (SATA)
                     {
