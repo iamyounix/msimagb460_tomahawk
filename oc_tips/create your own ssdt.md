@@ -2,6 +2,16 @@
 
 > Note: These are some known guides to manipulate ACPI. Any failed results such as boot failure, mulfuction device, system brick and are not my responsibility. The best move is to use EFI from USB.
 
+Table of Contents
+
+- [Operating System Interface Injection](#operating-system-interface-injection)
+- [Method Injection](#method-injection)
+- [Plugin Type Injection from Processor](#plugin-type-injection-from-processor)
+- [Disable Device](#disable-device)
+- [New Device](#new-device)
+- [Disable and Create New Device](#disable-and-create-new-device)
+- [Example](#example)
+  
 ## Operating System Interface Injection
 
 ```dsl
