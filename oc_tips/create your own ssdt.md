@@ -357,3 +357,21 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 }
 ```
 
+### Simple explanation:
+
+- The code starts with the DefinitionBlock statement, which provides information about the block itself. It includes a signature ("SSDT"), the revision number (2), the OEM ID ("Younix"), the OEM table ID ("B460"), and the OEM revision number (0x00002000).
+- The block then declares a list of external devices using the External statements. These devices are defined in the ACPI namespace and are referenced later in the block.
+- Next, there is an If statement that checks if the operating system is "Darwin" (which typically refers to macOS).
+- Inside the If statement, there is a Scope statement that sets the current scope to the root of the ACPI namespace.
+- Within the root scope, there are two methods defined: _INI (Initialize) and _STA (Status). These methods are used for device initialization and reporting the device status, respectively.
+- Inside the root scope, there is another scope called _SB, which represents the system bus. This scope contains the definitions of various devices in the system.
+- The first device defined is the PR00 device, which represents a processor object. It has a method called _DSM (Device-Specific Method) used for device-specific operations.
+- Inside the _SB scope, there is the PCI0 scope, representing the PCI bus. It contains multiple devices, including DRAM, LPCB, GLAN, GIGE, PEG0, PGMM, RP03, RP07, RP09, RP19, RP21, SAT0, SBUS, THSS, and XHC.
+- Each device within the PCI0 scope has an _ADR (Address) defined, specifying its unique address on the bus. Some devices also have a _STA (Status) defined, which indicates the status of the device.
+- The PEG0 device has sub-devices EGP0 and EGP1, which represent the PCIe graphics card and High Definition Audio (HDAU) device, respectively.
+- The RP03, RP07, RP09, RP19, and RP21 devices represent PCIe root ports, and each has a corresponding sub-device with an address defined.
+- The SATA device represents a Serial ATA controller.
+- The SBUS scope contains the BUS0 device, which represents the SMBus (System Management Bus). It also has a sub-device BLC0, which is a backlight controller.
+- The THSS device represents a thermal subsystem.
+- The XHC scope represents the USB (Universal Serial Bus) eXtensible Host Controller and contains a sub-scope RHUB, which represents the USB root hub. The RHUB scope has two sub-devices, USR1 and USR2, each having a _STA (Status) defined.
+- Finally, the block defines a device called USBX, which represents a USB device. It has an _ADR (Address) defined and a _DSM (Device-Specific Method) used for device-specific operations related to USB.
