@@ -2,8 +2,6 @@
 
 > Note: These are some known guides to manipulate ACPI. Any failed results such as boot failure, mmulfuction device, system brick and are not my responsibility. The best move is to use EFI from USB.
 
-
-
 ## Operating System Interface Injection
 
 ```dsl
@@ -17,8 +15,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 		{
 			XXX
 ```
-
-
 
 ## Method Injection
 
@@ -38,8 +34,6 @@ Scope (\)
 	}
 }
 ```
-
-
 
 ## Plugin Type Injection from Processor
 
@@ -71,8 +65,6 @@ Scope (_SB)
 }
 ```
 
-
-
 ## Disable Device
 
 ```dsl
@@ -96,8 +88,6 @@ DefinitionBlock ("", "SSDT", 2, "Younix", "B460", 0x00002000)
 }
 ```
 
-
-
 ## New Device
 
 ```dsl
@@ -106,8 +96,6 @@ Device (THSS)	// New device, most common to rename unrecognized pciXXXX,XXXX via
 	Name (_ADR, 0x00140002)  // _ADR is require to create new device
 }
 ```
-
-
 
 ## Disable and Create New Device
 
