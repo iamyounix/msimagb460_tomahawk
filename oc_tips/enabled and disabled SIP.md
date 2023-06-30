@@ -66,3 +66,9 @@ Disable SIP
   NVRAM Protections: disabled
   BaseSystem Verification: disabled
   ```
+- Use apps to determine SIP is enable or disable
+  - Head to [MenuBarSIPDetector](https://github.com/ITzTravelInTime/MenuBarSIPDetector).
+
+![Screenshot 2023-07-01 at 7 10 00 AM](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/e8c488da-6597-4e52-8a64-2d1647001714)
+![Screenshot 2023-07-01 at 7 14 43 AM](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/f17f8ccf-cadd-4538-9fa6-4fdccf5741fd)
+
