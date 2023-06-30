@@ -47,7 +47,7 @@ Changelog 0.9.3
 - Comet Lake-S UHD Graphics 630 (Headless)
 - Comet Lake-S 6c Host Bridge/DRAM Controller
 - Comet Lake PCH-V USB Controller
-- Comet Lake PCH-V cAVS - Requires AppleALC
+- Comet Lake PCH-V cAVS
 - Ethernet Connection (11) I219-V 
 - KINGSTON SA2000M8500G NVMe SSD No. 1
 - KINGSTON SA2000M8500G NVMe SSD No. 2
