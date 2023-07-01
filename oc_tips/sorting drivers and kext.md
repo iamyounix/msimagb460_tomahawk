@@ -3,6 +3,8 @@
 Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stability (Recommended). Use only specific drivers. improve boot speed and sorting kexts in priority; improve `debug` log and `data` injection, especially debugging. This method requires [Propertree](https://github.com/corpnewt/ProperTree). Below is an example:
 
 ![Kapture 2023-06-21 at 11 51 09](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/d834ca65-d742-4389-8dc6-3418b31abe64)
+![ocauxket](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/62e48c1d-4fdb-424a-9eb2-7d3c4a94807b)
+
 
 - Drivers
 
@@ -142,9 +144,7 @@ Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stabil
         │   └── 📃 OpenShell.efi
         └── 📁 config.plist
     ```
-
-  ![ocauxket](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/62e48c1d-4fdb-424a-9eb2-7d3c4a94807b)
-
+    
   As we can see by using `kextstat -l | grep -v com.apple`, kext still running as usual. Below is an example:
 
   ![kexstat](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/68f1389b-7b8b-40b1-8017-f3b4225453cd)
