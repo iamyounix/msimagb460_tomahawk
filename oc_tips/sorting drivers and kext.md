@@ -143,6 +143,8 @@ Adding a `Plugins` folder inside `Lilu.kext` and certain kexts to improve stabil
         └── 📁 config.plist
     ```
 
+  ![ocauxket](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/62e48c1d-4fdb-424a-9eb2-7d3c4a94807b)
+
   As we can see by using `kextstat -l | grep -v com.apple`, kext still running as usual. Below is an example:
 
   ![kexstat](https://github.com/iamyounix/msimagb460_tomahawk/assets/72515939/68f1389b-7b8b-40b1-8017-f3b4225453cd)
