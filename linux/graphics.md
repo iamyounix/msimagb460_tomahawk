@@ -1,5 +1,15 @@
 # Graphics
 
+Table of Contents:
+
+- [OpenCL](#opencl)
+- [OpenGL (EGL)](#opengl-egl)
+- [OpenGL (GLX)](#opengl-glx)
+- [Vulkan](#vulkan)
+- [Wayland](#wayland)
+- [Window Manager](#window-manager)
+- [X-Server](#x-server)
+
 ## OpenCL
 
 ```zsh
