@@ -57,6 +57,16 @@ Changelog 0.9.3
 
 > Note: `agdpmod=pikera` boot arg may disable `board ID` checks on Navi GPUs (RX 5000 and 6000 series); without this, you'll get a black screen, especially on SMBIOS, which is built with dual GPUs. Don't use it if you don't have Navi (i.e., Polaris and Vega cards shouldn't use this). As an alternative, this patch can also be injected via DeviceProperties as `agdpmod` or `data` or `70696b65726100` to any of the two GPUs available. Refer, [here](https://github.com/acidanthera/WhateverGreen).
 
+### Details:
+
+- [CPU](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/linux/cpu.md)
+- [Graphics](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/linux/graphics.md)
+- [Interrupt](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/linux/interrupt.md)
+- [PCI](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/linux/pci.md)
+- [USB](https://github.com/iamyounix/msimagb460_tomahawk/blob/main/linux/usb.md)
+
+> Note: All information is dumped via linux.
+
 ### Base Files
 
 Using 64-bit Firmwares, all base is taken from [OpenCorePkg's releases](https://github.com/acidanthera/OpenCorePkg/releases/) (x64) and [Binary Data](https://github.com/acidanthera/OcBinaryData).
