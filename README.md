@@ -9,7 +9,7 @@
 
 > **Note:** Please read, google, and do some research related to your hardware before start.
 >
-> - Please generate your own using [ACAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) or [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
+> - Please generate your own using [OCAuxiliary](https://github.com/ic005k/OCAuxiliaryTools) or [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
 > - Debug version can greatly help with debugging boot issues, however can add some noticeable delay to boot times (ie. 3-5 seconds to get to the picker). Once installed you can easily transition to Release.
 > - Release version provide snappier boot times with no useful debug info.
 > - This template include `Misc` / `Entries` example. Please change accordingly to your specific needed.
